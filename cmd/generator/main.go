@@ -3,6 +3,7 @@ package main
 import (
 	"encoding/json"
 	"fmt"
+	"io"
 	"log"
 	"net/http"
 	"os"
@@ -26,12 +27,14 @@ type OpenRouterModel struct {
 }
 
 type OpenRouterTopProvider struct {
-	ContextLength int `json:"context_length"`
-	MaxCompletion int `json:"max_completion"`
+	ContextLength       int `json:"context_length"`
+	MaxCompletionTokens int `json:"max_completion_tokens"`
 }
 
 type OpenRouterArchitecture struct {
-	Modality string `json:"modality"`
+	Modality         string   `json:"modality"`
+	InputModalities  []string `json:"input_modalities"`
+	OutputModalities []string `json:"output_modalities"`
 }
 
 type OpenRouterPricing struct {
@@ -86,7 +89,7 @@ func main() {
 			Provider:    strings.Split(m.ID, "/")[0], // Default provider from ID
 			Description: m.Description,
 			ContextLen:  m.ContextLength,
-			MaxOutput:   m.TopProvider.MaxCompletion,
+			MaxOutput:   m.TopProvider.MaxCompletionTokens,
 		}
 
 		// Apply overrides
@@ -165,6 +168,10 @@ func calculateFeatures(m OpenRouterModel) string {
 
 	if strings.Contains(strings.ToLower(m.Description), "function calling") || strings.Contains(strings.ToLower(m.Description), "tools") {
 		features = append(features, "CapFunctionCall")
+	}
+
+	if strings.Contains(strings.ToLower(m.Description), "#multimodal") {
+		features = append(features, "ModalityImageIn")
 	}
 
 	if len(features) == 0 {
@@ -250,8 +257,19 @@ func fetchOpenRouterModels() ([]OpenRouterModel, error) {
 		return nil, fmt.Errorf("unexpected status: %s", resp.Status)
 	}
 
+	body, err := io.ReadAll(resp.Body)
+	if err != nil {
+		return nil, err
+	}
+
+	// Save raw JSON as asset
+	os.MkdirAll("data", 0755)
+	if err := os.WriteFile("data/models.json", body, 0644); err != nil {
+		log.Printf("Warning: failed to save raw JSON: %v", err)
+	}
+
 	var orResp OpenRouterResponse
-	if err := json.NewDecoder(resp.Body).Decode(&orResp); err != nil {
+	if err := json.Unmarshal(body, &orResp); err != nil {
 		return nil, err
 	}
 
