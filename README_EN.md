@@ -20,6 +20,7 @@ Tested on Apple M3 Pro. All operations are nanosecond-level with near-zero memor
 | :--- | :--- | :--- |
 | `Get(ID)` (Exact Lookup) | **~6 ns/op** | 0 B/op |
 | `Get(Alias)` (Alias Lookup) | **~24 ns/op** | 0 B/op |
+| `Search(query, limit)` (Fuzzy) | **~35 µs/op** | ~11 KB/op |
 | `Query().Has(...).List()` | **~2000 ns/op** | 0 B/op |
 
 ## 📦 Installation
@@ -75,6 +76,18 @@ func main() {
     for _, m := range models {
         fmt.Printf("- %s: %s\n", m.ID(), m.Description())
     }
+}
+```
+
+### 3. Fuzzy Search
+
+When you are unsure of the full model name, use the search feature to get ranked results:
+
+```go
+// Search models containing "claude"
+results := llmspecs.Search("claude", 5)
+for _, m := range results {
+    fmt.Printf("Found: %s (%s)\n", m.Name(), m.ID())
 }
 ```
 

@@ -1,6 +1,7 @@
 package llmspecs
 
 import (
+	"strings"
 	"testing"
 )
 
@@ -97,5 +98,37 @@ func BenchmarkQueryCapabilities(b *testing.B) {
 	b.ResetTimer()
 	for i := 0; i < b.N; i++ {
 		Query().Has(ModalityImageIn).Has(CapFunctionCall).List()
+	}
+}
+
+func TestSearch(t *testing.T) {
+	// Test exact ID match
+	res := Search("openai/gpt-4", 1)
+	if len(res) == 0 || res[0].ID() != "openai/gpt-4" {
+		t.Error("Search for exact ID failed")
+	}
+
+	// Test case-insensitive prefix match
+	res = Search("claude", 5)
+	if len(res) == 0 {
+		t.Error("Search for 'claude' should return results")
+	}
+	for _, m := range res {
+		if !strings.Contains(strings.ToLower(m.ID()), "claude") && !strings.Contains(strings.ToLower(m.Name()), "claude") {
+			t.Errorf("Model %s should match 'claude'", m.ID())
+		}
+	}
+
+	// Test ranked alias match
+	res = Search("gpt4t", 1)
+	if len(res) == 0 || res[0].ID() != "openai/gpt-4-turbo" {
+		t.Errorf("Search for 'gpt4t' alias should return gpt-4-turbo as top result, got %v", res)
+	}
+}
+
+func BenchmarkSearch(b *testing.B) {
+	b.ResetTimer()
+	for i := 0; i < b.N; i++ {
+		Search("gpt-4", 10)
 	}
 }

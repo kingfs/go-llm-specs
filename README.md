@@ -20,6 +20,7 @@
 | :--- | :--- | :--- |
 | `Get(ID)` (精确查找) | **~6 ns/op** | 0 B/op |
 | `Get(Alias)` (别名查找) | **~24 ns/op** | 0 B/op |
+| `Search(query, limit)` (模糊搜索) | **~35 µs/op** | ~11 KB/op |
 | `Query().Has(...).List()` | **~2000 ns/op** | 0 B/op |
 
 ## 📦 安装
@@ -75,6 +76,18 @@ func main() {
     for _, m := range models {
         fmt.Printf("- %s: %s\n", m.ID(), m.Description())
     }
+}
+```
+
+### 3. 模糊搜索 (Search)
+
+当你不确定模型全名时，可以使用搜索功能获取按相关度排序的结果：
+
+```go
+// 搜索包含 "claude" 的模型
+results := llmspecs.Search("claude", 5)
+for _, m := range results {
+    fmt.Printf("Found: %s (%s)\n", m.Name(), m.ID())
 }
 ```
 

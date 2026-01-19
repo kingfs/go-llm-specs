@@ -28,4 +28,11 @@ func main() {
 		fmt.Printf("- %s (Prices: In $%f, Out $%f)\n",
 			model.ID(), model.PriceInput(), model.PriceOutput())
 	}
+
+	// 3. Fuzzy search
+	fmt.Println("\nFuzzy searching for 'gpt-4':")
+	searchResults := llmspecs.Search("gpt-4", 3)
+	for i, res := range searchResults {
+		fmt.Printf("%d. %s [%s]\n", i+1, res.Name(), res.ID())
+	}
 }

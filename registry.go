@@ -1,6 +1,9 @@
 package llmspecs
 
-import "strings"
+import (
+	"sort"
+	"strings"
+)
 
 // staticRegistry stores all static model data.
 // This will be populated in models_gen.go.
@@ -65,4 +68,79 @@ func (q *QueryBuilder) List() []Model {
 		results = append(results, m)
 	}
 	return results
+}
+
+// Search performs a fuzzy search across model IDs, names, and aliases.
+// It returns a ranked list of models based on relevance.
+func Search(query string, limit int) []Model {
+	if query == "" {
+		return nil
+	}
+
+	query = strings.ToLower(query)
+	type searchResult struct {
+		m     Model
+		score int
+	}
+	var results []searchResult
+
+	for _, m := range staticRegistry {
+		score := 0
+		id := strings.ToLower(m.ID())
+		name := strings.ToLower(m.Name())
+
+		// 1. Exact matches (Highest priority)
+		if id == query {
+			score += 100
+		} else if name == query {
+			score += 90
+		}
+
+		// 2. Prefix matches
+		if strings.HasPrefix(id, query) {
+			score += 50
+		} else if strings.HasPrefix(name, query) {
+			score += 40
+		}
+
+		// 3. Substring matches
+		if strings.Contains(id, query) {
+			score += 20
+		} else if strings.Contains(name, query) {
+			score += 10
+		}
+
+		// 4. Alias matches
+		for _, alias := range m.Aliases() {
+			a := strings.ToLower(alias)
+			if a == query {
+				score += 80
+			} else if strings.Contains(a, query) {
+				score += 15
+			}
+		}
+
+		if score > 0 {
+			results = append(results, searchResult{m, score})
+		}
+	}
+
+	// Sort by score descending
+	sort.Slice(results, func(i, j int) bool {
+		if results[i].score == results[j].score {
+			return results[i].m.ID() < results[j].m.ID()
+		}
+		return results[i].score > results[j].score
+	})
+
+	// Apply limit
+	if limit > 0 && len(results) > limit {
+		results = results[:limit]
+	}
+
+	final := make([]Model, len(results))
+	for i, r := range results {
+		final[i] = r.m
+	}
+	return final
 }
