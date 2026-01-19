@@ -1,0 +1,72 @@
+name: Daily Model Sync
+
+on:
+  schedule:
+    - cron: '0 2 * * *' # 2 AM UTC daily
+  workflow_dispatch:    # Allow manual trigger
+
+jobs:
+  update-and-release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        
+      - name: Set up Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: '1.25'
+
+      - name: Run Generator
+        run: |
+          go run cmd/generator/main.go
+          go fmt ./...
+
+      - name: Check for changes
+        id: check_changes
+        run: |
+          if git diff --quiet models_gen.go; then
+            echo "No changes detected."
+            echo "changed=false" >> $GITHUB_OUTPUT
+          else
+            echo "Model data updated!"
+            echo "changed=true" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Commit and Push
+        if: steps.check_changes.outputs.changed == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add models_gen.go
+          git commit -m "feat(data): auto-update model registry [skip ci]"
+          git push
+
+      - name: Calculate Next Version
+        if: steps.check_changes.outputs.changed == 'true'
+        id: semver
+        run: |
+          LATEST_TAG=$(git describe --tags --abbrev=0 2>/dev/null || echo "v0.0.0")
+          VERSION=${LATEST_TAG#v}
+          IFS='.' read -ra ADDR <<< "$VERSION"
+          major=${ADDR[0]}
+          minor=${ADDR[1]}
+          patch=${ADDR[2]}
+          NEW_PATCH=$((patch + 1))
+          NEW_TAG="v$major.$minor.$NEW_PATCH"
+          echo "new_tag=$NEW_TAG" >> $GITHUB_OUTPUT
+
+      - name: Create Release
+        if: steps.check_changes.outputs.changed == 'true'
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ steps.semver.outputs.new_tag }}
+          name: Release ${{ steps.semver.outputs.new_tag }}
+          body: |
+            Automatic update of LLM model data from OpenRouter.
+            Generated at: $(date -u +'%Y-%m-%d %H:%M:%S') UTC
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -1,0 +1,19 @@
+models:
+  "anthropic/claude-opus-4.5":
+    name_cn: "Claude 4.5 Opus"
+    description_cn: "Anthropic 最强大的模型，具备极高的推理能力。"
+    aliases:
+      - "claude-opus-4.5"
+      - "opus-4.5"
+  "openai/gpt-4-turbo":
+    name_cn: "GPT-4 Turbo"
+    description_cn: "OpenAI 的高性能模型，支持 128k 上下文。"
+    aliases:
+      - "gpt-4-turbo"
+      - "gpt4t"
+  "qwen/qwen-2.5-72b-instruct":
+    provider: "Qwen"
+    description_cn: "通义千问 2.5 72B 指令微调版。"
+    aliases:
+      - "qwen-2.5-72b"
+      - "qwen2.5"
