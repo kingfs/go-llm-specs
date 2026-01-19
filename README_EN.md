@@ -96,17 +96,23 @@ Check the [examples](file:///Users/kingfs/go/src/github.com/kingfs/go-llm-specs/
 ## 🤖 How it Works
 
 1.  **Generator (cmd/generator)**: Automatically fetches the full model list from OpenRouter daily.
-2.  **Overrides (data/overrides.yaml)**: Allows manual correction of aliases, addition of Chinese descriptions, and normalization of Provider names.
-3.  **Code Gen**: Automatically generates `models_gen.go`, hard-coding all data into static maps.
-4.  **Auto Update**: Uses GitHub Actions to sync daily and publish new versions using SemVer.
+2.  **Translator (cmd/translator)**: Uses LLMs to batch translate English descriptions to Chinese, saving to `data/overrides.yaml`.
+3.  **Overrides (data/overrides.yaml)**: Allows manual correction of aliases, addition of Chinese descriptions, and normalization of Provider names.
+4.  **Code Gen**: Automatically generates `models_gen.go`, hard-coding all data into static maps.
+5.  **Auto Update**: Uses GitHub Actions to sync daily and publish new versions using SemVer.
 
-## 📝 Running the Generator Locally
+## 📝 Running Tools Locally
 
-If you wish to refresh data manually:
-
+### Generator
 ```bash
-# Requires internet access
 go run cmd/generator/main.go
+```
+
+### Translator
+Requires `LLM_API_KEY`:
+```bash
+export LLM_API_KEY="sk-..."
+go run cmd/translator/main.go
 ```
 
 ## 📄 License

@@ -20,9 +20,27 @@ jobs:
         with:
           go-version: '1.25'
 
-      - name: Run Generator
+      - name: Fetch and Generate (Phase 1)
         run: |
+          # Run generator to fetch latest models.json
           go run cmd/generator/main.go
+
+      - name: Auto Translate Missing Descriptions
+        env:
+          LLM_API_KEY: ${{ secrets.LLM_API_KEY }}
+          LLM_BASE_URL: ${{ secrets.LLM_BASE_URL }}
+          LLM_MODEL: ${{ secrets.LLM_MODEL }}
+        run: |
+          if [ -n "$LLM_API_KEY" ]; then
+            echo "LLM_API_KEY found, running translator..."
+            go run cmd/translator/main.go
+            
+            # Re-run generator to bake in the new translations
+            go run cmd/generator/main.go
+          else
+            echo "Skipping translation (LLM_API_KEY not set)"
+          fi
+          
           go fmt ./...
 
       - name: Check for changes
@@ -41,8 +59,8 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add models_gen.go data/models.json
-          git commit -m "feat(data): auto-update model registry [skip ci]"
+          git add models_gen.go data/models.json data/overrides.yaml
+          git commit -m "feat(data): auto-update model registry and translations [skip ci]"
           git push
 
       - name: Calculate Next Version

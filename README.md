@@ -96,17 +96,24 @@ for _, m := range results {
 ## 🤖 工作原理
 
 1.  **Generator (cmd/generator)**: 每天自动从 OpenRouter 抓取全量模型数据。
-2.  **Overrides (data/overrides.yaml)**: 允许人工修正别名、补全中文描述、纠正 Provider 名称。
-3.  **Code Gen**: 自动生成 `models_gen.go`，将所有数据硬编码为静态 Map。
-4.  **Auto Update**: 通过 GitHub Actions 每天更新并自动发布 SemVer 版本。
+2.  **Translator (cmd/translator)**: 批量调用 LLM (默认 gpt-4o-mini) 将 `data/models.json` 中的英文描述翻译为中文，并存入 `data/overrides.yaml`。
+3.  **Overrides (data/overrides.yaml)**: 允许人工修正别名、补全中文描述、纠正 Provider 名称。
+4.  **Code Gen**: 自动生成 `models_gen.go`，将所有数据硬编码为静态 Map。
+5.  **Auto Update**: 通过 GitHub Actions 每天更新并自动发布 SemVer 版本。
 
-## 📝 手动运行生成器
+## 📝 手动运行工具
 
-如果你想使用最新的本地数据，可以手动运行：
-
+### 生成器 (Generator)
 ```bash
-# 需要有网络访问权限
 go run cmd/generator/main.go
+```
+
+### 翻译器 (Translator)
+需要设置 `LLM_API_KEY` (OpenAI 格式):
+```bash
+export LLM_API_KEY="sk-..."
+export LLM_MODEL="gpt-4o-mini" # 可选，默认值
+go run cmd/translator/main.go
 ```
 
 ## 📄 开源协议
