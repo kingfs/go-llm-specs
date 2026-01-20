@@ -13,7 +13,7 @@ func TestModelDataGetters(t *testing.T) {
 		MaxOutputVal:  50,
 		PriceInVal:    0.1,
 		PriceOutVal:   0.2,
-		Features:      ModalityTextIn,
+		FeaturesVal:   ModalityTextIn,
 		AliasList:     []string{"tm"},
 	}
 

@@ -16,6 +16,7 @@ func main() {
 	if ok {
 		fmt.Printf("[Alias Match] Found model: %s\n", m.Name())
 		fmt.Printf("Description: %s\n", m.DescriptionCN())
+		fmt.Printf("Features: %s\n", m.Features().String())
 	}
 
 	// 2. Query with multiple capabilities

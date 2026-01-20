@@ -79,7 +79,7 @@ func (q *QueryBuilder) List() []Model {
 			continue
 		}
 		// Filter by capabilities
-		if q.capability != 0 && (m.Features&q.capability) != q.capability {
+		if q.capability != 0 && (m.FeaturesVal&q.capability) != q.capability {
 			continue
 		}
 		results = append(results, m)

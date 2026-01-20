@@ -219,10 +219,14 @@ func calculateFeatures(m OpenRouterModel) string {
 		switch strings.ToLower(mod) {
 		case "text":
 			features = append(features, "ModalityTextOut")
-		case "audio":
-			features = append(features, "ModalityAudioOut")
 		case "image":
 			features = append(features, "ModalityImageOut")
+		case "audio":
+			features = append(features, "ModalityAudioOut")
+		case "video":
+			features = append(features, "ModalityVideoOut")
+		case "file":
+			features = append(features, "ModalityFileOut")
 		}
 	}
 
@@ -328,7 +332,7 @@ func init() {
 			MaxOutputVal:  {{ .MaxOutput }},
 			PriceInVal:    {{ printf "%f" .PriceIn }},
 			PriceOutVal:   {{ printf "%f" .PriceOut }},
-			Features:      {{ .Features }},
+			FeaturesVal:   {{ .Features }},
 			AliasList:     []string{ {{ range $i, $alias := .Aliases }}{{ if $i }}, {{ end }}"{{ $alias }}"{{ end }} },
 		},
 		{{- end }}

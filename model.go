@@ -15,6 +15,7 @@ type Model interface {
 	PriceOutput() float64
 
 	HasCapability(c Capability) bool
+	Features() Capability
 	Aliases() []string
 }
 
@@ -29,7 +30,7 @@ type modelData struct {
 	MaxOutputVal  int
 	PriceInVal    float64
 	PriceOutVal   float64
-	Features      Capability
+	FeaturesVal   Capability
 	AliasList     []string
 }
 
@@ -42,5 +43,6 @@ func (m *modelData) ContextLength() int              { return m.ContextLenVal }
 func (m *modelData) MaxOutput() int                  { return m.MaxOutputVal }
 func (m *modelData) PriceInput() float64             { return m.PriceInVal }
 func (m *modelData) PriceOutput() float64            { return m.PriceOutVal }
-func (m *modelData) HasCapability(c Capability) bool { return m.Features&c != 0 }
+func (m *modelData) HasCapability(c Capability) bool { return m.FeaturesVal&c != 0 }
+func (m *modelData) Features() Capability            { return m.FeaturesVal }
 func (m *modelData) Aliases() []string               { return m.AliasList }
