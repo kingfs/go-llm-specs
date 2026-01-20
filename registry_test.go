@@ -32,6 +32,34 @@ func TestGet(t *testing.T) {
 	}
 }
 
+func TestGetMany(t *testing.T) {
+	names := []string{
+		"openai/gpt-4",   // Valid ID
+		"GpT4t",          // Valid Alias (case-insensitive)
+		"non-existent",   // Non-existent
+		"qwen/qwen3-32b", // Another Valid ID
+	}
+
+	results := GetMany(names)
+
+	expectedCount := 3 // openai/gpt-4, openai/gpt-4-turbo (alias), qwen/qwen3-32b
+	if len(results) != expectedCount {
+		t.Errorf("Expected %d models, got %d", expectedCount, len(results))
+	}
+
+	foundIDs := make(map[string]bool)
+	for _, m := range results {
+		foundIDs[m.ID()] = true
+	}
+
+	expectedIDs := []string{"openai/gpt-4", "openai/gpt-4-turbo", "qwen/qwen3-32b"}
+	for _, id := range expectedIDs {
+		if !foundIDs[id] {
+			t.Errorf("Expected model %s was not found in results", id)
+		}
+	}
+}
+
 func TestQuery(t *testing.T) {
 	// 1. Test Provider filtering
 	p := "Anthropic"
@@ -84,6 +112,20 @@ func BenchmarkGetByAlias(b *testing.B) {
 	b.ResetTimer()
 	for i := 0; i < b.N; i++ {
 		Get(alias)
+	}
+}
+
+func BenchmarkGetMany(b *testing.B) {
+	names := []string{
+		"openai/gpt-4",
+		"gpt4t",
+		"anthropic/claude-3-5-sonnet",
+		"qwen3-32b",
+		"non-existent",
+	}
+	b.ResetTimer()
+	for i := 0; i < b.N; i++ {
+		GetMany(names)
 	}
 }
 

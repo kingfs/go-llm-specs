@@ -20,6 +20,7 @@ Tested on Apple M3 Pro. All operations are nanosecond-level with near-zero memor
 | :--- | :--- | :--- |
 | `Get(ID)` (Exact Lookup) | **~6 ns/op** | 0 B/op |
 | `Get(Alias)` (Alias Lookup) | **~24 ns/op** | 0 B/op |
+| `GetMany([]string)` (Batch) | **~156 ns/op** | 80 B/op (1 alloc) |
 | `Search(query, limit)` (Fuzzy) | **~35 µs/op** | ~11 KB/op |
 | `Query().Has(...).List()` | **~2000 ns/op** | 0 B/op |
 
@@ -53,7 +54,19 @@ func main() {
 }
 ```
 
-### 2. Chainable Query
+### 2. Batch Get (GetMany)
+
+Efficiently retrieve multiple models, automatically skipping those that don't exist:
+
+```go
+names := []string{"gpt4t", "qwen3-32b", "non-existent"}
+models := llmspecs.GetMany(names)
+for _, m := range models {
+    fmt.Printf("- Found: %s\n", m.Name())
+}
+```
+
+### 3. Chainable Query
 
 Fast bitmask-based filtering to find models matching specific criteria:
 
@@ -108,7 +121,7 @@ To simplify lookups, the project provides aliases via:
 m, ok := llmspecs.Get("qwen3-32b")
 ```
 
-Check the [examples](file:///Users/kingfs/go/src/github.com/kingfs/go-llm-specs/examples) directory for more details.
+Check the [examples](examples) directory for more details.
 
 ## 🤖 How it Works
 

@@ -30,6 +30,18 @@ func Get(name string) (Model, bool) {
 	return nil, false
 }
 
+// GetMany retrieves multiple models by their IDs or aliases.
+// It returns a slice containing the found models. Names that do not match any model are skipped.
+func GetMany(names []string) []Model {
+	results := make([]Model, 0, len(names))
+	for _, name := range names {
+		if m, ok := Get(name); ok {
+			results = append(results, m)
+		}
+	}
+	return results
+}
+
 // QueryBuilder provides a chainable API for filtering models.
 type QueryBuilder struct {
 	provider   string

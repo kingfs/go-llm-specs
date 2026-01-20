@@ -20,6 +20,7 @@
 | :--- | :--- | :--- |
 | `Get(ID)` (精确查找) | **~6 ns/op** | 0 B/op |
 | `Get(Alias)` (别名查找) | **~24 ns/op** | 0 B/op |
+| `GetMany([]string)` (批量) | **~156 ns/op** | 80 B/op (1 alloc) |
 | `Search(query, limit)` (模糊搜索) | **~35 µs/op** | ~11 KB/op |
 | `Query().Has(...).List()` | **~2000 ns/op** | 0 B/op |
 
@@ -53,7 +54,19 @@ func main() {
 }
 ```
 
-### 2. 链式查询 (Query)
+### 2. 批量获取 (GetMany)
+
+高效取回多个模型，自动跳过不存在的模型：
+
+```go
+names := []string{"gpt4t", "qwen3-32b", "non-existent"}
+models := llmspecs.GetMany(names)
+for _, m := range models {
+    fmt.Printf("- Found: %s\n", m.Name())
+}
+```
+
+### 3. 链式查询 (Query)
 
 强大的位掩码过滤，极速筛选符合要求的模型：
 
@@ -108,7 +121,7 @@ for _, m := range results {
 m, ok := llmspecs.Get("qwen3-32b")
 ```
 
-更多示例请参考 [examples](file:///Users/kingfs/go/src/github.com/kingfs/go-llm-specs/examples) 目录。
+更多示例请参考 [examples](examples) 目录。
 
 ## 🤖 工作原理
 

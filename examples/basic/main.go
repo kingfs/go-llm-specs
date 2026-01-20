@@ -35,4 +35,11 @@ func main() {
 	for i, res := range searchResults {
 		fmt.Printf("%d. %s [%s]\n", i+1, res.Name(), res.ID())
 	}
+
+	// 4. Batch get
+	fmt.Println("\nBatch retrieving models (gpt4t, qwen3-32b, non-existent):")
+	batch := llmspecs.GetMany([]string{"gpt4t", "qwen3-32b", "non-existent"})
+	for _, m := range batch {
+		fmt.Printf("- Found: %s (%s)\n", m.Name(), m.ID())
+	}
 }
