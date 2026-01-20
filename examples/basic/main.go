@@ -7,6 +7,8 @@ import (
 )
 
 func main() {
+	fmt.Println("Total models:", llmspecs.Total())
+
 	fmt.Println("LLM metadata registry examples:")
 
 	// 1. Get by alias

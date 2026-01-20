@@ -13,6 +13,11 @@ var staticRegistry = map[string]*modelData{}
 // This will be populated in models_gen.go.
 var aliasIndex = map[string]string{}
 
+// Total number of models in the registry.
+func Total() int {
+	return len(staticRegistry)
+}
+
 // Get retrieves a model by its ID or alias.
 func Get(name string) (Model, bool) {
 	// 1. Try exact ID
