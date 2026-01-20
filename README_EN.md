@@ -81,7 +81,13 @@ func main() {
 
 ### 3. Fuzzy Search
 
-When you are unsure of the full model name, use the search feature to get ranked results:
+When you are unsure of the full model name, use the search feature to get results ranked by relevance. The search logic matches against IDs, Names, and Aliases with the following weights:
+
+1.  **Exact Match** (ID: 100 pts, Name: 90 pts)
+2.  **Exact Alias Match** (80 pts)
+3.  **Prefix Match** (ID: 50 pts, Name: 40 pts)
+4.  **Substring Match** (ID: 20 pts, Name: 10 pts)
+5.  **Alias Substring Match** (15 pts)
 
 ```go
 // Search models containing "claude"
@@ -89,6 +95,17 @@ results := llmspecs.Search("claude", 5)
 for _, m := range results {
     fmt.Printf("Found: %s (%s)\n", m.Name(), m.ID())
 }
+```
+
+### 4. Aliases
+
+To simplify lookups, the project provides aliases via:
+- **Manual Overrides**: Manually defined in `data/overrides.yaml` (highest priority).
+- **Auto-Generation**: If a model ID suffix (e.g., `qwen3-32b` from `qwen/qwen3-32b`) is unique among all models, the generator automatically assigns it as an alias.
+
+```go
+// Lookup using an auto-generated unique suffix alias
+m, ok := llmspecs.Get("qwen3-32b")
 ```
 
 Check the [examples](file:///Users/kingfs/go/src/github.com/kingfs/go-llm-specs/examples) directory for more details.

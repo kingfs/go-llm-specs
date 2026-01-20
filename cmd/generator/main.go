@@ -19,13 +19,14 @@ import (
 
 // OpenRouter model structures
 type OpenRouterModel struct {
-	ID            string                 `json:"id"`
-	Name          string                 `json:"name"`
-	Description   string                 `json:"description"`
-	ContextLength int                    `json:"context_length"`
-	TopProvider   OpenRouterTopProvider  `json:"top_provider"`
-	Architecture  OpenRouterArchitecture `json:"architecture"`
-	Pricing       OpenRouterPricing      `json:"pricing"`
+	ID                  string                 `json:"id"`
+	Name                string                 `json:"name"`
+	Description         string                 `json:"description"`
+	ContextLength       int                    `json:"context_length"`
+	TopProvider         OpenRouterTopProvider  `json:"top_provider"`
+	Architecture        OpenRouterArchitecture `json:"architecture"`
+	Pricing             OpenRouterPricing      `json:"pricing"`
+	SupportedParameters []string               `json:"supported_parameters"`
 }
 
 type OpenRouterTopProvider struct {
@@ -120,10 +121,50 @@ func main() {
 		p.Features = calculateFeatures(m)
 
 		processedModels = append(processedModels, p)
+	}
 
-		// Popuplate alias map
+	// 3a. Auto-generate aliases from unique suffixes
+	suffixCounts := make(map[string]int)
+	for _, p := range processedModels {
+		parts := strings.Split(p.ID, "/")
+		if len(parts) > 1 {
+			suffix := parts[len(parts)-1]
+			suffixCounts[suffix]++
+		}
+	}
+
+	for _, p := range processedModels {
+		parts := strings.Split(p.ID, "/")
+		if len(parts) > 1 {
+			suffix := parts[len(parts)-1]
+			// If suffix is unique and not already an alias
+			if suffixCounts[suffix] == 1 {
+				exists := false
+				for _, a := range p.Aliases {
+					if strings.EqualFold(a, suffix) {
+						exists = true
+						break
+					}
+				}
+				if !exists {
+					p.Aliases = append(p.Aliases, suffix)
+				}
+			}
+		}
+	}
+
+	// 3b. Populate alias map
+	for _, p := range processedModels {
 		for _, alias := range p.Aliases {
-			aliasMap[strings.ToLower(alias)] = p.ID
+			// Check for collisions in alias map (should be rare with unique suffixes + overrides)
+			// But prioritizing overrides or first come. Sort later handles deterministic order if needed.
+			// Ideally we warn on collision.
+			lowerAlias := strings.ToLower(alias)
+			if existingID, ok := aliasMap[lowerAlias]; ok && existingID != p.ID {
+				log.Printf("Warning: Alias collision '%s' for models %s and %s. Keeping %s.", alias, existingID, p.ID, existingID)
+			} else {
+				aliasMap[lowerAlias] = p.ID
+			}
 		}
 	}
 
@@ -156,23 +197,65 @@ type ProcessedModel struct {
 
 func calculateFeatures(m OpenRouterModel) string {
 	var features []string
-	modalities := strings.Split(m.Architecture.Modality, "+")
-	for _, mod := range modalities {
-		switch strings.TrimSpace(mod) {
+
+	// Map Input Modalities
+	for _, mod := range m.Architecture.InputModalities {
+		switch strings.ToLower(mod) {
 		case "text":
-			features = append(features, "ModalityTextIn", "ModalityTextOut")
+			features = append(features, "ModalityTextIn")
 		case "image":
 			features = append(features, "ModalityImageIn")
 		case "audio":
-			features = append(features, "ModalityAudioIn", "ModalityAudioOut")
+			features = append(features, "ModalityAudioIn")
+		case "video":
+			features = append(features, "ModalityVideoIn")
+		case "file":
+			features = append(features, "ModalityFileIn")
 		}
 	}
 
-	if strings.Contains(strings.ToLower(m.Description), "function calling") || strings.Contains(strings.ToLower(m.Description), "tools") {
+	// Map Output Modalities
+	for _, mod := range m.Architecture.OutputModalities {
+		switch strings.ToLower(mod) {
+		case "text":
+			features = append(features, "ModalityTextOut")
+		case "audio":
+			features = append(features, "ModalityAudioOut")
+		case "image":
+			features = append(features, "ModalityImageOut")
+		}
+	}
+
+	// Function Calling: Check parameters or description
+	hasTools := false
+	for _, p := range m.SupportedParameters {
+		if p == "tools" || p == "tool_choice" {
+			hasTools = true
+			break
+		}
+	}
+	// Fallback to description check if parameters missing (older models)
+	if !hasTools && (strings.Contains(strings.ToLower(m.Description), "function calling") || strings.Contains(strings.ToLower(m.Description), "tools")) {
+		hasTools = true
+	}
+	if hasTools {
 		features = append(features, "CapFunctionCall")
 	}
 
+	// JSON Mode / Structured Outputs
+	for _, p := range m.SupportedParameters {
+		if p == "response_format" || p == "structured_outputs" {
+			features = append(features, "CapJsonMode")
+			break
+		}
+	}
+
+	// System Prompt support is very common, usually assumed, but if we want to be strict check parameters?
+	// For now, let's leave it as is or add detection if "system" roles are supported, but the API doesn't expose roles directly in this JSON.
+	// Many models support system prompts implicitly. We won't inadvertently set it to avoid false positives unless we have a clear signal.
+
 	if strings.Contains(strings.ToLower(m.Description), "#multimodal") {
+		// Only add if not already present, though deduplication handles it
 		features = append(features, "ModalityImageIn")
 	}
 
@@ -188,6 +271,9 @@ func calculateFeatures(m OpenRouterModel) string {
 			uniqueFeatures = append(uniqueFeatures, f)
 		}
 	}
+	// Sort for deterministic output
+	sort.Strings(uniqueFeatures)
+
 	return strings.Join(uniqueFeatures, " | ")
 }
 

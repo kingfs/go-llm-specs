@@ -132,3 +132,50 @@ func BenchmarkSearch(b *testing.B) {
 		Search("gpt-4", 10)
 	}
 }
+
+func TestSearch_Ranking(t *testing.T) {
+	// 1. Setup a controlled environment if possible, but since staticRegistry is global and large,
+	// we'll search for things we know are there and check their relative order.
+
+	// Target: openai/gpt-4
+	// Rules: Exact match > everything else
+	results := Search("openai/gpt-4", 10)
+	if len(results) == 0 {
+		t.Fatal("Search for 'openai/gpt-4' returned no results")
+	}
+	if results[0].ID() != "openai/gpt-4" {
+		t.Errorf("Top result should be 'openai/gpt-4', got %s", results[0].ID())
+	}
+
+	// Target: "gpt-4"
+	// Should return openai/gpt-4 as higher than things that just contain "gpt-4" in suffix
+	results = Search("gpt-4", 10)
+	topFound := false
+	for _, m := range results {
+		if m.ID() == "openai/gpt-4" {
+			topFound = true
+			break
+		}
+	}
+	if !topFound {
+		t.Error("Search for 'gpt-4' did not find 'openai/gpt-4'")
+	}
+}
+
+func TestGet_Aliases(t *testing.T) {
+	// Verify automatic suffix alias
+	id := "qwen/qwen3-32b"
+	alias := "qwen3-32b"
+	if m, ok := Get(alias); ok {
+		if m.ID() != id {
+			t.Errorf("Expected %s for alias %s, got %s", id, alias, m.ID())
+		}
+	} else {
+		t.Errorf("Failed to find model by auto-suffix alias: %s", alias)
+	}
+
+	// Verify case-insensitive alias
+	if m, ok := Get("QwEn3-32b"); !ok || m.ID() != id {
+		t.Error("Alias lookup should be case-insensitive")
+	}
+}

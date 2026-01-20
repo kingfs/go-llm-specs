@@ -81,7 +81,13 @@ func main() {
 
 ### 3. 模糊搜索 (Search)
 
-当你不确定模型全名时，可以使用搜索功能获取按相关度排序的结果：
+当你不确定模型全名时，可以使用搜索功能获取按相关度排序的结果。搜索逻辑支持对 ID、名称和别名进行加权匹配：
+
+1.  **精确匹配** (ID: 100分, 名称: 90分)
+2.  **别名精确匹配** (80分)
+3.  **前缀匹配** (ID: 50分, 名称: 40分)
+4.  **子串匹配** (ID: 20分, 名称: 10分)
+5.  **别名子串匹配** (15分)
 
 ```go
 // 搜索包含 "claude" 的模型
@@ -89,6 +95,17 @@ results := llmspecs.Search("claude", 5)
 for _, m := range results {
     fmt.Printf("Found: %s (%s)\n", m.Name(), m.ID())
 }
+```
+
+### 4. 别名机制 (Aliases)
+
+为了简化查找，项目通过以下方式生成别名：
+- **手动修正**: 在 `data/overrides.yaml` 中人工定义的别名（具有最高优先级）。
+- **自动生成**: 如果模型 ID 的后缀（如 `qwen/qwen3-32b` 中的 `qwen3-32b`）在全量模型中是唯一的，生成器会自动将其设为别名。
+
+```go
+// 使用自动生成的唯一后缀别名查找
+m, ok := llmspecs.Get("qwen3-32b")
 ```
 
 更多示例请参考 [examples](file:///Users/kingfs/go/src/github.com/kingfs/go-llm-specs/examples) 目录。

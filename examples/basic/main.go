@@ -10,7 +10,7 @@ func main() {
 	fmt.Println("LLM metadata registry examples:")
 
 	// 1. Get by alias
-	m, ok := llmspecs.Get("opus-4.5")
+	m, ok := llmspecs.Get("qwen3-32b")
 	if ok {
 		fmt.Printf("[Alias Match] Found model: %s\n", m.Name())
 		fmt.Printf("Description: %s\n", m.DescriptionCN())
@@ -31,7 +31,7 @@ func main() {
 
 	// 3. Fuzzy search
 	fmt.Println("\nFuzzy searching for 'gpt-4':")
-	searchResults := llmspecs.Search("gpt-4", 3)
+	searchResults := llmspecs.Search("gpt-4", 100)
 	for i, res := range searchResults {
 		fmt.Printf("%d. %s [%s]\n", i+1, res.Name(), res.ID())
 	}

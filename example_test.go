@@ -14,7 +14,7 @@ func ExampleGet() {
 	}
 	// Output:
 	// Model ID: openai/gpt-4-turbo
-	// Provider: Openai
+	// Provider: OpenAI
 }
 
 func ExampleQueryBuilder_List() {

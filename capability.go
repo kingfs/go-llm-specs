@@ -10,6 +10,9 @@ const (
 	ModalityImageIn
 	ModalityAudioIn
 	ModalityAudioOut
+	ModalityVideoIn
+	ModalityFileIn
+	ModalityImageOut
 )
 
 const (
