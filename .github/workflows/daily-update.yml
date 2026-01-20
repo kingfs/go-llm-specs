@@ -17,6 +17,8 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # Fetch all history and tags
         
       - name: Set up Go
         uses: actions/setup-go@v5
@@ -24,9 +26,22 @@ jobs:
           go-version: '1.25'
 
       - name: Fetch and Generate (Phase 1)
+        id: generate
         run: |
+          # Extract current IDs from models_gen.go if it exists
+          if [ -f models_gen.go ]; then
+            grep -oE 'IDVal:\s+"[^"]+"' models_gen.go | cut -d'"' -f2 | sort > /tmp/models_before.txt
+          else
+            touch /tmp/models_before.txt
+          fi
+
           # Run generator to fetch latest models.json
           go run cmd/generator/main.go
+
+          # Extract new IDs and compare
+          grep -oE 'IDVal:\s+"[^"]+"' models_gen.go | cut -d'"' -f2 | sort > /tmp/models_after.txt
+          NEW_MODELS=$(comm -13 /tmp/models_before.txt /tmp/models_after.txt | paste -sd ", " -)
+          echo "new_models=$NEW_MODELS" >> $GITHUB_OUTPUT
 
       - name: Auto Translate Missing Descriptions
         env:
@@ -66,18 +81,31 @@ jobs:
           git commit -m "feat(data): auto-update model registry and translations [skip ci]"
           git push
 
+      - name: Set Release Metadata
+        if: steps.check_changes.outputs.changed == 'true'
+        run: |
+          echo "GEN_TIMESTAMP=$(date -u +'%Y-%m-%d %H:%M:%S') UTC" >> $GITHUB_ENV
+
       - name: Calculate Next Version
         if: steps.check_changes.outputs.changed == 'true'
         id: semver
         run: |
-          LATEST_TAG=$(git describe --tags --abbrev=0 2>/dev/null || echo "v0.0.0")
+          # Get the highest semver tag, default to v0.0.0
+          LATEST_TAG=$(git tag --sort=-v:refname | head -n 1)
+          if [ -z "$LATEST_TAG" ]; then LATEST_TAG="v0.0.0"; fi
+          
+          echo "Latest tag found: $LATEST_TAG"
+          
           VERSION=${LATEST_TAG#v}
           IFS='.' read -ra ADDR <<< "$VERSION"
           major=${ADDR[0]}
           minor=${ADDR[1]}
           patch=${ADDR[2]}
+          
           NEW_PATCH=$((patch + 1))
           NEW_TAG="v$major.$minor.$NEW_PATCH"
+          
+          echo "New tag: $NEW_TAG"
           echo "new_tag=$NEW_TAG" >> $GITHUB_OUTPUT
 
       - name: Create Release
@@ -87,7 +115,11 @@ jobs:
           tag_name: ${{ steps.semver.outputs.new_tag }}
           name: Release ${{ steps.semver.outputs.new_tag }}
           body: |
-            Automatic update of LLM model data from OpenRouter.
-            Generated at: $(date -u +'%Y-%m-%d %H:%M:%S') UTC
+            ### Automatic update of LLM model data from OpenRouter.
+            
+            **Generated at:** ${{ env.GEN_TIMESTAMP }}
+            
+            **New models added:**
+            ${{ steps.generate.outputs.new_models || 'None (translation or override updates only)' }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
