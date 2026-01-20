@@ -11,6 +11,7 @@ import (
 	"strings"
 	"time"
 
+	"github.com/joho/godotenv"
 	"gopkg.in/yaml.v3"
 )
 
@@ -58,6 +59,8 @@ type ChatResponse struct {
 // -- Main --
 
 func main() {
+	godotenv.Load()
+
 	apiKey := os.Getenv("LLM_API_KEY")
 	if apiKey == "" {
 		log.Fatal("LLM_API_KEY environment variable is required")

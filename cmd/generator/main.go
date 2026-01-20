@@ -12,6 +12,8 @@ import (
 	"text/template"
 	"time"
 
+	"golang.org/x/text/cases"
+	"golang.org/x/text/language"
 	"gopkg.in/yaml.v3"
 )
 
@@ -217,7 +219,8 @@ func normalizeProvider(idPrefix string) string {
 	case "deepseek":
 		return "DeepSeek"
 	default:
-		return strings.Title(lower)
+		caser := cases.Title(language.English)
+		return caser.String(lower)
 	}
 }
 
