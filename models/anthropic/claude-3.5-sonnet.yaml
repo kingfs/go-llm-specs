@@ -1,3 +1,15 @@
+id: anthropic/claude-3.5-sonnet
+name: 'Anthropic: Claude 3.5 Sonnet'
+provider: Anthropic
+description: |-
+    New Claude 3.5 Sonnet delivers better-than-Opus capabilities, faster-than-Sonnet speeds, at the same Sonnet prices. Sonnet is particularly good at:
+
+    - Coding: Scores ~49% on SWE-Bench Verified, higher than the last best score, and without any fancy prompt scaffolding
+    - Data science: Augments human data science expertise; navigates unstructured data while using multiple tools for insights
+    - Visual processing: excelling at interpreting charts, graphs, and images, accurately transcribing text to derive insights beyond just the text alone
+    - Agentic tasks: exceptional tool use, making it great at agentic tasks (i.e. complex, multi-step problem solving tasks that require engaging with other systems)
+
+    #multimodal
 description_cn: |-
     全新 Claude 3.5 Sonnet 在性能上超越 Opus，速度优于原有 Sonnet，价格维持 Sonnet 水平。Sonnet 尤其擅长以下领域：
 
@@ -7,4 +19,14 @@ description_cn: |-
     - 智能体任务：具备卓越的工具调用能力，非常适合执行需与其他系统交互的复杂多步问题求解任务。
 
     #多模态
-id: anthropic/claude-3.5-sonnet
+context_length: 200000
+max_output: 8192
+price_in: 6e-06
+price_out: 3e-05
+features:
+    - CapChat
+    - CapFunctionCall
+    - ModalityFileIn
+    - ModalityImageIn
+    - ModalityTextIn
+    - ModalityTextOut

@@ -1,2 +1,14 @@
-description_cn: GPT-4o Search Preview 是专用于聊天补全（Chat Completions）中网络搜索的专用模型，经过训练以理解并执行网络搜索查询。
 id: openai/gpt-4o-search-preview
+name: 'OpenAI: GPT-4o Search Preview'
+provider: OpenAI
+description: GPT-4o Search Previewis a specialized model for web search in Chat Completions. It is trained to understand and execute web search queries.
+description_cn: GPT-4o Search Preview 是专用于聊天补全（Chat Completions）中网络搜索的专用模型，经过训练以理解并执行网络搜索查询。
+context_length: 128000
+max_output: 16384
+price_in: 2.5e-06
+price_out: 1e-05
+features:
+    - CapChat
+    - CapJsonMode
+    - ModalityTextIn
+    - ModalityTextOut

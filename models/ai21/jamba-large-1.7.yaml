@@ -1,2 +1,15 @@
-description_cn: Jamba Large 1.7 是 Jamba 开源系列的最新模型，在事实依据、指令遵循和整体效率方面均有提升。该模型基于混合 SSM-Transformer 架构，支持 256K 上下文窗口，相比前代版本可提供更准确、上下文关联更强的响应以及更优的可控性。
 id: ai21/jamba-large-1.7
+name: 'AI21: Jamba Large 1.7'
+provider: Ai21
+description: Jamba Large 1.7 is the latest model in the Jamba open family, offering improvements in grounding, instruction-following, and overall efficiency. Built on a hybrid SSM-Transformer architecture with a 256K context window, it delivers more accurate, contextually grounded responses and better steerability than previous versions.
+description_cn: Jamba Large 1.7 是 Jamba 开源系列的最新模型，在事实依据、指令遵循和整体效率方面均有提升。该模型基于混合 SSM-Transformer 架构，支持 256K 上下文窗口，相比前代版本可提供更准确、上下文关联更强的响应以及更优的可控性。
+context_length: 256000
+max_output: 4096
+price_in: 2e-06
+price_out: 8e-06
+features:
+    - CapChat
+    - CapFunctionCall
+    - CapJsonMode
+    - ModalityTextIn
+    - ModalityTextOut

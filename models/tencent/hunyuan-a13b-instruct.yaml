@@ -1,2 +1,14 @@
-description_cn: Hunyuan-A13B 是腾讯开发的 130 亿激活参数混合专家（MoE）语言模型，总参数量达 800 亿，支持思维链（Chain-of-Thought）推理。该模型在数学、科学、编程及多轮推理等任务的基准测试中表现优异，同时通过分组查询注意力（GQA）机制和量化支持（FP8、GPTQ 等）实现高效推理。
 id: tencent/hunyuan-a13b-instruct
+name: 'Tencent: Hunyuan A13B Instruct'
+provider: Tencent
+description: Hunyuan-A13B is a 13B active parameter Mixture-of-Experts (MoE) language model developed by Tencent, with a total parameter count of 80B and support for reasoning via Chain-of-Thought. It offers competitive benchmark performance across mathematics, science, coding, and multi-turn reasoning tasks, while maintaining high inference efficiency via Grouped Query Attention (GQA) and quantization support (FP8, GPTQ, etc.).
+description_cn: Hunyuan-A13B 是腾讯开发的 130 亿激活参数混合专家（MoE）语言模型，总参数量达 800 亿，支持思维链（Chain-of-Thought）推理。该模型在数学、科学、编程及多轮推理等任务的基准测试中表现优异，同时通过分组查询注意力（GQA）机制和量化支持（FP8、GPTQ 等）实现高效推理。
+context_length: 131072
+max_output: 131072
+price_in: 1.4e-07
+price_out: 5.7e-07
+features:
+    - CapChat
+    - CapJsonMode
+    - ModalityTextIn
+    - ModalityTextOut

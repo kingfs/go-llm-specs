@@ -1,3 +1,14 @@
+id: nvidia/nemotron-nano-12b-v2-vl:free
+name: 'NVIDIA: Nemotron Nano 12B 2 VL (free)'
+provider: Nvidia
+description: |-
+    NVIDIA Nemotron Nano 2 VL is a 12-billion-parameter open multimodal reasoning model designed for video understanding and document intelligence. It introduces a hybrid Transformer-Mamba architecture, combining transformer-level accuracy with Mamba’s memory-efficient sequence modeling for significantly higher throughput and lower latency.
+
+    The model supports inputs of text and multi-image documents, producing natural-language outputs. It is trained on high-quality NVIDIA-curated synthetic datasets optimized for optical-character recognition, chart reasoning, and multimodal comprehension.
+
+    Nemotron Nano 2 VL achieves leading results on OCRBench v2 and scores ≈ 74 average across MMMU, MathVista, AI2D, OCRBench, OCR-Reasoning, ChartQA, DocVQA, and Video-MME—surpassing prior open VL baselines. With Efficient Video Sampling (EVS), it handles long-form videos while reducing inference cost.
+
+    Open-weights, training data, and fine-tuning recipes are released under a permissive NVIDIA open license, with deployment supported across NeMo, NIM, and major inference runtimes.
 description_cn: |-
     NVIDIA Nemotron Nano 2 VL 是一款拥有 120 亿参数的开源多模态推理模型，专为视频理解和文档智能设计。该模型采用混合 Transformer-Mamba 架构，结合了 Transformer 级别的准确性与 Mamba 的内存高效序列建模能力，显著提升吞吐量并降低延迟。
 
@@ -6,4 +17,14 @@ description_cn: |-
     Nemotron Nano 2 VL 在 OCRBench v2 上取得领先成果，并在 MMMU、MathVista、AI2D、OCRBench、OCR-Reasoning、ChartQA、DocVQA 和 Video-MME 等基准测试中平均得分约 74，超越此前所有开源视觉语言基线模型。借助高效视频采样（EVS）技术，该模型可处理长视频内容，同时降低推理成本。
 
     模型权重、训练数据和微调方案均以宽松的 NVIDIA 开源许可证发布，并支持在 NeMo、NIM 及主流推理运行时环境中部署。
-id: nvidia/nemotron-nano-12b-v2-vl:free
+context_length: 128000
+max_output: 128000
+price_in: 0
+price_out: 0
+features:
+    - CapChat
+    - CapFunctionCall
+    - ModalityImageIn
+    - ModalityTextIn
+    - ModalityTextOut
+    - ModalityVideoIn

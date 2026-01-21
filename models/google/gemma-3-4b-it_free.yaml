@@ -1,2 +1,16 @@
-description_cn: Gemma 3 引入多模态能力，支持视觉-语言输入与文本输出，可处理长达 128k token 的上下文，支持超过 140 种语言，并在数学、推理和对话能力方面均有提升，包括结构化输出与函数调用功能。
 id: google/gemma-3-4b-it:free
+name: 'Google: Gemma 3 4B (free)'
+provider: Google
+description: Gemma 3 introduces multimodality, supporting vision-language input and text outputs. It handles context windows up to 128k tokens, understands over 140 languages, and offers improved math, reasoning, and chat capabilities, including structured outputs and function calling.
+description_cn: Gemma 3 引入多模态能力，支持视觉-语言输入与文本输出，可处理长达 128k token 的上下文，支持超过 140 种语言，并在数学、推理和对话能力方面均有提升，包括结构化输出与函数调用功能。
+context_length: 32768
+max_output: 8192
+price_in: 0
+price_out: 0
+features:
+    - CapChat
+    - CapFunctionCall
+    - CapJsonMode
+    - ModalityImageIn
+    - ModalityTextIn
+    - ModalityTextOut

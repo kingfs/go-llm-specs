@@ -1,2 +1,14 @@
-description_cn: Ministral 8B 是一款拥有 80 亿参数的模型，采用独特的交错滑动窗口注意力机制，实现更快、更节省内存的推理。专为边缘应用场景设计，支持高达 128K 的上下文长度，在知识理解和推理任务中表现优异。在 100 亿参数以下模型中性能领先，是低延迟、注重隐私应用的理想之选。
 id: mistralai/ministral-8b
+name: 'Mistral: Ministral 8B'
+provider: Mistral
+description: Ministral 8B is an 8B parameter model featuring a unique interleaved sliding-window attention pattern for faster, memory-efficient inference. Designed for edge use cases, it supports up to 128k context length and excels in knowledge and reasoning tasks. It outperforms peers in the sub-10B category, making it perfect for low-latency, privacy-first applications.
+description_cn: Ministral 8B 是一款拥有 80 亿参数的模型，采用独特的交错滑动窗口注意力机制，实现更快、更节省内存的推理。专为边缘应用场景设计，支持高达 128K 的上下文长度，在知识理解和推理任务中表现优异。在 100 亿参数以下模型中性能领先，是低延迟、注重隐私应用的理想之选。
+context_length: 131072
+price_in: 1e-07
+price_out: 1e-07
+features:
+    - CapChat
+    - CapFunctionCall
+    - CapJsonMode
+    - ModalityTextIn
+    - ModalityTextOut

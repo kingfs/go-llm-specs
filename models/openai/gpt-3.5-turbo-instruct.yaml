@@ -1,2 +1,14 @@
-description_cn: 该模型是 GPT-3.5 Turbo 的变体，专为指令类提示进行调优，未包含面向聊天场景的优化。训练数据截止至 2021 年 9 月。
 id: openai/gpt-3.5-turbo-instruct
+name: 'OpenAI: GPT-3.5 Turbo Instruct'
+provider: OpenAI
+description: 'This model is a variant of GPT-3.5 Turbo tuned for instructional prompts and omitting chat-related optimizations. Training data: up to Sep 2021.'
+description_cn: 该模型是 GPT-3.5 Turbo 的变体，专为指令类提示进行调优，未包含面向聊天场景的优化。训练数据截止至 2021 年 9 月。
+context_length: 4095
+max_output: 4096
+price_in: 1.5e-06
+price_out: 2e-06
+features:
+    - CapChat
+    - CapJsonMode
+    - ModalityTextIn
+    - ModalityTextOut

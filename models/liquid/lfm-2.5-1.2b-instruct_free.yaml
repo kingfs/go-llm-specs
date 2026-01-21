@@ -1,0 +1,11 @@
+id: liquid/lfm-2.5-1.2b-instruct:free
+name: 'LiquidAI: LFM2.5-1.2B-Instruct (free)'
+provider: Liquid
+description: LFM2.5-1.2B-Instruct is a compact, high-performance instruction-tuned model built for fast on-device AI. It delivers strong chat quality in a 1.2B parameter footprint, with efficient edge inference and broad runtime support.
+context_length: 32768
+price_in: 0
+price_out: 0
+features:
+    - CapChat
+    - ModalityTextIn
+    - ModalityTextOut

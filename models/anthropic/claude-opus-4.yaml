@@ -1,5 +1,19 @@
+id: anthropic/claude-opus-4
+name: 'Anthropic: Claude Opus 4'
+provider: Anthropic
+description: "Claude Opus 4 is benchmarked as the world’s best coding model, at time of release, bringing sustained performance on complex, long-running tasks and agent workflows. It sets new benchmarks in software engineering, achieving leading results on SWE-bench (72.5%) and Terminal-bench (43.2%). Opus 4 supports extended, agentic workflows, handling thousands of task steps continuously for hours without degradation. \n\nRead more at the [blog post here](https://www.anthropic.com/news/claude-4)"
 description_cn: |-
     Claude Opus 4 在发布时被公认为全球最强的编程模型，可在复杂、长时间运行的任务和智能体工作流中保持稳定性能。该模型在软件工程领域树立了新标杆，在 SWE-bench（72.5%）和 Terminal-bench（43.2%）上均取得领先成绩。Opus 4 支持扩展型智能体工作流，可连续数小时处理数千个任务步骤而性能不衰减。
 
     [在此处阅读博客文章](https://www.anthropic.com/news/claude-4)
-id: anthropic/claude-opus-4
+context_length: 200000
+max_output: 32000
+price_in: 1.5e-05
+price_out: 7.5e-05
+features:
+    - CapChat
+    - CapFunctionCall
+    - ModalityFileIn
+    - ModalityImageIn
+    - ModalityTextIn
+    - ModalityTextOut

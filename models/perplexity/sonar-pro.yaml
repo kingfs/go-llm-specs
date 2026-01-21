@@ -1,5 +1,17 @@
+id: perplexity/sonar-pro
+name: 'Perplexity: Sonar Pro'
+provider: Perplexity
+description: "Note: Sonar Pro pricing includes Perplexity search pricing. See [details here](https://docs.perplexity.ai/guides/pricing#detailed-pricing-breakdown-for-sonar-reasoning-pro-and-sonar-pro)\n\nFor enterprises seeking more advanced capabilities, the Sonar Pro API can handle in-depth, multi-step queries with added extensibility, like double the number of citations per search as Sonar on average. Plus, with a larger context window, it can handle longer and more nuanced searches and follow-up questions. "
 description_cn: |-
     注意：Sonar Pro 的定价已包含 Perplexity 搜索费用。详见[此处说明](https://docs.perplexity.ai/guides/pricing#detailed-pricing-breakdown-for-sonar-reasoning-pro-and-sonar-pro)
 
     面向需要更高级功能的企业用户，Sonar Pro API 可处理深入的多步骤查询，并具备更强的扩展性，例如平均每轮搜索可提供的引用数量是普通 Sonar 的两倍。此外，凭借更大的上下文窗口，它能够处理更长、更复杂的搜索请求及后续追问。
-id: perplexity/sonar-pro
+context_length: 200000
+max_output: 8000
+price_in: 3e-06
+price_out: 1.5e-05
+features:
+    - CapChat
+    - ModalityImageIn
+    - ModalityTextIn
+    - ModalityTextOut

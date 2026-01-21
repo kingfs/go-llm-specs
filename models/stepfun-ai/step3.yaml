@@ -1,2 +1,16 @@
-description_cn: Step3 是一款前沿的多模态推理模型，采用专家混合架构，总参数量达 3210 亿，每次前向传递激活 380 亿参数。该模型端到端设计，旨在最小化解码成本的同时，在视觉–语言推理任务中实现顶尖性能。通过多矩阵分解注意力（MFA）与注意力–前馈网络解耦（AFD）的协同设计，Step3 在旗舰级及低端加速器上均保持卓越效率。
 id: stepfun-ai/step3
+name: 'StepFun: Step3'
+provider: Stepfun-Ai
+description: Step3 is a cutting-edge multimodal reasoning model—built on a Mixture-of-Experts architecture with 321B total parameters and 38B active. It is designed end-to-end to minimize decoding costs while delivering top-tier performance in vision–language reasoning. Through the co-design of Multi-Matrix Factorization Attention (MFA) and Attention-FFN Disaggregation (AFD), Step3 maintains exceptional efficiency across both flagship and low-end accelerators.
+description_cn: Step3 是一款前沿的多模态推理模型，采用专家混合架构，总参数量达 3210 亿，每次前向传递激活 380 亿参数。该模型端到端设计，旨在最小化解码成本的同时，在视觉–语言推理任务中实现顶尖性能。通过多矩阵分解注意力（MFA）与注意力–前馈网络解耦（AFD）的协同设计，Step3 在旗舰级及低端加速器上均保持卓越效率。
+context_length: 65536
+max_output: 65536
+price_in: 5.7e-07
+price_out: 1.42e-06
+features:
+    - CapChat
+    - CapFunctionCall
+    - CapJsonMode
+    - ModalityImageIn
+    - ModalityTextIn
+    - ModalityTextOut

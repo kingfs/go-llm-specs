@@ -1,5 +1,19 @@
+id: nvidia/llama-3.1-nemotron-ultra-253b-v1
+name: 'NVIDIA: Llama 3.1 Nemotron Ultra 253B v1'
+provider: Nvidia
+description: |-
+    Llama-3.1-Nemotron-Ultra-253B-v1 is a large language model (LLM) optimized for advanced reasoning, human-interactive chat, retrieval-augmented generation (RAG), and tool-calling tasks. Derived from Meta’s Llama-3.1-405B-Instruct, it has been significantly customized using Neural Architecture Search (NAS), resulting in enhanced efficiency, reduced memory usage, and improved inference latency. The model supports a context length of up to 128K tokens and can operate efficiently on an 8x NVIDIA H100 node.
+
+    Note: you must include `detailed thinking on` in the system prompt to enable reasoning. Please see [Usage Recommendations](https://huggingface.co/nvidia/Llama-3_1-Nemotron-Ultra-253B-v1#quick-start-and-usage-recommendations) for more.
 description_cn: |-
     Llama-3.1-Nemotron-Ultra-253B-v1 是一款专为高级推理、人机交互对话、检索增强生成（RAG）及工具调用任务优化的大语言模型（LLM）。该模型基于 Meta 的 Llama-3.1-405B-Instruct，通过神经架构搜索（NAS）进行了深度定制，显著提升了效率、降低了内存占用并改善了推理延迟。模型支持最高 128K token 的上下文长度，并可在 8 块 NVIDIA H100 GPU 节点上高效运行。
 
     注意：必须在系统提示中包含 `detailed thinking on` 才能启用推理功能。更多详情请参阅 [使用建议](https://huggingface.co/nvidia/Llama-3_1-Nemotron-Ultra-253B-v1#quick-start-and-usage-recommendations)。
-id: nvidia/llama-3.1-nemotron-ultra-253b-v1
+context_length: 131072
+price_in: 6e-07
+price_out: 1.8e-06
+features:
+    - CapChat
+    - CapJsonMode
+    - ModalityTextIn
+    - ModalityTextOut

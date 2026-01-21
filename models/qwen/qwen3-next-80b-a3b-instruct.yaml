@@ -1,5 +1,20 @@
+id: qwen/qwen3-next-80b-a3b-instruct
+name: 'Qwen: Qwen3 Next 80B A3B Instruct'
+provider: Qwen
+description: |-
+    Qwen3-Next-80B-A3B-Instruct is an instruction-tuned chat model in the Qwen3-Next series optimized for fast, stable responses without “thinking” traces. It targets complex tasks across reasoning, code generation, knowledge QA, and multilingual use, while remaining robust on alignment and formatting. Compared with prior Qwen3 instruct variants, it focuses on higher throughput and stability on ultra-long inputs and multi-turn dialogues, making it well-suited for RAG, tool use, and agentic workflows that require consistent final answers rather than visible chain-of-thought.
+
+    The model employs scaling-efficient training and decoding to improve parameter efficiency and inference speed, and has been validated on a broad set of public benchmarks where it reaches or approaches larger Qwen3 systems in several categories while outperforming earlier mid-sized baselines. It is best used as a general assistant, code helper, and long-context task solver in production settings where deterministic, instruction-following outputs are preferred.
 description_cn: |-
     Qwen3-Next-80B-A3B-Instruct 是 Qwen3-Next 系列中的指令微调对话模型，专为快速、稳定响应而优化，不输出“思考”痕迹。该模型面向复杂任务场景，涵盖推理、代码生成、知识问答及多语言应用，同时在对齐性与格式规范方面保持稳健。相较早期 Qwen3 指令模型，本版本聚焦于超长输入与多轮对话下的更高吞吐量与稳定性，特别适用于需一致最终答案而非显式思维链的 RAG、工具调用及智能体工作流。
 
     模型采用高效扩展的训练与解码策略，提升参数效率与推理速度，并在广泛的公开基准测试中验证：在多个类别上达到或接近更大规模 Qwen3 系统的水平，同时显著优于早期中等规模基线。该模型最适合用于生产环境中需要确定性、严格遵循指令输出的通用助手、代码辅助及长上下文任务求解场景。
-id: qwen/qwen3-next-80b-a3b-instruct
+context_length: 262144
+price_in: 9e-08
+price_out: 1.1e-06
+features:
+    - CapChat
+    - CapFunctionCall
+    - CapJsonMode
+    - ModalityTextIn
+    - ModalityTextOut

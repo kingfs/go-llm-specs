@@ -1,7 +1,23 @@
+id: meta-llama/llama-3-70b-instruct
+name: 'Meta: Llama 3 70B Instruct'
+provider: Meta
+description: |-
+    Meta's latest class of model (Llama 3) launched with a variety of sizes & flavors. This 70B instruct-tuned version was optimized for high quality dialogue usecases.
+
+    It has demonstrated strong performance compared to leading closed-source models in human evaluations.
+
+    To read more about the model release, [click here](https://ai.meta.com/blog/meta-llama-3/). Usage of this model is subject to [Meta's Acceptable Use Policy](https://llama.meta.com/llama3/use-policy/).
 description_cn: |-
     Meta 最新推出的 Llama 3 系列模型包含多种规模与版本。此 70B 指令微调版本专为高质量对话场景优化。
 
     在人工评估中，其表现优于主流闭源模型。
 
     了解更多模型发布信息，请[点击此处](https://ai.meta.com/blog/meta-llama-3/)。使用本模型需遵守 [Meta 可接受使用政策](https://llama.meta.com/llama3/use-policy/)。
-id: meta-llama/llama-3-70b-instruct
+context_length: 8192
+price_in: 4e-07
+price_out: 4e-07
+features:
+    - CapChat
+    - CapJsonMode
+    - ModalityTextIn
+    - ModalityTextOut

@@ -1,2 +1,16 @@
-description_cn: GPT-5.1-Codex-Mini 是 GPT-5.1-Codex 的更小、更快版本。
 id: openai/gpt-5.1-codex-mini
+name: 'OpenAI: GPT-5.1-Codex-Mini'
+provider: OpenAI
+description: GPT-5.1-Codex-Mini is a smaller and faster version of GPT-5.1-Codex
+description_cn: GPT-5.1-Codex-Mini 是 GPT-5.1-Codex 的更小、更快版本。
+context_length: 400000
+max_output: 100000
+price_in: 2.5e-07
+price_out: 2e-06
+features:
+    - CapChat
+    - CapFunctionCall
+    - CapJsonMode
+    - ModalityImageIn
+    - ModalityTextIn
+    - ModalityTextOut

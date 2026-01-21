@@ -1,2 +1,13 @@
-description_cn: Rnj-1 是由 Essential AI 开发的 80 亿参数密集型开源权重模型系列，从零开始训练，专注于编程、数学和科学推理。该模型在多种编程语言、工具调用工作流及智能体执行环境（如 mini-SWE-agent）中均展现出强大性能。
 id: essentialai/rnj-1-instruct
+name: 'EssentialAI: Rnj 1 Instruct'
+provider: Essentialai
+description: 'Rnj-1 is an 8B-parameter, dense, open-weight model family developed by Essential AI and trained from scratch with a focus on programming, math, and scientific reasoning. The model demonstrates strong performance across multiple programming languages, tool-use workflows, and agentic execution environments (e.g., mini-SWE-agent). '
+description_cn: Rnj-1 是由 Essential AI 开发的 80 亿参数密集型开源权重模型系列，从零开始训练，专注于编程、数学和科学推理。该模型在多种编程语言、工具调用工作流及智能体执行环境（如 mini-SWE-agent）中均展现出强大性能。
+context_length: 32768
+price_in: 1.5e-07
+price_out: 1.5e-07
+features:
+    - CapChat
+    - CapJsonMode
+    - ModalityTextIn
+    - ModalityTextOut

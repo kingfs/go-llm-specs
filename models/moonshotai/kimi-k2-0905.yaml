@@ -1,5 +1,21 @@
+id: moonshotai/kimi-k2-0905
+name: 'MoonshotAI: Kimi K2 0905'
+provider: Moonshotai
+description: |-
+    Kimi K2 0905 is the September update of [Kimi K2 0711](moonshotai/kimi-k2). It is a large-scale Mixture-of-Experts (MoE) language model developed by Moonshot AI, featuring 1 trillion total parameters with 32 billion active per forward pass. It supports long-context inference up to 256k tokens, extended from the previous 128k.
+
+    This update improves agentic coding with higher accuracy and better generalization across scaffolds, and enhances frontend coding with more aesthetic and functional outputs for web, 3D, and related tasks. Kimi K2 is optimized for agentic capabilities, including advanced tool use, reasoning, and code synthesis. It excels across coding (LiveCodeBench, SWE-bench), reasoning (ZebraLogic, GPQA), and tool-use (Tau2, AceBench) benchmarks. The model is trained with a novel stack incorporating the MuonClip optimizer for stable large-scale MoE training.
 description_cn: |-
     Kimi K2 0905 是 [Kimi K2 0711](moonshotai/kimi-k2) 的九月更新版本，由月之暗面（Moonshot AI）开发的大规模专家混合（MoE）语言模型，总参数量达 1 万亿，每次前向传递激活 320 亿参数。支持最长 256k tokens 的长上下文推理（此前为 128k）。
 
     本次更新提升了智能体编程的准确率与跨框架泛化能力，并增强了前端编程在 Web、3D 等相关任务中的输出美观性与功能性。Kimi K2 针对智能体能力进行了优化，包括高级工具使用、推理与代码合成，在编程（LiveCodeBench、SWE-bench）、推理（ZebraLogic、GPQA）和工具使用（Tau2、AceBench）等基准测试中表现优异。该模型采用包含 MuonClip 优化器的新训练栈，以实现稳定的大规模 MoE 训练。
-id: moonshotai/kimi-k2-0905
+context_length: 262144
+max_output: 262144
+price_in: 3.9e-07
+price_out: 1.9e-06
+features:
+    - CapChat
+    - CapFunctionCall
+    - CapJsonMode
+    - ModalityTextIn
+    - ModalityTextOut

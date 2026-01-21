@@ -1,2 +1,16 @@
-description_cn: Qwen 增强版大视觉语言模型，显著提升了细节识别与文本识别能力，支持高达百万像素级的超高清分辨率及极端宽高比的图像输入，在各类视觉任务中均展现出显著性能优势。
 id: qwen/qwen-vl-plus
+name: 'Qwen: Qwen VL Plus'
+provider: Qwen
+description: |
+    Qwen's Enhanced Large Visual Language Model. Significantly upgraded for detailed recognition capabilities and text recognition abilities, supporting ultra-high pixel resolutions up to millions of pixels and extreme aspect ratios for image input. It delivers significant performance across a broad range of visual tasks.
+description_cn: Qwen 增强版大视觉语言模型，显著提升了细节识别与文本识别能力，支持高达百万像素级的超高清分辨率及极端宽高比的图像输入，在各类视觉任务中均展现出显著性能优势。
+context_length: 7500
+max_output: 1500
+price_in: 2.1e-07
+price_out: 6.3e-07
+features:
+    - CapChat
+    - CapJsonMode
+    - ModalityImageIn
+    - ModalityTextIn
+    - ModalityTextOut

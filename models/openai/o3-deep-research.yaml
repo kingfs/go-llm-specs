@@ -1,5 +1,23 @@
+id: openai/o3-deep-research
+name: 'OpenAI: o3 Deep Research'
+provider: OpenAI
+description: |-
+    o3-deep-research is OpenAI's advanced model for deep research, designed to tackle complex, multi-step research tasks.
+
+    Note: This model always uses the 'web_search' tool which adds additional cost.
 description_cn: |-
     o3-deep-research 是 OpenAI 专为深度研究设计的高级模型，旨在处理复杂的多步骤研究任务。
 
     注意：此模型始终使用“web_search”工具，会产生额外费用。
-id: openai/o3-deep-research
+context_length: 200000
+max_output: 100000
+price_in: 1e-05
+price_out: 4e-05
+features:
+    - CapChat
+    - CapFunctionCall
+    - CapJsonMode
+    - ModalityFileIn
+    - ModalityImageIn
+    - ModalityTextIn
+    - ModalityTextOut

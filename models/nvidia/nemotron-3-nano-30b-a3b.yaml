@@ -1,7 +1,27 @@
+id: nvidia/nemotron-3-nano-30b-a3b
+name: 'NVIDIA: Nemotron 3 Nano 30B A3B'
+provider: Nvidia
+description: |-
+    NVIDIA Nemotron 3 Nano 30B A3B is a small language MoE model with highest compute efficiency and accuracy for developers to build specialized agentic AI systems.
+
+    The model is fully open with open-weights, datasets and recipes so developers can easily
+    customize, optimize, and deploy the model on their infrastructure for maximum privacy and
+    security.
+
+    Note: For the free endpoint, all prompts and output are logged to improve the provider's model and its product and services. Please do not upload any personal, confidential, or otherwise sensitive information. This is a trial use only. Do not use for production or business-critical systems.
 description_cn: |-
     NVIDIA Nemotron 3 Nano 30B A3B 是一款面向开发者的小型语言专家混合（MoE）模型，在计算效率与准确性方面表现卓越，适用于构建专用智能体 AI 系统。
 
     该模型完全开源，提供开放权重、数据集及训练方案，便于开发者轻松定制、优化并在自有基础设施上部署，以实现最高级别的隐私与安全。
 
     注意：免费端点的所有提示与输出均会被记录，用于改进提供商的模型及其产品与服务。请勿上传任何个人、机密或其他敏感信息。此为试用版本，不得用于生产环境或关键业务系统。
-id: nvidia/nemotron-3-nano-30b-a3b
+context_length: 262144
+max_output: 262144
+price_in: 6e-08
+price_out: 2.4e-07
+features:
+    - CapChat
+    - CapFunctionCall
+    - CapJsonMode
+    - ModalityTextIn
+    - ModalityTextOut

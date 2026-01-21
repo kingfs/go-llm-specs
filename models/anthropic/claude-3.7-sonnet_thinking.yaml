@@ -1,7 +1,21 @@
+id: anthropic/claude-3.7-sonnet:thinking
+name: 'Anthropic: Claude 3.7 Sonnet (thinking)'
+provider: Anthropic
+description: "Claude 3.7 Sonnet is an advanced large language model with improved reasoning, coding, and problem-solving capabilities. It introduces a hybrid reasoning approach, allowing users to choose between rapid responses and extended, step-by-step processing for complex tasks. The model demonstrates notable improvements in coding, particularly in front-end development and full-stack updates, and excels in agentic workflows, where it can autonomously navigate multi-step processes. \n\nClaude 3.7 Sonnet maintains performance parity with its predecessor in standard mode while offering an extended reasoning mode for enhanced accuracy in math, coding, and instruction-following tasks.\n\nRead more at the [blog post here](https://www.anthropic.com/news/claude-3-7-sonnet)"
 description_cn: |-
     Claude 3.7 Sonnet 是一款先进的大语言模型，在推理、编程和问题解决能力方面均有显著提升。该模型引入了混合推理方法，允许用户在快速响应与针对复杂任务的逐步深入处理之间进行选择。其在编程方面表现尤为突出，尤其在前端开发和全栈更新场景中，并在智能体工作流（agentic workflows）中表现出色，能够自主执行多步骤流程。
 
     Claude 3.7 Sonnet 在标准模式下保持与其前代模型相当的性能，同时提供扩展推理模式，以在数学、编程及指令遵循任务中实现更高精度。
 
     更多详情请参阅[此博客文章](https://www.anthropic.com/news/claude-3-7-sonnet)
-id: anthropic/claude-3.7-sonnet:thinking
+context_length: 200000
+max_output: 64000
+price_in: 3e-06
+price_out: 1.5e-05
+features:
+    - CapChat
+    - CapFunctionCall
+    - ModalityFileIn
+    - ModalityImageIn
+    - ModalityTextIn
+    - ModalityTextOut

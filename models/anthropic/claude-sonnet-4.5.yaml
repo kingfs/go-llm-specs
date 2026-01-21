@@ -1,5 +1,23 @@
+id: anthropic/claude-sonnet-4.5
+name: 'Anthropic: Claude Sonnet 4.5'
+provider: Anthropic
+description: |-
+    Claude Sonnet 4.5 is Anthropic’s most advanced Sonnet model to date, optimized for real-world agents and coding workflows. It delivers state-of-the-art performance on coding benchmarks such as SWE-bench Verified, with improvements across system design, code security, and specification adherence. The model is designed for extended autonomous operation, maintaining task continuity across sessions and providing fact-based progress tracking.
+
+    Sonnet 4.5 also introduces stronger agentic capabilities, including improved tool orchestration, speculative parallel execution, and more efficient context and memory management. With enhanced context tracking and awareness of token usage across tool calls, it is particularly well-suited for multi-context and long-running workflows. Use cases span software engineering, cybersecurity, financial analysis, research agents, and other domains requiring sustained reasoning and tool use.
 description_cn: |-
     Claude Sonnet 4.5 是 Anthropic 迄今最先进的 Sonnet 模型，专为现实世界智能体和编码工作流优化。该模型在 SWE-bench Verified 等编码基准测试中达到业界领先水平，在系统设计、代码安全性和规范遵循方面均有显著提升。其设计支持长时间自主运行，可在会话间保持任务连续性，并提供基于事实的进度追踪。
 
     Sonnet 4.5 还增强了智能体能力，包括改进的工具编排、推测性并行执行以及更高效的上下文与内存管理。凭借强化的上下文追踪能力和对工具调用中 token 使用情况的感知，该模型特别适用于多上下文及长时间运行的工作流。典型应用场景涵盖软件工程、网络安全、金融分析、研究智能体及其他需要持续推理与工具调用的领域。
-id: anthropic/claude-sonnet-4.5
+context_length: 1000000
+max_output: 64000
+price_in: 3e-06
+price_out: 1.5e-05
+features:
+    - CapChat
+    - CapFunctionCall
+    - CapJsonMode
+    - ModalityFileIn
+    - ModalityImageIn
+    - ModalityTextIn
+    - ModalityTextOut

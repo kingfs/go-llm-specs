@@ -1,5 +1,21 @@
+id: mistralai/mistral-medium-3.1
+name: 'Mistral: Mistral Medium 3.1'
+provider: Mistral
+description: |-
+    Mistral Medium 3.1 is an updated version of Mistral Medium 3, which is a high-performance enterprise-grade language model designed to deliver frontier-level capabilities at significantly reduced operational cost. It balances state-of-the-art reasoning and multimodal performance with 8× lower cost compared to traditional large models, making it suitable for scalable deployments across professional and industrial use cases.
+
+    The model excels in domains such as coding, STEM reasoning, and enterprise adaptation. It supports hybrid, on-prem, and in-VPC deployments and is optimized for integration into custom workflows. Mistral Medium 3.1 offers competitive accuracy relative to larger models like Claude Sonnet 3.5/3.7, Llama 4 Maverick, and Command R+, while maintaining broad compatibility across cloud environments.
 description_cn: |-
     Mistral Medium 3.1 是 Mistral Medium 3 的升级版，是一款高性能企业级语言模型，旨在以显著降低的运营成本提供前沿能力。相比传统大模型，其成本降低 8 倍，同时兼顾顶尖的推理与多模态性能，适用于专业及工业场景的大规模部署。
 
     该模型在编程、STEM 推理和企业适配等领域表现卓越，支持混合部署、本地部署及 VPC 内部署，并针对自定义工作流集成进行了优化。在精度方面可与 Claude Sonnet 3.5/3.7、Llama 4 Maverick 和 Command R+ 等更大模型相媲美，同时保持广泛的云环境兼容性。
-id: mistralai/mistral-medium-3.1
+context_length: 131072
+price_in: 4e-07
+price_out: 2e-06
+features:
+    - CapChat
+    - CapFunctionCall
+    - CapJsonMode
+    - ModalityImageIn
+    - ModalityTextIn
+    - ModalityTextOut

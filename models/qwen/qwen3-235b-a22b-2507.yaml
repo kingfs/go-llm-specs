@@ -1,5 +1,20 @@
+id: qwen/qwen3-235b-a22b-2507
+name: 'Qwen: Qwen3 235B A22B Instruct 2507'
+provider: Qwen
+description: |-
+    Qwen3-235B-A22B-Instruct-2507 is a multilingual, instruction-tuned mixture-of-experts language model based on the Qwen3-235B architecture, with 22B active parameters per forward pass. It is optimized for general-purpose text generation, including instruction following, logical reasoning, math, code, and tool usage. The model supports a native 262K context length and does not implement "thinking mode" (<think> blocks).
+
+    Compared to its base variant, this version delivers significant gains in knowledge coverage, long-context reasoning, coding benchmarks, and alignment with open-ended tasks. It is particularly strong on multilingual understanding, math reasoning (e.g., AIME, HMMT), and alignment evaluations like Arena-Hard and WritingBench.
 description_cn: |-
     Qwen3-235B-A22B-Instruct-2507 是基于 Qwen3-235B 架构的多语言指令微调混合专家语言模型，每次前向传播激活 220 亿参数。该模型针对通用文本生成任务优化，涵盖指令遵循、逻辑推理、数学、编程及工具调用等能力。模型原生支持 262K 令牌上下文长度，且未启用“思考模式”（即无 <think> 区块）。
 
     相较于基础版本，此版本在知识覆盖广度、长上下文推理、编程基准及开放式任务对齐方面均有显著提升。其在多语言理解、数学推理（如 AIME、HMMT）以及 Arena-Hard、WritingBench 等对齐评估中表现尤为突出。
-id: qwen/qwen3-235b-a22b-2507
+context_length: 262144
+price_in: 7.1e-08
+price_out: 4.63e-07
+features:
+    - CapChat
+    - CapFunctionCall
+    - CapJsonMode
+    - ModalityTextIn
+    - ModalityTextOut

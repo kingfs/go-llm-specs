@@ -54,20 +54,19 @@ type OpenRouterResponse struct {
 type RegistryData struct {
 	Models map[string]ModelRegistry `yaml:"models"`
 }
-
 type ModelRegistry struct {
 	ID            string   `yaml:"id"`
 	Name          string   `yaml:"name"`
-	NameCN        string   `yaml:"name_cn"`
+	NameCN        string   `yaml:"name_cn,omitempty"`
 	Provider      string   `yaml:"provider"`
-	Description   string   `yaml:"description"`
-	DescriptionCN string   `yaml:"description_cn"`
+	Description   string   `yaml:"description,omitempty"`
+	DescriptionCN string   `yaml:"description_cn,omitempty"`
 	ContextLen    int      `yaml:"context_length"`
-	MaxOutput     int      `yaml:"max_output"`
+	MaxOutput     int      `yaml:"max_output,omitempty"`
 	PriceIn       float64  `yaml:"price_in"`
 	PriceOut      float64  `yaml:"price_out"`
-	Features      []string `yaml:"features"`
-	Aliases       []string `yaml:"aliases"`
+	Features      []string `yaml:"features,omitempty"`
+	Aliases       []string `yaml:"aliases,omitempty"`
 }
 
 func main() {
@@ -80,126 +79,62 @@ func main() {
 	}
 	log.Printf("Fetched %d models from OpenRouter", len(apiModels))
 
-	// 2. Load Local Registry
-	registryModels, err := loadRegistry("models")
+	// 2. Load Existing Local Registry
+	localModels, err := loadRegistry("models")
 	if err != nil {
-		log.Printf("Warning: failed to load local registry: %v (skipping)", err)
-		registryModels = make(map[string]ModelRegistry)
+		log.Printf("Warning: failed to load local registry: %v (skipping sync, continuing with current files)", err)
+		localModels = make(map[string]ModelRegistry)
 	}
-	log.Printf("Loaded %d models from local registry", len(registryModels))
+	log.Printf("Loaded %d models from local registry", len(localModels))
 
-	// 3. Process and Normalize
+	// 3. Sync API data to Local Registry
+	if err := syncToDisk(apiModels, localModels); err != nil {
+		log.Fatalf("Failed to sync models to disk: %v", err)
+	}
+
+	// 4. Reload Local Registry (Sole Source of Truth)
+	finalModels, err := loadRegistry("models")
+	if err != nil {
+		log.Fatalf("Failed to reload local registry: %v", err)
+	}
+	log.Printf("Final registry has %d models", len(finalModels))
+
+	// 5. Process for Code Generation
 	processedModels := make([]*ProcessedModel, 0)
-	processedIDs := make(map[string]bool)
-	aliasMap := make(map[string]string)
-
-	// 3a. Merge OpenRouter models with local registry
-	for _, m := range apiModels {
-		ov, hasRegistry := registryModels[m.ID]
-
-		p := &ProcessedModel{
-			ID:          m.ID,
-			Name:        m.Name,
-			Provider:    normalizeProvider(strings.Split(m.ID, "/")[0]),
-			Description: m.Description,
-			ContextLen:  m.ContextLength,
-			MaxOutput:   m.TopProvider.MaxCompletionTokens,
-		}
-
-		// Apply pricing from API
-		fmt.Sscanf(m.Pricing.Prompt, "%f", &p.PriceIn)
-		fmt.Sscanf(m.Pricing.Completion, "%f", &p.PriceOut)
-
-		// Base features from API
-		features := calculateFeatures(m)
-		// Default to Chat for OpenRouter models
-		if features == "0" {
-			features = "CapChat"
-		} else {
-			features = "CapChat | " + features
-		}
-
-		// Apply local overrides/additions
-		if hasRegistry {
-			if ov.Name != "" {
-				p.Name = ov.Name
-			}
-			if ov.Provider != "" {
-				p.Provider = ov.Provider
-			}
-			if ov.Description != "" {
-				p.Description = ov.Description
-			}
-			if ov.DescriptionCN != "" {
-				p.DescriptionCN = ov.DescriptionCN
-			}
-			if ov.ContextLen > 0 {
-				p.ContextLen = ov.ContextLen
-			}
-			if ov.MaxOutput > 0 {
-				p.MaxOutput = ov.MaxOutput
-			}
-			if ov.PriceIn > 0 {
-				p.PriceIn = ov.PriceIn
-			}
-			if ov.PriceOut > 0 {
-				p.PriceOut = ov.PriceOut
-			}
-			p.Aliases = append(p.Aliases, ov.Aliases...)
-
-			// If local features are specified, they override or extend?
-			// Let's make it override if not empty for maximum control.
-			if len(ov.Features) > 0 {
-				features = strings.Join(ov.Features, " | ")
-			}
-		}
-		p.Features = features
-		p.Provider = strings.Title(p.Provider)
-
-		// Check multimodal
-		if strings.Contains(p.Features, "ImageIn") || strings.Contains(p.Features, "VideoIn") {
-			if !strings.Contains(p.Features, "CapMultimodal") {
-				p.Features += " | CapMultimodal"
-			}
-		}
-
-		processedModels = append(processedModels, p)
-		processedIDs[p.ID] = true
-	}
-
-	// 3b. Add unique local models (not in OpenRouter)
-	for id, ov := range registryModels {
-		if processedIDs[id] {
-			continue
-		}
-
+	for id, m := range finalModels {
 		p := &ProcessedModel{
 			ID:            id,
-			Name:          ov.Name,
-			Provider:      ov.Provider,
-			Description:   ov.Description,
-			DescriptionCN: ov.DescriptionCN,
-			ContextLen:    ov.ContextLen,
-			MaxOutput:     ov.MaxOutput,
-			PriceIn:       ov.PriceIn,
-			PriceOut:      ov.PriceOut,
-			Aliases:       ov.Aliases,
-			Features:      strings.Join(ov.Features, " | "),
+			Name:          m.Name,
+			Provider:      m.Provider,
+			Description:   m.Description,
+			DescriptionCN: m.DescriptionCN,
+			ContextLen:    m.ContextLen,
+			MaxOutput:     m.MaxOutput,
+			PriceIn:       m.PriceIn,
+			PriceOut:      m.PriceOut,
+			Aliases:       m.Aliases,
 		}
-		if p.Features == "" {
+		if len(m.Features) > 0 {
+			p.Features = strings.Join(m.Features, " | ")
+		} else {
 			p.Features = "0"
 		}
-		// If ImageIn/VideoIn present, add CapMultimodal
+
+		// Auto-detect Multimodal for local models too if not explicitly tagged
 		if strings.Contains(p.Features, "ImageIn") || strings.Contains(p.Features, "VideoIn") {
 			if !strings.Contains(p.Features, "CapMultimodal") {
-				p.Features += " | CapMultimodal"
+				if p.Features == "0" {
+					p.Features = "CapMultimodal"
+				} else {
+					p.Features += " | CapMultimodal"
+				}
 			}
 		}
 
 		processedModels = append(processedModels, p)
 	}
 
-	// 3a. Auto-generate aliases from unique suffixes
+	// 6. Auto-generate aliases from unique suffixes
 	suffixCounts := make(map[string]int)
 	for _, p := range processedModels {
 		parts := strings.Split(p.ID, "/")
@@ -213,7 +148,6 @@ func main() {
 		parts := strings.Split(p.ID, "/")
 		if len(parts) > 1 {
 			suffix := parts[len(parts)-1]
-			// If suffix is unique and not already an alias
 			if suffixCounts[suffix] == 1 {
 				exists := false
 				for _, a := range p.Aliases {
@@ -229,32 +163,101 @@ func main() {
 		}
 	}
 
-	// 3b. Populate alias map
+	// Sort for deterministic alias map and output
+	sort.Slice(processedModels, func(i, j int) bool {
+		return processedModels[i].ID < processedModels[j].ID
+	})
+
+	// 7. Populate alias map
+	aliasMap := make(map[string]string)
 	for _, p := range processedModels {
 		for _, alias := range p.Aliases {
-			// Check for collisions in alias map (should be rare with unique suffixes + overrides)
-			// But prioritizing overrides or first come. Sort later handles deterministic order if needed.
-			// Ideally we warn on collision.
 			lowerAlias := strings.ToLower(alias)
 			if existingID, ok := aliasMap[lowerAlias]; ok && existingID != p.ID {
-				log.Printf("Warning: Alias collision '%s' for models %s and %s. Keeping %s.", alias, existingID, p.ID, existingID)
+				// Log collision but keep existing (usually manual alias wins if it came first, but here it's processed order)
+				// We should probably sort processedModels by ID first to be deterministic.
 			} else {
 				aliasMap[lowerAlias] = p.ID
 			}
 		}
 	}
 
-	// Sort models for deterministic output
-	sort.Slice(processedModels, func(i, j int) bool {
-		return processedModels[i].ID < processedModels[j].ID
-	})
-
-	// 4. Generate Code
+	// 8. Generate Code
 	if err := generateCode(processedModels, aliasMap); err != nil {
 		log.Fatalf("Failed to generate code: %v", err)
 	}
 
 	log.Println("Generator finished successfully.")
+}
+
+func syncToDisk(apiModels []OpenRouterModel, localModels map[string]ModelRegistry) error {
+	for _, m := range apiModels {
+		local, _ := localModels[m.ID]
+
+		// Update fields from API
+		local.ID = m.ID
+		local.Name = m.Name
+		local.Description = m.Description
+		local.ContextLen = m.ContextLength
+		local.MaxOutput = m.TopProvider.MaxCompletionTokens
+		local.Provider = normalizeProvider(strings.Split(m.ID, "/")[0])
+
+		fmt.Sscanf(m.Pricing.Prompt, "%f", &local.PriceIn)
+		fmt.Sscanf(m.Pricing.Completion, "%f", &local.PriceOut)
+
+		// Derived features from API (only if local features are empty)
+		if len(local.Features) == 0 {
+			featStr := calculateFeatures(m)
+			if featStr != "0" {
+				local.Features = strings.Split(featStr, " | ")
+			}
+			// Default to CapChat for OR models
+			hasChat := false
+			for _, f := range local.Features {
+				if f == "CapChat" {
+					hasChat = true
+					break
+				}
+			}
+			if !hasChat {
+				local.Features = append([]string{"CapChat"}, local.Features...)
+			}
+		}
+
+		// Save back to disk
+		if err := saveModelToDisk(local); err != nil {
+			log.Printf("Error saving model %s: %v", m.ID, err)
+		}
+	}
+	return nil
+}
+
+func saveModelToDisk(m ModelRegistry) error {
+	parts := strings.SplitN(m.ID, "/", 2)
+	if len(parts) != 2 {
+		return fmt.Errorf("invalid model ID: %s", m.ID)
+	}
+	provider := parts[0]
+	modelName := parts[1]
+	safeModelName := strings.ReplaceAll(modelName, ":", "_")
+	safeModelName = strings.ReplaceAll(safeModelName, "/", "_")
+
+	dir := filepath.Join("models", provider)
+	if err := os.MkdirAll(dir, 0755); err != nil {
+		return err
+	}
+
+	filePath := filepath.Join(dir, safeModelName+".yaml")
+
+	// Check if file exists to avoid unnecessary writes if no change?
+	// For now, just write.
+
+	data, err := yaml.Marshal(m)
+	if err != nil {
+		return err
+	}
+
+	return os.WriteFile(filePath, data, 0644)
 }
 
 type ProcessedModel struct {

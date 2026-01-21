@@ -1,7 +1,24 @@
+id: minimax/minimax-01
+name: 'MiniMax: MiniMax-01'
+provider: Minimax
+description: |-
+    MiniMax-01 is a combines MiniMax-Text-01 for text generation and MiniMax-VL-01 for image understanding. It has 456 billion parameters, with 45.9 billion parameters activated per inference, and can handle a context of up to 4 million tokens.
+
+    The text model adopts a hybrid architecture that combines Lightning Attention, Softmax Attention, and Mixture-of-Experts (MoE). The image model adopts the “ViT-MLP-LLM” framework and is trained on top of the text model.
+
+    To read more about the release, see: https://www.minimaxi.com/en/news/minimax-01-series-2
 description_cn: |-
     MiniMax-01 融合了用于文本生成的 MiniMax-Text-01 与用于图像理解的 MiniMax-VL-01。模型总参数量达 4560 亿，每次推理激活 459 亿参数，支持高达 400 万 token 的上下文长度。
 
     文本模型采用混合架构，结合 Lightning Attention、Softmax Attention 与混合专家（MoE）机制；图像模型采用“ViT-MLP-LLM”框架，并在文本模型基础上进行训练。
 
     更多发布详情请见：https://www.minimaxi.com/en/news/minimax-01-series-2
-id: minimax/minimax-01
+context_length: 1000192
+max_output: 1000192
+price_in: 2e-07
+price_out: 1.1e-06
+features:
+    - CapChat
+    - ModalityImageIn
+    - ModalityTextIn
+    - ModalityTextOut

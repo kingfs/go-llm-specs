@@ -1,0 +1,14 @@
+id: z-ai/glm-4.7-flash
+name: 'Z.AI: GLM 4.7 Flash'
+provider: Z-Ai
+description: As a 30B-class SOTA model, GLM-4.7-Flash offers a new option that balances performance and efficiency. It is further optimized for agentic coding use cases, strengthening coding capabilities, long-horizon task planning, and tool collaboration, and has achieved leading performance among open-source models of the same size on several current public benchmark leaderboards.
+context_length: 200000
+max_output: 131072
+price_in: 7e-08
+price_out: 4e-07
+features:
+    - CapChat
+    - CapFunctionCall
+    - CapJsonMode
+    - ModalityTextIn
+    - ModalityTextOut

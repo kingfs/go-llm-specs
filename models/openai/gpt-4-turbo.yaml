@@ -1,6 +1,23 @@
+id: openai/gpt-4-turbo
+name: 'OpenAI: GPT-4 Turbo'
+name_cn: GPT-4 Turbo
+provider: OpenAI
+description: |-
+    The latest GPT-4 Turbo model with vision capabilities. Vision requests can now use JSON mode and function calling.
+
+    Training data: up to December 2023.
+description_cn: OpenAI 的高性能模型，支持 128k 上下文。
+context_length: 128000
+max_output: 4096
+price_in: 1e-05
+price_out: 3e-05
+features:
+    - CapChat
+    - CapFunctionCall
+    - CapJsonMode
+    - ModalityImageIn
+    - ModalityTextIn
+    - ModalityTextOut
 aliases:
     - gpt-4-turbo
     - gpt4t
-description_cn: OpenAI 的高性能模型，支持 128k 上下文。
-id: openai/gpt-4-turbo
-name_cn: GPT-4 Turbo

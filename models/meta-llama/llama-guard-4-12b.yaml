@@ -1,5 +1,20 @@
+id: meta-llama/llama-guard-4-12b
+name: 'Meta: Llama Guard 4 12B'
+provider: Meta
+description: |-
+    Llama Guard 4 is a Llama 4 Scout-derived multimodal pretrained model, fine-tuned for content safety classification. Similar to previous versions, it can be used to classify content in both LLM inputs (prompt classification) and in LLM responses (response classification). It acts as an LLM—generating text in its output that indicates whether a given prompt or response is safe or unsafe, and if unsafe, it also lists the content categories violated.
+
+    Llama Guard 4 was aligned to safeguard against the standardized MLCommons hazards taxonomy and designed to support multimodal Llama 4 capabilities. Specifically, it combines features from previous Llama Guard models, providing content moderation for English and multiple supported languages, along with enhanced capabilities to handle mixed text-and-image prompts, including multiple images. Additionally, Llama Guard 4 is integrated into the Llama Moderations API, extending robust safety classification to text and images.
 description_cn: |-
     Llama Guard 4 是基于 Llama 4 Scout 衍生的多模态预训练模型，经微调用于内容安全分类。与早期版本类似，它可用于对大语言模型输入（提示分类）和输出（响应分类）进行安全评估。该模型以文本形式输出判断结果，明确指出给定提示或响应是否安全；若不安全，还会列出违反的具体内容类别。
 
     Llama Guard 4 依据标准化的 MLCommons 危害分类体系进行对齐，并专为支持 Llama 4 的多模态能力而设计。具体而言，它融合了前代 Llama Guard 模型的特性，提供对英语及多种支持语言的内容审核能力，并增强了对混合文本与图像提示（包括多图输入）的处理能力。此外，Llama Guard 4 已集成至 Llama Moderations API，为文本和图像提供强大的安全分类支持。
-id: meta-llama/llama-guard-4-12b
+context_length: 163840
+price_in: 1.8e-07
+price_out: 1.8e-07
+features:
+    - CapChat
+    - CapJsonMode
+    - ModalityImageIn
+    - ModalityTextIn
+    - ModalityTextOut

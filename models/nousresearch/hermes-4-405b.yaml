@@ -1,5 +1,20 @@
+id: nousresearch/hermes-4-405b
+name: 'Nous: Hermes 4 405B'
+provider: Nous Research
+description: |-
+    Hermes 4 is a large-scale reasoning model built on Meta-Llama-3.1-405B and released by Nous Research. It introduces a hybrid reasoning mode, where the model can choose to deliberate internally with <think>...</think> traces or respond directly, offering flexibility between speed and depth. Users can control the reasoning behaviour with the `reasoning` `enabled` boolean. [Learn more in our docs](https://openrouter.ai/docs/use-cases/reasoning-tokens#enable-reasoning-with-default-config)
+
+    The model is instruction-tuned with an expanded post-training corpus (~60B tokens) emphasizing reasoning traces, improving performance in math, code, STEM, and logical reasoning, while retaining broad assistant utility. It also supports structured outputs, including JSON mode, schema adherence, function calling, and tool use. Hermes 4 is trained for steerability, lower refusal rates, and alignment toward neutral, user-directed behavior.
 description_cn: |-
     Hermes 4 是由 Nous Research 基于 Meta-Llama-3.1-405B 构建的大规模推理模型，引入了混合推理模式：模型可选择通过 <think>...</think> 标记进行内部推理，或直接响应，从而在速度与深度之间灵活权衡。用户可通过 `reasoning` `enabled` 布尔值控制推理行为。[了解更多](https://openrouter.ai/docs/use-cases/reasoning-tokens#enable-reasoning-with-default-config)
 
     该模型经过指令微调，使用了约 600 亿 token 的扩展后训练语料，重点强化推理轨迹，在数学、代码、STEM 及逻辑推理方面性能显著提升，同时保留广泛的助手功能。此外，支持结构化输出（包括 JSON 模式、模式遵循、函数调用和工具使用）。Hermes 4 经过专门训练，具备更强的可控性、更低的拒答率，并对齐至中立、用户导向的行为模式。
-id: nousresearch/hermes-4-405b
+context_length: 131072
+price_in: 1e-06
+price_out: 3e-06
+features:
+    - CapChat
+    - CapFunctionCall
+    - CapJsonMode
+    - ModalityTextIn
+    - ModalityTextOut

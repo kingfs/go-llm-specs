@@ -1,5 +1,19 @@
+id: perplexity/sonar-reasoning-pro
+name: 'Perplexity: Sonar Reasoning Pro'
+provider: Perplexity
+description: |-
+    Note: Sonar Pro pricing includes Perplexity search pricing. See [details here](https://docs.perplexity.ai/guides/pricing#detailed-pricing-breakdown-for-sonar-reasoning-pro-and-sonar-pro)
+
+    Sonar Reasoning Pro is a premier reasoning model powered by DeepSeek R1 with Chain of Thought (CoT). Designed for advanced use cases, it supports in-depth, multi-step queries with a larger context window and can surface more citations per search, enabling more comprehensive and extensible responses.
 description_cn: |-
     注意：Sonar Pro 的定价已包含 Perplexity 搜索费用。详见[此处说明](https://docs.perplexity.ai/guides/pricing#detailed-pricing-breakdown-for-sonar-reasoning-pro-and-sonar-pro)
 
     Sonar Reasoning Pro 是一款由 DeepSeek R1 驱动、采用思维链（Chain of Thought, CoT）技术的高端推理模型。专为高级应用场景设计，支持深入的多步骤查询，拥有更大的上下文窗口，并可在每次搜索中返回更多引用，从而生成更全面、更具扩展性的回答。
-id: perplexity/sonar-reasoning-pro
+context_length: 128000
+price_in: 2e-06
+price_out: 8e-06
+features:
+    - CapChat
+    - ModalityImageIn
+    - ModalityTextIn
+    - ModalityTextOut

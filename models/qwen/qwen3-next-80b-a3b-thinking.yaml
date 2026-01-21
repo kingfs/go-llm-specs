@@ -1,5 +1,20 @@
+id: qwen/qwen3-next-80b-a3b-thinking
+name: 'Qwen: Qwen3 Next 80B A3B Thinking'
+provider: Qwen
+description: |-
+    Qwen3-Next-80B-A3B-Thinking is a reasoning-first chat model in the Qwen3-Next line that outputs structured “thinking” traces by default. It’s designed for hard multi-step problems; math proofs, code synthesis/debugging, logic, and agentic planning, and reports strong results across knowledge, reasoning, coding, alignment, and multilingual evaluations. Compared with prior Qwen3 variants, it emphasizes stability under long chains of thought and efficient scaling during inference, and it is tuned to follow complex instructions while reducing repetitive or off-task behavior.
+
+    The model is suitable for agent frameworks and tool use (function calling), retrieval-heavy workflows, and standardized benchmarking where step-by-step solutions are required. It supports long, detailed completions and leverages throughput-oriented techniques (e.g., multi-token prediction) for faster generation. Note that it operates in thinking-only mode.
 description_cn: |-
     Qwen3-Next-80B-A3B-Thinking 是 Qwen3-Next 系列中以推理优先的对话模型，默认输出结构化的“思考”轨迹。该模型专为高难度多步问题设计，包括数学证明、代码生成/调试、逻辑推理及智能体规划，在知识、推理、编程、对齐性与多语言评估中均表现强劲。相较早期 Qwen3 变体，本模型强调长思维链下的稳定性与推理阶段的高效扩展能力，并经过调优以更好遵循复杂指令，减少重复或偏离任务的行为。
 
     该模型适用于智能体框架与工具调用（函数调用）、重度检索工作流及需逐步解答的标准基准测试场景。支持生成长篇、详尽的回答，并采用面向吞吐量的技术（如多token预测）加速生成。请注意，该模型仅运行于纯思考模式。
-id: qwen/qwen3-next-80b-a3b-thinking
+context_length: 128000
+price_in: 1.5e-07
+price_out: 1.2e-06
+features:
+    - CapChat
+    - CapFunctionCall
+    - CapJsonMode
+    - ModalityTextIn
+    - ModalityTextOut

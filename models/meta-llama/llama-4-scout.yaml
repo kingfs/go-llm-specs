@@ -1,5 +1,22 @@
+id: meta-llama/llama-4-scout
+name: 'Meta: Llama 4 Scout'
+provider: Meta
+description: |-
+    Llama 4 Scout 17B Instruct (16E) is a mixture-of-experts (MoE) language model developed by Meta, activating 17 billion parameters out of a total of 109B. It supports native multimodal input (text and image) and multilingual output (text and code) across 12 supported languages. Designed for assistant-style interaction and visual reasoning, Scout uses 16 experts per forward pass and features a context length of 10 million tokens, with a training corpus of ~40 trillion tokens.
+
+    Built for high efficiency and local or commercial deployment, Llama 4 Scout incorporates early fusion for seamless modality integration. It is instruction-tuned for use in multilingual chat, captioning, and image understanding tasks. Released under the Llama 4 Community License, it was last trained on data up to August 2024 and launched publicly on April 5, 2025.
 description_cn: |-
     Llama 4 Scout 17B Instruct（16E）是 Meta 开发的混合专家（MoE）语言模型，总参数量为 1090 亿，每次前向传播激活 170 亿参数。该模型支持原生多模态输入（文本与图像）及 12 种语言的多语言输出（文本与代码），专为助手式交互与视觉推理设计，每次前向传播使用 16 个专家，上下文长度达 1000 万 token，训练语料规模约为 40 万亿 token。
 
     Llama 4 Scout 采用早期融合技术以实现无缝模态集成，兼顾高效率与本地或商业部署需求。该模型经过指令微调，适用于多语言对话、图像描述生成及图像理解等任务。依据 Llama 4 社区许可证发布，训练数据截止于 2024 年 8 月，并于 2025 年 4 月 5 日公开发布。
-id: meta-llama/llama-4-scout
+context_length: 327680
+max_output: 16384
+price_in: 8e-08
+price_out: 3e-07
+features:
+    - CapChat
+    - CapFunctionCall
+    - CapJsonMode
+    - ModalityImageIn
+    - ModalityTextIn
+    - ModalityTextOut

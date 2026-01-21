@@ -1,5 +1,22 @@
+id: openai/gpt-5.2-codex
+name: 'OpenAI: GPT-5.2-Codex'
+provider: OpenAI
+description: |-
+    GPT-5.2-Codex is an upgraded version of GPT-5.1-Codex optimized for software engineering and coding workflows. It is designed for both interactive development sessions and long, independent execution of complex engineering tasks. The model supports building projects from scratch, feature development, debugging, large-scale refactoring, and code review. Compared to GPT-5.1-Codex, 5.2-Codex is more steerable, adheres closely to developer instructions, and produces cleaner, higher-quality code outputs. Reasoning effort can be adjusted with the `reasoning.effort` parameter. Read the [docs here](https://openrouter.ai/docs/use-cases/reasoning-tokens#reasoning-effort-level)
+
+    Codex integrates into developer environments including the CLI, IDE extensions, GitHub, and cloud tasks. It adapts reasoning effort dynamically—providing fast responses for small tasks while sustaining extended multi-hour runs for large projects. The model is trained to perform structured code reviews, catching critical flaws by reasoning over dependencies and validating behavior against tests. It also supports multimodal inputs such as images or screenshots for UI development and integrates tool use for search, dependency installation, and environment setup. Codex is intended specifically for agentic coding applications.
 description_cn: |-
     GPT-5.2-Codex 是 GPT-5.1-Codex 的升级版，针对软件工程与编程工作流进行了优化，适用于交互式开发会话及长时间独立执行复杂工程任务。该模型支持从零构建项目、功能开发、调试、大规模重构及代码审查。相比 GPT-5.1-Codex，5.2-Codex 更具可控性，严格遵循开发者指令，并生成更简洁、高质量的代码。可通过 `reasoning.effort` 参数调节推理强度。详见[文档](https://openrouter.ai/docs/use-cases/reasoning-tokens#reasoning-effort-level)。
 
     Codex 可集成至 CLI、IDE 插件、GitHub 及云任务等开发者环境，能动态调整推理强度——小任务快速响应，大型项目则可持续运行数小时。该模型经过训练，可执行结构化代码审查，通过分析依赖关系并对照测试验证行为，识别关键缺陷。此外，它还支持 UI 开发所需的图像或多模态输入，并集成工具用于搜索、依赖安装及环境配置。Codex 专为智能体编程应用场景而设计。
-id: openai/gpt-5.2-codex
+context_length: 400000
+max_output: 128000
+price_in: 1.75e-06
+price_out: 1.4e-05
+features:
+    - CapChat
+    - CapFunctionCall
+    - CapJsonMode
+    - ModalityImageIn
+    - ModalityTextIn
+    - ModalityTextOut

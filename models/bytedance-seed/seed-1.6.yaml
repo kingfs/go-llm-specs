@@ -1,2 +1,17 @@
-description_cn: Seed 1.6 是字节跳动 Seed 团队发布的一款通用模型，具备多模态能力与自适应深度思考功能，上下文窗口达 256K。
 id: bytedance-seed/seed-1.6
+name: 'ByteDance Seed: Seed 1.6'
+provider: Bytedance-Seed
+description: Seed 1.6 is a general-purpose model released by the ByteDance Seed team. It incorporates multimodal capabilities and adaptive deep thinking with a 256K context window.
+description_cn: Seed 1.6 是字节跳动 Seed 团队发布的一款通用模型，具备多模态能力与自适应深度思考功能，上下文窗口达 256K。
+context_length: 262144
+max_output: 32768
+price_in: 2.5e-07
+price_out: 2e-06
+features:
+    - CapChat
+    - CapFunctionCall
+    - CapJsonMode
+    - ModalityImageIn
+    - ModalityTextIn
+    - ModalityTextOut
+    - ModalityVideoIn

@@ -1,5 +1,23 @@
+id: openai/gpt-4o-2024-11-20
+name: 'OpenAI: GPT-4o (2024-11-20)'
+provider: OpenAI
+description: |-
+    The 2024-11-20 version of GPT-4o offers a leveled-up creative writing ability with more natural, engaging, and tailored writing to improve relevance & readability. It’s also better at working with uploaded files, providing deeper insights & more thorough responses.
+
+    GPT-4o ("o" for "omni") is OpenAI's latest AI model, supporting both text and image inputs with text outputs. It maintains the intelligence level of [GPT-4 Turbo](/models/openai/gpt-4-turbo) while being twice as fast and 50% more cost-effective. GPT-4o also offers improved performance in processing non-English languages and enhanced visual capabilities.
 description_cn: |-
     GPT-4o 2024-11-20 版本提升了创意写作能力，生成更自然、生动且高度定制化的文本，显著增强相关性与可读性。同时，在处理上传文件方面表现更优，可提供更深入的洞察和更全面的回答。
 
     GPT-4o（“o”代表“omni”）是 OpenAI 最新一代 AI 模型，支持文本和图像输入并输出文本。其智能水平与 [GPT-4 Turbo](/models/openai/gpt-4-turbo) 相当，但速度提升一倍，成本降低 50%。此外，该版本在非英语语言处理和视觉能力方面也有进一步增强。
-id: openai/gpt-4o-2024-11-20
+context_length: 128000
+max_output: 16384
+price_in: 2.5e-06
+price_out: 1e-05
+features:
+    - CapChat
+    - CapFunctionCall
+    - CapJsonMode
+    - ModalityFileIn
+    - ModalityImageIn
+    - ModalityTextIn
+    - ModalityTextOut

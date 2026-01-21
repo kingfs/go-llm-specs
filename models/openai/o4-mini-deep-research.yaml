@@ -1,5 +1,23 @@
+id: openai/o4-mini-deep-research
+name: 'OpenAI: o4 Mini Deep Research'
+provider: OpenAI
+description: |-
+    o4-mini-deep-research is OpenAI's faster, more affordable deep research model—ideal for tackling complex, multi-step research tasks.
+
+    Note: This model always uses the 'web_search' tool which adds additional cost.
 description_cn: |-
     o4-mini-deep-research 是 OpenAI 推出的速度更快、成本更低的深度研究模型，非常适合处理复杂的多步骤研究任务。
 
     注意：此模型始终使用“web_search”工具，会产生额外费用。
-id: openai/o4-mini-deep-research
+context_length: 200000
+max_output: 100000
+price_in: 2e-06
+price_out: 8e-06
+features:
+    - CapChat
+    - CapFunctionCall
+    - CapJsonMode
+    - ModalityFileIn
+    - ModalityImageIn
+    - ModalityTextIn
+    - ModalityTextOut

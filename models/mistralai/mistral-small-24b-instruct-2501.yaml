@@ -1,5 +1,21 @@
+id: mistralai/mistral-small-24b-instruct-2501
+name: 'Mistral: Mistral Small 3'
+provider: Mistral
+description: |-
+    Mistral Small 3 is a 24B-parameter language model optimized for low-latency performance across common AI tasks. Released under the Apache 2.0 license, it features both pre-trained and instruction-tuned versions designed for efficient local deployment.
+
+    The model achieves 81% accuracy on the MMLU benchmark and performs competitively with larger models like Llama 3.3 70B and Qwen 32B, while operating at three times the speed on equivalent hardware. [Read the blog post about the model here.](https://mistral.ai/news/mistral-small-3/)
 description_cn: |-
     Mistral Small 3 是一款 240 亿参数的语言模型，针对常见 AI 任务优化了低延迟性能。该模型以 Apache 2.0 许可证发布，提供预训练版和指令微调版，适用于高效的本地部署。
 
     模型在 MMLU 基准测试中达到 81% 的准确率，性能可与 Llama 3.3 70B 和 Qwen 32B 等更大模型竞争，且在同等硬件上运行速度提升三倍。[点击此处阅读模型博客文章。](https://mistral.ai/news/mistral-small-3/)
-id: mistralai/mistral-small-24b-instruct-2501
+context_length: 32768
+max_output: 32768
+price_in: 3e-08
+price_out: 1.1e-07
+features:
+    - CapChat
+    - CapFunctionCall
+    - CapJsonMode
+    - ModalityTextIn
+    - ModalityTextOut

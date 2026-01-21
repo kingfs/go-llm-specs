@@ -1,5 +1,17 @@
+id: deepseek/deepseek-v3.1-terminus
+name: 'DeepSeek: DeepSeek V3.1 Terminus'
+provider: DeepSeek
+description: "DeepSeek-V3.1 Terminus is an update to [DeepSeek V3.1](/deepseek/deepseek-chat-v3.1) that maintains the model's original capabilities while addressing issues reported by users, including language consistency and agent capabilities, further optimizing the model's performance in coding and search agents. It is a large hybrid reasoning model (671B parameters, 37B active) that supports both thinking and non-thinking modes. It extends the DeepSeek-V3 base with a two-phase long-context training process, reaching up to 128K tokens, and uses FP8 microscaling for efficient inference. Users can control the reasoning behaviour with the `reasoning` `enabled` boolean. [Learn more in our docs](https://openrouter.ai/docs/use-cases/reasoning-tokens#enable-reasoning-with-default-config)\n\nThe model improves tool use, code generation, and reasoning efficiency, achieving performance comparable to DeepSeek-R1 on difficult benchmarks while responding more quickly. It supports structured tool calling, code agents, and search agents, making it suitable for research, coding, and agentic workflows. "
 description_cn: |-
     DeepSeek-V3.1 Terminus 是 [DeepSeek V3.1](/deepseek/deepseek-chat-v3.1) 的一次更新，在保留模型原有能力的同时，解决了用户反馈的问题（包括语言一致性和智能体能力），并进一步优化了其在代码和搜索智能体方面的性能。该模型是一个大型混合推理模型（总参数 671B，激活参数 37B），支持“思考”与“非思考”两种模式。它在 DeepSeek-V3 基础上通过两阶段长上下文训练流程扩展至最多 128K tokens，并采用 FP8 微缩放技术实现高效推理。用户可通过 `reasoning` `enabled` 布尔值控制推理行为。[详见文档](https://openrouter.ai/docs/use-cases/reasoning-tokens#enable-reasoning-with-default-config)
 
     该模型提升了工具使用、代码生成和推理效率，在高难度基准测试中表现媲美 DeepSeek-R1，同时响应速度更快。它支持结构化工具调用、代码智能体和搜索智能体，适用于研究、编码及智能体工作流。
-id: deepseek/deepseek-v3.1-terminus
+context_length: 163840
+price_in: 2.1e-07
+price_out: 7.9e-07
+features:
+    - CapChat
+    - CapFunctionCall
+    - CapJsonMode
+    - ModalityTextIn
+    - ModalityTextOut

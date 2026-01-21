@@ -1,2 +1,14 @@
-description_cn: 旨在复现 Claude 风格的详尽表达，但连贯性与记忆能力不及原版，适用于角色扮演或叙事场景。
 id: mancer/weaver
+name: 'Mancer: Weaver (alpha)'
+provider: Mancer
+description: An attempt to recreate Claude-style verbosity, but don't expect the same level of coherence or memory. Meant for use in roleplay/narrative situations.
+description_cn: 旨在复现 Claude 风格的详尽表达，但连贯性与记忆能力不及原版，适用于角色扮演或叙事场景。
+context_length: 8000
+max_output: 2000
+price_in: 7.5e-07
+price_out: 1e-06
+features:
+    - CapChat
+    - CapJsonMode
+    - ModalityTextIn
+    - ModalityTextOut

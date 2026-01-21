@@ -1,5 +1,21 @@
+id: deepseek/deepseek-r1-0528
+name: 'DeepSeek: R1 0528'
+provider: DeepSeek
+description: |-
+    May 28th update to the [original DeepSeek R1](/deepseek/deepseek-r1) Performance on par with [OpenAI o1](/openai/o1), but open-sourced and with fully open reasoning tokens. It's 671B parameters in size, with 37B active in an inference pass.
+
+    Fully open-source model.
 description_cn: |-
     5月28日更新版[原始 DeepSeek R1](/deepseek/deepseek-r1)，性能与[OpenAI o1](/openai/o1)相当，但完全开源且推理过程中的所有推理 token 均公开。模型总参数量为6710亿，单次推理激活370亿参数。
 
     完全开源模型。
-id: deepseek/deepseek-r1-0528
+context_length: 163840
+max_output: 65536
+price_in: 4e-07
+price_out: 1.75e-06
+features:
+    - CapChat
+    - CapFunctionCall
+    - CapJsonMode
+    - ModalityTextIn
+    - ModalityTextOut

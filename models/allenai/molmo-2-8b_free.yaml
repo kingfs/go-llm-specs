@@ -1,2 +1,16 @@
-description_cn: Molmo2-8B 是艾伦人工智能研究所（AI2）开发的开源视觉语言模型，属于 Molmo2 系列，支持图像、视频及多图理解与定位。该模型基于 Qwen3-8B 构建，采用 SigLIP 2 作为视觉主干网络，在短视频、计数和图像描述等任务上优于其他开源权重与开源数据的模型，同时在长视频任务中仍保持竞争力。
 id: allenai/molmo-2-8b:free
+name: 'AllenAI: Molmo2 8B (free)'
+provider: Allenai
+description: Molmo2-8B is an open vision-language model developed by the Allen Institute for AI (Ai2) as part of the Molmo2 family, supporting image, video, and multi-image understanding and grounding. It is based on Qwen3-8B and uses SigLIP 2 as its vision backbone, outperforming other open-weight, open-data models on short videos, counting, and captioning, while remaining competitive on long-video tasks.
+description_cn: Molmo2-8B 是艾伦人工智能研究所（AI2）开发的开源视觉语言模型，属于 Molmo2 系列，支持图像、视频及多图理解与定位。该模型基于 Qwen3-8B 构建，采用 SigLIP 2 作为视觉主干网络，在短视频、计数和图像描述等任务上优于其他开源权重与开源数据的模型，同时在长视频任务中仍保持竞争力。
+context_length: 36864
+max_output: 36864
+price_in: 0
+price_out: 0
+features:
+    - CapChat
+    - CapJsonMode
+    - ModalityImageIn
+    - ModalityTextIn
+    - ModalityTextOut
+    - ModalityVideoIn

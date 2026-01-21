@@ -1,2 +1,14 @@
-description_cn: Llemma 7B 是一款面向数学领域的语言模型。该模型以 Code Llama 7B 的权重初始化，并在 Proof-Pile-2 数据集上训练了 2000 亿个 token。Llemma 系列模型在数学领域的思维链推理以及使用 Python 和形式化定理证明器等计算工具方面表现尤为突出。
 id: eleutherai/llemma_7b
+name: 'EleutherAI: Llemma 7b'
+provider: Eleutherai
+description: Llemma 7B is a language model for mathematics. It was initialized with Code Llama 7B weights, and trained on the Proof-Pile-2 for 200B tokens. Llemma models are particularly strong at chain-of-thought mathematical reasoning and using computational tools for mathematics, such as Python and formal theorem provers.
+description_cn: Llemma 7B 是一款面向数学领域的语言模型。该模型以 Code Llama 7B 的权重初始化，并在 Proof-Pile-2 数据集上训练了 2000 亿个 token。Llemma 系列模型在数学领域的思维链推理以及使用 Python 和形式化定理证明器等计算工具方面表现尤为突出。
+context_length: 4096
+max_output: 4096
+price_in: 8e-07
+price_out: 1.2e-06
+features:
+    - CapChat
+    - CapFunctionCall
+    - ModalityTextIn
+    - ModalityTextOut

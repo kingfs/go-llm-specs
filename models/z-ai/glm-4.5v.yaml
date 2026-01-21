@@ -1,2 +1,16 @@
-description_cn: GLM-4.5V 是一款面向多模态智能体应用的视觉语言基础模型。基于混合专家（MoE）架构，总参数量达 1060 亿，每 token 激活 120 亿参数，在视频理解、图像问答、OCR 和文档解析等任务上达到业界领先水平，并在前端网页编码、事实依据和空间推理方面取得显著提升。模型提供混合推理模式：“思考模式”用于深度推理，“非思考模式”用于快速响应。推理行为可通过 `reasoning` `enabled` 布尔值切换。[了解更多](https://openrouter.ai/docs/use-cases/reasoning-tokens#enable-reasoning-with-default-config)
 id: z-ai/glm-4.5v
+name: 'Z.AI: GLM 4.5V'
+provider: Z-Ai
+description: 'GLM-4.5V is a vision-language foundation model for multimodal agent applications. Built on a Mixture-of-Experts (MoE) architecture with 106B parameters and 12B activated parameters, it achieves state-of-the-art results in video understanding, image Q&A, OCR, and document parsing, with strong gains in front-end web coding, grounding, and spatial reasoning. It offers a hybrid inference mode: a "thinking mode" for deep reasoning and a "non-thinking mode" for fast responses. Reasoning behavior can be toggled via the `reasoning` `enabled` boolean. [Learn more in our docs](https://openrouter.ai/docs/use-cases/reasoning-tokens#enable-reasoning-with-default-config)'
+description_cn: GLM-4.5V 是一款面向多模态智能体应用的视觉语言基础模型。基于混合专家（MoE）架构，总参数量达 1060 亿，每 token 激活 120 亿参数，在视频理解、图像问答、OCR 和文档解析等任务上达到业界领先水平，并在前端网页编码、事实依据和空间推理方面取得显著提升。模型提供混合推理模式：“思考模式”用于深度推理，“非思考模式”用于快速响应。推理行为可通过 `reasoning` `enabled` 布尔值切换。[了解更多](https://openrouter.ai/docs/use-cases/reasoning-tokens#enable-reasoning-with-default-config)
+context_length: 65536
+max_output: 16384
+price_in: 6e-07
+price_out: 1.8e-06
+features:
+    - CapChat
+    - CapFunctionCall
+    - CapJsonMode
+    - ModalityImageIn
+    - ModalityTextIn
+    - ModalityTextOut

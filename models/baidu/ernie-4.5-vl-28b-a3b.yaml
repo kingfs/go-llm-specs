@@ -1,2 +1,15 @@
-description_cn: 这是一款强大的多模态混合专家（MoE）对话模型，总参数量达 280 亿，每 token 激活 30 亿参数，依托创新的异构 MoE 架构与模态隔离路由机制，实现卓越的文本与视觉理解能力。模型基于高吞吐训练与推理的高效扩展基础设施构建，采用 SFT、DPO 和 UPO 等先进后训练技术优化性能，支持高达 131K 的上下文长度，并通过 RLVR 对齐机制显著提升跨模态推理与生成能力。
 id: baidu/ernie-4.5-vl-28b-a3b
+name: 'Baidu: ERNIE 4.5 VL 28B A3B'
+provider: Baidu
+description: A powerful multimodal Mixture-of-Experts chat model featuring 28B total parameters with 3B activated per token, delivering exceptional text and vision understanding through its innovative heterogeneous MoE structure with modality-isolated routing. Built with scaling-efficient infrastructure for high-throughput training and inference, the model leverages advanced post-training techniques including SFT, DPO, and UPO for optimized performance, while supporting an impressive 131K context length and RLVR alignment for superior cross-modal reasoning and generation capabilities.
+description_cn: 这是一款强大的多模态混合专家（MoE）对话模型，总参数量达 280 亿，每 token 激活 30 亿参数，依托创新的异构 MoE 架构与模态隔离路由机制，实现卓越的文本与视觉理解能力。模型基于高吞吐训练与推理的高效扩展基础设施构建，采用 SFT、DPO 和 UPO 等先进后训练技术优化性能，支持高达 131K 的上下文长度，并通过 RLVR 对齐机制显著提升跨模态推理与生成能力。
+context_length: 30000
+max_output: 8000
+price_in: 1.4e-07
+price_out: 5.6e-07
+features:
+    - CapChat
+    - CapFunctionCall
+    - ModalityImageIn
+    - ModalityTextIn
+    - ModalityTextOut

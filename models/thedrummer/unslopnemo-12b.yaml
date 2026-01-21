@@ -1,2 +1,14 @@
-description_cn: UnslopNemo v4.1 是 Rocinante 创作者推出的最新模型，专为冒险题材写作和角色扮演场景设计。
 id: thedrummer/unslopnemo-12b
+name: 'TheDrummer: UnslopNemo 12B'
+provider: Thedrummer
+description: UnslopNemo v4.1 is the latest addition from the creator of Rocinante, designed for adventure writing and role-play scenarios.
+description_cn: UnslopNemo v4.1 是 Rocinante 创作者推出的最新模型，专为冒险题材写作和角色扮演场景设计。
+context_length: 32768
+price_in: 4e-07
+price_out: 4e-07
+features:
+    - CapChat
+    - CapFunctionCall
+    - CapJsonMode
+    - ModalityTextIn
+    - ModalityTextOut

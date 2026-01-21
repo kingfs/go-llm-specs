@@ -1,2 +1,15 @@
-description_cn: Hermes 2 Pro 是 Nous Hermes 2 的升级再训练版本，采用更新并清洗后的 OpenHermes 2.5 数据集，并新增了内部开发的函数调用与 JSON 模式数据集。
 id: nousresearch/hermes-2-pro-llama-3-8b
+name: 'NousResearch: Hermes 2 Pro - Llama-3 8B'
+provider: Nous Research
+description: Hermes 2 Pro is an upgraded, retrained version of Nous Hermes 2, consisting of an updated and cleaned version of the OpenHermes 2.5 Dataset, as well as a newly introduced Function Calling and JSON Mode dataset developed in-house.
+description_cn: Hermes 2 Pro 是 Nous Hermes 2 的升级再训练版本，采用更新并清洗后的 OpenHermes 2.5 数据集，并新增了内部开发的函数调用与 JSON 模式数据集。
+context_length: 8192
+max_output: 8192
+price_in: 1.4e-07
+price_out: 1.4e-07
+features:
+    - CapChat
+    - CapFunctionCall
+    - CapJsonMode
+    - ModalityTextIn
+    - ModalityTextOut

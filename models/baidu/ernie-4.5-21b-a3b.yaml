@@ -1,2 +1,14 @@
-description_cn: 这是一款先进的纯文本混合专家（MoE）模型，总参数量达 210 亿，每 token 激活 30 亿参数，通过异构 MoE 结构与模态隔离路由机制实现卓越的多模态理解与生成能力。模型支持长达 131K token 的上下文，并借助多专家并行协作与量化技术实现高效推理；结合 SFT、DPO 和 UPO 等先进后训练方法，辅以专用路由与均衡损失函数，确保在各类应用场景中均具备优异性能。
 id: baidu/ernie-4.5-21b-a3b
+name: 'Baidu: ERNIE 4.5 21B A3B'
+provider: Baidu
+description: A sophisticated text-based Mixture-of-Experts (MoE) model featuring 21B total parameters with 3B activated per token, delivering exceptional multimodal understanding and generation through heterogeneous MoE structures and modality-isolated routing. Supporting an extensive 131K token context length, the model achieves efficient inference via multi-expert parallel collaboration and quantization, while advanced post-training techniques including SFT, DPO, and UPO ensure optimized performance across diverse applications with specialized routing and balancing losses for superior task handling.
+description_cn: 这是一款先进的纯文本混合专家（MoE）模型，总参数量达 210 亿，每 token 激活 30 亿参数，通过异构 MoE 结构与模态隔离路由机制实现卓越的多模态理解与生成能力。模型支持长达 131K token 的上下文，并借助多专家并行协作与量化技术实现高效推理；结合 SFT、DPO 和 UPO 等先进后训练方法，辅以专用路由与均衡损失函数，确保在各类应用场景中均具备优异性能。
+context_length: 120000
+max_output: 8000
+price_in: 7e-08
+price_out: 2.8e-07
+features:
+    - CapChat
+    - CapFunctionCall
+    - ModalityTextIn
+    - ModalityTextOut

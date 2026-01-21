@@ -1,2 +1,15 @@
-description_cn: GLM-4.5-Air 是我们最新旗舰模型系列的轻量级变体，同样专为以智能体为中心的应用场景设计。与 GLM-4.5 类似，它也采用混合专家（MoE）架构，但参数规模更为紧凑。GLM-4.5-Air 同样支持混合推理模式：提供用于高级推理和工具调用的“推理模式”，以及用于实时交互的“非推理模式”。用户可通过 `reasoning` `enabled` 布尔值控制推理行为。[了解更多请参阅文档](https://openrouter.ai/docs/use-cases/reasoning-tokens#enable-reasoning-with-default-config)
 id: z-ai/glm-4.5-air
+name: 'Z.AI: GLM 4.5 Air'
+provider: Z-Ai
+description: GLM-4.5-Air is the lightweight variant of our latest flagship model family, also purpose-built for agent-centric applications. Like GLM-4.5, it adopts the Mixture-of-Experts (MoE) architecture but with a more compact parameter size. GLM-4.5-Air also supports hybrid inference modes, offering a "thinking mode" for advanced reasoning and tool use, and a "non-thinking mode" for real-time interaction. Users can control the reasoning behaviour with the `reasoning` `enabled` boolean. [Learn more in our docs](https://openrouter.ai/docs/use-cases/reasoning-tokens#enable-reasoning-with-default-config)
+description_cn: GLM-4.5-Air 是我们最新旗舰模型系列的轻量级变体，同样专为以智能体为中心的应用场景设计。与 GLM-4.5 类似，它也采用混合专家（MoE）架构，但参数规模更为紧凑。GLM-4.5-Air 同样支持混合推理模式：提供用于高级推理和工具调用的“推理模式”，以及用于实时交互的“非推理模式”。用户可通过 `reasoning` `enabled` 布尔值控制推理行为。[了解更多请参阅文档](https://openrouter.ai/docs/use-cases/reasoning-tokens#enable-reasoning-with-default-config)
+context_length: 131072
+max_output: 131072
+price_in: 5e-08
+price_out: 2.2e-07
+features:
+    - CapChat
+    - CapFunctionCall
+    - CapJsonMode
+    - ModalityTextIn
+    - ModalityTextOut

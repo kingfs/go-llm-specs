@@ -1,5 +1,22 @@
+id: x-ai/grok-4.1-fast
+name: 'xAI: Grok 4.1 Fast'
+provider: X-Ai
+description: |-
+    Grok 4.1 Fast is xAI's best agentic tool calling model that shines in real-world use cases like customer support and deep research. 2M context window.
+
+    Reasoning can be enabled/disabled using the `reasoning` `enabled` parameter in the API. [Learn more in our docs](https://openrouter.ai/docs/use-cases/reasoning-tokens#controlling-reasoning-tokens)
 description_cn: |-
     Grok 4.1 Fast 是 xAI 最佳的智能体工具调用模型，在客服支持与深度研究等真实场景中表现卓越，支持 200 万 token 上下文窗口。
 
     可通过 API 中的 `reasoning` `enabled` 参数启用或禁用推理功能。[了解更多请参阅文档](https://openrouter.ai/docs/use-cases/reasoning-tokens#controlling-reasoning-tokens)
-id: x-ai/grok-4.1-fast
+context_length: 2000000
+max_output: 30000
+price_in: 2e-07
+price_out: 5e-07
+features:
+    - CapChat
+    - CapFunctionCall
+    - CapJsonMode
+    - ModalityImageIn
+    - ModalityTextIn
+    - ModalityTextOut

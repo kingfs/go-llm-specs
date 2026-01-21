@@ -1,7 +1,26 @@
+id: anthropic/claude-3-haiku
+name: 'Anthropic: Claude 3 Haiku'
+provider: Anthropic
+description: |-
+    Claude 3 Haiku is Anthropic's fastest and most compact model for
+    near-instant responsiveness. Quick and accurate targeted performance.
+
+    See the launch announcement and benchmark results [here](https://www.anthropic.com/news/claude-3-haiku)
+
+    #multimodal
 description_cn: |-
     Claude 3 Haiku 是 Anthropic 推出的最快、最紧凑的模型，可实现近乎即时的响应，兼具快速性与精准的定向性能。
 
     详见发布公告及基准测试结果：[此处](https://www.anthropic.com/news/claude-3-haiku)
 
     #multimodal
-id: anthropic/claude-3-haiku
+context_length: 200000
+max_output: 4096
+price_in: 2.5e-07
+price_out: 1.25e-06
+features:
+    - CapChat
+    - CapFunctionCall
+    - ModalityImageIn
+    - ModalityTextIn
+    - ModalityTextOut

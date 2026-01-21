@@ -1,3 +1,14 @@
+id: minimax/minimax-m2
+name: 'MiniMax: MiniMax M2'
+provider: Minimax
+description: |-
+    MiniMax-M2 is a compact, high-efficiency large language model optimized for end-to-end coding and agentic workflows. With 10 billion activated parameters (230 billion total), it delivers near-frontier intelligence across general reasoning, tool use, and multi-step task execution while maintaining low latency and deployment efficiency.
+
+    The model excels in code generation, multi-file editing, compile-run-fix loops, and test-validated repair, showing strong results on SWE-Bench Verified, Multi-SWE-Bench, and Terminal-Bench. It also performs competitively in agentic evaluations such as BrowseComp and GAIA, effectively handling long-horizon planning, retrieval, and recovery from execution errors.
+
+    Benchmarked by [Artificial Analysis](https://artificialanalysis.ai/models/minimax-m2), MiniMax-M2 ranks among the top open-source models for composite intelligence, spanning mathematics, science, and instruction-following. Its small activation footprint enables fast inference, high concurrency, and improved unit economics, making it well-suited for large-scale agents, developer assistants, and reasoning-driven applications that require responsiveness and cost efficiency.
+
+    To avoid degrading this model's performance, MiniMax highly recommends preserving reasoning between turns. Learn more about using reasoning_details to pass back reasoning in our [docs](https://openrouter.ai/docs/use-cases/reasoning-tokens#preserving-reasoning-blocks).
 description_cn: |-
     MiniMax-M2 是一款紧凑高效的大型语言模型，针对端到端编码和智能体工作流进行了优化。该模型激活参数达 100 亿（总计 2300 亿），在通用推理、工具调用和多步骤任务执行方面提供接近前沿的智能水平，同时保持低延迟和高部署效率。
 
@@ -6,4 +17,13 @@ description_cn: |-
     据 [Artificial Analysis](https://artificialanalysis.ai/models/minimax-m2) 测评，MiniMax-M2 在综合智能（涵盖数学、科学和指令遵循）方面位列顶尖开源模型之列。其较小的激活占用空间支持快速推理、高并发处理和更优的单位经济性，非常适合大规模智能体、开发者助手及对响应速度和成本效益有高要求的推理驱动型应用。
 
     为避免性能下降，MiniMax 强烈建议在对话轮次间保留推理过程。更多关于如何使用 reasoning_details 回传推理内容的信息，请参阅我们的 [文档](https://openrouter.ai/docs/use-cases/reasoning-tokens#preserving-reasoning-blocks)。
-id: minimax/minimax-m2
+context_length: 196608
+max_output: 65536
+price_in: 2e-07
+price_out: 1e-06
+features:
+    - CapChat
+    - CapFunctionCall
+    - CapJsonMode
+    - ModalityTextIn
+    - ModalityTextOut

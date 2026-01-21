@@ -1,7 +1,25 @@
+id: anthropic/claude-3.5-haiku
+name: 'Anthropic: Claude 3.5 Haiku'
+provider: Anthropic
+description: |-
+    Claude 3.5 Haiku features offers enhanced capabilities in speed, coding accuracy, and tool use. Engineered to excel in real-time applications, it delivers quick response times that are essential for dynamic tasks such as chat interactions and immediate coding suggestions.
+
+    This makes it highly suitable for environments that demand both speed and precision, such as software development, customer service bots, and data management systems.
+
+    This model is currently pointing to [Claude 3.5 Haiku (2024-10-22)](/anthropic/claude-3-5-haiku-20241022).
 description_cn: |-
     Claude 3.5 Haiku 在速度、代码准确性和工具使用方面能力显著增强。专为实时应用场景优化，可提供快速响应，适用于聊天交互和即时代码建议等动态任务。
 
     因此，该模型非常适合对速度与精度均有高要求的场景，如软件开发、客户服务机器人和数据管理系统。
 
     当前此模型指向 [Claude 3.5 Haiku (2024-10-22)](/anthropic/claude-3-5-haiku-20241022)。
-id: anthropic/claude-3.5-haiku
+context_length: 200000
+max_output: 8192
+price_in: 8e-07
+price_out: 4e-06
+features:
+    - CapChat
+    - CapFunctionCall
+    - ModalityImageIn
+    - ModalityTextIn
+    - ModalityTextOut

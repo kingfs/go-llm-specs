@@ -1,5 +1,21 @@
+id: alibaba/tongyi-deepresearch-30b-a3b
+name: Tongyi DeepResearch 30B A3B
+provider: Qwen
+description: |-
+    Tongyi DeepResearch is an agentic large language model developed by Tongyi Lab, with 30 billion total parameters activating only 3 billion per token. It's optimized for long-horizon, deep information-seeking tasks and delivers state-of-the-art performance on benchmarks like Humanity's Last Exam, BrowserComp, BrowserComp-ZH, WebWalkerQA, GAIA, xbench-DeepSearch, and FRAMES. This makes it superior for complex agentic search, reasoning, and multi-step problem-solving compared to prior models.
+
+    The model includes a fully automated synthetic data pipeline for scalable pre-training, fine-tuning, and reinforcement learning. It uses large-scale continual pre-training on diverse agentic data to boost reasoning and stay fresh. It also features end-to-end on-policy RL with a customized Group Relative Policy Optimization, including token-level gradients and negative sample filtering for stable training. The model supports ReAct for core ability checks and an IterResearch-based 'Heavy' mode for max performance through test-time scaling. It's ideal for advanced research agents, tool use, and heavy inference workflows.
 description_cn: |-
     通义深度研究（Tongyi DeepResearch）是通义实验室研发的智能体大语言模型，总参数量为300亿，每token仅激活30亿参数。该模型专为长周期、深度信息检索任务优化，在Humanity's Last Exam、BrowserComp、BrowserComp-ZH、WebWalkerQA、GAIA、xbench-DeepSearch和FRAMES等基准测试中达到业界领先水平，相较前代模型在复杂智能体搜索、推理及多步问题求解方面表现更优。
 
     该模型采用全自动合成数据流水线，支持可扩展的预训练、微调与强化学习。通过大规模持续预训练多样化智能体数据，提升推理能力并保持知识时效性。同时，模型引入端到端在线策略强化学习，采用定制化的分组相对策略优化（Group Relative Policy Optimization），结合token级梯度与负样本过滤机制，确保训练稳定性。模型支持ReAct用于核心能力验证，并提供基于IterResearch的“重型”模式，通过测试时扩展实现极致性能，适用于高级研究智能体、工具调用及高负载推理工作流。
-id: alibaba/tongyi-deepresearch-30b-a3b
+context_length: 131072
+max_output: 131072
+price_in: 9e-08
+price_out: 4e-07
+features:
+    - CapChat
+    - CapFunctionCall
+    - CapJsonMode
+    - ModalityTextIn
+    - ModalityTextOut

@@ -1,5 +1,21 @@
+id: openai/gpt-4-turbo-preview
+name: 'OpenAI: GPT-4 Turbo Preview'
+provider: OpenAI
+description: |-
+    The preview GPT-4 model with improved instruction following, JSON mode, reproducible outputs, parallel function calling, and more. Training data: up to Dec 2023.
+
+    **Note:** heavily rate limited by OpenAI while in preview.
 description_cn: |-
     预览版 GPT-4 模型，改进了指令遵循能力，支持 JSON 模式、可复现输出、并行函数调用等功能。训练数据截止于 2023 年 12 月。
 
     **注意**：预览期间受 OpenAI 严格速率限制。
-id: openai/gpt-4-turbo-preview
+context_length: 128000
+max_output: 4096
+price_in: 1e-05
+price_out: 3e-05
+features:
+    - CapChat
+    - CapFunctionCall
+    - CapJsonMode
+    - ModalityTextIn
+    - ModalityTextOut

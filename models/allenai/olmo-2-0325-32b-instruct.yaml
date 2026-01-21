@@ -1,2 +1,12 @@
-description_cn: OLMo-2 32B Instruct 是 OLMo-2 32B（2025年3月基础模型）的监督指令微调版本，在 GSM8K、MATH、IFEval 等复杂推理与指令遵循基准测试及通用 NLP 评估中表现卓越。该模型由 AI2 开发，属于一项开放、面向研究的计划，主要基于英文数据集训练，旨在推动开源语言模型的理解与发展。
 id: allenai/olmo-2-0325-32b-instruct
+name: 'AllenAI: Olmo 2 32B Instruct'
+provider: Allenai
+description: OLMo-2 32B Instruct is a supervised instruction-finetuned variant of the OLMo-2 32B March 2025 base model. It excels in complex reasoning and instruction-following tasks across diverse benchmarks such as GSM8K, MATH, IFEval, and general NLP evaluation. Developed by AI2, OLMo-2 32B is part of an open, research-oriented initiative, trained primarily on English-language datasets to advance the understanding and development of open-source language models.
+description_cn: OLMo-2 32B Instruct 是 OLMo-2 32B（2025年3月基础模型）的监督指令微调版本，在 GSM8K、MATH、IFEval 等复杂推理与指令遵循基准测试及通用 NLP 评估中表现卓越。该模型由 AI2 开发，属于一项开放、面向研究的计划，主要基于英文数据集训练，旨在推动开源语言模型的理解与发展。
+context_length: 128000
+price_in: 5e-08
+price_out: 2e-07
+features:
+    - CapChat
+    - ModalityTextIn
+    - ModalityTextOut

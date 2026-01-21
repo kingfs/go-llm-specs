@@ -1,5 +1,21 @@
+id: nousresearch/hermes-4-70b
+name: 'Nous: Hermes 4 70B'
+provider: Nous Research
+description: |-
+    Hermes 4 70B is a hybrid reasoning model from Nous Research, built on Meta-Llama-3.1-70B. It introduces the same hybrid mode as the larger 405B release, allowing the model to either respond directly or generate explicit <think>...</think> reasoning traces before answering. Users can control the reasoning behaviour with the `reasoning` `enabled` boolean. [Learn more in our docs](https://openrouter.ai/docs/use-cases/reasoning-tokens#enable-reasoning-with-default-config)
+
+    This 70B variant is trained with the expanded post-training corpus (~60B tokens) emphasizing verified reasoning data, leading to improvements in mathematics, coding, STEM, logic, and structured outputs while maintaining general assistant performance. It supports JSON mode, schema adherence, function calling, and tool use, and is designed for greater steerability with reduced refusal rates.
 description_cn: |-
     Hermes 4 70B 是 Nous Research 基于 Meta-Llama-3.1-70B 开发的混合推理模型，引入了与更大规模 405B 版本相同的混合模式，允许模型直接响应或在回答前生成显式的 <think>...</think> 推理轨迹。用户可通过 `reasoning` 的 `enabled` 布尔值控制推理行为。[详见文档](https://openrouter.ai/docs/use-cases/reasoning-tokens#enable-reasoning-with-default-config)
 
     该 70B 版本使用扩展后的后训练语料库（约 600 亿 tokens）进行训练，重点强化经验证的推理数据，从而在数学、编程、STEM、逻辑和结构化输出方面取得显著提升，同时保持通用助手性能。支持 JSON 模式、模式遵循、函数调用和工具使用，具备更强的可控性并降低拒答率。
-id: nousresearch/hermes-4-70b
+context_length: 131072
+max_output: 131072
+price_in: 1.1e-07
+price_out: 3.8e-07
+features:
+    - CapChat
+    - CapFunctionCall
+    - CapJsonMode
+    - ModalityTextIn
+    - ModalityTextOut

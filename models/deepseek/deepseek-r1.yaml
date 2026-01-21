@@ -1,7 +1,24 @@
+id: deepseek/deepseek-r1
+name: 'DeepSeek: R1'
+provider: DeepSeek
+description: |-
+    DeepSeek R1 is here: Performance on par with [OpenAI o1](/openai/o1), but open-sourced and with fully open reasoning tokens. It's 671B parameters in size, with 37B active in an inference pass.
+
+    Fully open-source model & [technical report](https://api-docs.deepseek.com/news/news250120).
+
+    MIT licensed: Distill & commercialize freely!
 description_cn: |-
     DeepSeek R1 现已发布：性能媲美 [OpenAI o1](/openai/o1)，但完全开源且推理 token 全部开放。模型总参数量达 6710 亿，单次推理激活 370 亿参数。
 
     完全开源模型及[技术报告](https://api-docs.deepseek.com/news/news250120)。
 
     采用 MIT 许可证：可自由蒸馏与商业化！
-id: deepseek/deepseek-r1
+context_length: 64000
+max_output: 16000
+price_in: 7e-07
+price_out: 2.5e-06
+features:
+    - CapChat
+    - CapFunctionCall
+    - ModalityTextIn
+    - ModalityTextOut

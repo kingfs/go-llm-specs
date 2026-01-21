@@ -1,5 +1,20 @@
+id: anthracite-org/magnum-v4-72b
+name: Magnum v4 72B
+provider: Anthracite-Org
+description: |-
+    This is a series of models designed to replicate the prose quality of the Claude 3 models, specifically Sonnet(https://openrouter.ai/anthropic/claude-3.5-sonnet) and Opus(https://openrouter.ai/anthropic/claude-3-opus).
+
+    The model is fine-tuned on top of [Qwen2.5 72B](https://openrouter.ai/qwen/qwen-2.5-72b-instruct).
 description_cn: |-
     该系列模型旨在复现 Claude 3 系列模型（特别是 Sonnet（https://openrouter.ai/anthropic/claude-3.5-sonnet）和 Opus（https://openrouter.ai/anthropic/claude-3-opus））的散文质量。
 
     本模型基于 [Qwen2.5 72B](https://openrouter.ai/qwen/qwen-2.5-72b-instruct) 进行微调。
-id: anthracite-org/magnum-v4-72b
+context_length: 16384
+max_output: 2048
+price_in: 3e-06
+price_out: 5e-06
+features:
+    - CapChat
+    - CapJsonMode
+    - ModalityTextIn
+    - ModalityTextOut

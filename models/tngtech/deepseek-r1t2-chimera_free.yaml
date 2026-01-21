@@ -1,2 +1,12 @@
-description_cn: DeepSeek-TNG-R1T2-Chimera 是 TNG Tech 推出的第二代 Chimera 模型，是一款 6710 亿参数的混合专家文本生成模型，由 DeepSeek-AI 的 R1-0528、R1 和 V3-0324 三个检查点通过专家集成（Assembly-of-Experts）融合而成。三亲本设计在 vLLM 下推理速度较原始 R1 提升约 20%，较 R1-0528 提升超 2 倍，在成本与智能之间取得良好平衡。该检查点标准使用支持最长 60k tokens 上下文（实测可达约 130k），并保持一致的 <think> token 行为，适用于长上下文分析、对话及其他开放式生成任务。
 id: tngtech/deepseek-r1t2-chimera:free
+name: 'TNG: DeepSeek R1T2 Chimera (free)'
+provider: Tngtech
+description: DeepSeek-TNG-R1T2-Chimera is the second-generation Chimera model from TNG Tech. It is a 671 B-parameter mixture-of-experts text-generation model assembled from DeepSeek-AI’s R1-0528, R1, and V3-0324 checkpoints with an Assembly-of-Experts merge. The tri-parent design yields strong reasoning performance while running roughly 20 % faster than the original R1 and more than 2× faster than R1-0528 under vLLM, giving a favorable cost-to-intelligence trade-off. The checkpoint supports contexts up to 60 k tokens in standard use (tested to ~130 k) and maintains consistent <think> token behaviour, making it suitable for long-context analysis, dialogue and other open-ended generation tasks.
+description_cn: DeepSeek-TNG-R1T2-Chimera 是 TNG Tech 推出的第二代 Chimera 模型，是一款 6710 亿参数的混合专家文本生成模型，由 DeepSeek-AI 的 R1-0528、R1 和 V3-0324 三个检查点通过专家集成（Assembly-of-Experts）融合而成。三亲本设计在 vLLM 下推理速度较原始 R1 提升约 20%，较 R1-0528 提升超 2 倍，在成本与智能之间取得良好平衡。该检查点标准使用支持最长 60k tokens 上下文（实测可达约 130k），并保持一致的 <think> token 行为，适用于长上下文分析、对话及其他开放式生成任务。
+context_length: 163840
+price_in: 0
+price_out: 0
+features:
+    - CapChat
+    - ModalityTextIn
+    - ModalityTextOut

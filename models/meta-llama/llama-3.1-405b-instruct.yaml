@@ -1,3 +1,14 @@
+id: meta-llama/llama-3.1-405b-instruct
+name: 'Meta: Llama 3.1 405B Instruct'
+provider: Meta
+description: |-
+    The highly anticipated 400B class of Llama3 is here! Clocking in at 128k context with impressive eval scores, the Meta AI team continues to push the frontier of open-source LLMs.
+
+    Meta's latest class of model (Llama 3.1) launched with a variety of sizes & flavors. This 405B instruct-tuned version is optimized for high quality dialogue usecases.
+
+    It has demonstrated strong performance compared to leading closed-source models including GPT-4o and Claude 3.5 Sonnet in evaluations.
+
+    To read more about the model release, [click here](https://ai.meta.com/blog/meta-llama-3-1/). Usage of this model is subject to [Meta's Acceptable Use Policy](https://llama.meta.com/llama3/use-policy/).
 description_cn: |-
     万众期待的 Llama 3 百亿级（400B）模型现已发布！支持 128k 上下文长度，并在多项评测中表现卓越，Meta AI 团队持续推动开源大语言模型的前沿边界。
 
@@ -6,4 +17,12 @@ description_cn: |-
     在评测中，其性能显著优于包括 GPT-4o 和 Claude 3.5 Sonnet 在内的主流闭源模型。
 
     欲了解模型发布的更多信息，请[点击此处](https://ai.meta.com/blog/meta-llama-3-1/)。使用本模型需遵守 [Meta 可接受使用政策](https://llama.meta.com/llama3/use-policy/)。
-id: meta-llama/llama-3.1-405b-instruct
+context_length: 10000
+price_in: 3.5e-06
+price_out: 3.5e-06
+features:
+    - CapChat
+    - CapFunctionCall
+    - CapJsonMode
+    - ModalityTextIn
+    - ModalityTextOut

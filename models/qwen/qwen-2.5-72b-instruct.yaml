@@ -1,6 +1,29 @@
+id: qwen/qwen-2.5-72b-instruct
+name: Qwen2.5 72B Instruct
+provider: Qwen
+description: |-
+    Qwen2.5 72B is the latest series of Qwen large language models. Qwen2.5 brings the following improvements upon Qwen2:
+
+    - Significantly more knowledge and has greatly improved capabilities in coding and mathematics, thanks to our specialized expert models in these domains.
+
+    - Significant improvements in instruction following, generating long texts (over 8K tokens), understanding structured data (e.g, tables), and generating structured outputs especially JSON. More resilient to the diversity of system prompts, enhancing role-play implementation and condition-setting for chatbots.
+
+    - Long-context Support up to 128K tokens and can generate up to 8K tokens.
+
+    - Multilingual support for over 29 languages, including Chinese, English, French, Spanish, Portuguese, German, Italian, Russian, Japanese, Korean, Vietnamese, Thai, Arabic, and more.
+
+    Usage of this model is subject to [Tongyi Qianwen LICENSE AGREEMENT](https://huggingface.co/Qwen/Qwen1.5-110B-Chat/blob/main/LICENSE).
+description_cn: 通义千问 2.5 72B 指令微调版。
+context_length: 32768
+max_output: 16384
+price_in: 1.2e-07
+price_out: 3.9e-07
+features:
+    - CapChat
+    - CapFunctionCall
+    - CapJsonMode
+    - ModalityTextIn
+    - ModalityTextOut
 aliases:
     - qwen-2.5-72b
     - qwen2.5
-description_cn: 通义千问 2.5 72B 指令微调版。
-id: qwen/qwen-2.5-72b-instruct
-provider: Qwen

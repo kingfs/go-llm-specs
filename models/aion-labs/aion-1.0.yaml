@@ -1,2 +1,13 @@
-description_cn: Aion-1.0 是一个多模型系统，旨在在推理、编码等多种任务上实现高性能。该系统基于 DeepSeek-R1 构建，并融合了思维树（Tree of Thoughts, ToT）和混合专家（Mixture of Experts, MoE）等额外模型与技术，是 Aion Lab 最强大的推理模型。
 id: aion-labs/aion-1.0
+name: 'AionLabs: Aion-1.0'
+provider: Aion-Labs
+description: Aion-1.0 is a multi-model system designed for high performance across various tasks, including reasoning and coding. It is built on DeepSeek-R1, augmented with additional models and techniques such as Tree of Thoughts (ToT) and Mixture of Experts (MoE). It is Aion Lab's most powerful reasoning model.
+description_cn: Aion-1.0 是一个多模型系统，旨在在推理、编码等多种任务上实现高性能。该系统基于 DeepSeek-R1 构建，并融合了思维树（Tree of Thoughts, ToT）和混合专家（Mixture of Experts, MoE）等额外模型与技术，是 Aion Lab 最强大的推理模型。
+context_length: 131072
+max_output: 32768
+price_in: 4e-06
+price_out: 8e-06
+features:
+    - CapChat
+    - ModalityTextIn
+    - ModalityTextOut

@@ -1,7 +1,23 @@
+id: meta-llama/llama-3.1-405b
+name: 'Meta: Llama 3.1 405B (base)'
+provider: Meta
+description: |-
+    Meta's latest class of model (Llama 3.1) launched with a variety of sizes & flavors. This is the base 405B pre-trained version.
+
+    It has demonstrated strong performance compared to leading closed-source models in human evaluations.
+
+    To read more about the model release, [click here](https://ai.meta.com/blog/meta-llama-3/). Usage of this model is subject to [Meta's Acceptable Use Policy](https://llama.meta.com/llama3/use-policy/).
 description_cn: |-
     Meta 最新推出的 Llama 3.1 系列模型包含多种规模与版本，此为 405B 参数的基础预训练版本。
 
     在人工评估中，该模型展现出优于主流闭源模型的强劲性能。
 
     欲了解模型发布的更多信息，请[点击此处](https://ai.meta.com/blog/meta-llama-3/)。使用本模型需遵守 [Meta 可接受使用政策](https://llama.meta.com/llama3/use-policy/)。
-id: meta-llama/llama-3.1-405b
+context_length: 32768
+max_output: 32768
+price_in: 4e-06
+price_out: 4e-06
+features:
+    - CapChat
+    - ModalityTextIn
+    - ModalityTextOut

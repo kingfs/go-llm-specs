@@ -1,5 +1,21 @@
+id: mistralai/devstral-2512
+name: 'Mistral: Devstral 2 2512'
+provider: Mistral
+description: |-
+    Devstral 2 is a state-of-the-art open-source model by Mistral AI specializing in agentic coding. It is a 123B-parameter dense transformer model supporting a 256K context window.
+
+    Devstral 2 supports exploring codebases and orchestrating changes across multiple files while maintaining architecture-level context. It tracks framework dependencies, detects failures, and retries with corrections—solving challenges like bug fixing and modernizing legacy systems. The model can be fine-tuned to prioritize specific languages or optimize for large enterprise codebases. It is available under a modified MIT license.
 description_cn: |-
     Devstral 2 是 Mistral AI 推出的前沿开源模型，专精于智能体编程。该模型为 1230 亿参数的稠密 Transformer 架构，支持 256K 上下文窗口。
 
     Devstral 2 能够在保持架构级上下文的前提下探索代码库并协调多文件变更。它可追踪框架依赖关系、检测失败并自动重试修正，有效应对缺陷修复和遗留系统现代化等挑战。该模型支持微调以优先处理特定语言或针对大型企业代码库进行优化，并采用修改版 MIT 许可证发布。
-id: mistralai/devstral-2512
+context_length: 262144
+max_output: 65536
+price_in: 5e-08
+price_out: 2.2e-07
+features:
+    - CapChat
+    - CapFunctionCall
+    - CapJsonMode
+    - ModalityTextIn
+    - ModalityTextOut

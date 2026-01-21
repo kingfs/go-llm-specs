@@ -1,7 +1,20 @@
+id: nousresearch/deephermes-3-mistral-24b-preview
+name: 'Nous: DeepHermes 3 Mistral 24B Preview'
+provider: Nous Research
+description: "DeepHermes 3 (Mistral 24B Preview) is an instruction-tuned language model by Nous Research based on Mistral-Small-24B, designed for chat, function calling, and advanced multi-turn reasoning. It introduces a dual-mode system that toggles between intuitive chat responses and structured “deep reasoning” mode using special system prompts. Fine-tuned via distillation from R1, it supports structured output (JSON mode) and function call syntax for agent-based applications.\n\nDeepHermes 3 supports a **reasoning toggle via system prompt**, allowing users to switch between fast, intuitive responses and deliberate, multi-step reasoning. When activated with the following specific system instruction, the model enters a *\"deep thinking\"* mode—generating extended chains of thought wrapped in `<think></think>` tags before delivering a final answer. \n\nSystem Prompt: You are a deep thinking AI, you may use extremely long chains of thought to deeply consider the problem and deliberate with yourself via systematic reasoning processes to help come to a correct solution prior to answering. You should enclose your thoughts and internal monologue inside <think> </think> tags, and then provide your solution or response to the problem.\n"
 description_cn: |-
     DeepHermes 3（Mistral 24B 预览版）是由 Nous Research 基于 Mistral-Small-24B 开发的指令微调语言模型，专为聊天、函数调用及高级多轮推理设计。该模型引入双模式系统，可通过特殊系统提示在直观聊天响应与结构化“深度推理”模式间切换。经 R1 蒸馏微调，支持结构化输出（JSON 模式）及面向智能体应用的函数调用语法。
 
     DeepHermes 3 支持**通过系统提示启用推理切换**，允许用户在快速直观响应与深思熟虑的多步推理之间自由转换。当使用以下特定系统指令激活时，模型将进入*“深度思考”*模式——在给出最终答案前，生成包含在 `<think></think>` 标签内的长链思维过程。
 
     系统提示：你是一个深度思考型 AI，可使用极长的思维链深入分析问题，并通过系统化推理过程与自身反复推演，以得出正确解答。请将你的思考与内心独白置于 <think> </think> 标签内，随后提供问题的解决方案或回答。
-id: nousresearch/deephermes-3-mistral-24b-preview
+context_length: 32768
+max_output: 32768
+price_in: 2e-08
+price_out: 1e-07
+features:
+    - CapChat
+    - CapFunctionCall
+    - CapJsonMode
+    - ModalityTextIn
+    - ModalityTextOut

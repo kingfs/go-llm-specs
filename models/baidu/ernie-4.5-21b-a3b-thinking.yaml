@@ -1,2 +1,13 @@
-description_cn: ERNIE-4.5-21B-A3B-Thinking 是百度推出的升级版轻量级 MoE 模型，经过优化以提升推理深度与质量，在逻辑谜题、数学、科学、编程、文本生成及专家级学术基准测试中表现卓越。
 id: baidu/ernie-4.5-21b-a3b-thinking
+name: 'Baidu: ERNIE 4.5 21B A3B Thinking'
+provider: Baidu
+description: ERNIE-4.5-21B-A3B-Thinking is Baidu's upgraded lightweight MoE model, refined to boost reasoning depth and quality for top-tier performance in logical puzzles, math, science, coding, text generation, and expert-level academic benchmarks.
+description_cn: ERNIE-4.5-21B-A3B-Thinking 是百度推出的升级版轻量级 MoE 模型，经过优化以提升推理深度与质量，在逻辑谜题、数学、科学、编程、文本生成及专家级学术基准测试中表现卓越。
+context_length: 131072
+max_output: 65536
+price_in: 7e-08
+price_out: 2.8e-07
+features:
+    - CapChat
+    - ModalityTextIn
+    - ModalityTextOut

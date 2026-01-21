@@ -1,2 +1,15 @@
-description_cn: Qwen3-32B 是 Qwen3 系列中的稠密因果语言模型，参数量达 328 亿，专为复杂推理与高效对话双重目标优化。该模型支持在“思考”模式（用于数学、编程和逻辑推理等任务）与“非思考”模式（用于更快速的通用对话）之间无缝切换。模型在指令遵循、智能体工具调用、创意写作及 100 多种语言和方言的多语言任务中均表现出色，原生支持 32K token 上下文，并可通过基于 YaRN 的扩展技术将上下文长度提升至 131K tokens。
 id: qwen/qwen3-32b
+name: 'Qwen: Qwen3 32B'
+provider: Qwen
+description: 'Qwen3-32B is a dense 32.8B parameter causal language model from the Qwen3 series, optimized for both complex reasoning and efficient dialogue. It supports seamless switching between a "thinking" mode for tasks like math, coding, and logical inference, and a "non-thinking" mode for faster, general-purpose conversation. The model demonstrates strong performance in instruction-following, agent tool use, creative writing, and multilingual tasks across 100+ languages and dialects. It natively handles 32K token contexts and can extend to 131K tokens using YaRN-based scaling. '
+description_cn: Qwen3-32B 是 Qwen3 系列中的稠密因果语言模型，参数量达 328 亿，专为复杂推理与高效对话双重目标优化。该模型支持在“思考”模式（用于数学、编程和逻辑推理等任务）与“非思考”模式（用于更快速的通用对话）之间无缝切换。模型在指令遵循、智能体工具调用、创意写作及 100 多种语言和方言的多语言任务中均表现出色，原生支持 32K token 上下文，并可通过基于 YaRN 的扩展技术将上下文长度提升至 131K tokens。
+context_length: 40960
+max_output: 40960
+price_in: 8e-08
+price_out: 2.4e-07
+features:
+    - CapChat
+    - CapFunctionCall
+    - CapJsonMode
+    - ModalityTextIn
+    - ModalityTextOut

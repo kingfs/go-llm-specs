@@ -1,2 +1,15 @@
-description_cn: INTELLECT-3 是一款1060亿参数的混合专家（MoE）模型（激活参数约120亿），基于 GLM-4.5-Air-Base 经过监督微调（SFT）及大规模强化学习（RL）后训练而成。在数学、代码、科学及通用推理等任务上，其单位参数性能达到业界领先水平，持续超越众多更大规模的前沿模型。该模型专为强大多步问题求解设计，在结构化任务中保持高准确性，同时凭借 MoE 架构实现高效的推理性能。
 id: prime-intellect/intellect-3
+name: 'Prime Intellect: INTELLECT-3'
+provider: Prime-Intellect
+description: INTELLECT-3 is a 106B-parameter Mixture-of-Experts model (12B active) post-trained from GLM-4.5-Air-Base using supervised fine-tuning (SFT) followed by large-scale reinforcement learning (RL). It offers state-of-the-art performance for its size across math, code, science, and general reasoning, consistently outperforming many larger frontier models. Designed for strong multi-step problem solving, it maintains high accuracy on structured tasks while remaining efficient at inference thanks to its MoE architecture.
+description_cn: INTELLECT-3 是一款1060亿参数的混合专家（MoE）模型（激活参数约120亿），基于 GLM-4.5-Air-Base 经过监督微调（SFT）及大规模强化学习（RL）后训练而成。在数学、代码、科学及通用推理等任务上，其单位参数性能达到业界领先水平，持续超越众多更大规模的前沿模型。该模型专为强大多步问题求解设计，在结构化任务中保持高准确性，同时凭借 MoE 架构实现高效的推理性能。
+context_length: 131072
+max_output: 131072
+price_in: 2e-07
+price_out: 1.1e-06
+features:
+    - CapChat
+    - CapFunctionCall
+    - CapJsonMode
+    - ModalityTextIn
+    - ModalityTextOut

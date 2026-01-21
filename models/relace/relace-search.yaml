@@ -1,7 +1,19 @@
+id: relace/relace-search
+name: 'Relace: Relace Search'
+provider: Relace
+description: "The relace-search model uses 4-12 `view_file` and `grep` tools in parallel to explore a codebase and return relevant files to the user request. \n\nIn contrast to RAG, relace-search performs agentic multi-step reasoning to produce highly precise results 4x faster than any frontier model. It's designed to serve as a subagent that passes its findings to an \"oracle\" coding agent, who orchestrates/performs the rest of the coding task.\n\nTo use relace-search you need to build an appropriate agent harness, and parse the response for relevant information to hand off to the oracle. Read more about it in the [Relace documentation](https://docs.relace.ai/docs/fast-agentic-search/agent)."
 description_cn: |-
     relace-search 模型通过并行调用 4–12 个 `view_file` 和 `grep` 工具来探索代码库，并返回与用户请求相关的文件。
 
     与 RAG 不同，relace-search 采用智能体多步推理机制，生成高度精准的结果，速度比任何前沿模型快 4 倍。该模型设计为子智能体，将其发现传递给“预言机”编程智能体，由后者协调并执行后续编码任务。
 
     使用 relace-search 需构建合适的智能体框架，并解析其响应以提取相关信息交予预言机。更多详情请参阅 [Relace 文档](https://docs.relace.ai/docs/fast-agentic-search/agent)。
-id: relace/relace-search
+context_length: 256000
+max_output: 128000
+price_in: 1e-06
+price_out: 3e-06
+features:
+    - CapChat
+    - CapFunctionCall
+    - ModalityTextIn
+    - ModalityTextOut

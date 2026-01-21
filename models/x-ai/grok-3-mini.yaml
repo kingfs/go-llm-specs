@@ -1,2 +1,14 @@
-description_cn: 一款轻量级模型，在响应前会进行思考。速度快、智能高效，适用于无需深厚领域知识的逻辑类任务。原始思考轨迹可供访问。
 id: x-ai/grok-3-mini
+name: 'xAI: Grok 3 Mini'
+provider: X-Ai
+description: A lightweight model that thinks before responding. Fast, smart, and great for logic-based tasks that do not require deep domain knowledge. The raw thinking traces are accessible.
+description_cn: 一款轻量级模型，在响应前会进行思考。速度快、智能高效，适用于无需深厚领域知识的逻辑类任务。原始思考轨迹可供访问。
+context_length: 131072
+price_in: 3e-07
+price_out: 5e-07
+features:
+    - CapChat
+    - CapFunctionCall
+    - CapJsonMode
+    - ModalityTextIn
+    - ModalityTextOut

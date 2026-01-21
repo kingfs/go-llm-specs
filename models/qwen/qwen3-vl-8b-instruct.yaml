@@ -1,5 +1,22 @@
+id: qwen/qwen3-vl-8b-instruct
+name: 'Qwen: Qwen3 VL 8B Instruct'
+provider: Qwen
+description: |-
+    Qwen3-VL-8B-Instruct is a multimodal vision-language model from the Qwen3-VL series, built for high-fidelity understanding and reasoning across text, images, and video. It features improved multimodal fusion with Interleaved-MRoPE for long-horizon temporal reasoning, DeepStack for fine-grained visual-text alignment, and text-timestamp alignment for precise event localization.
+
+    The model supports a native 256K-token context window, extensible to 1M tokens, and handles both static and dynamic media inputs for tasks like document parsing, visual question answering, spatial reasoning, and GUI control. It achieves text understanding comparable to leading LLMs while expanding OCR coverage to 32 languages and enhancing robustness under varied visual conditions.
 description_cn: |-
     Qwen3-VL-8B-Instruct 是 Qwen3-VL 系列中的多模态视觉语言模型，专为跨文本、图像和视频的高保真理解与推理而构建。该模型采用改进的多模态融合技术，包括用于长时序推理的 Interleaved-MRoPE、用于细粒度视觉-文本对齐的 DeepStack，以及用于精确事件定位的文本-时间戳对齐机制。
 
     该模型原生支持 256K token 上下文窗口，可扩展至 1M tokens，能够处理静态与动态媒体输入，适用于文档解析、视觉问答、空间推理和 GUI 控制等任务。其文本理解能力媲美主流大语言模型，OCR 支持语言扩展至 32 种，并在多样化视觉条件下展现出更强鲁棒性。
-id: qwen/qwen3-vl-8b-instruct
+context_length: 131072
+max_output: 32768
+price_in: 8e-08
+price_out: 5e-07
+features:
+    - CapChat
+    - CapFunctionCall
+    - CapJsonMode
+    - ModalityImageIn
+    - ModalityTextIn
+    - ModalityTextOut

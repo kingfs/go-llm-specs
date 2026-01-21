@@ -1,2 +1,14 @@
-description_cn: gpt-oss-120b 是 OpenAI 发布的开源权重、1170 亿参数的混合专家（MoE）语言模型，面向高阶推理、智能体及通用生产场景。每次前向传递激活 51 亿参数，并针对单张 H100 GPU 与原生 MXFP4 量化进行优化。模型支持可配置的推理深度、完整的思维链访问以及原生工具调用能力，包括函数调用、网页浏览和结构化输出生成。
 id: openai/gpt-oss-120b:exacto
+name: 'OpenAI: gpt-oss-120b (exacto)'
+provider: OpenAI
+description: gpt-oss-120b is an open-weight, 117B-parameter Mixture-of-Experts (MoE) language model from OpenAI designed for high-reasoning, agentic, and general-purpose production use cases. It activates 5.1B parameters per forward pass and is optimized to run on a single H100 GPU with native MXFP4 quantization. The model supports configurable reasoning depth, full chain-of-thought access, and native tool use, including function calling, browsing, and structured output generation.
+description_cn: gpt-oss-120b 是 OpenAI 发布的开源权重、1170 亿参数的混合专家（MoE）语言模型，面向高阶推理、智能体及通用生产场景。每次前向传递激活 51 亿参数，并针对单张 H100 GPU 与原生 MXFP4 量化进行优化。模型支持可配置的推理深度、完整的思维链访问以及原生工具调用能力，包括函数调用、网页浏览和结构化输出生成。
+context_length: 131072
+price_in: 3.9e-08
+price_out: 1.9e-07
+features:
+    - CapChat
+    - CapFunctionCall
+    - CapJsonMode
+    - ModalityTextIn
+    - ModalityTextOut

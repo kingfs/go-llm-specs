@@ -1,2 +1,15 @@
-description_cn: Amazon Nova Premier 是亚马逊多模态模型中能力最强的版本，专为复杂推理任务设计，同时也是蒸馏定制模型的最佳教师模型。
 id: amazon/nova-premier-v1
+name: 'Amazon: Nova Premier 1.0'
+provider: Amazon
+description: Amazon Nova Premier is the most capable of Amazon’s multimodal models for complex reasoning tasks and for use as the best teacher for distilling custom models.
+description_cn: Amazon Nova Premier 是亚马逊多模态模型中能力最强的版本，专为复杂推理任务设计，同时也是蒸馏定制模型的最佳教师模型。
+context_length: 1000000
+max_output: 32000
+price_in: 2.5e-06
+price_out: 1.25e-05
+features:
+    - CapChat
+    - CapFunctionCall
+    - ModalityImageIn
+    - ModalityTextIn
+    - ModalityTextOut

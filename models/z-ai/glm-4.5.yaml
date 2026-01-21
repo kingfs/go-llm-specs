@@ -1,2 +1,15 @@
-description_cn: GLM-4.5 是我们最新推出的旗舰基础模型，专为智能体应用打造。采用混合专家（MoE）架构，支持最高 128k token 的上下文长度。GLM-4.5 在推理、代码生成和智能体对齐方面能力显著提升。支持混合推理模式：一种为复杂推理和工具调用设计的“推理模式”，另一种为即时响应优化的“非推理模式”。用户可通过 `reasoning` `enabled` 布尔值控制推理行为。[了解更多请参阅文档](https://openrouter.ai/docs/use-cases/reasoning-tokens#enable-reasoning-with-default-config)
 id: z-ai/glm-4.5
+name: 'Z.AI: GLM 4.5'
+provider: Z-Ai
+description: GLM-4.5 is our latest flagship foundation model, purpose-built for agent-based applications. It leverages a Mixture-of-Experts (MoE) architecture and supports a context length of up to 128k tokens. GLM-4.5 delivers significantly enhanced capabilities in reasoning, code generation, and agent alignment. It supports a hybrid inference mode with two options, a "thinking mode" designed for complex reasoning and tool use, and a "non-thinking mode" optimized for instant responses. Users can control the reasoning behaviour with the `reasoning` `enabled` boolean. [Learn more in our docs](https://openrouter.ai/docs/use-cases/reasoning-tokens#enable-reasoning-with-default-config)
+description_cn: GLM-4.5 是我们最新推出的旗舰基础模型，专为智能体应用打造。采用混合专家（MoE）架构，支持最高 128k token 的上下文长度。GLM-4.5 在推理、代码生成和智能体对齐方面能力显著提升。支持混合推理模式：一种为复杂推理和工具调用设计的“推理模式”，另一种为即时响应优化的“非推理模式”。用户可通过 `reasoning` `enabled` 布尔值控制推理行为。[了解更多请参阅文档](https://openrouter.ai/docs/use-cases/reasoning-tokens#enable-reasoning-with-default-config)
+context_length: 131072
+max_output: 65536
+price_in: 3.5e-07
+price_out: 1.55e-06
+features:
+    - CapChat
+    - CapFunctionCall
+    - CapJsonMode
+    - ModalityTextIn
+    - ModalityTextOut

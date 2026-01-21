@@ -1,2 +1,15 @@
-description_cn: Qwen3-Max 是 Qwen3 系列的最新版本，相较 2025 年 1 月版，在推理能力、指令遵循、多语言支持及长尾知识覆盖方面均有显著提升。它在数学、编程、逻辑和科学任务中精度更高，能更可靠地理解中英文复杂指令，减少幻觉现象，并在开放式问答、写作和对话中生成更高质量的回答。该模型支持 100 多种语言，具备更强的翻译能力和常识推理能力，并针对检索增强生成（RAG）和工具调用进行了优化，但未包含专用的“思考”模式。
 id: qwen/qwen3-max
+name: 'Qwen: Qwen3 Max'
+provider: Qwen
+description: Qwen3-Max is an updated release built on the Qwen3 series, offering major improvements in reasoning, instruction following, multilingual support, and long-tail knowledge coverage compared to the January 2025 version. It delivers higher accuracy in math, coding, logic, and science tasks, follows complex instructions in Chinese and English more reliably, reduces hallucinations, and produces higher-quality responses for open-ended Q&A, writing, and conversation. The model supports over 100 languages with stronger translation and commonsense reasoning, and is optimized for retrieval-augmented generation (RAG) and tool calling, though it does not include a dedicated “thinking” mode.
+description_cn: Qwen3-Max 是 Qwen3 系列的最新版本，相较 2025 年 1 月版，在推理能力、指令遵循、多语言支持及长尾知识覆盖方面均有显著提升。它在数学、编程、逻辑和科学任务中精度更高，能更可靠地理解中英文复杂指令，减少幻觉现象，并在开放式问答、写作和对话中生成更高质量的回答。该模型支持 100 多种语言，具备更强的翻译能力和常识推理能力，并针对检索增强生成（RAG）和工具调用进行了优化，但未包含专用的“思考”模式。
+context_length: 256000
+max_output: 32768
+price_in: 1.2e-06
+price_out: 6e-06
+features:
+    - CapChat
+    - CapFunctionCall
+    - CapJsonMode
+    - ModalityTextIn
+    - ModalityTextOut

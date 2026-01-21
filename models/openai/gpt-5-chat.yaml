@@ -1,2 +1,16 @@
-description_cn: GPT-5 Chat 专为企业级应用设计，支持高级、自然、多模态且具备上下文感知能力的对话。
 id: openai/gpt-5-chat
+name: 'OpenAI: GPT-5 Chat'
+provider: OpenAI
+description: GPT-5 Chat is designed for advanced, natural, multimodal, and context-aware conversations for enterprise applications.
+description_cn: GPT-5 Chat 专为企业级应用设计，支持高级、自然、多模态且具备上下文感知能力的对话。
+context_length: 128000
+max_output: 16384
+price_in: 1.25e-06
+price_out: 1e-05
+features:
+    - CapChat
+    - CapJsonMode
+    - ModalityFileIn
+    - ModalityImageIn
+    - ModalityTextIn
+    - ModalityTextOut

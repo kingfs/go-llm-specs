@@ -1,2 +1,14 @@
-description_cn: Olmo 3.1 32B Instruct 是一款大规模、320亿参数的指令微调语言模型，专为高性能对话式 AI、多轮对话及实用指令遵循而设计。作为 Olmo 3.1 系列的成员，该变体强调对复杂用户指令的响应能力与稳健的聊天交互，同时在推理和编程基准测试中保持强大性能。该模型由 AI2 在 Apache 2.0 许可下开发，体现了 Olmo 计划对开放性与透明度的承诺。
 id: allenai/olmo-3.1-32b-instruct
+name: 'AllenAI: Olmo 3.1 32B Instruct'
+provider: Allenai
+description: Olmo 3.1 32B Instruct is a large-scale, 32-billion-parameter instruction-tuned language model engineered for high-performance conversational AI, multi-turn dialogue, and practical instruction following. As part of the Olmo 3.1 family, this variant emphasizes responsiveness to complex user directions and robust chat interactions while retaining strong capabilities on reasoning and coding benchmarks. Developed by Ai2 under the Apache 2.0 license, Olmo 3.1 32B Instruct reflects the Olmo initiative’s commitment to openness and transparency.
+description_cn: Olmo 3.1 32B Instruct 是一款大规模、320亿参数的指令微调语言模型，专为高性能对话式 AI、多轮对话及实用指令遵循而设计。作为 Olmo 3.1 系列的成员，该变体强调对复杂用户指令的响应能力与稳健的聊天交互，同时在推理和编程基准测试中保持强大性能。该模型由 AI2 在 Apache 2.0 许可下开发，体现了 Olmo 计划对开放性与透明度的承诺。
+context_length: 65536
+price_in: 2e-07
+price_out: 6e-07
+features:
+    - CapChat
+    - CapFunctionCall
+    - CapJsonMode
+    - ModalityTextIn
+    - ModalityTextOut

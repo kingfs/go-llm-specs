@@ -1,5 +1,20 @@
+id: mistralai/mistral-tiny
+name: Mistral Tiny
+provider: Mistral
+description: |-
+    Note: This model is being deprecated. Recommended replacement is the newer [Ministral 8B](/mistral/ministral-8b)
+
+    This model is currently powered by Mistral-7B-v0.2, and incorporates a "better" fine-tuning than [Mistral 7B](/models/mistralai/mistral-7b-instruct-v0.1), inspired by community work. It's best used for large batch processing tasks where cost is a significant factor but reasoning capabilities are not crucial.
 description_cn: |-
     注意：此模型即将弃用。推荐使用更新的 [Ministral 8B](/mistral/ministral-8b)。
 
     当前该模型基于 Mistral-7B-v0.2 构建，并采用了受社区工作启发的“更优”微调策略，相较于 [Mistral 7B](/models/mistralai/mistral-7b-instruct-v0.1) 有所提升。适用于对成本敏感但对推理能力要求不高的大批量处理任务。
-id: mistralai/mistral-tiny
+context_length: 32768
+price_in: 2.5e-07
+price_out: 2.5e-07
+features:
+    - CapChat
+    - CapFunctionCall
+    - CapJsonMode
+    - ModalityTextIn
+    - ModalityTextOut

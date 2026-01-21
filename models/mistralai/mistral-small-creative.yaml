@@ -1,2 +1,13 @@
-description_cn: Mistral Small Creative 是一款实验性小型模型，专为创意写作、叙事生成、角色扮演与人物驱动对话、通用指令遵循及对话代理而设计。
 id: mistralai/mistral-small-creative
+name: 'Mistral: Mistral Small Creative'
+provider: Mistral
+description: Mistral Small Creative is an experimental small model designed for creative writing, narrative generation, roleplay and character-driven dialogue, general-purpose instruction following, and conversational agents.
+description_cn: Mistral Small Creative 是一款实验性小型模型，专为创意写作、叙事生成、角色扮演与人物驱动对话、通用指令遵循及对话代理而设计。
+context_length: 32768
+price_in: 1e-07
+price_out: 3e-07
+features:
+    - CapChat
+    - CapFunctionCall
+    - ModalityTextIn
+    - ModalityTextOut

@@ -1,2 +1,19 @@
-description_cn: Gemini 2.5 Pro 是 Google 最先进的 AI 模型，专为高级推理、编程、数学和科学任务设计。该模型具备“思考”能力，能以更高的准确性和更精细的上下文理解生成响应。Gemini 2.5 Pro 在多项基准测试中表现卓越，包括在 LMArena 排行榜上位列第一，体现出优异的人类偏好对齐能力和复杂问题解决能力。
 id: google/gemini-2.5-pro-preview
+name: 'Google: Gemini 2.5 Pro Preview 06-05'
+provider: Google
+description: |
+    Gemini 2.5 Pro is Google’s state-of-the-art AI model designed for advanced reasoning, coding, mathematics, and scientific tasks. It employs “thinking” capabilities, enabling it to reason through responses with enhanced accuracy and nuanced context handling. Gemini 2.5 Pro achieves top-tier performance on multiple benchmarks, including first-place positioning on the LMArena leaderboard, reflecting superior human-preference alignment and complex problem-solving abilities.
+description_cn: Gemini 2.5 Pro 是 Google 最先进的 AI 模型，专为高级推理、编程、数学和科学任务设计。该模型具备“思考”能力，能以更高的准确性和更精细的上下文理解生成响应。Gemini 2.5 Pro 在多项基准测试中表现卓越，包括在 LMArena 排行榜上位列第一，体现出优异的人类偏好对齐能力和复杂问题解决能力。
+context_length: 1048576
+max_output: 65536
+price_in: 1.25e-06
+price_out: 1e-05
+features:
+    - CapChat
+    - CapFunctionCall
+    - CapJsonMode
+    - ModalityAudioIn
+    - ModalityFileIn
+    - ModalityImageIn
+    - ModalityTextIn
+    - ModalityTextOut

@@ -1,5 +1,20 @@
+id: qwen/qwen3-30b-a3b-thinking-2507
+name: 'Qwen: Qwen3 30B A3B Thinking 2507'
+provider: Qwen
+description: |-
+    Qwen3-30B-A3B-Thinking-2507 is a 30B parameter Mixture-of-Experts reasoning model optimized for complex tasks requiring extended multi-step thinking. The model is designed specifically for “thinking mode,” where internal reasoning traces are separated from final answers.
+
+    Compared to earlier Qwen3-30B releases, this version improves performance across logical reasoning, mathematics, science, coding, and multilingual benchmarks. It also demonstrates stronger instruction following, tool use, and alignment with human preferences. With higher reasoning efficiency and extended output budgets, it is best suited for advanced research, competitive problem solving, and agentic applications requiring structured long-context reasoning.
 description_cn: |-
     Qwen3-30B-A3B-Thinking-2507 是一款 300 亿参数的专家混合（MoE）推理模型，专为需要扩展多步思考的复杂任务而优化。该模型专为“思考模式”设计，将内部推理轨迹与最终答案分离。
 
     相较于早期 Qwen3-30B 版本，此版本在逻辑推理、数学、科学、编程及多语言基准测试中均有性能提升，同时展现出更强的指令遵循能力、工具使用能力以及与人类偏好的对齐度。凭借更高的推理效率和更长的输出预算，该模型特别适用于高级研究、竞赛级问题求解以及需要结构化长上下文推理的智能体应用。
-id: qwen/qwen3-30b-a3b-thinking-2507
+context_length: 32768
+price_in: 5.1e-08
+price_out: 3.4e-07
+features:
+    - CapChat
+    - CapFunctionCall
+    - CapJsonMode
+    - ModalityTextIn
+    - ModalityTextOut

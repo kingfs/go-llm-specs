@@ -1,5 +1,22 @@
+id: anthropic/claude-sonnet-4
+name: 'Anthropic: Claude Sonnet 4'
+provider: Anthropic
+description: |-
+    Claude Sonnet 4 significantly enhances the capabilities of its predecessor, Sonnet 3.7, excelling in both coding and reasoning tasks with improved precision and controllability. Achieving state-of-the-art performance on SWE-bench (72.7%), Sonnet 4 balances capability and computational efficiency, making it suitable for a broad range of applications from routine coding tasks to complex software development projects. Key enhancements include improved autonomous codebase navigation, reduced error rates in agent-driven workflows, and increased reliability in following intricate instructions. Sonnet 4 is optimized for practical everyday use, providing advanced reasoning capabilities while maintaining efficiency and responsiveness in diverse internal and external scenarios.
+
+    Read more at the [blog post here](https://www.anthropic.com/news/claude-4)
 description_cn: |-
     Claude Sonnet 4 相较前代 Sonnet 3.7 显著提升，在编程与推理任务中展现出更高的精度与可控性。该模型在 SWE-bench（72.7%）上达到业界领先水平，兼顾强大能力与计算效率，适用于从日常编码到复杂软件开发的广泛场景。关键改进包括更优的自主代码库导航能力、更低的智能体工作流错误率，以及对复杂指令更强的遵循可靠性。Sonnet 4 针对日常实用场景优化，在各类内外部应用中提供先进推理能力的同时，保持高效响应。
 
     [在此处阅读博客文章](https://www.anthropic.com/news/claude-4)
-id: anthropic/claude-sonnet-4
+context_length: 1000000
+max_output: 64000
+price_in: 3e-06
+price_out: 1.5e-05
+features:
+    - CapChat
+    - CapFunctionCall
+    - ModalityFileIn
+    - ModalityImageIn
+    - ModalityTextIn
+    - ModalityTextOut
