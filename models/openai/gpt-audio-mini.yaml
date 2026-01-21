@@ -2,14 +2,15 @@ id: openai/gpt-audio-mini
 name: 'OpenAI: GPT Audio Mini'
 provider: OpenAI
 description: A cost-efficient version of GPT Audio. The new snapshot features an upgraded decoder for more natural sounding voices and maintains better voice consistency. Input is priced at $0.60 per million tokens and output is priced at $2.40 per million tokens.
+description_cn: GPT Audio 的高性价比版本。新快照版本采用升级版解码器，可生成更自然的人声并保持更好的音色一致性。输入定价为每百万 token 0.60 美元，输出定价为每百万 token 2.40 美元。
 context_length: 128000
 max_output: 16384
 price_in: 6e-07
 price_out: 2.4e-06
 features:
-    - CapChat
-    - CapJsonMode
-    - ModalityAudioIn
-    - ModalityAudioOut
-    - ModalityTextIn
-    - ModalityTextOut
+  - CapChat
+  - CapJsonMode
+  - ModalityAudioIn
+  - ModalityAudioOut
+  - ModalityTextIn
+  - ModalityTextOut

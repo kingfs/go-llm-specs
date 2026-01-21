@@ -8,6 +8,7 @@ import (
 	"log"
 	"net/http"
 	"os"
+	"path/filepath"
 	"strings"
 	"time"
 
@@ -17,25 +18,22 @@ import (
 
 // -- Data Structures --
 
-type OpenRouterModel struct {
-	ID          string `json:"id"`
-	Description string `json:"description"`
-}
-
-type OpenRouterResponse struct {
-	Data []OpenRouterModel `json:"data"`
-}
-
-type OverrideData struct {
-	Models map[string]ModelOverride `yaml:"models"`
-}
-
-type ModelOverride struct {
+type ModelRegistry struct {
+	ID            string   `yaml:"id"`
+	Name          string   `yaml:"name"`
 	NameCN        string   `yaml:"name_cn,omitempty"`
+	Provider      string   `yaml:"provider"`
 	Description   string   `yaml:"description,omitempty"`
 	DescriptionCN string   `yaml:"description_cn,omitempty"`
+	ContextLen    int      `yaml:"context_length"`
+	MaxOutput     int      `yaml:"max_output,omitempty"`
+	PriceIn       float64  `yaml:"price_in"`
+	PriceOut      float64  `yaml:"price_out"`
+	Features      []string `yaml:"features,omitempty"`
 	Aliases       []string `yaml:"aliases,omitempty"`
-	Provider      string   `yaml:"provider,omitempty"`
+
+	// Internal helper
+	filePath string `yaml:"-"`
 }
 
 // -- API Types --
@@ -75,28 +73,19 @@ func main() {
 		modelName = "gpt-4o-mini"
 	}
 
-	// 1. Load models.json
-	models, err := loadModels("data/models.json")
+	// 1. Scan models/ directory recursively
+	log.Println("Scanning models/ directory...")
+	registry, err := scanRegistry("models")
 	if err != nil {
-		log.Fatalf("Failed to load models.json: %v", err)
+		log.Fatalf("Failed to scan models directory: %v", err)
 	}
+	log.Printf("Found %d models in registry.", len(registry))
 
-	// 2. Load overrides.yaml
-	overridesPath := "data/overrides.yaml"
-	overrides, err := loadOverrides(overridesPath)
-	if err != nil {
-		log.Fatalf("Failed to load overrides.yaml: %v", err)
-	}
-	if overrides.Models == nil {
-		overrides.Models = make(map[string]ModelOverride)
-	}
-
-	// 3. Identify missing translations
-	var pending []OpenRouterModel
-	for _, m := range models {
-		ov, exists := overrides.Models[m.ID]
-		// Condition: Has English desc, but NO Chinese desc in override
-		if m.Description != "" && (!exists || ov.DescriptionCN == "") {
+	// 2. Identify missing translations
+	var pending []*ModelRegistry
+	for _, m := range registry {
+		// Condition: Has English desc, but NO Chinese desc
+		if m.Description != "" && m.DescriptionCN == "" {
 			pending = append(pending, m)
 		}
 	}
@@ -106,7 +95,7 @@ func main() {
 		return
 	}
 
-	// 4. Batch Process
+	// 3. Batch Process
 	batchSize := 10
 	totalBatches := (len(pending) + batchSize - 1) / batchSize
 
@@ -125,7 +114,7 @@ func main() {
 			continue // Skip to next batch, don't crash entire process
 		}
 
-		// Update overrides
+		// Update and Save individually
 		changes := 0
 		for id, cnDesc := range translations {
 			newDesc := cleanResult(cnDesc)
@@ -133,20 +122,25 @@ func main() {
 				continue
 			}
 
-			entry := overrides.Models[id] // Get copy
-			entry.DescriptionCN = newDesc
-			overrides.Models[id] = entry // Set back
-			changes++
-		}
+			// Find model in batch
+			var target *ModelRegistry
+			for _, m := range batch {
+				if m.ID == id {
+					target = m
+					break
+				}
+			}
 
-		// Save IMMEDIATELY after each batch to avoid data loss
-		if changes > 0 {
-			if err := saveOverrides(overridesPath, overrides); err != nil {
-				log.Printf("Error saving overrides: %v", err)
-			} else {
-				log.Printf("Saved %d new translations.", changes)
+			if target != nil {
+				target.DescriptionCN = newDesc
+				if err := saveModel(target); err != nil {
+					log.Printf("Error saving model %s: %v", id, err)
+				} else {
+					changes++
+				}
 			}
 		}
+		log.Printf("Saved %d new translations in batch %d.", changes, batchIdx)
 
 		// Rate limit protection
 		time.Sleep(1 * time.Second)
@@ -155,48 +149,43 @@ func main() {
 
 // -- Helpers --
 
-func loadModels(path string) ([]OpenRouterModel, error) {
-	b, err := os.ReadFile(path)
-	if err != nil {
-		return nil, err
-	}
-	var resp OpenRouterResponse
-	if err := json.Unmarshal(b, &resp); err != nil {
-		return nil, err
-	}
-	return resp.Data, nil
-}
-
-func loadOverrides(path string) (*OverrideData, error) {
-	f, err := os.Open(path)
-	if err != nil {
-		if os.IsNotExist(err) {
-			return &OverrideData{}, nil
+func scanRegistry(root string) ([]*ModelRegistry, error) {
+	var models []*ModelRegistry
+	err := filepath.Walk(root, func(path string, info os.FileInfo, err error) error {
+		if err != nil {
+			return err
 		}
-		return nil, err
-	}
-	defer f.Close()
-	var out OverrideData
-	if err := yaml.NewDecoder(f).Decode(&out); err != nil {
-		return nil, err
-	}
-	return &out, nil
+		if info.IsDir() || (!strings.HasSuffix(path, ".yaml") && !strings.HasSuffix(path, ".yml")) {
+			return nil
+		}
+
+		f, err := os.Open(path)
+		if err != nil {
+			return err
+		}
+		defer f.Close()
+
+		var m ModelRegistry
+		if err := yaml.NewDecoder(f).Decode(&m); err == nil && m.ID != "" {
+			m.filePath = path
+			models = append(models, &m)
+		}
+		return nil
+	})
+	return models, err
 }
 
-func saveOverrides(path string, data *OverrideData) error {
-	// Marshal first
+func saveModel(m *ModelRegistry) error {
 	var buf bytes.Buffer
 	enc := yaml.NewEncoder(&buf)
 	enc.SetIndent(2)
-	if err := enc.Encode(data); err != nil {
+	if err := enc.Encode(m); err != nil {
 		return err
 	}
-
-	// Write file
-	return os.WriteFile(path, buf.Bytes(), 0644)
+	return os.WriteFile(m.filePath, buf.Bytes(), 0644)
 }
 
-func translateBatch(batch []OpenRouterModel, key, base, model string) (map[string]string, error) {
+func translateBatch(batch []*ModelRegistry, key, base, model string) (map[string]string, error) {
 	// Prepare input map: ID -> English Desc
 	inputs := make(map[string]string)
 	for _, m := range batch {
@@ -248,9 +237,15 @@ Content to translate:
 
 	rawContent := chatResp.Choices[0].Message.Content
 	// Extract JSON from potential code blocks
-	rawContent = strings.TrimPrefix(rawContent, "```json")
-	rawContent = strings.TrimPrefix(rawContent, "```")
-	rawContent = strings.TrimSuffix(rawContent, "```")
+	rawContent = strings.TrimSpace(rawContent)
+	if strings.HasPrefix(rawContent, "```json") {
+		rawContent = strings.TrimPrefix(rawContent, "```json")
+		rawContent = strings.TrimSuffix(rawContent, "```")
+	} else if strings.HasPrefix(rawContent, "```") {
+		rawContent = strings.TrimPrefix(rawContent, "```")
+		rawContent = strings.TrimSuffix(rawContent, "```")
+	}
+	rawContent = strings.TrimSpace(rawContent)
 
 	var results map[string]string
 	if err := json.Unmarshal([]byte(rawContent), &results); err != nil {
