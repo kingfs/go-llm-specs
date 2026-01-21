@@ -1,0 +1,5 @@
+description_cn: |-
+    NVIDIA 的 Llama 3.1 Nemotron 70B 是一款旨在生成精准且实用回复的语言模型。基于 [Llama 3.1 70B](/models/meta-llama/llama-3.1-70b-instruct) 架构并结合人类反馈强化学习（RLHF），在自动对齐基准测试中表现卓越。该模型专为需要高准确性的帮助性和回复生成任务而设计，适用于跨领域的多样化用户查询。
+
+    使用本模型需遵守 [Meta 可接受使用政策](https://www.llama.com/llama3/use-policy/)。
+id: nvidia/llama-3.1-nemotron-70b-instruct

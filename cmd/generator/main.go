@@ -7,6 +7,7 @@ import (
 	"log"
 	"net/http"
 	"os"
+	"path/filepath"
 	"sort"
 	"strings"
 	"text/template"
@@ -49,76 +50,151 @@ type OpenRouterResponse struct {
 	Data []OpenRouterModel `json:"data"`
 }
 
-// Override structures
-type OverrideData struct {
-	Models map[string]ModelOverride `yaml:"models"`
+// Registry structures
+type RegistryData struct {
+	Models map[string]ModelRegistry `yaml:"models"`
 }
 
-type ModelOverride struct {
+type ModelRegistry struct {
+	ID            string   `yaml:"id"`
+	Name          string   `yaml:"name"`
 	NameCN        string   `yaml:"name_cn"`
+	Provider      string   `yaml:"provider"`
 	Description   string   `yaml:"description"`
 	DescriptionCN string   `yaml:"description_cn"`
+	ContextLen    int      `yaml:"context_length"`
+	MaxOutput     int      `yaml:"max_output"`
+	PriceIn       float64  `yaml:"price_in"`
+	PriceOut      float64  `yaml:"price_out"`
+	Features      []string `yaml:"features"`
 	Aliases       []string `yaml:"aliases"`
-	Provider      string   `yaml:"provider"`
 }
 
 func main() {
 	log.Println("Starting llm-specs generator...")
 
 	// 1. Fetch data from OpenRouter
-	models, err := fetchOpenRouterModels()
+	apiModels, err := fetchOpenRouterModels()
 	if err != nil {
 		log.Fatalf("Failed to fetch models: %v", err)
 	}
-	log.Printf("Fetched %d models from OpenRouter", len(models))
+	log.Printf("Fetched %d models from OpenRouter", len(apiModels))
 
-	// 2. Load overrides
-	overrides, err := loadOverrides("data/overrides.yaml")
+	// 2. Load Local Registry
+	registryModels, err := loadRegistry("models")
 	if err != nil {
-		log.Printf("Warning: failed to load overrides: %v (skipping)", err)
-		overrides = &OverrideData{Models: make(map[string]ModelOverride)}
+		log.Printf("Warning: failed to load local registry: %v (skipping)", err)
+		registryModels = make(map[string]ModelRegistry)
 	}
+	log.Printf("Loaded %d models from local registry", len(registryModels))
 
 	// 3. Process and Normalize
-	processedModels := make([]*ProcessedModel, 0, len(models))
+	processedModels := make([]*ProcessedModel, 0)
+	processedIDs := make(map[string]bool)
 	aliasMap := make(map[string]string)
 
-	for _, m := range models {
-		ov, hasOverride := overrides.Models[m.ID]
+	// 3a. Merge OpenRouter models with local registry
+	for _, m := range apiModels {
+		ov, hasRegistry := registryModels[m.ID]
 
 		p := &ProcessedModel{
 			ID:          m.ID,
 			Name:        m.Name,
-			Provider:    normalizeProvider(strings.Split(m.ID, "/")[0]), // Default normalized provider from ID
+			Provider:    normalizeProvider(strings.Split(m.ID, "/")[0]),
 			Description: m.Description,
 			ContextLen:  m.ContextLength,
 			MaxOutput:   m.TopProvider.MaxCompletionTokens,
 		}
 
-		// Apply overrides
-		if hasOverride {
+		// Apply pricing from API
+		fmt.Sscanf(m.Pricing.Prompt, "%f", &p.PriceIn)
+		fmt.Sscanf(m.Pricing.Completion, "%f", &p.PriceOut)
+
+		// Base features from API
+		features := calculateFeatures(m)
+		// Default to Chat for OpenRouter models
+		if features == "0" {
+			features = "CapChat"
+		} else {
+			features = "CapChat | " + features
+		}
+
+		// Apply local overrides/additions
+		if hasRegistry {
+			if ov.Name != "" {
+				p.Name = ov.Name
+			}
 			if ov.Provider != "" {
 				p.Provider = ov.Provider
 			}
 			if ov.Description != "" {
 				p.Description = ov.Description
 			}
-			p.DescriptionCN = ov.DescriptionCN
-			p.Aliases = ov.Aliases
-		}
+			if ov.DescriptionCN != "" {
+				p.DescriptionCN = ov.DescriptionCN
+			}
+			if ov.ContextLen > 0 {
+				p.ContextLen = ov.ContextLen
+			}
+			if ov.MaxOutput > 0 {
+				p.MaxOutput = ov.MaxOutput
+			}
+			if ov.PriceIn > 0 {
+				p.PriceIn = ov.PriceIn
+			}
+			if ov.PriceOut > 0 {
+				p.PriceOut = ov.PriceOut
+			}
+			p.Aliases = append(p.Aliases, ov.Aliases...)
 
-		// Normalize Provider name (Title case again just in case)
+			// If local features are specified, they override or extend?
+			// Let's make it override if not empty for maximum control.
+			if len(ov.Features) > 0 {
+				features = strings.Join(ov.Features, " | ")
+			}
+		}
+		p.Features = features
 		p.Provider = strings.Title(p.Provider)
 
-		// Parse Pricing
-		var pIn, pOut float64
-		fmt.Sscanf(m.Pricing.Prompt, "%f", &pIn)
-		fmt.Sscanf(m.Pricing.Completion, "%f", &pOut)
-		p.PriceIn = pIn
-		p.PriceOut = pOut
+		// Check multimodal
+		if strings.Contains(p.Features, "ImageIn") || strings.Contains(p.Features, "VideoIn") {
+			if !strings.Contains(p.Features, "CapMultimodal") {
+				p.Features += " | CapMultimodal"
+			}
+		}
 
-		// Calculate Capabilities
-		p.Features = calculateFeatures(m)
+		processedModels = append(processedModels, p)
+		processedIDs[p.ID] = true
+	}
+
+	// 3b. Add unique local models (not in OpenRouter)
+	for id, ov := range registryModels {
+		if processedIDs[id] {
+			continue
+		}
+
+		p := &ProcessedModel{
+			ID:            id,
+			Name:          ov.Name,
+			Provider:      ov.Provider,
+			Description:   ov.Description,
+			DescriptionCN: ov.DescriptionCN,
+			ContextLen:    ov.ContextLen,
+			MaxOutput:     ov.MaxOutput,
+			PriceIn:       ov.PriceIn,
+			PriceOut:      ov.PriceOut,
+			Aliases:       ov.Aliases,
+			Features:      strings.Join(ov.Features, " | "),
+		}
+		if p.Features == "" {
+			p.Features = "0"
+		}
+		// If ImageIn/VideoIn present, add CapMultimodal
+		if strings.Contains(p.Features, "ImageIn") || strings.Contains(p.Features, "VideoIn") {
+			if !strings.Contains(p.Features, "CapMultimodal") {
+				p.Features += " | CapMultimodal"
+			}
+		}
 
 		processedModels = append(processedModels, p)
 	}
@@ -411,16 +487,47 @@ func fetchOpenRouterModels() ([]OpenRouterModel, error) {
 	return orResp.Data, nil
 }
 
-func loadOverrides(path string) (*OverrideData, error) {
-	f, err := os.Open(path)
-	if err != nil {
-		return nil, err
-	}
-	defer f.Close()
+func loadRegistry(root string) (map[string]ModelRegistry, error) {
+	models := make(map[string]ModelRegistry)
 
-	var overrides OverrideData
-	if err := yaml.NewDecoder(f).Decode(&overrides); err != nil {
-		return nil, err
-	}
-	return &overrides, nil
+	err := filepath.Walk(root, func(path string, info os.FileInfo, err error) error {
+		if err != nil {
+			return err
+		}
+		if info.IsDir() || (!strings.HasSuffix(path, ".yaml") && !strings.HasSuffix(path, ".yml")) {
+			return nil
+		}
+
+		f, err := os.Open(path)
+		if err != nil {
+			return err
+		}
+		defer f.Close()
+
+		// Try to decode as RegistryData (map of models)
+		var data RegistryData
+		decoder := yaml.NewDecoder(f)
+		if err := decoder.Decode(&data); err == nil && len(data.Models) > 0 {
+			for id, m := range data.Models {
+				if m.ID == "" {
+					m.ID = id
+				}
+				models[m.ID] = m
+			}
+			return nil
+		}
+
+		// Seek back and try as a single ModelRegistry
+		f.Seek(0, 0)
+		var single ModelRegistry
+		if err := yaml.NewDecoder(f).Decode(&single); err == nil && (single.ID != "" || single.Name != "") {
+			if single.ID != "" {
+				models[single.ID] = single
+			}
+		}
+
+		return nil
+	})
+
+	return models, err
 }

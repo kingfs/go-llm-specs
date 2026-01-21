@@ -1,0 +1,7 @@
+description_cn: |-
+    Google 推出的 Gemma 2 27B 是一款开源模型，基于与 [Gemini 系列模型](/models?q=gemini) 相同的研究和技术构建。
+
+    Gemma 模型适用于多种文本生成任务，包括问答、摘要和推理。
+
+    更多详情请参阅 [发布公告](https://blog.google/technology/developers/google-gemma-2/)。Gemma 的使用需遵守 Google 的 [Gemma 使用条款](https://ai.google.dev/gemma/terms)。
+id: google/gemma-2-27b-it

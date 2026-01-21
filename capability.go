@@ -27,6 +27,14 @@ const (
 	CapFunctionCall Capability = 1 << (16 + iota)
 	CapJsonMode
 	CapSystemPrompt
+
+	// Types (32-47 bit)
+	CapChat Capability = 1 << (32 + iota)
+	CapEmbedding
+	CapRerank
+	CapTTS
+	CapASR
+	CapMultimodal
 )
 
 // 建立一个内部映射表，用于快速匹配字符串
@@ -48,6 +56,12 @@ var capabilityNames = []struct {
 	{CapFunctionCall, "FunctionCall"},
 	{CapJsonMode, "JsonMode"},
 	{CapSystemPrompt, "SystemPrompt"},
+	{CapChat, "Chat"},
+	{CapEmbedding, "Embedding"},
+	{CapRerank, "Rerank"},
+	{CapTTS, "TTS"},
+	{CapASR, "ASR"},
+	{CapMultimodal, "Multimodal"},
 }
 
 // Has checks if the capability set contains the given capability.

@@ -1,0 +1,7 @@
+description_cn: |-
+    GPT-4o 2024-08-06 版本在结构化输出方面表现更佳，支持在 response_format 中指定 JSON Schema。更多详情请参阅[此处](https://openai.com/index/introducing-structured-outputs-in-the-api/)。
+
+    GPT-4o（“o”代表“omni”）是 OpenAI 最新的人工智能模型，支持文本与图像输入并生成文本输出。其智能水平与 [GPT-4 Turbo](/models/openai/gpt-4-turbo) 相当，但推理速度提升一倍，成本降低 50%。此外，GPT-4o 在非英语语言处理和视觉能力方面亦有显著增强。
+
+    在与其他模型的基准测试中，该模型曾短暂使用代号 ["im-also-a-good-gpt2-chatbot"](https://twitter.com/LiamFedus/status/1790064963966370209)。
+id: openai/gpt-4o-2024-08-06

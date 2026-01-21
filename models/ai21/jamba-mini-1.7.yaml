@@ -1,0 +1,2 @@
+description_cn: Jamba Mini 1.7 是 Jamba 开源模型家族中一款紧凑高效的成员，在保持 SSM-Transformer 混合架构和 256K 上下文窗口优势的同时，显著提升了事实依据能力和指令遵循能力。尽管体积小巧，仍能提供准确、上下文关联性强的响应及增强的可控性。
+id: ai21/jamba-mini-1.7

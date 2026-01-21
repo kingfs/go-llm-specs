@@ -1,0 +1,9 @@
+description_cn: |-
+    一款大型语言模型，通过将两个经过微调的 Llama 70B 模型合并为一个 120B 模型构建而成，融合了 Xwin 与 Euryale。
+
+    致谢：
+    - [@chargoddard](https://huggingface.co/chargoddard) 开发了用于模型合并的框架 [mergekit](https://github.com/cg123/mergekit)。
+    - [@Undi95](https://huggingface.co/Undi95) 协助确定了模型合并比例。
+
+    #merge
+id: alpindale/goliath-120b

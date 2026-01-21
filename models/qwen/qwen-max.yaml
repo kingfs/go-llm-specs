@@ -1,0 +1,2 @@
+description_cn: Qwen-Max 基于 Qwen2.5 构建，是 [Qwen 系列模型](/qwen) 中推理性能最强的版本，尤其擅长复杂的多步骤任务。该大规模 MoE 模型在超过 20 万亿 token 上完成预训练，并进一步通过精选的监督微调（SFT）与人类反馈强化学习（RLHF）方法进行后训练。具体参数量未公开。
+id: qwen/qwen-max

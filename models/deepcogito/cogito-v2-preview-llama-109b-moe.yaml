@@ -1,0 +1,2 @@
+description_cn: 一款基于 Llama-4-Scout-17B-16E 构建的指令微调混合推理专家混合（Mixture-of-Experts）模型。Cogito v2 可直接作答，也可启用扩展的“思考”阶段，其对齐机制由迭代蒸馏与放大（IDA）引导。该模型专注于编程、STEM、指令遵循和通用助理性任务，在多语言能力、工具调用和推理性能方面均优于同等规模的基线模型。支持长上下文使用（最高达 1000 万 tokens）及标准 Transformers 工作流。用户可通过 `reasoning` 的 `enabled` 布尔值控制推理行为。[详见文档](https://openrouter.ai/docs/use-cases/reasoning-tokens#enable-reasoning-with-default-config)
+id: deepcogito/cogito-v2-preview-llama-109b-moe

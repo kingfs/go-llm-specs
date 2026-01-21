@@ -1,0 +1,2 @@
+description_cn: DeepSeek-V3.2-Speciale 是 DeepSeek-V3.2 的高性能计算变体，专为极致推理与智能体性能优化。它基于 DeepSeek 稀疏注意力（DSA）实现高效的长上下文处理，并通过更大规模的强化学习后训练进一步超越基础模型的能力。评估结果显示，Speciale 在高难度推理任务上优于 GPT-5，能力接近 Gemini-3.0-Pro，同时保持出色的代码生成与工具使用可靠性。与 V3.2 一样，它也受益于大规模智能体任务合成流水线，显著提升交互环境中的指令遵循性与泛化能力。
+id: deepseek/deepseek-v3.2-speciale

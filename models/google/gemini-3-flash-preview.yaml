@@ -1,0 +1,5 @@
+description_cn: |-
+    Gemini 3 Flash Preview 是一款高速、高性价比的思维模型，专为智能体工作流、多轮对话和编程辅助而设计。其推理与工具使用性能接近 Pro 级别，但延迟显著低于更大的 Gemini 变体，非常适合交互式开发、长时间运行的智能体循环及协作编程任务。相比 Gemini 2.5 Flash，它在推理、多模态理解及可靠性方面均有全面提升。
+
+    该模型支持 100 万 token 的上下文窗口，可处理包括文本、图像、音频、视频和 PDF 在内的多模态输入，并输出文本。支持通过思维层级（minimal、low、medium、high）配置推理强度、结构化输出、工具调用及自动上下文缓存。Gemini 3 Flash Preview 面向希望获得强大推理与智能体行为，同时避免前沿大模型高昂成本与延迟的用户。
+id: google/gemini-3-flash-preview

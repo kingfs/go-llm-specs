@@ -1,0 +1,5 @@
+description_cn: |-
+    Grok 4 Fast 是 xAI 最新推出的多模态模型，具备业界领先的性价比，并支持200万token上下文窗口。该模型提供两种模式：非推理模式与推理模式。更多详情请参阅 xAI 官方[新闻公告](http://x.ai/news/grok-4-fast)。
+
+    用户可通过 API 中的 `reasoning` 参数的 `enabled` 字段启用或禁用推理功能。[详见文档](https://openrouter.ai/docs/use-cases/reasoning-tokens#controlling-reasoning-tokens)
+id: x-ai/grok-4-fast

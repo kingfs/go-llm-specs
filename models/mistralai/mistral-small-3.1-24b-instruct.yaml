@@ -1,0 +1,2 @@
+description_cn: Mistral Small 3.1 24B Instruct 是 Mistral Small 3（2501）的升级版本，拥有 240 亿参数并具备先进的多模态能力。该模型在文本推理与视觉任务（包括图像分析、编程、数学推理及数十种语言的多语言支持）方面达到业界领先水平。配备高达 128K token 的上下文窗口，并针对高效本地推理进行优化，适用于对话代理、函数调用、长文档理解及隐私敏感型部署等场景。其更新版本为 [Mistral Small 3.2](mistralai/mistral-small-3.2-24b-instruct)。
+id: mistralai/mistral-small-3.1-24b-instruct

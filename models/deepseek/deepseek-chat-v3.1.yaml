@@ -1,0 +1,7 @@
+description_cn: |-
+    DeepSeek-V3.1 是一款大型混合推理模型（总参数 6710 亿，激活参数 370 亿），通过提示模板支持“思考”与“非思考”两种模式。该模型在 DeepSeek-V3 基础上采用两阶段长上下文训练流程，支持最多 128K tokens，并利用 FP8 微缩放技术实现高效推理。用户可通过 `reasoning` `enabled` 布尔值控制推理行为。[了解更多](https://openrouter.ai/docs/use-cases/reasoning-tokens#enable-reasoning-with-default-config)
+
+    该模型在工具调用、代码生成和推理效率方面均有提升，在高难度基准测试中性能媲美 DeepSeek-R1，同时响应速度更快。支持结构化工具调用、代码代理和搜索代理，适用于科研、编程及智能体工作流。
+
+    此模型接替 [DeepSeek V3-0324](/deepseek/deepseek-chat-v3-0324)，在多种任务上表现优异。
+id: deepseek/deepseek-chat-v3.1

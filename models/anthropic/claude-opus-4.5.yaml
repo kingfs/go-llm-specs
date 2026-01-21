@@ -1,0 +1,6 @@
+aliases:
+    - claude-opus-4.5
+    - opus-4.5
+description_cn: Anthropic 最强大的模型，具备极高的推理能力。
+id: anthropic/claude-opus-4.5
+name_cn: Claude 4.5 Opus

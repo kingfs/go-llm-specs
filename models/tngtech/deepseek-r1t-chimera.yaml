@@ -1,0 +1,5 @@
+description_cn: |-
+    DeepSeek-R1T-Chimera 通过融合 DeepSeek-R1 与 DeepSeek-V3（0324）构建而成，兼具 R1 的推理能力和 V3 的 token 效率优势。该模型基于 DeepSeek-MoE Transformer 架构，针对通用文本生成任务进行了优化。
+
+    模型通过合并两个源模型的预训练权重，在推理能力、效率和指令遵循任务之间实现性能平衡。采用 MIT 许可证发布，适用于研究及商业用途。
+id: tngtech/deepseek-r1t-chimera

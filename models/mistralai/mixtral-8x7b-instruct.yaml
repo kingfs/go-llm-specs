@@ -1,0 +1,5 @@
+description_cn: |-
+    Mixtral 8x7B Instruct 是 Mistral AI 开发的预训练生成式稀疏混合专家（Sparse Mixture of Experts）模型，专为聊天和指令遵循场景设计，包含 8 个专家（前馈网络），总参数量达 470 亿。
+
+    该指令微调版本由 Mistral 官方提供。#moe
+id: mistralai/mixtral-8x7b-instruct

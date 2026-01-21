@@ -1,0 +1,5 @@
+description_cn: |-
+    这是 Mistral AI 的旗舰模型 Mistral Large 2（版本 mistral-large-2407）。该模型为闭源权重可用模型，在推理、代码、JSON、对话等方面表现卓越。发布详情请参阅[此处](https://mistral.ai/news/mistral-large-2407/)。
+
+    支持数十种语言，包括法语、德语、西班牙语、意大利语、葡萄牙语、阿拉伯语、印地语、俄语、中文、日语和韩语，并支持 80 多种编程语言，如 Python、Java、C、C++、JavaScript 和 Bash。其长上下文窗口可精准从大型文档中检索信息。
+id: mistralai/mistral-large-2407

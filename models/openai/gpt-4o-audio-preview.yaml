@@ -1,0 +1,2 @@
+description_cn: gpt-4o-audio-preview 模型新增对音频输入作为提示的支持。此增强功能使模型能够识别音频录音中的细微差别，从而丰富生成的用户体验。目前暂不支持音频输出。音频 token 的定价为每百万输入音频 token 40 美元。
+id: openai/gpt-4o-audio-preview

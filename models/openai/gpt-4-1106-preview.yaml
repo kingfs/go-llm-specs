@@ -1,0 +1,5 @@
+description_cn: |-
+    最新的 GPT-4 Turbo 模型，具备视觉能力。视觉请求现已支持 JSON 模式与函数调用。
+
+    训练数据截止至 2023 年 4 月。
+id: openai/gpt-4-1106-preview

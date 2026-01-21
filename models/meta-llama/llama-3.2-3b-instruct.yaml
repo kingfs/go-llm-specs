@@ -1,0 +1,9 @@
+description_cn: |-
+    Llama 3.2 3B 是一款拥有 30 亿参数的多语言大语言模型，专为高级自然语言处理任务（如对话生成、推理和摘要）而优化。基于最新的 Transformer 架构，支持包括英语、西班牙语和印地语在内的八种语言，并可适配更多语言。
+
+    该模型在 9 万亿 token 上进行训练，在指令遵循、复杂推理和工具调用方面表现出色。其均衡的性能使其成为跨语言文本生成应用的理想选择，兼顾准确性与效率。
+
+    点击此处查看[原始模型卡](https://github.com/meta-llama/llama-models/blob/main/models/llama3_2/MODEL_CARD.md)。
+
+    使用本模型需遵守 [Meta 可接受使用政策](https://www.llama.com/llama3/use-policy/)。
+id: meta-llama/llama-3.2-3b-instruct

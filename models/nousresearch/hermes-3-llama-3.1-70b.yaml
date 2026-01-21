@@ -1,0 +1,7 @@
+description_cn: |-
+    Hermes 3 是一款通用语言模型，在 [Hermes 2](/models/nousresearch/nous-hermes-2-mistral-7b-dpo) 基础上进行了多项改进，包括更先进的智能体能力、更出色的角色扮演、推理、多轮对话、长上下文连贯性，以及全方位性能提升。
+
+    Hermes 3 70B 是对 [Llama-3.1 70B 基础模型](/models/meta-llama/llama-3.1-70b-instruct) 进行的具有竞争力（甚至更优）的微调版本，专注于将大语言模型与用户需求对齐，赋予终端用户强大的引导能力和控制权。
+
+    Hermes 3 系列在 Hermes 2 能力基础上进一步拓展，包括更强大可靠的函数调用与结构化输出能力、通用助手能力，以及改进的代码生成技能。
+id: nousresearch/hermes-3-llama-3.1-70b

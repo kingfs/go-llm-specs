@@ -1,0 +1,9 @@
+description_cn: |-
+    一款高性能、行业标准的 73 亿参数模型，针对推理速度和上下文长度进行了优化。
+
+    这是 [Mistral 7B Instruct](/modelsmistralai/mistral-7b-instruct-v0.1) 的改进版本，主要变更包括：
+
+    - 上下文窗口扩展至 32k（v0.1 为 8k）
+    - Rope-theta = 1e6
+    - 移除了滑动窗口注意力机制
+id: mistralai/mistral-7b-instruct-v0.2

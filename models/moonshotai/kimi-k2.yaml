@@ -1,0 +1,2 @@
+description_cn: Kimi K2 Instruct 是月之暗面（Moonshot AI）开发的大规模混合专家（MoE）语言模型，总参数量达 1 万亿，每次前向传播激活 320 亿参数。该模型针对智能体能力进行优化，支持高级工具调用、复杂推理与代码合成。Kimi K2 在多项基准测试中表现卓越，尤其在编程（LiveCodeBench、SWE-bench）、推理（ZebraLogic、GPQA）及工具使用（Tau2、AceBench）任务中优势显著。模型支持最长 128K 令牌的长上下文推理，并采用包含 MuonClip 优化器的新型训练栈，确保大规模 MoE 模型训练的稳定性。
+id: moonshotai/kimi-k2

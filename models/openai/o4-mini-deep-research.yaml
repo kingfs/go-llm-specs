@@ -1,0 +1,5 @@
+description_cn: |-
+    o4-mini-deep-research 是 OpenAI 推出的速度更快、成本更低的深度研究模型，非常适合处理复杂的多步骤研究任务。
+
+    注意：此模型始终使用“web_search”工具，会产生额外费用。
+id: openai/o4-mini-deep-research

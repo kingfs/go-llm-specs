@@ -1,0 +1,2 @@
+description_cn: Hermes 2 Pro 是 Nous Hermes 2 的升级再训练版本，采用更新并清洗后的 OpenHermes 2.5 数据集，并新增了内部开发的函数调用与 JSON 模式数据集。
+id: nousresearch/hermes-2-pro-llama-3-8b

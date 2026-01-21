@@ -1,0 +1,5 @@
+description_cn: |-
+    Mistral Medium 3 是一款高性能的企业级语言模型，旨在以显著降低的运营成本提供前沿级能力。该模型在尖端推理与多模态性能之间取得平衡，成本仅为传统大模型的八分之一，适用于专业及工业场景的大规模部署。
+
+    该模型在编程、STEM 推理及企业适配等领域表现卓越，支持混合、本地及 VPC 内部署，并针对自定义工作流集成进行了优化。Mistral Medium 3 在准确性方面可与 Claude Sonnet 3.5/3.7、Llama 4 Maverick 和 Command R+ 等更大模型竞争，同时在各类云环境中保持广泛的兼容性。
+id: mistralai/mistral-medium-3

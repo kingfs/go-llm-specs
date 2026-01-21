@@ -1,0 +1,5 @@
+description_cn: |-
+    Pixtral Large 是一个拥有 1240 亿参数的开源权重多模态模型，基于 [Mistral Large 2](/mistralai/mistral-large-2411) 构建，能够理解文档、图表和自然图像。
+
+    该模型依据 Mistral 研究许可（MRL）可用于研究与教育用途，并可通过 Mistral 商业许可用于商业目的的实验、测试和生产部署。
+id: mistralai/pixtral-large-2411

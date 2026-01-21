@@ -1,0 +1,11 @@
+description_cn: |-
+    DeepSeek R1 Distill Qwen 32B 是基于 [Qwen 2.5 32B](https://huggingface.co/Qwen/Qwen2.5-32B) 并利用 [DeepSeek R1](/deepseek/deepseek-r1) 输出蒸馏而成的大语言模型。该模型在多项基准测试中超越 OpenAI o1-mini，为稠密模型树立了新的性能标杆。
+
+    其他基准测试结果包括：
+
+    - AIME 2024 pass@1：72.6
+    - MATH-500 pass@1：94.3
+    - CodeForces 评分：1691
+
+    通过 DeepSeek R1 输出的微调，该模型实现了可与更大规模前沿模型相媲美的竞争力。
+id: deepseek/deepseek-r1-distill-qwen-32b

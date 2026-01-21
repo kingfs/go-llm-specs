@@ -1,0 +1,2 @@
+description_cn: Gemma 3n E2B IT 是 Google DeepMind 开发的多模态指令微调模型，基于 60 亿参数架构，有效参数规模约为 20 亿。该模型采用 MatFormer 架构，支持嵌套子模型及通过 Mix-and-Match 框架进行模块化组合。Gemma 3n 系列针对低资源部署优化，提供 32K 上下文长度，在主流基准测试中展现出卓越的多语言能力与推理性能。此变体在包含代码、数学、网页及多模态数据的多样化语料上进行训练。
+id: google/gemma-3n-e2b-it:free

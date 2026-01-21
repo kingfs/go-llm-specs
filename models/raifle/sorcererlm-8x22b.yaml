@@ -1,0 +1,7 @@
+description_cn: |-
+    SorcererLM 是一款先进的角色扮演与叙事模型，基于 [WizardLM-2 8x22B](/microsoft/wizardlm-2-8x22b) 采用低秩 16 位 LoRA 微调而成。
+
+    - 具备高级推理与情感智能，可实现引人入胜的沉浸式交互；
+    - 写作风格生动，融合空间感知与上下文意识；
+    - 叙事深度增强，支持富有创意且动态变化的故事创作。
+id: raifle/sorcererlm-8x22b

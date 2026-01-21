@@ -1,0 +1,2 @@
+description_cn: Cogito v2 70B 是一款稠密型混合推理模型，兼具直接作答能力与高级自省机制。通过迭代策略优化构建，在保持较短推理链和更强直觉的同时，在各类推理任务中展现出卓越性能。
+id: deepcogito/cogito-v2-preview-llama-70b

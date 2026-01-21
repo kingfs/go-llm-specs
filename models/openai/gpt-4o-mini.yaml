@@ -1,0 +1,11 @@
+description_cn: |-
+    GPT-4o mini 是继 [GPT-4 Omni](/models/openai/gpt-4o) 之后 OpenAI 推出的最新模型，支持文本和图像输入，并生成文本输出。
+
+    作为其最先进的小型模型，其成本远低于其他近期前沿模型，比 [GPT-3.5 Turbo](/models/openai/gpt-3.5-turbo) 便宜 60% 以上，同时保持业界领先的智能水平，性价比显著提升。
+
+    GPT-4o mini 在 MMLU 基准测试中取得 82% 的得分，目前在主流聊天偏好排行榜上超越 GPT-4（参见 [常见排行榜](https://arena.lmsys.org/)）。
+
+    了解更多详情，请查看 [发布公告](https://openai.com/index/gpt-4o-mini-advancing-cost-efficient-intelligence/)。
+
+    #多模态
+id: openai/gpt-4o-mini

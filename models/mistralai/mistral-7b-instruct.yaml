@@ -1,0 +1,5 @@
+description_cn: |-
+    这是一款高性能、业界标准的 73 亿参数模型，针对速度和上下文长度进行了优化。
+
+    *Mistral 7B Instruct 包含多个版本变体，此处指最新版本。*
+id: mistralai/mistral-7b-instruct

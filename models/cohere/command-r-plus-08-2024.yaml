@@ -1,0 +1,7 @@
+description_cn: |-
+    command-r-plus-08-2024 是 [Command R+](/models/cohere/command-r-plus) 的更新版本，相较于前代 Command R+，吞吐量提升约 50%，延迟降低 25%，同时保持相同的硬件资源占用。
+
+    发布详情请参阅[此处](https://docs.cohere.com/changelog/command-gets-refreshed)。
+
+    使用本模型需遵守 Cohere 的[使用政策](https://docs.cohere.com/docs/usage-policy)和[SaaS 协议](https://cohere.com/saas-agreement)。
+id: cohere/command-r-plus-08-2024

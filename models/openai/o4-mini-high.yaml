@@ -1,0 +1,7 @@
+description_cn: |-
+    OpenAI o4-mini-high 与 [o4-mini](/openai/o4-mini) 为同一模型，仅将 reasoning_effort 参数设为 high。
+
+    OpenAI o4-mini 是 o 系列中一款紧凑型推理模型，在保持强大多模态和智能体能力的同时，针对快速、高性价比的性能进行了优化。该模型支持工具调用，在 AIME（配合 Python 达 99.5%）和 SWE-bench 等基准测试中展现出具有竞争力的推理与编码能力，超越前代 o3-mini，甚至在某些领域接近 o3。
+
+    尽管模型规模较小，o4-mini 在 STEM 任务、视觉问题求解（如 MathVista、MMMU）和代码编辑方面仍具备高准确率。特别适用于对延迟或成本敏感的高吞吐场景。得益于其高效架构和精细化的强化学习训练，o4-mini 能够串联工具、生成结构化输出，并在极短时间内（通常不到一分钟）完成多步骤任务。
+id: openai/o4-mini-high

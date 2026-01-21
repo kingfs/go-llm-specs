@@ -1,0 +1,6 @@
+aliases:
+    - qwen-2.5-72b
+    - qwen2.5
+description_cn: 通义千问 2.5 72B 指令微调版。
+id: qwen/qwen-2.5-72b-instruct
+provider: Qwen

@@ -1,0 +1,5 @@
+description_cn: |-
+    KAT-Coder-Pro V1 是快手 KwaiKAT 推出的 KAT-Coder 系列中最先进的智能体编程模型，专为智能体编程任务设计，在真实软件工程场景中表现卓越，在 SWE-Bench Verified 基准测试中达到 73.4% 的解决率。
+
+    该模型通过多阶段训练流程（包括中期训练、监督微调（SFT）、强化微调（RFT）及可扩展智能体强化学习）优化了工具使用能力、多轮交互、指令遵循、泛化能力及综合性能。
+id: kwaipilot/kat-coder-pro

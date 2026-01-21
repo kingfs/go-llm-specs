@@ -1,0 +1,5 @@
+description_cn: |-
+    o3-deep-research 是 OpenAI 专为深度研究设计的高级模型，旨在处理复杂的多步骤研究任务。
+
+    注意：此模型始终使用“web_search”工具，会产生额外费用。
+id: openai/o3-deep-research

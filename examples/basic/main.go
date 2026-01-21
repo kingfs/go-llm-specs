@@ -12,11 +12,14 @@ func main() {
 	fmt.Println("LLM metadata registry examples:")
 
 	// 1. Get by alias
-	m, ok := llmspecs.Get("qwen3-32b")
+	modelName := "qwen3-vl-plus"
+	m, ok := llmspecs.Get(modelName)
 	if ok {
 		fmt.Printf("[Alias Match] Found model: %s\n", m.Name())
 		fmt.Printf("Description: %s\n", m.DescriptionCN())
 		fmt.Printf("Features: %s\n", m.Features().String())
+	} else {
+		fmt.Printf("Model %s not found!\n", modelName)
 	}
 
 	// 2. Query with multiple capabilities

@@ -1,0 +1,9 @@
+description_cn: |-
+    万众期待的 Llama 3 百亿级（400B）模型现已发布！支持 128k 上下文长度，并在多项评测中表现卓越，Meta AI 团队持续推动开源大语言模型的前沿边界。
+
+    Meta 最新推出的 Llama 3.1 系列模型包含多种规模与版本，此 405B 指令微调版本专为高质量对话场景优化。
+
+    在评测中，其性能显著优于包括 GPT-4o 和 Claude 3.5 Sonnet 在内的主流闭源模型。
+
+    欲了解模型发布的更多信息，请[点击此处](https://ai.meta.com/blog/meta-llama-3-1/)。使用本模型需遵守 [Meta 可接受使用政策](https://llama.meta.com/llama3/use-policy/)。
+id: meta-llama/llama-3.1-405b-instruct:free

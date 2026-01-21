@@ -1,0 +1,2 @@
+description_cn: GPT-5 Mini 是 GPT-5 的紧凑版本，专为轻量级推理任务设计。它继承了 GPT-5 的指令遵循与安全对齐优势，同时显著降低延迟和成本。GPT-5 Mini 是 OpenAI o4-mini 模型的继任者。
+id: openai/gpt-5-mini

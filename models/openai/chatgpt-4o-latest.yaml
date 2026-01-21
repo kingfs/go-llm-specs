@@ -1,0 +1,5 @@
+description_cn: |-
+    OpenAI ChatGPT-4o 由 OpenAI 持续更新，始终指向 ChatGPT 当前使用的 GPT-4o 版本。因此，与 API 版本的 [GPT-4o](/models/openai/gpt-4o) 略有不同，它额外应用了 RLHF 微调，主要用于研究与评估。
+
+    OpenAI 指出，该模型不适用于生产环境，未来可能被移除或重定向至其他模型。
+id: openai/chatgpt-4o-latest

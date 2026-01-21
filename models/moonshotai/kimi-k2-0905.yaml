@@ -1,0 +1,5 @@
+description_cn: |-
+    Kimi K2 0905 是 [Kimi K2 0711](moonshotai/kimi-k2) 的九月更新版本，由月之暗面（Moonshot AI）开发的大规模专家混合（MoE）语言模型，总参数量达 1 万亿，每次前向传递激活 320 亿参数。支持最长 256k tokens 的长上下文推理（此前为 128k）。
+
+    本次更新提升了智能体编程的准确率与跨框架泛化能力，并增强了前端编程在 Web、3D 等相关任务中的输出美观性与功能性。Kimi K2 针对智能体能力进行了优化，包括高级工具使用、推理与代码合成，在编程（LiveCodeBench、SWE-bench）、推理（ZebraLogic、GPQA）和工具使用（Tau2、AceBench）等基准测试中表现优异。该模型采用包含 MuonClip 优化器的新训练栈，以实现稳定的大规模 MoE 训练。
+id: moonshotai/kimi-k2-0905

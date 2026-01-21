@@ -1,0 +1,5 @@
+description_cn: |-
+    Gemini 2.5 Flash 是 Google 最先进的主力模型，专为高级推理、编程、数学和科学任务设计。其内置“思考”能力，可提供更高准确性和更精细的上下文处理。
+
+    此外，Gemini 2.5 Flash 可通过“推理最大 token 数”参数进行配置，详见文档（https://openrouter.ai/docs/use-cases/reasoning-tokens#max-tokens-for-reasoning）。
+id: google/gemini-2.5-flash

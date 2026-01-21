@@ -1,0 +1,5 @@
+description_cn: |-
+    Mistral 于 2025 年 7 月底发布的前沿代码语言模型。Codestral 专为低延迟、高频率任务设计，例如中间填充（FIM）、代码修正和测试生成。
+
+    [博客文章](https://mistral.ai/news/codestral-25-08)
+id: mistralai/codestral-2508

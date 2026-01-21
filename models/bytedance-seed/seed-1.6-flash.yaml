@@ -1,0 +1,2 @@
+description_cn: Seed 1.6 Flash 是字节跳动 Seed 团队推出的超高速多模态深度思考模型，支持文本与视觉理解，具备 256K 上下文窗口，并可生成最多 16K 个输出 token。
+id: bytedance-seed/seed-1.6-flash

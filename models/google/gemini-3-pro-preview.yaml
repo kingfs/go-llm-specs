@@ -1,0 +1,5 @@
+description_cn: |-
+    Gemini 3 Pro 是谷歌面向高精度多模态推理的旗舰前沿模型，融合文本、图像、视频、音频和代码领域的强大能力，并支持 100 万 token 的上下文窗口。使用多轮工具调用时必须保留推理细节，详见文档：https://openrouter.ai/docs/use-cases/reasoning-tokens#preserving-reasoning-blocks。该模型在通用推理、STEM 问题求解、事实问答及多模态理解等基准测试中表现卓越，在 LMArena、GPQA Diamond、MathArena Apex、MMMU-Pro 和 Video-MMMU 等评测中均取得领先分数。其交互强调深度与可解释性：模型旨在以最少提示推断用户意图，并输出直接、聚焦洞察的回应。
+
+    专为高级开发与智能体工作流构建，Gemini 3 Pro 提供强大的工具调用能力、长周期规划稳定性，以及在复杂 UI、可视化和编程任务中的出色零样本生成能力。它在智能体编程（SWE-Bench Verified、Terminal-Bench 2.0）、多模态分析及结构化长文本任务（如研究综述、规划与交互式学习体验）方面尤为突出。适用场景包括自主智能体、编程助手、多模态分析、科学推理及高上下文信息处理。
+id: google/gemini-3-pro-preview

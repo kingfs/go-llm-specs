@@ -1,0 +1,5 @@
+description_cn: |-
+    Kimi K2 Thinking 是月之暗面（Moonshot AI）迄今最先进的开源推理模型，将 K2 系列拓展至智能体驱动的长周期推理领域。该模型基于 Kimi K2 引入的万亿参数混合专家（MoE）架构，每次前向传递激活 320 亿参数，支持 256k token 的上下文窗口。模型针对持续逐步推理、动态工具调用及跨越数百轮次的复杂推理工作流进行了优化，能将逐步推理与工具使用交错执行，实现无需漂移的数百步连续自主研究、编程与写作。
+
+    该模型在 HLE、BrowseComp、SWE-Multilingual 和 LiveCodeBench 等开源基准上创下新纪录，并能在 200–300 次工具调用中保持稳定的多智能体行为。依托大规模 MoE 架构与 MuonClip 优化，它在高推理深度与高推理效率之间取得平衡，适用于高要求的智能体与分析任务。
+id: moonshotai/kimi-k2-thinking

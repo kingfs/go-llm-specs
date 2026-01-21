@@ -1,0 +1,5 @@
+description_cn: |-
+    Sonar Pro 的全新 Pro Search 模式仅在 OpenRouter API 上提供，是 Perplexity 最先进的智能体搜索系统，专为深度推理与分析而设计。定价基于 token 数量外加每千次请求 18 美元。该模型驱动 Perplexity 平台上的 Pro Search 模式。
+
+    Sonar Pro Search 在 Sonar Pro 基础上增加了自主多步推理能力，不再局限于单次查询与结果整合，而是能够规划并执行完整的研究工作流，调用多种工具完成任务。
+id: perplexity/sonar-pro-search

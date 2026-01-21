@@ -1,0 +1,5 @@
+description_cn: |-
+    Mistral Large 2 2411 是与 [Pixtral Large 2411](/mistralai/pixtral-large-2411) 同时发布的 [Mistral Large 2](/mistralai/mistral-large) 的更新版本。
+
+    相比此前的 [Mistral Large 24.07](/mistralai/mistral-large-2407)，它在长上下文理解、新系统提示以及函数调用准确性方面均有显著提升。
+id: mistralai/mistral-large-2411

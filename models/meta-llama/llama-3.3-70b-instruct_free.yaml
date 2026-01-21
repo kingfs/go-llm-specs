@@ -1,0 +1,7 @@
+description_cn: |-
+    Meta Llama 3.3 多语言大语言模型（LLM）是一款经过预训练和指令微调的 70B 参数生成式模型（纯文本输入/输出）。该模型专为多语言对话场景优化，在主流行业基准测试中性能优于众多现有开源及闭源聊天模型。
+
+    支持语言：英语、德语、法语、意大利语、葡萄牙语、印地语、西班牙语和泰语。
+
+    [模型卡片](https://github.com/meta-llama/llama-models/blob/main/models/llama3_3/MODEL_CARD.md)
+id: meta-llama/llama-3.3-70b-instruct:free

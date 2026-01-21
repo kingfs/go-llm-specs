@@ -1,0 +1,5 @@
+description_cn: |-
+    DeepSeek-V3.2 是一款在计算效率与强推理及智能体工具使用能力之间取得平衡的大语言模型。它引入了 DeepSeek 稀疏注意力（DSA）机制——一种细粒度稀疏注意力方法，在长上下文场景中显著降低训练与推理成本的同时保持性能。通过可扩展的强化学习后训练框架进一步提升推理能力，据报告其性能达到 GPT-5 级别，并在2025年国际数学奥林匹克（IMO）和国际信息学奥林匹克（IOI）中斩获金牌。V3.2 还采用大规模智能体任务合成流水线，将推理能力更有效地融入工具使用场景，从而提升交互环境中的指令遵循性与泛化能力。
+
+    用户可通过 `reasoning` 的 `enabled` 布尔值控制推理行为。[详见文档](https://openrouter.ai/docs/use-cases/reasoning-tokens#enable-reasoning-with-default-config)
+id: deepseek/deepseek-v3.2

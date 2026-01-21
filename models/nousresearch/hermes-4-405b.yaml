@@ -1,0 +1,5 @@
+description_cn: |-
+    Hermes 4 是由 Nous Research 基于 Meta-Llama-3.1-405B 构建的大规模推理模型，引入了混合推理模式：模型可选择通过 <think>...</think> 标记进行内部推理，或直接响应，从而在速度与深度之间灵活权衡。用户可通过 `reasoning` `enabled` 布尔值控制推理行为。[了解更多](https://openrouter.ai/docs/use-cases/reasoning-tokens#enable-reasoning-with-default-config)
+
+    该模型经过指令微调，使用了约 600 亿 token 的扩展后训练语料，重点强化推理轨迹，在数学、代码、STEM 及逻辑推理方面性能显著提升，同时保留广泛的助手功能。此外，支持结构化输出（包括 JSON 模式、模式遵循、函数调用和工具使用）。Hermes 4 经过专门训练，具备更强的可控性、更低的拒答率，并对齐至中立、用户导向的行为模式。
+id: nousresearch/hermes-4-405b

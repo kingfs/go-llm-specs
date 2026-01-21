@@ -1,0 +1,2 @@
+description_cn: Mercury Coder 是全球首款扩散式大语言模型（dLLM）。该模型采用突破性的离散扩散方法，运行速度比 Claude 3.5 Haiku 和 GPT-4o Mini 等已优化速度的模型快 5–10 倍，同时性能相当。其卓越的速度使开发者在编码时能保持流畅状态，享受快速的聊天式迭代和响应迅速的代码补全建议。在 Copilot Arena 中，Mercury Coder 在速度方面排名第一，质量方面并列第二。更多详情请参阅[此博客文章](https://www.inceptionlabs.ai/blog/introducing-mercury)。
+id: inception/mercury-coder

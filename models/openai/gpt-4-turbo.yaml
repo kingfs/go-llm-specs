@@ -1,0 +1,6 @@
+aliases:
+    - gpt-4-turbo
+    - gpt4t
+description_cn: OpenAI 的高性能模型，支持 128k 上下文。
+id: openai/gpt-4-turbo
+name_cn: GPT-4 Turbo

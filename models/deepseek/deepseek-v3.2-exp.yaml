@@ -1,0 +1,5 @@
+description_cn: |-
+    DeepSeek-V3.2-Exp 是 DeepSeek 发布的实验性大语言模型，作为 V3.1 与未来架构之间的中间版本。该模型引入了 DeepSeek 稀疏注意力（DSA）机制——一种细粒度稀疏注意力机制，旨在长上下文场景下提升训练与推理效率，同时保持输出质量。用户可通过 `reasoning` `enabled` 布尔参数控制推理行为。[详见文档](https://openrouter.ai/docs/use-cases/reasoning-tokens#enable-reasoning-with-default-config)
+
+    该模型在与 V3.1-Terminus 对齐的条件下训练，便于直接对比。基准测试表明，其在推理、编码及智能体工具使用任务上的性能大致与 V3.1 相当，不同领域略有取舍。本次发布重点在于验证面向扩展上下文长度的架构优化，而非提升原始任务准确率，因此主要作为研究导向模型，用于探索高效 Transformer 设计。
+id: deepseek/deepseek-v3.2-exp

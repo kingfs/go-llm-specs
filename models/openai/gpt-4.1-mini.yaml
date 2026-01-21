@@ -1,0 +1,2 @@
+description_cn: GPT-4.1 Mini 是一款中等规模模型，在显著降低延迟和成本的同时，性能可与 GPT-4o 相媲美。它保留了 100 万 token 的上下文窗口，在困难指令评估中得分为 45.1%，MultiChallenge 得分为 35.8%，IFEval 得分为 84.1%。Mini 在编码能力（如 Aider 多语言差异基准达 31.6%）和视觉理解方面也表现出色，适用于对性能要求严苛的交互式应用。
+id: openai/gpt-4.1-mini

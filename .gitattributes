@@ -1,1 +1,2 @@
 models_gen.go merge=ours
+data/models.json merge=ours

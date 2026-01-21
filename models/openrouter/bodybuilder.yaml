@@ -1,0 +1,7 @@
+description_cn: |-
+    将您的自然语言请求转换为结构化的 OpenRouter API 请求对象。只需描述您希望 AI 模型完成的任务，Body Builder 即可自动生成相应的 API 调用。例如：“使用 gemini 和 opus 从 1 数到 10。”
+
+    此功能适用于创建多模型请求、自定义模型路由，或根据人类描述程序化生成 API 调用。
+
+    **Beta 公告**：Body Builder 目前处于 Beta 阶段，免费使用。未来定价与功能可能发生变化。
+id: openrouter/bodybuilder

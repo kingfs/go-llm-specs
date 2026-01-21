@@ -1,0 +1,2 @@
+description_cn: 一款拥有 73 亿参数的模型，在所有基准测试中均优于 Llama 2 13B，并针对推理速度和上下文长度进行了优化。
+id: mistralai/mistral-7b-instruct-v0.1

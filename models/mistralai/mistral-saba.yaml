@@ -1,0 +1,2 @@
+description_cn: Mistral Saba 是一款专为中东和南亚地区设计的 240 亿参数语言模型，在保持高效性能的同时提供准确且符合本地语境的响应。该模型基于精选的区域性数据集训练，支持多种印度本土语言（包括泰米尔语和马拉雅拉姆语）以及阿拉伯语，适用于广泛的区域性和多语言应用场景。更多详情请参阅[此博客文章](https://mistral.ai/en/news/mistral-saba)
+id: mistralai/mistral-saba

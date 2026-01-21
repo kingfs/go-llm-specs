@@ -1,0 +1,2 @@
+description_cn: Hunyuan-A13B 是腾讯开发的 130 亿激活参数混合专家（MoE）语言模型，总参数量达 800 亿，支持思维链（Chain-of-Thought）推理。该模型在数学、科学、编程及多轮推理等任务的基准测试中表现优异，同时通过分组查询注意力（GQA）机制和量化支持（FP8、GPTQ 等）实现高效推理。
+id: tencent/hunyuan-a13b-instruct

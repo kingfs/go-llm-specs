@@ -1,0 +1,5 @@
+description_cn: |-
+    gpt-oss-safeguard-20b 是 OpenAI 基于 gpt-oss-20b 构建的安全推理模型。这款开源权重、210 亿参数的混合专家（MoE）模型在内容分类、大模型过滤及信任与安全标注等安全任务上具备更低延迟。
+
+    更多关于此模型的信息，请参阅 OpenAI 的 gpt-oss-safeguard [用户指南](https://cookbook.openai.com/articles/gpt-oss-safeguard-guide)。
+id: openai/gpt-oss-safeguard-20b

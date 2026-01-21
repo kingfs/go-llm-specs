@@ -1,0 +1,5 @@
+description_cn: |-
+    o 系列模型通过强化学习训练，在回答前进行思考，以执行复杂推理。o3-pro 模型投入更多算力进行深度思考，从而持续提供更优答案。
+
+    注意：使用此模型需自带密钥（BYOK）。设置地址：https://openrouter.ai/settings/integrations
+id: openai/o3-pro

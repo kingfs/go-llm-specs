@@ -1,0 +1,5 @@
+description_cn: |-
+    Grok 4.1 Fast 是 xAI 最佳的智能体工具调用模型，在客服支持与深度研究等真实场景中表现卓越，支持 200 万 token 上下文窗口。
+
+    可通过 API 中的 `reasoning` `enabled` 参数启用或禁用推理功能。[了解更多请参阅文档](https://openrouter.ai/docs/use-cases/reasoning-tokens#controlling-reasoning-tokens)
+id: x-ai/grok-4.1-fast

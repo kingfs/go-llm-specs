@@ -1,0 +1,5 @@
+description_cn: |-
+    DeepSeek-V3 是 DeepSeek 团队推出的最新模型，在前代版本的指令遵循与编码能力基础上进一步提升。该模型在近 15 万亿 token 上完成预训练，公开评测显示其性能超越其他开源模型，并可媲美主流闭源模型。
+
+    有关模型详情，请访问 [DeepSeek-V3 代码仓库](https://github.com/deepseek-ai/DeepSeek-V3) 或参阅[发布公告](https://api-docs.deepseek.com/news/news1226)。
+id: deepseek/deepseek-chat

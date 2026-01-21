@@ -1,0 +1,10 @@
+description_cn: |-
+    Morph 高精度代码编辑应用模型，适用于复杂代码修改，推理速度约 4,500 tokens/秒，准确率达 98%，可实现精准代码转换。
+
+    该模型要求提示格式如下：
+    <instruction>{instruction}</instruction>
+    <code>{initial_code}</code>
+    <update>{edit_snippet}</update>
+
+    Morph 已启用零数据留存策略。更多模型信息请参阅其[文档](https://docs.morphllm.com/quickstart)。
+id: morph/morph-v3-large

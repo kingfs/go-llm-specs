@@ -1,0 +1,5 @@
+description_cn: |-
+    Devstral Medium 是由 Mistral AI 与 All Hands AI 联合开发的高性能代码生成与智能体推理模型。作为 Devstral Small 的升级版，其在 SWE-Bench Verified 基准上达到 61.6% 的准确率，超越 Gemini 2.5 Pro 与 GPT-4.1 等模型，同时成本显著更低。该模型专为在各类代码智能体与框架中泛化不同提示风格及工具使用而设计。
+
+    Devstral Medium 仅通过 API 提供（非开源权重），支持在私有基础设施上进行企业级部署，并可选配微调功能。
+id: mistralai/devstral-medium

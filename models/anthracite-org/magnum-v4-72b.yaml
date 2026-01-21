@@ -1,0 +1,5 @@
+description_cn: |-
+    该系列模型旨在复现 Claude 3 系列模型（特别是 Sonnet（https://openrouter.ai/anthropic/claude-3.5-sonnet）和 Opus（https://openrouter.ai/anthropic/claude-3-opus））的散文质量。
+
+    本模型基于 [Qwen2.5 72B](https://openrouter.ai/qwen/qwen-2.5-72b-instruct) 进行微调。
+id: anthracite-org/magnum-v4-72b

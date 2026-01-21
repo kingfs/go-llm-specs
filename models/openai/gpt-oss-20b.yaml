@@ -1,0 +1,2 @@
+description_cn: gpt-oss-20b 是 OpenAI 在 Apache 2.0 许可下发布的开源权重、210 亿参数模型。采用混合专家（MoE）架构，每次前向传递激活 36 亿参数，针对低延迟推理和消费级或单 GPU 硬件部署进行了优化。该模型基于 OpenAI 的 Harmony 响应格式训练，支持推理层级配置、微调以及智能体能力，包括函数调用、工具使用和结构化输出。
+id: openai/gpt-oss-20b

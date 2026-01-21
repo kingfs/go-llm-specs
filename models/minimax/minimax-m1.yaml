@@ -1,0 +1,5 @@
+description_cn: |-
+    MiniMax-M1 是一款大规模开源权重推理模型，专为长上下文和高效率推理而设计。该模型采用混合专家（MoE）架构，并结合自研的“闪电注意力”机制，可处理长达100万 token 的序列，同时保持出色的 FLOP 效率。模型总参数量达4560亿，每 token 激活459亿参数，专为复杂多步推理任务优化。
+
+    通过自研强化学习流程（CISPO）训练，M1 在长上下文理解、软件工程、智能体工具调用和数学推理方面表现突出。在 FullStackBench、SWE-bench、MATH、GPQA 和 TAU-Bench 等基准测试中成绩优异，常优于 DeepSeek R1 和 Qwen3-235B 等其他开源模型。
+id: minimax/minimax-m1

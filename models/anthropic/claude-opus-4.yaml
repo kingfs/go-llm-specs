@@ -1,0 +1,5 @@
+description_cn: |-
+    Claude Opus 4 在发布时被公认为全球最强的编程模型，可在复杂、长时间运行的任务和智能体工作流中保持稳定性能。该模型在软件工程领域树立了新标杆，在 SWE-bench（72.5%）和 Terminal-bench（43.2%）上均取得领先成绩。Opus 4 支持扩展型智能体工作流，可连续数小时处理数千个任务步骤而性能不衰减。
+
+    [在此处阅读博客文章](https://www.anthropic.com/news/claude-4)
+id: anthropic/claude-opus-4

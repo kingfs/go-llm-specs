@@ -1,0 +1,5 @@
+description_cn: |-
+    注意：此模型即将弃用。推荐使用更新的 [Ministral 8B](/mistral/ministral-8b)。
+
+    当前该模型基于 Mistral-7B-v0.2 构建，并采用了受社区工作启发的“更优”微调策略，相较于 [Mistral 7B](/models/mistralai/mistral-7b-instruct-v0.1) 有所提升。适用于对成本敏感但对推理能力要求不高的大批量处理任务。
+id: mistralai/mistral-tiny

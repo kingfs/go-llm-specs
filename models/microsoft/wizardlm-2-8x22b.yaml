@@ -1,0 +1,9 @@
+description_cn: |-
+    WizardLM-2 8x22B 是微软 AI 推出的最先进的 Wizard 系列模型，在性能上可与领先闭源模型高度竞争，并持续超越所有现有开源顶尖模型。
+
+    该模型基于 [Mixtral 8x22B](/models/mistralai/mixtral-8x22b) 进行指令微调。
+
+    了解更多模型发布信息，请[点击此处](https://wizardlm.github.io/WizardLM2/)。
+
+    #moe
+id: microsoft/wizardlm-2-8x22b

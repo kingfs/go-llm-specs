@@ -1,0 +1,5 @@
+description_cn: |-
+    预览版 GPT-4 模型，改进了指令遵循能力，支持 JSON 模式、可复现输出、并行函数调用等功能。训练数据截止于 2023 年 12 月。
+
+    **注意**：预览期间受 OpenAI 严格速率限制。
+id: openai/gpt-4-turbo-preview

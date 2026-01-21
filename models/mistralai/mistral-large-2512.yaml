@@ -1,0 +1,2 @@
+description_cn: Mistral Large 3 2512 是 Mistral 迄今为止最强大的模型，采用稀疏混合专家架构，激活参数达 410 亿（总计 6750 亿），并以 Apache 2.0 许可证发布。
+id: mistralai/mistral-large-2512

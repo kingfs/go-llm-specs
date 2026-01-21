@@ -1,0 +1,2 @@
+description_cn: Venice Uncensored Dolphin Mistral 24B Venice Edition 是 Mistral-Small-24B-Instruct-2501 的微调变体，由 dphn.ai 与 Venice.ai 联合开发。该模型定位为“无审查”的指令微调大语言模型，保留用户对对齐策略、系统提示及行为模式的完全控制权。面向高级且无限制的应用场景，Venice Uncensored 强调可引导性与行为透明性，移除了主流助手模型中常见的默认安全与对齐机制。
+id: cognitivecomputations/dolphin-mistral-24b-venice-edition:free

@@ -1,0 +1,7 @@
+description_cn: |-
+    MiniMax-01 融合了用于文本生成的 MiniMax-Text-01 与用于图像理解的 MiniMax-VL-01。模型总参数量达 4560 亿，每次推理激活 459 亿参数，支持高达 400 万 token 的上下文长度。
+
+    文本模型采用混合架构，结合 Lightning Attention、Softmax Attention 与混合专家（MoE）机制；图像模型采用“ViT-MLP-LLM”框架，并在文本模型基础上进行训练。
+
+    更多发布详情请见：https://www.minimaxi.com/en/news/minimax-01-series-2
+id: minimax/minimax-01

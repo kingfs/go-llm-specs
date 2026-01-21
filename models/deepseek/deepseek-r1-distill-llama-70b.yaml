@@ -1,0 +1,9 @@
+description_cn: |-
+    DeepSeek R1 Distill Llama 70B 是基于 [Llama-3.3-70B-Instruct](/meta-llama/llama-3.3-70b-instruct) 并利用 [DeepSeek R1](/deepseek/deepseek-r1) 输出蒸馏而成的大语言模型。该模型融合先进蒸馏技术，在多项基准测试中表现卓越，包括：
+
+    - AIME 2024 pass@1：70.0
+    - MATH-500 pass@1：94.5
+    - CodeForces 评分：1633
+
+    通过 DeepSeek R1 输出的微调，该模型实现了可与更大规模前沿模型相媲美的竞争力。
+id: deepseek/deepseek-r1-distill-llama-70b

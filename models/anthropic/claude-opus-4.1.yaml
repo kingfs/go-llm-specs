@@ -1,0 +1,2 @@
+description_cn: Claude Opus 4.1 是 Anthropic 旗舰模型的更新版本，在编码、推理和智能体任务方面性能显著提升。该模型在 SWE-bench Verified 上达到 74.5% 的准确率，并在多文件代码重构、调试精度和细节导向推理方面取得显著进步。模型支持最多 64K tokens 的扩展推理，专为研究、数据分析和工具辅助推理等任务优化。
+id: anthropic/claude-opus-4.1

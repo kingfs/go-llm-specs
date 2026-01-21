@@ -1,0 +1,2 @@
+description_cn: Coder‑Large 是基于 Qwen 2.5‑Instruct 微调的 320 亿参数模型，进一步在采用宽松许可证的 GitHub、CodeSearchNet 及合成缺陷修复语料库上训练而成。该模型支持 32k 上下文窗口，可在单次调用中完成多文件重构或长差异审查，并支持 30 多种编程语言，尤其针对 TypeScript、Go 和 Terraform 进行了优化。内部基准测试表明，得益于强化学习阶段对可编译输出的奖励机制，其在 HumanEval 上比 CodeLlama‑34B‑Python 高出 5–8 分，在 BugFix 任务上表现同样优异。模型默认在代码块旁生成结构化解释，既适用于教育工具，也适用于生产级编程助手场景。在成本方面，Together AI 的定价远低于主流闭源竞品，使团队能在控制支出的同时规模化部署交互式编码功能。
+id: arcee-ai/coder-large

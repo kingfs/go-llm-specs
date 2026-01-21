@@ -1,0 +1,7 @@
+description_cn: |-
+    Google 推出的 Gemma 2 9B 是一款先进的开源语言模型，在其规模级别中树立了效率与性能的新标杆。
+
+    该模型专为广泛任务设计，赋能开发者和研究人员构建创新应用，同时兼顾可访问性、安全性与成本效益。
+
+    更多详情请参阅 [发布公告](https://blog.google/technology/developers/google-gemma-2/)。Gemma 的使用需遵守 Google 的 [Gemma 使用条款](https://ai.google.dev/gemma/terms)。
+id: google/gemma-2-9b-it

@@ -1,0 +1,2 @@
+description_cn: 基于 PEFT 库提供的 4 位 QLoRA 微调方法，对拥有 70 亿参数的 Code LLaMA - Instruct 模型进行微调，专用于生成 Solidity 智能合约。
+id: alfredpros/codellama-7b-instruct-solidity

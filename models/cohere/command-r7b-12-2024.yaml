@@ -1,0 +1,5 @@
+description_cn: |-
+    Command R7B（2024 年 12 月版）是 Command R+ 模型的小幅快速更新版本，于 2024 年 12 月发布。该模型在检索增强生成（RAG）、工具调用、智能体等需要复杂推理和多步骤操作的任务中表现卓越。
+
+    使用本模型需遵守 Cohere 的[使用政策](https://docs.cohere.com/docs/usage-policy)和[SaaS 协议](https://cohere.com/saas-agreement)。
+id: cohere/command-r7b-12-2024

@@ -1,0 +1,5 @@
+description_cn: |-
+    InternVL3 系列是先进的多模态大语言模型（MLLM）。相较于 InternVL 2.5，InternVL3 展现出更强的多模态感知与推理能力。
+
+    此外，InternVL3 在基准测试中对标 Qwen2.5 Chat 模型，其语言模块以 Qwen2.5 预训练基础模型为初始化起点。得益于原生多模态预训练（Native Multimodal Pre-Training），InternVL3 系列在整体文本性能上超越 Qwen2.5 系列。
+id: opengvlab/internvl3-78b

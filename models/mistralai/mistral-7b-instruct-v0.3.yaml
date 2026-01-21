@@ -1,0 +1,11 @@
+description_cn: |-
+    这是一款高性能、业界标准的 73 亿参数模型，针对速度和上下文长度进行了优化。
+
+    这是 [Mistral 7B Instruct v0.2](/models/mistralai/mistral-7b-instruct-v0.2) 的改进版本，主要变更包括：
+
+    - 词表扩展至 32768
+    - 支持 v3 分词器
+    - 支持函数调用
+
+    注意：函数调用支持取决于具体服务提供商。
+id: mistralai/mistral-7b-instruct-v0.3

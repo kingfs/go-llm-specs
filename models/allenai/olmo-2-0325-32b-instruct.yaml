@@ -1,0 +1,2 @@
+description_cn: OLMo-2 32B Instruct 是 OLMo-2 32B（2025年3月基础模型）的监督指令微调版本，在 GSM8K、MATH、IFEval 等复杂推理与指令遵循基准测试及通用 NLP 评估中表现卓越。该模型由 AI2 开发，属于一项开放、面向研究的计划，主要基于英文数据集训练，旨在推动开源语言模型的理解与发展。
+id: allenai/olmo-2-0325-32b-instruct

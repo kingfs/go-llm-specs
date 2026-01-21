@@ -1,0 +1,2 @@
+description_cn: DeepSeek-TNG-R1T2-Chimera 是 TNG Tech 推出的第二代 Chimera 模型，是一款 6710 亿参数的混合专家文本生成模型，由 DeepSeek-AI 的 R1-0528、R1 和 V3-0324 三个检查点通过专家集成（Assembly-of-Experts）融合而成。三亲本设计在 vLLM 下推理速度较原始 R1 提升约 20%，较 R1-0528 提升超 2 倍，在成本与智能之间取得良好平衡。该检查点标准使用支持最长 60k tokens 上下文（实测可达约 130k），并保持一致的 <think> token 行为，适用于长上下文分析、对话及其他开放式生成任务。
+id: tngtech/deepseek-r1t2-chimera

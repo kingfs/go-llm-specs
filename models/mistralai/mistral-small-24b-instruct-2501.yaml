@@ -1,0 +1,5 @@
+description_cn: |-
+    Mistral Small 3 是一款 240 亿参数的语言模型，针对常见 AI 任务优化了低延迟性能。该模型以 Apache 2.0 许可证发布，提供预训练版和指令微调版，适用于高效的本地部署。
+
+    模型在 MMLU 基准测试中达到 81% 的准确率，性能可与 Llama 3.3 70B 和 Qwen 32B 等更大模型竞争，且在同等硬件上运行速度提升三倍。[点击此处阅读模型博客文章。](https://mistral.ai/news/mistral-small-3/)
+id: mistralai/mistral-small-24b-instruct-2501
