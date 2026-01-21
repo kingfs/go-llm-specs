@@ -2,16 +2,16 @@ id: qwen/qwen-vl-max
 name: 'Qwen: Qwen VL Max'
 provider: Qwen
 description: |
-    Qwen VL Max is a visual understanding model with 7500 tokens context length. It excels in delivering optimal performance for a broader spectrum of complex tasks.
+  Qwen VL Max is a visual understanding model with 7500 tokens context length. It excels in delivering optimal performance for a broader spectrum of complex tasks.
 description_cn: Qwen VL Max 是一款视觉理解模型，上下文长度达 7500 个 token，在更广泛的复杂任务中提供卓越性能。
 context_length: 131072
 max_output: 8192
 price_in: 8e-07
 price_out: 3.2e-06
 features:
-    - CapChat
-    - CapFunctionCall
-    - CapJsonMode
-    - ModalityImageIn
-    - ModalityTextIn
-    - ModalityTextOut
+  - CapChat
+  - CapFunctionCall
+  - CapJsonMode
+  - ModalityImageIn
+  - ModalityTextIn
+  - ModalityTextOut

@@ -8,10 +8,10 @@ max_output: 128000
 price_in: 5e-08
 price_out: 4e-07
 features:
-    - CapChat
-    - CapFunctionCall
-    - CapJsonMode
-    - ModalityFileIn
-    - ModalityImageIn
-    - ModalityTextIn
-    - ModalityTextOut
+  - CapChat
+  - CapFunctionCall
+  - CapJsonMode
+  - ModalityFileIn
+  - ModalityImageIn
+  - ModalityTextIn
+  - ModalityTextOut

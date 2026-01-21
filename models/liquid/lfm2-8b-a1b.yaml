@@ -7,6 +7,6 @@ context_length: 32768
 price_in: 1e-08
 price_out: 2e-08
 features:
-    - CapChat
-    - ModalityTextIn
-    - ModalityTextOut
+  - CapChat
+  - ModalityTextIn
+  - ModalityTextOut

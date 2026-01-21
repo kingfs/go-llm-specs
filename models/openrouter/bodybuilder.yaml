@@ -2,21 +2,21 @@ id: openrouter/bodybuilder
 name: Body Builder (beta)
 provider: Openrouter
 description: |-
-    Transform your natural language requests into structured OpenRouter API request objects. Describe what you want to accomplish with AI models, and Body Builder will construct the appropriate API calls. Example: "count to 10 using gemini and opus."
+  Transform your natural language requests into structured OpenRouter API request objects. Describe what you want to accomplish with AI models, and Body Builder will construct the appropriate API calls. Example: "count to 10 using gemini and opus."
 
-    This is useful for creating multi-model requests, custom model routers, or programmatic generation of API calls from human descriptions.
+  This is useful for creating multi-model requests, custom model routers, or programmatic generation of API calls from human descriptions.
 
-    **BETA NOTICE**: Body Builder is in beta, and currently free. Pricing and functionality may change in the future.
+  **BETA NOTICE**: Body Builder is in beta, and currently free. Pricing and functionality may change in the future.
 description_cn: |-
-    将您的自然语言请求转换为结构化的 OpenRouter API 请求对象。只需描述您希望 AI 模型完成的任务，Body Builder 即可自动生成相应的 API 调用。例如：“使用 gemini 和 opus 从 1 数到 10。”
+  将您的自然语言请求转换为结构化的 OpenRouter API 请求对象。只需描述您希望 AI 模型完成的任务，Body Builder 即可自动生成相应的 API 调用。例如：“使用 gemini 和 opus 从 1 数到 10。”
 
-    此功能适用于创建多模型请求、自定义模型路由，或根据人类描述程序化生成 API 调用。
+  此功能适用于创建多模型请求、自定义模型路由，或根据人类描述程序化生成 API 调用。
 
-    **Beta 公告**：Body Builder 目前处于 Beta 阶段，免费使用。未来定价与功能可能发生变化。
+  **Beta 公告**：Body Builder 目前处于 Beta 阶段，免费使用。未来定价与功能可能发生变化。
 context_length: 128000
 price_in: -1
 price_out: -1
 features:
-    - CapChat
-    - ModalityTextIn
-    - ModalityTextOut
+  - CapChat
+  - ModalityTextIn
+  - ModalityTextOut

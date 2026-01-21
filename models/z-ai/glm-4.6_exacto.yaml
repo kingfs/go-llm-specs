@@ -2,28 +2,28 @@ id: z-ai/glm-4.6:exacto
 name: 'Z.AI: GLM 4.6 (exacto)'
 provider: Z-Ai
 description: |-
-    Compared with GLM-4.5, this generation brings several key improvements:
+  Compared with GLM-4.5, this generation brings several key improvements:
 
-    Longer context window: The context window has been expanded from 128K to 200K tokens, enabling the model to handle more complex agentic tasks.
-    Superior coding performance: The model achieves higher scores on code benchmarks and demonstrates better real-world performance in applications such as Claude Code、Cline、Roo Code and Kilo Code, including improvements in generating visually polished front-end pages.
-    Advanced reasoning: GLM-4.6 shows a clear improvement in reasoning performance and supports tool use during inference, leading to stronger overall capability.
-    More capable agents: GLM-4.6 exhibits stronger performance in tool using and search-based agents, and integrates more effectively within agent frameworks.
-    Refined writing: Better aligns with human preferences in style and readability, and performs more naturally in role-playing scenarios.
+  Longer context window: The context window has been expanded from 128K to 200K tokens, enabling the model to handle more complex agentic tasks.
+  Superior coding performance: The model achieves higher scores on code benchmarks and demonstrates better real-world performance in applications such as Claude Code、Cline、Roo Code and Kilo Code, including improvements in generating visually polished front-end pages.
+  Advanced reasoning: GLM-4.6 shows a clear improvement in reasoning performance and supports tool use during inference, leading to stronger overall capability.
+  More capable agents: GLM-4.6 exhibits stronger performance in tool using and search-based agents, and integrates more effectively within agent frameworks.
+  Refined writing: Better aligns with human preferences in style and readability, and performs more naturally in role-playing scenarios.
 description_cn: |-
-    相比 GLM-4.5，本代模型带来多项关键改进：
+  相比 GLM-4.5，本代模型带来多项关键改进：
 
-    更长上下文窗口：上下文窗口从 128K 扩展至 200K tokens，使模型能够处理更复杂的智能体任务。
-    卓越编码性能：在代码基准测试中得分更高，并在 Claude Code、Cline、Roo Code 和 Kilo Code 等实际应用中表现更佳，包括生成视觉效果更精美的前端页面。
-    高级推理能力：GLM-4.6 的推理性能显著提升，支持推理过程中的工具调用，整体能力更强。
-    更强大的智能体：在工具调用型和基于搜索的智能体任务中表现更优，并能更有效地集成到智能体框架中。
-    精炼的写作能力：在风格与可读性方面更符合人类偏好，在角色扮演场景中表现更自然。
+  更长上下文窗口：上下文窗口从 128K 扩展至 200K tokens，使模型能够处理更复杂的智能体任务。
+  卓越编码性能：在代码基准测试中得分更高，并在 Claude Code、Cline、Roo Code 和 Kilo Code 等实际应用中表现更佳，包括生成视觉效果更精美的前端页面。
+  高级推理能力：GLM-4.6 的推理性能显著提升，支持推理过程中的工具调用，整体能力更强。
+  更强大的智能体：在工具调用型和基于搜索的智能体任务中表现更优，并能更有效地集成到智能体框架中。
+  精炼的写作能力：在风格与可读性方面更符合人类偏好，在角色扮演场景中表现更自然。
 context_length: 204800
 max_output: 131072
 price_in: 4.4e-07
 price_out: 1.76e-06
 features:
-    - CapChat
-    - CapFunctionCall
-    - CapJsonMode
-    - ModalityTextIn
-    - ModalityTextOut
+  - CapChat
+  - CapFunctionCall
+  - CapJsonMode
+  - ModalityTextIn
+  - ModalityTextOut

@@ -2,20 +2,20 @@ id: mistralai/mistral-medium-3
 name: 'Mistral: Mistral Medium 3'
 provider: Mistral
 description: |-
-    Mistral Medium 3 is a high-performance enterprise-grade language model designed to deliver frontier-level capabilities at significantly reduced operational cost. It balances state-of-the-art reasoning and multimodal performance with 8× lower cost compared to traditional large models, making it suitable for scalable deployments across professional and industrial use cases.
+  Mistral Medium 3 is a high-performance enterprise-grade language model designed to deliver frontier-level capabilities at significantly reduced operational cost. It balances state-of-the-art reasoning and multimodal performance with 8× lower cost compared to traditional large models, making it suitable for scalable deployments across professional and industrial use cases.
 
-    The model excels in domains such as coding, STEM reasoning, and enterprise adaptation. It supports hybrid, on-prem, and in-VPC deployments and is optimized for integration into custom workflows. Mistral Medium 3 offers competitive accuracy relative to larger models like Claude Sonnet 3.5/3.7, Llama 4 Maverick, and Command R+, while maintaining broad compatibility across cloud environments.
+  The model excels in domains such as coding, STEM reasoning, and enterprise adaptation. It supports hybrid, on-prem, and in-VPC deployments and is optimized for integration into custom workflows. Mistral Medium 3 offers competitive accuracy relative to larger models like Claude Sonnet 3.5/3.7, Llama 4 Maverick, and Command R+, while maintaining broad compatibility across cloud environments.
 description_cn: |-
-    Mistral Medium 3 是一款高性能的企业级语言模型，旨在以显著降低的运营成本提供前沿级能力。该模型在尖端推理与多模态性能之间取得平衡，成本仅为传统大模型的八分之一，适用于专业及工业场景的大规模部署。
+  Mistral Medium 3 是一款高性能的企业级语言模型，旨在以显著降低的运营成本提供前沿级能力。该模型在尖端推理与多模态性能之间取得平衡，成本仅为传统大模型的八分之一，适用于专业及工业场景的大规模部署。
 
-    该模型在编程、STEM 推理及企业适配等领域表现卓越，支持混合、本地及 VPC 内部署，并针对自定义工作流集成进行了优化。Mistral Medium 3 在准确性方面可与 Claude Sonnet 3.5/3.7、Llama 4 Maverick 和 Command R+ 等更大模型竞争，同时在各类云环境中保持广泛的兼容性。
+  该模型在编程、STEM 推理及企业适配等领域表现卓越，支持混合、本地及 VPC 内部署，并针对自定义工作流集成进行了优化。Mistral Medium 3 在准确性方面可与 Claude Sonnet 3.5/3.7、Llama 4 Maverick 和 Command R+ 等更大模型竞争，同时在各类云环境中保持广泛的兼容性。
 context_length: 131072
 price_in: 4e-07
 price_out: 2e-06
 features:
-    - CapChat
-    - CapFunctionCall
-    - CapJsonMode
-    - ModalityImageIn
-    - ModalityTextIn
-    - ModalityTextOut
+  - CapChat
+  - CapFunctionCall
+  - CapJsonMode
+  - ModalityImageIn
+  - ModalityTextIn
+  - ModalityTextOut

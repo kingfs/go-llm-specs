@@ -2,19 +2,19 @@ id: mistralai/devstral-small
 name: 'Mistral: Devstral Small 1.1'
 provider: Mistral
 description: |
-    Devstral Small 1.1 is a 24B parameter open-weight language model for software engineering agents, developed by Mistral AI in collaboration with All Hands AI. Finetuned from Mistral Small 3.1 and released under the Apache 2.0 license, it features a 128k token context window and supports both Mistral-style function calling and XML output formats.
+  Devstral Small 1.1 is a 24B parameter open-weight language model for software engineering agents, developed by Mistral AI in collaboration with All Hands AI. Finetuned from Mistral Small 3.1 and released under the Apache 2.0 license, it features a 128k token context window and supports both Mistral-style function calling and XML output formats.
 
-    Designed for agentic coding workflows, Devstral Small 1.1 is optimized for tasks such as codebase exploration, multi-file edits, and integration into autonomous development agents like OpenHands and Cline. It achieves 53.6% on SWE-Bench Verified, surpassing all other open models on this benchmark, while remaining lightweight enough to run on a single 4090 GPU or Apple silicon machine. The model uses a Tekken tokenizer with a 131k vocabulary and is deployable via vLLM, Transformers, Ollama, LM Studio, and other OpenAI-compatible runtimes.
+  Designed for agentic coding workflows, Devstral Small 1.1 is optimized for tasks such as codebase exploration, multi-file edits, and integration into autonomous development agents like OpenHands and Cline. It achieves 53.6% on SWE-Bench Verified, surpassing all other open models on this benchmark, while remaining lightweight enough to run on a single 4090 GPU or Apple silicon machine. The model uses a Tekken tokenizer with a 131k vocabulary and is deployable via vLLM, Transformers, Ollama, LM Studio, and other OpenAI-compatible runtimes.
 description_cn: |-
-    Devstral Small 1.1 是由 Mistral AI 与 All Hands AI 联合开发的 240 亿参数开源语言模型，专为软件工程智能体打造。该模型基于 Mistral Small 3.1 微调而成，采用 Apache 2.0 许可证发布，支持 128K 令牌上下文窗口，并兼容 Mistral 风格的函数调用与 XML 输出格式。
+  Devstral Small 1.1 是由 Mistral AI 与 All Hands AI 联合开发的 240 亿参数开源语言模型，专为软件工程智能体打造。该模型基于 Mistral Small 3.1 微调而成，采用 Apache 2.0 许可证发布，支持 128K 令牌上下文窗口，并兼容 Mistral 风格的函数调用与 XML 输出格式。
 
-    专为智能体编码工作流设计，Devstral Small 1.1 针对代码库探索、多文件编辑及集成至 OpenHands、Cline 等自主开发智能体等任务进行了优化。其在 SWE-Bench Verified 基准上取得 53.6% 的成绩，超越所有其他开源模型，同时足够轻量，可在单张 RTX 4090 GPU 或 Apple Silicon 设备上运行。该模型采用 Tekken 分词器，词表大小达 131K，可通过 vLLM、Transformers、Ollama、LM Studio 及其他兼容 OpenAI 的运行时部署。
+  专为智能体编码工作流设计，Devstral Small 1.1 针对代码库探索、多文件编辑及集成至 OpenHands、Cline 等自主开发智能体等任务进行了优化。其在 SWE-Bench Verified 基准上取得 53.6% 的成绩，超越所有其他开源模型，同时足够轻量，可在单张 RTX 4090 GPU 或 Apple Silicon 设备上运行。该模型采用 Tekken 分词器，词表大小达 131K，可通过 vLLM、Transformers、Ollama、LM Studio 及其他兼容 OpenAI 的运行时部署。
 context_length: 131072
 price_in: 1e-07
 price_out: 3e-07
 features:
-    - CapChat
-    - CapFunctionCall
-    - CapJsonMode
-    - ModalityTextIn
-    - ModalityTextOut
+  - CapChat
+  - CapFunctionCall
+  - CapJsonMode
+  - ModalityTextIn
+  - ModalityTextOut

@@ -2,19 +2,19 @@ id: mistralai/codestral-2508
 name: 'Mistral: Codestral 2508'
 provider: Mistral
 description: |-
-    Mistral's cutting-edge language model for coding released end of July 2025. Codestral specializes in low-latency, high-frequency tasks such as fill-in-the-middle (FIM), code correction and test generation.
+  Mistral's cutting-edge language model for coding released end of July 2025. Codestral specializes in low-latency, high-frequency tasks such as fill-in-the-middle (FIM), code correction and test generation.
 
-    [Blog Post](https://mistral.ai/news/codestral-25-08)
+  [Blog Post](https://mistral.ai/news/codestral-25-08)
 description_cn: |-
-    Mistral 于 2025 年 7 月底发布的前沿代码语言模型。Codestral 专为低延迟、高频率任务设计，例如中间填充（FIM）、代码修正和测试生成。
+  Mistral 于 2025 年 7 月底发布的前沿代码语言模型。Codestral 专为低延迟、高频率任务设计，例如中间填充（FIM）、代码修正和测试生成。
 
-    [博客文章](https://mistral.ai/news/codestral-25-08)
+  [博客文章](https://mistral.ai/news/codestral-25-08)
 context_length: 256000
 price_in: 3e-07
 price_out: 9e-07
 features:
-    - CapChat
-    - CapFunctionCall
-    - CapJsonMode
-    - ModalityTextIn
-    - ModalityTextOut
+  - CapChat
+  - CapFunctionCall
+  - CapJsonMode
+  - ModalityTextIn
+  - ModalityTextOut

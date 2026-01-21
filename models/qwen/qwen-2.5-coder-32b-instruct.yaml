@@ -3,18 +3,18 @@ name: Qwen2.5 Coder 32B Instruct
 provider: Qwen
 description: "Qwen2.5-Coder is the latest series of Code-Specific Qwen large language models (formerly known as CodeQwen). Qwen2.5-Coder brings the following improvements upon CodeQwen1.5:\n\n- Significantly improvements in **code generation**, **code reasoning** and **code fixing**. \n- A more comprehensive foundation for real-world applications such as **Code Agents**. Not only enhancing coding capabilities but also maintaining its strengths in mathematics and general competencies.\n\nTo read more about its evaluation results, check out [Qwen 2.5 Coder's blog](https://qwenlm.github.io/blog/qwen2.5-coder-family/)."
 description_cn: |-
-    Qwen2.5-Coder 是最新一代专注于代码的 Qwen 大语言模型系列（前身为 CodeQwen）。相较于 CodeQwen1.5，Qwen2.5-Coder 带来了以下改进：
+  Qwen2.5-Coder 是最新一代专注于代码的 Qwen 大语言模型系列（前身为 CodeQwen）。相较于 CodeQwen1.5，Qwen2.5-Coder 带来了以下改进：
 
-    - 在**代码生成**、**代码推理**和**代码修复**方面显著提升；
-    - 为实际应用场景（如**代码智能体**）提供了更全面的基础，不仅强化了编码能力，还保持了在数学和通用能力方面的优势。
+  - 在**代码生成**、**代码推理**和**代码修复**方面显著提升；
+  - 为实际应用场景（如**代码智能体**）提供了更全面的基础，不仅强化了编码能力，还保持了在数学和通用能力方面的优势。
 
-    更多评测结果详见 [Qwen 2.5 Coder 博客](https://qwenlm.github.io/blog/qwen2.5-coder-family/)。
+  更多评测结果详见 [Qwen 2.5 Coder 博客](https://qwenlm.github.io/blog/qwen2.5-coder-family/)。
 context_length: 32768
 max_output: 32768
 price_in: 3e-08
 price_out: 1.1e-07
 features:
-    - CapChat
-    - CapJsonMode
-    - ModalityTextIn
-    - ModalityTextOut
+  - CapChat
+  - CapJsonMode
+  - ModalityTextIn
+  - ModalityTextOut

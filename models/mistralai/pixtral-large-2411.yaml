@@ -2,21 +2,21 @@ id: mistralai/pixtral-large-2411
 name: 'Mistral: Pixtral Large 2411'
 provider: Mistral
 description: |+
-    Pixtral Large is a 124B parameter, open-weight, multimodal model built on top of [Mistral Large 2](/mistralai/mistral-large-2411). The model is able to understand documents, charts and natural images.
+  Pixtral Large is a 124B parameter, open-weight, multimodal model built on top of [Mistral Large 2](/mistralai/mistral-large-2411). The model is able to understand documents, charts and natural images.
 
-    The model is available under the Mistral Research License (MRL) for research and educational use, and the Mistral Commercial License for experimentation, testing, and production for commercial purposes.
+  The model is available under the Mistral Research License (MRL) for research and educational use, and the Mistral Commercial License for experimentation, testing, and production for commercial purposes.
 
 description_cn: |-
-    Pixtral Large 是一个拥有 1240 亿参数的开源权重多模态模型，基于 [Mistral Large 2](/mistralai/mistral-large-2411) 构建，能够理解文档、图表和自然图像。
+  Pixtral Large 是一个拥有 1240 亿参数的开源权重多模态模型，基于 [Mistral Large 2](/mistralai/mistral-large-2411) 构建，能够理解文档、图表和自然图像。
 
-    该模型依据 Mistral 研究许可（MRL）可用于研究与教育用途，并可通过 Mistral 商业许可用于商业目的的实验、测试和生产部署。
+  该模型依据 Mistral 研究许可（MRL）可用于研究与教育用途，并可通过 Mistral 商业许可用于商业目的的实验、测试和生产部署。
 context_length: 131072
 price_in: 2e-06
 price_out: 6e-06
 features:
-    - CapChat
-    - CapFunctionCall
-    - CapJsonMode
-    - ModalityImageIn
-    - ModalityTextIn
-    - ModalityTextOut
+  - CapChat
+  - CapFunctionCall
+  - CapJsonMode
+  - ModalityImageIn
+  - ModalityTextIn
+  - ModalityTextOut

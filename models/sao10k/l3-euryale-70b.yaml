@@ -2,27 +2,27 @@ id: sao10k/l3-euryale-70b
 name: 'Sao10k: Llama 3 Euryale 70B v2.1'
 provider: Sao10k
 description: |-
-    Euryale 70B v2.1 is a model focused on creative roleplay from [Sao10k](https://ko-fi.com/sao10k).
+  Euryale 70B v2.1 is a model focused on creative roleplay from [Sao10k](https://ko-fi.com/sao10k).
 
-    - Better prompt adherence.
-    - Better anatomy / spatial awareness.
-    - Adapts much better to unique and custom formatting / reply formats.
-    - Very creative, lots of unique swipes.
-    - Is not restrictive during roleplays.
+  - Better prompt adherence.
+  - Better anatomy / spatial awareness.
+  - Adapts much better to unique and custom formatting / reply formats.
+  - Very creative, lots of unique swipes.
+  - Is not restrictive during roleplays.
 description_cn: |-
-    Euryale 70B v2.1 是由 [Sao10k](https://ko-fi.com/sao10k) 开发的专注于创意角色扮演的模型。
+  Euryale 70B v2.1 是由 [Sao10k](https://ko-fi.com/sao10k) 开发的专注于创意角色扮演的模型。
 
-    - 更强的提示遵循能力
-    - 更佳的人体结构与空间感知能力
-    - 对独特及自定义格式/回复样式的适应性显著提升
-    - 极具创造力，提供大量新颖表达
-    - 在角色扮演过程中无过多限制
+  - 更强的提示遵循能力
+  - 更佳的人体结构与空间感知能力
+  - 对独特及自定义格式/回复样式的适应性显著提升
+  - 极具创造力，提供大量新颖表达
+  - 在角色扮演过程中无过多限制
 context_length: 8192
 max_output: 8192
 price_in: 1.48e-06
 price_out: 1.48e-06
 features:
-    - CapChat
-    - CapFunctionCall
-    - ModalityTextIn
-    - ModalityTextOut
+  - CapChat
+  - CapFunctionCall
+  - ModalityTextIn
+  - ModalityTextOut

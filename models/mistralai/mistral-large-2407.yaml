@@ -2,19 +2,19 @@ id: mistralai/mistral-large-2407
 name: Mistral Large 2407
 provider: Mistral
 description: |
-    This is Mistral AI's flagship model, Mistral Large 2 (version mistral-large-2407). It's a proprietary weights-available model and excels at reasoning, code, JSON, chat, and more. Read the launch announcement [here](https://mistral.ai/news/mistral-large-2407/).
+  This is Mistral AI's flagship model, Mistral Large 2 (version mistral-large-2407). It's a proprietary weights-available model and excels at reasoning, code, JSON, chat, and more. Read the launch announcement [here](https://mistral.ai/news/mistral-large-2407/).
 
-    It supports dozens of languages including French, German, Spanish, Italian, Portuguese, Arabic, Hindi, Russian, Chinese, Japanese, and Korean, along with 80+ coding languages including Python, Java, C, C++, JavaScript, and Bash. Its long context window allows precise information recall from large documents.
+  It supports dozens of languages including French, German, Spanish, Italian, Portuguese, Arabic, Hindi, Russian, Chinese, Japanese, and Korean, along with 80+ coding languages including Python, Java, C, C++, JavaScript, and Bash. Its long context window allows precise information recall from large documents.
 description_cn: |-
-    这是 Mistral AI 的旗舰模型 Mistral Large 2（版本 mistral-large-2407）。该模型为闭源权重可用模型，在推理、代码、JSON、对话等方面表现卓越。发布详情请参阅[此处](https://mistral.ai/news/mistral-large-2407/)。
+  这是 Mistral AI 的旗舰模型 Mistral Large 2（版本 mistral-large-2407）。该模型为闭源权重可用模型，在推理、代码、JSON、对话等方面表现卓越。发布详情请参阅[此处](https://mistral.ai/news/mistral-large-2407/)。
 
-    支持数十种语言，包括法语、德语、西班牙语、意大利语、葡萄牙语、阿拉伯语、印地语、俄语、中文、日语和韩语，并支持 80 多种编程语言，如 Python、Java、C、C++、JavaScript 和 Bash。其长上下文窗口可精准从大型文档中检索信息。
+  支持数十种语言，包括法语、德语、西班牙语、意大利语、葡萄牙语、阿拉伯语、印地语、俄语、中文、日语和韩语，并支持 80 多种编程语言，如 Python、Java、C、C++、JavaScript 和 Bash。其长上下文窗口可精准从大型文档中检索信息。
 context_length: 131072
 price_in: 2e-06
 price_out: 6e-06
 features:
-    - CapChat
-    - CapFunctionCall
-    - CapJsonMode
-    - ModalityTextIn
-    - ModalityTextOut
+  - CapChat
+  - CapFunctionCall
+  - CapJsonMode
+  - ModalityTextIn
+  - ModalityTextOut

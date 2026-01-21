@@ -3,17 +3,17 @@ name: 'xAI: Grok 3 Beta'
 provider: X-Ai
 description: "Grok 3 is the latest model from xAI. It's their flagship model that excels at enterprise use cases like data extraction, coding, and text summarization. Possesses deep domain knowledge in finance, healthcare, law, and science.\n\nExcels in structured tasks and benchmarks like GPQA, LCB, and MMLU-Pro where it outperforms Grok 3 Mini even on high thinking. \n\nNote: That there are two xAI endpoints for this model. By default when using this model we will always route you to the base endpoint. If you want the fast endpoint you can add `provider: { sort: throughput}`, to sort by throughput instead. \n"
 description_cn: |-
-    Grok 3 是 xAI 最新推出的旗舰模型，在企业级应用场景（如数据提取、编程和文本摘要）中表现卓越，并在金融、医疗、法律和科学等领域具备深厚的领域知识。
+  Grok 3 是 xAI 最新推出的旗舰模型，在企业级应用场景（如数据提取、编程和文本摘要）中表现卓越，并在金融、医疗、法律和科学等领域具备深厚的领域知识。
 
-    该模型在 GPQA、LCB 和 MMLU-Pro 等结构化任务与基准测试中表现优异，即使在高推理模式下也显著优于 Grok 3 Mini。
+  该模型在 GPQA、LCB 和 MMLU-Pro 等结构化任务与基准测试中表现优异，即使在高推理模式下也显著优于 Grok 3 Mini。
 
-    注意：此模型提供两个 xAI 接入端点。默认情况下，使用该模型将始终路由至基础端点。若需使用高速端点，可添加 `provider: { sort: throughput }` 以按吞吐量优先排序。
+  注意：此模型提供两个 xAI 接入端点。默认情况下，使用该模型将始终路由至基础端点。若需使用高速端点，可添加 `provider: { sort: throughput }` 以按吞吐量优先排序。
 context_length: 131072
 price_in: 3e-06
 price_out: 1.5e-05
 features:
-    - CapChat
-    - CapFunctionCall
-    - CapJsonMode
-    - ModalityTextIn
-    - ModalityTextOut
+  - CapChat
+  - CapFunctionCall
+  - CapJsonMode
+  - ModalityTextIn
+  - ModalityTextOut

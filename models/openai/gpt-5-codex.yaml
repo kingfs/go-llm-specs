@@ -2,21 +2,21 @@ id: openai/gpt-5-codex
 name: 'OpenAI: GPT-5 Codex'
 provider: OpenAI
 description: |-
-    GPT-5-Codex is a specialized version of GPT-5 optimized for software engineering and coding workflows. It is designed for both interactive development sessions and long, independent execution of complex engineering tasks. The model supports building projects from scratch, feature development, debugging, large-scale refactoring, and code review. Compared to GPT-5, Codex is more steerable, adheres closely to developer instructions, and produces cleaner, higher-quality code outputs. Reasoning effort can be adjusted with the `reasoning.effort` parameter. Read the [docs here](https://openrouter.ai/docs/use-cases/reasoning-tokens#reasoning-effort-level)
+  GPT-5-Codex is a specialized version of GPT-5 optimized for software engineering and coding workflows. It is designed for both interactive development sessions and long, independent execution of complex engineering tasks. The model supports building projects from scratch, feature development, debugging, large-scale refactoring, and code review. Compared to GPT-5, Codex is more steerable, adheres closely to developer instructions, and produces cleaner, higher-quality code outputs. Reasoning effort can be adjusted with the `reasoning.effort` parameter. Read the [docs here](https://openrouter.ai/docs/use-cases/reasoning-tokens#reasoning-effort-level)
 
-    Codex integrates into developer environments including the CLI, IDE extensions, GitHub, and cloud tasks. It adapts reasoning effort dynamically—providing fast responses for small tasks while sustaining extended multi-hour runs for large projects. The model is trained to perform structured code reviews, catching critical flaws by reasoning over dependencies and validating behavior against tests. It also supports multimodal inputs such as images or screenshots for UI development and integrates tool use for search, dependency installation, and environment setup. Codex is intended specifically for agentic coding applications.
+  Codex integrates into developer environments including the CLI, IDE extensions, GitHub, and cloud tasks. It adapts reasoning effort dynamically—providing fast responses for small tasks while sustaining extended multi-hour runs for large projects. The model is trained to perform structured code reviews, catching critical flaws by reasoning over dependencies and validating behavior against tests. It also supports multimodal inputs such as images or screenshots for UI development and integrates tool use for search, dependency installation, and environment setup. Codex is intended specifically for agentic coding applications.
 description_cn: |-
-    GPT-5-Codex 是 GPT-5 的专用版本，针对软件工程和编码工作流进行了优化。它既适用于交互式开发会话，也适用于长时间独立执行复杂工程任务。该模型支持从零构建项目、功能开发、调试、大规模重构和代码审查。相比 GPT-5，Codex 更具可控性，能更严格遵循开发者指令，并生成更简洁、高质量的代码。推理强度可通过 `reasoning.effort` 参数调节。[详见文档](https://openrouter.ai/docs/use-cases/reasoning-tokens#reasoning-effort-level)
+  GPT-5-Codex 是 GPT-5 的专用版本，针对软件工程和编码工作流进行了优化。它既适用于交互式开发会话，也适用于长时间独立执行复杂工程任务。该模型支持从零构建项目、功能开发、调试、大规模重构和代码审查。相比 GPT-5，Codex 更具可控性，能更严格遵循开发者指令，并生成更简洁、高质量的代码。推理强度可通过 `reasoning.effort` 参数调节。[详见文档](https://openrouter.ai/docs/use-cases/reasoning-tokens#reasoning-effort-level)
 
-    Codex 可集成至 CLI、IDE 插件、GitHub 和云任务等开发者环境。它能动态调整推理强度——对小型任务快速响应，对大型项目则可持续运行数小时。该模型经过训练，可执行结构化代码审查，通过推理依赖关系并验证测试行为来发现关键缺陷。它还支持图像或截图等多模态输入用于 UI 开发，并集成工具用于搜索、依赖安装和环境配置。Codex 专为智能体驱动的编码应用而设计。
+  Codex 可集成至 CLI、IDE 插件、GitHub 和云任务等开发者环境。它能动态调整推理强度——对小型任务快速响应，对大型项目则可持续运行数小时。该模型经过训练，可执行结构化代码审查，通过推理依赖关系并验证测试行为来发现关键缺陷。它还支持图像或截图等多模态输入用于 UI 开发，并集成工具用于搜索、依赖安装和环境配置。Codex 专为智能体驱动的编码应用而设计。
 context_length: 400000
 max_output: 128000
 price_in: 1.25e-06
 price_out: 1e-05
 features:
-    - CapChat
-    - CapFunctionCall
-    - CapJsonMode
-    - ModalityImageIn
-    - ModalityTextIn
-    - ModalityTextOut
+  - CapChat
+  - CapFunctionCall
+  - CapJsonMode
+  - ModalityImageIn
+  - ModalityTextIn
+  - ModalityTextOut

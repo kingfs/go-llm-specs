@@ -2,22 +2,22 @@ id: google/gemma-2-27b-it
 name: 'Google: Gemma 2 27B'
 provider: Google
 description: |-
-    Gemma 2 27B by Google is an open model built from the same research and technology used to create the [Gemini models](/models?q=gemini).
+  Gemma 2 27B by Google is an open model built from the same research and technology used to create the [Gemini models](/models?q=gemini).
 
-    Gemma models are well-suited for a variety of text generation tasks, including question answering, summarization, and reasoning.
+  Gemma models are well-suited for a variety of text generation tasks, including question answering, summarization, and reasoning.
 
-    See the [launch announcement](https://blog.google/technology/developers/google-gemma-2/) for more details. Usage of Gemma is subject to Google's [Gemma Terms of Use](https://ai.google.dev/gemma/terms).
+  See the [launch announcement](https://blog.google/technology/developers/google-gemma-2/) for more details. Usage of Gemma is subject to Google's [Gemma Terms of Use](https://ai.google.dev/gemma/terms).
 description_cn: |-
-    Google 推出的 Gemma 2 27B 是一款开源模型，基于与 [Gemini 系列模型](/models?q=gemini) 相同的研究和技术构建。
+  Google 推出的 Gemma 2 27B 是一款开源模型，基于与 [Gemini 系列模型](/models?q=gemini) 相同的研究和技术构建。
 
-    Gemma 模型适用于多种文本生成任务，包括问答、摘要和推理。
+  Gemma 模型适用于多种文本生成任务，包括问答、摘要和推理。
 
-    更多详情请参阅 [发布公告](https://blog.google/technology/developers/google-gemma-2/)。Gemma 的使用需遵守 Google 的 [Gemma 使用条款](https://ai.google.dev/gemma/terms)。
+  更多详情请参阅 [发布公告](https://blog.google/technology/developers/google-gemma-2/)。Gemma 的使用需遵守 Google 的 [Gemma 使用条款](https://ai.google.dev/gemma/terms)。
 context_length: 8192
 price_in: 6.5e-07
 price_out: 6.5e-07
 features:
-    - CapChat
-    - CapJsonMode
-    - ModalityTextIn
-    - ModalityTextOut
+  - CapChat
+  - CapJsonMode
+  - ModalityTextIn
+  - ModalityTextOut

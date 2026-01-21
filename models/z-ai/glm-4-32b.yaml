@@ -2,22 +2,22 @@ id: z-ai/glm-4-32b
 name: 'Z.AI: GLM 4 32B '
 provider: Z-Ai
 description: |-
-    GLM 4 32B is a cost-effective foundation language model.
+  GLM 4 32B is a cost-effective foundation language model.
 
-    It can efficiently perform complex tasks and has significantly enhanced capabilities in tool use, online search, and code-related intelligent tasks.
+  It can efficiently perform complex tasks and has significantly enhanced capabilities in tool use, online search, and code-related intelligent tasks.
 
-    It is made by the same lab behind the thudm models.
+  It is made by the same lab behind the thudm models.
 description_cn: |-
-    GLM-4-32B 是一款高性价比的基础语言模型。
+  GLM-4-32B 是一款高性价比的基础语言模型。
 
-    可高效执行复杂任务，在工具调用、在线搜索及代码相关智能任务方面能力显著增强。
+  可高效执行复杂任务，在工具调用、在线搜索及代码相关智能任务方面能力显著增强。
 
-    由 thudm 模型背后的同一实验室研发。
+  由 thudm 模型背后的同一实验室研发。
 context_length: 128000
 price_in: 1e-07
 price_out: 1e-07
 features:
-    - CapChat
-    - CapFunctionCall
-    - ModalityTextIn
-    - ModalityTextOut
+  - CapChat
+  - CapFunctionCall
+  - ModalityTextIn
+  - ModalityTextOut

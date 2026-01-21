@@ -2,20 +2,20 @@ id: qwen/qwen3-coder:exacto
 name: 'Qwen: Qwen3 Coder 480B A35B (exacto)'
 provider: Qwen
 description: |-
-    Qwen3-Coder-480B-A35B-Instruct is a Mixture-of-Experts (MoE) code generation model developed by the Qwen team. It is optimized for agentic coding tasks such as function calling, tool use, and long-context reasoning over repositories. The model features 480 billion total parameters, with 35 billion active per forward pass (8 out of 160 experts).
+  Qwen3-Coder-480B-A35B-Instruct is a Mixture-of-Experts (MoE) code generation model developed by the Qwen team. It is optimized for agentic coding tasks such as function calling, tool use, and long-context reasoning over repositories. The model features 480 billion total parameters, with 35 billion active per forward pass (8 out of 160 experts).
 
-    Pricing for the Alibaba endpoints varies by context length. Once a request is greater than 128k input tokens, the higher pricing is used.
+  Pricing for the Alibaba endpoints varies by context length. Once a request is greater than 128k input tokens, the higher pricing is used.
 description_cn: |-
-    Qwen3-Coder-480B-A35B-Instruct 是千问团队开发的混合专家（MoE）代码生成模型，专为智能体编程任务优化，如函数调用、工具使用及基于仓库的长上下文推理。该模型总参数量达 4800 亿，每次前向传播激活 350 亿参数（从 160 个专家中激活 8 个）。
+  Qwen3-Coder-480B-A35B-Instruct 是千问团队开发的混合专家（MoE）代码生成模型，专为智能体编程任务优化，如函数调用、工具使用及基于仓库的长上下文推理。该模型总参数量达 4800 亿，每次前向传播激活 350 亿参数（从 160 个专家中激活 8 个）。
 
-    阿里云端点的定价根据上下文长度而异。当请求输入 token 超过 128k 时，将适用更高费率。
+  阿里云端点的定价根据上下文长度而异。当请求输入 token 超过 128k 时，将适用更高费率。
 context_length: 262144
 max_output: 65536
 price_in: 2.2e-07
 price_out: 1.8e-06
 features:
-    - CapChat
-    - CapFunctionCall
-    - CapJsonMode
-    - ModalityTextIn
-    - ModalityTextOut
+  - CapChat
+  - CapFunctionCall
+  - CapJsonMode
+  - ModalityTextIn
+  - ModalityTextOut

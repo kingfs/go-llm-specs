@@ -2,25 +2,25 @@ id: meta-llama/llama-3.2-1b-instruct
 name: 'Meta: Llama 3.2 1B Instruct'
 provider: Meta
 description: |-
-    Llama 3.2 1B is a 1-billion-parameter language model focused on efficiently performing natural language tasks, such as summarization, dialogue, and multilingual text analysis. Its smaller size allows it to operate efficiently in low-resource environments while maintaining strong task performance.
+  Llama 3.2 1B is a 1-billion-parameter language model focused on efficiently performing natural language tasks, such as summarization, dialogue, and multilingual text analysis. Its smaller size allows it to operate efficiently in low-resource environments while maintaining strong task performance.
 
-    Supporting eight core languages and fine-tunable for more, Llama 1.3B is ideal for businesses or developers seeking lightweight yet powerful AI solutions that can operate in diverse multilingual settings without the high computational demand of larger models.
+  Supporting eight core languages and fine-tunable for more, Llama 1.3B is ideal for businesses or developers seeking lightweight yet powerful AI solutions that can operate in diverse multilingual settings without the high computational demand of larger models.
 
-    Click here for the [original model card](https://github.com/meta-llama/llama-models/blob/main/models/llama3_2/MODEL_CARD.md).
+  Click here for the [original model card](https://github.com/meta-llama/llama-models/blob/main/models/llama3_2/MODEL_CARD.md).
 
-    Usage of this model is subject to [Meta's Acceptable Use Policy](https://www.llama.com/llama3/use-policy/).
+  Usage of this model is subject to [Meta's Acceptable Use Policy](https://www.llama.com/llama3/use-policy/).
 description_cn: |-
-    Llama 3.2 1B 是一款拥有 10 亿参数的语言模型，专注于高效执行自然语言任务，如摘要生成、对话交互和多语言文本分析。其较小的体量使其能在低资源环境中高效运行，同时保持出色的性能。
+  Llama 3.2 1B 是一款拥有 10 亿参数的语言模型，专注于高效执行自然语言任务，如摘要生成、对话交互和多语言文本分析。其较小的体量使其能在低资源环境中高效运行，同时保持出色的性能。
 
-    该模型支持八种核心语言，并可微调以支持更多语言，是寻求轻量级但功能强大的 AI 解决方案的企业或开发者的理想选择，可在多样化的多语言场景中运行，且无需大型模型所需的高计算资源。
+  该模型支持八种核心语言，并可微调以支持更多语言，是寻求轻量级但功能强大的 AI 解决方案的企业或开发者的理想选择，可在多样化的多语言场景中运行，且无需大型模型所需的高计算资源。
 
-    点击此处查看[原始模型卡](https://github.com/meta-llama/llama-models/blob/main/models/llama3_2/MODEL_CARD.md)。
+  点击此处查看[原始模型卡](https://github.com/meta-llama/llama-models/blob/main/models/llama3_2/MODEL_CARD.md)。
 
-    使用本模型需遵守 [Meta 可接受使用政策](https://www.llama.com/llama3/use-policy/)。
+  使用本模型需遵守 [Meta 可接受使用政策](https://www.llama.com/llama3/use-policy/)。
 context_length: 60000
 price_in: 2.7e-08
 price_out: 2e-07
 features:
-    - CapChat
-    - ModalityTextIn
-    - ModalityTextOut
+  - CapChat
+  - ModalityTextIn
+  - ModalityTextOut

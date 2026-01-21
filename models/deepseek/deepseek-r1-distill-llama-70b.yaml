@@ -2,28 +2,28 @@ id: deepseek/deepseek-r1-distill-llama-70b
 name: 'DeepSeek: R1 Distill Llama 70B'
 provider: DeepSeek
 description: |-
-    DeepSeek R1 Distill Llama 70B is a distilled large language model based on [Llama-3.3-70B-Instruct](/meta-llama/llama-3.3-70b-instruct), using outputs from [DeepSeek R1](/deepseek/deepseek-r1). The model combines advanced distillation techniques to achieve high performance across multiple benchmarks, including:
+  DeepSeek R1 Distill Llama 70B is a distilled large language model based on [Llama-3.3-70B-Instruct](/meta-llama/llama-3.3-70b-instruct), using outputs from [DeepSeek R1](/deepseek/deepseek-r1). The model combines advanced distillation techniques to achieve high performance across multiple benchmarks, including:
 
-    - AIME 2024 pass@1: 70.0
-    - MATH-500 pass@1: 94.5
-    - CodeForces Rating: 1633
+  - AIME 2024 pass@1: 70.0
+  - MATH-500 pass@1: 94.5
+  - CodeForces Rating: 1633
 
-    The model leverages fine-tuning from DeepSeek R1's outputs, enabling competitive performance comparable to larger frontier models.
+  The model leverages fine-tuning from DeepSeek R1's outputs, enabling competitive performance comparable to larger frontier models.
 description_cn: |-
-    DeepSeek R1 Distill Llama 70B 是基于 [Llama-3.3-70B-Instruct](/meta-llama/llama-3.3-70b-instruct) 并利用 [DeepSeek R1](/deepseek/deepseek-r1) 输出蒸馏而成的大语言模型。该模型融合先进蒸馏技术，在多项基准测试中表现卓越，包括：
+  DeepSeek R1 Distill Llama 70B 是基于 [Llama-3.3-70B-Instruct](/meta-llama/llama-3.3-70b-instruct) 并利用 [DeepSeek R1](/deepseek/deepseek-r1) 输出蒸馏而成的大语言模型。该模型融合先进蒸馏技术，在多项基准测试中表现卓越，包括：
 
-    - AIME 2024 pass@1：70.0
-    - MATH-500 pass@1：94.5
-    - CodeForces 评分：1633
+  - AIME 2024 pass@1：70.0
+  - MATH-500 pass@1：94.5
+  - CodeForces 评分：1633
 
-    通过 DeepSeek R1 输出的微调，该模型实现了可与更大规模前沿模型相媲美的竞争力。
+  通过 DeepSeek R1 输出的微调，该模型实现了可与更大规模前沿模型相媲美的竞争力。
 context_length: 131072
 max_output: 131072
 price_in: 3e-08
 price_out: 1.1e-07
 features:
-    - CapChat
-    - CapFunctionCall
-    - CapJsonMode
-    - ModalityTextIn
-    - ModalityTextOut
+  - CapChat
+  - CapFunctionCall
+  - CapJsonMode
+  - ModalityTextIn
+  - ModalityTextOut

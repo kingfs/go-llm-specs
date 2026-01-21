@@ -2,26 +2,26 @@ id: openai/gpt-4o-2024-05-13
 name: 'OpenAI: GPT-4o (2024-05-13)'
 provider: OpenAI
 description: |-
-    GPT-4o ("o" for "omni") is OpenAI's latest AI model, supporting both text and image inputs with text outputs. It maintains the intelligence level of [GPT-4 Turbo](/models/openai/gpt-4-turbo) while being twice as fast and 50% more cost-effective. GPT-4o also offers improved performance in processing non-English languages and enhanced visual capabilities.
+  GPT-4o ("o" for "omni") is OpenAI's latest AI model, supporting both text and image inputs with text outputs. It maintains the intelligence level of [GPT-4 Turbo](/models/openai/gpt-4-turbo) while being twice as fast and 50% more cost-effective. GPT-4o also offers improved performance in processing non-English languages and enhanced visual capabilities.
 
-    For benchmarking against other models, it was briefly called ["im-also-a-good-gpt2-chatbot"](https://twitter.com/LiamFedus/status/1790064963966370209)
+  For benchmarking against other models, it was briefly called ["im-also-a-good-gpt2-chatbot"](https://twitter.com/LiamFedus/status/1790064963966370209)
 
-    #multimodal
+  #multimodal
 description_cn: |-
-    GPT-4o（“o”代表“omni”）是 OpenAI 最新推出的 AI 模型，支持文本和图像输入，并生成文本输出。其智能水平与 [GPT-4 Turbo](/models/openai/gpt-4-turbo) 相当，但推理速度提升两倍，成本降低 50%。此外，GPT-4o 在非英语语言处理和视觉能力方面均有显著增强。
+  GPT-4o（“o”代表“omni”）是 OpenAI 最新推出的 AI 模型，支持文本和图像输入，并生成文本输出。其智能水平与 [GPT-4 Turbo](/models/openai/gpt-4-turbo) 相当，但推理速度提升两倍，成本降低 50%。此外，GPT-4o 在非英语语言处理和视觉能力方面均有显著增强。
 
-    在与其他模型的基准测试中，该模型曾短暂使用代号 ["im-also-a-good-gpt2-chatbot"](https://twitter.com/LiamFedus/status/1790064963966370209)。
+  在与其他模型的基准测试中，该模型曾短暂使用代号 ["im-also-a-good-gpt2-chatbot"](https://twitter.com/LiamFedus/status/1790064963966370209)。
 
-    #多模态
+  #多模态
 context_length: 128000
 max_output: 4096
 price_in: 5e-06
 price_out: 1.5e-05
 features:
-    - CapChat
-    - CapFunctionCall
-    - CapJsonMode
-    - ModalityFileIn
-    - ModalityImageIn
-    - ModalityTextIn
-    - ModalityTextOut
+  - CapChat
+  - CapFunctionCall
+  - CapJsonMode
+  - ModalityFileIn
+  - ModalityImageIn
+  - ModalityTextIn
+  - ModalityTextOut

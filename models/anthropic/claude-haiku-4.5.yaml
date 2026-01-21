@@ -2,20 +2,20 @@ id: anthropic/claude-haiku-4.5
 name: 'Anthropic: Claude Haiku 4.5'
 provider: Anthropic
 description: |-
-    Claude Haiku 4.5 is Anthropic’s fastest and most efficient model, delivering near-frontier intelligence at a fraction of the cost and latency of larger Claude models. Matching Claude Sonnet 4’s performance across reasoning, coding, and computer-use tasks, Haiku 4.5 brings frontier-level capability to real-time and high-volume applications.
+  Claude Haiku 4.5 is Anthropic’s fastest and most efficient model, delivering near-frontier intelligence at a fraction of the cost and latency of larger Claude models. Matching Claude Sonnet 4’s performance across reasoning, coding, and computer-use tasks, Haiku 4.5 brings frontier-level capability to real-time and high-volume applications.
 
-    It introduces extended thinking to the Haiku line; enabling controllable reasoning depth, summarized or interleaved thought output, and tool-assisted workflows with full support for coding, bash, web search, and computer-use tools. Scoring >73% on SWE-bench Verified, Haiku 4.5 ranks among the world’s best coding models while maintaining exceptional responsiveness for sub-agents, parallelized execution, and scaled deployment.
+  It introduces extended thinking to the Haiku line; enabling controllable reasoning depth, summarized or interleaved thought output, and tool-assisted workflows with full support for coding, bash, web search, and computer-use tools. Scoring >73% on SWE-bench Verified, Haiku 4.5 ranks among the world’s best coding models while maintaining exceptional responsiveness for sub-agents, parallelized execution, and scaled deployment.
 description_cn: |-
-    Claude Haiku 4.5 是 Anthropic 推出的最快、最高效的模型，以远低于更大规模 Claude 模型的成本和延迟提供接近前沿水平的智能。其在推理、编码和计算机使用任务上的表现媲美 Claude Sonnet 4，将前沿能力带入实时和高吞吐量应用场景。
+  Claude Haiku 4.5 是 Anthropic 推出的最快、最高效的模型，以远低于更大规模 Claude 模型的成本和延迟提供接近前沿水平的智能。其在推理、编码和计算机使用任务上的表现媲美 Claude Sonnet 4，将前沿能力带入实时和高吞吐量应用场景。
 
-    该模型首次为 Haiku 系列引入扩展思考能力，支持可控的推理深度、摘要式或交错式思维输出，以及全面支持编码、Bash、网页搜索和计算机使用工具的工具辅助工作流。在 SWE-bench Verified 基准上得分超过 73%，Haiku 4.5 跻身全球顶尖编码模型之列，同时在子代理、并行执行和规模化部署中保持卓越响应速度。
+  该模型首次为 Haiku 系列引入扩展思考能力，支持可控的推理深度、摘要式或交错式思维输出，以及全面支持编码、Bash、网页搜索和计算机使用工具的工具辅助工作流。在 SWE-bench Verified 基准上得分超过 73%，Haiku 4.5 跻身全球顶尖编码模型之列，同时在子代理、并行执行和规模化部署中保持卓越响应速度。
 context_length: 200000
 max_output: 64000
 price_in: 1e-06
 price_out: 5e-06
 features:
-    - CapChat
-    - CapFunctionCall
-    - ModalityImageIn
-    - ModalityTextIn
-    - ModalityTextOut
+  - CapChat
+  - CapFunctionCall
+  - ModalityImageIn
+  - ModalityTextIn
+  - ModalityTextOut

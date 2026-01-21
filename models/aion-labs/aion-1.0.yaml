@@ -8,6 +8,6 @@ max_output: 32768
 price_in: 4e-06
 price_out: 8e-06
 features:
-    - CapChat
-    - ModalityTextIn
-    - ModalityTextOut
+  - CapChat
+  - ModalityTextIn
+  - ModalityTextOut

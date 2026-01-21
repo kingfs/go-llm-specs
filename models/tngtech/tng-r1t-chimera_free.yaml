@@ -2,36 +2,36 @@ id: tngtech/tng-r1t-chimera:free
 name: 'TNG: R1T Chimera (free)'
 provider: Tngtech
 description: |-
-    TNG-R1T-Chimera is an experimental LLM with a faible for creative storytelling and character interaction. It is a derivate of the original TNG/DeepSeek-R1T-Chimera released in April 2025 and is available exclusively via Chutes and OpenRouter.
+  TNG-R1T-Chimera is an experimental LLM with a faible for creative storytelling and character interaction. It is a derivate of the original TNG/DeepSeek-R1T-Chimera released in April 2025 and is available exclusively via Chutes and OpenRouter.
 
-    Characteristics and improvements include:
+  Characteristics and improvements include:
 
-    We think that it has a creative and pleasant personality.
-    It has a preliminary EQ-Bench3 value of about 1305.
-    It is quite a bit more intelligent than the original, albeit a slightly slower.
-    It is much more think-token consistent, i.e. reasoning and answer blocks are properly delineated.
-    Tool calling is much improved.
+  We think that it has a creative and pleasant personality.
+  It has a preliminary EQ-Bench3 value of about 1305.
+  It is quite a bit more intelligent than the original, albeit a slightly slower.
+  It is much more think-token consistent, i.e. reasoning and answer blocks are properly delineated.
+  Tool calling is much improved.
 
-    TNG Tech, the model authors, ask that users follow the careful guidelines that Microsoft has created for their "MAI-DS-R1" DeepSeek-based model. These guidelines are available on Hugging Face (https://huggingface.co/microsoft/MAI-DS-R1).
+  TNG Tech, the model authors, ask that users follow the careful guidelines that Microsoft has created for their "MAI-DS-R1" DeepSeek-based model. These guidelines are available on Hugging Face (https://huggingface.co/microsoft/MAI-DS-R1).
 description_cn: |-
-    TNG-R1T-Chimera 是一款实验性大语言模型，擅长创意叙事与角色互动。它是2025年4月发布的原始 TNG/DeepSeek-R1T-Chimera 模型的衍生版本，仅通过 Chutes 和 OpenRouter 平台提供。
+  TNG-R1T-Chimera 是一款实验性大语言模型，擅长创意叙事与角色互动。它是2025年4月发布的原始 TNG/DeepSeek-R1T-Chimera 模型的衍生版本，仅通过 Chutes 和 OpenRouter 平台提供。
 
-    主要特性与改进包括：
+  主要特性与改进包括：
 
-    - 具备富有创意且令人愉悦的个性；
-    - 初步 EQ-Bench3 评分为约1305；
-    - 智能水平显著高于原始版本，尽管推理速度略有下降；
-    - “思考令牌”一致性大幅提升，即推理块与答案块边界清晰明确；
-    - 工具调用能力显著增强。
+  - 具备富有创意且令人愉悦的个性；
+  - 初步 EQ-Bench3 评分为约1305；
+  - 智能水平显著高于原始版本，尽管推理速度略有下降；
+  - “思考令牌”一致性大幅提升，即推理块与答案块边界清晰明确；
+  - 工具调用能力显著增强。
 
-    模型开发者 TNG Tech 要求用户遵循微软为其“MAI-DS-R1” DeepSeek 基础模型制定的审慎使用指南。相关指南可在 Hugging Face 获取（https://huggingface.co/microsoft/MAI-DS-R1）。
+  模型开发者 TNG Tech 要求用户遵循微软为其“MAI-DS-R1” DeepSeek 基础模型制定的审慎使用指南。相关指南可在 Hugging Face 获取（https://huggingface.co/microsoft/MAI-DS-R1）。
 context_length: 163840
 max_output: 65536
 price_in: 0
 price_out: 0
 features:
-    - CapChat
-    - CapFunctionCall
-    - CapJsonMode
-    - ModalityTextIn
-    - ModalityTextOut
+  - CapChat
+  - CapFunctionCall
+  - CapJsonMode
+  - ModalityTextIn
+  - ModalityTextOut

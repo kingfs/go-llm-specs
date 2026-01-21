@@ -2,24 +2,24 @@ id: amazon/nova-pro-v1
 name: 'Amazon: Nova Pro 1.0'
 provider: Amazon
 description: |-
-    Amazon Nova Pro 1.0 is a capable multimodal model from Amazon focused on providing a combination of accuracy, speed, and cost for a wide range of tasks. As of December 2024, it achieves state-of-the-art performance on key benchmarks including visual question answering (TextVQA) and video understanding (VATEX).
+  Amazon Nova Pro 1.0 is a capable multimodal model from Amazon focused on providing a combination of accuracy, speed, and cost for a wide range of tasks. As of December 2024, it achieves state-of-the-art performance on key benchmarks including visual question answering (TextVQA) and video understanding (VATEX).
 
-    Amazon Nova Pro demonstrates strong capabilities in processing both visual and textual information and at analyzing financial documents.
+  Amazon Nova Pro demonstrates strong capabilities in processing both visual and textual information and at analyzing financial documents.
 
-    **NOTE**: Video input is not supported at this time.
+  **NOTE**: Video input is not supported at this time.
 description_cn: |-
-    Amazon Nova Pro 1.0 是亚马逊推出的高性能多模态模型，旨在为广泛任务提供精度、速度与成本的最佳平衡。截至 2024 年 12 月，该模型在关键基准测试中达到业界领先水平，包括视觉问答（TextVQA）和视频理解（VATEX）。
+  Amazon Nova Pro 1.0 是亚马逊推出的高性能多模态模型，旨在为广泛任务提供精度、速度与成本的最佳平衡。截至 2024 年 12 月，该模型在关键基准测试中达到业界领先水平，包括视觉问答（TextVQA）和视频理解（VATEX）。
 
-    Amazon Nova Pro 在处理视觉与文本信息以及分析金融文档方面展现出强大能力。
+  Amazon Nova Pro 在处理视觉与文本信息以及分析金融文档方面展现出强大能力。
 
-    **注意**：当前暂不支持视频输入。
+  **注意**：当前暂不支持视频输入。
 context_length: 300000
 max_output: 5120
 price_in: 8e-07
 price_out: 3.2e-06
 features:
-    - CapChat
-    - CapFunctionCall
-    - ModalityImageIn
-    - ModalityTextIn
-    - ModalityTextOut
+  - CapChat
+  - CapFunctionCall
+  - ModalityImageIn
+  - ModalityTextIn
+  - ModalityTextOut

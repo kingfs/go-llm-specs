@@ -2,19 +2,19 @@ id: xiaomi/mimo-v2-flash
 name: 'Xiaomi: MiMo-V2-Flash'
 provider: Xiaomi
 description: |-
-    MiMo-V2-Flash is an open-source foundation language model developed by Xiaomi. It is a Mixture-of-Experts model with 309B total parameters and 15B active parameters, adopting hybrid attention architecture. MiMo-V2-Flash supports a hybrid-thinking toggle and a 256K context window, and excels at reasoning, coding, and agent scenarios. On SWE-bench Verified and SWE-bench Multilingual, MiMo-V2-Flash ranks as the top #1 open-source model globally, delivering performance comparable to Claude Sonnet 4.5 while costing only about 3.5% as much.
+  MiMo-V2-Flash is an open-source foundation language model developed by Xiaomi. It is a Mixture-of-Experts model with 309B total parameters and 15B active parameters, adopting hybrid attention architecture. MiMo-V2-Flash supports a hybrid-thinking toggle and a 256K context window, and excels at reasoning, coding, and agent scenarios. On SWE-bench Verified and SWE-bench Multilingual, MiMo-V2-Flash ranks as the top #1 open-source model globally, delivering performance comparable to Claude Sonnet 4.5 while costing only about 3.5% as much.
 
-    Users can control the reasoning behaviour with the `reasoning` `enabled` boolean. [Learn more in our docs](https://openrouter.ai/docs/use-cases/reasoning-tokens#enable-reasoning-with-default-config).
+  Users can control the reasoning behaviour with the `reasoning` `enabled` boolean. [Learn more in our docs](https://openrouter.ai/docs/use-cases/reasoning-tokens#enable-reasoning-with-default-config).
 description_cn: |-
-    MiMo-V2-Flash 是小米开发的开源基础语言模型，采用混合专家（Mixture-of-Experts）架构，总参数量达 3090 亿，激活参数量为 150 亿，并采用混合注意力机制。MiMo-V2-Flash 支持混合思维开关与 256K 上下文窗口，在推理、编程及智能体场景中表现卓越。在 SWE-bench Verified 与 SWE-bench Multilingual 基准测试中，MiMo-V2-Flash 均位列全球开源模型榜首，性能媲美 Claude Sonnet 4.5，成本却仅为后者的约 3.5%。
+  MiMo-V2-Flash 是小米开发的开源基础语言模型，采用混合专家（Mixture-of-Experts）架构，总参数量达 3090 亿，激活参数量为 150 亿，并采用混合注意力机制。MiMo-V2-Flash 支持混合思维开关与 256K 上下文窗口，在推理、编程及智能体场景中表现卓越。在 SWE-bench Verified 与 SWE-bench Multilingual 基准测试中，MiMo-V2-Flash 均位列全球开源模型榜首，性能媲美 Claude Sonnet 4.5，成本却仅为后者的约 3.5%。
 
-    用户可通过 `reasoning` 的 `enabled` 布尔值控制推理行为。[了解更多](https://openrouter.ai/docs/use-cases/reasoning-tokens#enable-reasoning-with-default-config)。
+  用户可通过 `reasoning` 的 `enabled` 布尔值控制推理行为。[了解更多](https://openrouter.ai/docs/use-cases/reasoning-tokens#enable-reasoning-with-default-config)。
 context_length: 262144
 price_in: 9e-08
 price_out: 2.9e-07
 features:
-    - CapChat
-    - CapFunctionCall
-    - CapJsonMode
-    - ModalityTextIn
-    - ModalityTextOut
+  - CapChat
+  - CapFunctionCall
+  - CapJsonMode
+  - ModalityTextIn
+  - ModalityTextOut

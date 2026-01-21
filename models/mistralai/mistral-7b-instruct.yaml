@@ -2,18 +2,18 @@ id: mistralai/mistral-7b-instruct
 name: 'Mistral: Mistral 7B Instruct'
 provider: Mistral
 description: |-
-    A high-performing, industry-standard 7.3B parameter model, with optimizations for speed and context length.
+  A high-performing, industry-standard 7.3B parameter model, with optimizations for speed and context length.
 
-    *Mistral 7B Instruct has multiple version variants, and this is intended to be the latest version.*
+  *Mistral 7B Instruct has multiple version variants, and this is intended to be the latest version.*
 description_cn: |-
-    这是一款高性能、业界标准的 73 亿参数模型，针对速度和上下文长度进行了优化。
+  这是一款高性能、业界标准的 73 亿参数模型，针对速度和上下文长度进行了优化。
 
-    *Mistral 7B Instruct 包含多个版本变体，此处指最新版本。*
+  *Mistral 7B Instruct 包含多个版本变体，此处指最新版本。*
 context_length: 32768
 max_output: 4096
 price_in: 2e-07
 price_out: 2e-07
 features:
-    - CapChat
-    - ModalityTextIn
-    - ModalityTextOut
+  - CapChat
+  - ModalityTextIn
+  - ModalityTextOut

@@ -3,15 +3,15 @@ name: Switchpoint Router
 provider: Switchpoint
 description: "Switchpoint AI's router instantly analyzes your request and directs it to the optimal AI from an ever-evolving library. \n\nAs the world of LLMs advances, our router gets smarter, ensuring you always benefit from the industry's newest models without changing your workflow.\n\nThis model is configured for a simple, flat rate per response here on OpenRouter. It's powered by the full routing engine from [Switchpoint AI](https://www.switchpoint.dev)."
 description_cn: |-
-    Switchpoint AI 的路由模型可即时分析您的请求，并将其动态分发至不断演进的 AI 模型库中最优选项。
+  Switchpoint AI 的路由模型可即时分析您的请求，并将其动态分发至不断演进的 AI 模型库中最优选项。
 
-    随着大语言模型领域的持续进步，我们的路由系统亦同步进化，确保您无需更改现有工作流即可始终受益于业界最新模型。
+  随着大语言模型领域的持续进步，我们的路由系统亦同步进化，确保您无需更改现有工作流即可始终受益于业界最新模型。
 
-    该模型在 OpenRouter 平台上按每条响应收取统一费率，由 [Switchpoint AI](https://www.switchpoint.dev) 完整路由引擎驱动。
+  该模型在 OpenRouter 平台上按每条响应收取统一费率，由 [Switchpoint AI](https://www.switchpoint.dev) 完整路由引擎驱动。
 context_length: 131072
 price_in: 8.5e-07
 price_out: 3.4e-06
 features:
-    - CapChat
-    - ModalityTextIn
-    - ModalityTextOut
+  - CapChat
+  - ModalityTextIn
+  - ModalityTextOut

@@ -3,18 +3,18 @@ name: 'DeepSeek: DeepSeek V3.1'
 provider: DeepSeek
 description: "DeepSeek-V3.1 is a large hybrid reasoning model (671B parameters, 37B active) that supports both thinking and non-thinking modes via prompt templates. It extends the DeepSeek-V3 base with a two-phase long-context training process, reaching up to 128K tokens, and uses FP8 microscaling for efficient inference. Users can control the reasoning behaviour with the `reasoning` `enabled` boolean. [Learn more in our docs](https://openrouter.ai/docs/use-cases/reasoning-tokens#enable-reasoning-with-default-config)\n\nThe model improves tool use, code generation, and reasoning efficiency, achieving performance comparable to DeepSeek-R1 on difficult benchmarks while responding more quickly. It supports structured tool calling, code agents, and search agents, making it suitable for research, coding, and agentic workflows. \n\nIt succeeds the [DeepSeek V3-0324](/deepseek/deepseek-chat-v3-0324) model and performs well on a variety of tasks."
 description_cn: |-
-    DeepSeek-V3.1 是一款大型混合推理模型（总参数 6710 亿，激活参数 370 亿），通过提示模板支持“思考”与“非思考”两种模式。该模型在 DeepSeek-V3 基础上采用两阶段长上下文训练流程，支持最多 128K tokens，并利用 FP8 微缩放技术实现高效推理。用户可通过 `reasoning` `enabled` 布尔值控制推理行为。[了解更多](https://openrouter.ai/docs/use-cases/reasoning-tokens#enable-reasoning-with-default-config)
+  DeepSeek-V3.1 是一款大型混合推理模型（总参数 6710 亿，激活参数 370 亿），通过提示模板支持“思考”与“非思考”两种模式。该模型在 DeepSeek-V3 基础上采用两阶段长上下文训练流程，支持最多 128K tokens，并利用 FP8 微缩放技术实现高效推理。用户可通过 `reasoning` `enabled` 布尔值控制推理行为。[了解更多](https://openrouter.ai/docs/use-cases/reasoning-tokens#enable-reasoning-with-default-config)
 
-    该模型在工具调用、代码生成和推理效率方面均有提升，在高难度基准测试中性能媲美 DeepSeek-R1，同时响应速度更快。支持结构化工具调用、代码代理和搜索代理，适用于科研、编程及智能体工作流。
+  该模型在工具调用、代码生成和推理效率方面均有提升，在高难度基准测试中性能媲美 DeepSeek-R1，同时响应速度更快。支持结构化工具调用、代码代理和搜索代理，适用于科研、编程及智能体工作流。
 
-    此模型接替 [DeepSeek V3-0324](/deepseek/deepseek-chat-v3-0324)，在多种任务上表现优异。
+  此模型接替 [DeepSeek V3-0324](/deepseek/deepseek-chat-v3-0324)，在多种任务上表现优异。
 context_length: 32768
 max_output: 7168
 price_in: 1.5e-07
 price_out: 7.5e-07
 features:
-    - CapChat
-    - CapFunctionCall
-    - CapJsonMode
-    - ModalityTextIn
-    - ModalityTextOut
+  - CapChat
+  - CapFunctionCall
+  - CapJsonMode
+  - ModalityTextIn
+  - ModalityTextOut

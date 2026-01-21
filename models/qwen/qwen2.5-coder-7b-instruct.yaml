@@ -2,19 +2,19 @@ id: qwen/qwen2.5-coder-7b-instruct
 name: 'Qwen: Qwen2.5 Coder 7B Instruct'
 provider: Qwen
 description: |-
-    Qwen2.5-Coder-7B-Instruct is a 7B parameter instruction-tuned language model optimized for code-related tasks such as code generation, reasoning, and bug fixing. Based on the Qwen2.5 architecture, it incorporates enhancements like RoPE, SwiGLU, RMSNorm, and GQA attention with support for up to 128K tokens using YaRN-based extrapolation. It is trained on a large corpus of source code, synthetic data, and text-code grounding, providing robust performance across programming languages and agentic coding workflows.
+  Qwen2.5-Coder-7B-Instruct is a 7B parameter instruction-tuned language model optimized for code-related tasks such as code generation, reasoning, and bug fixing. Based on the Qwen2.5 architecture, it incorporates enhancements like RoPE, SwiGLU, RMSNorm, and GQA attention with support for up to 128K tokens using YaRN-based extrapolation. It is trained on a large corpus of source code, synthetic data, and text-code grounding, providing robust performance across programming languages and agentic coding workflows.
 
-    This model is part of the Qwen2.5-Coder family and offers strong compatibility with tools like vLLM for efficient deployment. Released under the Apache 2.0 license.
+  This model is part of the Qwen2.5-Coder family and offers strong compatibility with tools like vLLM for efficient deployment. Released under the Apache 2.0 license.
 description_cn: |-
-    Qwen2.5-Coder-7B-Instruct 是一款拥有 70 亿参数的指令微调语言模型，专为代码生成、推理和调试等任务优化。基于 Qwen2.5 架构，集成了 RoPE、SwiGLU、RMSNorm 和 GQA 注意力机制，并通过 YaRN 插值技术支持高达 128K token 的上下文长度。该模型在大规模源代码、合成数据及文本-代码对齐语料上训练，可在多种编程语言和智能体编码工作流中提供稳健性能。
+  Qwen2.5-Coder-7B-Instruct 是一款拥有 70 亿参数的指令微调语言模型，专为代码生成、推理和调试等任务优化。基于 Qwen2.5 架构，集成了 RoPE、SwiGLU、RMSNorm 和 GQA 注意力机制，并通过 YaRN 插值技术支持高达 128K token 的上下文长度。该模型在大规模源代码、合成数据及文本-代码对齐语料上训练，可在多种编程语言和智能体编码工作流中提供稳健性能。
 
-    作为 Qwen2.5-Coder 系列的一员，该模型与 vLLM 等高效部署工具高度兼容，并以 Apache 2.0 许可证发布。
+  作为 Qwen2.5-Coder 系列的一员，该模型与 vLLM 等高效部署工具高度兼容，并以 Apache 2.0 许可证发布。
 context_length: 32768
 price_in: 3e-08
 price_out: 9e-08
 features:
-    - CapChat
-    - CapFunctionCall
-    - CapJsonMode
-    - ModalityTextIn
-    - ModalityTextOut
+  - CapChat
+  - CapFunctionCall
+  - CapJsonMode
+  - ModalityTextIn
+  - ModalityTextOut

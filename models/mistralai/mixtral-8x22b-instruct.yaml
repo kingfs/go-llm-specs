@@ -2,27 +2,27 @@ id: mistralai/mixtral-8x22b-instruct
 name: 'Mistral: Mixtral 8x22B Instruct'
 provider: Mistral
 description: |-
-    Mistral's official instruct fine-tuned version of [Mixtral 8x22B](/models/mistralai/mixtral-8x22b). It uses 39B active parameters out of 141B, offering unparalleled cost efficiency for its size. Its strengths include:
-    - strong math, coding, and reasoning
-    - large context length (64k)
-    - fluency in English, French, Italian, German, and Spanish
+  Mistral's official instruct fine-tuned version of [Mixtral 8x22B](/models/mistralai/mixtral-8x22b). It uses 39B active parameters out of 141B, offering unparalleled cost efficiency for its size. Its strengths include:
+  - strong math, coding, and reasoning
+  - large context length (64k)
+  - fluency in English, French, Italian, German, and Spanish
 
-    See benchmarks on the launch announcement [here](https://mistral.ai/news/mixtral-8x22b/).
-    #moe
+  See benchmarks on the launch announcement [here](https://mistral.ai/news/mixtral-8x22b/).
+  #moe
 description_cn: |-
-    Mistral 官方发布的 [Mixtral 8x22B](/models/mistralai/mixtral-8x22b) 指令微调版本。该模型在 141B 总参数中激活 39B 参数，以同等规模实现无与伦比的成本效益。其优势包括：
-    - 出色的数学、编程与推理能力
-    - 超长上下文长度（64k）
-    - 流利支持英语、法语、意大利语、德语和西班牙语
+  Mistral 官方发布的 [Mixtral 8x22B](/models/mistralai/mixtral-8x22b) 指令微调版本。该模型在 141B 总参数中激活 39B 参数，以同等规模实现无与伦比的成本效益。其优势包括：
+  - 出色的数学、编程与推理能力
+  - 超长上下文长度（64k）
+  - 流利支持英语、法语、意大利语、德语和西班牙语
 
-    基准测试结果详见发布公告：[此处](https://mistral.ai/news/mixtral-8x22b/)。
-    #moe
+  基准测试结果详见发布公告：[此处](https://mistral.ai/news/mixtral-8x22b/)。
+  #moe
 context_length: 65536
 price_in: 2e-06
 price_out: 6e-06
 features:
-    - CapChat
-    - CapFunctionCall
-    - CapJsonMode
-    - ModalityTextIn
-    - ModalityTextOut
+  - CapChat
+  - CapFunctionCall
+  - CapJsonMode
+  - ModalityTextIn
+  - ModalityTextOut

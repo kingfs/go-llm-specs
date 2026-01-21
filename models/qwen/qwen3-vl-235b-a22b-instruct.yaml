@@ -2,20 +2,20 @@ id: qwen/qwen3-vl-235b-a22b-instruct
 name: 'Qwen: Qwen3 VL 235B A22B Instruct'
 provider: Qwen
 description: |-
-    Qwen3-VL-235B-A22B Instruct is an open-weight multimodal model that unifies strong text generation with visual understanding across images and video. The Instruct model targets general vision-language use (VQA, document parsing, chart/table extraction, multilingual OCR). The series emphasizes robust perception (recognition of diverse real-world and synthetic categories), spatial understanding (2D/3D grounding), and long-form visual comprehension, with competitive results on public multimodal benchmarks for both perception and reasoning.
+  Qwen3-VL-235B-A22B Instruct is an open-weight multimodal model that unifies strong text generation with visual understanding across images and video. The Instruct model targets general vision-language use (VQA, document parsing, chart/table extraction, multilingual OCR). The series emphasizes robust perception (recognition of diverse real-world and synthetic categories), spatial understanding (2D/3D grounding), and long-form visual comprehension, with competitive results on public multimodal benchmarks for both perception and reasoning.
 
-    Beyond analysis, Qwen3-VL supports agentic interaction and tool use: it can follow complex instructions over multi-image, multi-turn dialogues; align text to video timelines for precise temporal queries; and operate GUI elements for automation tasks. The models also enable visual coding workflows—turning sketches or mockups into code and assisting with UI debugging—while maintaining strong text-only performance comparable to the flagship Qwen3 language models. This makes Qwen3-VL suitable for production scenarios spanning document AI, multilingual OCR, software/UI assistance, spatial/embodied tasks, and research on vision-language agents.
+  Beyond analysis, Qwen3-VL supports agentic interaction and tool use: it can follow complex instructions over multi-image, multi-turn dialogues; align text to video timelines for precise temporal queries; and operate GUI elements for automation tasks. The models also enable visual coding workflows—turning sketches or mockups into code and assisting with UI debugging—while maintaining strong text-only performance comparable to the flagship Qwen3 language models. This makes Qwen3-VL suitable for production scenarios spanning document AI, multilingual OCR, software/UI assistance, spatial/embodied tasks, and research on vision-language agents.
 description_cn: |-
-    Qwen3-VL-235B-A22B Instruct 是一款开源多模态模型，融合了强大的文本生成能力与对图像和视频的视觉理解能力。Instruct 版本面向通用视觉-语言应用场景（如视觉问答、文档解析、图表/表格提取、多语言 OCR）。该系列强调鲁棒感知能力（识别多样化的现实与合成类别）、空间理解能力（2D/3D 定位）以及长篇幅视觉理解能力，在公开多模态基准测试中，其感知与推理性能均具竞争力。
+  Qwen3-VL-235B-A22B Instruct 是一款开源多模态模型，融合了强大的文本生成能力与对图像和视频的视觉理解能力。Instruct 版本面向通用视觉-语言应用场景（如视觉问答、文档解析、图表/表格提取、多语言 OCR）。该系列强调鲁棒感知能力（识别多样化的现实与合成类别）、空间理解能力（2D/3D 定位）以及长篇幅视觉理解能力，在公开多模态基准测试中，其感知与推理性能均具竞争力。
 
-    除分析能力外，Qwen3-VL 还支持智能体交互与工具调用：可在多图像、多轮对话中执行复杂指令；将文本对齐至视频时间轴以实现精确时序查询；并可操作 GUI 元素完成自动化任务。该模型还支持可视化编码工作流——将草图或原型转化为代码，并辅助 UI 调试，同时保持与旗舰版 Qwen3 语言模型相当的纯文本性能。因此，Qwen3-VL 适用于涵盖文档 AI、多语言 OCR、软件/UI 辅助、空间/具身任务及视觉-语言智能体研究等生产场景。
+  除分析能力外，Qwen3-VL 还支持智能体交互与工具调用：可在多图像、多轮对话中执行复杂指令；将文本对齐至视频时间轴以实现精确时序查询；并可操作 GUI 元素完成自动化任务。该模型还支持可视化编码工作流——将草图或原型转化为代码，并辅助 UI 调试，同时保持与旗舰版 Qwen3 语言模型相当的纯文本性能。因此，Qwen3-VL 适用于涵盖文档 AI、多语言 OCR、软件/UI 辅助、空间/具身任务及视觉-语言智能体研究等生产场景。
 context_length: 262144
 price_in: 2e-07
 price_out: 1.2e-06
 features:
-    - CapChat
-    - CapFunctionCall
-    - CapJsonMode
-    - ModalityImageIn
-    - ModalityTextIn
-    - ModalityTextOut
+  - CapChat
+  - CapFunctionCall
+  - CapJsonMode
+  - ModalityImageIn
+  - ModalityTextIn
+  - ModalityTextOut

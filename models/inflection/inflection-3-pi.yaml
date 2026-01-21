@@ -2,18 +2,18 @@ id: inflection/inflection-3-pi
 name: 'Inflection: Inflection 3 Pi'
 provider: Inflection
 description: |-
-    Inflection 3 Pi powers Inflection's [Pi](https://pi.ai) chatbot, including backstory, emotional intelligence, productivity, and safety. It has access to recent news, and excels in scenarios like customer support and roleplay.
+  Inflection 3 Pi powers Inflection's [Pi](https://pi.ai) chatbot, including backstory, emotional intelligence, productivity, and safety. It has access to recent news, and excels in scenarios like customer support and roleplay.
 
-    Pi has been trained to mirror your tone and style, if you use more emojis, so will Pi! Try experimenting with various prompts and conversation styles.
+  Pi has been trained to mirror your tone and style, if you use more emojis, so will Pi! Try experimenting with various prompts and conversation styles.
 description_cn: |-
-    Inflection 3 Pi 为 Inflection 的 [Pi](https://pi.ai) 聊天机器人提供支持，涵盖背景故事、情感智能、生产力和安全性。该模型可访问最新新闻，在客户服务和角色扮演等场景中表现卓越。
+  Inflection 3 Pi 为 Inflection 的 [Pi](https://pi.ai) 聊天机器人提供支持，涵盖背景故事、情感智能、生产力和安全性。该模型可访问最新新闻，在客户服务和角色扮演等场景中表现卓越。
 
-    Pi 经过训练可模仿您的语气和风格——若您使用更多表情符号，Pi 也会如此！不妨尝试各种提示词和对话风格。
+  Pi 经过训练可模仿您的语气和风格——若您使用更多表情符号，Pi 也会如此！不妨尝试各种提示词和对话风格。
 context_length: 8000
 max_output: 1024
 price_in: 2.5e-06
 price_out: 1e-05
 features:
-    - CapChat
-    - ModalityTextIn
-    - ModalityTextOut
+  - CapChat
+  - ModalityTextIn
+  - ModalityTextOut

@@ -3,16 +3,16 @@ name: 'Kwaipilot: KAT-Coder-Pro V1'
 provider: Kwaipilot
 description: "KAT-Coder-Pro V1 is KwaiKAT's most advanced agentic coding model in the KAT-Coder series. Designed specifically for agentic coding tasks, it excels in real-world software engineering scenarios, achieving 73.4% solve rate on the SWE-Bench Verified benchmark. \n\nThe model has been optimized for tool-use capability, multi-turn interaction, instruction following, generalization, and comprehensive capabilities through a multi-stage training process, including mid-training, supervised fine-tuning (SFT), reinforcement fine-tuning (RFT), and scalable agentic RL."
 description_cn: |-
-    KAT-Coder-Pro V1 是快手 KwaiKAT 推出的 KAT-Coder 系列中最先进的智能体编程模型，专为智能体编程任务设计，在真实软件工程场景中表现卓越，在 SWE-Bench Verified 基准测试中达到 73.4% 的解决率。
+  KAT-Coder-Pro V1 是快手 KwaiKAT 推出的 KAT-Coder 系列中最先进的智能体编程模型，专为智能体编程任务设计，在真实软件工程场景中表现卓越，在 SWE-Bench Verified 基准测试中达到 73.4% 的解决率。
 
-    该模型通过多阶段训练流程（包括中期训练、监督微调（SFT）、强化微调（RFT）及可扩展智能体强化学习）优化了工具使用能力、多轮交互、指令遵循、泛化能力及综合性能。
+  该模型通过多阶段训练流程（包括中期训练、监督微调（SFT）、强化微调（RFT）及可扩展智能体强化学习）优化了工具使用能力、多轮交互、指令遵循、泛化能力及综合性能。
 context_length: 256000
 max_output: 128000
 price_in: 2.07e-07
 price_out: 8.28e-07
 features:
-    - CapChat
-    - CapFunctionCall
-    - CapJsonMode
-    - ModalityTextIn
-    - ModalityTextOut
+  - CapChat
+  - CapFunctionCall
+  - CapJsonMode
+  - ModalityTextIn
+  - ModalityTextOut

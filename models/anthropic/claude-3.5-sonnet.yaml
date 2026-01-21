@@ -2,31 +2,31 @@ id: anthropic/claude-3.5-sonnet
 name: 'Anthropic: Claude 3.5 Sonnet'
 provider: Anthropic
 description: |-
-    New Claude 3.5 Sonnet delivers better-than-Opus capabilities, faster-than-Sonnet speeds, at the same Sonnet prices. Sonnet is particularly good at:
+  New Claude 3.5 Sonnet delivers better-than-Opus capabilities, faster-than-Sonnet speeds, at the same Sonnet prices. Sonnet is particularly good at:
 
-    - Coding: Scores ~49% on SWE-Bench Verified, higher than the last best score, and without any fancy prompt scaffolding
-    - Data science: Augments human data science expertise; navigates unstructured data while using multiple tools for insights
-    - Visual processing: excelling at interpreting charts, graphs, and images, accurately transcribing text to derive insights beyond just the text alone
-    - Agentic tasks: exceptional tool use, making it great at agentic tasks (i.e. complex, multi-step problem solving tasks that require engaging with other systems)
+  - Coding: Scores ~49% on SWE-Bench Verified, higher than the last best score, and without any fancy prompt scaffolding
+  - Data science: Augments human data science expertise; navigates unstructured data while using multiple tools for insights
+  - Visual processing: excelling at interpreting charts, graphs, and images, accurately transcribing text to derive insights beyond just the text alone
+  - Agentic tasks: exceptional tool use, making it great at agentic tasks (i.e. complex, multi-step problem solving tasks that require engaging with other systems)
 
-    #multimodal
+  #multimodal
 description_cn: |-
-    全新 Claude 3.5 Sonnet 在性能上超越 Opus，速度优于原有 Sonnet，价格维持 Sonnet 水平。Sonnet 尤其擅长以下领域：
+  全新 Claude 3.5 Sonnet 在性能上超越 Opus，速度优于原有 Sonnet，价格维持 Sonnet 水平。Sonnet 尤其擅长以下领域：
 
-    - 编程：在 SWE-Bench Verified 上得分约 49%，高于此前最佳成绩，且无需复杂的提示工程；
-    - 数据科学：增强人类数据科学家的专业能力，能结合多种工具从非结构化数据中提取洞见；
-    - 视觉处理：擅长解读图表、图形和图像，不仅能准确转录文本，还能从中挖掘超越文本本身的深层信息；
-    - 智能体任务：具备卓越的工具调用能力，非常适合执行需与其他系统交互的复杂多步问题求解任务。
+  - 编程：在 SWE-Bench Verified 上得分约 49%，高于此前最佳成绩，且无需复杂的提示工程；
+  - 数据科学：增强人类数据科学家的专业能力，能结合多种工具从非结构化数据中提取洞见；
+  - 视觉处理：擅长解读图表、图形和图像，不仅能准确转录文本，还能从中挖掘超越文本本身的深层信息；
+  - 智能体任务：具备卓越的工具调用能力，非常适合执行需与其他系统交互的复杂多步问题求解任务。
 
-    #多模态
+  #多模态
 context_length: 200000
 max_output: 8192
 price_in: 6e-06
 price_out: 3e-05
 features:
-    - CapChat
-    - CapFunctionCall
-    - ModalityFileIn
-    - ModalityImageIn
-    - ModalityTextIn
-    - ModalityTextOut
+  - CapChat
+  - CapFunctionCall
+  - ModalityFileIn
+  - ModalityImageIn
+  - ModalityTextIn
+  - ModalityTextOut

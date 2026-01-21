@@ -2,28 +2,28 @@ id: nousresearch/hermes-3-llama-3.1-405b
 name: 'Nous: Hermes 3 405B Instruct'
 provider: Nous Research
 description: |-
-    Hermes 3 is a generalist language model with many improvements over Hermes 2, including advanced agentic capabilities, much better roleplaying, reasoning, multi-turn conversation, long context coherence, and improvements across the board.
+  Hermes 3 is a generalist language model with many improvements over Hermes 2, including advanced agentic capabilities, much better roleplaying, reasoning, multi-turn conversation, long context coherence, and improvements across the board.
 
-    Hermes 3 405B is a frontier-level, full-parameter finetune of the Llama-3.1 405B foundation model, focused on aligning LLMs to the user, with powerful steering capabilities and control given to the end user.
+  Hermes 3 405B is a frontier-level, full-parameter finetune of the Llama-3.1 405B foundation model, focused on aligning LLMs to the user, with powerful steering capabilities and control given to the end user.
 
-    The Hermes 3 series builds and expands on the Hermes 2 set of capabilities, including more powerful and reliable function calling and structured output capabilities, generalist assistant capabilities, and improved code generation skills.
+  The Hermes 3 series builds and expands on the Hermes 2 set of capabilities, including more powerful and reliable function calling and structured output capabilities, generalist assistant capabilities, and improved code generation skills.
 
-    Hermes 3 is competitive, if not superior, to Llama-3.1 Instruct models at general capabilities, with varying strengths and weaknesses attributable between the two.
+  Hermes 3 is competitive, if not superior, to Llama-3.1 Instruct models at general capabilities, with varying strengths and weaknesses attributable between the two.
 description_cn: |-
-    Hermes 3 是一款通用语言模型，在 Hermes 2 基础上实现了多项改进，包括更先进的智能体能力、更出色的角色扮演、推理能力、多轮对话连贯性、长上下文一致性，以及全方位性能提升。
+  Hermes 3 是一款通用语言模型，在 Hermes 2 基础上实现了多项改进，包括更先进的智能体能力、更出色的角色扮演、推理能力、多轮对话连贯性、长上下文一致性，以及全方位性能提升。
 
-    Hermes 3 405B 是基于 Llama-3.1 405B 基础模型进行全参数微调的前沿级别模型，专注于将大语言模型与用户意图对齐，赋予终端用户强大的引导与控制能力。
+  Hermes 3 405B 是基于 Llama-3.1 405B 基础模型进行全参数微调的前沿级别模型，专注于将大语言模型与用户意图对齐，赋予终端用户强大的引导与控制能力。
 
-    Hermes 3 系列在 Hermes 2 能力集基础上进一步拓展，包括更强大可靠的函数调用与结构化输出能力、通用助手功能，以及增强的代码生成技能。
+  Hermes 3 系列在 Hermes 2 能力集基础上进一步拓展，包括更强大可靠的函数调用与结构化输出能力、通用助手功能，以及增强的代码生成技能。
 
-    在通用能力方面，Hermes 3 与 Llama-3.1 Instruct 模型相比具备竞争力，甚至更优，二者各有优势与不足。
+  在通用能力方面，Hermes 3 与 Llama-3.1 Instruct 模型相比具备竞争力，甚至更优，二者各有优势与不足。
 context_length: 131072
 max_output: 16384
 price_in: 1e-06
 price_out: 1e-06
 features:
-    - CapChat
-    - CapFunctionCall
-    - CapJsonMode
-    - ModalityTextIn
-    - ModalityTextOut
+  - CapChat
+  - CapFunctionCall
+  - CapJsonMode
+  - ModalityTextIn
+  - ModalityTextOut

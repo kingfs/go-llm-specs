@@ -2,31 +2,31 @@ id: mistralai/mistral-7b-instruct-v0.3
 name: 'Mistral: Mistral 7B Instruct v0.3'
 provider: Mistral
 description: |-
-    A high-performing, industry-standard 7.3B parameter model, with optimizations for speed and context length.
+  A high-performing, industry-standard 7.3B parameter model, with optimizations for speed and context length.
 
-    An improved version of [Mistral 7B Instruct v0.2](/models/mistralai/mistral-7b-instruct-v0.2), with the following changes:
+  An improved version of [Mistral 7B Instruct v0.2](/models/mistralai/mistral-7b-instruct-v0.2), with the following changes:
 
-    - Extended vocabulary to 32768
-    - Supports v3 Tokenizer
-    - Supports function calling
+  - Extended vocabulary to 32768
+  - Supports v3 Tokenizer
+  - Supports function calling
 
-    NOTE: Support for function calling depends on the provider.
+  NOTE: Support for function calling depends on the provider.
 description_cn: |-
-    这是一款高性能、业界标准的 73 亿参数模型，针对速度和上下文长度进行了优化。
+  这是一款高性能、业界标准的 73 亿参数模型，针对速度和上下文长度进行了优化。
 
-    这是 [Mistral 7B Instruct v0.2](/models/mistralai/mistral-7b-instruct-v0.2) 的改进版本，主要变更包括：
+  这是 [Mistral 7B Instruct v0.2](/models/mistralai/mistral-7b-instruct-v0.2) 的改进版本，主要变更包括：
 
-    - 词表扩展至 32768
-    - 支持 v3 分词器
-    - 支持函数调用
+  - 词表扩展至 32768
+  - 支持 v3 分词器
+  - 支持函数调用
 
-    注意：函数调用支持取决于具体服务提供商。
+  注意：函数调用支持取决于具体服务提供商。
 context_length: 32768
 max_output: 4096
 price_in: 2e-07
 price_out: 2e-07
 features:
-    - CapChat
-    - CapFunctionCall
-    - ModalityTextIn
-    - ModalityTextOut
+  - CapChat
+  - CapFunctionCall
+  - ModalityTextIn
+  - ModalityTextOut

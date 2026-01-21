@@ -2,20 +2,20 @@ id: nvidia/llama-3.1-nemotron-70b-instruct
 name: 'NVIDIA: Llama 3.1 Nemotron 70B Instruct'
 provider: Nvidia
 description: |-
-    NVIDIA's Llama 3.1 Nemotron 70B is a language model designed for generating precise and useful responses. Leveraging [Llama 3.1 70B](/models/meta-llama/llama-3.1-70b-instruct) architecture and Reinforcement Learning from Human Feedback (RLHF), it excels in automatic alignment benchmarks. This model is tailored for applications requiring high accuracy in helpfulness and response generation, suitable for diverse user queries across multiple domains.
+  NVIDIA's Llama 3.1 Nemotron 70B is a language model designed for generating precise and useful responses. Leveraging [Llama 3.1 70B](/models/meta-llama/llama-3.1-70b-instruct) architecture and Reinforcement Learning from Human Feedback (RLHF), it excels in automatic alignment benchmarks. This model is tailored for applications requiring high accuracy in helpfulness and response generation, suitable for diverse user queries across multiple domains.
 
-    Usage of this model is subject to [Meta's Acceptable Use Policy](https://www.llama.com/llama3/use-policy/).
+  Usage of this model is subject to [Meta's Acceptable Use Policy](https://www.llama.com/llama3/use-policy/).
 description_cn: |-
-    NVIDIA 的 Llama 3.1 Nemotron 70B 是一款旨在生成精准且实用回复的语言模型。基于 [Llama 3.1 70B](/models/meta-llama/llama-3.1-70b-instruct) 架构并结合人类反馈强化学习（RLHF），在自动对齐基准测试中表现卓越。该模型专为需要高准确性的帮助性和回复生成任务而设计，适用于跨领域的多样化用户查询。
+  NVIDIA 的 Llama 3.1 Nemotron 70B 是一款旨在生成精准且实用回复的语言模型。基于 [Llama 3.1 70B](/models/meta-llama/llama-3.1-70b-instruct) 架构并结合人类反馈强化学习（RLHF），在自动对齐基准测试中表现卓越。该模型专为需要高准确性的帮助性和回复生成任务而设计，适用于跨领域的多样化用户查询。
 
-    使用本模型需遵守 [Meta 可接受使用政策](https://www.llama.com/llama3/use-policy/)。
+  使用本模型需遵守 [Meta 可接受使用政策](https://www.llama.com/llama3/use-policy/)。
 context_length: 131072
 max_output: 16384
 price_in: 1.2e-06
 price_out: 1.2e-06
 features:
-    - CapChat
-    - CapFunctionCall
-    - CapJsonMode
-    - ModalityTextIn
-    - ModalityTextOut
+  - CapChat
+  - CapFunctionCall
+  - CapJsonMode
+  - ModalityTextIn
+  - ModalityTextOut

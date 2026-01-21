@@ -2,18 +2,18 @@ id: meituan/longcat-flash-chat
 name: 'Meituan: LongCat Flash Chat'
 provider: Meituan
 description: |-
-    LongCat-Flash-Chat is a large-scale Mixture-of-Experts (MoE) model with 560B total parameters, of which 18.6B–31.3B (≈27B on average) are dynamically activated per input. It introduces a shortcut-connected MoE design to reduce communication overhead and achieve high throughput while maintaining training stability through advanced scaling strategies such as hyperparameter transfer, deterministic computation, and multi-stage optimization.
+  LongCat-Flash-Chat is a large-scale Mixture-of-Experts (MoE) model with 560B total parameters, of which 18.6B–31.3B (≈27B on average) are dynamically activated per input. It introduces a shortcut-connected MoE design to reduce communication overhead and achieve high throughput while maintaining training stability through advanced scaling strategies such as hyperparameter transfer, deterministic computation, and multi-stage optimization.
 
-    This release, LongCat-Flash-Chat, is a non-thinking foundation model optimized for conversational and agentic tasks. It supports long context windows up to 128K tokens and shows competitive performance across reasoning, coding, instruction following, and domain benchmarks, with particular strengths in tool use and complex multi-step interactions.
+  This release, LongCat-Flash-Chat, is a non-thinking foundation model optimized for conversational and agentic tasks. It supports long context windows up to 128K tokens and shows competitive performance across reasoning, coding, instruction following, and domain benchmarks, with particular strengths in tool use and complex multi-step interactions.
 description_cn: |-
-    LongCat-Flash-Chat 是一个大规模混合专家（MoE）模型，总参数量达5600亿，每输入动态激活186亿至313亿参数（平均约270亿）。其创新性地采用捷径连接的MoE架构，有效降低通信开销，在保证训练稳定性的同时实现高吞吐量，这得益于超参迁移、确定性计算和多阶段优化等先进扩展策略。
+  LongCat-Flash-Chat 是一个大规模混合专家（MoE）模型，总参数量达5600亿，每输入动态激活186亿至313亿参数（平均约270亿）。其创新性地采用捷径连接的MoE架构，有效降低通信开销，在保证训练稳定性的同时实现高吞吐量，这得益于超参迁移、确定性计算和多阶段优化等先进扩展策略。
 
-    本次发布的 LongCat-Flash-Chat 是一款非推理型基础模型，专为对话与智能体任务优化。支持最长128K token上下文窗口，在推理、编程、指令遵循及领域基准测试中表现优异，尤其擅长工具调用与复杂多步交互场景。
+  本次发布的 LongCat-Flash-Chat 是一款非推理型基础模型，专为对话与智能体任务优化。支持最长128K token上下文窗口，在推理、编程、指令遵循及领域基准测试中表现优异，尤其擅长工具调用与复杂多步交互场景。
 context_length: 131072
 max_output: 131072
 price_in: 2e-07
 price_out: 8e-07
 features:
-    - CapChat
-    - ModalityTextIn
-    - ModalityTextOut
+  - CapChat
+  - ModalityTextIn
+  - ModalityTextOut

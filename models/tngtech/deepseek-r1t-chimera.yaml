@@ -2,19 +2,19 @@ id: tngtech/deepseek-r1t-chimera
 name: 'TNG: DeepSeek R1T Chimera'
 provider: Tngtech
 description: |-
-    DeepSeek-R1T-Chimera is created by merging DeepSeek-R1 and DeepSeek-V3 (0324), combining the reasoning capabilities of R1 with the token efficiency improvements of V3. It is based on a DeepSeek-MoE Transformer architecture and is optimized for general text generation tasks.
+  DeepSeek-R1T-Chimera is created by merging DeepSeek-R1 and DeepSeek-V3 (0324), combining the reasoning capabilities of R1 with the token efficiency improvements of V3. It is based on a DeepSeek-MoE Transformer architecture and is optimized for general text generation tasks.
 
-    The model merges pretrained weights from both source models to balance performance across reasoning, efficiency, and instruction-following tasks. It is released under the MIT license and intended for research and commercial use.
+  The model merges pretrained weights from both source models to balance performance across reasoning, efficiency, and instruction-following tasks. It is released under the MIT license and intended for research and commercial use.
 description_cn: |-
-    DeepSeek-R1T-Chimera 通过融合 DeepSeek-R1 与 DeepSeek-V3（0324）构建而成，兼具 R1 的推理能力和 V3 的 token 效率优势。该模型基于 DeepSeek-MoE Transformer 架构，针对通用文本生成任务进行了优化。
+  DeepSeek-R1T-Chimera 通过融合 DeepSeek-R1 与 DeepSeek-V3（0324）构建而成，兼具 R1 的推理能力和 V3 的 token 效率优势。该模型基于 DeepSeek-MoE Transformer 架构，针对通用文本生成任务进行了优化。
 
-    模型通过合并两个源模型的预训练权重，在推理能力、效率和指令遵循任务之间实现性能平衡。采用 MIT 许可证发布，适用于研究及商业用途。
+  模型通过合并两个源模型的预训练权重，在推理能力、效率和指令遵循任务之间实现性能平衡。采用 MIT 许可证发布，适用于研究及商业用途。
 context_length: 163840
 max_output: 163840
 price_in: 3e-07
 price_out: 1.2e-06
 features:
-    - CapChat
-    - CapJsonMode
-    - ModalityTextIn
-    - ModalityTextOut
+  - CapChat
+  - CapJsonMode
+  - ModalityTextIn
+  - ModalityTextOut

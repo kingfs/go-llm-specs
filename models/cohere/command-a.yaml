@@ -2,15 +2,15 @@ id: cohere/command-a
 name: 'Cohere: Command A'
 provider: Cohere
 description: |-
-    Command A is an open-weights 111B parameter model with a 256k context window focused on delivering great performance across agentic, multilingual, and coding use cases.
-    Compared to other leading proprietary and open-weights models Command A delivers maximum performance with minimum hardware costs, excelling on business-critical agentic and multilingual tasks.
+  Command A is an open-weights 111B parameter model with a 256k context window focused on delivering great performance across agentic, multilingual, and coding use cases.
+  Compared to other leading proprietary and open-weights models Command A delivers maximum performance with minimum hardware costs, excelling on business-critical agentic and multilingual tasks.
 description_cn: Command A 是一款开源权重的 1110 亿参数模型，支持 256k 上下文窗口，专注于在智能体、多语言和编程等应用场景中提供卓越性能。相较于其他主流闭源及开源模型，Command A 在显著降低硬件成本的同时实现最高性能，尤其擅长处理对业务至关重要的智能体与多语言任务。
 context_length: 256000
 max_output: 8192
 price_in: 2.5e-06
 price_out: 1e-05
 features:
-    - CapChat
-    - CapJsonMode
-    - ModalityTextIn
-    - ModalityTextOut
+  - CapChat
+  - CapJsonMode
+  - ModalityTextIn
+  - ModalityTextOut

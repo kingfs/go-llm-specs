@@ -3,19 +3,19 @@ name: 'OpenAI: o3 Mini High'
 provider: OpenAI
 description: "OpenAI o3-mini-high is the same model as [o3-mini](/openai/o3-mini) with reasoning_effort set to high. \n\no3-mini is a cost-efficient language model optimized for STEM reasoning tasks, particularly excelling in science, mathematics, and coding. The model features three adjustable reasoning effort levels and supports key developer capabilities including function calling, structured outputs, and streaming, though it does not include vision processing capabilities.\n\nThe model demonstrates significant improvements over its predecessor, with expert testers preferring its responses 56% of the time and noting a 39% reduction in major errors on complex questions. With medium reasoning effort settings, o3-mini matches the performance of the larger o1 model on challenging reasoning evaluations like AIME and GPQA, while maintaining lower latency and cost."
 description_cn: |-
-    OpenAI o3-mini-high 与 [o3-mini](/openai/o3-mini) 为同一模型，仅将 reasoning_effort 参数设为 high。
+  OpenAI o3-mini-high 与 [o3-mini](/openai/o3-mini) 为同一模型，仅将 reasoning_effort 参数设为 high。
 
-    o3-mini 是一款高性价比的语言模型，专为 STEM 推理任务优化，在科学、数学和编程领域表现尤为突出。该模型提供三种可调节的推理强度级别，并支持函数调用、结构化输出和流式响应等关键开发者功能，但不包含视觉处理能力。
+  o3-mini 是一款高性价比的语言模型，专为 STEM 推理任务优化，在科学、数学和编程领域表现尤为突出。该模型提供三种可调节的推理强度级别，并支持函数调用、结构化输出和流式响应等关键开发者功能，但不包含视觉处理能力。
 
-    相比前代模型，o3-mini 表现显著提升：专家评测者在 56% 的情况下更偏好其回答，并在复杂问题上观察到重大错误减少 39%。在中等推理强度设置下，o3-mini 在 AIME 和 GPQA 等高难度推理评测中达到与更大规模的 o1 模型相当的性能，同时保持更低的延迟和成本。
+  相比前代模型，o3-mini 表现显著提升：专家评测者在 56% 的情况下更偏好其回答，并在复杂问题上观察到重大错误减少 39%。在中等推理强度设置下，o3-mini 在 AIME 和 GPQA 等高难度推理评测中达到与更大规模的 o1 模型相当的性能，同时保持更低的延迟和成本。
 context_length: 200000
 max_output: 100000
 price_in: 1.1e-06
 price_out: 4.4e-06
 features:
-    - CapChat
-    - CapFunctionCall
-    - CapJsonMode
-    - ModalityFileIn
-    - ModalityTextIn
-    - ModalityTextOut
+  - CapChat
+  - CapFunctionCall
+  - CapJsonMode
+  - ModalityFileIn
+  - ModalityTextIn
+  - ModalityTextOut

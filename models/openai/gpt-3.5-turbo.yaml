@@ -2,20 +2,20 @@ id: openai/gpt-3.5-turbo
 name: 'OpenAI: GPT-3.5 Turbo'
 provider: OpenAI
 description: |-
-    GPT-3.5 Turbo is OpenAI's fastest model. It can understand and generate natural language or code, and is optimized for chat and traditional completion tasks.
+  GPT-3.5 Turbo is OpenAI's fastest model. It can understand and generate natural language or code, and is optimized for chat and traditional completion tasks.
 
-    Training data up to Sep 2021.
+  Training data up to Sep 2021.
 description_cn: |-
-    GPT-3.5 Turbo 是 OpenAI 速度最快的模型，可理解和生成自然语言或代码，专为聊天及传统补全任务优化。
+  GPT-3.5 Turbo 是 OpenAI 速度最快的模型，可理解和生成自然语言或代码，专为聊天及传统补全任务优化。
 
-    训练数据截止至 2021 年 9 月。
+  训练数据截止至 2021 年 9 月。
 context_length: 16385
 max_output: 4096
 price_in: 5e-07
 price_out: 1.5e-06
 features:
-    - CapChat
-    - CapFunctionCall
-    - CapJsonMode
-    - ModalityTextIn
-    - ModalityTextOut
+  - CapChat
+  - CapFunctionCall
+  - CapJsonMode
+  - ModalityTextIn
+  - ModalityTextOut

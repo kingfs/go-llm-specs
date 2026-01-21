@@ -3,16 +3,16 @@ name: 'Nex AGI: DeepSeek V3.1 Nex N1'
 provider: Nex-Agi
 description: "DeepSeek V3.1 Nex-N1 is the flagship release of the Nex-N1 series — a post-trained model designed to highlight agent autonomy, tool use, and real-world productivity. \n\nNex-N1 demonstrates competitive performance across all evaluation scenarios, showing particularly strong results in practical coding and HTML generation tasks."
 description_cn: |-
-    DeepSeek V3.1 Nex-N1 是 Nex-N1 系列的旗舰版本——一款经过后训练的模型，旨在突出智能体自主性、工具使用能力及现实生产力。
+  DeepSeek V3.1 Nex-N1 是 Nex-N1 系列的旗舰版本——一款经过后训练的模型，旨在突出智能体自主性、工具使用能力及现实生产力。
 
-    Nex-N1 在所有评估场景中均展现出竞争力，在实际编码和 HTML 生成任务中表现尤为突出。
+  Nex-N1 在所有评估场景中均展现出竞争力，在实际编码和 HTML 生成任务中表现尤为突出。
 context_length: 131072
 max_output: 163840
 price_in: 2.7e-07
 price_out: 1e-06
 features:
-    - CapChat
-    - CapFunctionCall
-    - CapJsonMode
-    - ModalityTextIn
-    - ModalityTextOut
+  - CapChat
+  - CapFunctionCall
+  - CapJsonMode
+  - ModalityTextIn
+  - ModalityTextOut

@@ -2,34 +2,34 @@ id: openai/gpt-4o-mini-2024-07-18
 name: 'OpenAI: GPT-4o-mini (2024-07-18)'
 provider: OpenAI
 description: |-
-    GPT-4o mini is OpenAI's newest model after [GPT-4 Omni](/models/openai/gpt-4o), supporting both text and image inputs with text outputs.
+  GPT-4o mini is OpenAI's newest model after [GPT-4 Omni](/models/openai/gpt-4o), supporting both text and image inputs with text outputs.
 
-    As their most advanced small model, it is many multiples more affordable than other recent frontier models, and more than 60% cheaper than [GPT-3.5 Turbo](/models/openai/gpt-3.5-turbo). It maintains SOTA intelligence, while being significantly more cost-effective.
+  As their most advanced small model, it is many multiples more affordable than other recent frontier models, and more than 60% cheaper than [GPT-3.5 Turbo](/models/openai/gpt-3.5-turbo). It maintains SOTA intelligence, while being significantly more cost-effective.
 
-    GPT-4o mini achieves an 82% score on MMLU and presently ranks higher than GPT-4 on chat preferences [common leaderboards](https://arena.lmsys.org/).
+  GPT-4o mini achieves an 82% score on MMLU and presently ranks higher than GPT-4 on chat preferences [common leaderboards](https://arena.lmsys.org/).
 
-    Check out the [launch announcement](https://openai.com/index/gpt-4o-mini-advancing-cost-efficient-intelligence/) to learn more.
+  Check out the [launch announcement](https://openai.com/index/gpt-4o-mini-advancing-cost-efficient-intelligence/) to learn more.
 
-    #multimodal
+  #multimodal
 description_cn: |-
-    GPT-4o mini 是继 [GPT-4 Omni](/models/openai/gpt-4o) 之后 OpenAI 推出的最新模型，支持文本和图像输入，并生成文本输出。
+  GPT-4o mini 是继 [GPT-4 Omni](/models/openai/gpt-4o) 之后 OpenAI 推出的最新模型，支持文本和图像输入，并生成文本输出。
 
-    作为其最先进的小型模型，其成本远低于其他近期前沿模型，比 [GPT-3.5 Turbo](/models/openai/gpt-3.5-turbo) 便宜 60% 以上，同时保持业界领先的智能水平，性价比显著提升。
+  作为其最先进的小型模型，其成本远低于其他近期前沿模型，比 [GPT-3.5 Turbo](/models/openai/gpt-3.5-turbo) 便宜 60% 以上，同时保持业界领先的智能水平，性价比显著提升。
 
-    GPT-4o mini 在 MMLU 基准测试中取得 82% 的得分，目前在主流聊天偏好排行榜上超越 GPT-4（参见 [常见排行榜](https://arena.lmsys.org/)）。
+  GPT-4o mini 在 MMLU 基准测试中取得 82% 的得分，目前在主流聊天偏好排行榜上超越 GPT-4（参见 [常见排行榜](https://arena.lmsys.org/)）。
 
-    了解更多详情，请查看 [发布公告](https://openai.com/index/gpt-4o-mini-advancing-cost-efficient-intelligence/)。
+  了解更多详情，请查看 [发布公告](https://openai.com/index/gpt-4o-mini-advancing-cost-efficient-intelligence/)。
 
-    #多模态
+  #多模态
 context_length: 128000
 max_output: 16384
 price_in: 1.5e-07
 price_out: 6e-07
 features:
-    - CapChat
-    - CapFunctionCall
-    - CapJsonMode
-    - ModalityFileIn
-    - ModalityImageIn
-    - ModalityTextIn
-    - ModalityTextOut
+  - CapChat
+  - CapFunctionCall
+  - CapJsonMode
+  - ModalityFileIn
+  - ModalityImageIn
+  - ModalityTextIn
+  - ModalityTextOut

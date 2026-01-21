@@ -3,17 +3,17 @@ name: 'xAI: Grok 3 Mini Beta'
 provider: X-Ai
 description: "Grok 3 Mini is a lightweight, smaller thinking model. Unlike traditional models that generate answers immediately, Grok 3 Mini thinks before responding. It’s ideal for reasoning-heavy tasks that don’t demand extensive domain knowledge, and shines in math-specific and quantitative use cases, such as solving challenging puzzles or math problems.\n\nTransparent \"thinking\" traces accessible. Defaults to low reasoning, can boost with setting `reasoning: { effort: \"high\" }`\n\nNote: That there are two xAI endpoints for this model. By default when using this model we will always route you to the base endpoint. If you want the fast endpoint you can add `provider: { sort: throughput}`, to sort by throughput instead. \n"
 description_cn: |-
-    Grok 3 Mini 是一款轻量级、低开销的推理模型。与传统模型即时生成答案不同，Grok 3 Mini 会在响应前进行思考，特别适合无需深厚领域知识但需强推理能力的任务，在数学及量化场景（如解决高难度谜题或数学问题）中表现突出。
+  Grok 3 Mini 是一款轻量级、低开销的推理模型。与传统模型即时生成答案不同，Grok 3 Mini 会在响应前进行思考，特别适合无需深厚领域知识但需强推理能力的任务，在数学及量化场景（如解决高难度谜题或数学问题）中表现突出。
 
-    支持透明的“思考”过程追踪。默认采用低推理强度，可通过设置 `reasoning: { effort: "high" }` 提升推理强度。
+  支持透明的“思考”过程追踪。默认采用低推理强度，可通过设置 `reasoning: { effort: "high" }` 提升推理强度。
 
-    注意：此模型提供两个 xAI 接入端点。默认情况下，使用该模型将始终路由至基础端点。若需使用高速端点，可添加 `provider: { sort: throughput }` 以按吞吐量优先排序。
+  注意：此模型提供两个 xAI 接入端点。默认情况下，使用该模型将始终路由至基础端点。若需使用高速端点，可添加 `provider: { sort: throughput }` 以按吞吐量优先排序。
 context_length: 131072
 price_in: 3e-07
 price_out: 5e-07
 features:
-    - CapChat
-    - CapFunctionCall
-    - CapJsonMode
-    - ModalityTextIn
-    - ModalityTextOut
+  - CapChat
+  - CapFunctionCall
+  - CapJsonMode
+  - ModalityTextIn
+  - ModalityTextOut

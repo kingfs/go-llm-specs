@@ -7,7 +7,7 @@ context_length: 4096
 price_in: 6e-08
 price_out: 6e-08
 features:
-    - CapChat
-    - CapJsonMode
-    - ModalityTextIn
-    - ModalityTextOut
+  - CapChat
+  - CapJsonMode
+  - ModalityTextIn
+  - ModalityTextOut

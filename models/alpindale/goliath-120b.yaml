@@ -2,27 +2,27 @@ id: alpindale/goliath-120b
 name: Goliath 120B
 provider: Alpindale
 description: |-
-    A large LLM created by combining two fine-tuned Llama 70B models into one 120B model. Combines Xwin and Euryale.
+  A large LLM created by combining two fine-tuned Llama 70B models into one 120B model. Combines Xwin and Euryale.
 
-    Credits to
-    - [@chargoddard](https://huggingface.co/chargoddard) for developing the framework used to merge the model - [mergekit](https://github.com/cg123/mergekit).
-    - [@Undi95](https://huggingface.co/Undi95) for helping with the merge ratios.
+  Credits to
+  - [@chargoddard](https://huggingface.co/chargoddard) for developing the framework used to merge the model - [mergekit](https://github.com/cg123/mergekit).
+  - [@Undi95](https://huggingface.co/Undi95) for helping with the merge ratios.
 
-    #merge
+  #merge
 description_cn: |-
-    一款大型语言模型，通过将两个经过微调的 Llama 70B 模型合并为一个 120B 模型构建而成，融合了 Xwin 与 Euryale。
+  一款大型语言模型，通过将两个经过微调的 Llama 70B 模型合并为一个 120B 模型构建而成，融合了 Xwin 与 Euryale。
 
-    致谢：
-    - [@chargoddard](https://huggingface.co/chargoddard) 开发了用于模型合并的框架 [mergekit](https://github.com/cg123/mergekit)。
-    - [@Undi95](https://huggingface.co/Undi95) 协助确定了模型合并比例。
+  致谢：
+  - [@chargoddard](https://huggingface.co/chargoddard) 开发了用于模型合并的框架 [mergekit](https://github.com/cg123/mergekit)。
+  - [@Undi95](https://huggingface.co/Undi95) 协助确定了模型合并比例。
 
-    #merge
+  #merge
 context_length: 6144
 max_output: 1024
 price_in: 6e-06
 price_out: 8e-06
 features:
-    - CapChat
-    - CapJsonMode
-    - ModalityTextIn
-    - ModalityTextOut
+  - CapChat
+  - CapJsonMode
+  - ModalityTextIn
+  - ModalityTextOut

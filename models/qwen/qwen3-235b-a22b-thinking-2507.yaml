@@ -2,20 +2,20 @@ id: qwen/qwen3-235b-a22b-thinking-2507
 name: 'Qwen: Qwen3 235B A22B Thinking 2507'
 provider: Qwen
 description: |-
-    Qwen3-235B-A22B-Thinking-2507 is a high-performance, open-weight Mixture-of-Experts (MoE) language model optimized for complex reasoning tasks. It activates 22B of its 235B parameters per forward pass and natively supports up to 262,144 tokens of context. This "thinking-only" variant enhances structured logical reasoning, mathematics, science, and long-form generation, showing strong benchmark performance across AIME, SuperGPQA, LiveCodeBench, and MMLU-Redux. It enforces a special reasoning mode (</think>) and is designed for high-token outputs (up to 81,920 tokens) in challenging domains.
+  Qwen3-235B-A22B-Thinking-2507 is a high-performance, open-weight Mixture-of-Experts (MoE) language model optimized for complex reasoning tasks. It activates 22B of its 235B parameters per forward pass and natively supports up to 262,144 tokens of context. This "thinking-only" variant enhances structured logical reasoning, mathematics, science, and long-form generation, showing strong benchmark performance across AIME, SuperGPQA, LiveCodeBench, and MMLU-Redux. It enforces a special reasoning mode (</think>) and is designed for high-token outputs (up to 81,920 tokens) in challenging domains.
 
-    The model is instruction-tuned and excels at step-by-step reasoning, tool use, agentic workflows, and multilingual tasks. This release represents the most capable open-source variant in the Qwen3-235B series, surpassing many closed models in structured reasoning use cases.
+  The model is instruction-tuned and excels at step-by-step reasoning, tool use, agentic workflows, and multilingual tasks. This release represents the most capable open-source variant in the Qwen3-235B series, surpassing many closed models in structured reasoning use cases.
 description_cn: |-
-    Qwen3-235B-A22B-Thinking-2507 是一款高性能、开源权重的混合专家（MoE）语言模型，专为复杂推理任务优化。每次前向传播激活其 2350 亿参数中的 220 亿，并原生支持最多 262,144 个上下文 token。该“纯推理”变体在结构化逻辑推理、数学、科学及长文本生成方面表现卓越，在 AIME、SuperGPQA、LiveCodeBench 和 MMLU-Redux 等基准测试中成绩优异。模型强制启用特殊推理模式（</think>），并针对高 token 输出（最高达 81,920 个 token）的挑战性领域进行优化。
+  Qwen3-235B-A22B-Thinking-2507 是一款高性能、开源权重的混合专家（MoE）语言模型，专为复杂推理任务优化。每次前向传播激活其 2350 亿参数中的 220 亿，并原生支持最多 262,144 个上下文 token。该“纯推理”变体在结构化逻辑推理、数学、科学及长文本生成方面表现卓越，在 AIME、SuperGPQA、LiveCodeBench 和 MMLU-Redux 等基准测试中成绩优异。模型强制启用特殊推理模式（</think>），并针对高 token 输出（最高达 81,920 个 token）的挑战性领域进行优化。
 
-    该模型经过指令微调，在逐步推理、工具调用、智能体工作流及多语言任务方面表现出色。此版本是 Qwen3-235B 系列中最强大的开源变体，在结构化推理应用场景中超越众多闭源模型。
+  该模型经过指令微调，在逐步推理、工具调用、智能体工作流及多语言任务方面表现出色。此版本是 Qwen3-235B 系列中最强大的开源变体，在结构化推理应用场景中超越众多闭源模型。
 context_length: 262144
 max_output: 262144
 price_in: 1.1e-07
 price_out: 6e-07
 features:
-    - CapChat
-    - CapFunctionCall
-    - CapJsonMode
-    - ModalityTextIn
-    - ModalityTextOut
+  - CapChat
+  - CapFunctionCall
+  - CapJsonMode
+  - ModalityTextIn
+  - ModalityTextOut

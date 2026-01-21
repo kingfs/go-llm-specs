@@ -2,22 +2,22 @@ id: meta-llama/llama-3.3-70b-instruct:free
 name: 'Meta: Llama 3.3 70B Instruct (free)'
 provider: Meta
 description: |-
-    The Meta Llama 3.3 multilingual large language model (LLM) is a pretrained and instruction tuned generative model in 70B (text in/text out). The Llama 3.3 instruction tuned text only model is optimized for multilingual dialogue use cases and outperforms many of the available open source and closed chat models on common industry benchmarks.
+  The Meta Llama 3.3 multilingual large language model (LLM) is a pretrained and instruction tuned generative model in 70B (text in/text out). The Llama 3.3 instruction tuned text only model is optimized for multilingual dialogue use cases and outperforms many of the available open source and closed chat models on common industry benchmarks.
 
-    Supported languages: English, German, French, Italian, Portuguese, Hindi, Spanish, and Thai.
+  Supported languages: English, German, French, Italian, Portuguese, Hindi, Spanish, and Thai.
 
-    [Model Card](https://github.com/meta-llama/llama-models/blob/main/models/llama3_3/MODEL_CARD.md)
+  [Model Card](https://github.com/meta-llama/llama-models/blob/main/models/llama3_3/MODEL_CARD.md)
 description_cn: |-
-    Meta Llama 3.3 多语言大语言模型（LLM）是一款经过预训练和指令微调的 70B 参数生成式模型（纯文本输入/输出）。该模型专为多语言对话场景优化，在主流行业基准测试中性能优于众多现有开源及闭源聊天模型。
+  Meta Llama 3.3 多语言大语言模型（LLM）是一款经过预训练和指令微调的 70B 参数生成式模型（纯文本输入/输出）。该模型专为多语言对话场景优化，在主流行业基准测试中性能优于众多现有开源及闭源聊天模型。
 
-    支持语言：英语、德语、法语、意大利语、葡萄牙语、印地语、西班牙语和泰语。
+  支持语言：英语、德语、法语、意大利语、葡萄牙语、印地语、西班牙语和泰语。
 
-    [模型卡片](https://github.com/meta-llama/llama-models/blob/main/models/llama3_3/MODEL_CARD.md)
+  [模型卡片](https://github.com/meta-llama/llama-models/blob/main/models/llama3_3/MODEL_CARD.md)
 context_length: 131072
 price_in: 0
 price_out: 0
 features:
-    - CapChat
-    - CapFunctionCall
-    - ModalityTextIn
-    - ModalityTextOut
+  - CapChat
+  - CapFunctionCall
+  - ModalityTextIn
+  - ModalityTextOut

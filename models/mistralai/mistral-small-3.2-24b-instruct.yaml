@@ -2,21 +2,21 @@ id: mistralai/mistral-small-3.2-24b-instruct
 name: 'Mistral: Mistral Small 3.2 24B'
 provider: Mistral
 description: |-
-    Mistral-Small-3.2-24B-Instruct-2506 is an updated 24B parameter model from Mistral optimized for instruction following, repetition reduction, and improved function calling. Compared to the 3.1 release, version 3.2 significantly improves accuracy on WildBench and Arena Hard, reduces infinite generations, and delivers gains in tool use and structured output tasks.
+  Mistral-Small-3.2-24B-Instruct-2506 is an updated 24B parameter model from Mistral optimized for instruction following, repetition reduction, and improved function calling. Compared to the 3.1 release, version 3.2 significantly improves accuracy on WildBench and Arena Hard, reduces infinite generations, and delivers gains in tool use and structured output tasks.
 
-    It supports image and text inputs with structured outputs, function/tool calling, and strong performance across coding (HumanEval+, MBPP), STEM (MMLU, MATH, GPQA), and vision benchmarks (ChartQA, DocVQA).
+  It supports image and text inputs with structured outputs, function/tool calling, and strong performance across coding (HumanEval+, MBPP), STEM (MMLU, MATH, GPQA), and vision benchmarks (ChartQA, DocVQA).
 description_cn: |-
-    Mistral-Small-3.2-24B-Instruct-2506 是 Mistral 推出的更新版 240 亿参数模型，专为指令遵循、减少重复输出及改进函数调用而优化。相比 3.1 版本，3.2 版在 WildBench 和 Arena Hard 基准上显著提升准确性，有效抑制无限生成问题，并在工具使用和结构化输出任务中取得明显进步。
+  Mistral-Small-3.2-24B-Instruct-2506 是 Mistral 推出的更新版 240 亿参数模型，专为指令遵循、减少重复输出及改进函数调用而优化。相比 3.1 版本，3.2 版在 WildBench 和 Arena Hard 基准上显著提升准确性，有效抑制无限生成问题，并在工具使用和结构化输出任务中取得明显进步。
 
-    该模型支持图文输入与结构化输出、函数/工具调用，在编程（HumanEval+、MBPP）、STEM（MMLU、MATH、GPQA）及视觉（ChartQA、DocVQA）等基准测试中表现优异。
+  该模型支持图文输入与结构化输出、函数/工具调用，在编程（HumanEval+、MBPP）、STEM（MMLU、MATH、GPQA）及视觉（ChartQA、DocVQA）等基准测试中表现优异。
 context_length: 131072
 max_output: 131072
 price_in: 6e-08
 price_out: 1.8e-07
 features:
-    - CapChat
-    - CapFunctionCall
-    - CapJsonMode
-    - ModalityImageIn
-    - ModalityTextIn
-    - ModalityTextOut
+  - CapChat
+  - CapFunctionCall
+  - CapJsonMode
+  - ModalityImageIn
+  - ModalityTextIn
+  - ModalityTextOut

@@ -2,25 +2,25 @@ id: thedrummer/rocinante-12b
 name: 'TheDrummer: Rocinante 12B'
 provider: Thedrummer
 description: |-
-    Rocinante 12B is designed for engaging storytelling and rich prose.
+  Rocinante 12B is designed for engaging storytelling and rich prose.
 
-    Early testers have reported:
-    - Expanded vocabulary with unique and expressive word choices
-    - Enhanced creativity for vivid narratives
-    - Adventure-filled and captivating stories
+  Early testers have reported:
+  - Expanded vocabulary with unique and expressive word choices
+  - Enhanced creativity for vivid narratives
+  - Adventure-filled and captivating stories
 description_cn: |-
-    Rocinante 12B 专为引人入胜的故事叙述和丰富文采而设计。
+  Rocinante 12B 专为引人入胜的故事叙述和丰富文采而设计。
 
-    早期测试者反馈：
-    - 词汇量更广，用词独特且富有表现力
-    - 创造力显著增强，可生成生动叙事
-    - 故事情节充满冒险且引人入胜
+  早期测试者反馈：
+  - 词汇量更广，用词独特且富有表现力
+  - 创造力显著增强，可生成生动叙事
+  - 故事情节充满冒险且引人入胜
 context_length: 32768
 price_in: 1.7e-07
 price_out: 4.3e-07
 features:
-    - CapChat
-    - CapFunctionCall
-    - CapJsonMode
-    - ModalityTextIn
-    - ModalityTextOut
+  - CapChat
+  - CapFunctionCall
+  - CapJsonMode
+  - ModalityTextIn
+  - ModalityTextOut

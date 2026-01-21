@@ -8,8 +8,8 @@ max_output: 8192
 price_in: 0
 price_out: 0
 features:
-    - CapChat
-    - CapFunctionCall
-    - ModalityImageIn
-    - ModalityTextIn
-    - ModalityTextOut
+  - CapChat
+  - CapFunctionCall
+  - ModalityImageIn
+  - ModalityTextIn
+  - ModalityTextOut

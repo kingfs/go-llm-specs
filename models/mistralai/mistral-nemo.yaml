@@ -2,24 +2,24 @@ id: mistralai/mistral-nemo
 name: 'Mistral: Mistral Nemo'
 provider: Mistral
 description: |-
-    A 12B parameter model with a 128k token context length built by Mistral in collaboration with NVIDIA.
+  A 12B parameter model with a 128k token context length built by Mistral in collaboration with NVIDIA.
 
-    The model is multilingual, supporting English, French, German, Spanish, Italian, Portuguese, Chinese, Japanese, Korean, Arabic, and Hindi.
+  The model is multilingual, supporting English, French, German, Spanish, Italian, Portuguese, Chinese, Japanese, Korean, Arabic, and Hindi.
 
-    It supports function calling and is released under the Apache 2.0 license.
+  It supports function calling and is released under the Apache 2.0 license.
 description_cn: |-
-    Mistral 与 NVIDIA 联合开发的 120 亿参数模型，支持 128k token 上下文长度。
+  Mistral 与 NVIDIA 联合开发的 120 亿参数模型，支持 128k token 上下文长度。
 
-    该模型支持多语言，包括英语、法语、德语、西班牙语、意大利语、葡萄牙语、中文、日语、韩语、阿拉伯语和印地语。
+  该模型支持多语言，包括英语、法语、德语、西班牙语、意大利语、葡萄牙语、中文、日语、韩语、阿拉伯语和印地语。
 
-    支持函数调用，并以 Apache 2.0 许可证发布。
+  支持函数调用，并以 Apache 2.0 许可证发布。
 context_length: 131072
 max_output: 16384
 price_in: 2e-08
 price_out: 4e-08
 features:
-    - CapChat
-    - CapFunctionCall
-    - CapJsonMode
-    - ModalityTextIn
-    - ModalityTextOut
+  - CapChat
+  - CapFunctionCall
+  - CapJsonMode
+  - ModalityTextIn
+  - ModalityTextOut

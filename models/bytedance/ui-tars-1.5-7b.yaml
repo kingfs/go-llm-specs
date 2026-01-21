@@ -2,19 +2,19 @@ id: bytedance/ui-tars-1.5-7b
 name: 'ByteDance: UI-TARS 7B '
 provider: Bytedance
 description: |-
-    UI-TARS-1.5 is a multimodal vision-language agent optimized for GUI-based environments, including desktop interfaces, web browsers, mobile systems, and games. Built by ByteDance, it builds upon the UI-TARS framework with reinforcement learning-based reasoning, enabling robust action planning and execution across virtual interfaces.
+  UI-TARS-1.5 is a multimodal vision-language agent optimized for GUI-based environments, including desktop interfaces, web browsers, mobile systems, and games. Built by ByteDance, it builds upon the UI-TARS framework with reinforcement learning-based reasoning, enabling robust action planning and execution across virtual interfaces.
 
-    This model achieves state-of-the-art results on a range of interactive and grounding benchmarks, including OSworld, WebVoyager, AndroidWorld, and ScreenSpot. It also demonstrates perfect task completion across diverse Poki games and outperforms prior models in Minecraft agent tasks. UI-TARS-1.5 supports thought decomposition during inference and shows strong scaling across variants, with the 1.5 version notably exceeding the performance of earlier 72B and 7B checkpoints.
+  This model achieves state-of-the-art results on a range of interactive and grounding benchmarks, including OSworld, WebVoyager, AndroidWorld, and ScreenSpot. It also demonstrates perfect task completion across diverse Poki games and outperforms prior models in Minecraft agent tasks. UI-TARS-1.5 supports thought decomposition during inference and shows strong scaling across variants, with the 1.5 version notably exceeding the performance of earlier 72B and 7B checkpoints.
 description_cn: |-
-    UI-TARS-1.5 是一款专为图形用户界面（GUI）环境优化的多模态视觉语言智能体，适用于桌面界面、网页浏览器、移动系统及游戏场景。该模型由字节跳动开发，在 UI-TARS 框架基础上引入基于强化学习的推理机制，可在各类虚拟界面中实现稳健的动作规划与执行。
+  UI-TARS-1.5 是一款专为图形用户界面（GUI）环境优化的多模态视觉语言智能体，适用于桌面界面、网页浏览器、移动系统及游戏场景。该模型由字节跳动开发，在 UI-TARS 框架基础上引入基于强化学习的推理机制，可在各类虚拟界面中实现稳健的动作规划与执行。
 
-    该模型在多项交互式与具身智能基准测试中达到业界领先水平，包括 OSworld、WebVoyager、AndroidWorld 和 ScreenSpot。此外，它在多种 Poki 游戏中实现了完美任务完成率，并在《我的世界》（Minecraft）智能体任务中显著超越先前模型。UI-TARS-1.5 支持推理过程中的思维分解，并在不同规模版本中展现出强大的性能扩展能力，其中 1.5 版本的性能明显优于早期的 72B 和 7B 检查点。
+  该模型在多项交互式与具身智能基准测试中达到业界领先水平，包括 OSworld、WebVoyager、AndroidWorld 和 ScreenSpot。此外，它在多种 Poki 游戏中实现了完美任务完成率，并在《我的世界》（Minecraft）智能体任务中显著超越先前模型。UI-TARS-1.5 支持推理过程中的思维分解，并在不同规模版本中展现出强大的性能扩展能力，其中 1.5 版本的性能明显优于早期的 72B 和 7B 检查点。
 context_length: 128000
 max_output: 2048
 price_in: 1e-07
 price_out: 2e-07
 features:
-    - CapChat
-    - ModalityImageIn
-    - ModalityTextIn
-    - ModalityTextOut
+  - CapChat
+  - ModalityImageIn
+  - ModalityTextIn
+  - ModalityTextOut

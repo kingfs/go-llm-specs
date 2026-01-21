@@ -2,29 +2,29 @@ id: meta-llama/llama-guard-2-8b
 name: 'Meta: LlamaGuard 2 8B'
 provider: Meta
 description: |-
-    This safeguard model has 8B parameters and is based on the Llama 3 family. Just like is predecessor, [LlamaGuard 1](https://huggingface.co/meta-llama/LlamaGuard-7b), it can do both prompt and response classification.
+  This safeguard model has 8B parameters and is based on the Llama 3 family. Just like is predecessor, [LlamaGuard 1](https://huggingface.co/meta-llama/LlamaGuard-7b), it can do both prompt and response classification.
 
-    LlamaGuard 2 acts as a normal LLM would, generating text that indicates whether the given input/output is safe/unsafe. If deemed unsafe, it will also share the content categories violated.
+  LlamaGuard 2 acts as a normal LLM would, generating text that indicates whether the given input/output is safe/unsafe. If deemed unsafe, it will also share the content categories violated.
 
-    For best results, please use raw prompt input or the `/completions` endpoint, instead of the chat API.
+  For best results, please use raw prompt input or the `/completions` endpoint, instead of the chat API.
 
-    It has demonstrated strong performance compared to leading closed-source models in human evaluations.
+  It has demonstrated strong performance compared to leading closed-source models in human evaluations.
 
-    To read more about the model release, [click here](https://ai.meta.com/blog/meta-llama-3/). Usage of this model is subject to [Meta's Acceptable Use Policy](https://llama.meta.com/llama3/use-policy/).
+  To read more about the model release, [click here](https://ai.meta.com/blog/meta-llama-3/). Usage of this model is subject to [Meta's Acceptable Use Policy](https://llama.meta.com/llama3/use-policy/).
 description_cn: |-
-    此安全防护模型拥有 80 亿参数，基于 Llama 3 系列构建。与前代 [LlamaGuard 1](https://huggingface.co/meta-llama/LlamaGuard-7b) 类似，它可对提示（prompt）和响应（response）进行分类。
+  此安全防护模型拥有 80 亿参数，基于 Llama 3 系列构建。与前代 [LlamaGuard 1](https://huggingface.co/meta-llama/LlamaGuard-7b) 类似，它可对提示（prompt）和响应（response）进行分类。
 
-    LlamaGuard 2 的工作方式类似于普通大语言模型，会生成文本以判断给定输入/输出是否安全。若判定为不安全，还会指出违反的内容类别。
+  LlamaGuard 2 的工作方式类似于普通大语言模型，会生成文本以判断给定输入/输出是否安全。若判定为不安全，还会指出违反的内容类别。
 
-    为获得最佳效果，请使用原始提示输入或 `/completions` 端点，而非聊天 API。
+  为获得最佳效果，请使用原始提示输入或 `/completions` 端点，而非聊天 API。
 
-    在人工评估中，其表现优于主流闭源模型。
+  在人工评估中，其表现优于主流闭源模型。
 
-    有关模型发布的更多信息，请[点击此处](https://ai.meta.com/blog/meta-llama-3/)。本模型的使用须遵守 [Meta 可接受使用政策](https://llama.meta.com/llama3/use-policy/)。
+  有关模型发布的更多信息，请[点击此处](https://ai.meta.com/blog/meta-llama-3/)。本模型的使用须遵守 [Meta 可接受使用政策](https://llama.meta.com/llama3/use-policy/)。
 context_length: 8192
 price_in: 2e-07
 price_out: 2e-07
 features:
-    - CapChat
-    - ModalityTextIn
-    - ModalityTextOut
+  - CapChat
+  - ModalityTextIn
+  - ModalityTextOut

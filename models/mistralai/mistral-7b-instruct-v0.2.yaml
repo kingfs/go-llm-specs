@@ -2,25 +2,25 @@ id: mistralai/mistral-7b-instruct-v0.2
 name: 'Mistral: Mistral 7B Instruct v0.2'
 provider: Mistral
 description: |-
-    A high-performing, industry-standard 7.3B parameter model, with optimizations for speed and context length.
+  A high-performing, industry-standard 7.3B parameter model, with optimizations for speed and context length.
 
-    An improved version of [Mistral 7B Instruct](/modelsmistralai/mistral-7b-instruct-v0.1), with the following changes:
+  An improved version of [Mistral 7B Instruct](/modelsmistralai/mistral-7b-instruct-v0.1), with the following changes:
 
-    - 32k context window (vs 8k context in v0.1)
-    - Rope-theta = 1e6
-    - No Sliding-Window Attention
+  - 32k context window (vs 8k context in v0.1)
+  - Rope-theta = 1e6
+  - No Sliding-Window Attention
 description_cn: |-
-    一款高性能、行业标准的 73 亿参数模型，针对推理速度和上下文长度进行了优化。
+  一款高性能、行业标准的 73 亿参数模型，针对推理速度和上下文长度进行了优化。
 
-    这是 [Mistral 7B Instruct](/modelsmistralai/mistral-7b-instruct-v0.1) 的改进版本，主要变更包括：
+  这是 [Mistral 7B Instruct](/modelsmistralai/mistral-7b-instruct-v0.1) 的改进版本，主要变更包括：
 
-    - 上下文窗口扩展至 32k（v0.1 为 8k）
-    - Rope-theta = 1e6
-    - 移除了滑动窗口注意力机制
+  - 上下文窗口扩展至 32k（v0.1 为 8k）
+  - Rope-theta = 1e6
+  - 移除了滑动窗口注意力机制
 context_length: 32768
 price_in: 2e-07
 price_out: 2e-07
 features:
-    - CapChat
-    - ModalityTextIn
-    - ModalityTextOut
+  - CapChat
+  - ModalityTextIn
+  - ModalityTextOut

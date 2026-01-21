@@ -1,6 +1,7 @@
 package main
 
 import (
+	"bytes"
 	"encoding/json"
 	"fmt"
 	"io"
@@ -249,15 +250,14 @@ func saveModelToDisk(m ModelRegistry) error {
 
 	filePath := filepath.Join(dir, safeModelName+".yaml")
 
-	// Check if file exists to avoid unnecessary writes if no change?
-	// For now, just write.
-
-	data, err := yaml.Marshal(m)
-	if err != nil {
+	var buf bytes.Buffer
+	enc := yaml.NewEncoder(&buf)
+	enc.SetIndent(2)
+	if err := enc.Encode(m); err != nil {
 		return err
 	}
 
-	return os.WriteFile(filePath, data, 0644)
+	return os.WriteFile(filePath, buf.Bytes(), 0644)
 }
 
 type ProcessedModel struct {

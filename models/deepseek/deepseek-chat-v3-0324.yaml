@@ -2,20 +2,20 @@ id: deepseek/deepseek-chat-v3-0324
 name: 'DeepSeek: DeepSeek V3 0324'
 provider: DeepSeek
 description: |-
-    DeepSeek V3, a 685B-parameter, mixture-of-experts model, is the latest iteration of the flagship chat model family from the DeepSeek team.
+  DeepSeek V3, a 685B-parameter, mixture-of-experts model, is the latest iteration of the flagship chat model family from the DeepSeek team.
 
-    It succeeds the [DeepSeek V3](/deepseek/deepseek-chat-v3) model and performs really well on a variety of tasks.
+  It succeeds the [DeepSeek V3](/deepseek/deepseek-chat-v3) model and performs really well on a variety of tasks.
 description_cn: |-
-    DeepSeek V3 是 DeepSeek 团队最新推出的旗舰级对话模型系列的最新版本，采用混合专家（Mixture-of-Experts）架构，参数量达 6850 亿。
+  DeepSeek V3 是 DeepSeek 团队最新推出的旗舰级对话模型系列的最新版本，采用混合专家（Mixture-of-Experts）架构，参数量达 6850 亿。
 
-    该模型继 [DeepSeek V3](/deepseek/deepseek-chat-v3) 之后推出，在各类任务中均表现出色。
+  该模型继 [DeepSeek V3](/deepseek/deepseek-chat-v3) 之后推出，在各类任务中均表现出色。
 context_length: 163840
 max_output: 65536
 price_in: 1.9e-07
 price_out: 8.7e-07
 features:
-    - CapChat
-    - CapFunctionCall
-    - CapJsonMode
-    - ModalityTextIn
-    - ModalityTextOut
+  - CapChat
+  - CapFunctionCall
+  - CapJsonMode
+  - ModalityTextIn
+  - ModalityTextOut

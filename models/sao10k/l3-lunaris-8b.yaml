@@ -2,22 +2,22 @@ id: sao10k/l3-lunaris-8b
 name: 'Sao10K: Llama 3 8B Lunaris'
 provider: Sao10k
 description: |-
-    Lunaris 8B is a versatile generalist and roleplaying model based on Llama 3. It's a strategic merge of multiple models, designed to balance creativity with improved logic and general knowledge.
+  Lunaris 8B is a versatile generalist and roleplaying model based on Llama 3. It's a strategic merge of multiple models, designed to balance creativity with improved logic and general knowledge.
 
-    Created by [Sao10k](https://huggingface.co/Sao10k), this model aims to offer an improved experience over Stheno v3.2, with enhanced creativity and logical reasoning.
+  Created by [Sao10k](https://huggingface.co/Sao10k), this model aims to offer an improved experience over Stheno v3.2, with enhanced creativity and logical reasoning.
 
-    For best results, use with Llama 3 Instruct context template, temperature 1.4, and min_p 0.1.
+  For best results, use with Llama 3 Instruct context template, temperature 1.4, and min_p 0.1.
 description_cn: |-
-    Lunaris 8B 是一款基于 Llama 3 的多功能通用及角色扮演模型，通过战略性融合多个模型，在创造力、逻辑推理与通用知识之间取得良好平衡。
+  Lunaris 8B 是一款基于 Llama 3 的多功能通用及角色扮演模型，通过战略性融合多个模型，在创造力、逻辑推理与通用知识之间取得良好平衡。
 
-    由 [Sao10k](https://huggingface.co/Sao10k) 开发，旨在提供优于 Stheno v3.2 的体验，显著增强创造力与逻辑推理能力。
+  由 [Sao10k](https://huggingface.co/Sao10k) 开发，旨在提供优于 Stheno v3.2 的体验，显著增强创造力与逻辑推理能力。
 
-    为获得最佳效果，建议配合 Llama 3 Instruct 上下文模板使用，温度（temperature）设为 1.4，min_p 设为 0.1。
+  为获得最佳效果，建议配合 Llama 3 Instruct 上下文模板使用，温度（temperature）设为 1.4，min_p 设为 0.1。
 context_length: 8192
 price_in: 4e-08
 price_out: 5e-08
 features:
-    - CapChat
-    - CapJsonMode
-    - ModalityTextIn
-    - ModalityTextOut
+  - CapChat
+  - CapJsonMode
+  - ModalityTextIn
+  - ModalityTextOut

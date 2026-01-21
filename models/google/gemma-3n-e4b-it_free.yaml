@@ -2,19 +2,19 @@ id: google/gemma-3n-e4b-it:free
 name: 'Google: Gemma 3n 4B (free)'
 provider: Google
 description: |-
-    Gemma 3n E4B-it is optimized for efficient execution on mobile and low-resource devices, such as phones, laptops, and tablets. It supports multimodal inputs—including text, visual data, and audio—enabling diverse tasks such as text generation, speech recognition, translation, and image analysis. Leveraging innovations like Per-Layer Embedding (PLE) caching and the MatFormer architecture, Gemma 3n dynamically manages memory usage and computational load by selectively activating model parameters, significantly reducing runtime resource requirements.
+  Gemma 3n E4B-it is optimized for efficient execution on mobile and low-resource devices, such as phones, laptops, and tablets. It supports multimodal inputs—including text, visual data, and audio—enabling diverse tasks such as text generation, speech recognition, translation, and image analysis. Leveraging innovations like Per-Layer Embedding (PLE) caching and the MatFormer architecture, Gemma 3n dynamically manages memory usage and computational load by selectively activating model parameters, significantly reducing runtime resource requirements.
 
-    This model supports a wide linguistic range (trained in over 140 languages) and features a flexible 32K token context window. Gemma 3n can selectively load parameters, optimizing memory and computational efficiency based on the task or device capabilities, making it well-suited for privacy-focused, offline-capable applications and on-device AI solutions. [Read more in the blog post](https://developers.googleblog.com/en/introducing-gemma-3n/)
+  This model supports a wide linguistic range (trained in over 140 languages) and features a flexible 32K token context window. Gemma 3n can selectively load parameters, optimizing memory and computational efficiency based on the task or device capabilities, making it well-suited for privacy-focused, offline-capable applications and on-device AI solutions. [Read more in the blog post](https://developers.googleblog.com/en/introducing-gemma-3n/)
 description_cn: |-
-    Gemma 3n E4B-it 针对手机、笔记本电脑和平板等移动及低资源设备的高效执行进行了优化。该模型支持多模态输入——包括文本、视觉数据和音频——可执行文本生成、语音识别、翻译及图像分析等多样化任务。借助逐层嵌入（PLE）缓存和 MatFormer 架构等创新技术，Gemma 3n 能动态管理内存使用与计算负载，通过选择性激活模型参数显著降低运行时资源需求。
+  Gemma 3n E4B-it 针对手机、笔记本电脑和平板等移动及低资源设备的高效执行进行了优化。该模型支持多模态输入——包括文本、视觉数据和音频——可执行文本生成、语音识别、翻译及图像分析等多样化任务。借助逐层嵌入（PLE）缓存和 MatFormer 架构等创新技术，Gemma 3n 能动态管理内存使用与计算负载，通过选择性激活模型参数显著降低运行时资源需求。
 
-    该模型支持广泛的语种（训练涵盖 140 多种语言），并具备灵活的 32K tokens 上下文窗口。Gemma 3n 可根据任务或设备能力选择性加载参数，优化内存与计算效率，非常适合注重隐私、支持离线运行的应用及端侧 AI 解决方案。[阅读博客文章了解更多](https://developers.googleblog.com/en/introducing-gemma-3n/)
+  该模型支持广泛的语种（训练涵盖 140 多种语言），并具备灵活的 32K tokens 上下文窗口。Gemma 3n 可根据任务或设备能力选择性加载参数，优化内存与计算效率，非常适合注重隐私、支持离线运行的应用及端侧 AI 解决方案。[阅读博客文章了解更多](https://developers.googleblog.com/en/introducing-gemma-3n/)
 context_length: 8192
 max_output: 2048
 price_in: 0
 price_out: 0
 features:
-    - CapChat
-    - CapJsonMode
-    - ModalityTextIn
-    - ModalityTextOut
+  - CapChat
+  - CapJsonMode
+  - ModalityTextIn
+  - ModalityTextOut
