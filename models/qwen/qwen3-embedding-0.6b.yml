@@ -1,0 +1,12 @@
+id: qwen/qwen3-embedding-0.6b
+name: "Qwen: Qwen3 Embedding 0.6B"
+provider: Qwen
+description: "Qwen3 0.6B's embedding model."
+description_cn: "Qwen3 0.6B 的嵌入模型。"
+features:
+  - CapEmbedding    # Support for new model types
+  - ModalityTextIn
+context_length: 32768
+price_in: 0.00000013
+aliases:
+  - qwen3-embedding-0.6b

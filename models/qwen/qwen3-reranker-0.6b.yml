@@ -1,0 +1,12 @@
+id: qwen/qwen3-reranker-0.6b
+name: "Qwen: Qwen3 Reranker 0.6B"
+provider: Qwen
+description: "Qwen3 0.6B's reranker model."
+description_cn: "Qwen3 0.6B 的 reranker 模型。"
+features:
+  - CapRerank   
+  - ModalityTextIn
+context_length: 32768
+price_in: 0.00000013
+aliases:
+  - qwen3-reranker-0.6b

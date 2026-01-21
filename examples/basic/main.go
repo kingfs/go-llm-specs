@@ -12,11 +12,12 @@ func main() {
 	fmt.Println("LLM metadata registry examples:")
 
 	// 1. Get by alias
-	modelName := "qwen3-vl-plus"
+	modelName := "qwen3-embedding-0.6b"
 	m, ok := llmspecs.Get(modelName)
 	if ok {
 		fmt.Printf("[Alias Match] Found model: %s\n", m.Name())
-		fmt.Printf("Description: %s\n", m.DescriptionCN())
+		fmt.Printf("Description: %s\n", m.Description())
+		fmt.Printf("Description CN: %s\n", m.DescriptionCN())
 		fmt.Printf("Features: %s\n", m.Features().String())
 	} else {
 		fmt.Printf("Model %s not found!\n", modelName)
@@ -43,8 +44,8 @@ func main() {
 	}
 
 	// 4. Batch get
-	fmt.Println("\nBatch retrieving models (gpt4t, qwen3-32b, non-existent):")
-	batch := llmspecs.GetMany([]string{"gpt4t", "qwen3-32b", "non-existent"})
+	fmt.Println("\nBatch retrieving models (gpt4t, qwen3-32b, qwen3-reranker-0.6b, qwen3-embedding-0.6b, non-existent):")
+	batch := llmspecs.GetMany([]string{"gpt4t", "qwen3-32b", "qwen3-reranker-0.6b", "qwen3-embedding-0.6b", "non-existent"})
 	for _, m := range batch {
 		fmt.Printf("- Found: %s (%s)\n", m.Name(), m.ID())
 	}
