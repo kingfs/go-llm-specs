@@ -4,7 +4,7 @@ provider: Bytedance-Seed
 description: Seed 1.6 Flash is an ultra-fast multimodal deep thinking model by ByteDance Seed, supporting both text and visual understanding. It features a 256k context window and can generate outputs of up to 16k tokens.
 description_cn: Seed 1.6 Flash 是字节跳动 Seed 团队推出的超高速多模态深度思考模型，支持文本与视觉理解，具备 256K 上下文窗口，并可生成最多 16K 个输出 token。
 context_length: 262144
-max_output: 16384
+max_output: 32768
 price_in: 7.5e-08
 price_out: 3e-07
 features:
