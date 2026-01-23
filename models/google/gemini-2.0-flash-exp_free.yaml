@@ -5,8 +5,8 @@ description: Gemini Flash 2.0 offers a significantly faster time to first token 
 description_cn: Gemini Flash 2.0 相较于 [Gemini Flash 1.5](/google/gemini-flash-1.5) 显著缩短了首 token 延迟（TTFT），同时保持与 [Gemini Pro 1.5](/google/gemini-pro-1.5) 等更大模型相当的质量。该版本在多模态理解、编码能力、复杂指令遵循及函数调用方面均有显著增强，共同带来更流畅、稳健的智能体体验。
 context_length: 1048576
 max_output: 8192
-price_in: 0
-price_out: 0
+price_in: 1e-07
+price_out: 4e-07
 features:
   - CapChat
   - CapFunctionCall

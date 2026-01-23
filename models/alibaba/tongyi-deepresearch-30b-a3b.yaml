@@ -12,7 +12,7 @@ description_cn: |-
 context_length: 131072
 max_output: 131072
 price_in: 9e-08
-price_out: 4e-07
+price_out: 4.5e-07
 features:
   - CapChat
   - CapFunctionCall
