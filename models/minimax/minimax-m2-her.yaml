@@ -1,0 +1,12 @@
+id: minimax/minimax-m2-her
+name: 'MiniMax: MiniMax M2-her'
+provider: Minimax
+description: MiniMax M2-her is a dialogue-first large language model built for immersive roleplay, character-driven chat, and expressive multi-turn conversations. Designed to stay consistent in tone and personality, it supports rich message roles (user_system, group, sample_message_user, sample_message_ai) and can learn from example dialogue to better match the style and pacing of your scenario, making it a strong choice for storytelling, companions, and conversational experiences where natural flow and vivid interaction matter most.
+context_length: 32768
+max_output: 2048
+price_in: 3e-07
+price_out: 1.2e-06
+features:
+  - CapChat
+  - ModalityTextIn
+  - ModalityTextOut
