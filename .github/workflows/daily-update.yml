@@ -64,7 +64,7 @@ jobs:
       - name: Check for changes
         id: check_changes
         run: |
-          if git diff --quiet models_gen.go models/ data/models.json; then
+          if git diff --quiet models/ ; then
             echo "No changes detected."
             echo "changed=false" >> $GITHUB_OUTPUT
           else
