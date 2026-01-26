@@ -51,7 +51,6 @@ func main() {
     if m, ok := llmspecs.Get("gpt4t"); ok {
         fmt.Printf("Model: %s\n", m.Name())
         fmt.Printf("Context Length: %d\n", m.ContextLength())
-        fmt.Printf("Input Price: $%f / 1k tokens\n", m.PriceInput())
     }
 }
 ```

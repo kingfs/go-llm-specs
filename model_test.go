@@ -11,8 +11,6 @@ func TestModelDataGetters(t *testing.T) {
 		DescCNVal:     "测试模型",
 		ContextLenVal: 100,
 		MaxOutputVal:  50,
-		PriceInVal:    0.1,
-		PriceOutVal:   0.2,
 		FeaturesVal:   ModalityTextIn,
 		AliasList:     []string{"tm"},
 	}
@@ -37,12 +35,6 @@ func TestModelDataGetters(t *testing.T) {
 	}
 	if m.MaxOutput() != 50 {
 		t.Error("Getter MaxOutput fail")
-	}
-	if m.PriceInput() != 0.1 {
-		t.Error("Getter PriceInput fail")
-	}
-	if m.PriceOutput() != 0.2 {
-		t.Error("Getter PriceOutput fail")
 	}
 	if !m.HasCapability(ModalityTextIn) {
 		t.Error("Getter HasCapability fail")

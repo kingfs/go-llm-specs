@@ -409,8 +409,6 @@ func init() {
 			DescCNVal:     {{ printf "%q" .DescriptionCN }},
 			ContextLenVal: {{ .ContextLen }},
 			MaxOutputVal:  {{ .MaxOutput }},
-			PriceInVal:    {{ printf "%f" .PriceIn }},
-			PriceOutVal:   {{ printf "%f" .PriceOut }},
 			FeaturesVal:   {{ .Features }},
 			AliasList:     []string{ {{ range $i, $alias := .Aliases }}{{ if $i }}, {{ end }}"{{ $alias }}"{{ end }} },
 		},

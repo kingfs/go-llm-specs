@@ -32,8 +32,8 @@ func main() {
 		List()
 
 	for _, model := range results {
-		fmt.Printf("- %s (Prices: In $%f, Out $%f)\n",
-			model.ID(), model.PriceInput(), model.PriceOutput())
+		fmt.Printf("- %s (context length: %d)\n",
+			model.ID(), model.ContextLength())
 	}
 
 	// 3. Fuzzy search

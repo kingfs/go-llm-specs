@@ -67,11 +67,7 @@ type Model interface {
     
     ContextLength() int
     MaxOutput() int
-    
-    // 价格 (返回 float64，单位 USD)
-    PriceInput() float64
-    PriceOutput() float64
-    
+
     // 核心算法方法
     HasCapability(c Capability) bool
     Aliases() []string
@@ -88,9 +84,6 @@ type modelData struct {
     
     ContextLenVal   int
     MaxOutputVal    int
-    
-    PriceInVal      float64 // 即使是参考价，也建议编译进去
-    PriceOutVal     float64
     
     Features        Capability // 位掩码核心
     AliasList       []string
