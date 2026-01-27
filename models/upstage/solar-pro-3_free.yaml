@@ -1,0 +1,13 @@
+id: upstage/solar-pro-3:free
+name: 'Upstage: Solar Pro 3 (free)'
+provider: Upstage
+description: Solar Pro 3 is Upstage's powerful Mixture-of-Experts (MoE) language model. With 102B total parameters and 12B active parameters per forward pass, it delivers exceptional performance while maintaining computational efficiency. Optimized for Korean with English and Japanese support.
+context_length: 128000
+price_in: 0
+price_out: 0
+features:
+  - CapChat
+  - CapFunctionCall
+  - CapJsonMode
+  - ModalityTextIn
+  - ModalityTextOut
