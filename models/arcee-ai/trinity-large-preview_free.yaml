@@ -1,0 +1,13 @@
+id: arcee-ai/trinity-large-preview:free
+name: 'Arcee AI: Trinity Large Preview (free)'
+provider: Arcee-Ai
+description: "Trinity-Large-Preview is a frontier-scale open-weight language model from Arcee, built as a 400B-parameter sparse Mixture-of-Experts with 13B active parameters per token using 4-of-256 expert routing. \n\nIt excels in creative writing, storytelling, role-play, chat scenarios, and real-time voice assistance, better than your average reasoning model usually can. But we’re also introducing some of our newer agentic performance. It was trained to navigate well in agent harnesses like OpenCode, Cline, and Kilo Code, and to handle complex toolchains and long, constraint-filled prompts. \n\nThe architecture natively supports very long context windows up to 512k tokens, with the Preview API currently served at 128k context using 8-bit quantization for practical deployment. Trinity-Large-Preview reflects Arcee’s efficiency-first design philosophy, offering a production-oriented frontier model with open weights and permissive licensing suitable for real-world applications and experimentation."
+context_length: 131000
+price_in: 0
+price_out: 0
+features:
+  - CapChat
+  - CapFunctionCall
+  - CapJsonMode
+  - ModalityTextIn
+  - ModalityTextOut
