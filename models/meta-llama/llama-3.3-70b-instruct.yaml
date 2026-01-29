@@ -15,8 +15,6 @@ description_cn: |-
   [模型卡片](https://github.com/meta-llama/llama-models/blob/main/models/llama3_3/MODEL_CARD.md)
 context_length: 131072
 max_output: 16384
-price_in: 1e-07
-price_out: 3.2e-07
 features:
   - CapChat
   - CapFunctionCall

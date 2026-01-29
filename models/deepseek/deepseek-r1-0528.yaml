@@ -11,8 +11,6 @@ description_cn: |-
   完全开源模型。
 context_length: 163840
 max_output: 65536
-price_in: 4e-07
-price_out: 1.75e-06
 features:
   - CapChat
   - CapFunctionCall

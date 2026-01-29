@@ -19,8 +19,6 @@ description_cn: |-
   为避免性能下降，MiniMax 强烈建议在对话轮次间保留推理过程。更多关于如何使用 reasoning_details 回传推理内容的信息，请参阅我们的 [文档](https://openrouter.ai/docs/use-cases/reasoning-tokens#preserving-reasoning-blocks)。
 context_length: 196608
 max_output: 65536
-price_in: 2e-07
-price_out: 1e-06
 features:
   - CapChat
   - CapFunctionCall

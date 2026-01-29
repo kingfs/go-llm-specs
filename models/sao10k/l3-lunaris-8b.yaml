@@ -14,8 +14,6 @@ description_cn: |-
 
   为获得最佳效果，建议配合 Llama 3 Instruct 上下文模板使用，温度（temperature）设为 1.4，min_p 设为 0.1。
 context_length: 8192
-price_in: 4e-08
-price_out: 5e-08
 features:
   - CapChat
   - CapJsonMode

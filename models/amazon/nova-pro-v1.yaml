@@ -15,8 +15,6 @@ description_cn: |-
   **注意**：当前暂不支持视频输入。
 context_length: 300000
 max_output: 5120
-price_in: 8e-07
-price_out: 3.2e-06
 features:
   - CapChat
   - CapFunctionCall

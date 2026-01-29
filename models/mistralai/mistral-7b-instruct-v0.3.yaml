@@ -23,8 +23,6 @@ description_cn: |-
   注意：函数调用支持取决于具体服务提供商。
 context_length: 32768
 max_output: 4096
-price_in: 2e-07
-price_out: 2e-07
 features:
   - CapChat
   - CapFunctionCall

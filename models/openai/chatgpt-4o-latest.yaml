@@ -11,8 +11,6 @@ description_cn: |-
   OpenAI 指出，该模型不适用于生产环境，未来可能被移除或重定向至其他模型。
 context_length: 128000
 max_output: 16384
-price_in: 5e-06
-price_out: 1.5e-05
 features:
   - CapChat
   - CapJsonMode

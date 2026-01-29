@@ -10,8 +10,6 @@ description_cn: |-
 
   除分析能力外，Qwen3-VL 还支持智能体交互与工具调用：可在多图像、多轮对话中执行复杂指令；将文本对齐至视频时间轴以实现精确时序查询；并可操作 GUI 元素完成自动化任务。该模型还支持可视化编码工作流——将草图或原型转化为代码，并辅助 UI 调试，同时保持与旗舰版 Qwen3 语言模型相当的纯文本性能。因此，Qwen3-VL 适用于涵盖文档 AI、多语言 OCR、软件/UI 辅助、空间/具身任务及视觉-语言智能体研究等生产场景。
 context_length: 262144
-price_in: 2e-07
-price_out: 1.2e-06
 features:
   - CapChat
   - CapFunctionCall

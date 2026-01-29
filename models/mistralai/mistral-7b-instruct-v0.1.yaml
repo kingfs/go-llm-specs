@@ -4,8 +4,6 @@ provider: Mistral
 description: A 7.3B parameter model that outperforms Llama 2 13B on all benchmarks, with optimizations for speed and context length.
 description_cn: 一款拥有 73 亿参数的模型，在所有基准测试中均优于 Llama 2 13B，并针对推理速度和上下文长度进行了优化。
 context_length: 2824
-price_in: 1.1e-07
-price_out: 1.9e-07
 features:
   - CapChat
   - ModalityTextIn

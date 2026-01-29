@@ -5,8 +5,6 @@ description: 'Gemini 2.5 Flash-Lite is a lightweight reasoning model in the Gemi
 description_cn: Gemini 2.5 Flash-Lite 是 Gemini 2.5 系列中的轻量级推理模型，专为超低延迟与高成本效益而优化。相比早期 Flash 模型，它在吞吐量、令牌生成速度及常见基准测试性能方面均有提升。默认情况下，“思考”功能（即多轮推理）已禁用以优先保障速度，但开发者可通过 [Reasoning API 参数](https://openrouter.ai/docs/use-cases/reasoning-tokens) 启用该功能，在特定场景下以成本换取更高智能水平。
 context_length: 1048576
 max_output: 65535
-price_in: 1e-07
-price_out: 4e-07
 features:
   - CapChat
   - CapFunctionCall

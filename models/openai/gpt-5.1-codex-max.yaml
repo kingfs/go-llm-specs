@@ -7,8 +7,6 @@ description_cn: |-
   GPT-5.1-Codex-Max 在整个开发生命周期中提供更快的性能、更强的推理能力以及更高的 Token 利用效率。
 context_length: 400000
 max_output: 128000
-price_in: 1.25e-06
-price_out: 1e-05
 features:
   - CapChat
   - CapFunctionCall

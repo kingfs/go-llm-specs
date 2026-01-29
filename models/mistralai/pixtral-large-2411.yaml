@@ -11,8 +11,6 @@ description_cn: |-
 
   该模型依据 Mistral 研究许可（MRL）可用于研究与教育用途，并可通过 Mistral 商业许可用于商业目的的实验、测试和生产部署。
 context_length: 131072
-price_in: 2e-06
-price_out: 6e-06
 features:
   - CapChat
   - CapFunctionCall

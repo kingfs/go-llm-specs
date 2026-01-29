@@ -10,8 +10,6 @@ description_cn: |-
 
   支持数十种语言，包括法语、德语、西班牙语、意大利语、葡萄牙语、阿拉伯语、印地语、俄语、中文、日语和韩语，以及 80 多种编程语言，如 Python、Java、C、C++、JavaScript 和 Bash。其超长上下文窗口可从大型文档中精准提取信息。
 context_length: 128000
-price_in: 2e-06
-price_out: 6e-06
 features:
   - CapChat
   - CapFunctionCall

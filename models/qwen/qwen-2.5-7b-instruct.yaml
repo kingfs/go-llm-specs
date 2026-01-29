@@ -26,8 +26,6 @@ description_cn: |-
 
   使用本模型需遵守 [通义千问许可协议](https://huggingface.co/Qwen/Qwen1.5-110B-Chat/blob/main/LICENSE)。
 context_length: 32768
-price_in: 4e-08
-price_out: 1e-07
 features:
   - CapChat
   - CapFunctionCall

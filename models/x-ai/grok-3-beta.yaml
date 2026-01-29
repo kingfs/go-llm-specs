@@ -9,8 +9,6 @@ description_cn: |-
 
   注意：此模型提供两个 xAI 接入端点。默认情况下，使用该模型将始终路由至基础端点。若需使用高速端点，可添加 `provider: { sort: throughput }` 以按吞吐量优先排序。
 context_length: 131072
-price_in: 3e-06
-price_out: 1.5e-05
 features:
   - CapChat
   - CapFunctionCall

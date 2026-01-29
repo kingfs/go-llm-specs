@@ -5,8 +5,6 @@ description: Amazon Nova Micro 1.0 is a text-only model that delivers the lowest
 description_cn: Amazon Nova Micro 1.0 是纯文本模型，在 Amazon Nova 系列中提供最低延迟的响应，且成本极低。其上下文长度达 12.8 万 token，针对速度与成本进行了优化，擅长文本摘要、翻译、内容分类、交互式聊天和头脑风暴等任务，并具备基础的数学推理与编码能力。
 context_length: 128000
 max_output: 5120
-price_in: 3.5e-08
-price_out: 1.4e-07
 features:
   - CapChat
   - CapFunctionCall

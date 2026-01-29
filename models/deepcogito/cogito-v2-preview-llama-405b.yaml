@@ -5,8 +5,6 @@ description: |
   Cogito v2 405B is a dense hybrid reasoning model that combines direct answering capabilities with advanced self-reflection. It represents a significant step toward frontier intelligence with dense architecture delivering performance competitive with leading closed models. This advanced reasoning system combines policy improvement with massive scale for exceptional capabilities.
 description_cn: Cogito v2 405B 是一种密集型混合推理模型，兼具直接回答能力与高级自省机制。该模型采用密集架构，在性能上可与领先的闭源模型相媲美，代表了迈向前沿智能的重要一步。这一先进推理系统结合策略优化与超大规模，展现出卓越能力。
 context_length: 32768
-price_in: 3.5e-06
-price_out: 3.5e-06
 features:
   - CapChat
   - CapFunctionCall

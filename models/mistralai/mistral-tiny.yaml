@@ -10,8 +10,6 @@ description_cn: |-
 
   当前该模型基于 Mistral-7B-v0.2 构建，并采用了受社区工作启发的“更优”微调策略，相较于 [Mistral 7B](/models/mistralai/mistral-7b-instruct-v0.1) 有所提升。适用于对成本敏感但对推理能力要求不高的大批量处理任务。
 context_length: 32768
-price_in: 2.5e-07
-price_out: 2.5e-07
 features:
   - CapChat
   - CapFunctionCall

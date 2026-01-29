@@ -10,8 +10,6 @@ description_cn: |-
   - Deep Research 会执行多次搜索以完成深度研究，搜索费用为每 1000 次搜索 5 美元。例如，一次包含 30 次搜索的请求将产生 0.15 美元的搜索费用
   - 推理是 Deep Research 中的一个独立步骤，模型会对研究阶段收集的所有材料进行大量自动化推理。此处的推理 token 与最终答案中的思维链（CoT）不同，指的是在生成输出前用于分析研究材料的内部推理 token，定价为每百万 token 3 美元
 context_length: 128000
-price_in: 2e-06
-price_out: 8e-06
 features:
   - CapChat
   - ModalityTextIn

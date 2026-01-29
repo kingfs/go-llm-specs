@@ -10,8 +10,6 @@ description_cn: |-
 
   Llama Guard 3 依据 MLCommons 标准化风险分类体系进行对齐，并专为支持 Llama 3.1 的能力而设计。具体而言，它支持 8 种语言的内容审核，并针对搜索及代码解释器工具调用场景的安全性与可靠性进行了优化。
 context_length: 131072
-price_in: 2e-08
-price_out: 6e-08
 features:
   - CapChat
   - ModalityTextIn

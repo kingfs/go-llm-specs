@@ -19,8 +19,6 @@ description_cn: |-
   - 在角色扮演过程中无过多限制
 context_length: 8192
 max_output: 8192
-price_in: 1.48e-06
-price_out: 1.48e-06
 features:
   - CapChat
   - CapFunctionCall

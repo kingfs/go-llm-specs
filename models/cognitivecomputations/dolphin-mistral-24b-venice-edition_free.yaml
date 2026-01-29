@@ -4,8 +4,6 @@ provider: Cognitivecomputations
 description: Venice Uncensored Dolphin Mistral 24B Venice Edition is a fine-tuned variant of Mistral-Small-24B-Instruct-2501, developed by dphn.ai in collaboration with Venice.ai. This model is designed as an “uncensored” instruct-tuned LLM, preserving user control over alignment, system prompts, and behavior. Intended for advanced and unrestricted use cases, Venice Uncensored emphasizes steerability and transparent behavior, removing default safety and alignment layers typically found in mainstream assistant models.
 description_cn: Venice Uncensored Dolphin Mistral 24B Venice Edition 是 Mistral-Small-24B-Instruct-2501 的微调变体，由 dphn.ai 与 Venice.ai 联合开发。该模型定位为“无审查”的指令微调大语言模型，保留用户对对齐策略、系统提示及行为模式的完全控制权。面向高级且无限制的应用场景，Venice Uncensored 强调可引导性与行为透明性，移除了主流助手模型中常见的默认安全与对齐机制。
 context_length: 32768
-price_in: 0
-price_out: 0
 features:
   - CapChat
   - CapJsonMode

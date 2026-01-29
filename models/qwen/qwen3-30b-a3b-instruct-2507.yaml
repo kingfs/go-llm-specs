@@ -5,8 +5,6 @@ description: Qwen3-30B-A3B-Instruct-2507 is a 30.5B-parameter mixture-of-experts
 description_cn: Qwen3-30B-A3B-Instruct-2507 是千问推出的 305 亿参数混合专家（MoE）语言模型，每次推理激活 33 亿参数。该模型运行于非推理模式，专为高质量指令遵循、多语言理解及智能体工具调用而设计。经指令数据后训练，其在推理（AIME、ZebraLogic）、代码（MultiPL-E、LiveCodeBench）和对齐（IFEval、WritingBench）等基准测试中表现优异。相比非指令微调版本，该模型在主观性和开放式任务上表现更佳，同时保持强大的事实性和代码能力。
 context_length: 262144
 max_output: 262144
-price_in: 8e-08
-price_out: 3.3e-07
 features:
   - CapChat
   - CapFunctionCall

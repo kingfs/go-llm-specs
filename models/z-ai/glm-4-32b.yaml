@@ -14,8 +14,6 @@ description_cn: |-
 
   由 thudm 模型背后的同一实验室研发。
 context_length: 128000
-price_in: 1e-07
-price_out: 1e-07
 features:
   - CapChat
   - CapFunctionCall

@@ -15,8 +15,6 @@ description_cn: |-
   在与其他模型的基准测试中，该模型曾短暂使用代号 ["im-also-a-good-gpt2-chatbot"](https://twitter.com/LiamFedus/status/1790064963966370209)。
 context_length: 128000
 max_output: 16384
-price_in: 2.5e-06
-price_out: 1e-05
 features:
   - CapChat
   - CapFunctionCall

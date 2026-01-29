@@ -11,8 +11,6 @@ description_cn: |-
   GPT-4o（“o”代表“omni”）是 OpenAI 最新一代 AI 模型，支持文本和图像输入并输出文本。其智能水平与 [GPT-4 Turbo](/models/openai/gpt-4-turbo) 相当，但速度提升一倍，成本降低 50%。此外，该版本在非英语语言处理和视觉能力方面也有进一步增强。
 context_length: 128000
 max_output: 16384
-price_in: 2.5e-06
-price_out: 1e-05
 features:
   - CapChat
   - CapFunctionCall

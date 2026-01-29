@@ -5,8 +5,6 @@ description: Qwen-Plus, based on the Qwen2.5 foundation model, is a 131K context
 description_cn: Qwen-Plus 基于 Qwen2.5 基础模型，上下文长度达 131K，兼顾性能、速度与成本。
 context_length: 131072
 max_output: 8192
-price_in: 4e-07
-price_out: 1.2e-06
 features:
   - CapChat
   - CapFunctionCall

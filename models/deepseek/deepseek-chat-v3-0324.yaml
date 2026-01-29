@@ -11,8 +11,6 @@ description_cn: |-
   该模型继 [DeepSeek V3](/deepseek/deepseek-chat-v3) 之后推出，在各类任务中均表现出色。
 context_length: 163840
 max_output: 65536
-price_in: 1.9e-07
-price_out: 8.7e-07
 features:
   - CapChat
   - CapFunctionCall

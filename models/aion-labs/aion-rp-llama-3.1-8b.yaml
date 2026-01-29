@@ -5,8 +5,6 @@ description: Aion-RP-Llama-3.1-8B ranks the highest in the character evaluation 
 description_cn: Aion-RP-Llama-3.1-8B 在 RPBench-Auto 基准的角色扮演评估部分中排名第一。RPBench-Auto 是 Arena-Hard-Auto 的角色扮演专用变体，采用大语言模型相互评估回复质量。该模型是一个经过微调的基础模型（非指令微调模型），旨在生成更自然、更多样化的文本。
 context_length: 32768
 max_output: 32768
-price_in: 8e-07
-price_out: 1.6e-06
 features:
   - CapChat
   - ModalityTextIn

@@ -15,8 +15,6 @@ description_cn: |-
   当前此模型指向 [Claude 3.5 Haiku (2024-10-22)](/anthropic/claude-3-5-haiku-20241022)。
 context_length: 200000
 max_output: 8192
-price_in: 8e-07
-price_out: 4e-06
 features:
   - CapChat
   - CapFunctionCall

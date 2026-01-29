@@ -15,8 +15,6 @@ description_cn: |-
   采用 MIT 许可证：可自由蒸馏与商业化！
 context_length: 64000
 max_output: 16000
-price_in: 7e-07
-price_out: 2.5e-06
 features:
   - CapChat
   - CapFunctionCall

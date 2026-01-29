@@ -8,8 +8,6 @@ description_cn: |-
   该模型针对无“推理模式”的指令遵循进行优化，并与 OpenAI 兼容的工具调用格式良好集成。
 context_length: 160000
 max_output: 32768
-price_in: 7e-08
-price_out: 2.7e-07
 features:
   - CapChat
   - CapFunctionCall

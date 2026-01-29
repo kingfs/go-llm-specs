@@ -5,8 +5,6 @@ description: Qwen3-8B is a dense 8.2B parameter causal language model from the Q
 description_cn: Qwen3-8B 是 Qwen3 系列中的稠密因果语言模型，参数量达 82 亿，兼顾高推理负载任务与高效对话。该模型支持在“思考”模式（用于数学、编程和逻辑推理）与“非思考”模式（用于通用对话）之间无缝切换。模型经过指令遵循、智能体集成、创意写作及 100 多种语言和方言的多语言任务微调，原生支持 32K token 上下文窗口，并可通过 YaRN 扩展技术将上下文长度提升至 131K tokens。
 context_length: 32000
 max_output: 8192
-price_in: 5e-08
-price_out: 2.5e-07
 features:
   - CapChat
   - CapFunctionCall

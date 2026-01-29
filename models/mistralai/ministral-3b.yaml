@@ -4,8 +4,6 @@ provider: Mistral
 description: Ministral 3B is a 3B parameter model optimized for on-device and edge computing. It excels in knowledge, commonsense reasoning, and function-calling, outperforming larger models like Mistral 7B on most benchmarks. Supporting up to 128k context length, it’s ideal for orchestrating agentic workflows and specialist tasks with efficient inference.
 description_cn: Ministral 3B 是一款拥有 30 亿参数的模型，专为设备端和边缘计算优化。它在知识理解、常识推理和函数调用方面表现卓越，在多数基准测试中优于 Mistral 7B 等更大模型。支持高达 128K 的上下文长度，非常适合编排智能体工作流及高效执行专业任务。
 context_length: 131072
-price_in: 4e-08
-price_out: 4e-08
 features:
   - CapChat
   - CapFunctionCall

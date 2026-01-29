@@ -5,8 +5,6 @@ description: 'Maestro Reasoning is Arcee''s flagship analysis model: a 32 B‑
 description_cn: Maestro Reasoning 是 Arcee 旗舰级分析模型：基于 Qwen 2.5‑32B 构建的 320 亿参数模型，采用 DPO 与思维链强化学习（chain‑of‑thought RL）进行微调，专精于逐步逻辑推理。相比早期 70 亿参数预览版，正式发布的 320 亿参数版本将上下文窗口扩展至 128k tokens，并在 MATH 与 GSM‑8K 基准测试中的通过率翻倍，同时提升了代码补全准确率。其指令风格鼓励生成结构化的“思考 → 答案”轨迹，用户可根据偏好选择解析或隐藏该轨迹。这种透明性特别契合金融、医疗等注重审计的行业，因其需追溯推理路径。在 Arcee Conductor 中，Maestro 会自动用于处理小型 SLM 无法应对的复杂多约束查询。
 context_length: 131072
 max_output: 32000
-price_in: 9e-07
-price_out: 3.3e-06
 features:
   - CapChat
   - ModalityTextIn

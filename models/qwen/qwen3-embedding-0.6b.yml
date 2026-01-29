@@ -7,6 +7,6 @@ features:
   - CapEmbedding    # Support for new model types
   - ModalityTextIn
 context_length: 32768
-price_in: 0.00000013
+
 aliases:
   - qwen3-embedding-0.6b

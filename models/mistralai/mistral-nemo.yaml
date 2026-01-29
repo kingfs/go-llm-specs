@@ -15,8 +15,6 @@ description_cn: |-
   支持函数调用，并以 Apache 2.0 许可证发布。
 context_length: 131072
 max_output: 16384
-price_in: 2e-08
-price_out: 4e-08
 features:
   - CapChat
   - CapFunctionCall

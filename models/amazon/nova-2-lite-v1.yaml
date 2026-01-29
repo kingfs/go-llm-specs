@@ -8,8 +8,6 @@ description_cn: |-
   Nova 2 Lite 在文档处理、视频信息提取、代码生成、提供准确的事实依据型答案以及自动化多步骤智能体工作流方面表现出色。
 context_length: 1000000
 max_output: 65535
-price_in: 3e-07
-price_out: 2.5e-06
 features:
   - CapChat
   - CapFunctionCall

@@ -8,8 +8,6 @@ description_cn: |-
   Nex-N1 在所有评估场景中均展现出竞争力，在实际编码和 HTML 生成任务中表现尤为突出。
 context_length: 131072
 max_output: 163840
-price_in: 2.7e-07
-price_out: 1e-06
 features:
   - CapChat
   - CapFunctionCall

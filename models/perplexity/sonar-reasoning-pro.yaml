@@ -10,8 +10,6 @@ description_cn: |-
 
   Sonar Reasoning Pro 是一款由 DeepSeek R1 驱动、采用思维链（Chain of Thought, CoT）技术的高端推理模型。专为高级应用场景设计，支持深入的多步骤查询，拥有更大的上下文窗口，并可在每次搜索中返回更多引用，从而生成更全面、更具扩展性的回答。
 context_length: 128000
-price_in: 2e-06
-price_out: 8e-06
 features:
   - CapChat
   - ModalityImageIn

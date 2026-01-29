@@ -5,8 +5,6 @@ description: Trinity Mini is a 26B-parameter (3B active) sparse mixture-of-exper
 description_cn: Trinity Mini 是一款稀疏混合专家（MoE）语言模型，总参数量260亿（每 token 激活约30亿），包含128个专家，每 token 激活其中8个。专为高效处理长上下文（131k tokens）而设计，具备强大的函数调用能力和多步智能体工作流支持。
 context_length: 131072
 max_output: 131072
-price_in: 4.5e-08
-price_out: 1.5e-07
 features:
   - CapChat
   - CapFunctionCall

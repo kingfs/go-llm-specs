@@ -19,8 +19,6 @@ description_cn: |-
   在通用能力方面，Hermes 3 与 Llama-3.1 Instruct 模型相比具备竞争力，甚至更优，二者各有优势与不足。
 context_length: 131072
 max_output: 16384
-price_in: 1e-06
-price_out: 1e-06
 features:
   - CapChat
   - CapFunctionCall

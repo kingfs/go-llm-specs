@@ -27,8 +27,6 @@ type ModelRegistry struct {
 	DescriptionCN string   `yaml:"description_cn,omitempty"`
 	ContextLen    int      `yaml:"context_length"`
 	MaxOutput     int      `yaml:"max_output,omitempty"`
-	PriceIn       float64  `yaml:"price_in"`
-	PriceOut      float64  `yaml:"price_out"`
 	Features      []string `yaml:"features,omitempty"`
 	Aliases       []string `yaml:"aliases,omitempty"`
 

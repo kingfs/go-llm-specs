@@ -10,8 +10,6 @@ description_cn: |-
 
   作为 Qwen2.5-Coder 系列的一员，该模型与 vLLM 等高效部署工具高度兼容，并以 Apache 2.0 许可证发布。
 context_length: 32768
-price_in: 3e-08
-price_out: 9e-08
 features:
   - CapChat
   - CapFunctionCall

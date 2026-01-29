@@ -5,8 +5,6 @@ description: GPT-4.1 is a flagship large language model optimized for advanced i
 description_cn: GPT-4.1 是一款旗舰级大语言模型，针对高级指令遵循、现实世界软件工程和长上下文推理进行了优化。支持 100 万 token 的上下文窗口，在编码（SWE-bench Verified 达 54.6%）、指令遵循（IFEval 达 87.4%）和多模态理解等基准测试中均优于 GPT-4o 和 GPT-4.5。该模型专为精确代码差异生成、智能体可靠性以及在大型文档上下文中实现高召回率而调优，非常适合用于智能体、IDE 工具和企业知识检索场景。
 context_length: 1047576
 max_output: 32768
-price_in: 2e-06
-price_out: 8e-06
 features:
   - CapChat
   - CapFunctionCall

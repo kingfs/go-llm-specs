@@ -19,8 +19,6 @@ description_cn: |-
   精炼的写作能力：在风格与可读性方面更符合人类偏好，在角色扮演场景中表现更自然。
 context_length: 202752
 max_output: 65536
-price_in: 3.5e-07
-price_out: 1.5e-06
 features:
   - CapChat
   - CapFunctionCall

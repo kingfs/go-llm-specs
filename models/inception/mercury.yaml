@@ -5,8 +5,6 @@ description: "Mercury is the first diffusion large language model (dLLM). Applyi
 description_cn: Mercury 是全球首款扩散式大语言模型（dLLM）。该模型采用突破性的离散扩散方法，推理速度比 GPT-4.1 Nano 和 Claude 3.5 Haiku 等已优化速度的模型快 5–10 倍，同时性能相当。Mercury 的高速度使开发者能够构建响应迅速的用户体验，适用于语音助手、搜索界面和聊天机器人等场景。更多详情请参阅[博客文章](https://www.inceptionlabs.ai/blog/introducing-mercury)。
 context_length: 128000
 max_output: 16384
-price_in: 2.5e-07
-price_out: 1e-06
 features:
   - CapChat
   - CapFunctionCall

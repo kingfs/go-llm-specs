@@ -5,8 +5,6 @@ description: Qwen Plus 0728, based on the Qwen3 foundation model, is a 1 million
 description_cn: Qwen Plus 0728 基于 Qwen3 基础模型，是一款支持百万上下文的混合推理模型，在性能、速度与成本之间取得均衡。
 context_length: 1000000
 max_output: 32768
-price_in: 4e-07
-price_out: 1.2e-06
 features:
   - CapChat
   - CapFunctionCall

@@ -4,8 +4,6 @@ provider: Mistral
 description: The smallest model in the Ministral 3 family, Ministral 3 3B is a powerful, efficient tiny language model with vision capabilities.
 description_cn: Ministral 3 系列中最小的模型 Ministral 3 3B 是一款高效、强大的微型多模态语言模型。
 context_length: 131072
-price_in: 1e-07
-price_out: 1e-07
 features:
   - CapChat
   - CapFunctionCall

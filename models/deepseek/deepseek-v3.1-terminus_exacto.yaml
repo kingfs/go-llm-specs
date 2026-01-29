@@ -7,8 +7,6 @@ description_cn: |-
 
   该模型提升了工具使用、代码生成和推理效率，在高难度基准测试中表现媲美 DeepSeek-R1，同时响应速度更快。它支持结构化工具调用、代码智能体和搜索智能体，适用于研究、编码及智能体工作流。
 context_length: 163840
-price_in: 2.1e-07
-price_out: 7.9e-07
 features:
   - CapChat
   - CapFunctionCall

@@ -11,8 +11,6 @@ description_cn: |-
   该 70B 版本使用扩展后的后训练语料库（约 600 亿 tokens）进行训练，重点强化经验证的推理数据，从而在数学、编程、STEM、逻辑和结构化输出方面取得显著提升，同时保持通用助手性能。支持 JSON 模式、模式遵循、函数调用和工具使用，具备更强的可控性并降低拒答率。
 context_length: 131072
 max_output: 131072
-price_in: 1.1e-07
-price_out: 3.8e-07
 features:
   - CapChat
   - CapFunctionCall

@@ -5,8 +5,6 @@ description: Jamba Large 1.7 is the latest model in the Jamba open family, offer
 description_cn: Jamba Large 1.7 是 Jamba 开源系列的最新模型，在事实依据、指令遵循和整体效率方面均有提升。该模型基于混合 SSM-Transformer 架构，支持 256K 上下文窗口，相比前代版本可提供更准确、上下文关联更强的响应以及更优的可控性。
 context_length: 256000
 max_output: 4096
-price_in: 2e-06
-price_out: 8e-06
 features:
   - CapChat
   - CapFunctionCall

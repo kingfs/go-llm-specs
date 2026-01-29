@@ -13,8 +13,6 @@ description_cn: |-
   Relace 已启用零数据留存策略。更多详情请参阅其[文档](https://docs.relace.ai/api-reference/instant-apply/apply)。
 context_length: 256000
 max_output: 128000
-price_in: 8.5e-07
-price_out: 1.25e-06
 features:
   - CapChat
   - ModalityTextIn

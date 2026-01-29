@@ -5,8 +5,6 @@ description: Palmyra X5 is Writer's most advanced model, purpose-built for build
 description_cn: Palmyra X5 是 Writer 公司最先进的模型，专为企业级 AI 智能体的构建与规模化部署而设计。依托创新的 Transformer 架构与混合注意力机制，该模型在高达 100 万 token 的上下文窗口内实现业界领先的推理速度与效率，从而加速推理过程并扩展内存容量，高效处理海量企业数据，为 AI 智能体的大规模应用提供关键支撑。
 context_length: 1040000
 max_output: 8192
-price_in: 6e-07
-price_out: 6e-06
 features:
   - CapChat
   - ModalityTextIn

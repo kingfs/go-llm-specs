@@ -4,8 +4,6 @@ provider: Liquid
 description: LFM2.5-1.2B-Thinking is a lightweight reasoning-focused model optimized for agentic tasks, data extraction, and RAG—while still running comfortably on edge devices. It supports long context (up to 32K tokens) and is designed to provide higher-quality “thinking” responses in a small 1.2B model.
 description_cn: LFM2.5-1.2B-Thinking 是一款轻量级推理专用模型，针对智能体任务、数据提取和检索增强生成（RAG）进行了优化，同时仍可在边缘设备上流畅运行。该模型支持长上下文（最高达 32K tokens），旨在以小巧的 12 亿参数规模提供更高质量的“思考型”响应。
 context_length: 32768
-price_in: 0
-price_out: 0
 features:
   - CapChat
   - ModalityTextIn

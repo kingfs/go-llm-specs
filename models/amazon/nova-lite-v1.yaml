@@ -11,8 +11,6 @@ description_cn: |-
   凭借 30 万 token 的输入上下文长度，它可在单次输入中分析多张图像或最多 30 分钟的视频。
 context_length: 300000
 max_output: 5120
-price_in: 6e-08
-price_out: 2.4e-07
 features:
   - CapChat
   - CapFunctionCall

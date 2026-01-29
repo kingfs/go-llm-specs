@@ -14,8 +14,6 @@ description_cn: |-
 
   更多详情请参阅 [发布公告](https://blog.google/technology/developers/google-gemma-2/)。Gemma 的使用需遵守 Google 的 [Gemma 使用条款](https://ai.google.dev/gemma/terms)。
 context_length: 8192
-price_in: 3e-08
-price_out: 9e-08
 features:
   - CapChat
   - ModalityTextIn

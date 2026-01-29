@@ -15,8 +15,6 @@ description_cn: |-
   更多发布详情请见：https://www.minimaxi.com/en/news/minimax-01-series-2
 context_length: 1000192
 max_output: 1000192
-price_in: 2e-07
-price_out: 1.1e-06
 features:
   - CapChat
   - ModalityImageIn

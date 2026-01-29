@@ -9,8 +9,6 @@ description: |-
 description_cn: Anthropic 最强大的模型，具备极高的推理能力。
 context_length: 200000
 max_output: 64000
-price_in: 5e-06
-price_out: 2.5e-05
 features:
   - CapChat
   - CapFunctionCall

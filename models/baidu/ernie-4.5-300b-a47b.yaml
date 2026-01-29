@@ -5,8 +5,6 @@ description: ERNIE-4.5-300B-A47B is a 300B parameter Mixture-of-Experts (MoE) la
 description_cn: ERNIE-4.5-300B-A47B 是百度推出的 ERNIE 4.5 系列中的 3000 亿参数混合专家（MoE）语言模型，每 token 激活 470 亿参数，支持中英文文本生成。该模型采用异构 MoE 架构，结合先进的路由机制与量化策略（包括 FP8 和 2-bit 格式），针对高吞吐推理和高效扩展进行了优化。此版本专为纯语言任务微调，支持推理、工具调用及最长 131k tokens 的上下文长度，适用于对推理能力和吞吐量要求较高的通用大模型应用场景。
 context_length: 123000
 max_output: 12000
-price_in: 2.8e-07
-price_out: 1.1e-06
 features:
   - CapChat
   - CapJsonMode

@@ -5,8 +5,6 @@ description: 'o3 is a well-rounded and powerful model across domains. It sets a 
 description_cn: o3 是一款在多个领域表现均衡且强大的模型，在数学、科学、编程和视觉推理任务中树立了新标杆。同时，它在技术写作和指令遵循方面也极为出色。适用于需结合文本、代码和图像进行多步骤分析的问题求解。
 context_length: 200000
 max_output: 100000
-price_in: 2e-06
-price_out: 8e-06
 features:
   - CapChat
   - CapFunctionCall

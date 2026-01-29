@@ -5,8 +5,6 @@ description: GPT-5 Mini is a compact version of GPT-5, designed to handle lighte
 description_cn: GPT-5 Mini 是 GPT-5 的紧凑版本，专为轻量级推理任务设计。它继承了 GPT-5 的指令遵循与安全对齐优势，同时显著降低延迟和成本。GPT-5 Mini 是 OpenAI o4-mini 模型的继任者。
 context_length: 400000
 max_output: 128000
-price_in: 2.5e-07
-price_out: 2e-06
 features:
   - CapChat
   - CapFunctionCall

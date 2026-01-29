@@ -5,8 +5,6 @@ description: Kimi-Dev-72B is an open-source large language model fine-tuned for 
 description_cn: Kimi-Dev-72B 是一款面向软件工程和问题修复任务微调的开源大语言模型。基于 Qwen2.5-72B，通过大规模强化学习进行优化：在真实代码仓库中应用代码补丁，并通过完整测试套件验证，仅对正确且鲁棒的补全结果给予奖励。该模型在 SWE-bench Verified 上达到60.4%，在开源模型中树立了软件缺陷修复与代码推理的新标杆。
 context_length: 131072
 max_output: 131072
-price_in: 2.9e-07
-price_out: 1.15e-06
 features:
   - CapChat
   - CapJsonMode

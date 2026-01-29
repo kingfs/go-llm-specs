@@ -4,8 +4,6 @@ provider: Liquid
 description: LFM2 is a new generation of hybrid models developed by Liquid AI, specifically designed for edge AI and on-device deployment. It sets a new standard in terms of quality, speed, and memory efficiency.
 description_cn: LFM2 是 Liquid AI 开发的新一代混合模型，专为边缘 AI 和端侧部署而设计，在质量、速度和内存效率方面树立了新标准。
 context_length: 32768
-price_in: 1e-08
-price_out: 2e-08
 features:
   - CapChat
   - ModalityTextIn

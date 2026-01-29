@@ -5,8 +5,6 @@ description: Skyfall 36B v2 is an enhanced iteration of Mistral Small 2501, spec
 description_cn: Skyfall 36B v2 是 Mistral Small 2501 的增强版本，经过专门微调，显著提升了创造力、细腻文风、角色扮演能力及连贯叙事表现。
 context_length: 32768
 max_output: 32768
-price_in: 5.5e-07
-price_out: 8e-07
 features:
   - CapChat
   - ModalityTextIn

@@ -11,8 +11,6 @@ description_cn: |-
   本次发布的 LongCat-Flash-Chat 是一款非推理型基础模型，专为对话与智能体任务优化。支持最长128K token上下文窗口，在推理、编程、指令遵循及领域基准测试中表现优异，尤其擅长工具调用与复杂多步交互场景。
 context_length: 131072
 max_output: 32768
-price_in: 2e-07
-price_out: 8e-07
 features:
   - CapChat
   - ModalityTextIn

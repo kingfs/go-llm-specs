@@ -5,8 +5,6 @@ description: Qwen3 Coder Flash is Alibaba's fast and cost efficient version of t
 description_cn: Qwen3 Coder Flash 是阿里巴巴推出的 Qwen3 Coder Plus 的快速且高性价比版本。该模型是一款强大的编程智能体，专注于通过工具调用与环境交互实现自主编程，兼具卓越的编码能力与通用任务处理能力。
 context_length: 128000
 max_output: 65536
-price_in: 3e-07
-price_out: 1.5e-06
 features:
   - CapChat
   - CapFunctionCall

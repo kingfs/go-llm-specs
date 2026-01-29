@@ -10,8 +10,6 @@ description_cn: |-
 
   在内部评估中（NeMo-Skills，最多 16 次运行，温度=0.6，top_p=0.95），该模型展现出强大的推理与编码能力，例如 MATH500 pass@1 = 97.4、AIME-2024 = 87.5、AIME-2025 = 82.71、GPQA = 71.97、LiveCodeBench（24.10–25.02）= 73.58 以及 MMLU-Pro（CoT）= 79.53。该模型面向实际推理效率（高 tokens/s、低显存占用），支持 Transformers/vLLM，并提供显式的“推理开/关”模式（默认聊天优先，关闭时推荐使用贪心解码）。适用于构建对准确率与成本平衡性及可靠工具使用有要求的智能体、助手和长上下文检索系统。
 context_length: 131072
-price_in: 1e-07
-price_out: 4e-07
 features:
   - CapChat
   - CapFunctionCall

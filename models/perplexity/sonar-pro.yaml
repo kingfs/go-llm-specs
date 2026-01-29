@@ -8,8 +8,6 @@ description_cn: |-
   面向需要更高级功能的企业用户，Sonar Pro API 可处理深入的多步骤查询，并具备更强的扩展性，例如平均每轮搜索可提供的引用数量是普通 Sonar 的两倍。此外，凭借更大的上下文窗口，它能够处理更长、更复杂的搜索请求及后续追问。
 context_length: 200000
 max_output: 8000
-price_in: 3e-06
-price_out: 1.5e-05
 features:
   - CapChat
   - ModalityImageIn

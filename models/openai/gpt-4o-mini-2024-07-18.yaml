@@ -23,8 +23,6 @@ description_cn: |-
   #多模态
 context_length: 128000
 max_output: 16384
-price_in: 1.5e-07
-price_out: 6e-07
 features:
   - CapChat
   - CapFunctionCall

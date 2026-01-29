@@ -5,8 +5,6 @@ description: As a 30B-class SOTA model, GLM-4.7-Flash offers a new option that b
 description_cn: 作为一款 300 亿参数级别的 SOTA 模型，GLM-4.7-Flash 在性能与效率之间实现了新的平衡。该模型进一步针对智能体编程场景进行了优化，强化了代码生成能力、长周期任务规划及工具协同能力，并在多个主流公开基准排行榜上，在同规模开源模型中取得了领先性能。
 context_length: 200000
 max_output: 131072
-price_in: 7e-08
-price_out: 4e-07
 features:
   - CapChat
   - CapFunctionCall

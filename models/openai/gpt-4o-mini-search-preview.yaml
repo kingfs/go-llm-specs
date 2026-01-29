@@ -5,8 +5,6 @@ description: GPT-4o mini Search Preview is a specialized model for web search in
 description_cn: GPT-4o mini Search Preview 是专用于聊天补全（Chat Completions）中网络搜索的专用模型，经过训练以理解并执行网络搜索查询。
 context_length: 128000
 max_output: 16384
-price_in: 1.5e-07
-price_out: 6e-07
 features:
   - CapChat
   - CapJsonMode

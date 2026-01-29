@@ -11,8 +11,6 @@ description_cn: |-
   有关模型详情，请访问 [DeepSeek-V3 代码仓库](https://github.com/deepseek-ai/DeepSeek-V3) 或参阅[发布公告](https://api-docs.deepseek.com/news/news1226)。
 context_length: 163840
 max_output: 163840
-price_in: 3e-07
-price_out: 1.2e-06
 features:
   - CapChat
   - CapFunctionCall

@@ -10,8 +10,6 @@ description_cn: |-
   系统提示：你是一个深度思考型 AI，可使用极长的思维链深入分析问题，并通过系统化推理过程与自身反复推演，以得出正确解答。请将你的思考与内心独白置于 <think> </think> 标签内，随后提供问题的解决方案或回答。
 context_length: 32768
 max_output: 32768
-price_in: 2e-08
-price_out: 1e-07
 features:
   - CapChat
   - CapFunctionCall

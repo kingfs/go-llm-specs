@@ -11,8 +11,6 @@ description_cn: |-
   GPT-5.2 面向广泛任务场景设计，在数学、编程、科学及工具调用等负载上均实现一致性能提升，并能生成更具连贯性的长篇回答，同时提高工具使用的可靠性。
 context_length: 400000
 max_output: 128000
-price_in: 1.75e-06
-price_out: 1.4e-05
 features:
   - CapChat
   - CapFunctionCall

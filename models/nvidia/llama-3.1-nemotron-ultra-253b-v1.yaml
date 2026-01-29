@@ -10,8 +10,6 @@ description_cn: |-
 
   注意：必须在系统提示中包含 `detailed thinking on` 才能启用推理功能。更多详情请参阅 [使用建议](https://huggingface.co/nvidia/Llama-3_1-Nemotron-Ultra-253B-v1#quick-start-and-usage-recommendations)。
 context_length: 131072
-price_in: 6e-07
-price_out: 1.8e-06
 features:
   - CapChat
   - CapJsonMode

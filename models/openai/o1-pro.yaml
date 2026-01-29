@@ -5,8 +5,6 @@ description: The o1 series of models are trained with reinforcement learning to 
 description_cn: o1 系列模型通过强化学习训练，能够在回答前进行思考并执行复杂推理。o1-pro 模型投入更多计算资源进行深度思考，从而持续提供更优质的答案。
 context_length: 200000
 max_output: 100000
-price_in: 0.00015
-price_out: 0.0006
 features:
   - CapChat
   - CapJsonMode

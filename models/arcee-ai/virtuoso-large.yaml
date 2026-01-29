@@ -5,8 +5,6 @@ description: Virtuoso‑Large is Arcee's top‑tier general‑purpose LLM at 72�
 description_cn: Virtuoso‑Large 是 Arcee 旗下 720 亿参数的顶级通用大语言模型，专为跨领域推理、创意写作及企业级问答任务优化。不同于多数 700 亿级同类模型，它保留了源自 Qwen 2.5 的 128k 上下文窗口，可一次性处理整本书籍、代码库或财务文件。训练过程融合 DeepSeek R1 蒸馏、多轮监督微调及最终的 DPO/RLHF 对齐阶段，在 BIG‑Bench‑Hard、GSM‑8K 及长上下文“大海捞针”测试中表现卓越。企业常将其作为 Conductor 流水线中的“兜底”智能核心，当其他小型 SLM 置信度不足时自动启用。尽管模型规模庞大，但凭借激进的 KV 缓存优化，在 8× H100 节点上首 token 延迟仍控制在低秒级，是一款实用的生产级高性能模型。
 context_length: 131072
 max_output: 64000
-price_in: 7.5e-07
-price_out: 1.2e-06
 features:
   - CapChat
   - CapFunctionCall

@@ -18,8 +18,6 @@ description_cn: |-
   - Rope-theta = 1e6
   - 移除了滑动窗口注意力机制
 context_length: 32768
-price_in: 2e-07
-price_out: 2e-07
 features:
   - CapChat
   - ModalityTextIn

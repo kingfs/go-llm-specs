@@ -11,8 +11,6 @@ description_cn: |-
   相比 QwQ 和 Qwen2.5 等前代模型，Qwen3 在数学、编程、常识推理、创意写作和交互式对话等方面显著提升。Qwen3-30B-A3B 变体包含 305 亿总参数（每任务激活 33 亿参数）、48 层网络结构、128 个专家（每任务激活 8 个），并借助 YaRN 技术支持高达 131K token 的上下文长度，为开源模型树立了新标杆。
 context_length: 40960
 max_output: 40960
-price_in: 6e-08
-price_out: 2.2e-07
 features:
   - CapChat
   - CapFunctionCall

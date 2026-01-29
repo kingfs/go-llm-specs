@@ -11,8 +11,6 @@ description_cn: |-
   通过自研强化学习流程（CISPO）训练，M1 在长上下文理解、软件工程、智能体工具调用和数学推理方面表现突出。在 FullStackBench、SWE-bench、MATH、GPQA 和 TAU-Bench 等基准测试中成绩优异，常优于 DeepSeek R1 和 Qwen3-235B 等其他开源模型。
 context_length: 1000000
 max_output: 40000
-price_in: 4e-07
-price_out: 2.2e-06
 features:
   - CapChat
   - CapFunctionCall

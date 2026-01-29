@@ -19,8 +19,6 @@ description_cn: |-
   #moe
 context_length: 65536
 max_output: 16384
-price_in: 4.8e-07
-price_out: 4.8e-07
 features:
   - CapChat
   - CapJsonMode

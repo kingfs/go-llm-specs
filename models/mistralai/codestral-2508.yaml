@@ -10,8 +10,6 @@ description_cn: |-
 
   [博客文章](https://mistral.ai/news/codestral-25-08)
 context_length: 256000
-price_in: 3e-07
-price_out: 9e-07
 features:
   - CapChat
   - CapFunctionCall

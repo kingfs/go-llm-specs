@@ -9,8 +9,6 @@ description_cn: |-
 
   该模型在 OpenRouter 平台上按每条响应收取统一费率，由 [Switchpoint AI](https://www.switchpoint.dev) 完整路由引擎驱动。
 context_length: 131072
-price_in: 8.5e-07
-price_out: 3.4e-06
 features:
   - CapChat
   - ModalityTextIn

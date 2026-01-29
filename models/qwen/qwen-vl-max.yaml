@@ -6,8 +6,6 @@ description: |
 description_cn: Qwen VL Max 是一款视觉理解模型，上下文长度达 7500 个 token，在更广泛的复杂任务中提供卓越性能。
 context_length: 131072
 max_output: 8192
-price_in: 8e-07
-price_out: 3.2e-06
 features:
   - CapChat
   - CapFunctionCall

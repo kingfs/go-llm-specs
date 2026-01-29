@@ -5,8 +5,6 @@ description: GPT-5.2 Pro is OpenAI’s most advanced model, offering major impro
 description_cn: GPT-5.2 Pro 是 OpenAI 最先进的模型，在智能体编程和长上下文性能方面相较 GPT-5 Pro 有重大提升。该模型专为需要逐步推理、精准指令遵循及高可靠性输出的高风险应用场景而优化。它支持运行时路由功能和高级提示理解能力，包括识别用户指定意图（如“对此深入思考”）。改进之处包括显著降低幻觉与迎合倾向，并在编程、写作及健康相关任务中表现更佳。
 context_length: 400000
 max_output: 128000
-price_in: 2.1e-05
-price_out: 0.000168
 features:
   - CapChat
   - CapFunctionCall

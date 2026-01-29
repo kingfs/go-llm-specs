@@ -11,8 +11,6 @@ description_cn: |-
   Devstral 2 能够在保持架构级上下文的前提下探索代码库并协调多文件变更。它可追踪框架依赖关系、检测失败并自动重试修正，有效应对缺陷修复和遗留系统现代化等挑战。该模型支持微调以优先处理特定语言或针对大型企业代码库进行优化，并采用修改版 MIT 许可证发布。
 context_length: 262144
 max_output: 65536
-price_in: 5e-08
-price_out: 2.2e-07
 features:
   - CapChat
   - CapFunctionCall

@@ -5,8 +5,6 @@ description: The gpt-audio model is OpenAI's first generally available audio mod
 description_cn: gpt-audio 模型是 OpenAI 首款通用音频模型。新快照版本采用升级版解码器，可生成更自然的人声并保持更好的音色一致性。音频输入定价为每百万 token 32 美元，输出定价为每百万 token 64 美元。
 context_length: 128000
 max_output: 16384
-price_in: 2.5e-06
-price_out: 1e-05
 features:
   - CapChat
   - CapJsonMode

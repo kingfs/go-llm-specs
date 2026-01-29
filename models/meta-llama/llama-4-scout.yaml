@@ -11,8 +11,6 @@ description_cn: |-
   Llama 4 Scout 采用早期融合技术以实现无缝模态集成，兼顾高效率与本地或商业部署需求。该模型经过指令微调，适用于多语言对话、图像描述生成及图像理解等任务。依据 Llama 4 社区许可证发布，训练数据截止于 2024 年 8 月，并于 2025 年 4 月 5 日公开发布。
 context_length: 327680
 max_output: 16384
-price_in: 8e-08
-price_out: 3e-07
 features:
   - CapChat
   - CapFunctionCall

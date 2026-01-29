@@ -5,8 +5,6 @@ description: Gemini 2.5 Pro is Google’s state-of-the-art AI model designed for
 description_cn: Gemini 2.5 Pro 是 Google 最先进的 AI 模型，专为高级推理、编程、数学及科学任务设计。其具备“思考”能力，可通过增强的准确性与细致的上下文处理进行推理。Gemini 2.5 Pro 在多项基准测试中表现顶尖，包括在 LMArena 排行榜上位列第一，体现出卓越的人类偏好对齐能力与复杂问题解决实力。
 context_length: 1048576
 max_output: 65535
-price_in: 1.25e-06
-price_out: 1e-05
 features:
   - CapChat
   - CapFunctionCall

@@ -5,8 +5,6 @@ description: Qwen3-14B is a dense 14.8B parameter causal language model from the
 description_cn: Qwen3-14B 是 Qwen3 系列中的稠密因果语言模型，参数量达 148 亿，兼顾复杂推理与高效对话。该模型支持在“思考”模式（适用于数学、编程和逻辑推理等任务）与“非思考”模式（适用于通用对话）之间无缝切换。模型经过指令遵循、智能体工具调用、创意写作及 100 多种语言和方言的多语言任务微调，原生支持 32K token 上下文，并可通过基于 YaRN 的扩展技术将上下文长度提升至 131K tokens。
 context_length: 40960
 max_output: 40960
-price_in: 5e-08
-price_out: 2.2e-07
 features:
   - CapChat
   - CapFunctionCall

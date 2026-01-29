@@ -11,8 +11,6 @@ description_cn: |-
   该模型采用全自动合成数据流水线，支持可扩展的预训练、微调与强化学习。通过大规模持续预训练多样化智能体数据，提升推理能力并保持知识时效性。同时，模型引入端到端在线策略强化学习，采用定制化的分组相对策略优化（Group Relative Policy Optimization），结合token级梯度与负样本过滤机制，确保训练稳定性。模型支持ReAct用于核心能力验证，并提供基于IterResearch的“重型”模式，通过测试时扩展实现极致性能，适用于高级研究智能体、工具调用及高负载推理工作流。
 context_length: 131072
 max_output: 131072
-price_in: 9e-08
-price_out: 4e-07
 features:
   - CapChat
   - CapFunctionCall

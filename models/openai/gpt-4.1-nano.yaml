@@ -5,8 +5,6 @@ description: For tasks that demand low latency, GPT‑4.1 nano is the fastest an
 description_cn: 对于低延迟任务，GPT-4.1 Nano 是 GPT-4.1 系列中速度最快、成本最低的模型。其体积小巧却性能卓越，配备 100 万 token 上下文窗口，在 MMLU 上得分 80.1%，GPQA 上得分 50.3%，Aider 多语言编码基准上得分 9.8%——甚至高于 GPT-4o Mini。该模型非常适合分类或自动补全等任务。
 context_length: 1047576
 max_output: 32768
-price_in: 1e-07
-price_out: 4e-07
 features:
   - CapChat
   - CapFunctionCall

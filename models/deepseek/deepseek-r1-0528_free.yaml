@@ -10,8 +10,6 @@ description_cn: |-
 
   完全开源模型。
 context_length: 163840
-price_in: 0
-price_out: 0
 features:
   - CapChat
   - ModalityTextIn

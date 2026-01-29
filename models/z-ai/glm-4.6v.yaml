@@ -5,8 +5,6 @@ description: GLM-4.6V is a large multimodal model designed for high-fidelity vis
 description_cn: GLM-4.6V 是一款大型多模态模型，专为高保真视觉理解及跨图像、文档和混合媒体的长上下文推理而设计。该模型支持高达 128K tokens，可直接将复杂页面布局和图表作为视觉输入进行处理，并集成原生多模态函数调用，实现感知与下游工具执行的无缝衔接。此外，该模型还支持交错式图文生成与 UI 重建工作流，包括截图转 HTML 合成及迭代式视觉编辑。
 context_length: 131072
 max_output: 131072
-price_in: 3e-07
-price_out: 9e-07
 features:
   - CapChat
   - CapFunctionCall

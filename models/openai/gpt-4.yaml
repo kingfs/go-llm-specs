@@ -5,8 +5,6 @@ description: 'OpenAI''s flagship model, GPT-4 is a large-scale multimodal langua
 description_cn: OpenAI 旗舰模型 GPT-4 是一款大规模多模态语言模型，凭借更广泛的知识储备和更强的推理能力，在解决复杂问题方面比以往模型更为精准。训练数据截止至 2021 年 9 月。
 context_length: 8191
 max_output: 4096
-price_in: 3e-05
-price_out: 6e-05
 features:
   - CapChat
   - CapFunctionCall

@@ -4,8 +4,6 @@ provider: Sao10k
 description: Euryale L3.1 70B v2.2 is a model focused on creative roleplay from [Sao10k](https://ko-fi.com/sao10k). It is the successor of [Euryale L3 70B v2.1](/models/sao10k/l3-euryale-70b).
 description_cn: Euryale L3.1 70B v2.2 是由 [Sao10k](https://ko-fi.com/sao10k) 开发的专注于创意角色扮演的模型，是 [Euryale L3 70B v2.1](/models/sao10k/l3-euryale-70b) 的继任版本。
 context_length: 32768
-price_in: 6.5e-07
-price_out: 7.5e-07
 features:
   - CapChat
   - CapFunctionCall

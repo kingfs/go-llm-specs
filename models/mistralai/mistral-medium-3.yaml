@@ -10,8 +10,6 @@ description_cn: |-
 
   该模型在编程、STEM 推理及企业适配等领域表现卓越，支持混合、本地及 VPC 内部署，并针对自定义工作流集成进行了优化。Mistral Medium 3 在准确性方面可与 Claude Sonnet 3.5/3.7、Llama 4 Maverick 和 Command R+ 等更大模型竞争，同时在各类云环境中保持广泛的兼容性。
 context_length: 131072
-price_in: 4e-07
-price_out: 2e-06
 features:
   - CapChat
   - CapFunctionCall

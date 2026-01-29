@@ -16,8 +16,6 @@ description_cn: |-
   - 创造力显著增强，可生成生动叙事
   - 故事情节充满冒险且引人入胜
 context_length: 32768
-price_in: 1.7e-07
-price_out: 4.3e-07
 features:
   - CapChat
   - CapFunctionCall

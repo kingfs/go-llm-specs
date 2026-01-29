@@ -9,8 +9,6 @@ description: |-
 description_cn: OpenAI 的高性能模型，支持 128k 上下文。
 context_length: 128000
 max_output: 4096
-price_in: 1e-05
-price_out: 3e-05
 features:
   - CapChat
   - CapFunctionCall

@@ -4,8 +4,6 @@ provider: Perplexity
 description: Sonar is lightweight, affordable, fast, and simple to use — now featuring citations and the ability to customize sources. It is designed for companies seeking to integrate lightweight question-and-answer features optimized for speed.
 description_cn: Sonar 轻量、经济、快速且易于使用——现已支持引用来源并可自定义信息源。该模型专为希望集成轻量级、高速问答功能的企业设计。
 context_length: 127072
-price_in: 1e-06
-price_out: 1e-06
 features:
   - CapChat
   - ModalityImageIn

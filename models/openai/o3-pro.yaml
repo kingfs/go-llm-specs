@@ -11,8 +11,6 @@ description_cn: |-
   注意：使用此模型需自带密钥（BYOK）。设置地址：https://openrouter.ai/settings/integrations
 context_length: 200000
 max_output: 100000
-price_in: 2e-05
-price_out: 8e-05
 features:
   - CapChat
   - CapFunctionCall

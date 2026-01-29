@@ -11,8 +11,6 @@ description_cn: |-
   该模型在 HLE、BrowseComp、SWE-Multilingual 和 LiveCodeBench 等开源基准上创下新纪录，并能在 200–300 次工具调用中保持稳定的多智能体行为。依托大规模 MoE 架构与 MuonClip 优化，它在高推理深度与高推理效率之间取得平衡，适用于高要求的智能体与分析任务。
 context_length: 262144
 max_output: 65535
-price_in: 4e-07
-price_out: 1.75e-06
 features:
   - CapChat
   - CapFunctionCall

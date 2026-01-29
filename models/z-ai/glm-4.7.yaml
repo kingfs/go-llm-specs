@@ -5,8 +5,6 @@ description: 'GLM-4.7 is Z.AI’s latest flagship model, featuring upgrades in t
 description_cn: GLM-4.7 是 Z.AI 最新旗舰模型，在两大核心领域实现升级：增强的编程能力与更稳定的多步推理/执行能力。该模型在执行复杂智能体任务方面表现显著提升，同时提供更自然的对话体验与更出色的前端交互效果。
 context_length: 202752
 max_output: 65535
-price_in: 4e-07
-price_out: 1.5e-06
 features:
   - CapChat
   - CapFunctionCall

@@ -5,8 +5,6 @@ description: Olmo 3 7B Instruct is a supervised instruction-fine-tuned variant o
 description_cn: Olmo 3 7B Instruct 是 Olmo 3 7B 基础模型的监督指令微调版本，专为指令遵循、问答和自然对话交互优化。通过高质量指令数据与开源训练流程，该模型在日常 NLP 任务中表现优异，同时保持易于集成和使用。由 AI2 基于 Apache 2.0 许可证开发，为指令驱动型应用提供透明且社区友好的选择。
 context_length: 65536
 max_output: 65536
-price_in: 1e-07
-price_out: 2e-07
 features:
   - CapChat
   - CapJsonMode

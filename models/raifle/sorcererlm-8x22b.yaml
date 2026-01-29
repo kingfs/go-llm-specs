@@ -14,8 +14,6 @@ description_cn: |-
   - 写作风格生动，融合空间感知与上下文意识；
   - 叙事深度增强，支持富有创意且动态变化的故事创作。
 context_length: 16000
-price_in: 4.5e-06
-price_out: 4.5e-06
 features:
   - CapChat
   - ModalityTextIn

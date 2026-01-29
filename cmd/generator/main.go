@@ -64,8 +64,6 @@ type ModelRegistry struct {
 	DescriptionCN string   `yaml:"description_cn,omitempty"`
 	ContextLen    int      `yaml:"context_length"`
 	MaxOutput     int      `yaml:"max_output,omitempty"`
-	PriceIn       float64  `yaml:"price_in"`
-	PriceOut      float64  `yaml:"price_out"`
 	Features      []string `yaml:"features,omitempty"`
 	Aliases       []string `yaml:"aliases,omitempty"`
 }
@@ -111,8 +109,6 @@ func main() {
 			DescriptionCN: m.DescriptionCN,
 			ContextLen:    m.ContextLen,
 			MaxOutput:     m.MaxOutput,
-			PriceIn:       m.PriceIn,
-			PriceOut:      m.PriceOut,
 			Aliases:       m.Aliases,
 		}
 		if len(m.Features) > 0 {
@@ -202,9 +198,6 @@ func syncToDisk(apiModels []OpenRouterModel, localModels map[string]ModelRegistr
 		local.ContextLen = m.ContextLength
 		local.MaxOutput = m.TopProvider.MaxCompletionTokens
 		local.Provider = normalizeProvider(strings.Split(m.ID, "/")[0])
-
-		fmt.Sscanf(m.Pricing.Prompt, "%f", &local.PriceIn)
-		fmt.Sscanf(m.Pricing.Completion, "%f", &local.PriceOut)
 
 		// Derived features from API (only if local features are empty)
 		if len(local.Features) == 0 {

@@ -154,7 +154,7 @@ features:
   - CapEmbedding    # 新增的模型类型支持
   - ModalityTextIn
 context_length: 8192
-price_in: 0.00000013
+
 aliases:
   - text-embedding-3-large
 ```

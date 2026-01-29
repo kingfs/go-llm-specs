@@ -11,8 +11,6 @@ description_cn: |-
   该模型在多项交互式与具身智能基准测试中达到业界领先水平，包括 OSworld、WebVoyager、AndroidWorld 和 ScreenSpot。此外，它在多种 Poki 游戏中实现了完美任务完成率，并在《我的世界》（Minecraft）智能体任务中显著超越先前模型。UI-TARS-1.5 支持推理过程中的思维分解，并在不同规模版本中展现出强大的性能扩展能力，其中 1.5 版本的性能明显优于早期的 72B 和 7B 检查点。
 context_length: 128000
 max_output: 2048
-price_in: 1e-07
-price_out: 2e-07
 features:
   - CapChat
   - ModalityImageIn

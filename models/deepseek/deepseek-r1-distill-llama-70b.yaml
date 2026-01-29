@@ -19,8 +19,6 @@ description_cn: |-
   通过 DeepSeek R1 输出的微调，该模型实现了可与更大规模前沿模型相媲美的竞争力。
 context_length: 131072
 max_output: 131072
-price_in: 3e-08
-price_out: 1.1e-07
 features:
   - CapChat
   - CapFunctionCall

@@ -10,8 +10,6 @@ description_cn: |-
   此模型接替 [DeepSeek V3-0324](/deepseek/deepseek-chat-v3-0324)，在多种任务上表现优异。
 context_length: 32768
 max_output: 7168
-price_in: 1.5e-07
-price_out: 7.5e-07
 features:
   - CapChat
   - CapFunctionCall

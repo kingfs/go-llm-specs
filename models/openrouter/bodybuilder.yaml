@@ -14,8 +14,6 @@ description_cn: |-
 
   **Beta 公告**：Body Builder 目前处于 Beta 阶段，免费使用。未来定价与功能可能发生变化。
 context_length: 128000
-price_in: -1
-price_out: -1
 features:
   - CapChat
   - ModalityTextIn

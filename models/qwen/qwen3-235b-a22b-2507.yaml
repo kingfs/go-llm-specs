@@ -10,8 +10,6 @@ description_cn: |-
 
   相较于基础版本，此版本在知识覆盖广度、长上下文推理、编程基准及开放式任务对齐方面均有显著提升。其在多语言理解、数学推理（如 AIME、HMMT）以及 Arena-Hard、WritingBench 等对齐评估中表现尤为突出。
 context_length: 262144
-price_in: 7.1e-08
-price_out: 4.63e-07
 features:
   - CapChat
   - CapFunctionCall

@@ -18,8 +18,6 @@ description_cn: |-
 
   欲了解模型发布的更多信息，请[点击此处](https://ai.meta.com/blog/meta-llama-3-1/)。使用本模型需遵守 [Meta 可接受使用政策](https://llama.meta.com/llama3/use-policy/)。
 context_length: 10000
-price_in: 3.5e-06
-price_out: 3.5e-06
 features:
   - CapChat
   - CapFunctionCall

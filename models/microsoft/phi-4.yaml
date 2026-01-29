@@ -9,8 +9,6 @@ description_cn: |-
 
   更多信息请参阅 [Phi-4 技术报告](https://arxiv.org/pdf/2412.08905)
 context_length: 16384
-price_in: 6e-08
-price_out: 1.4e-07
 features:
   - CapChat
   - CapJsonMode

@@ -11,8 +11,6 @@ description_cn: |-
   用户可通过 API 中的 `reasoning` 参数的 `enabled` 字段启用或禁用推理功能。[详见文档](https://openrouter.ai/docs/use-cases/reasoning-tokens#controlling-reasoning-tokens)
 context_length: 2000000
 max_output: 30000
-price_in: 2e-07
-price_out: 5e-07
 features:
   - CapChat
   - CapFunctionCall

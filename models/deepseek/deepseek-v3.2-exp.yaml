@@ -11,8 +11,6 @@ description_cn: |-
   该模型在与 V3.1-Terminus 对齐的条件下训练，便于直接对比。基准测试表明，其在推理、编码及智能体工具使用任务上的性能大致与 V3.1 相当，不同领域略有取舍。本次发布重点在于验证面向扩展上下文长度的架构优化，而非提升原始任务准确率，因此主要作为研究导向模型，用于探索高效 Transformer 设计。
 context_length: 163840
 max_output: 65536
-price_in: 2.1e-07
-price_out: 3.2e-07
 features:
   - CapChat
   - CapFunctionCall

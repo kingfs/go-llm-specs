@@ -19,8 +19,6 @@ description_cn: |-
   使用本模型需遵守 [Meta 可接受使用政策](https://www.llama.com/llama3/use-policy/)。
 context_length: 131072
 max_output: 16384
-price_in: 2e-08
-price_out: 2e-08
 features:
   - CapChat
   - CapJsonMode

@@ -4,8 +4,6 @@ provider: Qwen
 description: Qwen3-VL-32B-Instruct is a large-scale multimodal vision-language model designed for high-precision understanding and reasoning across text, images, and video. With 32 billion parameters, it combines deep visual perception with advanced text comprehension, enabling fine-grained spatial reasoning, document and scene analysis, and long-horizon video understanding.Robust OCR in 32 languages, and enhanced multimodal fusion through Interleaved-MRoPE and DeepStack architectures. Optimized for agentic interaction and visual tool use, Qwen3-VL-32B delivers state-of-the-art performance for complex real-world multimodal tasks.
 description_cn: Qwen3-VL-32B-Instruct 是一款大规模多模态视觉语言模型，专为文本、图像和视频的高精度理解与推理而设计。该模型拥有 320 亿参数，融合深度视觉感知与先进文本理解能力，支持细粒度空间推理、文档与场景分析以及长周期视频理解。支持 32 种语言的鲁棒 OCR，并通过 Interleaved-MRoPE 与 DeepStack 架构实现增强的多模态融合。该模型针对智能体交互和视觉工具调用进行了优化，在复杂现实世界的多模态任务中达到业界领先水平。
 context_length: 262144
-price_in: 5e-07
-price_out: 1.5e-06
 features:
   - CapChat
   - CapJsonMode

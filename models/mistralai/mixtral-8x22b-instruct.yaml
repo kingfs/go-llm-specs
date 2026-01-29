@@ -18,8 +18,6 @@ description_cn: |-
   基准测试结果详见发布公告：[此处](https://mistral.ai/news/mixtral-8x22b/)。
   #moe
 context_length: 65536
-price_in: 2e-06
-price_out: 6e-06
 features:
   - CapChat
   - CapFunctionCall

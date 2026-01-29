@@ -11,8 +11,6 @@ description_cn: |-
   相比 Instruct 版本，Thinking 版本引入了更深层次的视觉-语言融合与深思熟虑的推理路径，在长链逻辑任务、STEM 问题求解和多步视频理解方面表现更优。通过 Interleaved-MRoPE 和时间戳感知嵌入，该模型实现了更强的时间定位能力，同时保持与大型纯文本 LLM 相当的 OCR、多语言理解及文本生成能力。
 context_length: 256000
 max_output: 32768
-price_in: 1.8e-07
-price_out: 2.1e-06
 features:
   - CapChat
   - CapFunctionCall

@@ -10,8 +10,6 @@ description_cn: |-
 
   Devstral Medium 仅通过 API 提供（非开源权重），支持在私有基础设施上进行企业级部署，并可选配微调功能。
 context_length: 131072
-price_in: 4e-07
-price_out: 2e-06
 features:
   - CapChat
   - CapFunctionCall

@@ -5,8 +5,6 @@ description: GPT-5.2 Chat (AKA Instant) is the fast, lightweight member of the 5
 description_cn: GPT-5.2 Chat（又称 Instant）是 GPT-5.2 系列中轻量、高速的成员，专为低延迟对话优化，同时保留强大的通用智能。该模型采用自适应推理机制，仅在面对较难查询时才启动深度思考，从而在不拖慢常规对话的前提下提升数学、编程及多步骤任务的准确性。默认设置下，模型语气更亲切自然，指令遵循能力更强，短程推理也更加稳定。GPT-5.2 Chat 专为高吞吐、交互式工作负载设计，在响应速度与一致性比深度推理更为关键的场景中表现优异。
 context_length: 128000
 max_output: 16384
-price_in: 1.75e-06
-price_out: 1.4e-05
 features:
   - CapChat
   - CapFunctionCall

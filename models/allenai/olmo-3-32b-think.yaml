@@ -5,8 +5,6 @@ description: Olmo 3 32B Think is a large-scale, 32-billion-parameter model purpo
 description_cn: Olmo 3 32B Think 是一款专为深度推理、复杂逻辑链和高级指令遵循场景设计的大规模语言模型，参数量达320亿。其强大的能力使其在高难度评估任务和高度细致的对话推理中表现出色。该模型由艾伦人工智能研究所（AI2）基于 Apache 2.0 许可证开发，体现了 Olmo 项目对开放性的承诺，全面公开了模型权重、代码及训练方法。
 context_length: 65536
 max_output: 65536
-price_in: 1.5e-07
-price_out: 5e-07
 features:
   - CapChat
   - CapJsonMode

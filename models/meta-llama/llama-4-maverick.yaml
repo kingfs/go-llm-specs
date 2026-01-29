@@ -11,8 +11,6 @@ description_cn: |-
   Maverick 采用早期融合（early fusion）实现原生多模态能力，并支持 100 万 token 的上下文窗口。其训练数据涵盖约 22 万亿 token，包括精选的公开数据、授权数据及 Meta 平台数据，知识截止于 2024 年 8 月。该模型于 2025 年 4 月 5 日依据 Llama 4 社区许可证发布，适用于需要高级多模态理解与高吞吐性能的研究及商业应用。
 context_length: 1048576
 max_output: 16384
-price_in: 1.5e-07
-price_out: 6e-07
 features:
   - CapChat
   - CapFunctionCall

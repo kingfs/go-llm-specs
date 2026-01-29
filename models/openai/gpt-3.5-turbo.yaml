@@ -11,8 +11,6 @@ description_cn: |-
   训练数据截止至 2021 年 9 月。
 context_length: 16385
 max_output: 4096
-price_in: 5e-07
-price_out: 1.5e-06
 features:
   - CapChat
   - CapFunctionCall

@@ -11,8 +11,6 @@ description_cn: |-
   Sonar Pro Search 在 Sonar Pro 基础上增加了自主多步推理能力，不再局限于单次查询与结果整合，而是能够规划并执行完整的研究工作流，调用多种工具完成任务。
 context_length: 200000
 max_output: 8000
-price_in: 3e-06
-price_out: 1.5e-05
 features:
   - CapChat
   - CapFunctionCall

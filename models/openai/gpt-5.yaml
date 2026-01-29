@@ -5,8 +5,6 @@ description: GPT-5 is OpenAI’s most advanced model, offering major improvement
 description_cn: GPT-5 是 OpenAI 最先进的模型，在推理能力、代码质量和用户体验方面实现重大提升。该模型针对需要逐步推理、指令遵循以及在高风险场景中保持高准确性的复杂任务进行了优化。支持测试时路由功能和高级提示理解能力，包括用户指定的意图（如“认真思考此问题”）。改进包括减少幻觉和迎合倾向，并在编码、写作及健康相关任务中表现更佳。
 context_length: 400000
 max_output: 128000
-price_in: 1.25e-06
-price_out: 1e-05
 features:
   - CapChat
   - CapFunctionCall

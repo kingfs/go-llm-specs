@@ -4,8 +4,6 @@ provider: Mistral
 description: Voxtral Small is an enhancement of Mistral Small 3, incorporating state-of-the-art audio input capabilities while retaining best-in-class text performance. It excels at speech transcription, translation and audio understanding. Input audio is priced at $100 per million seconds.
 description_cn: Voxtral Small 是 Mistral Small 3 的增强版，在保留业界领先的文本性能的同时，集成了先进的音频输入能力，擅长语音转录、翻译和音频理解。音频输入定价为每百万秒 100 美元。
 context_length: 32000
-price_in: 1e-07
-price_out: 3e-07
 features:
   - CapChat
   - CapFunctionCall

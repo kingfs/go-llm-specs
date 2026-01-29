@@ -5,8 +5,6 @@ description: Gemma 3 introduces multimodality, supporting vision-language input 
 description_cn: Gemma 3 引入多模态能力，支持视觉-语言输入与文本输出，可处理长达 128k token 的上下文，支持超过 140 种语言，并在数学、推理和对话能力方面均有提升，包括结构化输出与函数调用功能。Gemma 3 12B 是 Gemma 3 系列中仅次于 [Gemma 3 27B](google/gemma-3-27b-it) 的第二大模型。
 context_length: 131072
 max_output: 131072
-price_in: 3e-08
-price_out: 1e-07
 features:
   - CapChat
   - CapFunctionCall

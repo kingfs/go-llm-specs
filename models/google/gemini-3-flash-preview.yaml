@@ -11,8 +11,6 @@ description_cn: |-
   该模型支持 100 万 token 的上下文窗口，可处理包括文本、图像、音频、视频和 PDF 在内的多模态输入，并输出文本。支持通过思维层级（minimal、low、medium、high）配置推理强度、结构化输出、工具调用及自动上下文缓存。Gemini 3 Flash Preview 面向希望获得强大推理与智能体行为，同时避免前沿大模型高昂成本与延迟的用户。
 context_length: 1048576
 max_output: 65535
-price_in: 5e-07
-price_out: 3e-06
 features:
   - CapChat
   - CapFunctionCall

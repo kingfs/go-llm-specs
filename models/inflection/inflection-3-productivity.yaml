@@ -15,8 +15,6 @@ description_cn: |-
   更多详情请见 [Inflection 官方公告](https://inflection.ai/blog/enterprise)。
 context_length: 8000
 max_output: 1024
-price_in: 2.5e-06
-price_out: 1e-05
 features:
   - CapChat
   - ModalityTextIn

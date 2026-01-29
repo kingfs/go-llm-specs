@@ -134,8 +134,6 @@ description_cn: |-
   - [moonshotai/kimi-k2-thinking](/moonshotai/kimi-k2-thinking)
   - [perplexity/sonar](/perplexity/sonar)
 context_length: 2000000
-price_in: -1
-price_out: -1
 features:
   - CapChat
   - ModalityTextIn

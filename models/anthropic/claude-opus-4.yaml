@@ -8,8 +8,6 @@ description_cn: |-
   [在此处阅读博客文章](https://www.anthropic.com/news/claude-4)
 context_length: 200000
 max_output: 32000
-price_in: 1.5e-05
-price_out: 7.5e-05
 features:
   - CapChat
   - CapFunctionCall

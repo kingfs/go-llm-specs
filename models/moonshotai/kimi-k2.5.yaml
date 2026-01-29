@@ -2,10 +2,9 @@ id: moonshotai/kimi-k2.5
 name: 'MoonshotAI: Kimi K2.5'
 provider: Moonshotai
 description: Kimi K2.5 is Moonshot AI's native multimodal model, delivering state-of-the-art visual coding capability and a self-directed agent swarm paradigm. Built on Kimi K2 with continued pretraining over approximately 15T mixed visual and text tokens, it delivers strong performance in general reasoning, visual coding, and agentic tool-calling.
+description_cn: Kimi K2.5 是月之暗面（Moonshot AI）推出的原生多模态模型，在视觉编程能力方面达到业界领先水平，并采用自主导向的智能体集群（agent swarm）范式。该模型基于 Kimi K2 架构，通过约 15 万亿混合视觉与文本 token 的持续预训练，在通用推理、视觉编程及智能体工具调用方面均展现出强大性能。
 context_length: 262144
 max_output: 262144
-price_in: 5e-07
-price_out: 2.5e-06
 features:
   - CapChat
   - CapFunctionCall

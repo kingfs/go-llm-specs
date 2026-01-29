@@ -11,8 +11,6 @@ description_cn: |-
   Sonnet 4.5 还增强了智能体能力，包括改进的工具编排、推测性并行执行以及更高效的上下文与内存管理。凭借强化的上下文追踪能力和对工具调用中 token 使用情况的感知，该模型特别适用于多上下文及长时间运行的工作流。典型应用场景涵盖软件工程、网络安全、金融分析、研究智能体及其他需要持续推理与工具调用的领域。
 context_length: 1000000
 max_output: 64000
-price_in: 3e-06
-price_out: 1.5e-05
 features:
   - CapChat
   - CapFunctionCall

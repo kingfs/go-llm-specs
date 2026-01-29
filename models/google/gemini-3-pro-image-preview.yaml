@@ -11,8 +11,6 @@ description_cn: |-
   其在图像中文本渲染（包括长段落与多语言排版）、多图一致性融合以及最多五个主体的身份精准保留方面处于行业领先地位。Nano Banana Pro 新增细粒度创意控制功能，如局部编辑、光照与焦点调节、相机视角变换，并支持 2K/4K 输出及灵活宽高比。该模型专为专业级设计、产品可视化、分镜脚本及复杂多元素构图打造，同时兼顾通用图像创作工作流的高效性。
 context_length: 65536
 max_output: 32768
-price_in: 2e-06
-price_out: 1.2e-05
 features:
   - CapChat
   - CapJsonMode

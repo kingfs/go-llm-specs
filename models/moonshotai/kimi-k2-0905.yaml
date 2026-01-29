@@ -11,8 +11,6 @@ description_cn: |-
   本次更新提升了智能体编程的准确率与跨框架泛化能力，并增强了前端编程在 Web、3D 等相关任务中的输出美观性与功能性。Kimi K2 针对智能体能力进行了优化，包括高级工具使用、推理与代码合成，在编程（LiveCodeBench、SWE-bench）、推理（ZebraLogic、GPQA）和工具使用（Tau2、AceBench）等基准测试中表现优异。该模型采用包含 MuonClip 优化器的新训练栈，以实现稳定的大规模 MoE 训练。
 context_length: 262144
 max_output: 262144
-price_in: 3.9e-07
-price_out: 1.9e-06
 features:
   - CapChat
   - CapFunctionCall

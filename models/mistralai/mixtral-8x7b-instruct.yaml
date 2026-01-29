@@ -11,8 +11,6 @@ description_cn: |-
   该指令微调版本由 Mistral 官方提供。#moe
 context_length: 32768
 max_output: 16384
-price_in: 5.4e-07
-price_out: 5.4e-07
 features:
   - CapChat
   - CapFunctionCall

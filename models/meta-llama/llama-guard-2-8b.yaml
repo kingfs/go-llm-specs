@@ -22,8 +22,6 @@ description_cn: |-
 
   有关模型发布的更多信息，请[点击此处](https://ai.meta.com/blog/meta-llama-3/)。本模型的使用须遵守 [Meta 可接受使用政策](https://llama.meta.com/llama3/use-policy/)。
 context_length: 8192
-price_in: 2e-07
-price_out: 2e-07
 features:
   - CapChat
   - ModalityTextIn

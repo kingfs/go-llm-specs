@@ -5,8 +5,6 @@ description: 'This model offers four times the context length of gpt-3.5-turbo, 
 description_cn: 该模型的上下文长度是 gpt-3.5-turbo 的四倍，单次请求可处理约 20 页文本，但成本更高。训练数据截止至 2021 年 9 月。
 context_length: 16385
 max_output: 4096
-price_in: 3e-06
-price_out: 4e-06
 features:
   - CapChat
   - CapFunctionCall

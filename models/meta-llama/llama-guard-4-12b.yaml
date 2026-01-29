@@ -10,8 +10,6 @@ description_cn: |-
 
   Llama Guard 4 依据标准化的 MLCommons 危害分类体系进行对齐，并专为支持 Llama 4 的多模态能力而设计。具体而言，它融合了前代 Llama Guard 模型的特性，提供对英语及多种支持语言的内容审核能力，并增强了对混合文本与图像提示（包括多图输入）的处理能力。此外，Llama Guard 4 已集成至 Llama Moderations API，为文本和图像提供强大的安全分类支持。
 context_length: 163840
-price_in: 1.8e-07
-price_out: 1.8e-07
 features:
   - CapChat
   - CapJsonMode

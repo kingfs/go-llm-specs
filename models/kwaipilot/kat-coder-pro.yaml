@@ -8,8 +8,6 @@ description_cn: |-
   该模型通过多阶段训练流程（包括中期训练、监督微调（SFT）、强化微调（RFT）及可扩展智能体强化学习）优化了工具使用能力、多轮交互、指令遵循、泛化能力及综合性能。
 context_length: 256000
 max_output: 128000
-price_in: 2.07e-07
-price_out: 8.28e-07
 features:
   - CapChat
   - CapFunctionCall

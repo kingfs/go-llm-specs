@@ -10,8 +10,6 @@ description_cn: |-
 
   专为智能体编码工作流设计，Devstral Small 1.1 针对代码库探索、多文件编辑及集成至 OpenHands、Cline 等自主开发智能体等任务进行了优化。其在 SWE-Bench Verified 基准上取得 53.6% 的成绩，超越所有其他开源模型，同时足够轻量，可在单张 RTX 4090 GPU 或 Apple Silicon 设备上运行。该模型采用 Tekken 分词器，词表大小达 131K，可通过 vLLM、Transformers、Ollama、LM Studio 及其他兼容 OpenAI 的运行时部署。
 context_length: 131072
-price_in: 1e-07
-price_out: 3e-07
 features:
   - CapChat
   - CapFunctionCall

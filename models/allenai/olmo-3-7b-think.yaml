@@ -5,8 +5,6 @@ description: Olmo 3 7B Think is a research-oriented language model in the Olmo f
 description_cn: Olmo 3 7B Think 是 Olmo 系列中面向研究的语言模型，专为高级推理和指令驱动任务设计，在多步问题求解、逻辑推理及维持连贯对话上下文方面表现卓越。该模型由 AI2 基于 Apache 2.0 许可证开发，支持完全透明的开放式实验，为学术研究和实用 NLP 工作流提供轻量但功能强大的基础。
 context_length: 65536
 max_output: 65536
-price_in: 1.2e-07
-price_out: 2e-07
 features:
   - CapChat
   - CapJsonMode

@@ -11,8 +11,6 @@ description_cn: |-
   本模型基于 [Qwen2.5 72B](https://openrouter.ai/qwen/qwen-2.5-72b-instruct) 进行微调。
 context_length: 16384
 max_output: 2048
-price_in: 3e-06
-price_out: 5e-06
 features:
   - CapChat
   - CapJsonMode

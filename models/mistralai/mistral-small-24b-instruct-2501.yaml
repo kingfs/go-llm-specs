@@ -11,8 +11,6 @@ description_cn: |-
   模型在 MMLU 基准测试中达到 81% 的准确率，性能可与 Llama 3.3 70B 和 Qwen 32B 等更大模型竞争，且在同等硬件上运行速度提升三倍。[点击此处阅读模型博客文章。](https://mistral.ai/news/mistral-small-3/)
 context_length: 32768
 max_output: 32768
-price_in: 3e-08
-price_out: 1.1e-07
 features:
   - CapChat
   - CapFunctionCall

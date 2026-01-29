@@ -4,8 +4,6 @@ provider: Sao10k
 description: This is [Sao10K](/sao10k)'s experiment over [Euryale v2.2](/sao10k/l3.1-euryale-70b).
 description_cn: 这是 [Sao10K](/sao10k) 在 [Euryale v2.2](/sao10k/l3.1-euryale-70b) 基础上开展的实验。
 context_length: 16000
-price_in: 3e-06
-price_out: 3e-06
 features:
   - CapChat
   - ModalityTextIn

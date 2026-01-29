@@ -10,8 +10,6 @@ description_cn: |-
 
   该模型适用于智能体框架与工具调用（函数调用）、重度检索工作流及需逐步解答的标准基准测试场景。支持生成长篇、详尽的回答，并采用面向吞吐量的技术（如多token预测）加速生成。请注意，该模型仅运行于纯思考模式。
 context_length: 128000
-price_in: 1.5e-07
-price_out: 1.2e-06
 features:
   - CapChat
   - CapFunctionCall

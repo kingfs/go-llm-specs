@@ -11,8 +11,6 @@ description_cn: |-
   更多关于此模型的信息，请参阅 OpenAI 的 gpt-oss-safeguard [用户指南](https://cookbook.openai.com/articles/gpt-oss-safeguard-guide)。
 context_length: 131072
 max_output: 65536
-price_in: 7.5e-08
-price_out: 3e-07
 features:
   - CapChat
   - CapFunctionCall

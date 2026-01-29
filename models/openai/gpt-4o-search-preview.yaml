@@ -5,8 +5,6 @@ description: GPT-4o Search Previewis a specialized model for web search in Chat 
 description_cn: GPT-4o Search Preview 是专用于聊天补全（Chat Completions）中网络搜索的专用模型，经过训练以理解并执行网络搜索查询。
 context_length: 128000
 max_output: 16384
-price_in: 2.5e-06
-price_out: 1e-05
 features:
   - CapChat
   - CapJsonMode

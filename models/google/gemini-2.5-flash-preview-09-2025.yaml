@@ -8,8 +8,6 @@ description_cn: |-
   此外，Gemini 2.5 Flash 可通过“max tokens for reasoning”参数进行配置，详情参见文档（https://openrouter.ai/docs/use-cases/reasoning-tokens#max-tokens-for-reasoning）。
 context_length: 1048576
 max_output: 65536
-price_in: 3e-07
-price_out: 2.5e-06
 features:
   - CapChat
   - CapFunctionCall

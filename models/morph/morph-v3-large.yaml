@@ -13,8 +13,6 @@ description_cn: |-
   Morph 已启用零数据留存策略。更多模型信息请参阅其[文档](https://docs.morphllm.com/quickstart)。
 context_length: 262144
 max_output: 131072
-price_in: 9e-07
-price_out: 1.9e-06
 features:
   - CapChat
   - ModalityTextIn

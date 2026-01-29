@@ -5,8 +5,6 @@ description: GPT-5 Image Mini combines OpenAI's advanced language capabilities, 
 description_cn: GPT-5 Image Mini 结合了由 [GPT-5 Mini](https://openrouter.ai/openai/gpt-5-mini) 驱动的先进语言能力与 GPT Image 1 Mini 的高效图像生成能力。这一原生多模态模型具备卓越的指令遵循、文本渲染和精细图像编辑能力，同时显著降低延迟与成本。它在高质量视觉内容创作方面表现出色，并保持强大的文本理解能力，非常适合需要大规模高效图像生成与文本处理的应用场景。
 context_length: 400000
 max_output: 128000
-price_in: 2.5e-06
-price_out: 2e-06
 features:
   - CapChat
   - CapFunctionCall

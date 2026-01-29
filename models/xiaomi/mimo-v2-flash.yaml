@@ -10,8 +10,6 @@ description_cn: |-
 
   用户可通过 `reasoning` 的 `enabled` 布尔值控制推理行为。[了解更多](https://openrouter.ai/docs/use-cases/reasoning-tokens#enable-reasoning-with-default-config)。
 context_length: 262144
-price_in: 9e-08
-price_out: 2.9e-07
 features:
   - CapChat
   - CapFunctionCall

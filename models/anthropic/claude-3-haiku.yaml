@@ -16,8 +16,6 @@ description_cn: |-
   #multimodal
 context_length: 200000
 max_output: 4096
-price_in: 2.5e-07
-price_out: 1.25e-06
 features:
   - CapChat
   - CapFunctionCall

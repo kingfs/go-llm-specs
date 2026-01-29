@@ -11,8 +11,6 @@ description_cn: |-
   为广泛任务覆盖而构建，GPT-5.1 在数学、编程和结构化分析负载上持续提升，提供更连贯的长文本回答及更可靠的工具调用能力。同时，其对话对齐经过精细调优，在不牺牲准确性的前提下实现更亲切、直观的回应。GPT-5.1 是 GPT-5 的主要全功能继任者。
 context_length: 400000
 max_output: 128000
-price_in: 1.25e-06
-price_out: 1e-05
 features:
   - CapChat
   - CapFunctionCall

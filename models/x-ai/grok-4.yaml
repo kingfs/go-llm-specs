@@ -4,8 +4,6 @@ provider: X-Ai
 description: Grok 4 is xAI's latest reasoning model with a 256k context window. It supports parallel tool calling, structured outputs, and both image and text inputs. Note that reasoning is not exposed, reasoning cannot be disabled, and the reasoning effort cannot be specified. Pricing increases once the total tokens in a given request is greater than 128k tokens. See more details on the [xAI docs](https://docs.x.ai/docs/models/grok-4-0709)
 description_cn: Grok 4 是 xAI 最新推出的推理模型，上下文窗口达 256K 令牌。支持并行工具调用、结构化输出，以及图像与文本双模态输入。请注意：该模型的推理能力不可关闭、不可调节，也无法指定推理强度。当单次请求总令牌数超过 128K 时，计费标准将上调。更多详情请参阅 [xAI 官方文档](https://docs.x.ai/docs/models/grok-4-0709)。
 context_length: 256000
-price_in: 3e-06
-price_out: 1.5e-05
 features:
   - CapChat
   - CapFunctionCall

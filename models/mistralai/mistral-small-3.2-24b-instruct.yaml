@@ -11,8 +11,6 @@ description_cn: |-
   该模型支持图文输入与结构化输出、函数/工具调用，在编程（HumanEval+、MBPP）、STEM（MMLU、MATH、GPQA）及视觉（ChartQA、DocVQA）等基准测试中表现优异。
 context_length: 131072
 max_output: 131072
-price_in: 6e-08
-price_out: 1.8e-07
 features:
   - CapChat
   - CapFunctionCall

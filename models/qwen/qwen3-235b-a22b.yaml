@@ -4,8 +4,6 @@ provider: Qwen
 description: Qwen3-235B-A22B is a 235B parameter mixture-of-experts (MoE) model developed by Qwen, activating 22B parameters per forward pass. It supports seamless switching between a "thinking" mode for complex reasoning, math, and code tasks, and a "non-thinking" mode for general conversational efficiency. The model demonstrates strong reasoning ability, multilingual support (100+ languages and dialects), advanced instruction-following, and agent tool-calling capabilities. It natively handles a 32K token context window and extends up to 131K tokens using YaRN-based scaling.
 description_cn: Qwen3-235B-A22B 是千问推出的 2350 亿参数稀疏专家混合（MoE）模型，每次前向传播激活 220 亿参数。该模型支持在“思考”模式（用于复杂推理、数学和代码任务）与“非思考”模式（用于高效通用对话）之间无缝切换，展现出强大的推理能力、多语言支持（覆盖 100 多种语言和方言）、高级指令遵循能力以及智能体工具调用功能。模型原生支持 32K token 上下文窗口，并可通过基于 YaRN 的扩展技术将上下文长度延伸至 131K tokens。
 context_length: 40960
-price_in: 2e-07
-price_out: 6e-07
 features:
   - CapChat
   - CapFunctionCall

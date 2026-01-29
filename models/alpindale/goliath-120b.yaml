@@ -19,8 +19,6 @@ description_cn: |-
   #merge
 context_length: 6144
 max_output: 1024
-price_in: 3.75e-06
-price_out: 7.5e-06
 features:
   - CapChat
   - CapJsonMode

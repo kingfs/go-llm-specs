@@ -27,8 +27,6 @@ description_cn: |-
   模型开发者 TNG Tech 要求用户遵循微软为其“MAI-DS-R1” DeepSeek 基础模型制定的审慎使用指南。相关指南可在 Hugging Face 获取（https://huggingface.co/microsoft/MAI-DS-R1）。
 context_length: 163840
 max_output: 65536
-price_in: 0
-price_out: 0
 features:
   - CapChat
   - CapFunctionCall

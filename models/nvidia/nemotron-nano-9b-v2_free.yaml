@@ -7,8 +7,6 @@ description_cn: |-
 
   其推理能力可通过系统提示词进行控制。若用户希望模型直接提供最终答案而不显示中间推理轨迹，亦可进行相应配置。
 context_length: 128000
-price_in: 0
-price_out: 0
 features:
   - CapChat
   - CapFunctionCall

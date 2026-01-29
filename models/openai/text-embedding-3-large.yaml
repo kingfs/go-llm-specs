@@ -4,8 +4,6 @@ provider: OpenAI
 description: OpenAI's most capable embedding model.
 description_cn: OpenAI 功能最强大的嵌入模型。
 context_length: 8192
-price_in: 1.3e-07
-price_out: 0
 features:
   - CapEmbedding
   - ModalityTextIn

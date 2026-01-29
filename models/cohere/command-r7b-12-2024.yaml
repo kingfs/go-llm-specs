@@ -11,8 +11,6 @@ description_cn: |-
   使用本模型需遵守 Cohere 的[使用政策](https://docs.cohere.com/docs/usage-policy)和[SaaS 协议](https://cohere.com/saas-agreement)。
 context_length: 128000
 max_output: 4000
-price_in: 3.75e-08
-price_out: 1.5e-07
 features:
   - CapChat
   - CapJsonMode

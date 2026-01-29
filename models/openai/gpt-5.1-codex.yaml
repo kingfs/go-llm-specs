@@ -11,8 +11,6 @@ description_cn: |-
   Codex 可集成至 CLI、IDE 插件、GitHub 及云任务等开发者环境，能动态调整推理强度——小任务快速响应，大型项目则可持续运行数小时。模型经过专门训练，可执行结构化代码审查，通过依赖分析与测试验证识别关键缺陷。此外，它还支持 UI 开发所需的多模态输入（如图像或截图），并集成工具用于搜索、依赖安装及环境配置。Codex 专为智能体编程应用而设计。
 context_length: 400000
 max_output: 128000
-price_in: 1.25e-06
-price_out: 1e-05
 features:
   - CapChat
   - CapFunctionCall

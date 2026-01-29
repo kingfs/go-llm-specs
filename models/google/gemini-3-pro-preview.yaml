@@ -11,8 +11,6 @@ description_cn: |-
   专为高级开发与智能体工作流构建，Gemini 3 Pro 提供强大的工具调用能力、长周期规划稳定性，以及在复杂 UI、可视化和编程任务中的出色零样本生成能力。它在智能体编程（SWE-Bench Verified、Terminal-Bench 2.0）、多模态分析及结构化长文本任务（如研究综述、规划与交互式学习体验）方面尤为突出。适用场景包括自主智能体、编程助手、多模态分析、科学推理及高上下文信息处理。
 context_length: 1048576
 max_output: 65536
-price_in: 2e-06
-price_out: 1.2e-05
 features:
   - CapChat
   - CapFunctionCall

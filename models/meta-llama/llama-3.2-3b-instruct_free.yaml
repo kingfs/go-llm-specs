@@ -18,8 +18,6 @@ description_cn: |-
 
   使用本模型需遵守 [Meta 可接受使用政策](https://www.llama.com/llama3/use-policy/)。
 context_length: 131072
-price_in: 0
-price_out: 0
 features:
   - CapChat
   - ModalityTextIn

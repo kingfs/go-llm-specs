@@ -11,8 +11,6 @@ description_cn: |-
   Pi 经过训练可模仿您的语气和风格——若您使用更多表情符号，Pi 也会如此！不妨尝试各种提示词和对话风格。
 context_length: 8000
 max_output: 1024
-price_in: 2.5e-06
-price_out: 1e-05
 features:
   - CapChat
   - ModalityTextIn

@@ -4,8 +4,6 @@ provider: Mistral
 description: Mistral Large 3 2512 is Mistral’s most capable model to date, featuring a sparse mixture-of-experts architecture with 41B active parameters (675B total), and released under the Apache 2.0 license.
 description_cn: Mistral Large 3 2512 是 Mistral 迄今为止最强大的模型，采用稀疏混合专家架构，激活参数达 410 亿（总计 6750 亿），并以 Apache 2.0 许可证发布。
 context_length: 262144
-price_in: 5e-07
-price_out: 1.5e-06
 features:
   - CapChat
   - CapFunctionCall

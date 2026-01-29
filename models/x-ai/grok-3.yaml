@@ -6,8 +6,6 @@ description: |+
 
 description_cn: Grok 3 是 xAI 推出的最新模型，作为其旗舰产品，在数据提取、编程和文本摘要等企业级应用场景中表现出色。在金融、医疗、法律和科学领域具备深厚的专业知识。
 context_length: 131072
-price_in: 3e-06
-price_out: 1.5e-05
 features:
   - CapChat
   - CapFunctionCall

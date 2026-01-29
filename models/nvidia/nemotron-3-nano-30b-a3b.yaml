@@ -16,8 +16,6 @@ description_cn: |-
 
   注意：免费端点的所有提示与输出均会被记录，用于改进提供商的模型及其产品与服务。请勿上传任何个人、机密或其他敏感信息。此为试用版本，不得用于生产环境或关键业务系统。
 context_length: 262144
-price_in: 5e-08
-price_out: 2e-07
 features:
   - CapChat
   - CapFunctionCall
