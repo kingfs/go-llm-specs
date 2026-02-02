@@ -4,6 +4,7 @@ provider: Undi95
 description: 'A recreation trial of the original MythoMax-L2-B13 but with updated models. #merge'
 description_cn: 基于更新模型对原始 MythoMax-L2-B13 的复现尝试。#merge
 context_length: 6144
+max_output: 4096
 features:
   - CapChat
   - CapJsonMode

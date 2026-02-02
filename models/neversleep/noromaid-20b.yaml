@@ -10,6 +10,7 @@ description_cn: |-
 
   #merge #uncensored
 context_length: 4096
+max_output: 2048
 features:
   - CapChat
   - CapJsonMode

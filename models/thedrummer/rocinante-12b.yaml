@@ -16,6 +16,7 @@ description_cn: |-
   - 创造力显著增强，可生成生动叙事
   - 故事情节充满冒险且引人入胜
 context_length: 32768
+max_output: 32768
 features:
   - CapChat
   - CapFunctionCall

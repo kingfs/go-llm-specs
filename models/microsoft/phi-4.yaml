@@ -9,6 +9,7 @@ description_cn: |-
 
   更多信息请参阅 [Phi-4 技术报告](https://arxiv.org/pdf/2412.08905)
 context_length: 16384
+max_output: 16384
 features:
   - CapChat
   - CapJsonMode

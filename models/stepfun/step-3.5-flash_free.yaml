@@ -1,0 +1,10 @@
+id: stepfun/step-3.5-flash:free
+name: 'StepFun: Step 3.5 Flash (free)'
+provider: Stepfun
+description: Step 3.5 Flash is StepFun's most capable open-source foundation model. Built on a sparse Mixture of Experts (MoE) architecture, it selectively activates only 11B of its 196B parameters per token. It is a reasoning model that is incredibly speed efficient even at long contexts.
+context_length: 256000
+features:
+  - CapChat
+  - CapFunctionCall
+  - ModalityTextIn
+  - ModalityTextOut
