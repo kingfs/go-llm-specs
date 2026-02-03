@@ -8,7 +8,7 @@ func TestModelDataGetters(t *testing.T) {
 		NameVal:       "Test Model",
 		ProviderVal:   "TestProvider",
 		DescVal:       "A test model",
-		DescCNVal:     "测试模型",
+		DescMap:       map[string]string{"cn": "测试模型", "jp": "テストモデル"},
 		ContextLenVal: 100,
 		MaxOutputVal:  50,
 		FeaturesVal:   ModalityTextIn,
@@ -29,6 +29,9 @@ func TestModelDataGetters(t *testing.T) {
 	}
 	if m.DescriptionCN() != "测试模型" {
 		t.Error("Getter DescriptionCN fail")
+	}
+	if m.DescriptionLang("jp") != "テストモデル" {
+		t.Error("Getter DescriptionLang fail")
 	}
 	if m.ContextLength() != 100 {
 		t.Error("Getter ContextLength fail")

@@ -56,16 +56,19 @@ type RegistryData struct {
 	Models map[string]ModelRegistry `yaml:"models"`
 }
 type ModelRegistry struct {
-	ID            string   `yaml:"id"`
-	Name          string   `yaml:"name"`
-	NameCN        string   `yaml:"name_cn,omitempty"`
-	Provider      string   `yaml:"provider"`
-	Description   string   `yaml:"description,omitempty"`
-	DescriptionCN string   `yaml:"description_cn,omitempty"`
-	ContextLen    int      `yaml:"context_length"`
-	MaxOutput     int      `yaml:"max_output,omitempty"`
-	Features      []string `yaml:"features,omitempty"`
-	Aliases       []string `yaml:"aliases,omitempty"`
+	ID           string            `yaml:"id"`
+	Name         string            `yaml:"name"`
+	NameCN       string            `yaml:"name_cn,omitempty"`
+	Provider     string            `yaml:"provider"`
+	Description  string            `yaml:"description,omitempty"`
+	Descriptions map[string]string `yaml:"descriptions,omitempty"`
+	ContextLen   int               `yaml:"context_length"`
+	MaxOutput    int               `yaml:"max_output,omitempty"`
+	Features     []string          `yaml:"features,omitempty"`
+	Aliases      []string          `yaml:"aliases,omitempty"`
+
+	// Legacy field for migration
+	DescriptionCN string `yaml:"description_cn,omitempty"`
 }
 
 func main() {
@@ -98,18 +101,51 @@ func main() {
 	}
 	log.Printf("Final registry has %d models", len(finalModels))
 
+	// Migration step: Ensure all models have their legacy DescriptionCN moved to Descriptions["cn"]
+	migrationCount := 0
+	for id, m := range finalModels {
+		if m.DescriptionCN != "" {
+			if m.Descriptions == nil {
+				m.Descriptions = make(map[string]string)
+			}
+			if _, ok := m.Descriptions["cn"]; !ok {
+				m.Descriptions["cn"] = m.DescriptionCN
+				m.DescriptionCN = "" // Clear legacy field
+				if err := saveModelToDisk(m); err != nil {
+					log.Printf("Error migrating model %s: %v", id, err)
+				} else {
+					migrationCount++
+					finalModels[id] = m // Update in map
+				}
+			}
+		}
+	}
+	if migrationCount > 0 {
+		log.Printf("Migrated %d models to the new descriptions map format", migrationCount)
+	}
+
 	// 5. Process for Code Generation
 	processedModels := make([]*ProcessedModel, 0)
 	for id, m := range finalModels {
 		p := &ProcessedModel{
-			ID:            id,
-			Name:          m.Name,
-			Provider:      m.Provider,
-			Description:   m.Description,
-			DescriptionCN: m.DescriptionCN,
-			ContextLen:    m.ContextLen,
-			MaxOutput:     m.MaxOutput,
-			Aliases:       m.Aliases,
+			ID:           id,
+			Name:         m.Name,
+			Provider:     m.Provider,
+			Description:  m.Description,
+			Descriptions: m.Descriptions,
+			ContextLen:   m.ContextLen,
+			MaxOutput:    m.MaxOutput,
+			Aliases:      m.Aliases,
+		}
+
+		// Migration: if DescriptionCN exists but Descriptions["cn"] doesn't, migrate it
+		if m.DescriptionCN != "" {
+			if p.Descriptions == nil {
+				p.Descriptions = make(map[string]string)
+			}
+			if _, ok := p.Descriptions["cn"]; !ok {
+				p.Descriptions["cn"] = m.DescriptionCN
+			}
 		}
 		if len(m.Features) > 0 {
 			p.Features = strings.Join(m.Features, " | ")
@@ -254,17 +290,17 @@ func saveModelToDisk(m ModelRegistry) error {
 }
 
 type ProcessedModel struct {
-	ID            string
-	Name          string
-	Provider      string
-	Description   string
-	DescriptionCN string
-	ContextLen    int
-	MaxOutput     int
-	PriceIn       float64
-	PriceOut      float64
-	Features      string // String representation for template
-	Aliases       []string
+	ID           string
+	Name         string
+	Provider     string
+	Description  string
+	Descriptions map[string]string
+	ContextLen   int
+	MaxOutput    int
+	PriceIn      float64
+	PriceOut     float64
+	Features     string // String representation for template
+	Aliases      []string
 }
 
 func calculateFeatures(m OpenRouterModel) string {
@@ -399,7 +435,7 @@ func init() {
 			NameVal:       "{{ .Name }}",
 			ProviderVal:   "{{ .Provider }}",
 			DescVal:       {{ printf "%q" .Description }},
-			DescCNVal:     {{ printf "%q" .DescriptionCN }},
+			DescMap:       map[string]string{ {{ range $lang, $val := .Descriptions }}"{{ $lang }}": {{ printf "%q" $val }}, {{ end }} },
 			ContextLenVal: {{ .ContextLen }},
 			MaxOutputVal:  {{ .MaxOutput }},
 			FeaturesVal:   {{ .Features }},

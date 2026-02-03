@@ -3,6 +3,7 @@ package main
 import (
 	"bytes"
 	"encoding/json"
+	"flag"
 	"fmt"
 	"io"
 	"log"
@@ -10,6 +11,7 @@ import (
 	"os"
 	"path/filepath"
 	"strings"
+	"sync"
 	"time"
 
 	"github.com/joho/godotenv"
@@ -19,16 +21,19 @@ import (
 // -- Data Structures --
 
 type ModelRegistry struct {
-	ID            string   `yaml:"id"`
-	Name          string   `yaml:"name"`
-	NameCN        string   `yaml:"name_cn,omitempty"`
-	Provider      string   `yaml:"provider"`
-	Description   string   `yaml:"description,omitempty"`
-	DescriptionCN string   `yaml:"description_cn,omitempty"`
-	ContextLen    int      `yaml:"context_length"`
-	MaxOutput     int      `yaml:"max_output,omitempty"`
-	Features      []string `yaml:"features,omitempty"`
-	Aliases       []string `yaml:"aliases,omitempty"`
+	ID           string            `yaml:"id"`
+	Name         string            `yaml:"name"`
+	NameCN       string            `yaml:"name_cn,omitempty"`
+	Provider     string            `yaml:"provider"`
+	Description  string            `yaml:"description,omitempty"`
+	Descriptions map[string]string `yaml:"descriptions,omitempty"`
+	ContextLen   int               `yaml:"context_length"`
+	MaxOutput    int               `yaml:"max_output,omitempty"`
+	Features     []string          `yaml:"features,omitempty"`
+	Aliases      []string          `yaml:"aliases,omitempty"`
+
+	// Legacy field for migration
+	DescriptionCN string `yaml:"description_cn,omitempty"`
 
 	// Internal helper
 	filePath string `yaml:"-"`
@@ -57,6 +62,18 @@ type ChatResponse struct {
 func main() {
 	godotenv.Load()
 
+	var langsStr string
+	flag.StringVar(&langsStr, "langs", "cn", "Comma-separated target languages for translation (e.g., cn, jp, ru, fr, vi)")
+
+	var concurrency int
+	flag.IntVar(&concurrency, "concurrency", 5, "Number of concurrent translation tasks")
+	flag.Parse()
+
+	targetLangs := strings.Split(langsStr, ",")
+	for i, l := range targetLangs {
+		targetLangs[i] = strings.TrimSpace(l)
+	}
+
 	apiKey := os.Getenv("LLM_API_KEY")
 	if apiKey == "" {
 		log.Fatal("LLM_API_KEY environment variable is required")
@@ -79,70 +96,92 @@ func main() {
 	}
 	log.Printf("Found %d models in registry.", len(registry))
 
-	// 2. Identify missing translations
+	// 2. Identify models missing any of the target languages
 	var pending []*ModelRegistry
 	for _, m := range registry {
-		// Condition: Has English desc, but NO Chinese desc
-		if m.Description != "" && m.DescriptionCN == "" {
+		if m.Description == "" {
+			continue
+		}
+		if m.Descriptions == nil {
+			m.Descriptions = make(map[string]string)
+		}
+		missing := false
+		for _, lang := range targetLangs {
+			if lang == "" || lang == "en" {
+				continue
+			}
+			if _, ok := m.Descriptions[lang]; !ok {
+				missing = true
+				break
+			}
+		}
+		if missing {
 			pending = append(pending, m)
 		}
 	}
 
-	log.Printf("Found %d models needing translation.", len(pending))
+	log.Printf("Found %d models needing translation to %v.", len(pending), targetLangs)
 	if len(pending) == 0 {
 		return
 	}
 
-	// 3. Batch Process
-	batchSize := 10
-	totalBatches := (len(pending) + batchSize - 1) / batchSize
+	// 3. Process concurrently
+	// Use a semaphore to limit concurrency
+	sem := make(chan struct{}, concurrency)
+	var wg sync.WaitGroup
 
-	for i := 0; i < len(pending); i += batchSize {
-		end := i + batchSize
-		if end > len(pending) {
-			end = len(pending)
-		}
-		batch := pending[i:end]
-		batchIdx := (i / batchSize) + 1
-		log.Printf("Processing batch %d/%d (%d items)...", batchIdx, totalBatches, len(batch))
+	log.Printf("Starting translation with concurrency=%d...", concurrency)
 
-		translations, err := translateBatch(batch, apiKey, apiBase, modelName)
-		if err != nil {
-			log.Printf("Error translating batch %d: %v", batchIdx, err)
-			continue // Skip to next batch, don't crash entire process
-		}
+	for i, m := range pending {
+		wg.Add(1)
+		sem <- struct{}{} // Acquire token
 
-		// Update and Save individually
-		changes := 0
-		for id, cnDesc := range translations {
-			newDesc := cleanResult(cnDesc)
-			if newDesc == "" {
-				continue
+		go func(idx int, target *ModelRegistry) {
+			defer wg.Done()
+			defer func() { <-sem }() // Release token
+
+			log.Printf("[%d/%d] Processing %s...", idx+1, len(pending), target.ID)
+
+			// We treat each model as a batch of 1
+			batch := []*ModelRegistry{target}
+			translations, err := translateBatchMulti(batch, targetLangs, apiKey, apiBase, modelName)
+			if err != nil {
+				log.Printf("[%d/%d] Error translating %s: %v", idx+1, len(pending), target.ID, err)
+				return
 			}
 
-			// Find model in batch
-			var target *ModelRegistry
-			for _, m := range batch {
-				if m.ID == id {
-					target = m
-					break
+			// Update and Save
+			langMap, ok := translations[target.ID]
+			if !ok {
+				// Might happen if LLM returns weird ID or format
+				log.Printf("[%d/%d] No translation returned for %s", idx+1, len(pending), target.ID)
+				return
+			}
+
+			updated := false
+			if target.Descriptions == nil {
+				target.Descriptions = make(map[string]string)
+			}
+			for lang, desc := range langMap {
+				cleanDesc := cleanResult(desc)
+				if cleanDesc != "" {
+					target.Descriptions[lang] = cleanDesc
+					updated = true
 				}
 			}
 
-			if target != nil {
-				target.DescriptionCN = newDesc
+			if updated {
 				if err := saveModel(target); err != nil {
-					log.Printf("Error saving model %s: %v", id, err)
+					log.Printf("[%d/%d] Error saving model %s: %v", idx+1, len(pending), target.ID, err)
 				} else {
-					changes++
+					log.Printf("[%d/%d] Saved updates for %s", idx+1, len(pending), target.ID)
 				}
 			}
-		}
-		log.Printf("Saved %d new translations in batch %d.", changes, batchIdx)
-
-		// Rate limit protection
-		time.Sleep(1 * time.Second)
+		}(i, m)
 	}
+
+	wg.Wait()
+	log.Println("All tasks completed.")
 }
 
 // -- Helpers --
@@ -183,7 +222,7 @@ func saveModel(m *ModelRegistry) error {
 	return os.WriteFile(m.filePath, buf.Bytes(), 0644)
 }
 
-func translateBatch(batch []*ModelRegistry, key, base, model string) (map[string]string, error) {
+func translateBatchMulti(batch []*ModelRegistry, targetLangs []string, key, base, model string) (map[string]map[string]string, error) {
 	// Prepare input map: ID -> English Desc
 	inputs := make(map[string]string)
 	for _, m := range batch {
@@ -192,12 +231,20 @@ func translateBatch(batch []*ModelRegistry, key, base, model string) (map[string
 
 	inputJSON, _ := json.MarshalIndent(inputs, "", "  ")
 
-	prompt := fmt.Sprintf(`You are a professional technical translator for LLM (Large Language Specs).
-Translate the values of the following JSON object into professional, concise Chinese.
-Do not translate keys (Model IDs). Keep the structure exactly the same: valid JSON {"id": "translated_description"}.
+	prompt := fmt.Sprintf(`You are a professional technical translator for Large Language Models.
+Translate the descriptions in the following JSON object into these languages: %s.
+
+Format your response as a valid JSON object where keys are Model IDs and values are objects containing the translations for each language.
+Example structure:
+{
+  "model-id": {
+    "lang-code": "translated description",
+    ...
+  }
+}
 
 Content to translate:
-%s`, string(inputJSON))
+%s`, strings.Join(targetLangs, ", "), string(inputJSON))
 
 	reqBody := ChatRequest{
 		Model: model,
@@ -212,7 +259,7 @@ Content to translate:
 	req.Header.Set("Content-Type", "application/json")
 	req.Header.Set("Authorization", "Bearer "+key)
 
-	client := &http.Client{Timeout: 60 * time.Second}
+	client := &http.Client{Timeout: 3 * time.Minute} // Longer timeout for multi-lang
 	resp, err := client.Do(req)
 	if err != nil {
 		return nil, err
@@ -234,7 +281,7 @@ Content to translate:
 	}
 
 	rawContent := chatResp.Choices[0].Message.Content
-	// Extract JSON from potential code blocks
+	// Extract JSON
 	rawContent = strings.TrimSpace(rawContent)
 	if strings.HasPrefix(rawContent, "```json") {
 		rawContent = strings.TrimPrefix(rawContent, "```json")
@@ -245,7 +292,7 @@ Content to translate:
 	}
 	rawContent = strings.TrimSpace(rawContent)
 
-	var results map[string]string
+	var results map[string]map[string]string
 	if err := json.Unmarshal([]byte(rawContent), &results); err != nil {
 		log.Printf("Failed to parse LLM response as JSON: %s", rawContent)
 		return nil, err

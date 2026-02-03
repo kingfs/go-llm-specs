@@ -7,6 +7,7 @@ type Model interface {
 	Provider() string
 	Description() string
 	DescriptionCN() string
+	DescriptionLang(lang string) string
 
 	ContextLength() int
 	MaxOutput() int
@@ -22,18 +23,27 @@ type modelData struct {
 	NameVal       string
 	ProviderVal   string
 	DescVal       string
-	DescCNVal     string
+	DescMap       map[string]string
 	ContextLenVal int
 	MaxOutputVal  int
 	FeaturesVal   Capability
 	AliasList     []string
 }
 
-func (m *modelData) ID() string                      { return m.IDVal }
-func (m *modelData) Name() string                    { return m.NameVal }
-func (m *modelData) Provider() string                { return m.ProviderVal }
-func (m *modelData) Description() string             { return m.DescVal }
-func (m *modelData) DescriptionCN() string           { return m.DescCNVal }
+func (m *modelData) ID() string            { return m.IDVal }
+func (m *modelData) Name() string          { return m.NameVal }
+func (m *modelData) Provider() string      { return m.ProviderVal }
+func (m *modelData) Description() string   { return m.DescVal }
+func (m *modelData) DescriptionCN() string { return m.DescriptionLang("cn") }
+func (m *modelData) DescriptionLang(lang string) string {
+	if m.DescMap == nil {
+		return m.DescVal
+	}
+	if _, ok := m.DescMap[lang]; !ok {
+		return m.DescVal
+	}
+	return m.DescMap[lang]
+}
 func (m *modelData) ContextLength() int              { return m.ContextLenVal }
 func (m *modelData) MaxOutput() int                  { return m.MaxOutputVal }
 func (m *modelData) HasCapability(c Capability) bool { return m.FeaturesVal&c != 0 }
