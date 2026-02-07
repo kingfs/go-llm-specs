@@ -1,0 +1,15 @@
+id: openrouter/pony-alpha
+name: Pony Alpha
+provider: Openrouter
+description: |-
+  Pony is a cutting-edge foundation model with strong performance in coding, agentic workflows, reasoning, and roleplay, making it well suited for hands-on coding and real-world use.
+
+  **Note:** All prompts and completions for this model are logged by the provider and may be used to improve the model.
+context_length: 200000
+max_output: 131000
+features:
+  - CapChat
+  - CapFunctionCall
+  - CapJsonMode
+  - ModalityTextIn
+  - ModalityTextOut
