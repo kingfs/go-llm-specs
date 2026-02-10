@@ -1,0 +1,12 @@
+id: openrouter/aurora-alpha
+name: Aurora Alpha
+provider: Openrouter
+description: "This is a cloaked model provided to the community to gather feedback. A reasoning model designed for speed. It is built for coding assistants, real-time conversational applications, and agentic workflows.\n\nDefault reasoning effort is set to medium for fast responses. For agentic coding use cases, we recommend changing effort to high. \n\nNote: All prompts and completions for this model are logged by the provider and may be used to improve the model."
+context_length: 128000
+max_output: 50000
+features:
+  - CapChat
+  - CapFunctionCall
+  - CapJsonMode
+  - ModalityTextIn
+  - ModalityTextOut
