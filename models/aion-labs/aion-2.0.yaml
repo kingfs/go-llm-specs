@@ -1,0 +1,10 @@
+id: aion-labs/aion-2.0
+name: 'AionLabs: Aion-2.0'
+provider: Aion-Labs
+description: Aion-2.0 is a variant of DeepSeek V3.2 optimized for immersive roleplaying and storytelling. It is particularly strong at introducing tension, crises, and conflict into stories, making narratives feel more engaging. It also handles mature and darker themes with more nuance and depth.
+context_length: 131072
+max_output: 32768
+features:
+  - CapChat
+  - ModalityTextIn
+  - ModalityTextOut
