@@ -1,0 +1,14 @@
+id: qwen/qwen3.5-27b
+name: 'Qwen: Qwen3.5-27B'
+provider: Qwen
+description: The Qwen3.5 27B native vision-language Dense model incorporates a linear attention mechanism, delivering fast response times while balancing inference speed and performance. Its overall capabilities are comparable to those of the Qwen3.5-122B-A10B.
+context_length: 262144
+max_output: 65536
+features:
+  - CapChat
+  - CapFunctionCall
+  - CapJsonMode
+  - ModalityImageIn
+  - ModalityTextIn
+  - ModalityTextOut
+  - ModalityVideoIn
