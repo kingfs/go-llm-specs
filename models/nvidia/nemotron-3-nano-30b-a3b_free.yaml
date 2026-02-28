@@ -7,8 +7,6 @@ description: |-
   The model is fully open with open-weights, datasets and recipes so developers can easily
   customize, optimize, and deploy the model on their infrastructure for maximum privacy and
   security.
-
-  Note: For the free endpoint, all prompts and output are logged to improve the provider's model and its product and services. Please do not upload any personal, confidential, or otherwise sensitive information. This is a trial use only. Do not use for production or business-critical systems.
 description_cn: |-
   NVIDIA Nemotron 3 Nano 30B A3B 是一款面向开发者的小型语言专家混合（MoE）模型，在计算效率与准确性方面表现卓越，适用于构建专用智能体 AI 系统。
 
