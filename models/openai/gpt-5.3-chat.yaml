@@ -1,0 +1,14 @@
+id: openai/gpt-5.3-chat
+name: 'OpenAI: GPT-5.3 Chat'
+provider: OpenAI
+description: GPT-5.3 Chat is an update to ChatGPT's most-used model that makes everyday conversations smoother, more useful, and more directly helpful. It delivers more accurate answers with better contextualization and significantly reduces unnecessary refusals, caveats, and overly cautious phrasing that can interrupt conversational flow.
+context_length: 128000
+max_output: 16384
+features:
+  - CapChat
+  - CapFunctionCall
+  - CapJsonMode
+  - ModalityFileIn
+  - ModalityImageIn
+  - ModalityTextIn
+  - ModalityTextOut
