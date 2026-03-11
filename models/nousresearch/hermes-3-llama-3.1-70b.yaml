@@ -13,8 +13,7 @@ description_cn: |-
   Hermes 3 70B 是对 [Llama-3.1 70B 基础模型](/models/meta-llama/llama-3.1-70b-instruct) 进行的具有竞争力（甚至更优）的微调版本，专注于将大语言模型与用户需求对齐，赋予终端用户强大的引导能力和控制权。
 
   Hermes 3 系列在 Hermes 2 能力基础上进一步拓展，包括更强大可靠的函数调用与结构化输出能力、通用助手能力，以及改进的代码生成技能。
-context_length: 65536
-max_output: 65536
+context_length: 131072
 features:
   - CapChat
   - CapFunctionCall
