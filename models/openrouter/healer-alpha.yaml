@@ -1,0 +1,18 @@
+id: openrouter/healer-alpha
+name: Healer Alpha
+provider: Openrouter
+description: |-
+  Healer Alpha is a frontier omni-modal model with vision, hearing, reasoning, and action capabilities. It brings the full power of agentic intelligence into the real world: natively perceiving visual and audio inputs, reasoning across modalities, and executing complex multi-step tasks with precision and reliability.
+
+  **Note:** All prompts and completions for this model are logged by the provider and may be used to improve the model.
+context_length: 262144
+max_output: 65536
+features:
+  - CapChat
+  - CapFunctionCall
+  - CapJsonMode
+  - ModalityAudioIn
+  - ModalityImageIn
+  - ModalityTextIn
+  - ModalityTextOut
+  - ModalityVideoIn

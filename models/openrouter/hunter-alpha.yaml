@@ -1,0 +1,15 @@
+id: openrouter/hunter-alpha
+name: Hunter Alpha
+provider: Openrouter
+description: |-
+  Hunter Alpha is a 1 Trillion parameter + 1M token context frontier intelligence model built for agentic use. It excels at long-horizon planning, complex reasoning, and sustained multi-step task execution, with the reliability and instruction-following precision that frameworks like OpenClaw need.
+
+  **Note:** All prompts and completions for this model are logged by the provider and may be used to improve the model.
+context_length: 1048576
+max_output: 65536
+features:
+  - CapChat
+  - CapFunctionCall
+  - CapJsonMode
+  - ModalityTextIn
+  - ModalityTextOut
