@@ -6,7 +6,7 @@ description: |-
 
   **Note:** All prompts and completions for this model are logged by the provider and may be used to improve the model.
 context_length: 262144
-max_output: 65536
+max_output: 32000
 features:
   - CapChat
   - CapFunctionCall
