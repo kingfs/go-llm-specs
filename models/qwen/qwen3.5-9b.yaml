@@ -2,7 +2,7 @@ id: qwen/qwen3.5-9b
 name: 'Qwen: Qwen3.5-9B'
 provider: Qwen
 description: Qwen3.5-9B is a multimodal foundation model from the Qwen3.5 family, designed to deliver strong reasoning, coding, and visual understanding in an efficient 9B-parameter architecture. It uses a unified vision-language design with early fusion of multimodal tokens, allowing the model to process and reason across text and images within the same context.
-context_length: 262144
+context_length: 256000
 features:
   - CapChat
   - CapFunctionCall
