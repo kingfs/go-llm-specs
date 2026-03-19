@@ -13,8 +13,7 @@ description_cn: |-
   支持语言：英语、德语、法语、意大利语、葡萄牙语、印地语、西班牙语和泰语。
 
   [模型卡片](https://github.com/meta-llama/llama-models/blob/main/models/llama3_3/MODEL_CARD.md)
-context_length: 128000
-max_output: 128000
+context_length: 65536
 features:
   - CapChat
   - CapFunctionCall
