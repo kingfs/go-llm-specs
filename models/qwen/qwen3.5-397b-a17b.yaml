@@ -2,6 +2,7 @@ id: qwen/qwen3.5-397b-a17b
 name: 'Qwen: Qwen3.5 397B A17B'
 provider: Qwen
 description: The Qwen3.5 series 397B-A17B native vision-language model is built on a hybrid architecture that integrates a linear attention mechanism with a sparse mixture-of-experts model, achieving higher inference efficiency. It delivers state-of-the-art performance comparable to leading-edge models across a wide range of tasks, including language understanding, logical reasoning, code generation, agent-based tasks, image understanding, video understanding, and graphical user interface (GUI) interactions. With its robust code-generation and agent capabilities, the model exhibits strong generalization across diverse agent.
+description_cn: Qwen3.5 系列 397B-A17B 原生视觉语言模型基于混合架构，融合线性注意力机制与稀疏混合专家（MoE）模型，实现更高推理效率。该模型在语言理解、逻辑推理、代码生成、智能体任务、图像理解、视频理解及图形用户界面（GUI）交互等广泛任务中达到业界领先水平。凭借强大的代码生成与智能体能力，模型在多样化智能体场景中展现出卓越的泛化性能。
 context_length: 262144
 max_output: 65536
 features:

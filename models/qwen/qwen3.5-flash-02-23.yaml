@@ -2,6 +2,7 @@ id: qwen/qwen3.5-flash-02-23
 name: 'Qwen: Qwen3.5-Flash'
 provider: Qwen
 description: The Qwen3.5 native vision-language Flash models are built on a hybrid architecture that integrates a linear attention mechanism with a sparse mixture-of-experts model, achieving higher inference efficiency. Compared to the 3 series, these models deliver a leap forward in performance for both pure text and multimodal tasks, offering fast response times while balancing inference speed and overall performance.
+description_cn: Qwen3.5 原生视觉语言 Flash 模型采用混合架构，融合线性注意力机制与稀疏混合专家（MoE）模型，实现更高推理效率。相比 3 系列，这些模型在纯文本与多模态任务上均实现性能飞跃，在保持快速响应的同时兼顾推理速度与整体性能。
 context_length: 1000000
 max_output: 65536
 features:

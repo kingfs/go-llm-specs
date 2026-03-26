@@ -2,6 +2,7 @@ id: bytedance-seed/seed-2.0-mini
 name: 'ByteDance Seed: Seed-2.0-Mini'
 provider: Bytedance-Seed
 description: Seed-2.0-mini targets latency-sensitive, high-concurrency, and cost-sensitive scenarios, emphasizing fast response and flexible inference deployment. It delivers performance comparable to ByteDance-Seed-1.6, supports 256k context, four reasoning effort modes (minimal/low/medium/high), multimodal understanding, and is optimized for lightweight tasks where cost and speed take priority.
+description_cn: Seed-2.0-mini 面向对延迟敏感、高并发及成本敏感的场景，强调快速响应与灵活推理部署。其性能媲美 ByteDance-Seed-1.6，支持 256k 上下文长度、四种推理强度模式（最低/低/中/高）、多模态理解，并针对成本与速度优先的轻量级任务进行了优化。
 context_length: 262144
 max_output: 131072
 features:

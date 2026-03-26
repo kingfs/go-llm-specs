@@ -2,6 +2,7 @@ id: z-ai/glm-5-turbo
 name: 'Z.ai: GLM 5 Turbo'
 provider: Z-Ai
 description: GLM-5 Turbo is a new model from Z.ai designed for fast inference and strong performance in agent-driven environments such as OpenClaw scenarios. It is deeply optimized for real-world agent workflows involving long execution chains, with improved complex instruction decomposition, tool use, scheduled and persistent execution, and overall stability across extended tasks.
+description_cn: GLM-5 Turbo 是 Z.ai 推出的新一代模型，专为快速推理及 OpenClaw 等智能体驱动场景优化。该模型深度适配涉及长执行链路的真实世界智能体工作流，在复杂指令分解、工具调用、定时与持久化执行以及长时间任务稳定性方面均有显著提升。
 context_length: 202752
 max_output: 131072
 features:

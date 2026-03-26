@@ -7,6 +7,12 @@ description: |-
   Reasoning effort behavior:
   - low / medium: 4 agents
   - high / xhigh: 16 agents
+description_cn: |-
+  Grok 4.20 Multi-Agent Beta 是 xAI Grok 4.20 的一个变体，专为协作式智能体工作流设计。多个智能体并行运行，可执行深度研究、协调工具调用，并在复杂任务中综合信息。
+
+  推理资源分配策略：
+  - low / medium：4 个智能体
+  - high / xhigh：16 个智能体
 context_length: 2000000
 features:
   - CapChat

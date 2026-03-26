@@ -5,6 +5,10 @@ description: |-
   GPT-5.4 mini brings the core capabilities of GPT-5.4 to a faster, more efficient model optimized for high-throughput workloads. It supports text and image inputs with strong performance across reasoning, coding, and tool use, while reducing latency and cost for large-scale deployments.
 
   The model is designed for production environments that require a balance of capability and efficiency, making it well suited for chat applications, coding assistants, and agent workflows that operate at scale. GPT-5.4 mini delivers reliable instruction following, solid multi-step reasoning, and consistent performance across diverse tasks with improved cost efficiency.
+description_cn: |-
+  GPT-5.4 mini 将 GPT-5.4 的核心能力集成到一个更快、更高效的模型中，专为高吞吐量工作负载优化。它支持文本与图像输入，在推理、编程和工具调用方面表现强劲，同时显著降低大规模部署的延迟与成本。
+
+  该模型面向需要能力与效率平衡的生产环境，非常适合聊天应用、编程助手及大规模智能体工作流。GPT-5.4 mini 提供可靠的指令遵循能力、稳健的多步骤推理，并在多样化任务中保持一致性能，同时提升成本效益。
 context_length: 400000
 max_output: 128000
 features:

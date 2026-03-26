@@ -2,6 +2,7 @@ id: xiaomi/mimo-v2-omni
 name: 'Xiaomi: MiMo-V2-Omni'
 provider: Xiaomi
 description: MiMo-V2-Omni is a frontier omni-modal model that natively processes image, video, and audio inputs within a unified architecture. It combines strong multimodal perception with agentic capability - visual grounding, multi-step planning, tool use, and code execution - making it well-suited for complex real-world tasks that span modalities. 256K context window.
+description_cn: MiMo-V2-Omni 是一款前沿的全模态模型，可在统一架构中原生处理图像、视频和音频输入。它融合了强大的多模态感知能力与智能体功能——包括视觉定位、多步规划、工具调用和代码执行——非常适合跨模态的复杂现实任务。上下文窗口长达 256K。
 context_length: 262144
 max_output: 65536
 features:

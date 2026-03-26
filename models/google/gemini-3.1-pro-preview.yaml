@@ -5,6 +5,10 @@ description: |-
   Gemini 3.1 Pro Preview is Google’s frontier reasoning model, delivering enhanced software engineering performance, improved agentic reliability, and more efficient token usage across complex workflows. Building on the multimodal foundation of the Gemini 3 series, it combines high-precision reasoning across text, image, video, audio, and code with a 1M-token context window. Reasoning Details must be preserved when using multi-turn tool calling, see our docs here: https://openrouter.ai/docs/use-cases/reasoning-tokens#preserving-reasoning. The 3.1 update introduces measurable gains in SWE benchmarks and real-world coding environments, along with stronger autonomous task execution in structured domains such as finance and spreadsheet-based workflows.
 
   Designed for advanced development and agentic systems, Gemini 3.1 Pro Preview improves long-horizon stability and tool orchestration while increasing token efficiency. It introduces a new medium thinking level to better balance cost, speed, and performance. The model excels in agentic coding, structured planning, multimodal analysis, and workflow automation, making it well-suited for autonomous agents, financial modeling, spreadsheet automation, and high-context enterprise tasks.
+description_cn: |-
+  Gemini 3.1 Pro 预览版是谷歌的前沿推理模型，在软件工程性能、智能体可靠性及复杂工作流中的令牌效率方面均有提升。基于 Gemini 3 系列的多模态基础，该模型融合了文本、图像、视频、音频和代码的高精度推理能力，并支持 100 万令牌上下文窗口。在多轮工具调用中必须保留推理细节，详见文档：https://openrouter.ai/docs/use-cases/reasoning-tokens#preserving-reasoning。3.1 版本在 SWE 基准测试及真实编码环境中均取得可衡量的提升，并在金融、电子表格等结构化领域的自主任务执行能力上进一步增强。
+
+  该模型专为高级开发与智能体系统设计，在长周期稳定性与工具编排方面有所改进，同时提升了令牌效率。新增的“中等”推理强度级别可更好地平衡成本、速度与性能。它在智能体编码、结构化规划、多模态分析及工作流自动化方面表现优异，适用于自主智能体、金融建模、电子表格自动化及高上下文企业级任务。
 context_length: 1048576
 max_output: 65536
 features:

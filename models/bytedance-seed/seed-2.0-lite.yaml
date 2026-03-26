@@ -2,6 +2,7 @@ id: bytedance-seed/seed-2.0-lite
 name: 'ByteDance Seed: Seed-2.0-Lite'
 provider: Bytedance-Seed
 description: Seed-2.0-Lite is a versatile, cost‑efficient enterprise workhorse that delivers strong multimodal and agent capabilities while offering noticeably lower latency, making it a practical default choice for most production workloads across text, vision, and tools. Engineered for high-frequency visual understanding and agentic workflows, it's an ideal choice for deployment at scale with minimal latency.
+description_cn: Seed-2.0-Lite 是一款多功能、高性价比的企业级主力模型，在提供强大多模态与智能体能力的同时显著降低延迟，是大多数文本、视觉及工具类生产工作负载的实用默认选择。该模型专为高频视觉理解与智能体工作流设计，非常适合大规模部署且对延迟要求严苛的场景。
 context_length: 262144
 max_output: 131072
 features:

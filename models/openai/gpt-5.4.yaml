@@ -5,6 +5,10 @@ description: |-
   GPT-5.4 is OpenAI’s latest frontier model, unifying the Codex and GPT lines into a single system. It features a 1M+ token context window (922K input, 128K output) with support for text and image inputs, enabling high-context reasoning, coding, and multimodal analysis within the same workflow.
 
   The model delivers improved performance in coding, document understanding, tool use, and instruction following. It is designed as a strong default for both general-purpose tasks and software engineering, capable of generating production-quality code, synthesizing information across multiple sources, and executing complex multi-step workflows with fewer iterations and greater token efficiency.
+description_cn: |-
+  GPT-5.4 是 OpenAI 最新一代前沿模型，将 Codex 与 GPT 系列统一为单一系统。该模型支持超过 100 万 token 的上下文窗口（922K 输入，128K 输出），并兼容文本与图像输入，可在同一工作流中实现高上下文推理、编程及多模态分析。
+
+  该模型在编程、文档理解、工具调用和指令遵循方面性能显著提升，适用于通用任务与软件工程场景，能够生成生产级代码、跨多源信息综合，并以更少迭代次数和更高 token 效率执行复杂的多步骤工作流。
 context_length: 1050000
 max_output: 128000
 features:

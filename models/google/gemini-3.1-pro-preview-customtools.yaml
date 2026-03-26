@@ -5,6 +5,10 @@ description: |-
   Gemini 3.1 Pro Preview Custom Tools is a variant of Gemini 3.1 Pro that improves tool selection behavior by preventing overuse of a general bash tool when more efficient third-party or user-defined functions are available. This specialized preview endpoint significantly increases function calling reliability and ensures the model selects the most appropriate tool in coding agents and complex, multi-tool workflows.
 
   It retains the core strengths of Gemini 3.1 Pro, including multimodal reasoning across text, image, video, audio, and code, a 1M-token context window, and strong software engineering performance.
+description_cn: |-
+  Gemini 3.1 Pro 预览版（自定义工具版）是 Gemini 3.1 Pro 的一个变体，通过避免在存在更高效的第三方或用户自定义函数时过度使用通用 Bash 工具，优化了工具选择行为。这一专用预览端点显著提升了函数调用的可靠性，确保模型在编码智能体及复杂的多工具工作流中选择最合适的工具。
+
+  该版本保留了 Gemini 3.1 Pro 的核心优势，包括跨文本、图像、视频、音频和代码的多模态推理能力、100 万令牌上下文窗口，以及强大的软件工程性能。
 context_length: 1048576
 max_output: 65536
 features:

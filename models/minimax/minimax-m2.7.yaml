@@ -5,6 +5,10 @@ description: |-
   MiniMax-M2.7 is a next-generation large language model designed for autonomous, real-world productivity and continuous improvement. Built to actively participate in its own evolution, M2.7 integrates advanced agentic capabilities through multi-agent collaboration, enabling it to plan, execute, and refine complex tasks across dynamic environments.
 
   Trained for production-grade performance, M2.7 handles workflows such as live debugging, root cause analysis, financial modeling, and full document generation across Word, Excel, and PowerPoint. It delivers strong results on benchmarks including 56.2% on SWE-Pro and 57.0% on Terminal Bench 2, while achieving a 1495 ELO on GDPval-AA, setting a new standard for multi-agent systems operating in real-world digital workflows.
+description_cn: |-
+  MiniMax-M2.7 是下一代大语言模型，专为自主化、真实世界生产力及持续进化而设计。它通过多智能体协作集成先进智能体能力，可在动态环境中主动规划、执行并优化复杂任务。
+
+  M2.7 针对生产级性能进行训练，可处理实时调试、根因分析、财务建模以及跨 Word、Excel 和 PowerPoint 的完整文档生成等工作流。在多项基准测试中表现卓越：SWE-Pro 得分 56.2%，Terminal Bench 2 达 57.0%，并在 GDPval-AA 上取得 1495 ELO 分，为真实数字工作流中的多智能体系统树立了新标杆。
 context_length: 204800
 max_output: 131072
 features:

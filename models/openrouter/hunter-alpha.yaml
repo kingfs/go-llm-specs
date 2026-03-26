@@ -5,6 +5,10 @@ description: |-
   Hunter Alpha is a 1 Trillion parameter + 1M token context frontier intelligence model built for agentic use. It excels at long-horizon planning, complex reasoning, and sustained multi-step task execution, with the reliability and instruction-following precision that frameworks like OpenClaw need.
 
   **Note:** All prompts and completions for this model are logged by the provider and may be used to improve the model.
+description_cn: |-
+  Hunter Alpha 是一款参数规模超 1 万亿、上下文窗口达 100 万 token 的前沿智能模型，专为智能体应用构建。它在长期规划、复杂推理及持续多步骤任务执行方面表现出色，具备 OpenClaw 等框架所需的可靠性和精准指令遵循能力。
+
+  **注意：** 该模型的所有提示与生成内容均由提供商记录，并可能用于模型改进。
 context_length: 1048576
 max_output: 32000
 features:

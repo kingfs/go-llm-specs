@@ -2,6 +2,7 @@ id: google/gemini-3.1-flash-image-preview
 name: 'Google: Nano Banana 2 (Gemini 3.1 Flash Image Preview)'
 provider: Google
 description: Gemini 3.1 Flash Image Preview, a.k.a. "Nano Banana 2," is Google’s latest state of the art image generation and editing model, delivering Pro-level visual quality at Flash speed. It combines advanced contextual understanding with fast, cost-efficient inference, making complex image generation and iterative edits significantly more accessible. Aspect ratios can be controlled with the [image_config API Parameter](https://openrouter.ai/docs/features/multimodal/image-generation#image-aspect-ratio-configuration)
+description_cn: Gemini 3.1 Flash 图像预览版（又称“Nano Banana 2”）是谷歌最新推出的尖端图像生成与编辑模型，以 Flash 级速度提供 Pro 级视觉质量。它结合了先进的上下文理解能力与快速、高性价比的推理，大幅降低了复杂图像生成与迭代编辑的使用门槛。可通过 [image_config API 参数](https://openrouter.ai/docs/features/multimodal/image-generation#image-aspect-ratio-configuration) 控制图像宽高比。
 context_length: 65536
 max_output: 65536
 features:

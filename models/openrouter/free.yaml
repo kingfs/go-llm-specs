@@ -2,6 +2,7 @@ id: openrouter/free
 name: Free Models Router
 provider: Openrouter
 description: 'The simplest way to get free inference. openrouter/free is a router that selects free models at random from the models available on OpenRouter. The router smartly filters for models that support features needed for your request such as image understanding, tool calling, structured outputs and more. '
+description_cn: 获取免费推理的最简单方式。openrouter/free 是一个路由服务，从 OpenRouter 上可用的免费模型中随机选择。该路由会智能筛选出支持您请求所需功能（如图像理解、工具调用、结构化输出等）的模型。
 context_length: 200000
 features:
   - CapChat

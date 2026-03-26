@@ -2,6 +2,7 @@ id: openai/gpt-5.3-chat
 name: 'OpenAI: GPT-5.3 Chat'
 provider: OpenAI
 description: GPT-5.3 Chat is an update to ChatGPT's most-used model that makes everyday conversations smoother, more useful, and more directly helpful. It delivers more accurate answers with better contextualization and significantly reduces unnecessary refusals, caveats, and overly cautious phrasing that can interrupt conversational flow.
+description_cn: GPT-5.3 Chat 是 ChatGPT 最常用模型的一次重要更新，旨在让日常对话更流畅、更有用、更直接地提供帮助。它能提供更准确的答案，上下文理解更佳，并大幅减少不必要的拒绝、免责声明及过度谨慎的措辞，从而避免打断对话连贯性。
 context_length: 128000
 max_output: 16384
 features:

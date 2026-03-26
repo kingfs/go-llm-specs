@@ -5,6 +5,10 @@ description: |-
   Pony is a cutting-edge foundation model with strong performance in coding, agentic workflows, reasoning, and roleplay, making it well suited for hands-on coding and real-world use.
 
   **Note:** All prompts and completions for this model are logged by the provider and may be used to improve the model.
+description_cn: |-
+  Pony 是一款尖端基础模型，在编程、智能体工作流、推理及角色扮演方面表现优异，非常适合实际编程与现实应用场景。
+
+  **注意：** 该模型的所有提示与生成内容均由提供商记录，并可能用于模型改进。
 context_length: 200000
 max_output: 131000
 features:

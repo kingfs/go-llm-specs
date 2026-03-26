@@ -2,6 +2,7 @@ id: qwen/qwen3.5-35b-a3b
 name: 'Qwen: Qwen3.5-35B-A3B'
 provider: Qwen
 description: The Qwen3.5 Series 35B-A3B is a native vision-language model designed with a hybrid architecture that integrates linear attention mechanisms and a sparse mixture-of-experts model, achieving higher inference efficiency. Its overall performance is comparable to that of the Qwen3.5-27B.
+description_cn: Qwen3.5 系列 35B-A3B 是一款原生视觉语言模型，采用混合架构，融合线性注意力机制与稀疏混合专家（MoE）模型，实现更高推理效率。其整体性能与 Qwen3.5-27B 相当。
 context_length: 262144
 max_output: 65536
 features:

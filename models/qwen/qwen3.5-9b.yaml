@@ -2,6 +2,7 @@ id: qwen/qwen3.5-9b
 name: 'Qwen: Qwen3.5-9B'
 provider: Qwen
 description: Qwen3.5-9B is a multimodal foundation model from the Qwen3.5 family, designed to deliver strong reasoning, coding, and visual understanding in an efficient 9B-parameter architecture. It uses a unified vision-language design with early fusion of multimodal tokens, allowing the model to process and reason across text and images within the same context.
+description_cn: Qwen3.5-9B 是 Qwen3.5 系列中的多模态基础模型，采用高效的 9B 参数架构，在推理、编码和视觉理解方面表现优异。该模型采用统一的视觉语言设计，通过早期融合多模态 token，可在同一上下文中联合处理并推理文本与图像信息。
 context_length: 256000
 max_output: 65536
 features:

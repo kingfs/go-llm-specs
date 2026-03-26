@@ -2,6 +2,12 @@ id: nvidia/nemotron-3-super-120b-a12b:free
 name: 'NVIDIA: Nemotron 3 Super (free)'
 provider: Nvidia
 description: "NVIDIA Nemotron 3 Super is a 120B-parameter open hybrid MoE model, activating just 12B parameters for maximum compute efficiency and accuracy in complex multi-agent applications. Built on a hybrid Mamba-Transformer Mixture-of-Experts architecture with multi-token prediction (MTP), it delivers over 50% higher token generation compared to leading open models.\n \nThe model features a 1M token context window for long-term agent coherence, cross-document reasoning, and multi-step task planning. Latent MoE enables calling 4 experts for the inference cost of only one, improving intelligence and generalization. Multi-environment RL training across 10+ environments delivers leading accuracy on benchmarks including AIME 2025, TerminalBench, and SWE-Bench Verified.\n \nFully open with weights, datasets, and recipes under the NVIDIA Open License, Nemotron 3 Super allows easy customization and secure deployment anywhere — from workstation to cloud."
+description_cn: |-
+  NVIDIA Nemotron 3 Super 是一款开源混合专家（MoE）大模型，总参数量达 1200 亿，每推理仅激活 120 亿参数，以实现复杂多智能体应用中的极致计算效率与精度。该模型基于混合 Mamba-Transformer MoE 架构，并支持多 token 预测（MTP），其 token 生成速度较主流开源模型提升超 50%。
+
+  模型配备 100 万 token 上下文窗口，支持长期智能体一致性、跨文档推理及多步骤任务规划。“隐式 MoE”技术可在单次推理成本下调用 4 位专家，显著增强智能性与泛化能力。通过在 10 余个环境中的多环境强化学习训练，该模型在 AIME 2025、TerminalBench 和 SWE-Bench Verified 等基准测试中均取得领先成绩。
+
+  Nemotron 3 Super 在 NVIDIA 开源许可下完全开放模型权重、数据集与训练方案，便于用户轻松定制并在任意环境（从工作站到云端）安全部署。
 context_length: 262144
 max_output: 262144
 features:

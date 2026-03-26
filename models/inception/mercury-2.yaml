@@ -2,6 +2,10 @@ id: inception/mercury-2
 name: 'Inception: Mercury 2'
 provider: Inception
 description: "Mercury 2 is an extremely fast reasoning LLM, and the first reasoning diffusion LLM (dLLM).\nInstead of generating tokens sequentially, Mercury 2 produces and refines multiple tokens in parallel, achieving >1,000 tokens/sec on standard GPUs. Mercury 2 is 5x+ faster than leading speed-optimized LLMs like Claude 4.5 Haiku and GPT 5 Mini, at a fraction of the cost. \nMercury 2 supports tunable reasoning levels, 128K context, native tool use, and schema-aligned JSON output. Built for coding workflows where latency compounds, real-time voice/search, and agent loops. OpenAI API compatible. Read more in the [blog post](https://www.inceptionlabs.ai/blog/introducing-mercury-2)."
+description_cn: |-
+  Mercury 2 是一款极速推理大语言模型，也是首款推理扩散型大语言模型（dLLM）。它摒弃了传统的逐个生成 token 的方式，转而并行生成并优化多个 token，在标准 GPU 上实现超过 1,000 token/秒的生成速度。其速度比 Claude 4.5 Haiku 和 GPT 5 Mini 等主流高速优化 LLM 快 5 倍以上，且成本仅为后者的一小部分。
+
+  Mercury 2 支持可调推理级别、128K 上下文、原生工具调用以及符合 Schema 的 JSON 输出，专为编码工作流（延迟累积敏感）、实时语音/搜索及智能体循环等场景打造，并兼容 OpenAI API。更多详情请参阅[博客文章](https://www.inceptionlabs.ai/blog/introducing-mercury-2)。
 context_length: 128000
 max_output: 50000
 features:

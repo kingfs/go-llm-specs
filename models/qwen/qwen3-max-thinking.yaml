@@ -2,6 +2,7 @@ id: qwen/qwen3-max-thinking
 name: 'Qwen: Qwen3 Max Thinking'
 provider: Qwen
 description: Qwen3-Max-Thinking is the flagship reasoning model in the Qwen3 series, designed for high-stakes cognitive tasks that require deep, multi-step reasoning. By significantly scaling model capacity and reinforcement learning compute, it delivers major gains in factual accuracy, complex reasoning, instruction following, alignment with human preferences, and agentic behavior.
+description_cn: Qwen3-Max-Thinking 是 Qwen3 系列中的旗舰推理模型，专为需要深度、多步推理的高风险认知任务而设计。通过显著扩展模型容量并增加强化学习计算资源，该模型在事实准确性、复杂推理、指令遵循、人类偏好对齐以及智能体行为等方面均取得显著提升。
 context_length: 262144
 max_output: 32768
 features:

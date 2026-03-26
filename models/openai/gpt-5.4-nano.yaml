@@ -5,6 +5,10 @@ description: |-
   GPT-5.4 nano is the most lightweight and cost-efficient variant of the GPT-5.4 family, optimized for speed-critical and high-volume tasks. It supports text and image inputs and is designed for low-latency use cases such as classification, data extraction, ranking, and sub-agent execution.
 
   The model prioritizes responsiveness and efficiency over deep reasoning, making it ideal for pipelines that require fast, reliable outputs at scale. GPT-5.4 nano is well suited for background tasks, real-time systems, and distributed agent architectures where minimizing cost and latency is essential.
+description_cn: |-
+  GPT-5.4 nano 是 GPT-5.4 系列中最轻量、最具成本效益的变体，专为对速度敏感和高并发任务优化。它支持文本与图像输入，适用于分类、数据抽取、排序及子智能体执行等低延迟场景。
+
+  该模型优先保障响应速度与效率，而非深度推理，非常适合需要大规模快速、可靠输出的流水线任务。GPT-5.4 nano 非常适用于后台任务、实时系统及分布式智能体架构，其中最小化成本与延迟至关重要。
 context_length: 400000
 max_output: 128000
 features:

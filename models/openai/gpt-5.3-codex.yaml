@@ -5,6 +5,10 @@ description: |-
   GPT-5.3-Codex is OpenAI’s most advanced agentic coding model, combining the frontier software engineering performance of GPT-5.2-Codex with the broader reasoning and professional knowledge capabilities of GPT-5.2. It achieves state-of-the-art results on SWE-Bench Pro and strong performance on Terminal-Bench 2.0 and OSWorld-Verified, reflecting improved multi-language coding, terminal proficiency, and real-world computer-use skills. The model is optimized for long-running, tool-using workflows and supports interactive steering during execution, making it suitable for complex development tasks, debugging, deployment, and iterative product work.
 
   Beyond coding, GPT-5.3-Codex performs strongly on structured knowledge-work benchmarks such as GDPval, supporting tasks like document drafting, spreadsheet analysis, slide creation, and operational research across domains. It is trained with enhanced cybersecurity awareness, including vulnerability identification capabilities, and deployed with additional safeguards for high-risk use cases. Compared to prior Codex models, it is more token-efficient and approximately 25% faster, targeting professional end-to-end workflows that span reasoning, execution, and computer interaction.
+description_cn: |-
+  GPT-5.3-Codex 是 OpenAI 最先进的智能体编程模型，融合了 GPT-5.2-Codex 在前沿软件工程方面的卓越性能，以及 GPT-5.2 更广泛的推理与专业知识能力。该模型在 SWE-Bench Pro 上达到业界领先水平，并在 Terminal-Bench 2.0 与 OSWorld-Verified 中表现强劲，体现出更强的多语言编程能力、终端操作熟练度及真实计算机使用技能。模型针对长时间运行、工具调用密集的工作流进行了优化，支持执行过程中的交互式干预，适用于复杂开发、调试、部署及迭代式产品开发任务。
+
+  除编程外，GPT-5.3-Codex 在 GDPval 等结构化知识工作基准测试中同样表现优异，可胜任跨领域的文档起草、电子表格分析、幻灯片制作及运营研究等任务。模型经过强化的网络安全意识训练，具备漏洞识别能力，并针对高风险应用场景部署了额外防护机制。相比早期 Codex 模型，其 token 利用效率更高，推理速度提升约 25%，专为涵盖推理、执行与计算机交互的端到端专业工作流而设计。
 context_length: 400000
 max_output: 128000
 features:

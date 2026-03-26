@@ -2,6 +2,7 @@ id: openai/gpt-5.4-pro
 name: 'OpenAI: GPT-5.4 Pro'
 provider: OpenAI
 description: GPT-5.4 Pro is OpenAI's most advanced model, building on GPT-5.4's unified architecture with enhanced reasoning capabilities for complex, high-stakes tasks. It features a 1M+ token context window (922K input, 128K output) with support for text and image inputs. Optimized for step-by-step reasoning, instruction following, and accuracy, GPT-5.4 Pro excels at agentic coding, long-context workflows, and multi-step problem solving.
+description_cn: GPT-5.4 Pro 是 OpenAI 最先进的模型，在 GPT-5.4 统一架构基础上进一步增强推理能力，专为复杂、高风险任务设计。它具备超过 100 万 token 的上下文窗口（922K 输入，128K 输出），支持文本与图像输入，针对逐步推理、指令遵循和准确性进行优化，在智能体编程、长上下文工作流及多步骤问题求解方面表现卓越。
 context_length: 1050000
 max_output: 128000
 features:

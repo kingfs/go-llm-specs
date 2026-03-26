@@ -7,6 +7,12 @@ description: |
   Beyond coding, Opus 4.6 excels at sustained knowledge work. It produces near-production-ready documents, plans, and analyses in a single pass, and maintains coherence across very long outputs and extended sessions. This makes it a strong default for tasks that require persistence, judgment, and follow-through, such as technical design, migration planning, and end-to-end project execution.
 
   For users upgrading from earlier Opus versions, see our [official migration guide here](https://openrouter.ai/docs/guides/guides/model-migrations/claude-4-6-opus)
+description_cn: |-
+  Opus 4.6 是 Anthropic 最强大的编码与长期专业任务模型。它专为跨完整工作流（而非单次提示）运行的智能体设计，在大型代码库、复杂重构及多步骤调试等随时间展开的任务中尤为高效。相比前代模型，它展现出更深入的上下文理解能力、更强的问题分解能力，以及在高难度工程任务中的更高可靠性。
+
+  除编码外，Opus 4.6 在持续性知识工作中同样出色。它可在单次生成中产出接近生产就绪的文档、计划与分析，并在超长输出及长时间会话中保持连贯性。这使其成为需要持久性、判断力与执行力的任务（如技术架构设计、迁移规划及端到端项目执行）的理想默认选择。
+
+  从早期 Opus 版本升级的用户，请参阅我们的[官方迁移指南](https://openrouter.ai/docs/guides/guides/model-migrations/claude-4-6-opus)。
 context_length: 1000000
 max_output: 128000
 features:
