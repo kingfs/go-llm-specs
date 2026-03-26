@@ -3,6 +3,8 @@ package main
 import (
 	"bytes"
 	"encoding/json"
+	"errors"
+	"flag"
 	"fmt"
 	"io"
 	"log"
@@ -18,6 +20,8 @@ import (
 	"golang.org/x/text/language"
 	"gopkg.in/yaml.v3"
 )
+
+const defaultOpenRouterModelsURL = "https://openrouter.ai/api/v1/models"
 
 // OpenRouter model structures
 type OpenRouterModel struct {
@@ -55,6 +59,7 @@ type OpenRouterResponse struct {
 type RegistryData struct {
 	Models map[string]ModelRegistry `yaml:"models"`
 }
+
 type ModelRegistry struct {
 	ID            string   `yaml:"id"`
 	Name          string   `yaml:"name"`
@@ -68,38 +73,103 @@ type ModelRegistry struct {
 	Aliases       []string `yaml:"aliases,omitempty"`
 }
 
+type ProcessedModel struct {
+	ID            string
+	Name          string
+	Provider      string
+	Description   string
+	DescriptionCN string
+	ContextLen    int
+	MaxOutput     int
+	Features      string
+	Aliases       []string
+}
+
+type generatorConfig struct {
+	Source           string
+	APIURL           string
+	ModelsDir        string
+	CachePath        string
+	OutputGo         string
+	SyncRegistry     bool
+	FetchOnly        bool
+	UseCacheFallback bool
+	HTTPTimeout      time.Duration
+}
+
 func main() {
-	log.Println("Starting llm-specs generator...")
+	cfg := parseFlags()
+	if err := run(cfg); err != nil {
+		log.Fatal(err)
+	}
+}
 
-	// 1. Fetch data from OpenRouter
-	apiModels, err := fetchOpenRouterModels()
+func parseFlags() generatorConfig {
+	defaultURL := os.Getenv("OPENROUTER_MODELS_URL")
+	if defaultURL == "" {
+		defaultURL = defaultOpenRouterModelsURL
+	}
+
+	cfg := generatorConfig{}
+	flag.StringVar(&cfg.Source, "source", "openrouter", "upstream source used to fetch models")
+	flag.StringVar(&cfg.APIURL, "api-url", defaultURL, "upstream models API URL")
+	flag.StringVar(&cfg.ModelsDir, "models-dir", "models", "directory containing model yaml files")
+	flag.StringVar(&cfg.CachePath, "cache-path", "data/models.json", "path for upstream raw models cache")
+	flag.StringVar(&cfg.OutputGo, "output-go", "models_gen.go", "generated Go registry output path")
+	flag.BoolVar(&cfg.SyncRegistry, "sync-registry", true, "write fetched upstream data back into models directory before codegen")
+	flag.BoolVar(&cfg.FetchOnly, "fetch-only", false, "only fetch/cache upstream metadata, skip registry sync and code generation")
+	flag.BoolVar(&cfg.UseCacheFallback, "use-cache-fallback", true, "fall back to the cached raw upstream payload when HTTP fetch fails")
+	flag.DurationVar(&cfg.HTTPTimeout, "timeout", 30*time.Second, "HTTP timeout used when fetching upstream models")
+	flag.Parse()
+	return cfg
+}
+
+func run(cfg generatorConfig) error {
+	log.Printf("Starting llm-specs generator (source=%s)", cfg.Source)
+
+	apiModels, err := fetchSourceModels(cfg)
 	if err != nil {
-		log.Fatalf("Failed to fetch models: %v", err)
+		return fmt.Errorf("fetch upstream models: %w", err)
 	}
-	log.Printf("Fetched %d models from OpenRouter", len(apiModels))
+	log.Printf("Fetched %d models from %s", len(apiModels), cfg.Source)
 
-	// 2. Load Existing Local Registry
-	localModels, err := loadRegistry("models")
+	if cfg.FetchOnly {
+		log.Println("Fetch-only mode enabled, skipping registry sync and code generation")
+		return nil
+	}
+
+	localModels, err := loadRegistry(cfg.ModelsDir)
 	if err != nil {
-		log.Printf("Warning: failed to load local registry: %v (skipping sync, continuing with current files)", err)
-		localModels = make(map[string]ModelRegistry)
+		return fmt.Errorf("load local registry from %s: %w", cfg.ModelsDir, err)
 	}
-	log.Printf("Loaded %d models from local registry", len(localModels))
+	log.Printf("Loaded %d local model files", len(localModels))
 
-	// 3. Sync API data to Local Registry
-	if err := syncToDisk(apiModels, localModels); err != nil {
-		log.Fatalf("Failed to sync models to disk: %v", err)
+	if cfg.SyncRegistry {
+		if err := syncToDisk(apiModels, localModels, cfg.ModelsDir); err != nil {
+			return fmt.Errorf("sync models to disk: %w", err)
+		}
 	}
 
-	// 4. Reload Local Registry (Sole Source of Truth)
-	finalModels, err := loadRegistry("models")
+	finalModels, err := loadRegistry(cfg.ModelsDir)
 	if err != nil {
-		log.Fatalf("Failed to reload local registry: %v", err)
+		return fmt.Errorf("reload local registry from %s: %w", cfg.ModelsDir, err)
 	}
-	log.Printf("Final registry has %d models", len(finalModels))
+	log.Printf("Final registry contains %d models", len(finalModels))
 
-	// 5. Process for Code Generation
-	processedModels := make([]*ProcessedModel, 0)
+	processedModels := buildProcessedModels(finalModels)
+	aliasMap := buildAliasMap(processedModels)
+
+	if err := generateCode(cfg.OutputGo, processedModels, aliasMap); err != nil {
+		return fmt.Errorf("generate code: %w", err)
+	}
+
+	log.Printf("Generator finished successfully, wrote %s", cfg.OutputGo)
+	return nil
+}
+
+func buildProcessedModels(finalModels map[string]ModelRegistry) []*ProcessedModel {
+	processedModels := make([]*ProcessedModel, 0, len(finalModels))
+
 	for id, m := range finalModels {
 		p := &ProcessedModel{
 			ID:            id,
@@ -109,15 +179,15 @@ func main() {
 			DescriptionCN: m.DescriptionCN,
 			ContextLen:    m.ContextLen,
 			MaxOutput:     m.MaxOutput,
-			Aliases:       m.Aliases,
+			Aliases:       normalizeStringList(m.Aliases),
 		}
+
 		if len(m.Features) > 0 {
-			p.Features = strings.Join(m.Features, " | ")
+			p.Features = strings.Join(normalizeStringList(m.Features), " | ")
 		} else {
 			p.Features = "0"
 		}
 
-		// Auto-detect Multimodal for local models too if not explicitly tagged
 		if strings.Contains(p.Features, "ImageIn") || strings.Contains(p.Features, "VideoIn") {
 			if !strings.Contains(p.Features, "CapMultimodal") {
 				if p.Features == "0" {
@@ -131,113 +201,163 @@ func main() {
 		processedModels = append(processedModels, p)
 	}
 
-	// 6. Auto-generate aliases from unique suffixes
-	suffixCounts := make(map[string]int)
-	for _, p := range processedModels {
-		parts := strings.Split(p.ID, "/")
-		if len(parts) > 1 {
-			suffix := parts[len(parts)-1]
-			suffixCounts[suffix]++
-		}
-	}
+	autoAddUniqueSuffixAliases(processedModels)
 
-	for _, p := range processedModels {
-		parts := strings.Split(p.ID, "/")
-		if len(parts) > 1 {
-			suffix := parts[len(parts)-1]
-			if suffixCounts[suffix] == 1 {
-				exists := false
-				for _, a := range p.Aliases {
-					if strings.EqualFold(a, suffix) {
-						exists = true
-						break
-					}
-				}
-				if !exists {
-					p.Aliases = append(p.Aliases, suffix)
-				}
-			}
-		}
-	}
-
-	// Sort for deterministic alias map and output
 	sort.Slice(processedModels, func(i, j int) bool {
 		return processedModels[i].ID < processedModels[j].ID
 	})
 
-	// 7. Populate alias map
+	for _, model := range processedModels {
+		model.Aliases = normalizeStringList(model.Aliases)
+	}
+
+	return processedModels
+}
+
+func autoAddUniqueSuffixAliases(processedModels []*ProcessedModel) {
+	suffixCounts := make(map[string]int, len(processedModels))
+	for _, p := range processedModels {
+		parts := strings.Split(p.ID, "/")
+		if len(parts) > 1 {
+			suffixCounts[parts[len(parts)-1]]++
+		}
+	}
+
+	for _, p := range processedModels {
+		parts := strings.Split(p.ID, "/")
+		if len(parts) <= 1 {
+			continue
+		}
+
+		suffix := parts[len(parts)-1]
+		if suffixCounts[suffix] != 1 {
+			continue
+		}
+
+		exists := false
+		for _, alias := range p.Aliases {
+			if strings.EqualFold(alias, suffix) {
+				exists = true
+				break
+			}
+		}
+		if !exists {
+			p.Aliases = append(p.Aliases, suffix)
+		}
+	}
+}
+
+func buildAliasMap(processedModels []*ProcessedModel) map[string]string {
 	aliasMap := make(map[string]string)
 	for _, p := range processedModels {
 		for _, alias := range p.Aliases {
 			lowerAlias := strings.ToLower(alias)
 			if existingID, ok := aliasMap[lowerAlias]; ok && existingID != p.ID {
-				// Log collision but keep existing (usually manual alias wins if it came first, but here it's processed order)
-				// We should probably sort processedModels by ID first to be deterministic.
-			} else {
-				aliasMap[lowerAlias] = p.ID
+				log.Printf("Skipping alias collision for %q: %s already maps to %s", alias, p.ID, existingID)
+				continue
 			}
+			aliasMap[lowerAlias] = p.ID
 		}
 	}
-
-	// 8. Generate Code
-	if err := generateCode(processedModels, aliasMap); err != nil {
-		log.Fatalf("Failed to generate code: %v", err)
-	}
-
-	log.Println("Generator finished successfully.")
+	return aliasMap
 }
 
-func syncToDisk(apiModels []OpenRouterModel, localModels map[string]ModelRegistry) error {
-	for _, m := range apiModels {
-		local, _ := localModels[m.ID]
-
-		// Update fields from API
-		local.ID = m.ID
-		local.Name = m.Name
-		local.Description = m.Description
-		local.ContextLen = m.ContextLength
-		local.MaxOutput = m.TopProvider.MaxCompletionTokens
-		local.Provider = normalizeProvider(strings.Split(m.ID, "/")[0])
-
-		// Derived features from API (only if local features are empty)
-		if len(local.Features) == 0 {
-			featStr := calculateFeatures(m)
-			if featStr != "0" {
-				local.Features = strings.Split(featStr, " | ")
-			}
-			// Default to CapChat for OR models
-			hasChat := false
-			for _, f := range local.Features {
-				if f == "CapChat" {
-					hasChat = true
-					break
-				}
-			}
-			if !hasChat {
-				local.Features = append([]string{"CapChat"}, local.Features...)
-			}
-		}
-
-		// Save back to disk
-		if err := saveModelToDisk(local); err != nil {
-			log.Printf("Error saving model %s: %v", m.ID, err)
+func syncToDisk(apiModels []OpenRouterModel, localModels map[string]ModelRegistry, modelsDir string) error {
+	for _, upstream := range apiModels {
+		merged := mergeModelRegistry(upstream, localModels[upstream.ID])
+		if err := saveModelToDisk(merged, modelsDir); err != nil {
+			return fmt.Errorf("save model %s: %w", upstream.ID, err)
 		}
 	}
 	return nil
 }
 
-func saveModelToDisk(m ModelRegistry) error {
+func mergeModelRegistry(upstream OpenRouterModel, local ModelRegistry) ModelRegistry {
+	merged := ModelRegistry{
+		ID:          upstream.ID,
+		Name:        upstream.Name,
+		Provider:    normalizeProvider(strings.Split(upstream.ID, "/")[0]),
+		Description: upstream.Description,
+		ContextLen:  upstream.ContextLength,
+		MaxOutput:   upstream.TopProvider.MaxCompletionTokens,
+		Features:    stringsToFeatures(calculateFeatures(upstream)),
+		Aliases:     nil,
+	}
+
+	// Local YAML fields are authoritative when explicitly set.
+	if local.ID != "" {
+		merged.ID = local.ID
+	}
+	if local.Name != "" {
+		merged.Name = local.Name
+	}
+	if local.NameCN != "" {
+		merged.NameCN = local.NameCN
+	}
+	if local.Provider != "" {
+		merged.Provider = local.Provider
+	}
+	if local.Description != "" {
+		merged.Description = local.Description
+	}
+	if local.DescriptionCN != "" {
+		merged.DescriptionCN = local.DescriptionCN
+	}
+	if local.ContextLen > 0 {
+		merged.ContextLen = local.ContextLen
+	}
+	if local.MaxOutput > 0 {
+		merged.MaxOutput = local.MaxOutput
+	}
+	if len(local.Features) > 0 {
+		merged.Features = local.Features
+	}
+	if len(local.Aliases) > 0 {
+		merged.Aliases = local.Aliases
+	}
+
+	merged.Features = normalizeStringList(merged.Features)
+	merged.Aliases = normalizeStringList(merged.Aliases)
+
+	if len(merged.Features) == 0 {
+		merged.Features = []string{"CapChat"}
+	} else if !containsFold(merged.Features, "CapChat") {
+		merged.Features = append([]string{"CapChat"}, merged.Features...)
+		merged.Features = normalizeStringList(merged.Features)
+	}
+
+	return merged
+}
+
+func stringsToFeatures(featureExpr string) []string {
+	if featureExpr == "" || featureExpr == "0" {
+		return nil
+	}
+
+	parts := strings.Split(featureExpr, "|")
+	features := make([]string, 0, len(parts))
+	for _, part := range parts {
+		part = strings.TrimSpace(part)
+		if part == "" || part == "0" {
+			continue
+		}
+		features = append(features, part)
+	}
+	return normalizeStringList(features)
+}
+
+func saveModelToDisk(m ModelRegistry, modelsDir string) error {
 	parts := strings.SplitN(m.ID, "/", 2)
 	if len(parts) != 2 {
 		return fmt.Errorf("invalid model ID: %s", m.ID)
 	}
+
 	provider := parts[0]
 	modelName := parts[1]
-	safeModelName := strings.ReplaceAll(modelName, ":", "_")
-	safeModelName = strings.ReplaceAll(safeModelName, "/", "_")
+	safeModelName := strings.NewReplacer(":", "_", "/", "_").Replace(modelName)
 
-	dir := filepath.Join("models", provider)
-	if err := os.MkdirAll(dir, 0755); err != nil {
+	dir := filepath.Join(modelsDir, provider)
+	if err := os.MkdirAll(dir, 0o755); err != nil {
 		return err
 	}
 
@@ -250,27 +370,12 @@ func saveModelToDisk(m ModelRegistry) error {
 		return err
 	}
 
-	return os.WriteFile(filePath, buf.Bytes(), 0644)
-}
-
-type ProcessedModel struct {
-	ID            string
-	Name          string
-	Provider      string
-	Description   string
-	DescriptionCN string
-	ContextLen    int
-	MaxOutput     int
-	PriceIn       float64
-	PriceOut      float64
-	Features      string // String representation for template
-	Aliases       []string
+	return os.WriteFile(filePath, buf.Bytes(), 0o644)
 }
 
 func calculateFeatures(m OpenRouterModel) string {
 	var features []string
 
-	// Map Input Modalities
 	for _, mod := range m.Architecture.InputModalities {
 		switch strings.ToLower(mod) {
 		case "text":
@@ -286,7 +391,6 @@ func calculateFeatures(m OpenRouterModel) string {
 		}
 	}
 
-	// Map Output Modalities
 	for _, mod := range m.Architecture.OutputModalities {
 		switch strings.ToLower(mod) {
 		case "text":
@@ -302,7 +406,6 @@ func calculateFeatures(m OpenRouterModel) string {
 		}
 	}
 
-	// Function Calling: Check parameters or description
 	hasTools := false
 	for _, p := range m.SupportedParameters {
 		if p == "tools" || p == "tool_choice" {
@@ -310,7 +413,6 @@ func calculateFeatures(m OpenRouterModel) string {
 			break
 		}
 	}
-	// Fallback to description check if parameters missing (older models)
 	if !hasTools && (strings.Contains(strings.ToLower(m.Description), "function calling") || strings.Contains(strings.ToLower(m.Description), "tools")) {
 		hasTools = true
 	}
@@ -318,7 +420,6 @@ func calculateFeatures(m OpenRouterModel) string {
 		features = append(features, "CapFunctionCall")
 	}
 
-	// JSON Mode / Structured Outputs
 	for _, p := range m.SupportedParameters {
 		if p == "response_format" || p == "structured_outputs" {
 			features = append(features, "CapJsonMode")
@@ -326,31 +427,15 @@ func calculateFeatures(m OpenRouterModel) string {
 		}
 	}
 
-	// System Prompt support is very common, usually assumed, but if we want to be strict check parameters?
-	// For now, let's leave it as is or add detection if "system" roles are supported, but the API doesn't expose roles directly in this JSON.
-	// Many models support system prompts implicitly. We won't inadvertently set it to avoid false positives unless we have a clear signal.
-
 	if strings.Contains(strings.ToLower(m.Description), "#multimodal") {
-		// Only add if not already present, though deduplication handles it
 		features = append(features, "ModalityImageIn")
 	}
 
 	if len(features) == 0 {
 		return "0"
 	}
-	// Deduplicate
-	featureMap := make(map[string]bool)
-	var uniqueFeatures []string
-	for _, f := range features {
-		if !featureMap[f] {
-			featureMap[f] = true
-			uniqueFeatures = append(uniqueFeatures, f)
-		}
-	}
-	// Sort for deterministic output
-	sort.Strings(uniqueFeatures)
 
-	return strings.Join(uniqueFeatures, " | ")
+	return strings.Join(normalizeStringList(features), " | ")
 }
 
 func normalizeProvider(idPrefix string) string {
@@ -416,13 +501,13 @@ func init() {
 }
 `
 
-func generateCode(models []*ProcessedModel, aliasMap map[string]string) error {
+func generateCode(outputPath string, models []*ProcessedModel, aliasMap map[string]string) error {
 	tmpl, err := template.New("gen").Parse(modelTemplate)
 	if err != nil {
 		return err
 	}
 
-	f, err := os.Create("models_gen.go")
+	f, err := os.Create(outputPath)
 	if err != nil {
 		return err
 	}
@@ -441,25 +526,31 @@ func generateCode(models []*ProcessedModel, aliasMap map[string]string) error {
 	return tmpl.Execute(f, data)
 }
 
-func fetchOpenRouterModels() ([]OpenRouterModel, error) {
-	resp, err := http.Get("https://openrouter.ai/api/v1/models")
+func fetchSourceModels(cfg generatorConfig) ([]OpenRouterModel, error) {
+	switch strings.ToLower(cfg.Source) {
+	case "openrouter":
+		return fetchOpenRouterModels(cfg.APIURL, cfg.CachePath, cfg.UseCacheFallback, cfg.HTTPTimeout)
+	default:
+		return nil, fmt.Errorf("unsupported source %q", cfg.Source)
+	}
+}
+
+func fetchOpenRouterModels(apiURL, cachePath string, useCacheFallback bool, timeout time.Duration) ([]OpenRouterModel, error) {
+	client := &http.Client{Timeout: timeout}
+	resp, err := client.Get(apiURL)
 	if err != nil {
-		// Fallback to local cache if available
-		log.Printf("Network error: %v. Attempting to use local cache data/models.json", err)
-		body, err := os.ReadFile("data/models.json")
-		if err != nil {
-			return nil, fmt.Errorf("failed to fetch from network and failed to read local cache: %v", err)
-		}
-		var orResp OpenRouterResponse
-		if err := json.Unmarshal(body, &orResp); err != nil {
+		if !useCacheFallback {
 			return nil, err
 		}
-		return orResp.Data, nil
+		return loadOpenRouterModelsFromCache(cachePath, err)
 	}
 	defer resp.Body.Close()
 
 	if resp.StatusCode != http.StatusOK {
-		return nil, fmt.Errorf("unexpected status: %s", resp.Status)
+		if !useCacheFallback {
+			return nil, fmt.Errorf("unexpected status: %s", resp.Status)
+		}
+		return loadOpenRouterModelsFromCache(cachePath, fmt.Errorf("unexpected status: %s", resp.Status))
 	}
 
 	body, err := io.ReadAll(resp.Body)
@@ -467,15 +558,40 @@ func fetchOpenRouterModels() ([]OpenRouterModel, error) {
 		return nil, err
 	}
 
-	// Save raw JSON as asset
-	os.MkdirAll("data", 0755)
-	if err := os.WriteFile("data/models.json", body, 0644); err != nil {
-		log.Printf("Warning: failed to save raw JSON: %v", err)
+	if cachePath != "" {
+		cacheDir := filepath.Dir(cachePath)
+		if cacheDir != "." {
+			if err := os.MkdirAll(cacheDir, 0o755); err != nil {
+				log.Printf("Warning: failed to create cache directory %s: %v", cacheDir, err)
+			}
+		}
+		if err := os.WriteFile(cachePath, body, 0o644); err != nil {
+			log.Printf("Warning: failed to save raw JSON cache to %s: %v", cachePath, err)
+		}
 	}
 
 	var orResp OpenRouterResponse
 	if err := json.Unmarshal(body, &orResp); err != nil {
 		return nil, err
+	}
+
+	return orResp.Data, nil
+}
+
+func loadOpenRouterModelsFromCache(cachePath string, fetchErr error) ([]OpenRouterModel, error) {
+	if cachePath == "" {
+		return nil, fetchErr
+	}
+
+	log.Printf("Fetch failed (%v), attempting cache fallback from %s", fetchErr, cachePath)
+	body, err := os.ReadFile(cachePath)
+	if err != nil {
+		return nil, errors.Join(fetchErr, fmt.Errorf("read cache %s: %w", cachePath, err))
+	}
+
+	var orResp OpenRouterResponse
+	if err := json.Unmarshal(body, &orResp); err != nil {
+		return nil, errors.Join(fetchErr, fmt.Errorf("decode cache %s: %w", cachePath, err))
 	}
 
 	return orResp.Data, nil
@@ -498,7 +614,6 @@ func loadRegistry(root string) (map[string]ModelRegistry, error) {
 		}
 		defer f.Close()
 
-		// Try to decode as RegistryData (map of models)
 		var data RegistryData
 		decoder := yaml.NewDecoder(f)
 		if err := decoder.Decode(&data); err == nil && len(data.Models) > 0 {
@@ -511,8 +626,10 @@ func loadRegistry(root string) (map[string]ModelRegistry, error) {
 			return nil
 		}
 
-		// Seek back and try as a single ModelRegistry
-		f.Seek(0, 0)
+		if _, err := f.Seek(0, io.SeekStart); err != nil {
+			return err
+		}
+
 		var single ModelRegistry
 		if err := yaml.NewDecoder(f).Decode(&single); err == nil && (single.ID != "" || single.Name != "") {
 			if single.ID != "" {
@@ -524,4 +641,45 @@ func loadRegistry(root string) (map[string]ModelRegistry, error) {
 	})
 
 	return models, err
+}
+
+func normalizeStringList(values []string) []string {
+	if len(values) == 0 {
+		return nil
+	}
+
+	seen := make(map[string]string, len(values))
+	for _, value := range values {
+		value = strings.TrimSpace(value)
+		if value == "" {
+			continue
+		}
+
+		lower := strings.ToLower(value)
+		if _, ok := seen[lower]; !ok {
+			seen[lower] = value
+		}
+	}
+
+	if len(seen) == 0 {
+		return nil
+	}
+
+	result := make([]string, 0, len(seen))
+	for _, value := range seen {
+		result = append(result, value)
+	}
+	sort.Slice(result, func(i, j int) bool {
+		return strings.ToLower(result[i]) < strings.ToLower(result[j])
+	})
+	return result
+}
+
+func containsFold(values []string, target string) bool {
+	for _, value := range values {
+		if strings.EqualFold(value, target) {
+			return true
+		}
+	}
+	return false
 }

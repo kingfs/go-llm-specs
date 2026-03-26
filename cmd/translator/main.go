@@ -3,20 +3,20 @@ package main
 import (
 	"bytes"
 	"encoding/json"
+	"flag"
 	"fmt"
 	"io"
 	"log"
 	"net/http"
 	"os"
 	"path/filepath"
+	"sort"
 	"strings"
 	"time"
 
 	"github.com/joho/godotenv"
 	"gopkg.in/yaml.v3"
 )
-
-// -- Data Structures --
 
 type ModelRegistry struct {
 	ID            string   `yaml:"id"`
@@ -30,11 +30,8 @@ type ModelRegistry struct {
 	Features      []string `yaml:"features,omitempty"`
 	Aliases       []string `yaml:"aliases,omitempty"`
 
-	// Internal helper
 	filePath string `yaml:"-"`
 }
-
-// -- API Types --
 
 type ChatMessage struct {
 	Role    string `json:"role"`
@@ -52,100 +49,123 @@ type ChatResponse struct {
 	} `json:"choices"`
 }
 
-// -- Main --
+type translatorConfig struct {
+	ModelsDir    string
+	BatchSize    int
+	Limit        int
+	Provider     string
+	IDPrefix     string
+	OnlyMissing  bool
+	DryRun       bool
+	RequestDelay time.Duration
+	APIBase      string
+	APIKey       string
+	Model        string
+}
 
 func main() {
 	godotenv.Load()
 
-	apiKey := os.Getenv("LLM_API_KEY")
-	if apiKey == "" {
-		log.Fatal("LLM_API_KEY environment variable is required")
-	}
-	// Defaults
-	apiBase := os.Getenv("LLM_BASE_URL")
-	if apiBase == "" {
-		apiBase = "https://api.openai.com/v1"
-	}
-	modelName := os.Getenv("LLM_MODEL")
-	if modelName == "" {
-		modelName = "gpt-4o-mini"
-	}
-
-	// 1. Scan models/ directory recursively
-	log.Println("Scanning models/ directory...")
-	registry, err := scanRegistry("models")
+	cfg, err := parseFlags()
 	if err != nil {
-		log.Fatalf("Failed to scan models directory: %v", err)
-	}
-	log.Printf("Found %d models in registry.", len(registry))
-
-	// 2. Identify missing translations
-	var pending []*ModelRegistry
-	for _, m := range registry {
-		// Condition: Has English desc, but NO Chinese desc
-		if m.Description != "" && m.DescriptionCN == "" {
-			pending = append(pending, m)
-		}
+		log.Fatal(err)
 	}
 
-	log.Printf("Found %d models needing translation.", len(pending))
-	if len(pending) == 0 {
-		return
-	}
-
-	// 3. Batch Process
-	batchSize := 10
-	totalBatches := (len(pending) + batchSize - 1) / batchSize
-
-	for i := 0; i < len(pending); i += batchSize {
-		end := i + batchSize
-		if end > len(pending) {
-			end = len(pending)
-		}
-		batch := pending[i:end]
-		batchIdx := (i / batchSize) + 1
-		log.Printf("Processing batch %d/%d (%d items)...", batchIdx, totalBatches, len(batch))
-
-		translations, err := translateBatch(batch, apiKey, apiBase, modelName)
-		if err != nil {
-			log.Printf("Error translating batch %d: %v", batchIdx, err)
-			continue // Skip to next batch, don't crash entire process
-		}
-
-		// Update and Save individually
-		changes := 0
-		for id, cnDesc := range translations {
-			newDesc := cleanResult(cnDesc)
-			if newDesc == "" {
-				continue
-			}
-
-			// Find model in batch
-			var target *ModelRegistry
-			for _, m := range batch {
-				if m.ID == id {
-					target = m
-					break
-				}
-			}
-
-			if target != nil {
-				target.DescriptionCN = newDesc
-				if err := saveModel(target); err != nil {
-					log.Printf("Error saving model %s: %v", id, err)
-				} else {
-					changes++
-				}
-			}
-		}
-		log.Printf("Saved %d new translations in batch %d.", changes, batchIdx)
-
-		// Rate limit protection
-		time.Sleep(1 * time.Second)
+	if err := run(cfg); err != nil {
+		log.Fatal(err)
 	}
 }
 
-// -- Helpers --
+func parseFlags() (translatorConfig, error) {
+	cfg := translatorConfig{}
+
+	flag.StringVar(&cfg.ModelsDir, "models-dir", "models", "directory containing model yaml files")
+	flag.IntVar(&cfg.BatchSize, "batch-size", 10, "number of models translated per API request")
+	flag.IntVar(&cfg.Limit, "limit", 0, "maximum number of models to translate in this run, 0 means no limit")
+	flag.StringVar(&cfg.Provider, "provider", "", "optional provider filter, matched case-insensitively against yaml provider")
+	flag.StringVar(&cfg.IDPrefix, "id-prefix", "", "optional model ID prefix filter, for example openai/ or qwen/")
+	flag.BoolVar(&cfg.OnlyMissing, "only-missing", true, "translate only models without description_cn")
+	flag.BoolVar(&cfg.DryRun, "dry-run", false, "print selected models without calling the translation API")
+	flag.DurationVar(&cfg.RequestDelay, "delay", time.Second, "delay between translation batches")
+	flag.Parse()
+
+	cfg.APIKey = strings.TrimSpace(os.Getenv("LLM_API_KEY"))
+	cfg.APIBase = strings.TrimSpace(os.Getenv("LLM_BASE_URL"))
+	cfg.Model = strings.TrimSpace(os.Getenv("LLM_MODEL"))
+
+	if cfg.APIBase == "" {
+		cfg.APIBase = "https://api.openai.com/v1"
+	}
+	if cfg.Model == "" {
+		cfg.Model = "gpt-4o-mini"
+	}
+	if !cfg.DryRun && cfg.APIKey == "" {
+		return cfg, fmt.Errorf("LLM_API_KEY environment variable is required")
+	}
+	if cfg.BatchSize <= 0 {
+		return cfg, fmt.Errorf("batch-size must be greater than 0")
+	}
+
+	return cfg, nil
+}
+
+func run(cfg translatorConfig) error {
+	log.Printf("Scanning %s for model yaml files...", cfg.ModelsDir)
+	registry, err := scanRegistry(cfg.ModelsDir)
+	if err != nil {
+		return fmt.Errorf("scan models directory: %w", err)
+	}
+	log.Printf("Loaded %d models from registry", len(registry))
+
+	pending := collectPendingTranslations(registry, cfg)
+	log.Printf("Selected %d models for translation", len(pending))
+	if len(pending) == 0 {
+		return nil
+	}
+
+	if cfg.DryRun {
+		for _, model := range pending {
+			log.Printf("dry-run: %s (%s)", model.ID, model.filePath)
+		}
+		return nil
+	}
+
+	totalBatches := (len(pending) + cfg.BatchSize - 1) / cfg.BatchSize
+	for i := 0; i < len(pending); i += cfg.BatchSize {
+		end := min(i+cfg.BatchSize, len(pending))
+		batch := pending[i:end]
+		batchIdx := (i / cfg.BatchSize) + 1
+
+		log.Printf("Translating batch %d/%d (%d items)", batchIdx, totalBatches, len(batch))
+		translations, err := translateBatch(batch, cfg.APIKey, cfg.APIBase, cfg.Model)
+		if err != nil {
+			log.Printf("Batch %d failed: %v", batchIdx, err)
+			continue
+		}
+
+		changed := 0
+		for _, target := range batch {
+			newDesc := cleanResult(translations[target.ID])
+			if newDesc == "" || newDesc == target.DescriptionCN {
+				continue
+			}
+
+			target.DescriptionCN = newDesc
+			if err := saveModel(target); err != nil {
+				log.Printf("Save failed for %s: %v", target.ID, err)
+				continue
+			}
+			changed++
+		}
+
+		log.Printf("Saved %d translated models in batch %d", changed, batchIdx)
+		if end < len(pending) {
+			time.Sleep(cfg.RequestDelay)
+		}
+	}
+
+	return nil
+}
 
 func scanRegistry(root string) ([]*ModelRegistry, error) {
 	var models []*ModelRegistry
@@ -170,7 +190,38 @@ func scanRegistry(root string) ([]*ModelRegistry, error) {
 		}
 		return nil
 	})
-	return models, err
+	if err != nil {
+		return nil, err
+	}
+
+	sort.Slice(models, func(i, j int) bool {
+		return models[i].ID < models[j].ID
+	})
+	return models, nil
+}
+
+func collectPendingTranslations(registry []*ModelRegistry, cfg translatorConfig) []*ModelRegistry {
+	pending := make([]*ModelRegistry, 0, len(registry))
+	for _, m := range registry {
+		if m.Description == "" {
+			continue
+		}
+		if cfg.OnlyMissing && strings.TrimSpace(m.DescriptionCN) != "" {
+			continue
+		}
+		if cfg.Provider != "" && !strings.EqualFold(strings.TrimSpace(m.Provider), strings.TrimSpace(cfg.Provider)) {
+			continue
+		}
+		if cfg.IDPrefix != "" && !strings.HasPrefix(strings.ToLower(m.ID), strings.ToLower(cfg.IDPrefix)) {
+			continue
+		}
+		pending = append(pending, m)
+	}
+
+	if cfg.Limit > 0 && len(pending) > cfg.Limit {
+		pending = pending[:cfg.Limit]
+	}
+	return pending
 }
 
 func saveModel(m *ModelRegistry) error {
@@ -180,23 +231,22 @@ func saveModel(m *ModelRegistry) error {
 	if err := enc.Encode(m); err != nil {
 		return err
 	}
-	return os.WriteFile(m.filePath, buf.Bytes(), 0644)
+	return os.WriteFile(m.filePath, buf.Bytes(), 0o644)
 }
 
 func translateBatch(batch []*ModelRegistry, key, base, model string) (map[string]string, error) {
-	// Prepare input map: ID -> English Desc
-	inputs := make(map[string]string)
+	inputs := make(map[string]string, len(batch))
 	for _, m := range batch {
 		inputs[m.ID] = m.Description
 	}
 
 	inputJSON, _ := json.MarshalIndent(inputs, "", "  ")
+	prompt := fmt.Sprintf(`You are a professional technical translator for LLM model metadata.
+Translate only the JSON values into concise, accurate Simplified Chinese.
+Do not translate keys.
+Return valid JSON only, with the exact same keys.
 
-	prompt := fmt.Sprintf(`You are a professional technical translator for LLM (Large Language Specs).
-Translate the values of the following JSON object into professional, concise Chinese.
-Do not translate keys (Model IDs). Keep the structure exactly the same: valid JSON {"id": "translated_description"}.
-
-Content to translate:
+Input JSON:
 %s`, string(inputJSON))
 
 	reqBody := ChatRequest{
@@ -208,7 +258,10 @@ Content to translate:
 
 	jsonBody, _ := json.Marshal(reqBody)
 
-	req, _ := http.NewRequest("POST", base+"/chat/completions", bytes.NewBuffer(jsonBody))
+	req, err := http.NewRequest("POST", strings.TrimRight(base, "/")+"/chat/completions", bytes.NewBuffer(jsonBody))
+	if err != nil {
+		return nil, err
+	}
 	req.Header.Set("Content-Type", "application/json")
 	req.Header.Set("Authorization", "Bearer "+key)
 
@@ -219,23 +272,20 @@ Content to translate:
 	}
 	defer resp.Body.Close()
 
-	if resp.StatusCode != 200 {
+	if resp.StatusCode != http.StatusOK {
 		body, _ := io.ReadAll(resp.Body)
-		return nil, fmt.Errorf("API Error %d: %s", resp.StatusCode, string(body))
+		return nil, fmt.Errorf("API error %d: %s", resp.StatusCode, string(body))
 	}
 
 	var chatResp ChatResponse
 	if err := json.NewDecoder(resp.Body).Decode(&chatResp); err != nil {
 		return nil, err
 	}
-
 	if len(chatResp.Choices) == 0 {
 		return nil, fmt.Errorf("empty response from LLM")
 	}
 
-	rawContent := chatResp.Choices[0].Message.Content
-	// Extract JSON from potential code blocks
-	rawContent = strings.TrimSpace(rawContent)
+	rawContent := strings.TrimSpace(chatResp.Choices[0].Message.Content)
 	if strings.HasPrefix(rawContent, "```json") {
 		rawContent = strings.TrimPrefix(rawContent, "```json")
 		rawContent = strings.TrimSuffix(rawContent, "```")
@@ -256,4 +306,11 @@ Content to translate:
 
 func cleanResult(s string) string {
 	return strings.TrimSpace(s)
+}
+
+func min(a, b int) int {
+	if a < b {
+		return a
+	}
+	return b
 }

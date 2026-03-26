@@ -1,187 +1,183 @@
 # go-llm-specs
 
-The most comprehensive, fastest, and type-safe LLM static metadata registry in the Golang ecosystem.
+A static, type-safe LLM model metadata registry for Go.
 
 [English](./README_EN.md) | [中文](./README.md)
 
 [![Daily Model Sync](https://github.com/kingfs/go-llm-specs/actions/workflows/daily-update.yml/badge.svg)](https://github.com/kingfs/go-llm-specs/actions/workflows/daily-update.yml)
 [![Go Reference](https://pkg.go.dev/badge/github.com/kingfs/go-llm-specs.svg)](https://pkg.go.dev/github.com/kingfs/go-llm-specs)
 
-## 🌟 Project Vision
+## What This Project Does
 
-*   **Single Source of Truth**: Primary data sourced from OpenRouter, combined with local overrides and additions in the `models/` directory.
-*   **Zero Runtime IO**: All data is compiled into the binary—zero network latency for queries.
-*   **High Performance**: Utilizes Bitmasks and efficient indexing for nanosecond-level lookups (including new types like Embedding/Reranker).
-*   **Self-Updating**: Powered by GitHub Actions for fully automated daily updates and releases.
+`go-llm-specs` maintains a compiled-in registry of LLM metadata for Go applications.
 
-## 🚀 Benchmarks
+- The primary upstream source is currently OpenRouter.
+- Local `models/**/*.yaml` files hold overrides, additions, aliases, and Chinese descriptions.
+- The final merged registry is emitted into `models_gen.go`.
+- Runtime lookups are fully static and require no network I/O.
+- `cmd/translator` incrementally fills missing `description_cn` fields under `models/`.
 
-Tested on Apple M3 Pro. All operations are nanosecond-level with near-zero memory allocation:
+For AI-oriented repository guidance, see [AGENTS.md](./AGENTS.md). For maintainer workflow details, see [docs/DEVELOPMENT.md](./docs/DEVELOPMENT.md).
 
-| Operation | Performance | Allocation |
-| :--- | :--- | :--- |
-| `Get(ID)` (Exact Lookup) | **~6 ns/op** | 0 B/op |
-| `Get(Alias)` (Alias Lookup) | **~24 ns/op** | 0 B/op |
-| `GetMany([]string)` (Batch) | **~156 ns/op** | 80 B/op (1 alloc) |
-| `Search(query, limit)` (Fuzzy) | **~35 µs/op** | ~11 KB/op |
-| `Query().Has(...).List()` | **~2000 ns/op** | 0 B/op |
+## Main Features
 
-## 📦 Installation
+- `Get` / `GetMany`: exact lookup by model ID or alias
+- `Query`: chainable capability filtering backed by bitmasks
+- `Search`: fuzzy search across IDs, names, and aliases
+- Local override support: explicitly set YAML fields win over upstream values
+- Code generation: the merged registry can be embedded directly into downstream Go binaries
+
+## Installation
 
 ```bash
 go get github.com/kingfs/go-llm-specs
 ```
 
-## 🛠 Usage Examples
-
-### 1. Basic Get
-
-Supports model retrieval by ID or alias:
+## Quick Example
 
 ```go
 package main
 
 import (
-    "fmt"
-    "github.com/kingfs/go-llm-specs"
+	"fmt"
+
+	llmspecs "github.com/kingfs/go-llm-specs"
 )
 
 func main() {
-    // Get model by alias
-    if m, ok := llmspecs.Get("gpt4t"); ok {
-        fmt.Printf("Model: %s\n", m.Name())
-        fmt.Printf("Context Length: %d\n", m.ContextLength())
-    }
+	if m, ok := llmspecs.Get("gpt4t"); ok {
+		fmt.Println(m.Name(), m.ContextLength())
+	}
 }
 ```
 
-### 2. Batch Get (GetMany)
-
-Efficiently retrieve multiple models, automatically skipping those that don't exist:
+### Query Example
 
 ```go
-names := []string{"gpt4t", "qwen3-32b", "non-existent"}
-models := llmspecs.GetMany(names)
-for _, m := range models {
-    fmt.Printf("- Found: %s\n", m.Name())
-}
+models := llmspecs.Query().
+	Provider("Anthropic").
+	Has(llmspecs.ModalityImageIn).
+	Has(llmspecs.CapFunctionCall).
+	List()
 ```
 
-### 3. Chainable Query
-
-Fast bitmask-based filtering to find models matching specific criteria:
+### Search Example
 
 ```go
-package main
-
-import (
-    "fmt"
-    "github.com/kingfs/go-llm-specs"
-)
-
-func main() {
-    // Find Anthropic models that support Vision and Function Calling
-    models := llmspecs.Query().
-        Provider("Anthropic").
-        Has(llmspecs.ModalityImageIn).
-        Has(llmspecs.CapFunctionCall).
-        List()
-
-    for _, m := range models {
-        fmt.Printf("- %s: %s\n", m.ID(), m.Description())
-    }
-}
-```
-
-### 3. Fuzzy Search
-
-When you are unsure of the full model name, use the search feature to get results ranked by relevance. The search logic matches against IDs, Names, and Aliases with the following weights:
-
-1.  **Exact Match** (ID: 100 pts, Name: 90 pts)
-2.  **Exact Alias Match** (80 pts)
-3.  **Prefix Match** (ID: 50 pts, Name: 40 pts)
-4.  **Substring Match** (ID: 20 pts, Name: 10 pts)
-5.  **Alias Substring Match** (15 pts)
-
-```go
-// Search models containing "claude"
 results := llmspecs.Search("claude", 5)
-for _, m := range results {
-    fmt.Printf("Found: %s (%s)\n", m.Name(), m.ID())
-}
 ```
 
-### 4. Aliases
+See [examples/basic/main.go](./examples/basic/main.go) for a runnable example.
 
-To simplify lookups, the project provides aliases via:
-- **Manual Overrides**: Manually defined in the `models/` directory (highest priority).
-- **Auto-Generation**: If a model ID suffix (e.g., `qwen3-32b` from `qwen/qwen3-32b`) is unique among all models, the generator automatically assigns it as an alias.
+## Repository Layout
 
-```go
-// Lookup using an auto-generated unique suffix alias
-m, ok := llmspecs.Get("qwen3-32b")
+```text
+.
+├── cmd/
+│   ├── generator/      # fetch upstream data and generate the static registry
+│   └── translator/     # incrementally translate model descriptions
+├── data/
+│   └── models.json     # cached upstream payload
+├── docs/
+├── models/             # human-maintained YAML model files
+├── models_gen.go       # generated file, do not edit manually
+└── Taskfile.yml        # go-task entry point
 ```
 
-Check the [examples](examples) directory for more details.
+## Development Commands
 
-## 📂 Custom Registry & Overrides
+The repository uses `go-task` as the main command entry point.
 
-The project supports adding new models or overriding existing ones via the `models/` directory in the root. The generator recursively scans all `.yaml` files in his folder.
-
-### 1. Directory Structure
-It is recommended to organize files by provider:
-```
-models/
-├── openai/
-│   ├── gpt-4o.yaml
-│   └── text-embedding-3.yaml
-├── anthropic/
-│   └── claude-3-opus.yaml
-└── custom-provider.yaml
+```bash
+task fmt
+task lint
+task test
+task build
+task generator
+task translator
+task sync
 ```
 
-### 2. Registration Rules
-- **New Models**: Create a YAML file with a unique `id` (e.g., `my-provider/my-model`).
-- **Overrides**: Use the same `id` as in OpenRouter; fields in the YAML will override the API-sourced data.
+Pass extra CLI flags after `--`:
 
-### 3. YAML Format Example
+```bash
+task generator -- -fetch-only
+task translator -- -provider OpenAI -limit 20
+task run -- go test ./...
+```
+
+## Generator
+
+`cmd/generator` is responsible for:
+
+1. Fetching the upstream model list and descriptions.
+2. Merging local overrides from `models/`.
+3. Writing updated YAML files back to `models/`.
+4. Emitting `models_gen.go` for downstream Go projects.
+
+Common commands:
+
+```bash
+task generator
+task generator -- -fetch-only
+task generator -- -sync-registry=false
+```
+
+Useful flags:
+
+- `-source`: upstream source, currently `openrouter`
+- `-api-url`: upstream models endpoint
+- `-models-dir`: local YAML directory
+- `-cache-path`: raw upstream JSON cache path
+- `-output-go`: generated Go file path
+- `-fetch-only`: refresh upstream cache only
+
+## Translator
+
+By default, `cmd/translator` only targets YAML files that:
+
+- have `description`
+- do not yet have `description_cn`
+
+Common commands:
+
+```bash
+export LLM_API_KEY="sk-..."
+task translator
+task translator -- -provider OpenAI -limit 50
+task translator -- -dry-run -id-prefix qwen/
+```
+
+Environment variables:
+
+- `LLM_API_KEY`: required
+- `LLM_BASE_URL`: optional, defaults to `https://api.openai.com/v1`
+- `LLM_MODEL`: optional, defaults to `gpt-4o-mini`
+
+## Local Override Example
+
 ```yaml
 id: openai/text-embedding-3-large
 name: "OpenAI: Text Embedding 3 Large"
 provider: OpenAI
 description_cn: "OpenAI's most powerful embedding model."
 features:
-  - CapEmbedding    # Support for new model types
+  - CapEmbedding
   - ModalityTextIn
 context_length: 8192
 aliases:
   - text-embedding-3-large
 ```
 
-For supported features, check `capability.go`.
+See [capability.go](./capability.go) for supported capability constants.
 
-## 🤖 How it Works
+## Recommended Workflow
 
-1.  **Generator (cmd/generator)**: Automatically fetches the full model list from OpenRouter and recursively loads all local definitions from `models/`, then merges them.
-2.  **Translator (cmd/translator)**: Optionally uses LLMs to translate missing Chinese descriptions in `models/`.
-3.  **Local Registry (models/)**: Stores manual corrections, aliases, translations, and models missing from the API (like Embedding/Reranker).
-4.  **Code Gen**: Automatically generates `models_gen.go`, hard-coding all data into static maps.
-5.  **Auto Update**: Uses GitHub Actions to sync daily and publish new versions using SemVer.
+1. Run `task generator` to refresh upstream data and local registry files.
+2. Run `task translator` if Chinese descriptions need to be filled in.
+3. Run `task generator` again so translated fields are baked into `models_gen.go`.
+4. Run `task ci` before submitting changes.
 
-## 📝 Running Tools Locally
-
-### Generator
-```bash
-go run cmd/generator/main.go
-```
-
-### Translator
-Requires `LLM_API_KEY`:
-```bash
-export LLM_API_KEY="sk-..."
-go run cmd/translator/main.go
-```
-
-## 📄 License
+## License
 
 Apache 2.0 License

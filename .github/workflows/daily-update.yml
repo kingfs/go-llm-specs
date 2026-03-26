@@ -25,6 +25,11 @@ jobs:
         with:
           go-version: '1.25'
 
+      - name: Install Task
+        run: |
+          go install github.com/go-task/task/v3/cmd/task@latest
+          echo "$(go env GOPATH)/bin" >> "$GITHUB_PATH"
+
       - name: Fetch and Generate (Phase 1)
         id: generate
         run: |
@@ -36,7 +41,7 @@ jobs:
           fi
 
           # Run generator to fetch latest models.json
-          go run cmd/generator/main.go
+          task generator
 
           # Extract new IDs and compare
           grep -oE 'IDVal:\s+"[^"]+"' models_gen.go | cut -d'"' -f2 | sort > /tmp/models_after.txt
@@ -51,15 +56,15 @@ jobs:
         run: |
           if [ -n "$LLM_API_KEY" ]; then
             echo "LLM_API_KEY found, running translator..."
-            go run cmd/translator/main.go
+            task translator
             
             # Re-run generator to bake in the new translations
-            go run cmd/generator/main.go
+            task generator
           else
             echo "Skipping translation (LLM_API_KEY not set)"
           fi
           
-          go fmt ./...
+          task fmt
 
       - name: Check for changes
         id: check_changes

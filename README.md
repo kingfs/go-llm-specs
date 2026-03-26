@@ -1,189 +1,186 @@
 # go-llm-specs
 
-构建 Golang 生态中最全、最快、类型安全的 LLM 静态元数据中心。
+构建 Golang 生态中面向 LLM 的静态模型元数据注册表。
 
 [English](./README_EN.md) | [中文](./README.md)
 
 [![Daily Model Sync](https://github.com/kingfs/go-llm-specs/actions/workflows/daily-update.yml/badge.svg)](https://github.com/kingfs/go-llm-specs/actions/workflows/daily-update.yml)
 [![Go Reference](https://pkg.go.dev/badge/github.com/kingfs/go-llm-specs.svg)](https://pkg.go.dev/github.com/kingfs/go-llm-specs)
 
-## 🌟 项目愿景
+## 项目定位
 
-*   **Single Source of Truth**: 以 OpenRouter 为主数据源，结合本地 `models/` 目录下的修正与补充。
-*   **Zero Runtime IO**: 所有数据编译进二进制，查询零网络延迟。
-*   **High Performance**: 利用 Bitmask（位掩码）处理模型能力，纳秒级查询（包括新增的模型类型如 Embedding/Reranker）。
-*   **Self-Updating**: 利用 GitHub Actions 实现“无人值守”的自动更新与版本发布。
+`go-llm-specs` 维护一份静态、类型安全、可直接编译进 Go 二进制的 LLM 模型注册表。
 
-## 🚀 性能基准
+- 上游主数据源当前为 OpenRouter。
+- 本地 `models/**/*.yaml` 负责人工修正、补充、别名和中文描述。
+- 生成结果写入 `models_gen.go`，运行时不需要网络请求。
+- `cmd/translator` 负责对 `models/` 下缺失 `description_cn` 的文件做增量翻译。
 
-在 Apple M3 Pro 上测试，所有操作均为纳秒级且几乎零内存分配：
+AI 协作说明见 [AGENTS.md](./AGENTS.md)，开发流程说明见 [docs/DEVELOPMENT.md](./docs/DEVELOPMENT.md)。
 
-| 操作 | 性能 | 内存分配 |
-| :--- | :--- | :--- |
-| `Get(ID)` (精确查找) | **~6 ns/op** | 0 B/op |
-| `Get(Alias)` (别名查找) | **~24 ns/op** | 0 B/op |
-| `GetMany([]string)` (批量) | **~156 ns/op** | 80 B/op (1 alloc) |
-| `Search(query, limit)` (模糊搜索) | **~35 µs/op** | ~11 KB/op |
-| `Query().Has(...).List()` | **~2000 ns/op** | 0 B/op |
+## 核心能力
 
-## 📦 安装
+- `Get` / `GetMany`：按 ID 或别名快速查找模型。
+- `Query`：基于位掩码能力的链式过滤。
+- `Search`：按 ID、名称、别名做模糊搜索。
+- `models/` 覆盖机制：本地 YAML 显式填写的字段优先于上游数据。
+- 代码生成：将最终注册表固化到 `models_gen.go`，方便其他 Go 项目直接依赖。
+
+## 安装
 
 ```bash
 go get github.com/kingfs/go-llm-specs
 ```
 
-## 🛠 使用示例
+## 快速使用
 
-### 1. 基础获取 (Get)
-
-支持通过 ID 或别名获取模型信息：
+### 基础获取
 
 ```go
 package main
 
 import (
-    "fmt"
-    "github.com/kingfs/go-llm-specs"
+	"fmt"
+
+	llmspecs "github.com/kingfs/go-llm-specs"
 )
 
 func main() {
-    // 通过别名获取模型
-    if m, ok := llmspecs.Get("gpt4t"); ok {
-        fmt.Printf("Model: %s\n", m.Name())
-        fmt.Printf("Context Length: %d\n", m.ContextLength())
-    }
+	if m, ok := llmspecs.Get("gpt4t"); ok {
+		fmt.Println(m.Name(), m.ContextLength())
+	}
 }
 ```
 
-### 2. 批量获取 (GetMany)
-
-高效取回多个模型，自动跳过不存在的模型：
+### 链式查询
 
 ```go
-names := []string{"gpt4t", "qwen3-32b", "non-existent"}
-models := llmspecs.GetMany(names)
-for _, m := range models {
-    fmt.Printf("- Found: %s\n", m.Name())
-}
+models := llmspecs.Query().
+	Provider("Anthropic").
+	Has(llmspecs.ModalityImageIn).
+	Has(llmspecs.CapFunctionCall).
+	List()
 ```
 
-### 3. 链式查询 (Query)
-
-强大的位掩码过滤，极速筛选符合要求的模型：
+### 模糊搜索
 
 ```go
-package main
-
-import (
-    "fmt"
-    "github.com/kingfs/go-llm-specs"
-)
-
-func main() {
-    // 筛选 Anthropic 旗下支持图片输入和函数调用的模型
-    models := llmspecs.Query().
-        Provider("Anthropic").
-        Has(llmspecs.ModalityImageIn).
-        Has(llmspecs.CapFunctionCall).
-        List()
-
-    for _, m := range models {
-        fmt.Printf("- %s: %s\n", m.ID(), m.Description())
-    }
-}
-```
-
-### 3. 模糊搜索 (Search)
-
-当你不确定模型全名时，可以使用搜索功能获取按相关度排序的结果。搜索逻辑支持对 ID、名称和别名进行加权匹配：
-
-1.  **精确匹配** (ID: 100分, 名称: 90分)
-2.  **别名精确匹配** (80分)
-3.  **前缀匹配** (ID: 50分, 名称: 40分)
-4.  **子串匹配** (ID: 20分, 名称: 10分)
-5.  **别名子串匹配** (15分)
-
-```go
-// 搜索包含 "claude" 的模型
 results := llmspecs.Search("claude", 5)
-for _, m := range results {
-    fmt.Printf("Found: %s (%s)\n", m.Name(), m.ID())
-}
 ```
 
-### 4. 别名机制 (Aliases)
+更多示例见 [examples/basic/main.go](./examples/basic/main.go)。
 
-为了简化查找，项目通过以下方式生成别名：
-- **手动修正**: 在 `models/` 目录下人工定义的别名（具有最高优先级）。
-- **自动生成**: 如果模型 ID 的后缀（如 `qwen/qwen3-32b` 中的 `qwen3-32b`）在全量模型中是唯一的，生成器会自动将其设为别名。
+## 数据目录
 
-```go
-// 使用自动生成的唯一后缀别名查找
-m, ok := llmspecs.Get("qwen3-32b")
+```text
+.
+├── cmd/
+│   ├── generator/      # 从上游抓取并生成静态注册表
+│   └── translator/     # 对 models/ 做增量翻译
+├── data/
+│   └── models.json     # 上游原始缓存
+├── docs/
+├── models/             # 人工维护的 YAML 模型定义
+├── models_gen.go       # 生成文件，不要手改
+└── Taskfile.yml        # go-task 统一入口
 ```
 
-更多示例请参考 [examples](examples) 目录。
+## 开发命令
 
-## 📂 自定义注册表与覆盖
+项目使用 `go-task` 作为统一入口。
 
-项目支持通过根目录下的 `models/` 文件夹添加新模型或覆盖现有模型信息。生成器会递归扫描该目录下的所有 `.yaml` 文件。
-
-### 1. 目录结构
-建议按供应商组织文件：
-```
-models/
-├── openai/
-│   ├── gpt-4o.yaml
-│   └── text-embedding-3.yaml
-├── anthropic/
-│   └── claude-3-opus.yaml
-└── custom-provider.yaml
+```bash
+task fmt
+task lint
+task test
+task build
+task generator
+task translator
+task sync
 ```
 
-### 2. 添加/覆盖规则
-- **添加新模型**: 创建 YAML 文件并指定唯一的 `id`（例如：`my-provider/my-model`）。
-- **覆盖现有模型**: 使用与 OpenRouter 相同的 `id`，YAML 中的字段将覆盖 API 返回的数据。
+传递额外参数时使用 `--`：
 
-### 3. YAML 格式示例
+```bash
+task generator -- -fetch-only
+task translator -- -provider OpenAI -limit 20
+task run -- go test ./...
+```
+
+## Generator
+
+`cmd/generator` 的职责是：
+
+1. 从上游拉取模型列表及描述。
+2. 合并 `models/` 中的本地覆盖。
+3. 更新 `models/**/*.yaml`。
+4. 生成 `models_gen.go` 供其他项目直接使用。
+
+常用命令：
+
+```bash
+task generator
+task generator -- -fetch-only
+task generator -- -sync-registry=false
+```
+
+常用参数：
+
+- `-source`：上游来源，当前支持 `openrouter`
+- `-api-url`：上游接口地址
+- `-models-dir`：本地 YAML 目录
+- `-cache-path`：原始上游 JSON 缓存路径
+- `-output-go`：生成的 Go 文件路径
+- `-fetch-only`：只抓取上游并刷新缓存，不写 `models/` 和 `models_gen.go`
+
+## Translator
+
+`cmd/translator` 默认只翻译满足以下条件的 YAML：
+
+- 有 `description`
+- 缺少 `description_cn`
+
+常用命令：
+
+```bash
+export LLM_API_KEY="sk-..."
+task translator
+task translator -- -provider OpenAI -limit 50
+task translator -- -dry-run -id-prefix qwen/
+```
+
+环境变量：
+
+- `LLM_API_KEY`：必填
+- `LLM_BASE_URL`：可选，默认 `https://api.openai.com/v1`
+- `LLM_MODEL`：可选，默认 `gpt-4o-mini`
+
+## 本地模型覆盖示例
+
 ```yaml
 id: openai/text-embedding-3-large
 name: "OpenAI: Text Embedding 3 Large"
 provider: OpenAI
 description_cn: "OpenAI 最强大的嵌入模型。"
 features:
-  - CapEmbedding    # 新增的模型类型支持
+  - CapEmbedding
   - ModalityTextIn
 context_length: 8192
-
 aliases:
   - text-embedding-3-large
 ```
 
-支持的 Feature 见 `capability.go`。
+支持的 capability 常量见 [capability.go](./capability.go)。
 
-## 🤖 工作原理
+## 工作流
 
-1.  **Generator (cmd/generator)**: 每天自动从 OpenRouter 抓取数据，并递归加载 `models/` 目录下的所有本地定义，最后进行合并。
-2.  **Translator (cmd/translator)**: 批量调用 LLM 将 `models/` 中缺失中文描述的模型进行翻译补偿（可选）。
-3.  **Local Registry (models/)**: 存放人工修正、别名、中文描述以及 API 缺失的模型（如 Embedding/Reranker）。
-4.  **Code Gen**: 自动生成 `models_gen.go`，将所有数据硬编码为静态 Map。
-5.  **Auto Update**: 通过 GitHub Actions 每天更新并自动发布 SemVer 版本。
+典型维护流程：
 
-## 📝 手动运行工具
+1. 运行 `task generator` 拉取上游并刷新本地注册表。
+2. 如需中文描述，运行 `task translator`。
+3. 再次运行 `task generator`，把翻译后的 `description_cn` 编译进 `models_gen.go`。
+4. 运行 `task ci` 验证格式、静态检查、测试和构建。
 
-### 生成器 (Generator)
-```bash
-go run cmd/generator/main.go
-```
-
-### 翻译器 (Translator)
-需要设置 `LLM_API_KEY` (OpenAI 格式):
-```bash
-export LLM_API_KEY="sk-..."
-export LLM_MODEL="gpt-4o-mini" # 可选，默认值
-go run cmd/translator/main.go
-```
-
-## 📄 开源协议
+## 许可证
 
 Apache 2.0 License

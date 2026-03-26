@@ -1,0 +1,60 @@
+version: '3'
+
+dotenv:
+  - .env
+
+tasks:
+  default:
+    desc: Show available tasks
+    cmds:
+      - task --list
+
+  fmt:
+    desc: Format all Go packages
+    cmds:
+      - go fmt ./...
+
+  lint:
+    desc: Run lightweight static checks
+    cmds:
+      - go vet ./...
+
+  test:
+    desc: Run unit tests
+    cmds:
+      - go test ./...
+
+  build:
+    desc: Build all Go packages
+    cmds:
+      - go build ./...
+
+  generator:
+    desc: Fetch upstream metadata, sync models/, and regenerate models_gen.go
+    cmds:
+      - go run ./cmd/generator {{.CLI_ARGS}}
+
+  translator:
+    desc: Incrementally translate missing description_cn fields in models/
+    cmds:
+      - go run ./cmd/translator {{.CLI_ARGS}}
+
+  sync:
+    desc: "End-to-end refresh: generator -> translator -> generator"
+    cmds:
+      - task: generator
+      - task: translator
+      - task: generator
+
+  ci:
+    desc: CI-equivalent local checks
+    cmds:
+      - task: fmt
+      - task: lint
+      - task: test
+      - task: build
+
+  run:
+    desc: Run an arbitrary shell command, for example task run -- go test ./...
+    cmds:
+      - '{{.CLI_ARGS}}'
