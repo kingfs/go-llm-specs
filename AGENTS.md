@@ -13,7 +13,8 @@ This repository is a static LLM model metadata registry for Go. AI agents should
 2. `Taskfile.yml` for the supported development commands.
 3. `cmd/generator/main.go` for upstream sync and code generation behavior.
 4. `cmd/translator/main.go` for incremental translation behavior.
-5. `capability.go`, `model.go`, and `registry.go` for runtime API and feature semantics.
+5. `cmd/releasecheck/main.go` for release gating semantics.
+6. `capability.go`, `model.go`, and `registry.go` for runtime API and feature semantics.
 
 ## File Ownership Rules
 
@@ -32,6 +33,7 @@ This repository is a static LLM model metadata registry for Go. AI agents should
 - `task generator`
 - `task translator`
 - `task sync`
+- `task releasecheck`
 
 Pass extra flags after `--`, for example:
 
@@ -42,6 +44,7 @@ Pass extra flags after `--`, for example:
 
 - Local YAML overrides are authoritative when a field is explicitly set.
 - `description_cn` is translated incrementally; untranslated files are the default target set.
+- Releases are gated by `cmd/releasecheck`, not by raw file diffs.
 - Aliases are case-insensitive at runtime.
 - Capability names used in YAML must match the Go constants defined in `capability.go`.
 - Keep docs aligned with the actual CLI flags and task commands.
@@ -65,6 +68,7 @@ Pass extra flags after `--`, for example:
 1. Ensure `LLM_API_KEY` and optional `LLM_BASE_URL` / `LLM_MODEL` are set.
 2. Run `task translator`.
 3. Run `task generator` to bake translations into `models_gen.go`.
+4. Run `task releasecheck` to confirm this change should produce a tag.
 
 ## Review Checklist
 

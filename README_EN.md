@@ -95,6 +95,7 @@ task test
 task build
 task generator
 task translator
+task releasecheck
 task sync
 ```
 
@@ -154,6 +155,27 @@ Environment variables:
 - `LLM_BASE_URL`: optional, defaults to `https://api.openai.com/v1`
 - `LLM_MODEL`: optional, defaults to `gpt-4o-mini`
 
+## Release Check
+
+`cmd/releasecheck` compares the latest tag with the current `models_gen.go` and decides whether a new release is warranted.
+
+Current release policy:
+
+- These changes trigger a release:
+  - added models
+  - removed models
+  - changes to `name`, `provider`, `description`, `description_cn`, `features`, or `aliases`
+- These changes do not trigger a release by themselves:
+  - `context_length`
+  - `max_output`
+
+Common commands:
+
+```bash
+task releasecheck
+task releasecheck -- -base-ref v0.3.44 -format json
+```
+
 ## Local Override Example
 
 ```yaml
@@ -176,7 +198,8 @@ See [capability.go](./capability.go) for supported capability constants.
 1. Run `task generator` to refresh upstream data and local registry files.
 2. Run `task translator` if Chinese descriptions need to be filled in.
 3. Run `task generator` again so translated fields are baked into `models_gen.go`.
-4. Run `task ci` before submitting changes.
+4. Run `task releasecheck` to see whether the change should publish a release.
+5. Run `task ci` before submitting changes.
 
 ## License
 

@@ -19,6 +19,7 @@ task test
 task build
 task generator
 task translator
+task releasecheck
 task sync
 ```
 
@@ -48,6 +49,13 @@ task translator -- -dry-run -id-prefix qwen/
 
 - `models_gen.go`: generated, do not edit manually.
 - `data/models.json`: cached upstream payload, useful for debugging or offline fallback.
+
+## Release Gating
+
+- `cmd/releasecheck` compares the latest git tag with the current `models_gen.go`.
+- It triggers a release for model additions/removals and significant metadata changes.
+- It ignores `context_length` and `max_output` changes when they are the only differences.
+- This is the source of truth used by GitHub Actions to decide whether a new tag should be published.
 
 ## Validation
 

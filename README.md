@@ -96,6 +96,7 @@ task test
 task build
 task generator
 task translator
+task releasecheck
 task sync
 ```
 
@@ -155,6 +156,27 @@ task translator -- -dry-run -id-prefix qwen/
 - `LLM_BASE_URL`：可选，默认 `https://api.openai.com/v1`
 - `LLM_MODEL`：可选，默认 `gpt-4o-mini`
 
+## Release Check
+
+`cmd/releasecheck` 用于比较“上一个 tag”与当前 `models_gen.go` 的有效差异，并决定是否应该发布新版本。
+
+当前策略：
+
+- 以下变化会触发发布：
+  - 新增模型
+  - 删除模型
+  - `name`、`provider`、`description`、`description_cn`、`features`、`aliases` 的变化
+- 以下变化默认不会单独触发发布：
+  - `context_length`
+  - `max_output`
+
+常用命令：
+
+```bash
+task releasecheck
+task releasecheck -- -base-ref v0.3.44 -format json
+```
+
 ## 本地模型覆盖示例
 
 ```yaml
@@ -179,7 +201,8 @@ aliases:
 1. 运行 `task generator` 拉取上游并刷新本地注册表。
 2. 如需中文描述，运行 `task translator`。
 3. 再次运行 `task generator`，把翻译后的 `description_cn` 编译进 `models_gen.go`。
-4. 运行 `task ci` 验证格式、静态检查、测试和构建。
+4. 运行 `task releasecheck` 确认这次变更是否应触发发版。
+5. 运行 `task ci` 验证格式、静态检查、测试和构建。
 
 ## 许可证
 

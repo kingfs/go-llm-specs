@@ -39,6 +39,11 @@ tasks:
     cmds:
       - go run ./cmd/translator {{.CLI_ARGS}}
 
+  releasecheck:
+    desc: Compare current models_gen.go with the latest tag and decide whether a release is needed
+    cmds:
+      - go run ./cmd/releasecheck {{.CLI_ARGS}}
+
   sync:
     desc: "End-to-end refresh: generator -> translator -> generator"
     cmds:
@@ -49,9 +54,9 @@ tasks:
   ci:
     desc: CI-equivalent local checks
     cmds:
-      - task: fmt
       - task: lint
       - task: test
+      - task: fmt
       - task: build
 
   run:

@@ -5,21 +5,27 @@ on:
     branches:
       - master
   schedule:
-    - cron: '0 2 * * *' # 2 AM UTC daily
-  workflow_dispatch:    # Allow manual trigger
+    - cron: '0 2 * * *'
+  workflow_dispatch:
 
 jobs:
-  update-and-release:
+  sync-upstream:
+    if: github.event_name != 'push'
     runs-on: ubuntu-latest
     permissions:
       contents: write
-    
+    outputs:
+      changed: ${{ steps.changes.outputs.changed }}
+      release_needed: ${{ steps.releasecheck.outputs.release_needed }}
+      next_tag: ${{ steps.releasecheck.outputs.next_tag }}
+      release_body: ${{ steps.releasecheck.outputs.release_body }}
+      release_summary: ${{ steps.releasecheck.outputs.release_summary }}
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0 # Fetch all history and tags
-        
+          fetch-depth: 0
+
       - name: Set up Go
         uses: actions/setup-go@v5
         with:
@@ -30,101 +36,82 @@ jobs:
           go install github.com/go-task/task/v3/cmd/task@latest
           echo "$(go env GOPATH)/bin" >> "$GITHUB_PATH"
 
-      - name: Fetch and Generate (Phase 1)
-        id: generate
+      - name: Refresh upstream registry
+        run: task generator
+
+      - name: Check for synced changes
+        id: changes
         run: |
-          # Extract current IDs from models_gen.go if it exists
-          if [ -f models_gen.go ]; then
-            grep -oE 'IDVal:\s+"[^"]+"' models_gen.go | cut -d'"' -f2 | sort > /tmp/models_before.txt
+          if git diff --quiet -- models/ models_gen.go data/models.json; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
           else
-            touch /tmp/models_before.txt
+            echo "changed=true" >> "$GITHUB_OUTPUT"
           fi
 
-          # Run generator to fetch latest models.json
-          task generator
-
-          # Extract new IDs and compare
-          grep -oE 'IDVal:\s+"[^"]+"' models_gen.go | cut -d'"' -f2 | sort > /tmp/models_after.txt
-          NEW_MODELS=$(comm -13 /tmp/models_before.txt /tmp/models_after.txt | paste -sd ", " -)
-          echo "new_models=$NEW_MODELS" >> $GITHUB_OUTPUT
-
-      - name: Auto Translate Missing Descriptions
-        env:
-          LLM_API_KEY: ${{ secrets.LLM_API_KEY }}
-          LLM_BASE_URL: ${{ secrets.LLM_BASE_URL }}
-          LLM_MODEL: ${{ secrets.LLM_MODEL }}
+      - name: Evaluate release necessity
+        id: releasecheck
         run: |
-          if [ -n "$LLM_API_KEY" ]; then
-            echo "LLM_API_KEY found, running translator..."
-            task translator
-            
-            # Re-run generator to bake in the new translations
-            task generator
-          else
-            echo "Skipping translation (LLM_API_KEY not set)"
-          fi
-          
-          task fmt
+          task releasecheck -- -github-output "$GITHUB_OUTPUT" -format text > /tmp/releasecheck.txt
+          cat /tmp/releasecheck.txt
 
-      - name: Check for changes
-        id: check_changes
-        run: |
-          if git diff --quiet models/ ; then
-            echo "No changes detected."
-            echo "changed=false" >> $GITHUB_OUTPUT
-          else
-            echo "Model data or registry updated!"
-            echo "changed=true" >> $GITHUB_OUTPUT
-          fi
-
-      - name: Commit and Push
-        if: steps.check_changes.outputs.changed == 'true'
+      - name: Commit and push synced data
+        if: steps.changes.outputs.changed == 'true'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add models_gen.go data/models.json models/
-          git commit -m "feat(data): auto-update model registry and translations [skip ci]"
+          git commit -m "feat(data): sync upstream model registry [skip ci]"
           git push
 
-      - name: Set Release Metadata
-        if: steps.check_changes.outputs.changed == 'true'
-        run: |
-          echo "GEN_TIMESTAMP=$(date -u +'%Y-%m-%d %H:%M:%S') UTC" >> $GITHUB_ENV
-
-      - name: Calculate Next Version
-        if: steps.check_changes.outputs.changed == 'true'
-        id: semver
-        run: |
-          # Get the highest semver tag, default to v0.0.0
-          LATEST_TAG=$(git tag --sort=-v:refname | head -n 1)
-          if [ -z "$LATEST_TAG" ]; then LATEST_TAG="v0.0.0"; fi
-          
-          echo "Latest tag found: $LATEST_TAG"
-          
-          VERSION=${LATEST_TAG#v}
-          IFS='.' read -ra ADDR <<< "$VERSION"
-          major=${ADDR[0]}
-          minor=${ADDR[1]}
-          patch=${ADDR[2]}
-          
-          NEW_PATCH=$((patch + 1))
-          NEW_TAG="v$major.$minor.$NEW_PATCH"
-          
-          echo "New tag: $NEW_TAG"
-          echo "new_tag=$NEW_TAG" >> $GITHUB_OUTPUT
-
-      - name: Create Release
-        if: steps.check_changes.outputs.changed == 'true'
+      - name: Create release for upstream changes
+        if: steps.releasecheck.outputs.release_needed == 'true'
         uses: softprops/action-gh-release@v2
         with:
-          tag_name: ${{ steps.semver.outputs.new_tag }}
-          name: Release ${{ steps.semver.outputs.new_tag }}
-          body: |
-            ### Automatic update of LLM model data from OpenRouter.
-            
-            **Generated at:** ${{ env.GEN_TIMESTAMP }}
-            
-            **New models added:**
-            ${{ steps.generate.outputs.new_models || 'None (translation or override updates only)' }}
+          tag_name: ${{ steps.releasecheck.outputs.next_tag }}
+          name: Release ${{ steps.releasecheck.outputs.next_tag }}
+          body: ${{ steps.releasecheck.outputs.release_body }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  release-from-push:
+    if: github.event_name == 'push' && github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: '1.25'
+
+      - name: Install Task
+        run: |
+          go install github.com/go-task/task/v3/cmd/task@latest
+          echo "$(go env GOPATH)/bin" >> "$GITHUB_PATH"
+
+      - name: Validate repository
+        run: |
+          task lint
+          task test
+          task fmt
+
+      - name: Evaluate release necessity
+        id: releasecheck
+        run: |
+          task releasecheck -- -github-output "$GITHUB_OUTPUT" -format text > /tmp/releasecheck.txt
+          cat /tmp/releasecheck.txt
+
+      - name: Create release for pushed metadata updates
+        if: steps.releasecheck.outputs.release_needed == 'true'
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ steps.releasecheck.outputs.next_tag }}
+          name: Release ${{ steps.releasecheck.outputs.next_tag }}
+          body: ${{ steps.releasecheck.outputs.release_body }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
