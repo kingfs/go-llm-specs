@@ -5,6 +5,21 @@ import (
 	"testing"
 )
 
+func withTestRegistry(t *testing.T, models map[string]*modelData, aliases map[string]string, fn func()) {
+	t.Helper()
+
+	oldRegistry := staticRegistry
+	oldAliases := aliasIndex
+	staticRegistry = models
+	aliasIndex = aliases
+	defer func() {
+		staticRegistry = oldRegistry
+		aliasIndex = oldAliases
+	}()
+
+	fn()
+}
+
 func TestGet(t *testing.T) {
 	// Verify exact ID
 	id := "openai/gpt-4"
@@ -220,4 +235,70 @@ func TestGet_Aliases(t *testing.T) {
 	if m, ok := Get("QwEn3-32b"); !ok || m.ID() != id {
 		t.Error("Alias lookup should be case-insensitive")
 	}
+}
+
+func TestQuery_FamilyAndTag(t *testing.T) {
+	withTestRegistry(t, map[string]*modelData{
+		"openai/gpt-5-mini": {
+			IDVal:       "openai/gpt-5-mini",
+			NameVal:     "OpenAI: GPT-5 Mini",
+			ProviderVal: "OpenAI",
+			FamilyVal:   "GPT",
+			SeriesVal:   "GPT-5 Mini",
+			SummaryVal:  "Fast GPT model.",
+			TagList:     []string{"gpt", "mini", "chat"},
+			FeaturesVal: CapChat | ModalityTextIn | ModalityTextOut,
+		},
+		"qwen/qwen3-coder-next": {
+			IDVal:       "qwen/qwen3-coder-next",
+			NameVal:     "Qwen: Qwen3 Coder Next",
+			ProviderVal: "Qwen",
+			FamilyVal:   "Qwen",
+			SeriesVal:   "Qwen3 Coder Next",
+			SummaryVal:  "Coding agent model.",
+			TagList:     []string{"qwen", "coding", "agent"},
+			FeaturesVal: CapChat | CapFunctionCall | ModalityTextIn | ModalityTextOut,
+		},
+	}, map[string]string{}, func() {
+		results := Query().Family("Qwen").Tag("coding").List()
+		if len(results) != 1 || results[0].ID() != "qwen/qwen3-coder-next" {
+			t.Fatalf("unexpected query results: %#v", results)
+		}
+	})
+}
+
+func TestSearch_UsesStructuredFields(t *testing.T) {
+	withTestRegistry(t, map[string]*modelData{
+		"qwen/qwen3-coder-next": {
+			IDVal:       "qwen/qwen3-coder-next",
+			NameVal:     "Qwen: Qwen3 Coder Next",
+			ProviderVal: "Qwen",
+			FamilyVal:   "Qwen",
+			SeriesVal:   "Qwen3 Coder Next",
+			SummaryVal:  "Purpose-built for coding agents.",
+			TagList:     []string{"coding", "agent"},
+			AliasList:   []string{"qwen-coder-next"},
+		},
+		"openai/gpt-4o": {
+			IDVal:       "openai/gpt-4o",
+			NameVal:     "OpenAI: GPT-4o",
+			ProviderVal: "OpenAI",
+			FamilyVal:   "GPT",
+			SeriesVal:   "GPT-4o",
+			SummaryVal:  "General multimodal model.",
+			TagList:     []string{"multimodal"},
+		},
+	}, map[string]string{
+		"qwen-coder-next": "qwen/qwen3-coder-next",
+	}, func() {
+		results := Search("coding", 5)
+		if len(results) == 0 || results[0].ID() != "qwen/qwen3-coder-next" {
+			t.Fatalf("expected coding search to prefer qwen coder model, got %#v", results)
+		}
+
+		results = Search("qwen agent", 5)
+		if len(results) == 0 || results[0].ID() != "qwen/qwen3-coder-next" {
+			t.Fatalf("expected structured token search to prefer qwen coder model, got %#v", results)
+		}
+	})
 }

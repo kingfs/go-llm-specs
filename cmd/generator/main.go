@@ -79,6 +79,10 @@ type ProcessedModel struct {
 	Provider      string
 	Description   string
 	DescriptionCN string
+	Family        string
+	Series        string
+	Summary       string
+	Tags          []string
 	ContextLen    int
 	MaxOutput     int
 	Features      string
@@ -181,6 +185,11 @@ func buildProcessedModels(finalModels map[string]ModelRegistry) []*ProcessedMode
 			MaxOutput:     m.MaxOutput,
 			Aliases:       normalizeStringList(m.Aliases),
 		}
+		meta := deriveStructuredMetadata(m)
+		p.Family = meta.Family
+		p.Series = meta.Series
+		p.Summary = meta.Summary
+		p.Tags = meta.Tags
 
 		if len(m.Features) > 0 {
 			p.Features = strings.Join(normalizeStringList(m.Features), " | ")
@@ -485,6 +494,10 @@ func init() {
 			ProviderVal:   "{{ .Provider }}",
 			DescVal:       {{ printf "%q" .Description }},
 			DescCNVal:     {{ printf "%q" .DescriptionCN }},
+			FamilyVal:     {{ printf "%q" .Family }},
+			SeriesVal:     {{ printf "%q" .Series }},
+			SummaryVal:    {{ printf "%q" .Summary }},
+			TagList:       []string{ {{ range $i, $tag := .Tags }}{{ if $i }}, {{ end }}"{{ $tag }}"{{ end }} },
 			ContextLenVal: {{ .ContextLen }},
 			MaxOutputVal:  {{ .MaxOutput }},
 			FeaturesVal:   {{ .Features }},
