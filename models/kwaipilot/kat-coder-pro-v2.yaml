@@ -1,0 +1,12 @@
+id: kwaipilot/kat-coder-pro-v2
+name: 'Kwaipilot: KAT-Coder-Pro V2'
+provider: Kwaipilot
+description: KAT-Coder-Pro V2 is the latest high-performance model in KwaiKAT’s KAT-Coder series, designed for complex enterprise-grade software engineering and SaaS integration. It builds on the agentic coding strengths of earlier versions, with a focus on large-scale production environments, multi-system coordination, and seamless integration across modern software stacks, while also supporting web aesthetics generation to produce production-grade landing pages and presentation decks.
+context_length: 256000
+max_output: 80000
+features:
+  - CapChat
+  - CapFunctionCall
+  - CapJsonMode
+  - ModalityTextIn
+  - ModalityTextOut
