@@ -1,0 +1,11 @@
+id: arcee-ai/trinity-large-thinking
+name: 'Arcee AI: Trinity Large Thinking'
+provider: Arcee-Ai
+description: 'Trinity Large Thinking is a powerful open source reasoning model from the team at Arcee AI. It shows strong performance in PinchBench, agentic workloads, and reasoning tasks. It is free in open claw for the first five days. Launch video: https://youtu.be/Gc82AXLa0Rg?si=4RLn6WBz33qT--B7'
+context_length: 262144
+max_output: 80000
+features:
+  - CapChat
+  - CapFunctionCall
+  - ModalityTextIn
+  - ModalityTextOut

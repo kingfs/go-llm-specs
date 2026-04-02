@@ -1,0 +1,14 @@
+id: z-ai/glm-5v-turbo
+name: 'Z.ai: GLM 5V Turbo'
+provider: Z-Ai
+description: GLM-5V-Turbo is Z.ai’s first native multimodal agent foundation model, built for vision-based coding and agent-driven tasks. It natively handles image, video, and text inputs, excels at long-horizon planning, complex coding, and task execution, and works seamlessly with agents to complete the full loop of “perceive → plan → execute“.
+context_length: 202752
+max_output: 131072
+features:
+  - CapChat
+  - CapFunctionCall
+  - CapJsonMode
+  - ModalityImageIn
+  - ModalityTextIn
+  - ModalityTextOut
+  - ModalityVideoIn
