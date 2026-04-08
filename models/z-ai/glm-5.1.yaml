@@ -1,0 +1,11 @@
+id: z-ai/glm-5.1
+name: 'Z.ai: GLM 5.1'
+provider: Z-Ai
+description: GLM-5.1 delivers a major leap in coding capability, with particularly significant gains in handling long-horizon tasks. Unlike previous models built around minute-level interactions, GLM-5.1 can work independently and continuously on...
+context_length: 202752
+features:
+  - CapChat
+  - CapFunctionCall
+  - CapJsonMode
+  - ModalityTextIn
+  - ModalityTextOut

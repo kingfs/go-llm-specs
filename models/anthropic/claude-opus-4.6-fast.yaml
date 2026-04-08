@@ -1,0 +1,16 @@
+id: anthropic/claude-opus-4.6-fast
+name: 'Anthropic: Claude Opus 4.6 (Fast)'
+provider: Anthropic
+description: |-
+  Fast-mode variant of [Opus 4.6](/anthropic/claude-opus-4.6) - identical capabilities with higher output speed at premium 6x pricing.
+
+  Learn more in Anthropic's docs: https://platform.claude.com/docs/en/build-with-claude/fast-mode
+context_length: 1000000
+max_output: 128000
+features:
+  - CapChat
+  - CapFunctionCall
+  - CapJsonMode
+  - ModalityImageIn
+  - ModalityTextIn
+  - ModalityTextOut
