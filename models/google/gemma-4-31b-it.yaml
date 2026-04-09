@@ -2,6 +2,7 @@ id: google/gemma-4-31b-it
 name: 'Google: Gemma 4 31B'
 provider: Google
 description: Gemma 4 31B Instruct is Google DeepMind's 30.7B dense multimodal model supporting text and image input with text output. Features a 256K token context window, configurable thinking/reasoning mode, native function calling, and multilingual support across 140+ languages. Strong on coding, reasoning, and document understanding tasks. Apache 2.0 license.
+description_cn: Gemma 4 31B Instruct 是 Google DeepMind 推出的 307 亿参数稠密多模态模型，支持文本和图像输入并生成文本输出。具备 25.6 万 token 上下文窗口、可配置的思维/推理模式、原生函数调用，并支持 140 多种语言。在代码编写、推理和文档理解任务中表现强劲。采用 Apache 2.0 许可证。
 context_length: 262144
 max_output: 131072
 features:

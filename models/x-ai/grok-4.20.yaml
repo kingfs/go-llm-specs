@@ -5,6 +5,10 @@ description: |-
   Grok 4.20 is xAI's newest flagship model with industry-leading speed and agentic tool calling capabilities. It combines the lowest hallucination rate on the market with strict prompt adherance, delivering consistently precise and truthful responses.
 
   Reasoning can be enabled/disabled using the `reasoning` `enabled` parameter in the API. [Learn more in our docs](https://openrouter.ai/docs/use-cases/reasoning-tokens#controlling-reasoning-tokens)
+description_cn: |-
+  Grok 4.20 是 xAI 最新的旗舰模型，具备业界领先的推理速度和智能体工具调用能力。它结合市场上最低的幻觉率与严格的提示遵循能力，始终提供精准且真实的回答。
+
+  可通过 API 中的 `reasoning` `enabled` 参数启用或禁用推理功能。[了解更多请参阅文档](https://openrouter.ai/docs/use-cases/reasoning-tokens#controlling-reasoning-tokens)
 context_length: 2000000
 features:
   - CapChat

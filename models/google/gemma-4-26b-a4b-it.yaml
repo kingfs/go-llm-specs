@@ -2,6 +2,7 @@ id: google/gemma-4-26b-a4b-it
 name: 'Google: Gemma 4 26B A4B '
 provider: Google
 description: Gemma 4 26B A4B IT is an instruction-tuned Mixture-of-Experts (MoE) model from Google DeepMind. Despite 25.2B total parameters, only 3.8B activate per token during inference — delivering near-31B quality at a fraction of the compute cost. Supports multimodal input including text, images, and video (up to 60s at 1fps). Features a 256K token context window, native function calling, configurable thinking/reasoning mode, and structured output support. Released under Apache 2.0.
+description_cn: Gemma 4 26B A4B IT 是 Google DeepMind 推出的指令微调混合专家（MoE）模型。尽管总参数量达 252 亿，但每次推理仅激活 38 亿参数，以极低计算成本实现接近 310 亿参数模型的质量。支持多模态输入，包括文本、图像和视频（最高 60 秒，1fps）。具备 25.6 万 token 上下文窗口、原生函数调用、可配置的思维/推理模式以及结构化输出支持。采用 Apache 2.0 许可证发布。
 context_length: 262144
 max_output: 262144
 features:

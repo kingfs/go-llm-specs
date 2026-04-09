@@ -5,6 +5,10 @@ description: |-
   Reka Flash 3 is a general-purpose, instruction-tuned large language model with 21 billion parameters, developed by Reka. It excels at general chat, coding tasks, instruction-following, and function calling. Featuring a 32K context length and optimized through reinforcement learning (RLOO), it provides competitive performance comparable to proprietary models within a smaller parameter footprint. Ideal for low-latency, local, or on-device deployments, Reka Flash 3 is compact, supports efficient quantization (down to 11GB at 4-bit precision), and employs explicit reasoning tags ("<reasoning>") to indicate its internal thought process.
 
   Reka Flash 3 is primarily an English model with limited multilingual understanding capabilities. The model weights are released under the Apache 2.0 license.
+description_cn: |-
+  Reka Flash 3 是 Reka 开发的通用指令微调大语言模型，拥有 210 亿参数。它在通用对话、编程任务、指令遵循和函数调用方面表现出色。模型上下文长度达 32K，并通过强化学习（RLOO）优化，在较小参数量下即可媲美闭源模型的性能。适用于低延迟、本地或端侧部署，体积紧凑，支持高效量化（4-bit 精度下仅需 11GB），并使用显式推理标签（"<reasoning>"）指示内部思维过程。
+
+  Reka Flash 3 主要为英文模型，具备有限的多语言理解能力。模型权重以 Apache 2.0 许可证发布。
 context_length: 65536
 max_output: 65536
 features:

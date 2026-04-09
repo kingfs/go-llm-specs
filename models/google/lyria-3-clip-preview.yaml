@@ -2,6 +2,7 @@ id: google/lyria-3-clip-preview
 name: 'Google: Lyria 3 Clip Preview'
 provider: Google
 description: 30 second duration clips are priced at $0.04 per clip. Lyria 3 is Google's family of music generation models, available through the Gemini API. With Lyria 3, you can generate high-quality, 48kHz stereo audio from text prompts or from images. These models deliver structural coherence, including vocals, timed lyrics, and full instrumental arrangements. Lyria 3 Clip can generate short clips, loops, previews.
+description_cn: 30 秒时长的音频片段每段定价 0.04 美元。Lyria 3 是 Google 的音乐生成模型系列，通过 Gemini API 提供。借助 Lyria 3，您可以根据文本提示或图像生成高质量的 48kHz 立体声音频。这些模型具备结构连贯性，包含人声、定时歌词和完整器乐编排。Lyria 3 Clip 可生成短片段、循环和预览。
 context_length: 1048576
 max_output: 65536
 features:

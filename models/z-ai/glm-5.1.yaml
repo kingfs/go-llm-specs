@@ -2,6 +2,7 @@ id: z-ai/glm-5.1
 name: 'Z.ai: GLM 5.1'
 provider: Z-Ai
 description: GLM-5.1 delivers a major leap in coding capability, with particularly significant gains in handling long-horizon tasks. Unlike previous models built around minute-level interactions, GLM-5.1 can work independently and continuously on...
+description_cn: GLM-5.1 在编程能力上实现重大飞跃，尤其在处理长周期任务方面提升显著。不同于以往围绕分钟级交互构建的模型，GLM-5.1 能够独立、持续地工作于……
 context_length: 202752
 max_output: 131072
 features:

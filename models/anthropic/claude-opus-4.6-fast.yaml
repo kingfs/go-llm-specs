@@ -5,6 +5,10 @@ description: |-
   Fast-mode variant of [Opus 4.6](/anthropic/claude-opus-4.6) - identical capabilities with higher output speed at premium 6x pricing.
 
   Learn more in Anthropic's docs: https://platform.claude.com/docs/en/build-with-claude/fast-mode
+description_cn: |-
+  [Opus 4.6](/anthropic/claude-opus-4.6) 的快速模式变体——能力完全相同，输出速度更高，价格为标准版的 6 倍。
+
+  更多详情请参阅 Anthropic 文档：https://platform.claude.com/docs/en/build-with-claude/fast-mode
 context_length: 1000000
 max_output: 128000
 features:
