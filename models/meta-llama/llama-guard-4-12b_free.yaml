@@ -1,0 +1,11 @@
+id: meta-llama/llama-guard-4-12b:free
+name: 'Meta: Llama Guard 4 12B (free)'
+provider: Meta
+description: Llama Guard 4 is a Llama 4 Scout-derived multimodal pretrained model, fine-tuned for content safety classification. Similar to previous versions, it can be used to classify content in both LLM...
+context_length: 163840
+max_output: 65000
+features:
+  - CapChat
+  - ModalityImageIn
+  - ModalityTextIn
+  - ModalityTextOut
