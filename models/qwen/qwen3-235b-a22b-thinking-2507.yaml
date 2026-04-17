@@ -10,6 +10,7 @@ description_cn: |-
 
   该模型经过指令微调，在逐步推理、工具调用、智能体工作流及多语言任务方面表现出色。此版本是 Qwen3-235B 系列中最强大的开源变体，在结构化推理应用场景中超越众多闭源模型。
 context_length: 131072
+max_output: 262144
 features:
   - CapChat
   - CapFunctionCall
