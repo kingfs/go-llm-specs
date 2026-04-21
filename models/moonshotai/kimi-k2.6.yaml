@@ -1,0 +1,13 @@
+id: moonshotai/kimi-k2.6
+name: 'MoonshotAI: Kimi K2.6'
+provider: Moonshotai
+description: Kimi K2.6 is Moonshot AI's next-generation multimodal model, designed for long-horizon coding, coding-driven UI/UX generation, and multi-agent orchestration. It handles complex end-to-end coding tasks across Python, Rust, and Go, and...
+context_length: 262144
+max_output: 262144
+features:
+  - CapChat
+  - CapFunctionCall
+  - CapJsonMode
+  - ModalityImageIn
+  - ModalityTextIn
+  - ModalityTextOut
