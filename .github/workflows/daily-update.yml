@@ -14,6 +14,7 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
+      models: read
     outputs:
       changed: ${{ steps.changes.outputs.changed }}
       release_needed: ${{ steps.releasecheck.outputs.release_needed }}
@@ -37,6 +38,27 @@ jobs:
           echo "$(go env GOPATH)/bin" >> "$GITHUB_PATH"
 
       - name: Refresh upstream registry
+        run: task generator
+
+      - name: Check for upstream changes
+        id: upstream_changes
+        run: |
+          if git diff --quiet -- models/ models_gen.go data/models.json; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Translate missing Chinese descriptions
+        if: steps.upstream_changes.outputs.changed == 'true'
+        env:
+          LLM_API_KEY: ${{ secrets.GITHUB_TOKEN }}
+          LLM_BASE_URL: https://models.github.ai/inference
+          LLM_MODEL: openai/gpt-4o-mini
+        run: task translator
+
+      - name: Regenerate compiled registry after translation
+        if: steps.upstream_changes.outputs.changed == 'true'
         run: task generator
 
       - name: Check for synced changes
