@@ -1,0 +1,13 @@
+id: ~anthropic/claude-opus-latest
+name: 'Anthropic: Claude Opus Latest'
+provider: ~Anthropic
+description: This model always redirects to the latest model in the Claude Opus family.
+context_length: 1000000
+max_output: 128000
+features:
+  - CapChat
+  - CapFunctionCall
+  - CapJsonMode
+  - ModalityImageIn
+  - ModalityTextIn
+  - ModalityTextOut

@@ -1,0 +1,9 @@
+id: openrouter/pareto-code
+name: Pareto Code Router
+provider: Openrouter
+description: The Pareto Router is a way to have OpenRouter always pick a strong coding model for your needs without committing to a specific one. You express a single `min_coding_score` preference...
+context_length: 200000
+features:
+  - CapChat
+  - ModalityTextIn
+  - ModalityTextOut

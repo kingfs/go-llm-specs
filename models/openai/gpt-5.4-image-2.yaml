@@ -1,0 +1,14 @@
+id: openai/gpt-5.4-image-2
+name: 'OpenAI: GPT-5.4 Image 2'
+provider: OpenAI
+description: '[GPT-5.4](https://openrouter.ai/openai/gpt-5.4) Image 2 combines OpenAI''s GPT-5.4 model with state-of-the-art image generation capabilities from GPT Image 2. It enables rich multimodal workflows, allowing users to seamlessly move between reasoning, coding, and...'
+context_length: 272000
+max_output: 128000
+features:
+  - CapChat
+  - CapJsonMode
+  - ModalityFileIn
+  - ModalityImageIn
+  - ModalityImageOut
+  - ModalityTextIn
+  - ModalityTextOut
