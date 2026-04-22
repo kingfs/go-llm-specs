@@ -2,6 +2,7 @@ id: openrouter/elephant-alpha
 name: Elephant
 provider: Openrouter
 description: Elephant Alpha is a 100B-parameter text model focused on intelligence efficiency, delivering strong reasoning performance while minimizing token usage. It supports a 256K context window with up to 32K output...
+description_cn: Elephant Alpha 是一款 100B 参数的文本模型，专注于智能效率，在最小化 token 消耗的同时提供强大的推理性能。支持 256K 上下文窗口，最大输出长度达 32K……
 context_length: 262144
 max_output: 32768
 features:

@@ -2,6 +2,7 @@ id: openai/gpt-5.4-image-2
 name: 'OpenAI: GPT-5.4 Image 2'
 provider: OpenAI
 description: '[GPT-5.4](https://openrouter.ai/openai/gpt-5.4) Image 2 combines OpenAI''s GPT-5.4 model with state-of-the-art image generation capabilities from GPT Image 2. It enables rich multimodal workflows, allowing users to seamlessly move between reasoning, coding, and...'
+description_cn: '[GPT-5.4](https://openrouter.ai/openai/gpt-5.4) Image 2 将 OpenAI 的 GPT-5.4 模型与 GPT Image 2 的先进图像生成能力相结合，支持丰富的多模态工作流，让用户能在推理、编码与……之间无缝切换。'
 context_length: 272000
 max_output: 128000
 features:

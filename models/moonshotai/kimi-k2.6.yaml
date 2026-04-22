@@ -2,6 +2,7 @@ id: moonshotai/kimi-k2.6
 name: 'MoonshotAI: Kimi K2.6'
 provider: Moonshotai
 description: Kimi K2.6 is Moonshot AI's next-generation multimodal model, designed for long-horizon coding, coding-driven UI/UX generation, and multi-agent orchestration. It handles complex end-to-end coding tasks across Python, Rust, and Go, and...
+description_cn: Kimi K2.6 是月之暗面推出的下一代多模态模型，专为长周期编程、代码驱动的 UI/UX 生成及多智能体协同而设计。它可处理涵盖 Python、Rust 和 Go 的复杂端到端编码任务，并……
 context_length: 262144
 max_output: 262144
 features:
