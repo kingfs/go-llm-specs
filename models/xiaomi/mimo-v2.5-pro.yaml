@@ -1,0 +1,13 @@
+id: xiaomi/mimo-v2.5-pro
+name: 'Xiaomi: MiMo-V2.5-Pro'
+provider: Xiaomi
+description: MiMo-V2.5-Pro is Xiaomi’s flagship model, delivering strong performance in general agentic capabilities, complex software engineering, and long-horizon tasks, with top rankings on benchmarks such as ClawEval, GDPVal, and SWE-bench Pro....
+description_cn: MiMo-V2.5-Pro 是小米的旗舰模型，在通用代理能力、复杂软件工程和长远任务上表现强劲，在 ClawEval、GDPVal 和 SWE-bench Pro 等基准测试中名列前茅....
+context_length: 1048576
+max_output: 131072
+features:
+  - CapChat
+  - CapFunctionCall
+  - CapJsonMode
+  - ModalityTextIn
+  - ModalityTextOut

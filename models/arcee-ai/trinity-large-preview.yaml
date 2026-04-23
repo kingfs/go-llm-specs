@@ -1,0 +1,12 @@
+id: arcee-ai/trinity-large-preview
+name: 'Arcee AI: Trinity Large Preview'
+provider: Arcee-Ai
+description: Trinity-Large-Preview is a frontier-scale open-weight language model from Arcee, built as a 400B-parameter sparse Mixture-of-Experts with 13B active parameters per token using 4-of-256 expert routing. It excels in creative writing,...
+description_cn: Trinity-Large-Preview 是 Arcee 开发的前沿规模开放权重语言模型，采用 400B 参数稀疏专家混合模型，每个 Token 使用 4-of-256 专家路由的 13B 活跃参数。它在创意写作方面表现出色，...
+context_length: 131000
+features:
+  - CapChat
+  - CapFunctionCall
+  - CapJsonMode
+  - ModalityTextIn
+  - ModalityTextOut
