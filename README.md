@@ -1,30 +1,32 @@
 # go-llm-specs
 
-构建 Golang 生态中面向 LLM 的静态模型元数据注册表。
+面向 Go 应用的 LLM 模型元数据注册表：把模型 ID、供应商、上下文长度、输入输出模态、工具调用、JSON mode、别名、标签和中英文描述编译进你的程序。
 
 [English](./README_EN.md) | [中文](./README.md)
 
 [![Daily Model Sync](https://github.com/kingfs/go-llm-specs/actions/workflows/daily-update.yml/badge.svg)](https://github.com/kingfs/go-llm-specs/actions/workflows/daily-update.yml)
 [![Go Reference](https://pkg.go.dev/badge/github.com/kingfs/go-llm-specs.svg)](https://pkg.go.dev/github.com/kingfs/go-llm-specs)
 
-## 项目定位
+## 为什么需要它
 
-`go-llm-specs` 维护一份静态、类型安全、可直接编译进 Go 二进制的 LLM 模型注册表。
+如果你的产品里需要接入多个 LLM 供应商，通常很快会遇到这些重复工作：
 
-- 上游主数据源当前为 OpenRouter。
-- 本地 `models/**/*.yaml` 负责人工修正、补充、别名和中文描述。
-- 生成结果写入 `models_gen.go`，运行时不需要网络请求。
-- `cmd/translator` 负责对 `models/` 下缺失 `description_cn` 的文件做增量翻译。
+- 用户输入 `gpt4t`、`claude sonnet`、`qwen3-32b` 时，你需要把它们解析成稳定的模型 ID。
+- 模型选择器、管理后台、计费配置、路由策略需要展示模型名称、供应商、上下文窗口和能力标签。
+- 调用模型前需要判断它是否支持图片输入、函数调用、结构化输出、Embedding、Rerank、TTS 或 ASR。
+- 你不希望每次启动服务都请求外部接口，也不希望在业务代码里维护一堆易过期的模型常量。
 
-AI 协作说明见 [AGENTS.md](./AGENTS.md)，开发流程说明见 [docs/DEVELOPMENT.md](./docs/DEVELOPMENT.md)。
+`go-llm-specs` 把这些信息整理成一个静态、类型安全、可直接依赖的 Go 包。运行时只做内存查询，不访问网络，适合放进 API 服务、Agent 平台、模型网关、控制台、CLI 工具和内部运维系统。
 
-## 核心能力
+## 你能得到什么
 
-- `Get` / `GetMany`：按 ID 或别名快速查找模型。
-- `Query`：基于位掩码能力的链式过滤。
-- `Search`：按 ID、名称、别名做模糊搜索。
-- `models/` 覆盖机制：本地 YAML 显式填写的字段优先于上游数据。
-- 代码生成：将最终注册表固化到 `models_gen.go`，方便其他 Go 项目直接依赖。
+- 静态注册表：当前包含 800+ 个模型，数据随项目自动同步并生成到 `models_gen.go`。
+- 统一模型卡片：快速拿到 ID、名称、供应商、系列、摘要、标签、上下文长度、最大输出和能力位。
+- 别名解析：按模型 ID 或别名查询，别名大小写不敏感。
+- 能力过滤：用 Go 常量筛选 Vision、Tool Use、JSON mode、Embedding、Rerank 等模型能力。
+- 模糊搜索：在模型 ID、名称、系列、标签和别名中搜索，适合构建模型选择器。
+- 零运行时依赖：注册表编译进二进制，服务启动和查询都不依赖外部模型列表接口。
+- 中英文描述：适合直接在中文或英文产品界面里渲染模型说明。
 
 ## 安装
 
@@ -32,9 +34,7 @@ AI 协作说明见 [AGENTS.md](./AGENTS.md)，开发流程说明见 [docs/DEVELO
 go get github.com/kingfs/go-llm-specs
 ```
 
-## 快速使用
-
-### 基础获取
+## 快速开始
 
 ```go
 package main
@@ -46,48 +46,125 @@ import (
 )
 
 func main() {
-	if m, ok := llmspecs.Get("gpt4t"); ok {
-		fmt.Println(m.Name(), m.ContextLength())
+	model, ok := llmspecs.Get("gpt4t")
+	if !ok {
+		return
 	}
+
+	fmt.Println(model.ID())              // openai/gpt-4-turbo
+	fmt.Println(model.Provider())        // OpenAI
+	fmt.Println(model.ContextLength())   // 上下文窗口
+	fmt.Println(model.Features().String()) // TextIn|TextOut|...
 }
 ```
 
-### 链式查询
+更多可运行示例见 [examples/basic/main.go](./examples/basic/main.go)。
+
+## 常见用法
+
+### 构建模型选择器
+
+```go
+for _, model := range llmspecs.Search("claude sonnet", 10) {
+	card := model.Card()
+	fmt.Printf("%s: %s [%s]\n", card.Provider, card.Name, card.ID)
+}
+```
+
+### 筛选支持图片和工具调用的模型
 
 ```go
 models := llmspecs.Query().
-	Provider("Anthropic").
 	Has(llmspecs.ModalityImageIn).
 	Has(llmspecs.CapFunctionCall).
 	List()
 ```
 
-### 模糊搜索
+### 只看某个供应商的模型
 
 ```go
-results := llmspecs.Search("claude", 5)
+anthropicVisionModels := llmspecs.Query().
+	Provider("Anthropic").
+	Has(llmspecs.ModalityImageIn).
+	List()
 ```
 
-更多示例见 [examples/basic/main.go](./examples/basic/main.go)。
+### 校验业务配置里的模型名
 
-## 数据目录
+```go
+configured := []string{"gpt4t", "qwen3-32b", "not-exist"}
+validModels := llmspecs.GetMany(configured)
+```
+
+### 按标签组织模型
+
+```go
+reasoningModels := llmspecs.Query().
+	Tag(string(llmspecs.TagReasoning)).
+	List()
+
+for _, tag := range llmspecs.KnownTags() {
+	fmt.Println(tag.Category, tag.Name, tag.Label)
+}
+```
+
+## API 概览
+
+| API | 说明 |
+| --- | --- |
+| `Total()` | 返回注册表模型数量 |
+| `Get(idOrAlias)` | 通过模型 ID 或别名获取模型 |
+| `GetMany(idsOrAliases)` | 批量获取模型，未命中的条目会被跳过 |
+| `Search(query, limit)` | 在 ID、名称、系列、摘要、标签和别名中模糊搜索 |
+| `Query()` | 创建链式查询器 |
+| `KnownTags()` | 返回稳定标签目录，便于下游渲染和分组 |
+| `Model.Card()` | 返回适合 UI 展示的轻量结构体 |
+
+`Model` 暴露的核心字段包括：
+
+- `ID()`、`Name()`、`Provider()`、`Family()`、`Series()`
+- `Description()`、`DescriptionCN()`、`Summary()`
+- `ContextLength()`、`MaxOutput()`
+- `Features()`、`HasCapability()`、`Tags()`、`HasTag()`、`Aliases()`
+
+能力常量定义在 [capability.go](./capability.go)，标签常量定义在 [tag.go](./tag.go)。
+
+## 适合放在哪里
+
+- 模型网关：根据用户选择、能力要求或供应商策略路由模型。
+- Agent 平台：只展示支持工具调用、结构化输出或多模态输入的模型。
+- SaaS 控制台：渲染模型列表、标签、上下文窗口和本地化说明。
+- CLI / SDK：验证配置文件中的模型名，给出搜索和补全结果。
+- 内部平台：用统一模型元数据替代散落在业务代码里的硬编码表。
+
+## 数据来源与更新
+
+项目当前主要从 OpenRouter 同步模型元数据，并通过 `models/**/*.yaml` 维护人工修正、补充字段、别名和中文描述。最终数据会生成到 `models_gen.go`，下游项目只需要正常引入 Go 包即可，不需要在运行时执行同步任务。
+
+维护相关文件：
 
 ```text
 .
 ├── cmd/
-│   ├── generator/      # 从上游抓取并生成静态注册表
-│   └── translator/     # 对 models/ 做增量翻译
+│   ├── generator/      # 同步上游数据并生成静态注册表
+│   └── translator/     # 增量补充中文描述
 ├── data/
 │   └── models.json     # 上游原始缓存
-├── docs/
 ├── models/             # 人工维护的 YAML 模型定义
 ├── models_gen.go       # 生成文件，不要手改
 └── Taskfile.yml        # go-task 统一入口
 ```
 
-## 开发命令
+## 参与贡献
 
-项目使用 `go-task` 作为统一入口。
+如果你发现模型信息缺失、别名不方便、能力标签不准确，欢迎提交 PR。常见维护流程：
+
+```bash
+task generator
+task test
+```
+
+常用命令：
 
 ```bash
 task fmt
@@ -100,109 +177,7 @@ task releasecheck
 task sync
 ```
 
-传递额外参数时使用 `--`：
-
-```bash
-task generator -- -fetch-only
-task translator -- -provider OpenAI -limit 20
-task run -- go test ./...
-```
-
-## Generator
-
-`cmd/generator` 的职责是：
-
-1. 从上游拉取模型列表及描述。
-2. 合并 `models/` 中的本地覆盖。
-3. 更新 `models/**/*.yaml`。
-4. 生成 `models_gen.go` 供其他项目直接使用。
-
-常用命令：
-
-```bash
-task generator
-task generator -- -fetch-only
-task generator -- -sync-registry=false
-```
-
-常用参数：
-
-- `-source`：上游来源，当前支持 `openrouter`
-- `-api-url`：上游接口地址
-- `-models-dir`：本地 YAML 目录
-- `-cache-path`：原始上游 JSON 缓存路径
-- `-output-go`：生成的 Go 文件路径
-- `-fetch-only`：只抓取上游并刷新缓存，不写 `models/` 和 `models_gen.go`
-
-## Translator
-
-`cmd/translator` 默认只翻译满足以下条件的 YAML：
-
-- 有 `description`
-- 缺少 `description_cn`
-
-常用命令：
-
-```bash
-export LLM_API_KEY="sk-..."
-task translator
-task translator -- -provider OpenAI -limit 50
-task translator -- -dry-run -id-prefix qwen/
-```
-
-环境变量：
-
-- `LLM_API_KEY`：必填
-- `LLM_BASE_URL`：可选，默认 `https://api.openai.com/v1`
-- `LLM_MODEL`：可选，默认 `gpt-4o-mini`
-
-## Release Check
-
-`cmd/releasecheck` 用于比较“上一个 tag”与当前 `models_gen.go` 的有效差异，并决定是否应该发布新版本。
-
-当前策略：
-
-- 以下变化会触发发布：
-  - 新增模型
-  - 删除模型
-  - `name`、`provider`、`description`、`description_cn`、`features`、`aliases` 的变化
-- 以下变化默认不会单独触发发布：
-  - `context_length`
-  - `max_output`
-
-常用命令：
-
-```bash
-task releasecheck
-task releasecheck -- -base-ref v0.3.44 -format json
-```
-
-## 本地模型覆盖示例
-
-```yaml
-id: openai/text-embedding-3-large
-name: "OpenAI: Text Embedding 3 Large"
-provider: OpenAI
-description_cn: "OpenAI 最强大的嵌入模型。"
-features:
-  - CapEmbedding
-  - ModalityTextIn
-context_length: 8192
-aliases:
-  - text-embedding-3-large
-```
-
-支持的 capability 常量见 [capability.go](./capability.go)。
-
-## 工作流
-
-典型维护流程：
-
-1. 运行 `task generator` 拉取上游并刷新本地注册表。
-2. 如需中文描述，运行 `task translator`。
-3. 再次运行 `task generator`，把翻译后的 `description_cn` 编译进 `models_gen.go`。
-4. 运行 `task releasecheck` 确认这次变更是否应触发发版。
-5. 运行 `task ci` 验证格式、静态检查、测试和构建。
+本地覆盖模型信息时，请修改 `models/**/*.yaml`，不要手改 `models_gen.go`。更完整的维护说明见 [docs/DEVELOPMENT.md](./docs/DEVELOPMENT.md)，AI 协作说明见 [AGENTS.md](./AGENTS.md)。
 
 ## 许可证
 

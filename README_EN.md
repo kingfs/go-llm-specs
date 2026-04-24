@@ -1,31 +1,32 @@
 # go-llm-specs
 
-A static, type-safe LLM model metadata registry for Go.
+An LLM model metadata registry for Go applications. It compiles model IDs, providers, context windows, input/output modalities, tool-use support, JSON mode, aliases, tags, and English/Chinese descriptions into your binary.
 
 [English](./README_EN.md) | [中文](./README.md)
 
 [![Daily Model Sync](https://github.com/kingfs/go-llm-specs/actions/workflows/daily-update.yml/badge.svg)](https://github.com/kingfs/go-llm-specs/actions/workflows/daily-update.yml)
 [![Go Reference](https://pkg.go.dev/badge/github.com/kingfs/go-llm-specs.svg)](https://pkg.go.dev/github.com/kingfs/go-llm-specs)
 
-## What This Project Does
+## Why This Exists
 
-`go-llm-specs` maintains a compiled-in registry of LLM metadata for Go applications.
+When a Go product supports multiple LLM providers, the same problems tend to show up quickly:
 
-- The primary upstream source is currently OpenRouter.
-- Local `models/**/*.yaml` files hold overrides, additions, aliases, and Chinese descriptions.
-- The final merged registry is emitted into `models_gen.go`.
-- Runtime lookups are fully static and require no network I/O.
-- `cmd/translator` incrementally fills missing `description_cn` fields under `models/`.
+- Users type aliases such as `gpt4t`, `claude sonnet`, or `qwen3-32b`, and your app needs to resolve them to stable model IDs.
+- Model pickers, admin consoles, billing rules, and routing policies need names, providers, context windows, and capability labels.
+- Your code needs to know whether a model supports image input, function calling, structured output, embedding, reranking, TTS, or ASR.
+- You do not want every service startup to depend on a remote model-list endpoint, and you do not want stale model constants scattered across business code.
 
-For AI-oriented repository guidance, see [AGENTS.md](./AGENTS.md). For maintainer workflow details, see [docs/DEVELOPMENT.md](./docs/DEVELOPMENT.md).
+`go-llm-specs` packages that metadata as a static, type-safe Go library. Runtime lookups are in-memory and require no network I/O, making it a good fit for API services, agent platforms, model gateways, dashboards, CLI tools, and internal operations systems.
 
-## Main Features
+## What You Get
 
-- `Get` / `GetMany`: exact lookup by model ID or alias
-- `Query`: chainable capability filtering backed by bitmasks
-- `Search`: fuzzy search across IDs, names, and aliases
-- Local override support: explicitly set YAML fields win over upstream values
-- Code generation: the merged registry can be embedded directly into downstream Go binaries
+- Static registry: currently 800+ models, synchronized and generated into `models_gen.go`.
+- Unified model cards: ID, name, provider, family, series, summary, tags, context length, max output, and capabilities.
+- Alias resolution: lookup by model ID or alias, with case-insensitive alias matching.
+- Capability filters: query Vision, Tool Use, JSON mode, Embedding, Rerank, and other model capabilities with Go constants.
+- Fuzzy search: search across model IDs, names, series, tags, summaries, and aliases for model pickers.
+- Zero runtime network dependency: the registry is compiled into your binary.
+- English and Chinese descriptions: useful for localized product interfaces.
 
 ## Installation
 
@@ -33,7 +34,7 @@ For AI-oriented repository guidance, see [AGENTS.md](./AGENTS.md). For maintaine
 go get github.com/kingfs/go-llm-specs
 ```
 
-## Quick Example
+## Quick Start
 
 ```go
 package main
@@ -45,48 +46,125 @@ import (
 )
 
 func main() {
-	if m, ok := llmspecs.Get("gpt4t"); ok {
-		fmt.Println(m.Name(), m.ContextLength())
+	model, ok := llmspecs.Get("gpt4t")
+	if !ok {
+		return
 	}
+
+	fmt.Println(model.ID())                // openai/gpt-4-turbo
+	fmt.Println(model.Provider())          // OpenAI
+	fmt.Println(model.ContextLength())     // context window
+	fmt.Println(model.Features().String()) // TextIn|TextOut|...
 }
 ```
 
-### Query Example
+See [examples/basic/main.go](./examples/basic/main.go) for a runnable example.
+
+## Common Patterns
+
+### Build a model picker
+
+```go
+for _, model := range llmspecs.Search("claude sonnet", 10) {
+	card := model.Card()
+	fmt.Printf("%s: %s [%s]\n", card.Provider, card.Name, card.ID)
+}
+```
+
+### Find models with image input and tool use
 
 ```go
 models := llmspecs.Query().
-	Provider("Anthropic").
 	Has(llmspecs.ModalityImageIn).
 	Has(llmspecs.CapFunctionCall).
 	List()
 ```
 
-### Search Example
+### List models from one provider
 
 ```go
-results := llmspecs.Search("claude", 5)
+anthropicVisionModels := llmspecs.Query().
+	Provider("Anthropic").
+	Has(llmspecs.ModalityImageIn).
+	List()
 ```
 
-See [examples/basic/main.go](./examples/basic/main.go) for a runnable example.
+### Validate configured model names
 
-## Repository Layout
+```go
+configured := []string{"gpt4t", "qwen3-32b", "not-exist"}
+validModels := llmspecs.GetMany(configured)
+```
+
+### Group models by tags
+
+```go
+reasoningModels := llmspecs.Query().
+	Tag(string(llmspecs.TagReasoning)).
+	List()
+
+for _, tag := range llmspecs.KnownTags() {
+	fmt.Println(tag.Category, tag.Name, tag.Label)
+}
+```
+
+## API Overview
+
+| API | Description |
+| --- | --- |
+| `Total()` | Return the number of models in the registry |
+| `Get(idOrAlias)` | Get a model by ID or alias |
+| `GetMany(idsOrAliases)` | Batch lookup; missing entries are skipped |
+| `Search(query, limit)` | Fuzzy search over IDs, names, series, summaries, tags, and aliases |
+| `Query()` | Create a chainable model query |
+| `KnownTags()` | Return the stable tag catalog for downstream rendering and grouping |
+| `Model.Card()` | Return a compact structure suitable for UI model cards |
+
+Core `Model` fields include:
+
+- `ID()`, `Name()`, `Provider()`, `Family()`, `Series()`
+- `Description()`, `DescriptionCN()`, `Summary()`
+- `ContextLength()`, `MaxOutput()`
+- `Features()`, `HasCapability()`, `Tags()`, `HasTag()`, `Aliases()`
+
+Capability constants live in [capability.go](./capability.go), and tag constants live in [tag.go](./tag.go).
+
+## Where It Fits
+
+- Model gateways: route by user selection, capability requirements, or provider policy.
+- Agent platforms: expose only models that support tool use, structured output, or multimodal input.
+- SaaS dashboards: render model lists, tags, context windows, and localized descriptions.
+- CLIs and SDKs: validate config files and provide search/autocomplete results.
+- Internal platforms: replace hard-coded model tables spread across service code.
+
+## Data Source And Updates
+
+The project currently syncs model metadata primarily from OpenRouter. Human-maintained `models/**/*.yaml` files provide corrections, extra fields, aliases, and Chinese descriptions. The final registry is generated into `models_gen.go`, so downstream applications only need to import the Go package; they do not need to run sync jobs at runtime.
+
+Maintainer-facing files:
 
 ```text
 .
 ├── cmd/
-│   ├── generator/      # fetch upstream data and generate the static registry
-│   └── translator/     # incrementally translate model descriptions
+│   ├── generator/      # sync upstream metadata and generate the static registry
+│   └── translator/     # incrementally fill Chinese descriptions
 ├── data/
 │   └── models.json     # cached upstream payload
-├── docs/
-├── models/             # human-maintained YAML model files
+├── models/             # human-maintained YAML model definitions
 ├── models_gen.go       # generated file, do not edit manually
 └── Taskfile.yml        # go-task entry point
 ```
 
-## Development Commands
+## Contributing
 
-The repository uses `go-task` as the main command entry point.
+PRs are welcome for missing models, better aliases, corrected capabilities, and improved metadata. The common maintenance flow is:
+
+```bash
+task generator
+task test
+```
+
+Useful commands:
 
 ```bash
 task fmt
@@ -99,107 +177,7 @@ task releasecheck
 task sync
 ```
 
-Pass extra CLI flags after `--`:
-
-```bash
-task generator -- -fetch-only
-task translator -- -provider OpenAI -limit 20
-task run -- go test ./...
-```
-
-## Generator
-
-`cmd/generator` is responsible for:
-
-1. Fetching the upstream model list and descriptions.
-2. Merging local overrides from `models/`.
-3. Writing updated YAML files back to `models/`.
-4. Emitting `models_gen.go` for downstream Go projects.
-
-Common commands:
-
-```bash
-task generator
-task generator -- -fetch-only
-task generator -- -sync-registry=false
-```
-
-Useful flags:
-
-- `-source`: upstream source, currently `openrouter`
-- `-api-url`: upstream models endpoint
-- `-models-dir`: local YAML directory
-- `-cache-path`: raw upstream JSON cache path
-- `-output-go`: generated Go file path
-- `-fetch-only`: refresh upstream cache only
-
-## Translator
-
-By default, `cmd/translator` only targets YAML files that:
-
-- have `description`
-- do not yet have `description_cn`
-
-Common commands:
-
-```bash
-export LLM_API_KEY="sk-..."
-task translator
-task translator -- -provider OpenAI -limit 50
-task translator -- -dry-run -id-prefix qwen/
-```
-
-Environment variables:
-
-- `LLM_API_KEY`: required
-- `LLM_BASE_URL`: optional, defaults to `https://api.openai.com/v1`
-- `LLM_MODEL`: optional, defaults to `gpt-4o-mini`
-
-## Release Check
-
-`cmd/releasecheck` compares the latest tag with the current `models_gen.go` and decides whether a new release is warranted.
-
-Current release policy:
-
-- These changes trigger a release:
-  - added models
-  - removed models
-  - changes to `name`, `provider`, `description`, `description_cn`, `features`, or `aliases`
-- These changes do not trigger a release by themselves:
-  - `context_length`
-  - `max_output`
-
-Common commands:
-
-```bash
-task releasecheck
-task releasecheck -- -base-ref v0.3.44 -format json
-```
-
-## Local Override Example
-
-```yaml
-id: openai/text-embedding-3-large
-name: "OpenAI: Text Embedding 3 Large"
-provider: OpenAI
-description_cn: "OpenAI's most powerful embedding model."
-features:
-  - CapEmbedding
-  - ModalityTextIn
-context_length: 8192
-aliases:
-  - text-embedding-3-large
-```
-
-See [capability.go](./capability.go) for supported capability constants.
-
-## Recommended Workflow
-
-1. Run `task generator` to refresh upstream data and local registry files.
-2. Run `task translator` if Chinese descriptions need to be filled in.
-3. Run `task generator` again so translated fields are baked into `models_gen.go`.
-4. Run `task releasecheck` to see whether the change should publish a release.
-5. Run `task ci` before submitting changes.
+When changing model metadata, edit `models/**/*.yaml` and regenerate instead of hand-editing `models_gen.go`. See [docs/DEVELOPMENT.md](./docs/DEVELOPMENT.md) for maintainer details and [AGENTS.md](./AGENTS.md) for AI collaboration notes.
 
 ## License
 
