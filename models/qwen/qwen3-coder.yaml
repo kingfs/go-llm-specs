@@ -10,6 +10,7 @@ description_cn: |-
 
   阿里云端点的定价根据上下文长度而异。当请求输入 token 超过 128k 时，将适用更高费率。
 context_length: 262144
+max_output: 65536
 features:
   - CapChat
   - CapFunctionCall

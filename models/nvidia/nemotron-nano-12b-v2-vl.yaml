@@ -18,6 +18,7 @@ description_cn: |-
 
   模型权重、训练数据和微调方案均以宽松的 NVIDIA 开源许可证发布，并支持在 NeMo、NIM 及主流推理运行时环境中部署。
 context_length: 131072
+max_output: 16384
 features:
   - CapChat
   - CapJsonMode

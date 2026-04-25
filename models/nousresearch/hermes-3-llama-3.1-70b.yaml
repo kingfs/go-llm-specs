@@ -14,6 +14,7 @@ description_cn: |-
 
   Hermes 3 系列在 Hermes 2 能力基础上进一步拓展，包括更强大可靠的函数调用与结构化输出能力、通用助手能力，以及改进的代码生成技能。
 context_length: 131072
+max_output: 16384
 features:
   - CapChat
   - CapFunctionCall
