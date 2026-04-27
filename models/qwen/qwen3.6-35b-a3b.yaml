@@ -1,0 +1,14 @@
+id: qwen/qwen3.6-35b-a3b
+name: 'Qwen: Qwen3.6 35B A3B'
+provider: Qwen
+description: Qwen3.6-35B-A3B is an open-weight multimodal model from Alibaba Cloud with 35 billion total parameters and 3 billion active parameters per token. It uses a hybrid sparse mixture-of-experts architecture combining Gated...
+description_cn: Qwen3.6-35B-A3B是阿里云推出的开放权重多模态模型，总参数为350亿，每个令牌有30亿活跃参数。采用混合稀疏专家混合架构，结合了门控...
+context_length: 262144
+max_output: 65536
+features:
+  - CapChat
+  - CapJsonMode
+  - ModalityImageIn
+  - ModalityTextIn
+  - ModalityTextOut
+  - ModalityVideoIn
