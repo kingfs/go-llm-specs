@@ -1,0 +1,14 @@
+id: ~moonshotai/kimi-latest
+name: MoonshotAI Kimi Latest
+provider: ~Moonshotai
+description: This model always redirects to the latest model in the MoonshotAI Kimi family.
+description_cn: 该模型始终重定向到MoonshotAI Kimi系列中的最新模型。
+context_length: 256000
+max_output: 65536
+features:
+  - CapChat
+  - CapFunctionCall
+  - CapJsonMode
+  - ModalityImageIn
+  - ModalityTextIn
+  - ModalityTextOut

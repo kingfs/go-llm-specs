@@ -1,0 +1,15 @@
+id: ~openai/gpt-mini-latest
+name: OpenAI GPT Mini Latest
+provider: ~Openai
+description: This model always redirects to the latest model in the OpenAI GPT Mini family.
+description_cn: 该模型始终重定向到OpenAI GPT Mini系列中的最新模型。
+context_length: 400000
+max_output: 128000
+features:
+  - CapChat
+  - CapFunctionCall
+  - CapJsonMode
+  - ModalityFileIn
+  - ModalityImageIn
+  - ModalityTextIn
+  - ModalityTextOut

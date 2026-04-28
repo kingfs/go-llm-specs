@@ -1,0 +1,17 @@
+id: ~google/gemini-flash-latest
+name: Google Gemini Flash Latest
+provider: ~Google
+description: This model always redirects to the latest model in the Google Gemini Flash family.
+description_cn: 该模型始终重定向到Google Gemini Flash系列中的最新模型。
+context_length: 1048576
+max_output: 65536
+features:
+  - CapChat
+  - CapFunctionCall
+  - CapJsonMode
+  - ModalityAudioIn
+  - ModalityFileIn
+  - ModalityImageIn
+  - ModalityTextIn
+  - ModalityTextOut
+  - ModalityVideoIn

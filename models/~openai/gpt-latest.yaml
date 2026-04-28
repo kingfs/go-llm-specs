@@ -1,0 +1,15 @@
+id: ~openai/gpt-latest
+name: OpenAI GPT Latest
+provider: ~Openai
+description: This model always redirects to the latest model in the OpenAI GPT family.
+description_cn: 该模型始终重定向到OpenAI GPT系列中的最新模型。
+context_length: 1050000
+max_output: 128000
+features:
+  - CapChat
+  - CapFunctionCall
+  - CapJsonMode
+  - ModalityFileIn
+  - ModalityImageIn
+  - ModalityTextIn
+  - ModalityTextOut

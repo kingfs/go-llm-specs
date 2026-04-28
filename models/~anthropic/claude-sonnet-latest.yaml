@@ -1,0 +1,14 @@
+id: ~anthropic/claude-sonnet-latest
+name: Anthropic Claude Sonnet Latest
+provider: ~Anthropic
+description: This model always redirects to the latest model in the Anthropic Claude Sonnet family.
+description_cn: 该模型始终重定向到Anthropic Claude Sonnet系列中的最新模型。
+context_length: 1000000
+max_output: 128000
+features:
+  - CapChat
+  - CapFunctionCall
+  - CapJsonMode
+  - ModalityImageIn
+  - ModalityTextIn
+  - ModalityTextOut

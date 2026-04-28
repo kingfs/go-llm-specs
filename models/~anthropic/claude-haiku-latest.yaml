@@ -1,0 +1,14 @@
+id: ~anthropic/claude-haiku-latest
+name: Anthropic Claude Haiku Latest
+provider: ~Anthropic
+description: This model always redirects to the latest model in the Anthropic Claude Haiku family.
+description_cn: 该模型始终重定向到Anthropic Claude Haiku系列中的最新模型。
+context_length: 200000
+max_output: 64000
+features:
+  - CapChat
+  - CapFunctionCall
+  - CapJsonMode
+  - ModalityImageIn
+  - ModalityTextIn
+  - ModalityTextOut
