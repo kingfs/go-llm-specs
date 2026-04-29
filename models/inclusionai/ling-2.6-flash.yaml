@@ -1,0 +1,13 @@
+id: inclusionai/ling-2.6-flash
+name: 'inclusionAI: Ling-2.6-flash'
+provider: Inclusionai
+description: Ling-2.6-flash is an instant (instruct) model from inclusionAI with 104B total parameters and 7.4B active parameters, designed for real-world agents that require fast responses, strong execution, and high token efficiency....
+description_cn: Ling-2.6-flash 是来自 inclusionAI 的即时（指令）模型，具有 104 亿总参数和 74 亿活动参数，旨在满足需要快速响应、强大执行和高令牌效率的现实世界代理的需求......
+context_length: 262144
+max_output: 32768
+features:
+  - CapChat
+  - CapFunctionCall
+  - CapJsonMode
+  - ModalityTextIn
+  - ModalityTextOut
