@@ -1,0 +1,12 @@
+id: inclusionai/ring-2.6-1t:free
+name: 'inclusionAI: Ring-2.6-1T (free)'
+provider: Inclusionai
+description: Ring-2.6-1T is a 1T-parameter-scale thinking model with 63B active parameters, built for real-world agent workflows that require both strong capability and operational efficiency. It is optimized for coding agents, tool...
+description_cn: Ring-2.6-1T 是一个具有 63B 活跃参数的 1T 参数规模思维模型，旨在满足既需要强大能力又需要操作效率的现实世界代理工作流程。它针对编码代理、工具等进行了优化...
+context_length: 262144
+max_output: 65536
+features:
+  - CapChat
+  - CapFunctionCall
+  - ModalityTextIn
+  - ModalityTextOut
