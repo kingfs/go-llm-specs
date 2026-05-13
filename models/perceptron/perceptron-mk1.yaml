@@ -1,0 +1,14 @@
+id: perceptron/perceptron-mk1
+name: 'Perceptron: Perceptron Mk1'
+provider: Perceptron
+description: Perceptron Mk1 (Mark One) is Perceptron's highest-quality vision-language model for video and embodied reasoning.** It accepts image and video inputs paired with natural language queries, and produces detailed visual understanding...
+description_cn: Perceptron Mk1（第一代）是Perceptron最高质量的视频-语言模型，适用于视频和具身推理。** 它接受配对的图像和视频输入以及自然语言查询，并生成详细的视觉理解...
+context_length: 32768
+max_output: 8192
+features:
+  - CapChat
+  - CapJsonMode
+  - ModalityImageIn
+  - ModalityTextIn
+  - ModalityTextOut
+  - ModalityVideoIn

@@ -1,0 +1,21 @@
+id: anthropic/claude-opus-4.7-fast
+name: 'Anthropic: Claude Opus 4.7 (Fast)'
+provider: Anthropic
+description: |-
+  Fast-mode variant of [Opus 4.7](/anthropic/claude-opus-4.7) - identical capabilities with higher output speed at premium 6x pricing.
+
+  Learn more in Anthropic's docs: https://platform.claude.com/docs/en/build-with-claude/fast-mode
+description_cn: |-
+  [Opus 4.7](/anthropic/claude-opus-4.7)的快速模式变体——具有相同能力，但输出速度更快，定价为6倍的高端费用。
+
+  在Anthropic的文档中了解更多信息：https://platform.claude.com/docs/en/build-with-claude/fast-mode
+context_length: 1000000
+max_output: 128000
+features:
+  - CapChat
+  - CapFunctionCall
+  - CapJsonMode
+  - ModalityFileIn
+  - ModalityImageIn
+  - ModalityTextIn
+  - ModalityTextOut
