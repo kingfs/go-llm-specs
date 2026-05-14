@@ -1,0 +1,12 @@
+id: deepseek/deepseek-v4-flash:free
+name: 'DeepSeek: DeepSeek V4 Flash (free)'
+provider: DeepSeek
+description: DeepSeek V4 Flash is an efficiency-optimized Mixture-of-Experts model from DeepSeek with 284B total parameters and 13B activated parameters, supporting a 1M-token context window. It is designed for fast inference and...
+description_cn: DeepSeek V4 Flash 是一个效率优化的混合专家模型，来自 DeepSeek，拥有 284B 总参数和 13B 激活参数，支持 1M 代币上下文窗口。它旨在快速推理和...
+context_length: 256000
+max_output: 256000
+features:
+  - CapChat
+  - CapFunctionCall
+  - ModalityTextIn
+  - ModalityTextOut
