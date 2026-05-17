@@ -9,6 +9,7 @@ description_cn: |-
 
   Nemotron 3 Super 在 NVIDIA 开源许可下完全开放模型权重、数据集与训练方案，便于用户轻松定制并在任意环境（从工作站到云端）安全部署。
 context_length: 262144
+max_output: 16384
 features:
   - CapChat
   - CapFunctionCall
