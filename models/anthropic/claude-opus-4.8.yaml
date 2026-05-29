@@ -1,0 +1,15 @@
+id: anthropic/claude-opus-4.8
+name: 'Anthropic: Claude Opus 4.8'
+provider: Anthropic
+description: Claude Opus 4.8 is Anthropic's most capable generally available model in the Opus family. It supports text, image, and file inputs with text output, with reasoning support and a 1M-token...
+description_cn: Claude Opus 4.8 是 Anthropic 在 Opus 系列中最强大的公开模型。它支持文本、图像和文件输入，并以文本输出，具备推理支持和 1M 令牌...
+context_length: 1000000
+max_output: 128000
+features:
+  - CapChat
+  - CapFunctionCall
+  - CapJsonMode
+  - ModalityFileIn
+  - ModalityImageIn
+  - ModalityTextIn
+  - ModalityTextOut
