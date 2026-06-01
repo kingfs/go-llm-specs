@@ -1,0 +1,15 @@
+id: minimax/minimax-m3
+name: 'MiniMax: MiniMax M3'
+provider: Minimax
+description: MiniMax-M3 is a multimodal foundation model from MiniMax. It supports text, image, and video inputs with text output, a 1M-token context window, and is suited for long-horizon agentic work, coding,...
+description_cn: MiniMax-M3 是 MiniMax 的多模态基础模型。它支持文本、图像和视频输入，并生成文本输出，具有 100 万个标记的上下文窗口，适合长远代理工作、编码等。
+context_length: 1048576
+max_output: 512000
+features:
+  - CapChat
+  - CapFunctionCall
+  - CapJsonMode
+  - ModalityImageIn
+  - ModalityTextIn
+  - ModalityTextOut
+  - ModalityVideoIn
