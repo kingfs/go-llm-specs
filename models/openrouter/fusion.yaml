@@ -1,0 +1,10 @@
+id: openrouter/fusion
+name: 'OpenRouter: Fusion'
+provider: Openrouter
+description: Fusion turns your prompt into a small multi-model deliberation. A panel of expert models (see below) analyzes your prompt in parallel with web search and web fetch enabled, then a...
+description_cn: Fusion将您的提示转换为一个小型多模型讨论。一组专家模型（见下文）与启用网页搜索和网页抓取的情况下并行分析您的提示，然后...
+context_length: 128000
+features:
+  - CapChat
+  - ModalityTextIn
+  - ModalityTextOut
