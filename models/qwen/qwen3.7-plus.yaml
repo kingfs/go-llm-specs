@@ -1,0 +1,14 @@
+id: qwen/qwen3.7-plus
+name: 'Qwen: Qwen3.7 Plus'
+provider: Qwen
+description: Qwen3.7-Plus is a cost-effective model in Alibaba's Qwen3.7 series. It supports text and image input with text output, building on the series' text capabilities with a comprehensive upgrade to its...
+description_cn: Qwen3.7-Plus是阿里巴巴Qwen3.7系列中的高性价比模型。它支持文本和图像输入，文本输出，基于该系列的文本能力，进行了全面升级...
+context_length: 1000000
+max_output: 65536
+features:
+  - CapChat
+  - CapFunctionCall
+  - CapJsonMode
+  - ModalityImageIn
+  - ModalityTextIn
+  - ModalityTextOut
