@@ -1,0 +1,13 @@
+id: nvidia/nemotron-3-ultra-550b-a55b
+name: 'NVIDIA: Nemotron 3 Ultra'
+provider: Nvidia
+description: NVIDIA Nemotron 3 Ultra is an open frontier-reasoning and orchestration model from NVIDIA, with 55B active parameters out of 550B total (MoE). Built on a hybrid Transformer-Mamba mixture-of-experts architecture, it...
+description_cn: NVIDIA Nemotron 3 Ultra是NVIDIA的一个开放前沿推理和 orchestration 模型，具有550B总参数中的55B活跃参数（MoE）。基于混合的Transformer-Mamba专家混合架构，它...
+context_length: 1000000
+max_output: 16384
+features:
+  - CapChat
+  - CapFunctionCall
+  - CapJsonMode
+  - ModalityTextIn
+  - ModalityTextOut
