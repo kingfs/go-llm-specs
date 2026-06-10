@@ -1,0 +1,15 @@
+id: ~anthropic/claude-fable-latest
+name: 'Anthropic: Claude Fable Latest'
+provider: ~Anthropic
+description: This model always redirects to the latest model in the Claude Fable family.
+description_cn: 该模型始终重定向到 Claude Fable 系列中的最新模型。
+context_length: 1000000
+max_output: 128000
+features:
+  - CapChat
+  - CapFunctionCall
+  - CapJsonMode
+  - ModalityFileIn
+  - ModalityImageIn
+  - ModalityTextIn
+  - ModalityTextOut
