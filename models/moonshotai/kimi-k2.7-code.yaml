@@ -4,6 +4,7 @@ provider: Moonshotai
 description: 'MoonshotAI: Kimi K2.7 Code is a coding-focused model in Moonshot AI''s Kimi K2 family, built to complete end-to-end programming tasks reliably over long contexts. It uses a native multimodal mixture-of-experts...'
 description_cn: 'MoonshotAI: Kimi K2.7 Code 是 Moonshot AI 的 Kimi K2 系列中的一个专注于编码的模型，旨在可靠地完成长期上下文中的端到端编程任务。它使用原生多模态专家混合...'
 context_length: 262144
+max_output: 262144
 features:
   - CapChat
   - CapFunctionCall
