@@ -1,0 +1,13 @@
+id: poolside/laguna-m.1
+name: 'Poolside: Laguna M.1'
+provider: Poolside
+description: Laguna M.1 is the flagship coding agent model from [Poolside](https://poolside.ai/), optimized for complex software engineering tasks. Designed for agentic coding workflows, it supports tool calling and reasoning, with a 256K...
+description_cn: Laguna M.1是[Poolside](https://poolside.ai/)的旗舰编码代理模型，优化用于复杂的软件工程任务。专为代理编码工作流程设计，支持工具调用和推理，具有256K...
+context_length: 262144
+max_output: 32768
+features:
+  - CapChat
+  - CapFunctionCall
+  - CapJsonMode
+  - ModalityTextIn
+  - ModalityTextOut
