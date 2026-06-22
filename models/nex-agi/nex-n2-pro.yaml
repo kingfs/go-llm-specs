@@ -1,0 +1,12 @@
+id: nex-agi/nex-n2-pro
+name: 'Nex AGI: Nex-N2-Pro'
+provider: Nex-Agi
+description: Nex-N2-Pro is an agentic mixture-of-experts model from Nex AGI, with 17B active parameters out of 397B total. Built on the Qwen3.5 architecture, it accepts text and image input and produces...
+description_cn: Nex-N2-Pro 是来自 Nex AGI 的一种主动混合专家模型，具有 17B 的活跃参数，总计 397B。基于 Qwen3.5 架构，支持文本和图像输入，并生成...
+context_length: 262144
+max_output: 262144
+features:
+  - CapChat
+  - ModalityImageIn
+  - ModalityTextIn
+  - ModalityTextOut
