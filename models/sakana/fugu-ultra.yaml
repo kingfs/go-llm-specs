@@ -1,0 +1,14 @@
+id: sakana/fugu-ultra
+name: 'Sakana: Fugu Ultra'
+provider: Sakana
+description: 'Fugu Ultra is the higher-performance model in Sakana AI''s Fugu family. Rather than a single monolithic model, Fugu is a learned multi-agent orchestration system: a language model trained to route...'
+description_cn: Fugu Ultra是Sakana AI的Fugu系列中的高性能模型。它并不是一个单一的整体模型，而是一个学习型多代理系统：一个经过训练的语言模型，用于路由...
+context_length: 1000000
+max_output: 128000
+features:
+  - CapChat
+  - CapFunctionCall
+  - CapJsonMode
+  - ModalityImageIn
+  - ModalityTextIn
+  - ModalityTextOut
