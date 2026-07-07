@@ -1,0 +1,14 @@
+id: nex-agi/nex-n2-mini
+name: 'Nex AGI: Nex-N2-Mini'
+provider: Nex-Agi
+description: Nex-N2-Mini is an open-source agentic mixture-of-experts model from Nex AGI, the smaller sibling in the Nex-N2 series. It accepts text and image input and is built for coding, tool use,...
+description_cn: Nex-N2-Mini 是来自 Nex AGI 的开源代理混合专家模型，是 Nex-N2 系列中更小的兄弟。它接受文本和图像输入，旨在进行编码、工具使用等。
+context_length: 262144
+max_output: 262144
+features:
+  - CapChat
+  - CapFunctionCall
+  - CapJsonMode
+  - ModalityImageIn
+  - ModalityTextIn
+  - ModalityTextOut
