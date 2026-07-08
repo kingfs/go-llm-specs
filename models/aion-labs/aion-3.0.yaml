@@ -1,0 +1,13 @@
+id: aion-labs/aion-3.0
+name: 'AionLabs: Aion-3.0'
+provider: Aion-Labs
+description: Aion-3.0 is a multi-model roleplaying and storytelling system from AionLabs, built on the GLM family of models. It uses a collaborative generation process in which multiple specialized models each contribute...
+description_cn: Aion-3.0是AionLabs推出的多模型角色扮演和叙事系统，基于GLM模型系列。它采用协作生成过程，多个专用模型共同贡献...
+context_length: 131072
+max_output: 32768
+features:
+  - CapChat
+  - CapFunctionCall
+  - CapJsonMode
+  - ModalityTextIn
+  - ModalityTextOut
