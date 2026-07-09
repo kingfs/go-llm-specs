@@ -1,0 +1,14 @@
+id: ~x-ai/grok-latest
+name: 'xAI: Grok Latest'
+provider: ~X-Ai
+description: This model always redirects to the latest Grok model from xAI.
+description_cn: 该模型始终重定向到 xAI 的最新 Grok 模型。
+context_length: 500000
+features:
+  - CapChat
+  - CapFunctionCall
+  - CapJsonMode
+  - ModalityFileIn
+  - ModalityImageIn
+  - ModalityTextIn
+  - ModalityTextOut

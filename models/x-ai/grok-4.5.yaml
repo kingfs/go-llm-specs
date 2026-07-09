@@ -1,0 +1,14 @@
+id: x-ai/grok-4.5
+name: 'xAI: Grok 4.5'
+provider: X-Ai
+description: Grok 4.5 is SpaceXAI's smartest model with frontier performance on coding, knowledge work, and STEM.
+description_cn: Grok 4.5 是 SpaceXAI 最智能的模型，在编码、知识工作和STEM领域表现卓越。
+context_length: 500000
+features:
+  - CapChat
+  - CapFunctionCall
+  - CapJsonMode
+  - ModalityFileIn
+  - ModalityImageIn
+  - ModalityTextIn
+  - ModalityTextOut
