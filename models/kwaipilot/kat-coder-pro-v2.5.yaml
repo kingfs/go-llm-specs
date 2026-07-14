@@ -1,0 +1,11 @@
+id: kwaipilot/kat-coder-pro-v2.5
+name: 'Kwaipilot: KAT-Coder-Pro V2.5'
+provider: Kwaipilot
+context_length: 256000
+max_output: 80000
+features:
+  - CapChat
+  - CapFunctionCall
+  - CapJsonMode
+  - ModalityTextIn
+  - ModalityTextOut
