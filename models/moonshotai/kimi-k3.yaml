@@ -1,0 +1,13 @@
+id: moonshotai/kimi-k3
+name: 'MoonshotAI: Kimi K3'
+provider: Moonshotai
+description: Kimi K3 is an ultra-large-scale, open-weight multimodal reasoning model from Moonshot AI. It is suited for complex coding, knowledge work, and long-horizon agentic workflows, and is particularly strong at navigating...
+description_cn: Kimi K3 是来自 Moonshot AI 的超大规模开放权重多模态推理模型。它适合复杂编码、知识工作和长时间的代理工作流，尤其擅长导航...
+context_length: 1048576
+features:
+  - CapChat
+  - CapFunctionCall
+  - CapJsonMode
+  - ModalityImageIn
+  - ModalityTextIn
+  - ModalityTextOut

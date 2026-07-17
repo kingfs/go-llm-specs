@@ -1,0 +1,16 @@
+id: meta/muse-spark-1.1
+name: 'Meta: Muse Spark 1.1'
+provider: Meta
+description: Muse Spark 1.1 is a multimodal reasoning model from Meta, built for agentic tasks. It accepts text, images, video, audio, and PDF documents and returns text, with a 1M-token context...
+description_cn: Muse Spark 1.1 是来自 Meta 的多模态推理模型，专为代理任务而构建。它接受文本、图像、视频、音频和 PDF 文档，并返回文本，具有 1M 令牌的上下文...
+context_length: 1048576
+features:
+  - CapChat
+  - CapFunctionCall
+  - CapJsonMode
+  - ModalityAudioIn
+  - ModalityFileIn
+  - ModalityImageIn
+  - ModalityTextIn
+  - ModalityTextOut
+  - ModalityVideoIn
