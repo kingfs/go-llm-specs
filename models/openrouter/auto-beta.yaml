@@ -1,0 +1,17 @@
+id: openrouter/auto-beta
+name: Auto Router (Beta)
+provider: Openrouter
+description: Auto Router (Beta) is a task-aware router from OpenRouter. It classifies each request, then routes it the [most popular model](/rankings#task-spend) for that task based on aggregate spend, filtered by your...
+description_cn: 自动路由器（测试版）是OpenRouter的一个任务感知路由器。它对每个请求进行分类，然后根据聚合支出将其路由到该任务的[最受欢迎模型](/rankings#task-spend)，并过滤您的...
+context_length: 2000000
+features:
+  - CapChat
+  - CapFunctionCall
+  - CapJsonMode
+  - ModalityAudioIn
+  - ModalityFileIn
+  - ModalityImageIn
+  - ModalityImageOut
+  - ModalityTextIn
+  - ModalityTextOut
+  - ModalityVideoIn
