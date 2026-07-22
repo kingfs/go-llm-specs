@@ -1,0 +1,12 @@
+id: poolside/laguna-s-2.1
+name: 'Poolside: Laguna S 2.1'
+provider: Poolside
+description: Laguna S 2.1 is the latest coding agent model from [Poolside](<https://poolside.ai/>). Laguna S 2.1 is a 118B total parameter model with 8B active parameters, scoring 70.2% on Terminal-Bench 2.1 and...
+description_cn: Laguna S 2.1 是 [Poolside](<https://poolside.ai/>) 最新的编码代理模型。Laguna S 2.1 是一个118B参数总量的模型，具有8B活跃参数，在Terminal-Bench 2.1中得分70.2%并...
+context_length: 1048576
+max_output: 131072
+features:
+  - CapChat
+  - CapFunctionCall
+  - ModalityTextIn
+  - ModalityTextOut
