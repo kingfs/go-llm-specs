@@ -1,0 +1,12 @@
+id: inclusionai/ling-3.0-flash:free
+name: Ling-3.0-flash (free)
+provider: Inclusionai
+description: '*Ling-3.0-flash* is a *124B-parameter Mixture-of-Experts (MoE) model*, with approximately *5.1B parameters activated per token*. The model is designed with *token efficiency and production-scale agentic inference* as key priorities, enabling developers...'
+description_cn: '*Ling-3.0-flash* 是一个 *124B参数的专家混合模型 (MoE)*，每个token大约激活 *5.1B参数*。该模型的设计重点是 *token效率和生产规模应用推理*，使开发者能够...'
+context_length: 262144
+max_output: 32768
+features:
+  - CapChat
+  - CapFunctionCall
+  - ModalityTextIn
+  - ModalityTextOut
