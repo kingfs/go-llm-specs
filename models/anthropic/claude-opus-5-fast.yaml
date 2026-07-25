@@ -1,0 +1,21 @@
+id: anthropic/claude-opus-5-fast
+name: Claude Opus 5 (Fast)
+provider: Anthropic
+description: |-
+  Fast-mode variant of [Opus 5](/anthropic/claude-opus-5) - identical capabilities with higher output speed at 2x pricing relative to regular Opus 5.
+
+  Learn more in Anthropic's docs: https://platform.claude.com/docs/en/build-with-claude/fast-mode
+description_cn: |-
+  [Opus 5](/anthropic/claude-opus-5) 的快速模式变体 - 具备相同能力，但输出速度更快，价格为常规 Opus 5 的 2 倍。
+
+  更多信息请参见 Anthropic 的文档：https://platform.claude.com/docs/en/build-with-claude/fast-mode
+context_length: 1000000
+max_output: 128000
+features:
+  - CapChat
+  - CapFunctionCall
+  - CapJsonMode
+  - ModalityFileIn
+  - ModalityImageIn
+  - ModalityTextIn
+  - ModalityTextOut

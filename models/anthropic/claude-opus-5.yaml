@@ -1,0 +1,15 @@
+id: anthropic/claude-opus-5
+name: Claude Opus 5
+provider: Anthropic
+description: Claude Opus 5 is Anthropic’s flagship model for demanding reasoning, coding, and long-horizon agentic work. It is particularly strong at end-to-end software tasks, code review and bug finding, visual analysis...
+description_cn: Claude Opus 5 是 Anthropic 的旗舰模型，适用于复杂推理、编码和长期自主工作。它在端到端软件任务、代码审查和错误发现、视觉分析等方面尤为强大...
+context_length: 1000000
+max_output: 128000
+features:
+  - CapChat
+  - CapFunctionCall
+  - CapJsonMode
+  - ModalityFileIn
+  - ModalityImageIn
+  - ModalityTextIn
+  - ModalityTextOut
