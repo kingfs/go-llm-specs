@@ -1,0 +1,15 @@
+id: qwen/qwen3.7-flash
+name: 'Qwen: Qwen3.7 Flash'
+provider: Qwen
+description: Qwen3.7 Flash is a vision-language reasoning model from Alibaba. It is suited for multimodal agents, visual coding, search, and computer interaction, with strengths in object recognition, spatial understanding, and real-world...
+description_cn: Qwen3.7 Flash是阿里巴巴的一款视觉-语言推理模型。适用于多模态智能体、视觉编码、搜索和计算机交互，擅长物体识别、空间理解和现实世界...
+context_length: 1000000
+max_output: 65536
+features:
+  - CapChat
+  - CapFunctionCall
+  - CapJsonMode
+  - ModalityImageIn
+  - ModalityTextIn
+  - ModalityTextOut
+  - ModalityVideoIn
