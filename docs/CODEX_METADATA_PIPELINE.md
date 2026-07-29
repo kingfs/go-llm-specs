@@ -128,6 +128,36 @@ It supports:
 
 The Codex schema version is pinned in project code and documented in the manifest. `used_fallback_model_metadata` is never emitted.
 
+### Codex candidate selection
+
+`cmd/codexsuggest` has three mutually exclusive selection modes. Every mode writes reviewable `pending` suggestions; none directly enables a model:
+
+```bash
+# One model. -slug is recommended when the serving name differs from the ID suffix.
+task codexsuggest -- -model qwen/qwen3.6-27b -slug qwen3.6-27b
+
+# A deployment-specific list with explicit serving names.
+task codexsuggest -- -allowlist codex-models.yaml \
+  -report .cache/codex-selection.json
+
+# Models created during the last 180 days, served through OpenRouter.
+task codexsuggest -- -since 180d -serving-provider openrouter \
+  -report .cache/codex-recent.json
+```
+
+The allowlist format is:
+
+```yaml
+models:
+  - id: qwen/qwen3.6-27b
+    slugs:
+      - qwen3.6-27b
+```
+
+The time selector reads the Unix `created` field in `data/models.json`. It intentionally does not use `discovered_at`, because a historical migration may give many old records the same migration timestamp. `YYYY-MM-DD` and RFC3339 cutoffs are also accepted.
+
+Recent OpenRouter IDs are used as slugs only with the explicit `-serving-provider openrouter` switch. Without it, eligible records are reported as missing a serving slug so an operator can map them for vLLM, SGLang, or a provider API. The report records included and skipped candidates with reasons. Static eligibility requires schema v2, positive context length, chat, function calling, and text input/output capabilities.
+
 ### Deployment probe
 
 `cmd/modelprobe` runs non-destructive requests against an already-running OpenAI-compatible endpoint. It tests discovery, text generation, tool calls, parallel tool calls, JSON output, reasoning parameters, and optional image input. It writes an observation report; it does not directly mutate YAML.
@@ -166,6 +196,10 @@ task suggestion -- -fields context_length,description apply \
   data/suggestions/qwen/qwen3.6-27b.model-card.json
 
 task codexsuggest -- -model qwen/qwen3.6-27b
+
+# Or select a reviewed deployment list / recent OpenRouter candidates.
+task codexsuggest -- -allowlist codex-models.yaml -report .cache/codex-selection.json
+task codexsuggest -- -since 180d -serving-provider openrouter -report .cache/codex-recent.json
 
 # Resume a local backfill for every HF-enriched record. Identical source revisions are reused.
 LLM_REASONING_EFFORT=none CARD_EXTRACT_MAX_CHARS=8000 task cardextract-batch
@@ -227,6 +261,22 @@ task modelprobe -- -base-url http://localhost:8000/v1 -model qwen3.6-27b \
 ```
 
 The committed `dist/codex/third-party-models.json` is intentionally named as a standalone third-party catalog. Using it directly replaces Codex's bundled catalog. Users who also need bundled entries should capture them with their pinned Codex CLI and use the merge flag; the generator rejects collisions rather than silently overriding either catalog.
+
+For example:
+
+```bash
+gh release download v0.6.0 --pattern 'third-party-models.json*'
+
+# Direct use: exact catalog slugs avoid fallback metadata warnings.
+# ~/.codex/config.toml:
+# model_catalog_json = "/absolute/path/to/third-party-models.json"
+
+# Preserve the bundled entries by generating a version-local merged catalog.
+codex debug models --bundled > bundled-models.json
+task codexgen -- -bundled-catalog bundled-models.json -output merged-models.json
+```
+
+The v0.6.0 asset contains one entry because only `qwen3.6-27b` had an approved Codex policy at release time. A later catalog grows only when suggestions are explicitly reviewed and applied. The full model registry is not a valid Codex catalog: it includes non-chat modalities and records without verified serving slugs or Codex tool policy.
 
 ## Acceptance criteria
 

@@ -20,7 +20,7 @@
 
 ## 你能得到什么
 
-- 静态注册表：当前包含 800+ 个模型，数据随项目自动同步并生成到 `models_gen.go`。
+- 静态注册表：包含数百个模型，数据随项目自动同步并生成到 `models_gen.go`。
 - 统一模型卡片：快速拿到 ID、名称、供应商、系列、摘要、标签、上下文长度、最大输出和能力位。
 - 别名解析：按模型 ID 或别名查询，别名大小写不敏感。
 - 能力过滤：用 Go 常量筛选 Vision、Tool Use、JSON mode、Embedding、Rerank 等模型能力。
@@ -179,6 +179,8 @@ task translator
 task cardextract -- -model qwen/qwen3.6-27b -ai-model <local-model>
 task suggestion -- list
 task codexsuggest -- -model qwen/qwen3.6-27b
+task codexsuggest -- -allowlist codex-models.yaml -report .cache/codex-selection.json
+task codexsuggest -- -since 180d -serving-provider openrouter -report .cache/codex-recent.json
 task enrich
 task codexgen
 task modelprobe -- -base-url http://localhost:8000/v1 -model qwen3.6-27b -server vllm
@@ -189,6 +191,53 @@ task sync
 本地覆盖模型信息时，请修改 `models/**/*.yaml`，不要手改 `models_gen.go`。更完整的维护说明见 [docs/DEVELOPMENT.md](./docs/DEVELOPMENT.md)，AI 协作说明见 [AGENTS.md](./AGENTS.md)。
 
 新发现或显式选择的模型可以使用 schema v2 保存来源可追溯的 OpenRouter、Hugging Face、reasoning 和 Codex metadata；没有声明版本的历史模型仍按 v1 读取，不会被批量迁移。运行 `task enrich -- -model <provider/model>` 可显式 enrichment，运行 `task codexgen` 会将 `codex.enabled: true` 的模型输出到独立第三方目录 `dist/codex/third-party-models.json`。完整设计和本地部署探测边界见 [Codex metadata pipeline](./docs/CODEX_METADATA_PIPELINE.md)。
+
+## Codex 第三方模型目录
+
+v0.6.0 的 `third-party-models.json` 只有 `qwen3.6-27b`，因为生成器只发布经过审核且显式设置 `codex.enabled: true` 的模型。这份文件可供 Codex 使用；当配置的模型名与目录中的 `slug` 精确一致时，Codex 不再回退到 fallback metadata，因而可消除对应的 metadata warning：
+
+```bash
+gh release download v0.6.0 --pattern 'third-party-models.json*'
+```
+
+```toml
+# ~/.codex/config.toml
+model_catalog_json = "/absolute/path/to/third-party-models.json"
+```
+
+注意：`model_catalog_json` 会替换当前 Codex 自带的模型目录，并非追加。需要同时保留内置模型时，应使用同一 Codex 版本导出并在本地合并：
+
+```bash
+codex debug models --bundled > bundled-models.json
+task codexgen -- -bundled-catalog bundled-models.json -output merged-models.json
+```
+
+指定一批实际部署的模型时，创建清单（slug 必须与 API 返回/接受的模型名一致）：
+
+```yaml
+models:
+  - id: qwen/qwen3.6-27b
+    slugs: [qwen3.6-27b]
+  - id: deepseek/deepseek-v3.2
+    slugs: [deepseek-v3.2]
+```
+
+```bash
+task codexsuggest -- -allowlist codex-models.yaml -report .cache/codex-selection.json
+task suggestion -- list
+task suggestion -- -fields codex.enabled,codex.slugs,codex.shell_type,codex.apply_patch_tool_type,codex.supports_parallel_tool_calls,codex.input_modalities apply data/suggestions/<provider>/<model>.codex.json
+task codexgen
+task codexcheck
+```
+
+OpenRouter 用户也可以按真实发布时间选择最近半年候选：
+
+```bash
+task codexsuggest -- -since 180d -serving-provider openrouter \
+  -report .cache/codex-recent.json
+```
+
+这里的“最近”只负责筛选候选；非 schema v2、非 chat/tool、缺少文本输入输出或上下文信息的记录会写入 skipped 报告。对于 vLLM/SGLang 或其他供应商，不应假定 OpenRouter ID 就是 serving slug，请先把候选整理成上述显式清单。审核并 apply 后，下一次 `task codexgen` 会把所有合格且已启用的模型打包到同一个目录。不能直接把注册表中的全部模型导出，因为其中还包括 embedding、rerank、音频模型以及未确认服务名/工具策略的记录。
 
 ## 许可证
 
