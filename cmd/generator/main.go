@@ -1,7 +1,6 @@
 package main
 
 import (
-	"bytes"
 	"encoding/json"
 	"errors"
 	"flag"
@@ -16,6 +15,7 @@ import (
 	"text/template"
 	"time"
 
+	registrymodel "github.com/kingfs/go-llm-specs/internal/registry"
 	"golang.org/x/text/cases"
 	"golang.org/x/text/language"
 	"gopkg.in/yaml.v3"
@@ -60,18 +60,7 @@ type RegistryData struct {
 	Models map[string]ModelRegistry `yaml:"models"`
 }
 
-type ModelRegistry struct {
-	ID            string   `yaml:"id"`
-	Name          string   `yaml:"name"`
-	NameCN        string   `yaml:"name_cn,omitempty"`
-	Provider      string   `yaml:"provider"`
-	Description   string   `yaml:"description,omitempty"`
-	DescriptionCN string   `yaml:"description_cn,omitempty"`
-	ContextLen    int      `yaml:"context_length"`
-	MaxOutput     int      `yaml:"max_output,omitempty"`
-	Features      []string `yaml:"features,omitempty"`
-	Aliases       []string `yaml:"aliases,omitempty"`
-}
+type ModelRegistry = registrymodel.Model
 
 type ProcessedModel struct {
 	ID            string
@@ -282,47 +271,29 @@ func syncToDisk(apiModels []OpenRouterModel, localModels map[string]ModelRegistr
 }
 
 func mergeModelRegistry(upstream OpenRouterModel, local ModelRegistry) ModelRegistry {
-	merged := ModelRegistry{
-		ID:          upstream.ID,
-		Name:        upstream.Name,
-		Provider:    normalizeProvider(strings.Split(upstream.ID, "/")[0]),
-		Description: upstream.Description,
-		ContextLen:  upstream.ContextLength,
-		MaxOutput:   upstream.TopProvider.MaxCompletionTokens,
-		Features:    stringsToFeatures(calculateFeatures(upstream)),
-		Aliases:     nil,
+	// Start from the complete local object so v2 and forward-compatible fields
+	// survive synchronization. Upstream only fills fields that are not locally set.
+	merged := local
+	if merged.ID == "" {
+		merged.ID = upstream.ID
 	}
-
-	// Local YAML fields are authoritative when explicitly set.
-	if local.ID != "" {
-		merged.ID = local.ID
+	if merged.Name == "" {
+		merged.Name = upstream.Name
 	}
-	if local.Name != "" {
-		merged.Name = local.Name
+	if merged.Provider == "" {
+		merged.Provider = normalizeProvider(strings.Split(upstream.ID, "/")[0])
 	}
-	if local.NameCN != "" {
-		merged.NameCN = local.NameCN
+	if merged.Description == "" {
+		merged.Description = upstream.Description
 	}
-	if local.Provider != "" {
-		merged.Provider = local.Provider
+	if merged.ContextLen <= 0 {
+		merged.ContextLen = upstream.ContextLength
 	}
-	if local.Description != "" {
-		merged.Description = local.Description
+	if merged.MaxOutput <= 0 {
+		merged.MaxOutput = upstream.TopProvider.MaxCompletionTokens
 	}
-	if local.DescriptionCN != "" {
-		merged.DescriptionCN = local.DescriptionCN
-	}
-	if local.ContextLen > 0 {
-		merged.ContextLen = local.ContextLen
-	}
-	if local.MaxOutput > 0 {
-		merged.MaxOutput = local.MaxOutput
-	}
-	if len(local.Features) > 0 {
-		merged.Features = local.Features
-	}
-	if len(local.Aliases) > 0 {
-		merged.Aliases = local.Aliases
+	if len(merged.Features) == 0 {
+		merged.Features = stringsToFeatures(calculateFeatures(upstream))
 	}
 
 	merged.Features = normalizeStringList(merged.Features)
@@ -372,14 +343,7 @@ func saveModelToDisk(m ModelRegistry, modelsDir string) error {
 
 	filePath := filepath.Join(dir, safeModelName+".yaml")
 
-	var buf bytes.Buffer
-	enc := yaml.NewEncoder(&buf)
-	enc.SetIndent(2)
-	if err := enc.Encode(m); err != nil {
-		return err
-	}
-
-	return os.WriteFile(filePath, buf.Bytes(), 0o644)
+	return registrymodel.Save(filePath, m)
 }
 
 func calculateFeatures(m OpenRouterModel) string {
