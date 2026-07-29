@@ -54,6 +54,11 @@ tasks:
     cmds:
       - go run ./cmd/codexgen -validate
 
+  codexcheck:
+    desc: Load the generated catalog through the pinned Codex CLI
+    cmds:
+      - go run ./cmd/codexcheck {{.CLI_ARGS}}
+
   modelprobe:
     desc: Probe an already-running OpenAI-compatible model deployment
     cmds:
