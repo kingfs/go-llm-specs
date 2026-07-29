@@ -66,7 +66,7 @@ func (d Document) Validate() error {
 
 func validateClaimType(claim Claim) error {
 	switch claim.Field {
-	case "description", "reasoning.parser":
+	case "description", "reasoning.parser", "codex.shell_type", "codex.apply_patch_tool_type":
 		var value string
 		if json.Unmarshal(claim.Value, &value) != nil || value == "" {
 			return fmt.Errorf("%s must be a non-empty string", claim.Field)
@@ -76,12 +76,12 @@ func validateClaimType(claim Claim) error {
 		if json.Unmarshal(claim.Value, &value) != nil || value <= 0 {
 			return fmt.Errorf("%s must be a positive integer", claim.Field)
 		}
-	case "reasoning.supported":
+	case "reasoning.supported", "codex.enabled", "codex.supports_parallel_tool_calls":
 		var value bool
 		if json.Unmarshal(claim.Value, &value) != nil {
 			return fmt.Errorf("%s must be a boolean", claim.Field)
 		}
-	case "features", "serving.vllm_args", "serving.sglang_args":
+	case "features", "serving.vllm_args", "serving.sglang_args", "codex.slugs", "codex.input_modalities":
 		var values []string
 		if json.Unmarshal(claim.Value, &values) != nil {
 			return fmt.Errorf("%s must be a string array", claim.Field)

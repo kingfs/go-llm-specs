@@ -44,6 +44,16 @@ tasks:
     cmds:
       - go run ./cmd/cardextractor {{.CLI_ARGS}}
 
+  suggestion:
+    desc: Review and explicitly apply evidence-backed metadata suggestions
+    cmds:
+      - go run ./cmd/suggestionctl {{.CLI_ARGS}}
+
+  codexsuggest:
+    desc: Generate a conservative reviewable Codex policy suggestion
+    cmds:
+      - go run ./cmd/codexsuggest {{.CLI_ARGS}}
+
   enrich:
     desc: Enrich new or selected model YAML from structured upstream sources
     cmds:
