@@ -1,3 +1,4 @@
+schema_version: 2
 id: moonshotai/kimi-k2-0905:exacto
 name: 'MoonshotAI: Kimi K2 0905 (exacto)'
 provider: Moonshotai
@@ -16,3 +17,4 @@ features:
   - CapJsonMode
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:40:03.232909852Z

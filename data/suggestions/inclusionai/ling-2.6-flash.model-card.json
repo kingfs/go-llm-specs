@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "inclusionai/ling-2.6-flash",
+  "status": "pending",
+  "created_at": "2026-07-29T11:27:34.037466208Z",
+  "source": {
+    "url": "https://huggingface.co/inclusionAI/Ling-2.6-flash/resolve/11236968749136a78d4b7cbfb786c4460f2f353e/README.md",
+    "revision": "11236968749136a78d4b7cbfb786c4460f2f353e",
+    "sha256": "0c51f6aa2a4f39a5dc3e8247cf9c57b4c19d5402171851db4df2cbec1b5da181"
+  },
+  "generator": {
+    "model": "qwen3.6-27b",
+    "wire_api": "responses"
+  },
+  "claims": [
+    {
+      "field": "description",
+      "value": "Ling-2.6-flash is a 104B total parameter, 7.4B active parameter instruct model with hybrid linear attention and sparse MoE architecture, optimized for inference efficiency, token efficiency, and agent performance.",
+      "evidence": "104B total parameters and 7.4B active parameters",
+      "section": "Introduction",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "CapChat"
+      ],
+      "evidence": "reaches inference speeds of up to 340 tokens/s",
+      "section": "Introduction",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "CapFunctionCall"
+      ],
+      "evidence": "refined Ling-2.6-flash in tool use",
+      "section": "Introduction",
+      "confidence": "low"
+    }
+  ]
+}

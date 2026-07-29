@@ -1,3 +1,4 @@
+schema_version: 2
 id: google/lyria-3-pro-preview
 name: 'Google: Lyria 3 Pro Preview'
 provider: Google
@@ -12,3 +13,20 @@ features:
   - ModalityImageIn
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:38:26.958909892Z
+upstream:
+  openrouter:
+    canonical_slug: google/lyria-3-pro-preview-20260330
+    supported_parameters:
+      - max_tokens
+      - response_format
+      - seed
+      - temperature
+      - top_p
+    input_modalities:
+      - image
+      - text
+    output_modalities:
+      - audio
+      - text
+    fetched_at: 2026-07-29T10:38:26.958910242Z

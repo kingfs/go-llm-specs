@@ -1,3 +1,4 @@
+schema_version: 2
 id: z-ai/glm-4.7-flash
 name: 'Z.ai: GLM 4.7 Flash'
 provider: Z-Ai
@@ -11,3 +12,64 @@ features:
   - CapJsonMode
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:45:14.735573529Z
+upstream:
+  openrouter:
+    canonical_slug: z-ai/glm-4.7-flash-20260119
+    huggingface_id: zai-org/GLM-4.7-Flash
+    supported_parameters:
+      - frequency_penalty
+      - include_reasoning
+      - logit_bias
+      - logprobs
+      - max_tokens
+      - min_p
+      - presence_penalty
+      - reasoning
+      - repetition_penalty
+      - response_format
+      - seed
+      - stop
+      - structured_outputs
+      - temperature
+      - tool_choice
+      - tools
+      - top_k
+      - top_logprobs
+      - top_p
+    input_modalities:
+      - text
+    output_modalities:
+      - text
+    fetched_at: 2026-07-29T10:45:14.735574179Z
+  huggingface:
+    id: zai-org/GLM-4.7-Flash
+    revision: 7dd20894a642a0aa287e9827cb1a1f7f91386b67
+    pipeline_tag: text-generation
+    model_type: glm4_moe_lite
+    architectures:
+      - Glm4MoeLiteForCausalLM
+    license: mit
+    tags:
+      - arxiv:2508.06471
+      - conversational
+      - deploy:azure
+      - en
+      - endpoints_compatible
+      - eval-results
+      - glm4_moe_lite
+      - license:mit
+      - region:us
+      - safetensors
+      - text-generation
+      - transformers
+      - zh
+    config_context_length: 202752
+    tokenizer_model_max_length: 128000
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-07-29T10:45:16.520190401Z
+reasoning:
+  supported: true
+  default_enabled: true

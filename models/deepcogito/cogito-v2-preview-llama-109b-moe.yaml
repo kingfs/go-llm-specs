@@ -1,3 +1,4 @@
+schema_version: 2
 id: deepcogito/cogito-v2-preview-llama-109b-moe
 name: Cogito V2 Preview Llama 109B
 provider: Deepcogito
@@ -10,3 +11,31 @@ features:
   - ModalityImageIn
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:37:23.134450566Z
+upstream:
+  huggingface:
+    id: deepcogito/cogito-v2-preview-llama-109B-MoE
+    revision: b9b1d0a6028f514c21375056ceebef73d5288d50
+    pipeline_tag: image-text-to-text
+    model_type: llama4
+    architectures:
+      - Llama4ForConditionalGeneration
+    tags:
+      - base_model:finetune:meta-llama/Llama-4-Scout-17B-16E
+      - base_model:meta-llama/Llama-4-Scout-17B-16E
+      - conversational
+      - endpoints_compatible
+      - image-text-to-text
+      - license:llama4
+      - llama4
+      - region:us
+      - safetensors
+      - text-generation-inference
+      - transformers
+    tokenizer_model_max_length: 10485760
+    processor_class: Llama4Processor
+    structured_files:
+      - config.json
+      - preprocessor_config.json
+      - tokenizer_config.json
+    fetched_at: 2026-07-29T10:37:25.488666305Z

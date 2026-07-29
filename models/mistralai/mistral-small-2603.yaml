@@ -1,3 +1,4 @@
+schema_version: 2
 id: mistralai/mistral-small-2603
 name: 'Mistral: Mistral Small 4'
 provider: Mistral
@@ -11,3 +12,80 @@ features:
   - ModalityImageIn
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:39:44.226081054Z
+upstream:
+  openrouter:
+    canonical_slug: mistralai/mistral-small-2603
+    huggingface_id: mistralai/Mistral-Small-4-119B-2603
+    supported_parameters:
+      - frequency_penalty
+      - include_reasoning
+      - max_tokens
+      - presence_penalty
+      - reasoning
+      - reasoning_effort
+      - response_format
+      - seed
+      - stop
+      - structured_outputs
+      - temperature
+      - tool_choice
+      - tools
+      - top_k
+      - top_p
+    input_modalities:
+      - image
+      - text
+    output_modalities:
+      - text
+    fetched_at: 2026-07-29T10:39:44.226081584Z
+  huggingface:
+    id: mistralai/Mistral-Small-4-119B-2603
+    revision: a11f36bebf709121056b1dbcc943d1c6afbe494d
+    model_type: mistral3
+    architectures:
+      - Mistral3ForConditionalGeneration
+    license: apache-2.0
+    tags:
+      - ar
+      - bn
+      - de
+      - deploy:azure
+      - en
+      - es
+      - eval-results
+      - fa
+      - fp8
+      - fr
+      - hi
+      - id
+      - it
+      - ja
+      - ko
+      - license:apache-2.0
+      - mistral3
+      - ms
+      - ne
+      - pl
+      - pt
+      - region:us
+      - ro
+      - ru
+      - safetensors
+      - sr
+      - sv
+      - tr
+      - uk
+      - vLLM
+      - vi
+      - zh
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-07-29T10:39:46.153717608Z
+reasoning:
+  supported: true
+  default_effort: high
+  supported_efforts:
+    - high
+    - none

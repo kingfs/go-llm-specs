@@ -1,0 +1,94 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "qwen/qwen3-32b",
+  "status": "pending",
+  "created_at": "2026-07-29T11:48:53.953879696Z",
+  "source": {
+    "url": "https://huggingface.co/Qwen/Qwen3-32B/resolve/9216db5781bf21249d130ec9da846c4624c16137/README.md",
+    "revision": "9216db5781bf21249d130ec9da846c4624c16137",
+    "sha256": "137d69b292fde9e3e2eca55945a7a2a5388c2c652232243792897b1a35d2081b"
+  },
+  "generator": {
+    "model": "qwen3.6-27b",
+    "wire_api": "responses"
+  },
+  "claims": [
+    {
+      "field": "description",
+      "value": "Causal language model with 32.8B total parameters (31.2B non-embedding), 64 layers, 64 Q attention heads, 8 KV attention heads (GQA).",
+      "evidence": "Number of Parameters: 32.8B",
+      "section": "## Model Overview",
+      "confidence": "high"
+    },
+    {
+      "field": "context_length",
+      "value": 32768,
+      "evidence": "Context Length: 32,768 natively and [131,072 tokens with YaRN](#processing-long-texts).",
+      "section": "## Model Overview",
+      "confidence": "high"
+    },
+    {
+      "field": "description",
+      "value": "Type: Causal Language Models, Training: Pretraining \u0026 Post-training, Parameters: 32.8B (31.2B non-embedding), 64 layers, GQA (64 Q heads, 8 KV heads).",
+      "evidence": "Number of Layers: 64",
+      "section": "## Model Overview",
+      "confidence": "high"
+    },
+    {
+      "field": "reasoning.supported",
+      "value": true,
+      "evidence": "reasoning.supported: true (model generates think content wrapped in `\u003cthinking\u003e` and `` blocks in thinking mode)",
+      "section": "## Quickstart",
+      "confidence": "high"
+    },
+    {
+      "field": "reasoning.parser",
+      "value": "qwen3",
+      "evidence": "reasoning.parser: qwen3 (SGLang) / deepseek_r1 (vLLM)",
+      "section": "## Quickstart",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "CapChat",
+        "CapFunctionCall",
+        "CapJsonMode",
+        "ModalityTextIn",
+        "ModalityTextOut"
+      ],
+      "evidence": "ModalityTextIn, ModalityTextOut, CapFunctionCall (agent capabilities with external tools), CapChat, CapJsonMode (model generates structured thinking blocks and final responses)",
+      "section": "## Qwen3 Highlights",
+      "confidence": "high"
+    },
+    {
+      "field": "description",
+      "value": "Multilingual model supporting 100+ languages/dialects with strong multilingual instruction following and translation capabilities.",
+      "evidence": "Support of 100+ languages and dialects with strong capabilities for multilingual instruction following and translation.",
+      "section": "## Qwen3 Highlights",
+      "confidence": "high"
+    },
+    {
+      "field": "description",
+      "value": "Features agent capabilities enabling integration with external tools.",
+      "evidence": "Expertise in agent capabilities, enabling precise integration with external tools in both thinking and unthinking modes",
+      "section": "## Qwen3 Highlights",
+      "confidence": "medium"
+    },
+    {
+      "field": "description",
+      "value": "Pipeline tag: text-generation",
+      "evidence": "pipeline_tag: text-generation",
+      "section": "---",
+      "confidence": "high"
+    },
+    {
+      "field": "description",
+      "value": "Default behavior: thinking mode enabled (enable_thinking=True), generating thinking content in `\u003cthinking\u003e` blocks before final response.",
+      "evidence": "enable_thinking=True is the default value for enable_thinking",
+      "section": "### `enable_thinking=True`",
+      "confidence": "high"
+    }
+  ]
+}

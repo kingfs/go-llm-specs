@@ -1,3 +1,4 @@
+schema_version: 2
 id: amazon/nova-2-lite-v1
 name: 'Amazon: Nova 2 Lite'
 provider: Amazon
@@ -16,3 +17,27 @@ features:
   - ModalityTextIn
   - ModalityTextOut
   - ModalityVideoIn
+discovered_at: 2026-07-29T10:36:36.150005431Z
+upstream:
+  openrouter:
+    canonical_slug: amazon/nova-2-lite-v1
+    supported_parameters:
+      - include_reasoning
+      - max_tokens
+      - reasoning
+      - stop
+      - temperature
+      - tool_choice
+      - tools
+      - top_k
+      - top_p
+    input_modalities:
+      - file
+      - image
+      - text
+      - video
+    output_modalities:
+      - text
+    fetched_at: 2026-07-29T10:36:36.150005971Z
+reasoning:
+  supported: true

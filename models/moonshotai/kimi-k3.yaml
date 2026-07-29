@@ -1,3 +1,4 @@
+schema_version: 2
 id: moonshotai/kimi-k3
 name: 'MoonshotAI: Kimi K3'
 provider: Moonshotai
@@ -11,3 +12,69 @@ features:
   - ModalityImageIn
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:40:13.653747755Z
+upstream:
+  openrouter:
+    canonical_slug: moonshotai/kimi-k3-20260715
+    huggingface_id: moonshotai/Kimi-K3
+    supported_parameters:
+      - frequency_penalty
+      - include_reasoning
+      - logit_bias
+      - logprobs
+      - max_tokens
+      - min_p
+      - presence_penalty
+      - reasoning
+      - reasoning_effort
+      - repetition_penalty
+      - response_format
+      - seed
+      - stop
+      - structured_outputs
+      - temperature
+      - tool_choice
+      - tools
+      - top_k
+      - top_logprobs
+      - top_p
+    input_modalities:
+      - image
+      - text
+    output_modalities:
+      - text
+    fetched_at: 2026-07-29T10:40:13.653748305Z
+  huggingface:
+    id: moonshotai/Kimi-K3
+    revision: 9f62e4e9fffbd0a83ddd60e1c209d828994b3569
+    pipeline_tag: image-text-to-text
+    model_type: kimi_k3
+    architectures:
+      - KimiK3ForConditionalGeneration
+    license: other
+    tags:
+      - 8-bit
+      - compressed-tensors
+      - conversational
+      - custom_code
+      - eval-results
+      - feature-extraction
+      - image-text-to-text
+      - kimi_k3
+      - license:other
+      - region:us
+      - safetensors
+      - transformers
+    structured_files:
+      - config.json
+      - preprocessor_config.json
+      - tokenizer_config.json
+    fetched_at: 2026-07-29T10:40:15.523531786Z
+reasoning:
+  supported: true
+  default_enabled: true
+  default_effort: max
+  supported_efforts:
+    - high
+    - low
+    - max

@@ -1,3 +1,4 @@
+schema_version: 2
 id: mistralai/mistral-small-creative
 name: 'Mistral: Mistral Small Creative'
 provider: Mistral
@@ -9,3 +10,4 @@ features:
   - CapFunctionCall
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:39:50.706792922Z

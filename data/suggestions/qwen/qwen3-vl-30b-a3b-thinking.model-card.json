@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "qwen/qwen3-vl-30b-a3b-thinking",
+  "status": "pending",
+  "created_at": "2026-07-29T11:58:23.005377301Z",
+  "source": {
+    "url": "https://huggingface.co/Qwen/Qwen3-VL-30B-A3B-Thinking/resolve/d0ed0380729be07a546fdefafbb4fe411f341e92/README.md",
+    "revision": "d0ed0380729be07a546fdefafbb4fe411f341e92",
+    "sha256": "8ab2ea253931eb58f551879115404099e9415ddaabc8c7ea3f73c526be290a6f"
+  },
+  "generator": {
+    "model": "qwen3.6-27b",
+    "wire_api": "responses"
+  },
+  "claims": [
+    {
+      "field": "features",
+      "value": [
+        "ModalityImageIn",
+        "ModalityTextIn",
+        "ModalityTextOut"
+      ],
+      "evidence": "pipeline_tag: image-text-to-text",
+      "section": "Qwen3-VL-30B-A3B-Thinking",
+      "confidence": "high"
+    },
+    {
+      "field": "context_length",
+      "value": 256000,
+      "evidence": "Native 256K context, expandable to 1M",
+      "section": "Qwen3-VL-30B-A3B-Thinking",
+      "confidence": "high"
+    },
+    {
+      "field": "description",
+      "value": "Qwen3-VL-30B-A3B-Thinking is a vision-language model in the Qwen series. It features interleave multimodal input (image and text), native 256K context length, and supports video understanding and advanced spatial perception. It uses a MoE architecture (30B total, 3B active) with reasoning-enhanced Thinking edition capabilities.",
+      "evidence": "This generation delivers comprehensive upgrades across the board: superior text understanding \u0026 generation... enhanced spatial and video dynamics comprehension",
+      "section": "Qwen3-VL-30B-A3B-Thinking",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "ModalityImageIn",
+        "ModalityTextIn",
+        "ModalityTextOut"
+      ],
+      "evidence": "Qwen3VLMoeForConditionalGeneration.from_pretrained",
+      "section": "Quickstart",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "ModalityImageIn",
+        "ModalityTextIn",
+        "ModalityTextOut",
+        "ModalityVideoIn"
+      ],
+      "evidence": "Native 256K context, expandable to 1M; handles books and hours-long video with full recall and second-level indexing.",
+      "section": "Qwen3-VL-30B-A3B-Thinking",
+      "confidence": "high"
+    },
+    {
+      "field": "reasoning.supported",
+      "value": true,
+      "evidence": "Available in Dense and MoE architectures that scale from edge to cloud, with Instruct and reasoning‑enhanced Thinking editions",
+      "section": "Qwen3-VL-30B-A3B-Thinking",
+      "confidence": "medium"
+    }
+  ]
+}

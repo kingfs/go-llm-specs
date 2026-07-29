@@ -1,3 +1,4 @@
+schema_version: 2
 id: thedrummer/unslopnemo-12b
 name: 'TheDrummer: UnslopNemo 12B'
 provider: Thedrummer
@@ -11,3 +12,44 @@ features:
   - CapJsonMode
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:44:32.789654936Z
+upstream:
+  openrouter:
+    canonical_slug: thedrummer/unslopnemo-12b
+    huggingface_id: TheDrummer/UnslopNemo-12B-v4.1
+    supported_parameters:
+      - frequency_penalty
+      - logprobs
+      - max_tokens
+      - presence_penalty
+      - repetition_penalty
+      - response_format
+      - seed
+      - stop
+      - structured_outputs
+      - temperature
+      - tool_choice
+      - tools
+      - top_logprobs
+      - top_p
+    input_modalities:
+      - text
+    output_modalities:
+      - text
+    knowledge_cutoff: "2024-04-30"
+    fetched_at: 2026-07-29T10:44:32.789655476Z
+  huggingface:
+    id: TheDrummer/UnslopNemo-12B-v4.1
+    revision: c20fadc8281ea8237acb8054f4a84524ca257478
+    model_type: mistral
+    architectures:
+      - MistralForCausalLM
+    tags:
+      - mistral
+      - region:us
+      - safetensors
+    config_context_length: 1024000
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-07-29T10:44:34.751488139Z

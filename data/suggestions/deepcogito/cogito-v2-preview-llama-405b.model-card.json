@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "deepcogito/cogito-v2-preview-llama-405b",
+  "status": "pending",
+  "created_at": "2026-07-29T11:21:04.710373309Z",
+  "source": {
+    "url": "https://huggingface.co/deepcogito/cogito-v2-preview-llama-405B/resolve/c30a7a0d87be5a6f02ba926c945f5aa1e949d57a/README.md",
+    "revision": "c30a7a0d87be5a6f02ba926c945f5aa1e949d57a",
+    "sha256": "5e51878e7bb114e8b51ef80f83518f5b3afe39c639a18bac3f60b12e99a189dc"
+  },
+  "generator": {
+    "model": "qwen3.6-27b",
+    "wire_api": "responses"
+  },
+  "claims": [
+    {
+      "field": "description",
+      "value": "The Cogito v2 LLMs are instruction tuned generative models.",
+      "evidence": "instruction tuned generative models",
+      "section": "# Cogito v2 preview - 405B",
+      "confidence": "high"
+    },
+    {
+      "field": "context_length",
+      "value": 131072,
+      "evidence": "trained in over 30 languages and supports a context length of 128k.",
+      "section": "# Cogito v2 preview - 405B",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "CapFunctionCall"
+      ],
+      "evidence": "Cogito models support tool calling (single, parallel, multiple and parallel_multiple)",
+      "section": "# Tool Calling",
+      "confidence": "medium"
+    },
+    {
+      "field": "reasoning.parser",
+      "value": "hybrid (standard mode or extended thinking via enable_thinking=True or system prompt)",
+      "evidence": "By default, the model will answer in the standard mode. - To enable thinking, you can do any one of the two methods",
+      "section": "## Implementing extended thinking",
+      "confidence": "medium"
+    },
+    {
+      "field": "features",
+      "value": [
+        "CapJsonMode",
+        "ModalityTextIn",
+        "ModalityTextOut"
+      ],
+      "evidence": "This model is trained in over 30 languages and supports a context length of 128k.",
+      "section": "# Cogito v2 preview - 405B",
+      "confidence": "medium"
+    }
+  ]
+}

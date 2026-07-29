@@ -1,3 +1,4 @@
+schema_version: 2
 id: qwen/qwen-vl-plus
 name: 'Qwen: Qwen VL Plus'
 provider: Qwen
@@ -12,3 +13,4 @@ features:
   - ModalityImageIn
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:42:24.269395176Z

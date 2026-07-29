@@ -1,3 +1,4 @@
+schema_version: 2
 id: amazon/nova-micro-v1
 name: 'Amazon: Nova Micro 1.0'
 provider: Amazon
@@ -10,3 +11,20 @@ features:
   - CapFunctionCall
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:36:36.987202837Z
+upstream:
+  openrouter:
+    canonical_slug: amazon/nova-micro-v1
+    supported_parameters:
+      - max_tokens
+      - stop
+      - temperature
+      - tools
+      - top_k
+      - top_p
+    input_modalities:
+      - text
+    output_modalities:
+      - text
+    knowledge_cutoff: "2024-10-31"
+    fetched_at: 2026-07-29T10:36:36.987203407Z

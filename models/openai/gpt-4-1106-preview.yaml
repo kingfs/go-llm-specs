@@ -1,3 +1,4 @@
+schema_version: 2
 id: openai/gpt-4-1106-preview
 name: 'OpenAI: GPT-4 Turbo (older v1106)'
 provider: OpenAI
@@ -17,3 +18,4 @@ features:
   - CapJsonMode
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:41:06.011541015Z

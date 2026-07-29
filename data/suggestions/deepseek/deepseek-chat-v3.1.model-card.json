@@ -1,0 +1,82 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "deepseek/deepseek-chat-v3.1",
+  "status": "pending",
+  "created_at": "2026-07-29T11:21:46.829173243Z",
+  "source": {
+    "url": "https://huggingface.co/deepseek-ai/DeepSeek-V3.1/resolve/c0781d039fb7a1ba2abc4add0bdc293e92d2b8db/README.md",
+    "revision": "c0781d039fb7a1ba2abc4add0bdc293e92d2b8db",
+    "sha256": "f15b36c9bd73adf6518169b390cbea09ef9b487c86bad317fe03dbef4f41b305"
+  },
+  "generator": {
+    "model": "qwen3.6-27b",
+    "wire_api": "responses"
+  },
+  "claims": [
+    {
+      "field": "description",
+      "value": "DeepSeek-V3.1 is a hybrid model supporting both thinking and non-thinking modes via chat template change, with improved tool calling, agent tasks, and thinking efficiency.",
+      "evidence": "DeepSeek-V3.1 is a hybrid model that supports both thinking mode and non-thinking mode.",
+      "section": "Introduction",
+      "confidence": "high"
+    },
+    {
+      "field": "context_length",
+      "value": 131072,
+      "evidence": "Context Length | 128K",
+      "section": "Model Downloads",
+      "confidence": "high"
+    },
+    {
+      "field": "reasoning.supported",
+      "value": true,
+      "evidence": "DeepSeek-V3.1-Think achieves comparable answer quality to DeepSeek-R1-0528, while responding more quickly.",
+      "section": "Introduction",
+      "confidence": "low"
+    },
+    {
+      "field": "features",
+      "value": [
+        "CapFunctionCall"
+      ],
+      "evidence": "Smarter tool calling: Through post-training optimization, the model's performance in tool usage and agent tasks has significantly improved.",
+      "section": "Introduction",
+      "confidence": "medium"
+    },
+    {
+      "field": "features",
+      "value": [
+        "CapFunctionCall"
+      ],
+      "evidence": "Toolcall is supported in non-thinking mode.",
+      "section": "ToolCall",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "CapChat"
+      ],
+      "evidence": "The prefix of thinking mode is similar to DeepSeek-R1.",
+      "section": "Thinking",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "CapJsonMode"
+      ],
+      "evidence": "Toolcall is supported in non-thinking mode. The format is...\u003c｜tool▁calls▁begin｜\u003e...",
+      "section": "ToolCall",
+      "confidence": "low"
+    },
+    {
+      "field": "features",
+      "value": [],
+      "evidence": "DeepSeek-V3.1 is trained using the UE8M0 FP8 scale data format on both model weights and activations",
+      "section": "Introduction",
+      "confidence": "low"
+    }
+  ]
+}

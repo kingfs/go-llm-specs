@@ -1,3 +1,4 @@
+schema_version: 2
 id: openai/gpt-5-chat
 name: 'OpenAI: GPT-5 Chat'
 provider: OpenAI
@@ -12,3 +13,4 @@ features:
   - ModalityImageIn
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:41:13.347997914Z

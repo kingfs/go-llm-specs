@@ -1,3 +1,4 @@
+schema_version: 2
 id: nousresearch/deephermes-3-mistral-24b-preview
 name: 'Nous: DeepHermes 3 Mistral 24B Preview'
 provider: Nous Research
@@ -16,3 +17,46 @@ features:
   - CapJsonMode
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:40:24.948535995Z
+upstream:
+  huggingface:
+    id: NousResearch/DeepHermes-3-Mistral-24B-Preview
+    revision: 48072dc6c0594a3198eb862c13613c4ab1119009
+    pipeline_tag: text-generation
+    model_type: mistral
+    architectures:
+      - MistralForCausalLM
+    tags:
+      - Mistral-Small
+      - axolotl
+      - base_model:finetune:mistralai/Mistral-Small-24B-Base-2501
+      - base_model:mistralai/Mistral-Small-24B-Base-2501
+      - chat
+      - chatml
+      - conversational
+      - distillation
+      - en
+      - endpoints_compatible
+      - finetune
+      - function calling
+      - gpt4
+      - instruct
+      - json mode
+      - license:apache-2.0
+      - mistral
+      - r1
+      - reasoning
+      - region:us
+      - roleplaying
+      - safetensors
+      - synthetic data
+      - text-generation
+      - text-generation-inference
+      - transformers
+      - vllm
+    config_context_length: 32768
+    chat_template_sha256: 8237a56e19eeec917fbd9b7876ec0932abf1fc2b535178321c8a38e0462f8862
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-07-29T10:40:27.248811372Z

@@ -12,12 +12,14 @@ import (
 )
 
 type Config struct {
-	BaseURL string
-	APIKey  string
-	Model   string
-	WireAPI string
-	Timeout time.Duration
-	Retries int
+	BaseURL         string
+	APIKey          string
+	Model           string
+	WireAPI         string
+	Timeout         time.Duration
+	Retries         int
+	ReasoningEffort string
+	JSONSchema      map[string]any
 }
 
 type Client struct {
@@ -82,8 +84,14 @@ func (c *Client) Complete(ctx context.Context, prompt string) (string, error) {
 		endpoint += "/responses"
 		body["input"] = prompt
 		body["max_output_tokens"] = 8192
-		body["reasoning"] = map[string]any{"effort": "low"}
-		body["text"] = map[string]any{"format": map[string]any{"type": "json_object"}}
+		if c.config.ReasoningEffort != "" {
+			body["reasoning"] = map[string]any{"effort": c.config.ReasoningEffort}
+		}
+		format := map[string]any{"type": "json_object"}
+		if c.config.JSONSchema != nil {
+			format = map[string]any{"type": "json_schema", "name": "structured_output", "strict": true, "schema": c.config.JSONSchema}
+		}
+		body["text"] = map[string]any{"format": format}
 	} else {
 		endpoint += "/chat/completions"
 		body["messages"] = []any{map[string]any{"role": "user", "content": prompt}}

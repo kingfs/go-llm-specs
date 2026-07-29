@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "z-ai/glm-4.5-air",
+  "status": "pending",
+  "created_at": "2026-07-29T12:06:18.33627759Z",
+  "source": {
+    "url": "https://huggingface.co/zai-org/GLM-4.5-Air/resolve/a24ceef6ce4f3536971efe9b778bdaa1bab18daa/README.md",
+    "revision": "a24ceef6ce4f3536971efe9b778bdaa1bab18daa",
+    "sha256": "fdcdf454bbb54db5cf1a1dd83152feb6555c4962678cae5c7658bf9cd0261e8b"
+  },
+  "generator": {
+    "model": "qwen3.6-27b",
+    "wire_api": "responses"
+  },
+  "claims": [
+    {
+      "field": "description",
+      "value": "Foundation model with 106B total parameters and 12B active parameters, designed for intelligent agents with hybrid reasoning modes.",
+      "evidence": "GLM-4.5 has 355 billion total parameters with 32 billion active parameters, while GLM-4.5-Air adopts a more compact design with 106 billion total parameters and 12 billion active parameters.",
+      "section": "Model Introduction",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "CapFunctionCall"
+      ],
+      "evidence": "Both GLM-4.5 and GLM-4.5-Air are hybrid reasoning models that provide two modes: thinking mode for complex reasoning and tool usage, and non-thinking mode for immediate responses.",
+      "section": "Model Introduction",
+      "confidence": "high"
+    }
+  ]
+}

@@ -1,3 +1,4 @@
+schema_version: 2
 id: ~openai/gpt-mini-latest
 name: OpenAI GPT Mini Latest
 provider: ~Openai
@@ -13,3 +14,35 @@ features:
   - ModalityImageIn
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:45:26.743811332Z
+upstream:
+  openrouter:
+    canonical_slug: ~openai/gpt-mini-latest
+    supported_parameters:
+      - include_reasoning
+      - max_completion_tokens
+      - max_tokens
+      - reasoning
+      - reasoning_effort
+      - response_format
+      - seed
+      - structured_outputs
+      - tool_choice
+      - tools
+    input_modalities:
+      - file
+      - image
+      - text
+    output_modalities:
+      - text
+    knowledge_cutoff: "2025-08-31"
+    fetched_at: 2026-07-29T10:45:26.743811632Z
+reasoning:
+  supported: true
+  default_effort: medium
+  supported_efforts:
+    - high
+    - low
+    - medium
+    - none
+    - xhigh

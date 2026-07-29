@@ -1,3 +1,4 @@
+schema_version: 2
 id: tencent/hy3
 name: 'Tencent: Hy3'
 provider: Tencent
@@ -11,3 +12,67 @@ features:
   - CapJsonMode
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:44:19.198518924Z
+upstream:
+  openrouter:
+    canonical_slug: tencent/hy3-20260706
+    huggingface_id: tencent/Hy3
+    supported_parameters:
+      - frequency_penalty
+      - include_reasoning
+      - logit_bias
+      - max_completion_tokens
+      - max_tokens
+      - min_p
+      - presence_penalty
+      - reasoning
+      - reasoning_effort
+      - repetition_penalty
+      - response_format
+      - seed
+      - stop
+      - structured_outputs
+      - temperature
+      - tool_choice
+      - tools
+      - top_k
+      - top_p
+    input_modalities:
+      - text
+    output_modalities:
+      - text
+    fetched_at: 2026-07-29T10:44:19.198519114Z
+  huggingface:
+    id: tencent/Hy3
+    revision: a960ebc3da325ba167f069f76c41eb62c9280d22
+    pipeline_tag: text-generation
+    model_type: hy_v3
+    architectures:
+      - HYV3ForCausalLM
+    license: apache-2.0
+    tags:
+      - conversational
+      - endpoints_compatible
+      - eval-results
+      - hunyuan
+      - hy3
+      - hy_v3
+      - license:apache-2.0
+      - moe
+      - region:us
+      - safetensors
+      - text-generation
+      - transformers
+    config_context_length: 262144
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-07-29T10:44:21.490522291Z
+reasoning:
+  supported: true
+  default_enabled: true
+  default_effort: high
+  supported_efforts:
+    - high
+    - low
+    - none

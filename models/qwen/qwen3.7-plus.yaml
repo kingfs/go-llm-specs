@@ -1,3 +1,4 @@
+schema_version: 2
 id: qwen/qwen3.7-plus
 name: 'Qwen: Qwen3.7 Plus'
 provider: Qwen
@@ -12,3 +13,33 @@ features:
   - ModalityImageIn
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:43:51.694353434Z
+upstream:
+  openrouter:
+    canonical_slug: qwen/qwen3.7-plus-20260602
+    supported_parameters:
+      - frequency_penalty
+      - include_reasoning
+      - logprobs
+      - max_tokens
+      - presence_penalty
+      - reasoning
+      - response_format
+      - seed
+      - stop
+      - structured_outputs
+      - temperature
+      - tool_choice
+      - tools
+      - top_k
+      - top_logprobs
+      - top_p
+    input_modalities:
+      - image
+      - text
+    output_modalities:
+      - text
+    fetched_at: 2026-07-29T10:43:51.694353834Z
+reasoning:
+  supported: true
+  default_enabled: true

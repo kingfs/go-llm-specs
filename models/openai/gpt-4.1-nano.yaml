@@ -1,3 +1,4 @@
+schema_version: 2
 id: openai/gpt-4.1-nano
 name: 'OpenAI: GPT-4.1 Nano'
 provider: OpenAI
@@ -13,3 +14,25 @@ features:
   - ModalityImageIn
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:41:08.245182569Z
+upstream:
+  openrouter:
+    canonical_slug: openai/gpt-4.1-nano-2025-04-14
+    supported_parameters:
+      - max_completion_tokens
+      - max_tokens
+      - response_format
+      - seed
+      - structured_outputs
+      - temperature
+      - tool_choice
+      - tools
+      - top_p
+    input_modalities:
+      - file
+      - image
+      - text
+    output_modalities:
+      - text
+    knowledge_cutoff: "2024-06-30"
+    fetched_at: 2026-07-29T10:41:08.245183059Z

@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "ai21/jamba-large-1.7",
+  "status": "pending",
+  "created_at": "2026-07-29T10:51:55.962677864Z",
+  "source": {
+    "url": "https://huggingface.co/ai21labs/AI21-Jamba-Large-1.7/resolve/f95d1c3c9ac9028a9306e717047b5515e73c1dd1/README.md",
+    "revision": "f95d1c3c9ac9028a9306e717047b5515e73c1dd1",
+    "sha256": "e258f60a6ce87e4e853c0eeaeec0bc18b95a8bd19676c345ba9e1ccf588db766"
+  },
+  "generator": {
+    "model": "qwen3.6-27b",
+    "wire_api": "responses"
+  },
+  "claims": [
+    {
+      "field": "description",
+      "value": "Jamba Large 1.7 is an open model in the Jamba family, featuring a novel SSM-Transformer hybrid architecture, 256K context window, and improvements in grounding and instruction-following.",
+      "evidence": "This new version builds on the novel SSM-Transformer hybrid architecture, 256K context window, and efficiency gains of previous versions, while introducing improvements in grounding and instruction-following.",
+      "section": "Model Information",
+      "confidence": "high"
+    },
+    {
+      "field": "context_length",
+      "value": 262144,
+      "evidence": "Context length: 256K",
+      "section": "Model Details",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "ModalityTextIn",
+        "ModalityTextOut"
+      ],
+      "evidence": "Supported languages: English, Spanish, French, Portuguese, Italian, Dutch, German, Arabic and Hebrew",
+      "section": "Model Details",
+      "confidence": "high"
+    }
+  ]
+}

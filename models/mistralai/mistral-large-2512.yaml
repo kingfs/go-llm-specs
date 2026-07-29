@@ -1,3 +1,4 @@
+schema_version: 2
 id: mistralai/mistral-large-2512
 name: 'Mistral: Mistral Large 3 2512'
 provider: Mistral
@@ -11,3 +12,26 @@ features:
   - ModalityImageIn
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:39:37.833309841Z
+upstream:
+  openrouter:
+    canonical_slug: mistralai/mistral-large-2512
+    supported_parameters:
+      - frequency_penalty
+      - max_tokens
+      - presence_penalty
+      - response_format
+      - seed
+      - stop
+      - structured_outputs
+      - temperature
+      - tool_choice
+      - tools
+      - top_p
+    input_modalities:
+      - file
+      - image
+      - text
+    output_modalities:
+      - text
+    fetched_at: 2026-07-29T10:39:37.833310311Z

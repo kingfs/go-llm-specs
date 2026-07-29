@@ -1,3 +1,4 @@
+schema_version: 2
 id: x-ai/grok-4.3
 name: 'xAI: Grok 4.3'
 provider: X-Ai
@@ -11,3 +12,40 @@ features:
   - ModalityImageIn
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:44:50.291620831Z
+upstream:
+  openrouter:
+    canonical_slug: x-ai/grok-4.3-20260430
+    supported_parameters:
+      - frequency_penalty
+      - include_reasoning
+      - logprobs
+      - max_tokens
+      - presence_penalty
+      - reasoning
+      - reasoning_effort
+      - response_format
+      - seed
+      - stop
+      - structured_outputs
+      - temperature
+      - tool_choice
+      - tools
+      - top_logprobs
+      - top_p
+    input_modalities:
+      - file
+      - image
+      - text
+    output_modalities:
+      - text
+    fetched_at: 2026-07-29T10:44:50.291621401Z
+reasoning:
+  supported: true
+  default_enabled: true
+  default_effort: low
+  supported_efforts:
+    - high
+    - low
+    - medium
+    - none

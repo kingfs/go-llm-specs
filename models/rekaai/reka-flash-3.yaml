@@ -1,3 +1,4 @@
+schema_version: 2
 id: rekaai/reka-flash-3
 name: 'Reka: Flash 3'
 provider: Rekaai
@@ -16,3 +17,50 @@ features:
   - CapFunctionCall
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:43:57.501429696Z
+upstream:
+  openrouter:
+    canonical_slug: rekaai/reka-flash-3
+    huggingface_id: RekaAI/reka-flash-3
+    supported_parameters:
+      - frequency_penalty
+      - include_reasoning
+      - logprobs
+      - max_tokens
+      - presence_penalty
+      - reasoning
+      - seed
+      - stop
+      - structured_outputs
+      - temperature
+      - top_k
+      - top_logprobs
+      - top_p
+    input_modalities:
+      - text
+    output_modalities:
+      - text
+    knowledge_cutoff: "2025-01-31"
+    fetched_at: 2026-07-29T10:43:57.501430346Z
+  huggingface:
+    id: RekaAI/reka-flash-3
+    revision: 8d251ecb02eca9f0f4aa052b29ef922628d2806f
+    model_type: llama
+    architectures:
+      - LlamaForCausalLM
+    license: apache-2.0
+    tags:
+      - license:apache-2.0
+      - llama
+      - region:us
+      - safetensors
+    config_context_length: 32768
+    tokenizer_model_max_length: 32768
+    chat_template_sha256: c182f3d3ad14221661f0bd33fdc26b597ccd7aed25ed7a3d41a3691d1feea190
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-07-29T10:43:59.673011127Z
+reasoning:
+  supported: true
+  mandatory: true

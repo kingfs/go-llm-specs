@@ -1,0 +1,131 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "google/gemma-2-27b-it",
+  "status": "pending",
+  "created_at": "2026-07-29T11:24:40.994042732Z",
+  "source": {
+    "url": "https://huggingface.co/google/gemma-2-27b-it/resolve/aaf20e6b9f4c0fcf043f6fb2a2068419086d77b0/README.md",
+    "revision": "aaf20e6b9f4c0fcf043f6fb2a2068419086d77b0",
+    "sha256": "39e424d5dd6380c7d8d37c74fe9331bf3e52bfb402b36b13b9d8fc926fde2fbc"
+  },
+  "generator": {
+    "model": "qwen3.6-27b",
+    "wire_api": "responses"
+  },
+  "claims": [
+    {
+      "field": "description",
+      "value": "Gemma is a family of lightweight, state-of-the-art open models from Google, built from the same research and technology used to create the Gemini models. They are text-to-text, decoder-only large language models, available in English, with open weights for both pre-trained variants and instruction-tuned variants.",
+      "evidence": "They are text-to-text, decoder-only large language models, available in English, with open weights for both pre-trained variants and instruction-tuned variants.",
+      "section": "### Description",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "CapChat",
+        "ModalityTextIn",
+        "ModalityTextOut"
+      ],
+      "evidence": "text-generation",
+      "section": "---",
+      "confidence": "high"
+    },
+    {
+      "field": "reasoning.supported",
+      "value": true,
+      "evidence": "Gemma models are well-suited for a variety of text generation tasks, including question answering, summarization, and reasoning.",
+      "section": "### Description",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "CapChat",
+        "ModalityTextIn",
+        "ModalityTextOut"
+      ],
+      "evidence": "The Gemma-2 model can be run up to 6x faster by leveraging torch compile.",
+      "section": "#### Advanced Usage",
+      "confidence": "medium"
+    },
+    {
+      "field": "features",
+      "value": [
+        "CapChat",
+        "ModalityTextIn",
+        "ModalityTextOut"
+      ],
+      "evidence": "The native weights of this model were exported in `bfloat16` precision.",
+      "section": "#### Running the model on a GPU using different precisions",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "CapChat",
+        "ModalityTextIn",
+        "ModalityTextOut"
+      ],
+      "evidence": "`pipe = pipeline(\n    \"text-generation\",`",
+      "section": "#### Running with the `pipeline` API",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "CapChat",
+        "ModalityTextIn",
+        "ModalityTextOut"
+      ],
+      "evidence": "`model = AutoModelForCausalLM.from_pretrained(\n    \"google/gemma-2-27b-it\",`",
+      "section": "#### Running the model on a single / multi GPU",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "CapChat",
+        "ModalityTextIn",
+        "ModalityTextOut"
+      ],
+      "evidence": "`local-gemma --model 27b --preset speed`",
+      "section": "#### Running the model through a CLI",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "CapChat",
+        "ModalityTextIn",
+        "ModalityTextOut"
+      ],
+      "evidence": "`quantization_config = BitsAndBytesConfig(load_in_8bit=True)`",
+      "section": "#### Quantized Versions through `bitsandbytes`",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "CapChat",
+        "ModalityTextIn",
+        "ModalityTextOut"
+      ],
+      "evidence": "`quantization_config = BitsAndBytesConfig(load_in_4bit=True)`",
+      "section": "#### Quantized Versions through `bitsandbytes`",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "CapChat",
+        "ModalityTextIn",
+        "ModalityTextOut"
+      ],
+      "evidence": "`model.forward = torch.compile(model.forward, mode=\"reduce-overhead\", fullgraph=True)`",
+      "section": "#### Advanced Usage",
+      "confidence": "high"
+    }
+  ]
+}

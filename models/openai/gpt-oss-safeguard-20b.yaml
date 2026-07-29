@@ -1,3 +1,4 @@
+schema_version: 2
 id: openai/gpt-oss-safeguard-20b
 name: 'OpenAI: gpt-oss-safeguard-20b'
 provider: OpenAI
@@ -17,3 +18,57 @@ features:
   - CapJsonMode
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:41:37.936457105Z
+upstream:
+  openrouter:
+    canonical_slug: openai/gpt-oss-safeguard-20b
+    huggingface_id: openai/gpt-oss-safeguard-20b
+    supported_parameters:
+      - include_reasoning
+      - max_tokens
+      - reasoning
+      - response_format
+      - seed
+      - stop
+      - structured_outputs
+      - temperature
+      - tool_choice
+      - tools
+      - top_p
+    input_modalities:
+      - text
+    output_modalities:
+      - text
+    fetched_at: 2026-07-29T10:41:37.936457595Z
+  huggingface:
+    id: openai/gpt-oss-safeguard-20b
+    revision: 8a11e17b25c973a24099d4016bf2e17dd7ec1574
+    pipeline_tag: text-generation
+    model_type: gpt_oss
+    architectures:
+      - GptOssForCausalLM
+    license: apache-2.0
+    tags:
+      - 8-bit
+      - arxiv:2508.10925
+      - base_model:finetune:openai/gpt-oss-20b
+      - base_model:openai/gpt-oss-20b
+      - conversational
+      - deploy:azure
+      - endpoints_compatible
+      - gpt_oss
+      - license:apache-2.0
+      - mxfp4
+      - region:us
+      - safetensors
+      - text-generation
+      - transformers
+      - vllm
+    config_context_length: 131072
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-07-29T10:41:40.873698942Z
+reasoning:
+  supported: true
+  mandatory: true

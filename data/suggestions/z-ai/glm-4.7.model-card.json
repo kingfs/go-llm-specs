@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "z-ai/glm-4.7",
+  "status": "pending",
+  "created_at": "2026-07-29T12:07:52.887005885Z",
+  "source": {
+    "url": "https://huggingface.co/zai-org/GLM-4.7/resolve/602d01efcdd332c5238ca4bcede555defbe83eb7/README.md",
+    "revision": "602d01efcdd332c5238ca4bcede555defbe83eb7",
+    "sha256": "8c1867fa4d54dd7d0d0ec736f3a3f4ab24e8c4596daff5c7390ca8422fa24afe"
+  },
+  "generator": {
+    "model": "qwen3.6-27b",
+    "wire_api": "responses"
+  },
+  "claims": [
+    {
+      "field": "reasoning.supported",
+      "value": false,
+      "evidence": "GLM-4.7 further enhances Interleaved Thinking",
+      "section": "## Introduction",
+      "confidence": "high"
+    },
+    {
+      "field": "max_output",
+      "value": 131072,
+      "evidence": "temperature: `1.0`\ntop-p: `0.95`\nmax new tokens: `131072`",
+      "section": "## Gettting started with GLM-4.7",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [],
+      "evidence": "GLM-4.7 further enhances Interleaved Thinking ... and introduces Preserved Thinking and Turn-level Thinking.",
+      "section": "## Gettting started with GLM-4.7",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [],
+      "evidence": "GLM-4.7 supports inference frameworks including vLLM and SGLang.",
+      "section": "## Gettting started with GLM-4.7",
+      "confidence": "high"
+    }
+  ]
+}

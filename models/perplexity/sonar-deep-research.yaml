@@ -1,3 +1,4 @@
+schema_version: 2
 id: perplexity/sonar-deep-research
 name: 'Perplexity: Sonar Deep Research'
 provider: Perplexity
@@ -14,3 +15,24 @@ features:
   - CapChat
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:41:54.644059406Z
+upstream:
+  openrouter:
+    canonical_slug: perplexity/sonar-deep-research
+    supported_parameters:
+      - frequency_penalty
+      - include_reasoning
+      - max_tokens
+      - presence_penalty
+      - reasoning
+      - temperature
+      - top_k
+      - top_p
+      - web_search_options
+    input_modalities:
+      - text
+    output_modalities:
+      - text
+    fetched_at: 2026-07-29T10:41:54.644059566Z
+reasoning:
+  supported: true

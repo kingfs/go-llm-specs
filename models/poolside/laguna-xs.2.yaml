@@ -1,3 +1,4 @@
+schema_version: 2
 id: poolside/laguna-xs.2
 name: 'Poolside: Laguna XS.2'
 provider: Poolside
@@ -11,3 +12,29 @@ features:
   - CapJsonMode
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:42:07.656366571Z
+upstream:
+  huggingface:
+    id: poolside/Laguna-XS.2
+    revision: 69e3f4046616e40fb55ac54e0e2e6accbe5cadfe
+    pipeline_tag: text-generation
+    model_type: laguna
+    architectures:
+      - LagunaForCausalLM
+    tags:
+      - conversational
+      - custom_code
+      - eval-results
+      - laguna
+      - laguna-xs.2
+      - license:apache-2.0
+      - region:us
+      - safetensors
+      - text-generation
+      - transformers
+      - vllm
+    config_context_length: 262144
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-07-29T10:42:09.641058192Z

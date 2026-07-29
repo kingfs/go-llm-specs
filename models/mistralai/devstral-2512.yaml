@@ -1,3 +1,4 @@
+schema_version: 2
 id: mistralai/devstral-2512
 name: 'Mistral: Devstral 2 2512'
 provider: Mistral
@@ -16,3 +17,46 @@ features:
   - CapJsonMode
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:39:24.226519191Z
+upstream:
+  openrouter:
+    canonical_slug: mistralai/devstral-2512
+    huggingface_id: mistralai/Devstral-2-123B-Instruct-2512
+    supported_parameters:
+      - frequency_penalty
+      - max_tokens
+      - presence_penalty
+      - response_format
+      - seed
+      - stop
+      - structured_outputs
+      - temperature
+      - tool_choice
+      - tools
+      - top_p
+    input_modalities:
+      - file
+      - text
+    output_modalities:
+      - text
+    fetched_at: 2026-07-29T10:39:24.226519651Z
+  huggingface:
+    id: mistralai/Devstral-2-123B-Instruct-2512
+    revision: 1613bf01adb5e1c6fdc196b46e6b173eae75eb4a
+    model_type: ministral3
+    architectures:
+      - Ministral3ForCausalLM
+    license: other
+    tags:
+      - fp8
+      - license:other
+      - ministral3
+      - mistral-common
+      - region:us
+      - safetensors
+      - vllm
+    config_context_length: 262144
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-07-29T10:39:26.232558811Z

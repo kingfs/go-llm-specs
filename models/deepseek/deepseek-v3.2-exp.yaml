@@ -1,3 +1,4 @@
+schema_version: 2
 id: deepseek/deepseek-v3.2-exp
 name: 'DeepSeek: DeepSeek V3.2 Exp'
 provider: DeepSeek
@@ -17,3 +18,64 @@ features:
   - CapJsonMode
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:37:47.292719489Z
+upstream:
+  openrouter:
+    canonical_slug: deepseek/deepseek-v3.2-exp
+    huggingface_id: deepseek-ai/DeepSeek-V3.2-Exp
+    supported_parameters:
+      - frequency_penalty
+      - include_reasoning
+      - logit_bias
+      - logprobs
+      - max_tokens
+      - min_p
+      - presence_penalty
+      - reasoning
+      - repetition_penalty
+      - response_format
+      - seed
+      - stop
+      - structured_outputs
+      - temperature
+      - tool_choice
+      - tools
+      - top_k
+      - top_logprobs
+      - top_p
+    input_modalities:
+      - text
+    output_modalities:
+      - text
+    knowledge_cutoff: "2025-07-31"
+    fetched_at: 2026-07-29T10:37:47.292720029Z
+  huggingface:
+    id: deepseek-ai/DeepSeek-V3.2-Exp
+    revision: 194c67e12b1b0d6df0ef373ddcf215bc84027409
+    pipeline_tag: text-generation
+    model_type: deepseek_v32
+    architectures:
+      - DeepseekV32ForCausalLM
+    license: mit
+    tags:
+      - base_model:deepseek-ai/DeepSeek-V3.2-Exp-Base
+      - base_model:finetune:deepseek-ai/DeepSeek-V3.2-Exp-Base
+      - conversational
+      - deepseek_v32
+      - endpoints_compatible
+      - eval-results
+      - fp8
+      - license:mit
+      - region:us
+      - safetensors
+      - text-generation
+      - transformers
+    config_context_length: 163840
+    tokenizer_model_max_length: 131072
+    chat_template_sha256: f8f090f0fb913a6f00d71cdf5ea3596fc4fb662c39e00d709f95229cb0310e9f
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-07-29T10:37:49.218531978Z
+reasoning:
+  supported: true

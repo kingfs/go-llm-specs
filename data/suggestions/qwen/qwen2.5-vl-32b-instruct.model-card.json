@@ -1,0 +1,91 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "qwen/qwen2.5-vl-32b-instruct",
+  "status": "pending",
+  "created_at": "2026-07-29T11:45:45.069848387Z",
+  "source": {
+    "url": "https://huggingface.co/Qwen/Qwen2.5-VL-32B-Instruct/resolve/7cfb30d71a1f4f49a57592323337a4a4727301da/README.md",
+    "revision": "7cfb30d71a1f4f49a57592323337a4a4727301da",
+    "sha256": "8b2cedaa7ac11bb2240cc535ca44420dadeda876d114fe5db35b997afcf1044b"
+  },
+  "generator": {
+    "model": "qwen3.6-27b",
+    "wire_api": "responses"
+  },
+  "claims": [
+    {
+      "field": "description",
+      "value": "32B instruction-tuned vision-language model from the Qwen family.",
+      "evidence": "This repo contains the instruction-tuned 32B Qwen2.5-VL model.",
+      "section": "Introduction",
+      "confidence": "medium"
+    },
+    {
+      "field": "features",
+      "value": [
+        "ModalityVideoIn"
+      ],
+      "evidence": "Qwen2.5-VL can comprehend videos of over 1 hour",
+      "section": "Introduction",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "ModalityImageIn"
+      ],
+      "evidence": "proficient in recognizing common objects such as flowers, birds, fish, and insects, but it is highly capable of analyzing texts, charts, icons, graphics, and layouts within images",
+      "section": "Introduction",
+      "confidence": "high"
+    },
+    {
+      "field": "context_length",
+      "value": 16384,
+      "evidence": "The default range for the number of visual tokens per image in the model is 4-16384.",
+      "section": "Quickstart",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "CapJsonMode"
+      ],
+      "evidence": "It can's support structured outputs of their contents, benefiting usages in finance, commerce, etc.",
+      "section": "Introduction",
+      "confidence": "low"
+    },
+    {
+      "field": "description",
+      "value": "Vision encoder uses SwiGLU and RMSNorm aligned with the Qwen2.5 LLM structure",
+      "evidence": "The ViT architecture is further optimized with SwiGLU and RMSNorm, aligning it with the structure of the Qwen2.5 LLM",
+      "section": "Introduction",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "CapFunctionCall"
+      ],
+      "evidence": "directly plays as a visual agent that can reason and dynamically direct tools",
+      "section": "Introduction",
+      "confidence": "low"
+    },
+    {
+      "field": "features",
+      "value": [
+        "ModalityVideoIn"
+      ],
+      "evidence": "We extend dynamic resolution to the temporal dimension by adopting dynamic FPS sampling, enabling the model to comprehend videos at various sampling rates",
+      "section": "Introduction",
+      "confidence": "high"
+    },
+    {
+      "field": "description",
+      "value": "Flash Attention 2 is recommended for acceleration and memory savings in multi-image and video scenarios.",
+      "evidence": "We recommend enabling flash_attention_2 for better acceleration and memory saving, especially in multi-image and video scenarios",
+      "section": "Quickstart",
+      "confidence": "low"
+    }
+  ]
+}

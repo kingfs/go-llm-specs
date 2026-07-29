@@ -1,3 +1,4 @@
+schema_version: 2
 id: sao10k/l3.1-70b-hanami-x1
 name: 'Sao10K: Llama 3.1 70B Hanami x1'
 provider: Sao10k
@@ -8,3 +9,24 @@ features:
   - CapChat
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:44:04.034522698Z
+upstream:
+  huggingface:
+    id: Sao10K/L3.1-70B-Hanami-x1
+    revision: f054d970fe9119d0237ce97029e6f5b9fce630eb
+    model_type: llama
+    architectures:
+      - LlamaForCausalLM
+    tags:
+      - en
+      - license:cc-by-nc-4.0
+      - llama
+      - region:us
+      - safetensors
+    config_context_length: 131072
+    tokenizer_model_max_length: 131072
+    chat_template_sha256: 55a286d976ec1506622d57328a02f436a8c52497cb0e3b3f345c433043fb6be2
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-07-29T10:44:06.174715143Z

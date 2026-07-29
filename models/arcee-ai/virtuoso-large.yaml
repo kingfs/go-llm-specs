@@ -1,3 +1,4 @@
+schema_version: 2
 id: arcee-ai/virtuoso-large
 name: 'Arcee AI: Virtuoso Large'
 provider: Arcee-Ai
@@ -10,3 +11,52 @@ features:
   - CapFunctionCall
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:37:02.303613505Z
+upstream:
+  openrouter:
+    canonical_slug: arcee-ai/virtuoso-large
+    supported_parameters:
+      - frequency_penalty
+      - logit_bias
+      - max_tokens
+      - min_p
+      - presence_penalty
+      - repetition_penalty
+      - stop
+      - temperature
+      - tool_choice
+      - tools
+      - top_k
+      - top_p
+    input_modalities:
+      - text
+    output_modalities:
+      - text
+    knowledge_cutoff: "2025-03-31"
+    fetched_at: 2026-07-29T10:37:02.303613805Z
+  huggingface:
+    id: arcee-ai/Virtuoso-Large
+    revision: fd1911bb14e0cf3890f674d7756d202eec7a3a2b
+    pipeline_tag: text-generation
+    model_type: qwen2
+    architectures:
+      - Qwen2ForCausalLM
+    tags:
+      - base_model:Qwen/Qwen2.5-72B
+      - base_model:finetune:Qwen/Qwen2.5-72B
+      - conversational
+      - endpoints_compatible
+      - license:other
+      - qwen2
+      - region:us
+      - safetensors
+      - text-generation
+      - text-generation-inference
+      - transformers
+    config_context_length: 131072
+    tokenizer_model_max_length: 131072
+    chat_template_sha256: e8ed55c976cdf8b12e3cceb5c34e14a15b91e11c60ce476c5f6409b2e3f7ea01
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-07-29T10:37:04.256862724Z

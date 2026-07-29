@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "z-ai/glm-4.7-flash",
+  "status": "pending",
+  "created_at": "2026-07-29T12:07:41.586782785Z",
+  "source": {
+    "url": "https://huggingface.co/zai-org/GLM-4.7-Flash/resolve/7dd20894a642a0aa287e9827cb1a1f7f91386b67/README.md",
+    "revision": "7dd20894a642a0aa287e9827cb1a1f7f91386b67",
+    "sha256": "4a211a7cbd9b6bc80380fc331497e85ffae66a26a525e642edb8bb7ba4d6ba90"
+  },
+  "generator": {
+    "model": "qwen3.6-27b",
+    "wire_api": "responses"
+  },
+  "claims": [
+    {
+      "field": "description",
+      "value": "GLM-4.7-Flash is a 30B-A3B MoE model.",
+      "evidence": "GLM-4.7-Flash is a 30B-A3B MoE model.",
+      "section": "Introduction",
+      "confidence": "high"
+    },
+    {
+      "field": "max_output",
+      "value": 131072,
+      "evidence": "default settings: temperature: 1.0, top-p: 0.95, max new tokens: 131072",
+      "section": "Introduction",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "CapChat",
+        "CapFunctionCall"
+      ],
+      "evidence": "--tool-call-parser glm47 --enable-auto-tool-choice",
+      "section": "Serve GLM-4.7-Flash Locally",
+      "confidence": "high"
+    },
+    {
+      "field": "reasoning.supported",
+      "value": true,
+      "evidence": "--reasoning-parser glm45",
+      "section": "Serve GLM-4.7-Flash Locally",
+      "confidence": "high"
+    },
+    {
+      "field": "reasoning.parser",
+      "value": "glm47",
+      "evidence": "--tool-call-parser glm47",
+      "section": "Serve GLM-4.7-Flash Locally",
+      "confidence": "high"
+    }
+  ]
+}

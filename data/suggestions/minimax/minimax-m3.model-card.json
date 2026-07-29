@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "minimax/minimax-m3",
+  "status": "pending",
+  "created_at": "2026-07-29T11:30:17.694073027Z",
+  "source": {
+    "url": "https://huggingface.co/MiniMaxAI/MiniMax-M3/resolve/f0e1c1e04d40177e4673a22097036854f536e9c0/README.md",
+    "revision": "f0e1c1e04d40177e4673a22097036854f536e9c0",
+    "sha256": "6148856dbf8be26dcf3f9b913be0252c38454e852108fdab01212fe965f3e327"
+  },
+  "generator": {
+    "model": "qwen3.6-27b",
+    "wire_api": "responses"
+  },
+  "claims": [
+    {
+      "field": "description",
+      "value": "MiniMax-M3 is a native multimodal model with 1M context, featuring ~428B total parameters and ~23B activated parameters. It undergoes mixed-modality training from the first step for deeper semantic fusion across text, image, and video.",
+      "evidence": "MiniMax-M3 is a native multimodal model with 1M context.",
+      "section": "# MiniMax Sparse Attention (MSA)",
+      "confidence": "high"
+    },
+    {
+      "field": "reasoning.supported",
+      "value": true,
+      "evidence": "M3 supports three reasoning modes through the `thinking` parameter:\n- **`enabled`** — Reasoning is always enabled.",
+      "section": "# How to Use",
+      "confidence": "high"
+    },
+    {
+      "field": "context_length",
+      "value": 1000000,
+      "evidence": "MiniMax-M3 is a native multimodal model with 1M context.",
+      "section": "# MiniMax Sparse Attention (MSA)",
+      "confidence": "medium"
+    },
+    {
+      "field": "context_length",
+      "value": 1000000,
+      "evidence": "MiniMax-M3 is a native multimodal model with 1M context.",
+      "section": "# MiniMax Sparse Attention (MSA)",
+      "confidence": "low"
+    }
+  ]
+}

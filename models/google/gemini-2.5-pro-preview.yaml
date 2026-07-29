@@ -1,3 +1,4 @@
+schema_version: 2
 id: google/gemini-2.5-pro-preview
 name: 'Google: Gemini 2.5 Pro Preview 06-05'
 provider: Google
@@ -15,3 +16,31 @@ features:
   - ModalityImageIn
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:38:02.799181445Z
+upstream:
+  openrouter:
+    canonical_slug: google/gemini-2.5-pro-preview-06-05
+    supported_parameters:
+      - include_reasoning
+      - max_tokens
+      - reasoning
+      - response_format
+      - seed
+      - stop
+      - structured_outputs
+      - temperature
+      - tool_choice
+      - tools
+      - top_p
+    input_modalities:
+      - audio
+      - file
+      - image
+      - text
+    output_modalities:
+      - text
+    knowledge_cutoff: "2025-01-31"
+    fetched_at: 2026-07-29T10:38:02.799181745Z
+reasoning:
+  supported: true
+  mandatory: true

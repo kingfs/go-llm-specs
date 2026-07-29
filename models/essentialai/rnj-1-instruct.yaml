@@ -1,3 +1,4 @@
+schema_version: 2
 id: essentialai/rnj-1-instruct
 name: 'EssentialAI: Rnj 1 Instruct'
 provider: Essentialai
@@ -9,3 +10,31 @@ features:
   - CapJsonMode
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:37:56.124087052Z
+upstream:
+  huggingface:
+    id: EssentialAI/rnj-1-instruct
+    revision: 5ef96d7a82b2bff8009192979432c9bc64e870cd
+    pipeline_tag: text-generation
+    model_type: gemma3_text
+    architectures:
+      - Gemma3ForCausalLM
+    tags:
+      - base_model:EssentialAI/rnj-1
+      - base_model:finetune:EssentialAI/rnj-1
+      - conversational
+      - deploy:azure
+      - endpoints_compatible
+      - gemma3_text
+      - license:apache-2.0
+      - region:us
+      - safetensors
+      - text-generation
+      - text-generation-inference
+      - transformers
+    config_context_length: 32768
+    chat_template_sha256: e80da82826612e997107fac871c7f9e4e81e534afceb6962026a957ac51f9897
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-07-29T10:37:58.069709421Z

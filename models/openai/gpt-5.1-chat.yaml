@@ -1,3 +1,4 @@
+schema_version: 2
 id: openai/gpt-5.1-chat
 name: 'OpenAI: GPT-5.1 Chat'
 provider: OpenAI
@@ -14,3 +15,21 @@ features:
   - ModalityImageIn
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:41:17.66521451Z
+upstream:
+  openrouter:
+    canonical_slug: openai/gpt-5.1-chat-20251113
+    supported_parameters:
+      - max_completion_tokens
+      - response_format
+      - seed
+      - structured_outputs
+      - tool_choice
+      - tools
+    input_modalities:
+      - file
+      - image
+      - text
+    output_modalities:
+      - text
+    fetched_at: 2026-07-29T10:41:17.66521745Z

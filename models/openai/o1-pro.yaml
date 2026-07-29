@@ -1,3 +1,4 @@
+schema_version: 2
 id: openai/o1-pro
 name: 'OpenAI: o1-pro'
 provider: OpenAI
@@ -12,3 +13,24 @@ features:
   - ModalityImageIn
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:41:41.403601674Z
+upstream:
+  openrouter:
+    canonical_slug: openai/o1-pro
+    supported_parameters:
+      - include_reasoning
+      - max_tokens
+      - reasoning
+      - response_format
+      - seed
+      - structured_outputs
+    input_modalities:
+      - file
+      - image
+      - text
+    output_modalities:
+      - text
+    knowledge_cutoff: "2023-10-31"
+    fetched_at: 2026-07-29T10:41:41.403601794Z
+reasoning:
+  supported: true

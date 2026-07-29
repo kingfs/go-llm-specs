@@ -1,3 +1,4 @@
+schema_version: 2
 id: ibm-granite/granite-4.1-8b
 name: 'IBM: Granite 4.1 8B'
 provider: Ibm-Granite
@@ -11,3 +12,56 @@ features:
   - CapJsonMode
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:38:31.477093536Z
+upstream:
+  openrouter:
+    canonical_slug: ibm-granite/granite-4.1-8b-20260429
+    huggingface_id: ibm-granite/granite-4.1-8b
+    supported_parameters:
+      - frequency_penalty
+      - logprobs
+      - max_tokens
+      - presence_penalty
+      - repetition_penalty
+      - response_format
+      - seed
+      - stop
+      - structured_outputs
+      - temperature
+      - tool_choice
+      - tools
+      - top_k
+      - top_logprobs
+      - top_p
+    input_modalities:
+      - text
+    output_modalities:
+      - text
+    fetched_at: 2026-07-29T10:38:31.477093936Z
+  huggingface:
+    id: ibm-granite/granite-4.1-8b
+    revision: 1504002f650e656a0a3789d99574df12e3e94ed0
+    pipeline_tag: text-generation
+    model_type: granite
+    architectures:
+      - GraniteForCausalLM
+    license: apache-2.0
+    tags:
+      - arxiv:0000.00000
+      - conversational
+      - deploy:azure
+      - endpoints_compatible
+      - eval-results
+      - granite
+      - granite-4.1
+      - language
+      - license:apache-2.0
+      - region:us
+      - safetensors
+      - text-generation
+      - transformers
+    config_context_length: 131072
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-07-29T10:38:33.207223533Z

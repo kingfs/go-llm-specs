@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "z-ai/glm-4.5",
+  "status": "pending",
+  "created_at": "2026-07-29T12:06:34.236446361Z",
+  "source": {
+    "url": "https://huggingface.co/zai-org/GLM-4.5/resolve/cbb2c7cfb52fa128a9660cb1a7a78e017899e115/README.md",
+    "revision": "cbb2c7cfb52fa128a9660cb1a7a78e017899e115",
+    "sha256": "07db7b02ec521000c2e97f12b3f4b0fd4cd4f9ae4b1e3f2d44a362b3c07e0b43"
+  },
+  "generator": {
+    "model": "qwen3.6-27b",
+    "wire_api": "responses"
+  },
+  "claims": [
+    {
+      "field": "description",
+      "value": "GLM-4.5 is a foundation model for intelligent agents with 355B total parameters and 32B active parameters. It unifies reasoning, coding, and agent capabilities with hybrid reasoning support.",
+      "evidence": "GLM-4.5 has 355 billion total parameters with 32 billion active parameters",
+      "section": "Model Introduction",
+      "confidence": "medium"
+    },
+    {
+      "field": "features",
+      "value": [
+        "CapFunctionCall",
+        "ModalityTextIn",
+        "ModalityTextOut"
+      ],
+      "evidence": "GLM-4.5 models unify reasoning, coding, and intelligent agent capabilities",
+      "section": "Model Introduction",
+      "confidence": "medium"
+    },
+    {
+      "field": "context_length",
+      "value": 131072,
+      "evidence": "The models can utilize their full 128K context length",
+      "section": "System Requirements",
+      "confidence": "high"
+    }
+  ]
+}

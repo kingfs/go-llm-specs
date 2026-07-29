@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "qwen/qwen3-coder-30b-a3b-instruct",
+  "status": "pending",
+  "created_at": "2026-07-29T11:49:43.828285632Z",
+  "source": {
+    "url": "https://huggingface.co/Qwen/Qwen3-Coder-30B-A3B-Instruct/resolve/b2cff646eb4bb1d68355c01b18ae02e7cf42d120/README.md",
+    "revision": "b2cff646eb4bb1d68355c01b18ae02e7cf42d120",
+    "sha256": "98e8f0e00f2d6c7f1743fc4ef2b6297dcc57bec73d71f36588aed984370ac3f3"
+  },
+  "generator": {
+    "model": "qwen3.6-27b",
+    "wire_api": "responses"
+  },
+  "claims": [
+    {
+      "field": "description",
+      "value": "Qwen3-Coder-30B-A3B-Instruct is a Causal Language Model with 30.5B total and 3.3B activated parameters, 48 layers, using pretraining and post-training.",
+      "evidence": "Type: Causal Language Models\nTraining Stage: Pretraining \u0026 Post-training\nNumber of Parameters: 30.5B in total and 3.3B activated\nNumber of Layers: 48",
+      "section": "Model Overview",
+      "confidence": "high"
+    },
+    {
+      "field": "context_length",
+      "value": 262144,
+      "evidence": "Context Length: **262,144 natively** .",
+      "section": "Model Overview",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "CapFunctionCall"
+      ],
+      "evidence": "Number of Parameters: 30.5B in total and 3.3B activated",
+      "section": "Model Overview",
+      "confidence": "high"
+    },
+    {
+      "field": "reasoning.parser",
+      "value": "non-thinking",
+      "evidence": "This model supports only non-thinking mode and does not generate ``\u003cthink\u003e`` blocks in its output.",
+      "section": "Model Overview",
+      "confidence": "high"
+    }
+  ]
+}

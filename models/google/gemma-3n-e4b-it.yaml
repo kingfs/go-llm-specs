@@ -1,3 +1,4 @@
+schema_version: 2
 id: google/gemma-3n-e4b-it
 name: 'Google: Gemma 3n 4B'
 provider: Google
@@ -14,3 +15,68 @@ features:
   - CapChat
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:38:18.092790426Z
+upstream:
+  openrouter:
+    canonical_slug: google/gemma-3n-e4b-it
+    huggingface_id: google/gemma-3n-E4B-it
+    supported_parameters:
+      - frequency_penalty
+      - logit_bias
+      - max_tokens
+      - min_p
+      - presence_penalty
+      - repetition_penalty
+      - response_format
+      - stop
+      - structured_outputs
+      - temperature
+      - top_k
+      - top_p
+    input_modalities:
+      - text
+    output_modalities:
+      - text
+    knowledge_cutoff: "2024-08-31"
+    fetched_at: 2026-07-29T10:38:18.092791136Z
+  huggingface:
+    id: google/gemma-3n-E4B-it
+    revision: c1221e9c62e34a43ab7ffacd1be0ea71f126ef10
+    pipeline_tag: image-text-to-text
+    model_type: gemma3n
+    architectures:
+      - Gemma3nForConditionalGeneration
+    license: gemma
+    tags:
+      - arxiv:1705.03551
+      - arxiv:1903.00161
+      - arxiv:1904.09728
+      - arxiv:1905.07830
+      - arxiv:1905.10044
+      - arxiv:1907.10641
+      - arxiv:1911.01547
+      - arxiv:1911.11641
+      - arxiv:2009.03300
+      - arxiv:2107.03374
+      - arxiv:2108.07732
+      - arxiv:2210.03057
+      - arxiv:2311.12022
+      - arxiv:2403.07974
+      - arxiv:2411.19799
+      - arxiv:2502.12404
+      - arxiv:2502.21228
+      - audio-text-to-text
+      - automatic-speech-recognition
+      - automatic-speech-translation
+      - base_model:finetune:google/gemma-3n-E4B
+      - base_model:google/gemma-3n-E4B
+      - conversational
+      - endpoints_compatible
+      - gemma3n
+      - image-text-to-text
+      - license:gemma
+      - region:us
+      - safetensors
+      - transformers
+      - video-text-to-text
+    fetched_at: 2026-07-29T10:38:18.80906786Z

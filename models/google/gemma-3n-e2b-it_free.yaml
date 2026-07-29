@@ -1,3 +1,4 @@
+schema_version: 2
 id: google/gemma-3n-e2b-it:free
 name: 'Google: Gemma 3n 2B (free)'
 provider: Google
@@ -10,3 +11,4 @@ features:
   - CapJsonMode
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:38:17.673612298Z

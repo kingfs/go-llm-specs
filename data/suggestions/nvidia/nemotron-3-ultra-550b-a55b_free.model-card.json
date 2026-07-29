@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "nvidia/nemotron-3-ultra-550b-a55b:free",
+  "status": "pending",
+  "created_at": "2026-07-29T11:39:59.356010143Z",
+  "source": {
+    "url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3-Ultra-550B-A55B-BF16/resolve/624ba927cfbef0427354998700de3d51173c8c04/README.md",
+    "revision": "624ba927cfbef0427354998700de3d51173c8c04",
+    "sha256": "5d21cc09a51d7ba037cfb7ece3f3426957a7f16242a20d1c0cb3a446bb62cbfb"
+  },
+  "generator": {
+    "model": "qwen3.6-27b",
+    "wire_api": "responses"
+  },
+  "claims": [
+    {
+      "field": "description",
+      "value": "Nemotron-3-Ultra-550B-A55B-BF16 is a LatentMoE LLM (Mamba-2 + MoE + Attention) with 550B total parameters and 55B active parameters, supporting up to 1M context length across English, French, Spanish, Italian, German, Japanese, Hindi, Korean, Brazilian Portuguese, and Chinese.",
+      "evidence": "550B (55B active)",
+      "section": "Model Summary",
+      "confidence": "high"
+    },
+    {
+      "field": "context_length",
+      "value": 1000000,
+      "evidence": "Context Length | Up to 1M tokens",
+      "section": "Model Summary",
+      "confidence": "high"
+    },
+    {
+      "field": "max_output",
+      "value": 1000000,
+      "evidence": "up to 1M tokens",
+      "section": "Model Summary",
+      "confidence": "low"
+    },
+    {
+      "field": "features",
+      "value": [
+        "ModalityTextIn",
+        "ModalityTextOut"
+      ],
+      "evidence": "ModalityTextIn, ModalityTextOut",
+      "section": "Model Summary",
+      "confidence": "high"
+    },
+    {
+      "field": "reasoning.supported",
+      "value": true,
+      "evidence": "configurable on/off via chat template (`enable_thinking=True/False`)",
+      "section": "Model Summary",
+      "confidence": "high"
+    }
+  ]
+}

@@ -1,3 +1,4 @@
+schema_version: 2
 id: xiaomi/mimo-v2-omni
 name: 'Xiaomi: MiMo-V2-Omni'
 provider: Xiaomi
@@ -14,3 +15,4 @@ features:
   - ModalityTextIn
   - ModalityTextOut
   - ModalityVideoIn
+discovered_at: 2026-07-29T10:44:52.970192082Z

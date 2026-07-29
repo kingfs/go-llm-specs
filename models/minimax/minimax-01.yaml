@@ -1,3 +1,4 @@
+schema_version: 2
 id: minimax/minimax-01
 name: 'MiniMax: MiniMax-01'
 provider: Minimax
@@ -20,3 +21,42 @@ features:
   - ModalityImageIn
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:39:07.014597057Z
+upstream:
+  openrouter:
+    canonical_slug: minimax/minimax-01
+    huggingface_id: MiniMaxAI/MiniMax-Text-01
+    supported_parameters:
+      - max_tokens
+      - temperature
+      - top_p
+    input_modalities:
+      - image
+      - text
+    output_modalities:
+      - text
+    knowledge_cutoff: "2024-03-31"
+    fetched_at: 2026-07-29T10:39:07.014597737Z
+  huggingface:
+    id: MiniMaxAI/MiniMax-Text-01
+    revision: a7351bf2bee0e1253919d349f1ad304e6dac13e9
+    pipeline_tag: text-generation
+    model_type: minimax_text_01
+    architectures:
+      - MiniMaxText01ForCausalLM
+    tags:
+      - arxiv:2501.08313
+      - conversational
+      - custom_code
+      - eval-results
+      - minimax_text_01
+      - region:us
+      - safetensors
+      - text-generation
+    config_context_length: 10240000
+    tokenizer_model_max_length: 40960000
+    chat_template_sha256: 0fb24c6593d1670a77c21957807fd38f5117bd13902ec726a5b3d5ba626a7fdd
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-07-29T10:39:09.414867964Z

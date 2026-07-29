@@ -1,0 +1,81 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "google/gemma-3n-e4b-it",
+  "status": "pending",
+  "created_at": "2026-07-29T11:25:49.486661587Z",
+  "source": {
+    "url": "https://huggingface.co/google/gemma-3n-E4B-it/resolve/c1221e9c62e34a43ab7ffacd1be0ea71f126ef10/README.md",
+    "revision": "c1221e9c62e34a43ab7ffacd1be0ea71f126ef10",
+    "sha256": "e6dc720726c0d9ecb14d78c693c42c5e276dc8d4096124eac37a041ae3d71bb0"
+  },
+  "generator": {
+    "model": "qwen3.6-27b",
+    "wire_api": "responses"
+  },
+  "claims": [
+    {
+      "field": "features",
+      "value": [
+        "CapChat",
+        "ModalityTextIn",
+        "ModalityTextOut",
+        "ModalityImageIn",
+        "ModalityAudioIn",
+        "ModalityVideoIn"
+      ],
+      "evidence": "Gemma 3n models are designed for efficient execution on low-resource devices. They are capable of multimodal input, handling text, image, video, and audio input, and generating text outputs",
+      "section": "# Gemma 3n model card",
+      "confidence": "high"
+    },
+    {
+      "field": "description",
+      "value": "Gemma 3n is a multimodal model from Google DeepMind with an effective size of 2B and 4B parameters using selective parameter activation technology, available in pre-trained and instruction-tuned variants for text, image, video, and audio inputs.",
+      "evidence": "While the raw parameter count of this model is 8B, the architecture design allows the model to be run with a memory footprint comparable to a traditional 4B model",
+      "section": "# Gemma 3n model card",
+      "confidence": "high"
+    },
+    {
+      "field": "context_length",
+      "value": 8,
+      "evidence": "They are available in two sizes based on effective parameters. While the raw parameter count of this model is 8B",
+      "section": "# Gemma 3n model card",
+      "confidence": "high"
+    },
+    {
+      "field": "context_length",
+      "value": 32768,
+      "evidence": "Total input context of 32K tokens",
+      "section": "### Inputs and outputs",
+      "confidence": "high"
+    },
+    {
+      "field": "max_output",
+      "value": 32768,
+      "evidence": "Total output length up to 32K tokens, subtracting the request input tokens",
+      "section": "### Inputs and outputs",
+      "confidence": "high"
+    },
+    {
+      "field": "reasoning.supported",
+      "value": true,
+      "evidence": "They use a MatFormer architecture that allows nesting sub-models within the E4B model.",
+      "section": "# Gemma 3n model card",
+      "confidence": "high"
+    },
+    {
+      "field": "description",
+      "value": "Gemma 3n E4B is an instruction-tuned multimodal model supporting text, image, video, and audio inputs with text outputs.",
+      "evidence": "pipeline_tag: image-text-to-text",
+      "section": "# Gemma 3n model card",
+      "confidence": "medium"
+    },
+    {
+      "field": "description",
+      "value": "Images are normalized to 256x256, 512x512, or 768x768 resolution and encoded to 256 tokens each; audio is encoded to 6.25 tokens per second from a single channel.",
+      "evidence": "Images, normalized to 256x256, 512x512, or 768x768 resolution and encoded to 256 tokens each",
+      "section": "### Inputs and outputs",
+      "confidence": "high"
+    }
+  ]
+}

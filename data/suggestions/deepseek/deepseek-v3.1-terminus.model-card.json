@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "deepseek/deepseek-v3.1-terminus",
+  "status": "pending",
+  "created_at": "2026-07-29T11:22:44.095813014Z",
+  "source": {
+    "url": "https://huggingface.co/deepseek-ai/DeepSeek-V3.1-Terminus/resolve/19510d6dc61f79dbd925bd51ee8a9081c509a4b6/README.md",
+    "revision": "19510d6dc61f79dbd925bd51ee8a9081c509a4b6",
+    "sha256": "dc67c899eb7a549130d6c2e4b36cff0b12917720dafe9e12e141547d864ff475"
+  },
+  "generator": {
+    "model": "qwen3.6-27b",
+    "wire_api": "responses"
+  },
+  "claims": [
+    {
+      "field": "description",
+      "value": "Updated version of DeepSeek-V3.1 maintaining original capabilities while improving language consistency (reducing mixed Chinese-English and abnormal characters) and optimizing Code Agent and Search Agent performance.",
+      "evidence": "This update maintains the model's original capabilities while addressing issues reported by users, including: Language consistency: Reducing instances of mixed Chinese-English text and occasional abnormal characters; Agent capabilities: Further optimizing the performance of the Code Agent and Search Agent.",
+      "section": "# DeepSeek-V3.1-Terminus",
+      "confidence": "high"
+    },
+    {
+      "field": "description",
+      "value": "This model is a fine-tuned version of deepseek-ai/DeepSeek-V3.1-Base.",
+      "evidence": "base_model: - deepseek-ai/DeepSeek-V3.1-Base",
+      "section": "# DeepSeek-V3.1-Terminus",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "CapFunctionCall"
+      ],
+      "evidence": "The template and tool-set of search agent have been updated",
+      "section": "## Introduction",
+      "confidence": "high"
+    },
+    {
+      "field": "context_length",
+      "value": 131072,
+      "evidence": "The model structure of DeepSeek-V3.1-Terminus is the same as DeepSeek-V3",
+      "section": "## How to Run Locally",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "ModalityTextIn",
+        "ModalityTextOut"
+      ],
+      "evidence": "This repository and the model weights are licensed under the MIT License",
+      "section": "## License",
+      "confidence": "high"
+    }
+  ]
+}

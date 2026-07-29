@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "qwen/qwen3-coder",
+  "status": "pending",
+  "created_at": "2026-07-29T11:50:14.981337183Z",
+  "source": {
+    "url": "https://huggingface.co/Qwen/Qwen3-Coder-480B-A35B-Instruct/resolve/9d90cf8fca1bf7b7acca42d3fc9ae694a2194069/README.md",
+    "revision": "9d90cf8fca1bf7b7acca42d3fc9ae694a2194069",
+    "sha256": "435afee9137a46ceb1e510fb8d2cef921d69ca1f5f7d5a1d9252ba22ebe21149"
+  },
+  "generator": {
+    "model": "qwen3.6-27b",
+    "wire_api": "responses"
+  },
+  "claims": [
+    {
+      "field": "context_length",
+      "value": 262144,
+      "evidence": "Context Length: 262,144 natively.",
+      "section": "# Qwen3-Coder-480B-A35B-Instruct",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "ModalityTextIn",
+        "ModalityTextOut"
+      ],
+      "evidence": "We advise you to use the latest version of `transformers`.",
+      "section": "## Quickstart",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "CapFunctionCall"
+      ],
+      "evidence": "Qwen3-Coder excels in tool calling capabilities.",
+      "section": "## Agentic Coding",
+      "confidence": "high"
+    },
+    {
+      "field": "description",
+      "value": "Qwen3-Coder is an agentic code model. The most powerful variant is Qwen3-Coder-480B-A35B-Instruct, featuring native 256K context support extendable to 1M using Yarn.",
+      "evidence": "featuring the following key enhancements: ... Long-context Capabilities with native support for 256K tokens",
+      "section": "## Highlights",
+      "confidence": "high"
+    },
+    {
+      "field": "description",
+      "value": "Type: Causal Language Models. Parameters: 480B total, 35B activated. Layers: 62. Experts: 160 total, 8 activated.",
+      "evidence": "Number of Parameters: 480B in total and 35B activated",
+      "section": "## Model Overview",
+      "confidence": "high"
+    },
+    {
+      "field": "max_output",
+      "value": 65536,
+      "evidence": "We recommend using an output length of 65,536 tokens for most queries",
+      "section": "## Best Practices",
+      "confidence": "medium"
+    }
+  ]
+}

@@ -1,3 +1,4 @@
+schema_version: 2
 id: anthropic/claude-3.7-sonnet
 name: 'Anthropic: Claude 3.7 Sonnet'
 provider: Anthropic
@@ -17,3 +18,4 @@ features:
   - ModalityImageIn
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:36:41.588572057Z

@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "nvidia/nemotron-3-super-120b-a12b",
+  "status": "pending",
+  "created_at": "2026-07-29T11:39:39.874599903Z",
+  "source": {
+    "url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3-Super-120B-A12B-FP8/resolve/7d7e5797b8a3c7abbab54033b6004e93e8b6bc91/README.md",
+    "revision": "7d7e5797b8a3c7abbab54033b6004e93e8b6bc91",
+    "sha256": "af0efbb6048727ca52ff09cea2b8a79ae68c336a7f23697e269412860c49fda1"
+  },
+  "generator": {
+    "model": "qwen3.6-27b",
+    "wire_api": "responses"
+  },
+  "claims": [
+    {
+      "field": "description",
+      "value": "Large language model trained by NVIDIA with strong agentic, reasoning, and conversational capabilities. Uses LatentMoE architecture with interleaved Mamba-2 and MoE layers, Multi-Token Prediction, 12B active parameters out of 120B total.",
+      "evidence": "Nemotron-3-Super-120B-A12B-FP8 is a large language model (LLM) trained by NVIDIA, designed to deliver strong agentic, reasoning, and conversational capabilities.",
+      "section": "Description",
+      "confidence": "high"
+    },
+    {
+      "field": "context_length",
+      "value": 1048576,
+      "evidence": "Context Length | Up to 1M tokens",
+      "section": "Model Summary",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "ModalityTextIn",
+        "ModalityTextOut"
+      ],
+      "evidence": "language: - en - fr - es - it - de - ja - zh",
+      "section": "Model Summary",
+      "confidence": "high"
+    },
+    {
+      "field": "reasoning.supported",
+      "value": true,
+      "evidence": "Reasoning Mode | Configurable on/off via chat template (enable_thinking=True/False)",
+      "section": "Model Summary",
+      "confidence": "high"
+    },
+    {
+      "field": "reasoning.parser",
+      "value": "Configurable via chat template",
+      "evidence": "The model's reasoning capabilities can be configured through a flag in the chat template.",
+      "section": "Description",
+      "confidence": "high"
+    }
+  ]
+}

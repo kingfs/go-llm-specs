@@ -1,3 +1,4 @@
+schema_version: 2
 id: qwen/qwen3-coder-next
 name: 'Qwen: Qwen3 Coder Next'
 provider: Qwen
@@ -17,3 +18,57 @@ features:
   - CapJsonMode
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:42:56.511242307Z
+upstream:
+  openrouter:
+    canonical_slug: qwen/qwen3-coder-next-2025-02-03
+    huggingface_id: Qwen/Qwen3-Coder-Next
+    supported_parameters:
+      - frequency_penalty
+      - logit_bias
+      - logprobs
+      - max_tokens
+      - presence_penalty
+      - repetition_penalty
+      - response_format
+      - seed
+      - stop
+      - structured_outputs
+      - temperature
+      - tool_choice
+      - tools
+      - top_k
+      - top_logprobs
+      - top_p
+    input_modalities:
+      - text
+    output_modalities:
+      - text
+    fetched_at: 2026-07-29T10:42:56.511242537Z
+  huggingface:
+    id: Qwen/Qwen3-Coder-Next
+    revision: a7fbcb5c0e12d62a448eaa0e260346bf5dcc0feb
+    pipeline_tag: text-generation
+    model_type: qwen3_next
+    architectures:
+      - Qwen3NextForCausalLM
+    license: apache-2.0
+    tags:
+      - conversational
+      - deploy:azure
+      - deploy:sagemaker
+      - endpoints_compatible
+      - eval-results
+      - license:apache-2.0
+      - qwen3_next
+      - region:us
+      - safetensors
+      - text-generation
+      - transformers
+    config_context_length: 262144
+    tokenizer_model_max_length: 1048576
+    chat_template_sha256: 5a8204703ce7c0baf8228fa8313b1b4d055b6c3674ce7d0a233c14222a295830
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-07-29T10:42:59.439445509Z

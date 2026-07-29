@@ -1,0 +1,74 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "openai/gpt-oss-safeguard-20b",
+  "status": "pending",
+  "created_at": "2026-07-29T11:42:05.031921587Z",
+  "source": {
+    "url": "https://huggingface.co/openai/gpt-oss-safeguard-20b/resolve/8a11e17b25c973a24099d4016bf2e17dd7ec1574/README.md",
+    "revision": "8a11e17b25c973a24099d4016bf2e17dd7ec1574",
+    "sha256": "1a3a493bbb99dd2935e6e61c902be60ba326d7627958f5f78279259bb77027e9"
+  },
+  "generator": {
+    "model": "qwen3.6-27b",
+    "wire_api": "responses"
+  },
+  "claims": [
+    {
+      "field": "description",
+      "value": "gpt-oss-safeguard-20b is a 21B parameter safety reasoning model (3.6B active) built upon gpt-oss. It is intended for safety use cases, classifying text based on user-provided policies. It uses the harmony response format and supports configurable reasoning effort levels.",
+      "evidence": "gpt-oss-safeguard-20b (21B parameters with 3.6B active parameters) fits into GPUs with 16GB of VRAM.",
+      "section": "Highlights",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [],
+      "evidence": "Both models were trained on our harmony response format and should only be used with the harmony format as it will not work correctly otherwise.",
+      "section": "Highlights",
+      "confidence": "medium"
+    },
+    {
+      "field": "description",
+      "value": "Licensed under Apache 2.0.",
+      "evidence": "license: apache-2.0",
+      "section": "model_info",
+      "confidence": "high"
+    },
+    {
+      "field": "description",
+      "value": "This model is a fine-tune of the openai/gpt-oss-20b base model.",
+      "evidence": "base_model:\n- openai/gpt-oss-20b\nbase_model_relation: finetune",
+      "section": "model_info",
+      "confidence": "high"
+    },
+    {
+      "field": "description",
+      "value": "The model has 21B total parameters and 3.6B active parameters, fitting on GPUs with 16GB VRAM.",
+      "evidence": "gpt-oss-safeguard-20b (21B parameters with 3.6B active parameters) fits into GPUs with 16GB of VRAM.",
+      "section": "Highlights",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [],
+      "evidence": "With these models, you can classify text content based on safety policies that you provide",
+      "section": "Highlights",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [],
+      "evidence": "pipeline_tag: text-generation",
+      "section": "model_info",
+      "confidence": "low"
+    },
+    {
+      "field": "features",
+      "value": [],
+      "evidence": "Easily adjust the reasoning effort (low, medium, high) based on your specific use case and latency needs.",
+      "section": "Highlights",
+      "confidence": "medium"
+    }
+  ]
+}

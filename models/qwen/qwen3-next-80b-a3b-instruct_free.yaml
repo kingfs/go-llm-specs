@@ -1,3 +1,4 @@
+schema_version: 2
 id: qwen/qwen3-next-80b-a3b-instruct:free
 name: 'Qwen: Qwen3 Next 80B A3B Instruct (free)'
 provider: Qwen
@@ -16,3 +17,4 @@ features:
   - CapJsonMode
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:43:07.296422962Z

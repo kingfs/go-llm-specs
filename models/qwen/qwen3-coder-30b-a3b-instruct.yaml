@@ -1,3 +1,4 @@
+schema_version: 2
 id: qwen/qwen3-coder-30b-a3b-instruct
 name: 'Qwen: Qwen3 Coder 30B A3B Instruct'
 provider: Qwen
@@ -14,3 +15,57 @@ features:
   - CapJsonMode
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:42:53.574705221Z
+upstream:
+  openrouter:
+    canonical_slug: qwen/qwen3-coder-30b-a3b-instruct
+    huggingface_id: Qwen/Qwen3-Coder-30B-A3B-Instruct
+    supported_parameters:
+      - frequency_penalty
+      - logprobs
+      - max_tokens
+      - presence_penalty
+      - repetition_penalty
+      - response_format
+      - seed
+      - stop
+      - structured_outputs
+      - temperature
+      - tool_choice
+      - tools
+      - top_k
+      - top_logprobs
+      - top_p
+    input_modalities:
+      - text
+    output_modalities:
+      - text
+    knowledge_cutoff: "2025-06-30"
+    fetched_at: 2026-07-29T10:42:53.574705711Z
+  huggingface:
+    id: Qwen/Qwen3-Coder-30B-A3B-Instruct
+    revision: b2cff646eb4bb1d68355c01b18ae02e7cf42d120
+    pipeline_tag: text-generation
+    model_type: qwen3_moe
+    architectures:
+      - Qwen3MoeForCausalLM
+    license: apache-2.0
+    tags:
+      - arxiv:2505.09388
+      - conversational
+      - deploy:azure
+      - deploy:sagemaker
+      - endpoints_compatible
+      - license:apache-2.0
+      - qwen3_moe
+      - region:us
+      - safetensors
+      - text-generation
+      - transformers
+    config_context_length: 262144
+    tokenizer_model_max_length: 1048576
+    chat_template_sha256: 88cd0adc27f1adc985392c39fee6bee53c03ef6b85d60074e966809704902ad4
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-07-29T10:42:55.992191437Z

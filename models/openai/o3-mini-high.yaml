@@ -1,3 +1,4 @@
+schema_version: 2
 id: openai/o3-mini-high
 name: 'OpenAI: o3 Mini High'
 provider: OpenAI
@@ -17,3 +18,30 @@ features:
   - ModalityFileIn
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:41:43.110905952Z
+upstream:
+  openrouter:
+    canonical_slug: openai/o3-mini-high-2025-01-31
+    supported_parameters:
+      - include_reasoning
+      - max_tokens
+      - reasoning
+      - reasoning_effort
+      - response_format
+      - seed
+      - structured_outputs
+      - tool_choice
+      - tools
+    input_modalities:
+      - file
+      - text
+    output_modalities:
+      - text
+    knowledge_cutoff: "2023-10-31"
+    fetched_at: 2026-07-29T10:41:43.110906122Z
+reasoning:
+  supported: true
+  mandatory: true
+  default_effort: high
+  supported_efforts:
+    - high

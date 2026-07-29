@@ -1,3 +1,4 @@
+schema_version: 2
 id: deepseek/deepseek-r1
 name: 'DeepSeek: R1'
 provider: DeepSeek
@@ -20,3 +21,64 @@ features:
   - CapFunctionCall
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:37:36.407241798Z
+upstream:
+  openrouter:
+    canonical_slug: deepseek/deepseek-r1
+    huggingface_id: deepseek-ai/DeepSeek-R1
+    supported_parameters:
+      - frequency_penalty
+      - include_reasoning
+      - max_completion_tokens
+      - max_tokens
+      - presence_penalty
+      - reasoning
+      - repetition_penalty
+      - response_format
+      - seed
+      - stop
+      - structured_outputs
+      - temperature
+      - tool_choice
+      - tools
+      - top_k
+      - top_p
+    input_modalities:
+      - text
+    output_modalities:
+      - text
+    knowledge_cutoff: "2024-07-31"
+    fetched_at: 2026-07-29T10:37:36.407242108Z
+  huggingface:
+    id: deepseek-ai/DeepSeek-R1
+    revision: 56d4cbbb4d29f4355bab4b9a39ccb717a14ad5ad
+    pipeline_tag: text-generation
+    model_type: deepseek_v3
+    architectures:
+      - DeepseekV3ForCausalLM
+    license: mit
+    tags:
+      - arxiv:2501.12948
+      - conversational
+      - custom_code
+      - deepseek_v3
+      - deploy:sagemaker
+      - endpoints_compatible
+      - eval-results
+      - fp8
+      - license:mit
+      - region:us
+      - safetensors
+      - text-generation
+      - text-generation-inference
+      - transformers
+    config_context_length: 163840
+    tokenizer_model_max_length: 16384
+    chat_template_sha256: 4d1566b58721278bf355236797ce7a3ddff727a4cdb09dcad0cefac0eba796e4
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-07-29T10:37:38.308583323Z
+reasoning:
+  supported: true
+  mandatory: true

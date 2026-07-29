@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "deepseek/deepseek-r1-distill-llama-70b",
+  "status": "pending",
+  "created_at": "2026-07-29T11:22:19.808096966Z",
+  "source": {
+    "url": "https://huggingface.co/deepseek-ai/DeepSeek-R1-Distill-Llama-70B/resolve/b1c0b44b4369b597ad119a196caf79a9c40e141e/README.md",
+    "revision": "b1c0b44b4369b597ad119a196caf79a9c40e141e",
+    "sha256": "47e0ab0f591a2ab95a3095b649342eba19489c86a058e95f2289df1656bfaf39"
+  },
+  "generator": {
+    "model": "qwen3.6-27b",
+    "wire_api": "responses"
+  },
+  "claims": [
+    {
+      "field": "description",
+      "value": "DeepSeek-R1-Distill-Llama-70B is a 70B parameter dense model distilled from DeepSeek-R1, based on the Llama-3.3-70B-Instruct base model. It is part of the DeepSeek-R1 distillation series open-sourced to the community. The model's config and tokenizer are slightly changed from the base, and users are recommended to use the provider's settings to run it.",
+      "evidence": "DeepSeek-R1-Distill-Llama-70B | Llama-3.3-70B-Instruct | [🤗 HuggingFace](https://huggingface.co/deepseek-ai/DeepSeek-R1-Distill-Llama-70B)",
+      "section": "DeepSeek-R1-Distill Models",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "CapChat",
+        "ModalityTextIn",
+        "ModalityTextOut"
+      ],
+      "evidence": "DeepSeek-R1-Distill-Llama-70B  |  Llama-3.3-70B-Instruct",
+      "section": "DeepSeek-R1-Distill Models",
+      "confidence": "high"
+    }
+  ]
+}

@@ -1,3 +1,4 @@
+schema_version: 2
 id: nvidia/nemotron-nano-12b-v2-vl:free
 name: 'NVIDIA: Nemotron Nano 12B 2 VL (free)'
 provider: Nvidia
@@ -26,3 +27,44 @@ features:
   - ModalityTextIn
   - ModalityTextOut
   - ModalityVideoIn
+discovered_at: 2026-07-29T10:40:59.041505407Z
+upstream:
+  openrouter:
+    canonical_slug: nvidia/nemotron-nano-12b-v2-vl
+    huggingface_id: nvidia/NVIDIA-Nemotron-Nano-12B-v2-VL-BF16
+    supported_parameters:
+      - include_reasoning
+      - max_tokens
+      - reasoning
+      - seed
+      - temperature
+      - tool_choice
+      - tools
+      - top_p
+    input_modalities:
+      - image
+      - text
+      - video
+    output_modalities:
+      - text
+    fetched_at: 2026-07-29T10:40:59.041506077Z
+  huggingface:
+    id: nvidia/NVIDIA-Nemotron-Nano-12B-v2-VL-BF16
+    revision: 5d250e2e111dc5e1434131bdf3d590c27a878ade
+    pipeline_tag: image-text-to-text
+    license: other
+    tags:
+      - VLM
+      - arxiv:2501.14818
+      - arxiv:2511.03929
+      - conversational
+      - endpoints_compatible
+      - image-text-to-text
+      - license:other
+      - nvidia
+      - region:us
+      - safetensors
+      - transformers
+    fetched_at: 2026-07-29T10:41:00.090414575Z
+reasoning:
+  supported: true

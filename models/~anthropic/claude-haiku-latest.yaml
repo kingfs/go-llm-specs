@@ -1,3 +1,4 @@
+schema_version: 2
 id: ~anthropic/claude-haiku-latest
 name: Anthropic Claude Haiku Latest
 provider: ~Anthropic
@@ -12,3 +13,29 @@ features:
   - ModalityImageIn
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:45:23.800298848Z
+upstream:
+  openrouter:
+    canonical_slug: ~anthropic/claude-haiku-latest
+    supported_parameters:
+      - include_reasoning
+      - max_completion_tokens
+      - max_tokens
+      - reasoning
+      - response_format
+      - stop
+      - structured_outputs
+      - temperature
+      - tool_choice
+      - tools
+      - top_k
+      - top_p
+    input_modalities:
+      - file
+      - image
+      - text
+    output_modalities:
+      - text
+    fetched_at: 2026-07-29T10:45:23.800299038Z
+reasoning:
+  supported: true

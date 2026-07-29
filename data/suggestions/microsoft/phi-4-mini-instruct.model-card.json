@@ -1,0 +1,69 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "microsoft/phi-4-mini-instruct",
+  "status": "pending",
+  "created_at": "2026-07-29T11:29:13.129330847Z",
+  "source": {
+    "url": "https://huggingface.co/microsoft/Phi-4-mini-instruct/resolve/cfbefacb99257ffa30c83adab238a50856ac3083/README.md",
+    "revision": "cfbefacb99257ffa30c83adab238a50856ac3083",
+    "sha256": "441056763ec8aef7b2e28612341c9a7c3b83ccb0be9c29c1afed9fb3f3a135d6"
+  },
+  "generator": {
+    "model": "qwen3.6-27b",
+    "wire_api": "responses"
+  },
+  "claims": [
+    {
+      "field": "context_length",
+      "value": 131072,
+      "evidence": "Phi-4-mini-instruct is a lightweight open model ... supports 128K token context length.",
+      "section": "## Model Summary",
+      "confidence": "high"
+    },
+    {
+      "field": "description",
+      "value": "Phi-4-mini-instruct is a lightweight open model built upon synthetic data and filtered publicly available websites - with a focus on high-quality, reasoning dense data. It belongs to the Phi-4 model family and supports 128K token context length.",
+      "evidence": "Phi-4-mini-instruct is a lightweight open model built upon synthetic data and filtered publicly available websites",
+      "section": "## Model Summary",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "CapChat"
+      ],
+      "evidence": "The model underwent an enhancement process, incorporating both supervised fine-tuning and direct preference optimization to support precise instruction adherence and robust safety measures.",
+      "section": "## Model Summary",
+      "confidence": "medium"
+    },
+    {
+      "field": "features",
+      "value": [
+        "ModalityTextIn",
+        "ModalityTextOut"
+      ],
+      "evidence": "The model is intended for broad multilingual commercial and research use. ... The model is not specifically designed or evaluated for all downstream purposes.",
+      "section": "## Intended Uses",
+      "confidence": "medium"
+    },
+    {
+      "field": "features",
+      "value": [
+        "CapFunctionCall"
+      ],
+      "evidence": "The Phi-4-mini model employed new architecture for efficiency ... better post-training techniques were used for instruction following, function calling",
+      "section": "## Release Notes",
+      "confidence": "medium"
+    },
+    {
+      "field": "features",
+      "value": [
+        "CapChat"
+      ],
+      "evidence": "The model provides uses for general purpose AI systems and applications which require: ... 3) Strong reasoning (especially math and logic).",
+      "section": "## Intended Uses",
+      "confidence": "low"
+    }
+  ]
+}

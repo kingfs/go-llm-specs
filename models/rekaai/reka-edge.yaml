@@ -1,3 +1,4 @@
+schema_version: 2
 id: rekaai/reka-edge
 name: Reka Edge
 provider: Rekaai
@@ -13,3 +14,55 @@ features:
   - ModalityTextIn
   - ModalityTextOut
   - ModalityVideoIn
+discovered_at: 2026-07-29T10:43:55.100088429Z
+upstream:
+  openrouter:
+    canonical_slug: rekaai/reka-edge-2603
+    huggingface_id: RekaAI/reka-edge-2603
+    supported_parameters:
+      - frequency_penalty
+      - logprobs
+      - max_tokens
+      - presence_penalty
+      - seed
+      - stop
+      - structured_outputs
+      - temperature
+      - tool_choice
+      - tools
+      - top_k
+      - top_logprobs
+      - top_p
+    input_modalities:
+      - image
+      - text
+      - video
+    output_modalities:
+      - text
+    fetched_at: 2026-07-29T10:43:55.100088809Z
+  huggingface:
+    id: RekaAI/reka-edge-2603
+    revision: 492c81c225fbf5f3263a8245b00827721b119a13
+    pipeline_tag: image-text-to-text
+    model_type: yasa2
+    architectures:
+      - Yasa2ForConditionalGeneration
+    license: other
+    tags:
+      - conversational
+      - custom_code
+      - image-text-to-text
+      - license:other
+      - region:us
+      - safetensors
+      - transformers
+      - yasa2
+    tokenizer_model_max_length: 16384
+    processor_class: Yasa2Processor
+    structured_files:
+      - config.json
+      - preprocessor_config.json
+      - tokenizer_config.json
+    fetched_at: 2026-07-29T10:43:57.400153025Z
+reasoning:
+  supported: true

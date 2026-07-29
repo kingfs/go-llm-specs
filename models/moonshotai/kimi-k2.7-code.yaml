@@ -1,3 +1,4 @@
+schema_version: 2
 id: moonshotai/kimi-k2.7-code
 name: 'MoonshotAI: Kimi K2.7 Code'
 provider: Moonshotai
@@ -13,3 +14,64 @@ features:
   - ModalityTextIn
   - ModalityTextOut
   - ModalityVideoIn
+discovered_at: 2026-07-29T10:40:10.97401849Z
+upstream:
+  openrouter:
+    canonical_slug: moonshotai/kimi-k2.7-code-20260612
+    huggingface_id: moonshotai/Kimi-K2.7-Code
+    supported_parameters:
+      - frequency_penalty
+      - include_reasoning
+      - logit_bias
+      - logprobs
+      - max_tokens
+      - min_p
+      - parallel_tool_calls
+      - presence_penalty
+      - reasoning
+      - repetition_penalty
+      - response_format
+      - seed
+      - stop
+      - structured_outputs
+      - temperature
+      - tool_choice
+      - tools
+      - top_k
+      - top_logprobs
+      - top_p
+    input_modalities:
+      - image
+      - text
+    output_modalities:
+      - text
+    fetched_at: 2026-07-29T10:40:10.97401871Z
+  huggingface:
+    id: moonshotai/Kimi-K2.7-Code
+    revision: 74797c9c62378b951a1f6fcf5c4631024e9b8bef
+    pipeline_tag: image-text-to-text
+    model_type: kimi_k25
+    architectures:
+      - KimiK25ForConditionalGeneration
+    license: other
+    tags:
+      - compressed-tensors
+      - conversational
+      - custom_code
+      - eval-results
+      - feature-extraction
+      - image-text-to-text
+      - kimi_k25
+      - license:other
+      - region:us
+      - safetensors
+      - transformers
+    structured_files:
+      - config.json
+      - preprocessor_config.json
+      - tokenizer_config.json
+    fetched_at: 2026-07-29T10:40:13.134618468Z
+reasoning:
+  supported: true
+  mandatory: true
+  default_enabled: true

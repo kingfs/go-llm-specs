@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "allenai/olmo-3.1-32b-instruct",
+  "status": "pending",
+  "created_at": "2026-07-29T11:17:08.242731628Z",
+  "source": {
+    "url": "https://huggingface.co/allenai/Olmo-3.1-32B-Instruct/resolve/ac0587e4a7744a551c059d8cd17ba220bc940dae/README.md",
+    "revision": "ac0587e4a7744a551c059d8cd17ba220bc940dae",
+    "sha256": "6c62cf90cac81ee7b4f57de5adbdc2480c5f2a67cdb000f391507cb5112fdf01"
+  },
+  "generator": {
+    "model": "qwen3.6-27b",
+    "wire_api": "responses"
+  },
+  "claims": [
+    {
+      "field": "description",
+      "value": "Olmo-3.1-32B-Instruct is a Transformer style autoregressive language model from the Olmo 3 family, licensed under Apache 2.0.",
+      "evidence": "a Transformer style autoregressive language model.",
+      "section": "Model Details",
+      "confidence": "high"
+    },
+    {
+      "field": "description",
+      "value": "Supports English language.",
+      "evidence": "Language(s) (NLP): English",
+      "section": "Model Details",
+      "confidence": "high"
+    },
+    {
+      "field": "description",
+      "value": "The model's training data cutoff date is December 2024.",
+      "evidence": "Date cutoff: Dec. 2024.",
+      "section": "Model Details",
+      "confidence": "high"
+    },
+    {
+      "field": "description",
+      "value": "Supported in transformers library version 4.57.0 or higher.",
+      "evidence": "Olmo 3 is supported in transformers 4.57.0 or higher:",
+      "section": "Installation",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "CapChat"
+      ],
+      "evidence": "Long chain-of-thought thinking improves reasoning tasks like math and coding.",
+      "section": "Model Details",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "ModalityTextIn",
+        "ModalityTextOut",
+        "CapChat"
+      ],
+      "evidence": "ModalityTextIn",
+      "section": "Model Details",
+      "confidence": "high"
+    }
+  ]
+}

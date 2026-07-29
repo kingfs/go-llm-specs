@@ -1,3 +1,4 @@
+schema_version: 2
 id: allenai/olmo-3-32b-think
 name: 'AllenAI: Olmo 3 32B Think'
 provider: Allenai
@@ -10,3 +11,59 @@ features:
   - CapJsonMode
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:36:23.719667465Z
+upstream:
+  openrouter:
+    canonical_slug: allenai/olmo-3-32b-think-20251121
+    huggingface_id: allenai/Olmo-3-32B-Think
+    supported_parameters:
+      - frequency_penalty
+      - include_reasoning
+      - logit_bias
+      - max_tokens
+      - presence_penalty
+      - reasoning
+      - repetition_penalty
+      - response_format
+      - seed
+      - stop
+      - structured_outputs
+      - temperature
+      - top_k
+      - top_p
+    input_modalities:
+      - text
+    output_modalities:
+      - text
+    fetched_at: 2026-07-29T10:36:23.719667745Z
+  huggingface:
+    id: allenai/Olmo-3-32B-Think
+    revision: f2edda15216e738ef2bb73771e11890e152b2112
+    pipeline_tag: text-generation
+    model_type: olmo3
+    architectures:
+      - Olmo3ForCausalLM
+    license: apache-2.0
+    tags:
+      - arxiv:2512.13961
+      - base_model:allenai/Olmo-3-32B-Think-DPO
+      - base_model:finetune:allenai/Olmo-3-32B-Think-DPO
+      - conversational
+      - dataset:allenai/Dolci-Think-RL
+      - en
+      - endpoints_compatible
+      - license:apache-2.0
+      - olmo3
+      - region:us
+      - safetensors
+      - text-generation
+      - transformers
+    config_context_length: 65536
+    tokenizer_model_max_length: 65536
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-07-29T10:36:25.630323859Z
+reasoning:
+  supported: true
+  mandatory: true

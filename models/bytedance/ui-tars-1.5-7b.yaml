@@ -1,3 +1,4 @@
+schema_version: 2
 id: bytedance/ui-tars-1.5-7b
 name: 'ByteDance: UI-TARS 7B '
 provider: Bytedance
@@ -16,3 +17,69 @@ features:
   - ModalityImageIn
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:37:13.148349835Z
+upstream:
+  openrouter:
+    canonical_slug: bytedance/ui-tars-1.5-7b
+    huggingface_id: ByteDance-Seed/UI-TARS-1.5-7B
+    supported_parameters:
+      - frequency_penalty
+      - logit_bias
+      - logprobs
+      - max_tokens
+      - presence_penalty
+      - repetition_penalty
+      - seed
+      - stop
+      - structured_outputs
+      - temperature
+      - top_k
+      - top_logprobs
+      - top_p
+    input_modalities:
+      - image
+      - text
+    output_modalities:
+      - text
+    knowledge_cutoff: "2025-01-31"
+    fetched_at: 2026-07-29T10:37:13.148350225Z
+  huggingface:
+    id: ByteDance-Seed/UI-TARS-1.5-7B
+    revision: 683d002dd99d8f95104d31e70391a39348857f4e
+    pipeline_tag: image-text-to-text
+    model_type: qwen2_5_vl
+    architectures:
+      - Qwen2_5_VLForConditionalGeneration
+    license: apache-2.0
+    tags:
+      - arxiv:2401.13919
+      - arxiv:2404.07972
+      - arxiv:2405.14573
+      - arxiv:2409.08264
+      - arxiv:2410.23218
+      - arxiv:2501.12326
+      - arxiv:2504.01382
+      - arxiv:2504.07981
+      - conversational
+      - deploy:azure
+      - en
+      - endpoints_compatible
+      - eval-results
+      - gui
+      - image-text-to-text
+      - license:apache-2.0
+      - multimodal
+      - qwen2_5_vl
+      - region:us
+      - safetensors
+      - text-generation-inference
+      - transformers
+    config_context_length: 128000
+    tokenizer_model_max_length: 131072
+    processor_class: Qwen2_5_VLProcessor
+    chat_template_sha256: 2450407449f909ed7223b4002829a2dfdfbd3b78dcd03791faa299513472df01
+    structured_files:
+      - config.json
+      - preprocessor_config.json
+      - tokenizer_config.json
+    fetched_at: 2026-07-29T10:37:15.435775115Z

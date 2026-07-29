@@ -1,3 +1,4 @@
+schema_version: 2
 id: mistralai/mistral-large-2407
 name: Mistral Large 2407
 provider: Mistral
@@ -16,3 +17,26 @@ features:
   - CapJsonMode
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:39:36.869081288Z
+upstream:
+  openrouter:
+    canonical_slug: mistralai/mistral-large-2407
+    supported_parameters:
+      - frequency_penalty
+      - max_tokens
+      - presence_penalty
+      - response_format
+      - seed
+      - stop
+      - structured_outputs
+      - temperature
+      - tool_choice
+      - tools
+      - top_p
+    input_modalities:
+      - file
+      - text
+    output_modalities:
+      - text
+    knowledge_cutoff: "2024-03-31"
+    fetched_at: 2026-07-29T10:39:36.869081598Z

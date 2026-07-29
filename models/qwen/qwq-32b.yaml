@@ -1,3 +1,4 @@
+schema_version: 2
 id: qwen/qwq-32b
 name: 'Qwen: QwQ 32B'
 provider: Qwen
@@ -11,3 +12,38 @@ features:
   - CapJsonMode
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:43:52.114487508Z
+upstream:
+  huggingface:
+    id: Qwen/QwQ-32B
+    revision: 976055f8c83f394f35dbd3ab09a285a984907bd0
+    pipeline_tag: text-generation
+    model_type: qwen2
+    architectures:
+      - Qwen2ForCausalLM
+    tags:
+      - arxiv:2309.00071
+      - arxiv:2412.15115
+      - base_model:Qwen/Qwen2.5-32B
+      - base_model:finetune:Qwen/Qwen2.5-32B
+      - chat
+      - conversational
+      - deploy:azure
+      - deploy:sagemaker
+      - en
+      - endpoints_compatible
+      - eval-results
+      - license:apache-2.0
+      - qwen2
+      - region:us
+      - safetensors
+      - text-generation
+      - text-generation-inference
+      - transformers
+    config_context_length: 40960
+    tokenizer_model_max_length: 131072
+    chat_template_sha256: 13f91b172335397a56f44ce9c72dfac5973c8af233be43445a9b269a39934896
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-07-29T10:43:54.152837317Z

@@ -1,3 +1,4 @@
+schema_version: 2
 id: openai/gpt-5-image
 name: 'OpenAI: GPT-5 Image'
 provider: OpenAI
@@ -14,3 +15,33 @@ features:
   - ModalityImageOut
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:41:14.204128703Z
+upstream:
+  openrouter:
+    canonical_slug: openai/gpt-5-image
+    supported_parameters:
+      - frequency_penalty
+      - include_reasoning
+      - logit_bias
+      - logprobs
+      - max_tokens
+      - presence_penalty
+      - reasoning
+      - response_format
+      - seed
+      - stop
+      - structured_outputs
+      - temperature
+      - top_logprobs
+      - top_p
+    input_modalities:
+      - file
+      - image
+      - text
+    output_modalities:
+      - image
+      - text
+    fetched_at: 2026-07-29T10:41:14.204128883Z
+reasoning:
+  supported: true
+  mandatory: true

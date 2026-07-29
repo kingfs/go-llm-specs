@@ -1,3 +1,4 @@
+schema_version: 2
 id: prime-intellect/intellect-3
 name: 'Prime Intellect: INTELLECT-3'
 provider: Prime-Intellect
@@ -11,3 +12,38 @@ features:
   - CapJsonMode
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:42:10.174804159Z
+upstream:
+  huggingface:
+    id: PrimeIntellect/INTELLECT-3
+    revision: ff39d4a4688989f3f28868923d030c28e1b7d81c
+    pipeline_tag: text-generation
+    model_type: glm4_moe
+    architectures:
+      - Glm4MoeForCausalLM
+    tags:
+      - agentic
+      - base_model:finetune:zai-org/GLM-4.5-Air-Base
+      - base_model:zai-org/GLM-4.5-Air-Base
+      - conversational
+      - custom_code
+      - en
+      - endpoints_compatible
+      - glm4_moe
+      - license:mit
+      - mixture-of-experts
+      - prime-intellect
+      - prime-rl
+      - reasoning
+      - region:us
+      - reinforcement-learning
+      - safetensors
+      - text-generation
+      - transformers
+      - verifiers
+    config_context_length: 131072
+    tokenizer_model_max_length: 128000
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-07-29T10:42:13.116675345Z

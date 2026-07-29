@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "deepseek/deepseek-chat-v3-0324",
+  "status": "pending",
+  "created_at": "2026-07-29T11:21:33.6954753Z",
+  "source": {
+    "url": "https://huggingface.co/deepseek-ai/DeepSeek-V3-0324/resolve/e9b33add76883f293d6bf61f6bd89b497e80e335/README.md",
+    "revision": "e9b33add76883f293d6bf61f6bd89b497e80e335",
+    "sha256": "2865d7eb83243042a9e896823ccc08c737713c5e10516401d295f46825920abc"
+  },
+  "generator": {
+    "model": "qwen3.6-27b",
+    "wire_api": "responses"
+  },
+  "claims": [
+    {
+      "field": "features",
+      "value": [
+        "CapFunctionCall"
+      ],
+      "evidence": "Increased accuracy in Function Calling, fixing issues from previous V3 versions",
+      "section": "## Features",
+      "confidence": "high"
+    },
+    {
+      "field": "description",
+      "value": "DeepSeek-V3-0324 is a model with notable improvements over DeepSeek-V3, including better reasoning benchmark scores (MMLU-Pro, GPQA, AIME, LiveCodeBench), front-end web development capabilities, Chinese writing proficiency, Chinese search capabilities, and function calling accuracy.",
+      "evidence": "DeepSeek-V3-0324 demonstrates notable improvements over its predecessor, DeepSeek-V3, in several key aspects.",
+      "section": "## Features",
+      "confidence": "medium"
+    }
+  ]
+}

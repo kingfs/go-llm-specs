@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "nex-agi/nex-n2-pro",
+  "status": "pending",
+  "created_at": "2026-07-29T11:36:54.480734066Z",
+  "source": {
+    "url": "https://huggingface.co/nex-agi/Nex-N2-Pro/resolve/e7e4a4a29eb46a41a730d0b283ec5af0f16185d9/README.md",
+    "revision": "e7e4a4a29eb46a41a730d0b283ec5af0f16185d9",
+    "sha256": "faa8ddeeaeff18b2ca76bf4d4b3e98cf912378a650cc19f2c74acb72812bf50e"
+  },
+  "generator": {
+    "model": "qwen3.6-27b",
+    "wire_api": "responses"
+  },
+  "claims": [
+    {
+      "field": "description",
+      "value": "Agentic model built on Qwen3.5-397B-A17B. Post-trained by Nex-AGI with an 'Agentic Thinking' framework connecting requirement understanding, task planning, code implementation, environmental feedback, and evaluation. Includes adaptive and coherent thinking components for real-world productivity, coding, deep research, tool calling, and terminal execution scenarios.",
+      "evidence": "Nex-N2 ships in two variants, both post-trained on the Qwen3.5 series: Nex-N2-Pro (built on Qwen3.5-397B-A17B)",
+      "section": "Performance",
+      "confidence": "high"
+    },
+    {
+      "field": "context_length",
+      "value": 131072,
+      "evidence": "Nex-N2 ships in two variants, both post-trained on the Qwen3.5 series: Nex-N2-Pro (built on Qwen3.5-397B-A17B)",
+      "section": "Performance",
+      "confidence": "high"
+    },
+    {
+      "field": "max_output",
+      "value": 16384,
+      "evidence": "Nex-N2-Pro (built on Qwen3.5-397B-A17B) and Nex-N2-mini (built on Qwen3.5-35B-A3B-Base)",
+      "section": "Performance",
+      "confidence": "medium"
+    },
+    {
+      "field": "features",
+      "value": [
+        "ModalityTextIn",
+        "ModalityTextOut"
+      ],
+      "evidence": "Nex-N2 unifies them through an Agentic Thinking framework... connecting requirement understanding, task planning, code implementation, environmental feedback, evaluation and debugging, and continuous iteration",
+      "section": "Nex-N2",
+      "confidence": "medium"
+    },
+    {
+      "field": "reasoning.supported",
+      "value": true,
+      "evidence": "Launch the server (example on two 8x H100 servers with CUDA 13.0): ... --reasoning-parser qwen3 --tool-call-parser qwen3_coder",
+      "section": "Usage",
+      "confidence": "high"
+    },
+    {
+      "field": "reasoning.parser",
+      "value": "qwen3",
+      "evidence": "--reasoning-parser qwen3 --tool-call-parser qwen3_coder",
+      "section": "Usage",
+      "confidence": "high"
+    }
+  ]
+}

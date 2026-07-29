@@ -1,3 +1,4 @@
+schema_version: 2
 id: poolside/laguna-m.1
 name: 'Poolside: Laguna M.1'
 provider: Poolside
@@ -11,3 +12,31 @@ features:
   - CapJsonMode
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:41:56.331890705Z
+upstream:
+  huggingface:
+    id: poolside/Laguna-M.1
+    revision: 2bf8a4ab6d2e8e1e0d92a41318532a0fee1640d6
+    pipeline_tag: text-generation
+    model_type: laguna
+    architectures:
+      - LagunaForCausalLM
+    tags:
+      - bf16
+      - conversational
+      - custom_code
+      - eval-results
+      - laguna
+      - laguna-m.1
+      - license:apache-2.0
+      - moe
+      - region:us
+      - safetensors
+      - sglang
+      - text-generation
+      - vllm
+    config_context_length: 262144
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-07-29T10:41:59.176683332Z

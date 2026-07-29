@@ -1,3 +1,4 @@
+schema_version: 2
 id: x-ai/grok-4.1-fast
 name: 'xAI: Grok 4.1 Fast'
 provider: X-Ai
@@ -18,3 +19,4 @@ features:
   - ModalityImageIn
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:44:48.189592534Z

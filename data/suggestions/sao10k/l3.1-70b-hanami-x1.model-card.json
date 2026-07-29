@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "sao10k/l3.1-70b-hanami-x1",
+  "status": "pending",
+  "created_at": "2026-07-29T12:02:22.575430522Z",
+  "source": {
+    "url": "https://huggingface.co/Sao10K/L3.1-70B-Hanami-x1/resolve/f054d970fe9119d0237ce97029e6f5b9fce630eb/README.md",
+    "revision": "f054d970fe9119d0237ce97029e6f5b9fce630eb",
+    "sha256": "5256b29c1bf0f938b8ee573f109d8271e3aa67995dea35224d8d6c5d44e2e5ab"
+  },
+  "generator": {
+    "model": "qwen3.6-27b",
+    "wire_api": "responses"
+  },
+  "claims": [
+    {
+      "field": "features",
+      "value": [
+        "ModalityTextIn",
+        "ModalityTextOut"
+      ],
+      "evidence": "min_p of at minimum 0.1 is recommended for Llama 3 types.",
+      "section": "Llama-3.1-70B-Hanami-x1",
+      "confidence": "low"
+    }
+  ]
+}

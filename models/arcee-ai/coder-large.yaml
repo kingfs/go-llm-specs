@@ -1,3 +1,4 @@
+schema_version: 2
 id: arcee-ai/coder-large
 name: 'Arcee AI: Coder Large'
 provider: Arcee-Ai
@@ -8,3 +9,4 @@ features:
   - CapChat
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:36:53.483150514Z

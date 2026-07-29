@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "nvidia/nemotron-3-nano-30b-a3b",
+  "status": "pending",
+  "created_at": "2026-07-29T11:39:06.543911387Z",
+  "source": {
+    "url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B-BF16/resolve/2d59de1cbd51c0adf384eb906b766d1aee0e0517/README.md",
+    "revision": "2d59de1cbd51c0adf384eb906b766d1aee0e0517",
+    "sha256": "7d7b0a9aeefc8496ed049e45585911f495029e1c144766a8d8d0b863efc25b62"
+  },
+  "generator": {
+    "model": "qwen3.6-27b",
+    "wire_api": "responses"
+  },
+  "claims": [
+    {
+      "field": "description",
+      "value": "LLM designed for reasoning and non-reasoning tasks. Hybrid MoE architecture with 23 Mamba-2/MoE and 6 Attention layers. 30B total parameters, 3.5B active.",
+      "evidence": "Nemotron-3-Nano-30B-A3B-BF16 is a large language model (LLM) trained from scratch by NVIDIA, and designed as a unified model for both reasoning and non-reasoning tasks.",
+      "section": "Description",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "CapChat",
+        "ModalityTextIn",
+        "ModalityTextOut"
+      ],
+      "evidence": "The model has 3.5B active parameters and 30B parameters in total.",
+      "section": "Description",
+      "confidence": "high"
+    },
+    {
+      "field": "reasoning.supported",
+      "value": true,
+      "evidence": "It responds to user queries and tasks by first generating a reasoning trace and then concluding with a final response.",
+      "section": "Description",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "CapChat",
+        "ModalityTextIn",
+        "ModalityTextOut"
+      ],
+      "evidence": "The supported languages include: English, German, Spanish, French, Italian, and Japanese.",
+      "section": "Description",
+      "confidence": "high"
+    },
+    {
+      "field": "description",
+      "value": "Post-training data cutoff: November 28, 2025.",
+      "evidence": "The post-training data has a cutoff date of November 28, 2025.",
+      "section": "Description",
+      "confidence": "medium"
+    }
+  ]
+}

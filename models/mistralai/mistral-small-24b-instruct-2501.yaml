@@ -1,3 +1,4 @@
+schema_version: 2
 id: mistralai/mistral-small-24b-instruct-2501
 name: 'Mistral: Mistral Small 3'
 provider: Mistral
@@ -17,3 +18,61 @@ features:
   - CapJsonMode
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:39:42.078413751Z
+upstream:
+  openrouter:
+    canonical_slug: mistralai/mistral-small-24b-instruct-2501
+    huggingface_id: mistralai/Mistral-Small-24B-Instruct-2501
+    supported_parameters:
+      - frequency_penalty
+      - logit_bias
+      - max_tokens
+      - min_p
+      - presence_penalty
+      - repetition_penalty
+      - response_format
+      - seed
+      - stop
+      - structured_outputs
+      - temperature
+      - top_k
+      - top_p
+    input_modalities:
+      - text
+    output_modalities:
+      - text
+    knowledge_cutoff: "2023-10-31"
+    fetched_at: 2026-07-29T10:39:42.078414271Z
+  huggingface:
+    id: mistralai/Mistral-Small-24B-Instruct-2501
+    revision: 9527884be6e5616bdd54de542f9ae13384489724
+    model_type: mistral
+    architectures:
+      - MistralForCausalLM
+    license: apache-2.0
+    tags:
+      - base_model:finetune:mistralai/Mistral-Small-24B-Base-2501
+      - base_model:mistralai/Mistral-Small-24B-Base-2501
+      - de
+      - en
+      - es
+      - eval-results
+      - fr
+      - it
+      - ja
+      - ko
+      - license:apache-2.0
+      - mistral
+      - pt
+      - region:us
+      - ru
+      - safetensors
+      - vllm
+      - zh
+    config_context_length: 32768
+    tokenizer_model_max_length: 32768
+    chat_template_sha256: e96795d035203784313023391fe8d6fe456a2ceb83aed5dcd1cc87bf344b44d6
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-07-29T10:39:44.124913566Z

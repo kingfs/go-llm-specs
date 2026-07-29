@@ -1,3 +1,4 @@
+schema_version: 2
 id: openai/gpt-5-codex
 name: 'OpenAI: GPT-5 Codex'
 provider: OpenAI
@@ -18,3 +19,26 @@ features:
   - ModalityImageIn
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:41:13.779053515Z
+upstream:
+  openrouter:
+    canonical_slug: openai/gpt-5-codex
+    supported_parameters:
+      - include_reasoning
+      - max_tokens
+      - reasoning
+      - response_format
+      - seed
+      - structured_outputs
+      - tool_choice
+      - tools
+    input_modalities:
+      - image
+      - text
+    output_modalities:
+      - text
+    knowledge_cutoff: "2024-09-30"
+    fetched_at: 2026-07-29T10:41:13.779053915Z
+reasoning:
+  supported: true
+  mandatory: true

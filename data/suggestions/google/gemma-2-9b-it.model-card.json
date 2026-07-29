@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "google/gemma-2-9b-it",
+  "status": "pending",
+  "created_at": "2026-07-29T11:24:50.720066809Z",
+  "source": {
+    "url": "https://huggingface.co/google/gemma-2-9b-it/resolve/11c9b309abf73637e4b6f9a3fa1e92e615547819/README.md",
+    "revision": "11c9b309abf73637e4b6f9a3fa1e92e615547819",
+    "sha256": "1f13ef7e215f05bfc51c2f3ecefbe8d8041c264c91eb99c79a706f12c11fac89"
+  },
+  "generator": {
+    "model": "qwen3.6-27b",
+    "wire_api": "responses"
+  },
+  "claims": [
+    {
+      "field": "description",
+      "value": "Gemma is a family of lightweight, state-of-the-art open models from Google, built from the same research and technology used to create the Gemini models.",
+      "evidence": "Gemma is a family of lightweight, state-of-the-art open models from Google, built from the same research and technology used to create the Gemini models.",
+      "section": "Description",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "ModalityTextIn",
+        "ModalityTextOut",
+        "CapChat"
+      ],
+      "evidence": "They are text-to-text, decoder-only large language models, available in English",
+      "section": "Description",
+      "confidence": "high"
+    }
+  ]
+}

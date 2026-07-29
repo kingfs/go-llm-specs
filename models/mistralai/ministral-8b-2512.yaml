@@ -1,3 +1,4 @@
+schema_version: 2
 id: mistralai/ministral-8b-2512
 name: 'Mistral: Ministral 3 8B 2512'
 provider: Mistral
@@ -11,3 +12,62 @@ features:
   - ModalityImageIn
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:39:32.591057043Z
+upstream:
+  openrouter:
+    canonical_slug: mistralai/ministral-8b-2512
+    huggingface_id: mistralai/Ministral-3-8B-Instruct-2512
+    supported_parameters:
+      - frequency_penalty
+      - logprobs
+      - max_tokens
+      - presence_penalty
+      - repetition_penalty
+      - response_format
+      - seed
+      - stop
+      - structured_outputs
+      - temperature
+      - tool_choice
+      - tools
+      - top_logprobs
+      - top_p
+    input_modalities:
+      - image
+      - text
+    output_modalities:
+      - text
+    fetched_at: 2026-07-29T10:39:32.591057593Z
+  huggingface:
+    id: mistralai/Ministral-3-8B-Instruct-2512
+    revision: 5b26027e7b19eeb4b7352e1fed3926375dd2cb4d
+    model_type: mistral3
+    architectures:
+      - Mistral3ForConditionalGeneration
+    license: apache-2.0
+    tags:
+      - ar
+      - arxiv:2601.08584
+      - base_model:mistralai/Ministral-3-8B-Base-2512
+      - base_model:quantized:mistralai/Ministral-3-8B-Base-2512
+      - de
+      - en
+      - es
+      - fp8
+      - fr
+      - it
+      - ja
+      - ko
+      - license:apache-2.0
+      - mistral-common
+      - mistral3
+      - nl
+      - pt
+      - region:us
+      - safetensors
+      - vllm
+      - zh
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-07-29T10:39:34.508262086Z

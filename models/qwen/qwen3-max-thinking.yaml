@@ -1,3 +1,4 @@
+schema_version: 2
 id: qwen/qwen3-max-thinking
 name: 'Qwen: Qwen3 Max Thinking'
 provider: Qwen
@@ -11,3 +12,31 @@ features:
   - CapJsonMode
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:43:03.676861503Z
+upstream:
+  openrouter:
+    canonical_slug: qwen/qwen3-max-thinking-20260123
+    supported_parameters:
+      - frequency_penalty
+      - include_reasoning
+      - logprobs
+      - max_tokens
+      - presence_penalty
+      - reasoning
+      - response_format
+      - seed
+      - stop
+      - structured_outputs
+      - temperature
+      - tool_choice
+      - tools
+      - top_k
+      - top_logprobs
+      - top_p
+    input_modalities:
+      - text
+    output_modalities:
+      - text
+    fetched_at: 2026-07-29T10:43:03.676861833Z
+reasoning:
+  supported: true

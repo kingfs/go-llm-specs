@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "qwen/qwen3.5-397b-a17b",
+  "status": "pending",
+  "created_at": "2026-07-29T12:00:17.433229485Z",
+  "source": {
+    "url": "https://huggingface.co/Qwen/Qwen3.5-397B-A17B/resolve/8472618112abcbd45acbcdc58436aff4233c23f7/README.md",
+    "revision": "8472618112abcbd45acbcdc58436aff4233c23f7",
+    "sha256": "dd4a3c3a2be44ec32281a9426044188980af43bec55472d00437ca018f581be0"
+  },
+  "generator": {
+    "model": "qwen3.6-27b",
+    "wire_api": "responses"
+  },
+  "claims": [
+    {
+      "field": "description",
+      "value": "Causal Language Model with Vision Encoder. 397B total parameters, 17B activated. Hybrid architecture with Gated Delta Networks and sparse Mixture-of-Experts (512 experts, 10 routed + 1 shared). Supports image-text-to-text pipeline with multimodal training.",
+      "evidence": "Type: Causal Language Model with Vision Encoder",
+      "section": "Model Overview",
+      "confidence": "high"
+    },
+    {
+      "field": "context_length",
+      "value": 262144,
+      "evidence": "Context Length: 262,144 natively and extensible up to 1,010,000 tokens.",
+      "section": "Model Overview",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "CapChat",
+        "CapFunctionCall",
+        "ModalityTextIn",
+        "ModalityTextOut",
+        "ModalityImageIn"
+      ],
+      "evidence": "Qwen3.5 features the following enhancement: Unified Vision-Language Foundation: Early fusion training on multimodal tokens achieves cross-generational parity with Qwen3 and outperforms Qwen3-VL models across reasoning, coding, agents, and visual understanding benchmarks.",
+      "section": "Qwen3.5 Highlights",
+      "confidence": "medium"
+    },
+    {
+      "field": "reasoning.supported",
+      "value": false,
+      "evidence": "In particular, Qwen3.5-Plus is the hosted version corresponding to Qwen3.5-397B-A17B with more production features, e.g., 1M context length by default, official built-in tools, and adaptive tool use.",
+      "section": "Model Overview",
+      "confidence": "low"
+    }
+  ]
+}

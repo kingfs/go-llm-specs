@@ -1,3 +1,4 @@
+schema_version: 2
 id: nousresearch/hermes-2-pro-llama-3-8b
 name: 'NousResearch: Hermes 2 Pro - Llama-3 8B'
 provider: Nous Research
@@ -11,3 +12,45 @@ features:
   - CapJsonMode
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:40:27.350036508Z
+upstream:
+  huggingface:
+    id: NousResearch/Hermes-2-Pro-Llama-3-8B
+    revision: f798274b30e7d2d4797c369edcc0cc7473b6e6f2
+    pipeline_tag: text-generation
+    model_type: llama
+    architectures:
+      - LlamaForCausalLM
+    tags:
+      - DPO
+      - Llama-3
+      - RLHF
+      - axolotl
+      - base_model:NousResearch/Meta-Llama-3-8B
+      - base_model:finetune:NousResearch/Meta-Llama-3-8B
+      - chatml
+      - conversational
+      - dataset:teknium/OpenHermes-2.5
+      - deploy:sagemaker
+      - distillation
+      - en
+      - endpoints_compatible
+      - finetune
+      - function calling
+      - gpt4
+      - instruct
+      - json mode
+      - license:llama3
+      - llama
+      - region:us
+      - safetensors
+      - synthetic data
+      - text-generation
+      - text-generation-inference
+      - transformers
+    config_context_length: 8192
+    chat_template_sha256: 69882df37ebdbd0badef2bddc094f12d20534b46676f2a65dc03b8bc69ddd585
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-07-29T10:40:29.643786872Z

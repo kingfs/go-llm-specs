@@ -1,3 +1,4 @@
+schema_version: 2
 id: mistralai/mistral-7b-instruct-v0.2
 name: 'Mistral: Mistral 7B Instruct v0.2'
 provider: Mistral
@@ -22,3 +23,4 @@ features:
   - CapChat
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:39:35.463951663Z

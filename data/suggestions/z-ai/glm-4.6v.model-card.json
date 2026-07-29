@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "z-ai/glm-4.6v",
+  "status": "pending",
+  "created_at": "2026-07-29T12:07:21.405866508Z",
+  "source": {
+    "url": "https://huggingface.co/zai-org/GLM-4.6V/resolve/4e2d47eb0b41c5280d8294b17cef9e94fdcfff46/README.md",
+    "revision": "4e2d47eb0b41c5280d8294b17cef9e94fdcfff46",
+    "sha256": "0305284a9e10e088e3b6d3d474215a6f325a4525f923eb34cba0288259dbd5e0"
+  },
+  "generator": {
+    "model": "qwen3.6-27b",
+    "wire_api": "responses"
+  },
+  "claims": [
+    {
+      "field": "description",
+      "value": "GLM-4.6V is a foundation model (106B) for cloud/cluster scenarios; GLM-4.6V-Flash is a lightweight 9B version optimized for local deployment. Part of the GLM-V family.",
+      "evidence": "GLM-4.6V series model includes two versions: GLM-4.6V (106B)... and GLM-4.6V-Flash (9B)",
+      "section": "# GLM-4.6V",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "CapChat",
+        "ModalityImageIn",
+        "ModalityTextIn",
+        "ModalityTextOut"
+      ],
+      "evidence": "pipeline_tag: image-text-to-text",
+      "section": "---",
+      "confidence": "high"
+    },
+    {
+      "field": "context_length",
+      "value": 131072,
+      "evidence": "GLM-4.6V scales its context window to 128k tokens in training",
+      "section": "# GLM-4.6V",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "CapFunctionCall"
+      ],
+      "evidence": "Crucially, we integrate native Function Calling capabilities for the first time.",
+      "section": "# GLM-4.6V",
+      "confidence": "high"
+    },
+    {
+      "field": "max_output",
+      "value": 16384,
+      "evidence": "max_generate_tokens: 16K",
+      "section": "## Evaluation Settings",
+      "confidence": "high"
+    }
+  ]
+}

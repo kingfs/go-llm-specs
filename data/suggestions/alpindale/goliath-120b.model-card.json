@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "alpindale/goliath-120b",
+  "status": "pending",
+  "created_at": "2026-07-29T11:17:31.402980825Z",
+  "source": {
+    "url": "https://huggingface.co/alpindale/goliath-120b/resolve/f199bc8644f81163d2ce099b6793f0f65775a62c/README.md",
+    "revision": "f199bc8644f81163d2ce099b6793f0f65775a62c",
+    "sha256": "73a5d1447fdac401aef44e310b295055418cde4a988079b75c99ef404bc512a3"
+  },
+  "generator": {
+    "model": "qwen3.6-27b",
+    "wire_api": "responses"
+  },
+  "claims": [
+    {
+      "field": "description",
+      "value": "An auto-regressive causal language model created by merging two fine-tuned Llama-2 70B models (Xwin-LM-70B-V0.1 and Euryale-1.3-L2-70B) using layer-wise mergekit.",
+      "evidence": "An auto-regressive causal LM created by combining 2x finetuned Llama-2 70B into one.",
+      "section": "Goliath 120B",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "ModalityTextIn",
+        "ModalityTextOut"
+      ],
+      "evidence": "tags: - merge",
+      "section": "Goliath 120B",
+      "confidence": "high"
+    }
+  ]
+}

@@ -1,3 +1,4 @@
+schema_version: 2
 id: allenai/molmo-2-8b:free
 name: 'AllenAI: Molmo2 8B (free)'
 provider: Allenai
@@ -12,3 +13,4 @@ features:
   - ModalityTextIn
   - ModalityTextOut
   - ModalityVideoIn
+discovered_at: 2026-07-29T10:36:21.114750328Z

@@ -1,3 +1,4 @@
+schema_version: 2
 id: openai/chatgpt-4o-latest
 name: 'OpenAI: ChatGPT-4o'
 provider: OpenAI
@@ -17,3 +18,4 @@ features:
   - ModalityImageIn
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:41:03.028947545Z

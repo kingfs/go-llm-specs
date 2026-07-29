@@ -1,3 +1,4 @@
+schema_version: 2
 id: nex-agi/nex-n2-pro
 name: 'Nex AGI: Nex-N2-Pro'
 provider: Nex-Agi
@@ -10,3 +11,54 @@ features:
   - ModalityImageIn
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:40:22.186023994Z
+upstream:
+  openrouter:
+    canonical_slug: nex-agi/nex-n2-pro
+    huggingface_id: nex-agi/Nex-N2-Pro
+    supported_parameters:
+      - frequency_penalty
+      - include_reasoning
+      - logprobs
+      - max_tokens
+      - reasoning
+      - temperature
+      - tool_choice
+      - tools
+      - top_k
+      - top_logprobs
+      - top_p
+    input_modalities:
+      - image
+      - text
+    output_modalities:
+      - text
+    fetched_at: 2026-07-29T10:40:22.186024294Z
+  huggingface:
+    id: nex-agi/Nex-N2-Pro
+    revision: e7e4a4a29eb46a41a730d0b283ec5af0f16185d9
+    pipeline_tag: text-generation
+    model_type: qwen3_5_moe
+    architectures:
+      - Qwen3_5MoeForConditionalGeneration
+    license: apache-2.0
+    tags:
+      - conversational
+      - endpoints_compatible
+      - eval-results
+      - image-text-to-text
+      - license:apache-2.0
+      - qwen3_5_moe
+      - region:us
+      - safetensors
+      - text-generation
+      - transformers
+    tokenizer_model_max_length: 262144
+    processor_class: Qwen3VLProcessor
+    structured_files:
+      - config.json
+      - preprocessor_config.json
+      - tokenizer_config.json
+    fetched_at: 2026-07-29T10:40:24.424742042Z
+reasoning:
+  supported: true

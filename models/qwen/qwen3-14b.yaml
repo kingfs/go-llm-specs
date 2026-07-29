@@ -1,3 +1,4 @@
+schema_version: 2
 id: qwen/qwen3-14b
 name: 'Qwen: Qwen3 14B'
 provider: Qwen
@@ -11,3 +12,67 @@ features:
   - CapJsonMode
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:42:31.493901122Z
+upstream:
+  openrouter:
+    canonical_slug: qwen/qwen3-14b-04-28
+    huggingface_id: Qwen/Qwen3-14B
+    supported_parameters:
+      - frequency_penalty
+      - include_reasoning
+      - logit_bias
+      - logprobs
+      - max_tokens
+      - min_p
+      - presence_penalty
+      - reasoning
+      - repetition_penalty
+      - response_format
+      - seed
+      - stop
+      - structured_outputs
+      - temperature
+      - tool_choice
+      - tools
+      - top_k
+      - top_logprobs
+      - top_p
+    input_modalities:
+      - text
+    output_modalities:
+      - text
+    knowledge_cutoff: "2025-03-31"
+    fetched_at: 2026-07-29T10:42:31.493901522Z
+  huggingface:
+    id: Qwen/Qwen3-14B
+    revision: 40c069824f4251a91eefaf281ebe4c544efd3e18
+    pipeline_tag: text-generation
+    model_type: qwen3
+    architectures:
+      - Qwen3ForCausalLM
+    license: apache-2.0
+    tags:
+      - arxiv:2309.00071
+      - arxiv:2505.09388
+      - base_model:Qwen/Qwen3-14B-Base
+      - base_model:finetune:Qwen/Qwen3-14B-Base
+      - conversational
+      - deploy:azure
+      - deploy:sagemaker
+      - endpoints_compatible
+      - license:apache-2.0
+      - qwen3
+      - region:us
+      - safetensors
+      - text-generation
+      - text-generation-inference
+      - transformers
+    config_context_length: 40960
+    tokenizer_model_max_length: 131072
+    chat_template_sha256: d7d7b7a694907104724f66d29e96b811c834ab8d1a40ef59f00469049fee7794
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-07-29T10:42:33.23039243Z
+reasoning:
+  supported: true

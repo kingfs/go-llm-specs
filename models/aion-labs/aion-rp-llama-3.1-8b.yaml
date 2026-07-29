@@ -1,3 +1,4 @@
+schema_version: 2
 id: aion-labs/aion-rp-llama-3.1-8b
 name: 'AionLabs: Aion-RP 1.0 (8B)'
 provider: Aion-Labs
@@ -9,3 +10,37 @@ features:
   - CapChat
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:36:14.085082542Z
+upstream:
+  openrouter:
+    canonical_slug: aion-labs/aion-rp-llama-3.1-8b
+    supported_parameters:
+      - max_tokens
+      - temperature
+      - top_p
+    input_modalities:
+      - text
+    output_modalities:
+      - text
+    knowledge_cutoff: "2023-12-31"
+    fetched_at: 2026-07-29T10:36:14.085083082Z
+  huggingface:
+    id: aion-labs/Aion-RP-Llama-3.1-8B
+    revision: 8ae617bc85c5d6698c3323863c42098d1998f7bb
+    model_type: llama
+    architectures:
+      - LlamaForCausalLM
+    tags:
+      - base_model:finetune:meta-llama/Llama-3.1-8B
+      - base_model:meta-llama/Llama-3.1-8B
+      - license:apache-2.0
+      - llama
+      - region:us
+      - safetensors
+    config_context_length: 131072
+    tokenizer_model_max_length: 131072
+    chat_template_sha256: 4c54ce0b7cb5dd1bc35eb0d75be0bcefbd7d0019a8768db2bb21165e5c191e0c
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-07-29T10:36:16.061609918Z

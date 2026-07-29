@@ -1,3 +1,4 @@
+schema_version: 2
 id: qwen/qwen-plus-2025-07-28:thinking
 name: 'Qwen: Qwen Plus 0728 (thinking)'
 provider: Qwen
@@ -11,3 +12,32 @@ features:
   - CapJsonMode
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:42:22.985354037Z
+upstream:
+  openrouter:
+    canonical_slug: qwen/qwen-plus-2025-07-28
+    supported_parameters:
+      - frequency_penalty
+      - include_reasoning
+      - logprobs
+      - max_tokens
+      - presence_penalty
+      - reasoning
+      - response_format
+      - seed
+      - stop
+      - structured_outputs
+      - temperature
+      - tool_choice
+      - tools
+      - top_k
+      - top_logprobs
+      - top_p
+    input_modalities:
+      - text
+    output_modalities:
+      - text
+    knowledge_cutoff: "2025-03-31"
+    fetched_at: 2026-07-29T10:42:22.985354447Z
+reasoning:
+  supported: true

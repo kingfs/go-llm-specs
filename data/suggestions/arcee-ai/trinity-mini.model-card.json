@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "arcee-ai/trinity-mini",
+  "status": "pending",
+  "created_at": "2026-07-29T11:18:27.834444976Z",
+  "source": {
+    "url": "https://huggingface.co/arcee-ai/Trinity-Mini/resolve/cdb81e8130815fec299cccc8f8700004b8366e1e/README.md",
+    "revision": "cdb81e8130815fec299cccc8f8700004b8366e1e",
+    "sha256": "a4c57d32656c692259680f9674a4e6b09efe58cd4e468e1b7915526a169b6854"
+  },
+  "generator": {
+    "model": "qwen3.6-27b",
+    "wire_api": "responses"
+  },
+  "claims": [
+    {
+      "field": "context_length",
+      "value": 131072,
+      "evidence": "Context length: 128k",
+      "section": "## Model Details",
+      "confidence": "high"
+    },
+    {
+      "field": "description",
+      "value": "Trinity Mini is an Arcee AI 26B MoE model with 3B active parameters. It is the medium-sized model in the Trinity family of open-weight models for enterprise and tinkerers. Tuned for reasoning.",
+      "evidence": "Trinity Mini is an Arcee AI 26B MoE model with 3B active parameters. It is the medium-sized model in our new Trinity family, a series of open-weight models for enterprise and tinkerers alike.",
+      "section": "# Trinity Mini",
+      "confidence": "high"
+    }
+  ]
+}

@@ -1,3 +1,4 @@
+schema_version: 2
 id: nvidia/nemotron-3-nano-30b-a3b
 name: 'NVIDIA: Nemotron 3 Nano 30B A3B'
 provider: Nvidia
@@ -21,3 +22,89 @@ features:
   - CapJsonMode
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:40:42.246289803Z
+upstream:
+  openrouter:
+    canonical_slug: nvidia/nemotron-3-nano-30b-a3b
+    huggingface_id: nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B-BF16
+    supported_parameters:
+      - frequency_penalty
+      - include_reasoning
+      - logit_bias
+      - logprobs
+      - max_tokens
+      - min_p
+      - presence_penalty
+      - reasoning
+      - repetition_penalty
+      - response_format
+      - seed
+      - stop
+      - structured_outputs
+      - temperature
+      - tool_choice
+      - tools
+      - top_k
+      - top_logprobs
+      - top_p
+    input_modalities:
+      - text
+    output_modalities:
+      - text
+    fetched_at: 2026-07-29T10:40:42.246290263Z
+  huggingface:
+    id: nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B-BF16
+    revision: 2d59de1cbd51c0adf384eb906b766d1aee0e0517
+    pipeline_tag: text-generation
+    model_type: nemotron_h
+    architectures:
+      - NemotronHForCausalLM
+    license: other
+    tags:
+      - arxiv:2512.20848
+      - arxiv:2512.20856
+      - conversational
+      - custom_code
+      - dataset:nvidia/Nemotron-3-Nano-RL-Training-Blend
+      - dataset:nvidia/Nemotron-Agentic-v1
+      - dataset:nvidia/Nemotron-CC-Code-v1
+      - dataset:nvidia/Nemotron-CC-Math-v1
+      - dataset:nvidia/Nemotron-CC-v2
+      - dataset:nvidia/Nemotron-CC-v2.1
+      - dataset:nvidia/Nemotron-Competitive-Programming-v1
+      - dataset:nvidia/Nemotron-Instruction-Following-Chat-v1
+      - dataset:nvidia/Nemotron-Math-Proofs-v1
+      - dataset:nvidia/Nemotron-Math-v2
+      - dataset:nvidia/Nemotron-Pretraining-Code-v1
+      - dataset:nvidia/Nemotron-Pretraining-Code-v2
+      - dataset:nvidia/Nemotron-Pretraining-Dataset-sample
+      - dataset:nvidia/Nemotron-Pretraining-SFT-v1
+      - dataset:nvidia/Nemotron-Pretraining-Specialized-v1
+      - dataset:nvidia/Nemotron-Science-v1
+      - de
+      - deploy:azure
+      - deploy:sagemaker
+      - en
+      - endpoints_compatible
+      - es
+      - eval-results
+      - fr
+      - it
+      - ja
+      - license:other
+      - nemotron_h
+      - nvidia
+      - pytorch
+      - region:us
+      - safetensors
+      - text-generation
+      - transformers
+    config_context_length: 262144
+    tokenizer_model_max_length: 262144
+    chat_template_sha256: b6c84de34cc7a4ad069a0323cf23259d42b9a7f4da09ea1a382dcd0a0fc0b664
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-07-29T10:40:44.27280989Z
+reasoning:
+  supported: true

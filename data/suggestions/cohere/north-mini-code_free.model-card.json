@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "cohere/north-mini-code:free",
+  "status": "pending",
+  "created_at": "2026-07-29T11:20:16.570111266Z",
+  "source": {
+    "url": "https://huggingface.co/CohereLabs/North-Mini-Code-1.0/resolve/d11e61a842617a22dc328552fa5bb86231ee4f37/README.md",
+    "revision": "d11e61a842617a22dc328552fa5bb86231ee4f37",
+    "sha256": "bf2bdf19acafee528920a386900fdf9e5c1bb7ba87cc74acb4ad61054e8ec039"
+  },
+  "generator": {
+    "model": "qwen3.6-27b",
+    "wire_api": "responses"
+  },
+  "claims": [
+    {
+      "field": "description",
+      "value": "Open weights research release of a 30B total / 3B active MoE model for code generation, agentic software engineering, and terminal tasks. Supports 256K context and 64K output. Developed by Cohere.",
+      "evidence": "North Mini Code is an open weights research release of a 30B-A3B parameter model optimized for code generation, agentic software engineering, and terminal tasks.",
+      "section": "Model Summary",
+      "confidence": "high"
+    },
+    {
+      "field": "context_length",
+      "value": 262144,
+      "evidence": "Context length: 256K \u0026 64K max output",
+      "section": "Model Summary",
+      "confidence": "high"
+    },
+    {
+      "field": "max_output",
+      "value": 65536,
+      "evidence": "Context length: 256K \u0026 64K max output",
+      "section": "Model Summary",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "CapChat",
+        "CapFunctionCall",
+        "CapJsonMode",
+        "ModalityTextIn",
+        "ModalityTextOut"
+      ],
+      "evidence": "North-Mini-Code-1.0 has been specifically trained with tool-use capabilities for agentic coding. Tool use with North-Mini-Code-1.0 is supported through chat templates in Transformers. We recommend providing tool descriptions using JSON schema.",
+      "section": "Tool Use Capabilities:",
+      "confidence": "high"
+    },
+    {
+      "field": "reasoning.supported",
+      "value": true,
+      "evidence": "North Mini Code, similarly as all the other Cohere agent models released to date, supports interleaved thinking and works best when turned on.",
+      "section": "Tool Use Capabilities:",
+      "confidence": "high"
+    }
+  ]
+}

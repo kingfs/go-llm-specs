@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "deepseek/deepseek-chat",
+  "status": "pending",
+  "created_at": "2026-07-29T11:21:59.252490016Z",
+  "source": {
+    "url": "https://huggingface.co/deepseek-ai/DeepSeek-V3/resolve/e815299b0bcbac849fa540c768ef21845365c9eb/README.md",
+    "revision": "e815299b0bcbac849fa540c768ef21845365c9eb",
+    "sha256": "2864355521af9066676a10293c98dcbbfe05f8f3f48eb1ead59ea789e9641c63"
+  },
+  "generator": {
+    "model": "qwen3.6-27b",
+    "wire_api": "responses"
+  },
+  "claims": [
+    {
+      "field": "description",
+      "value": "DeepSeek-V3 is a MoE language model with 671B total parameters and 37B activated per token. It adopts Multi-head Latent Attention (MLA) and DeepSeekMoE architectures. It pioneers an auxiliary-loss-free load balancing strategy and uses a multi-token prediction training objective. Pre-trained on 14.8T tokens with Supervised Fine-Tuning and Reinforcement Learning.",
+      "evidence": "DeepSeek-V3, a strong Mixture-of-Experts (MoE) language model with 671B total parameters with 37B activated",
+      "section": "## 1. Introduction",
+      "confidence": "high"
+    },
+    {
+      "field": "context_length",
+      "value": 131072,
+      "evidence": "Context Length | 128K",
+      "section": "## 3. Model Downloads",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "CapChat",
+        "CapFunctionCall",
+        "CapJsonMode",
+        "ModalityTextIn",
+        "ModalityTextOut"
+      ],
+      "evidence": "ModalityTextIn, ModalityTextOut, CapChat, CapFunctionCall, CapJsonMode are implied by the model being a chat model, though not explicitly listed as registry constants",
+      "section": "## 1. Introduction",
+      "confidence": "high"
+    }
+  ]
+}

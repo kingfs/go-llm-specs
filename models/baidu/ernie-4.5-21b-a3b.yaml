@@ -1,3 +1,4 @@
+schema_version: 2
 id: baidu/ernie-4.5-21b-a3b
 name: 'Baidu: ERNIE 4.5 21B A3B'
 provider: Baidu
@@ -10,3 +11,4 @@ features:
   - CapFunctionCall
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:37:04.774110681Z

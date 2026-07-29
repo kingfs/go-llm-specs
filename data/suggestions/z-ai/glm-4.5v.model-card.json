@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "z-ai/glm-4.5v",
+  "status": "pending",
+  "created_at": "2026-07-29T12:06:49.763207568Z",
+  "source": {
+    "url": "https://huggingface.co/zai-org/GLM-4.5V/resolve/ed47433b37111465ec527affaaddceff371bca04/README.md",
+    "revision": "ed47433b37111465ec527affaaddceff371bca04",
+    "sha256": "ab7aecfd41bb6d6277d0a822cc6b6770a783a924bef415de968b0eb3952422e1"
+  },
+  "generator": {
+    "model": "qwen3.6-27b",
+    "wire_api": "responses"
+  },
+  "claims": [
+    {
+      "field": "description",
+      "value": "GLM-4.5V is based on GLM-4.5-Air (106B parameters, 12B active). It supports image, video, document, and GUI tasks, with thinking mode for deep reasoning.",
+      "evidence": "GLM-4.5V is based on ZhipuAI's next-generation flagship text foundation model GLM-4.5-Air (106B parameters, 12B active).",
+      "section": "## Introduction \u0026 Model Overview",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "ModalityImageIn",
+        "ModalityTextIn",
+        "ModalityTextOut"
+      ],
+      "evidence": "pipeline_tag: image-text-to-text",
+      "section": "MODEL CARD",
+      "confidence": "medium"
+    },
+    {
+      "field": "max_output",
+      "value": 8192,
+      "evidence": "max_new_tokens=8192",
+      "section": "### Quick Start with Transformers",
+      "confidence": "low"
+    }
+  ]
+}

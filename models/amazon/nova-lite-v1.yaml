@@ -1,3 +1,4 @@
+schema_version: 2
 id: amazon/nova-lite-v1
 name: 'Amazon: Nova Lite 1.0'
 provider: Amazon
@@ -17,3 +18,21 @@ features:
   - ModalityImageIn
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:36:36.569547798Z
+upstream:
+  openrouter:
+    canonical_slug: amazon/nova-lite-v1
+    supported_parameters:
+      - max_tokens
+      - stop
+      - temperature
+      - tools
+      - top_k
+      - top_p
+    input_modalities:
+      - image
+      - text
+    output_modalities:
+      - text
+    knowledge_cutoff: "2024-10-31"
+    fetched_at: 2026-07-29T10:36:36.569547948Z

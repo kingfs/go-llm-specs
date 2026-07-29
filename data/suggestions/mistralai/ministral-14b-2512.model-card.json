@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "mistralai/ministral-14b-2512",
+  "status": "pending",
+  "created_at": "2026-07-29T11:30:45.952102965Z",
+  "source": {
+    "url": "https://huggingface.co/mistralai/Ministral-3-14B-Instruct-2512/resolve/29439f81c2be264d8d393273f99e7db9c0961120/README.md",
+    "revision": "29439f81c2be264d8d393273f99e7db9c0961120",
+    "sha256": "61f0e40a9c6017d3bf489e65b6b83c9c609ba9d1589fe674ce9426c16abd05ac"
+  },
+  "generator": {
+    "model": "qwen3.6-27b",
+    "wire_api": "responses"
+  },
+  "claims": [
+    {
+      "field": "description",
+      "value": "Instruct post-trained model in FP8 with 13.5B language parameters and 0.4B vision encoder. Supports chat, instruction-based, and agentic use cases with native function calling and JSON outputting.",
+      "evidence": "Ministral 3 14B consists of two main architectural components: 13.5B Language Model, 0.4B Vision Encoder",
+      "section": "Key Features",
+      "confidence": "high"
+    },
+    {
+      "field": "context_length",
+      "value": 262144,
+      "evidence": "Supports a 256k context window.",
+      "section": "Key Features",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "ModalityTextIn",
+        "ModalityTextOut",
+        "ModalityImageIn",
+        "CapFunctionCall"
+      ],
+      "evidence": "Vision: Enables the model to analyze images and provide insights based on visual content, in addition to text.",
+      "section": "Key Features",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "ModalityTextIn",
+        "ModalityTextOut",
+        "ModalityImageIn",
+        "CapFunctionCall"
+      ],
+      "evidence": "Agentic: Offers best-in-class agentic capabilities with native function calling and JSON outputting.",
+      "section": "Key Features",
+      "confidence": "high"
+    }
+  ]
+}

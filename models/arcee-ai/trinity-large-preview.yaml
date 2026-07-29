@@ -1,3 +1,4 @@
+schema_version: 2
 id: arcee-ai/trinity-large-preview
 name: 'Arcee AI: Trinity Large Preview'
 provider: Arcee-Ai
@@ -10,3 +11,44 @@ features:
   - CapJsonMode
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:36:54.754309457Z
+upstream:
+  huggingface:
+    id: arcee-ai/Trinity-Large-Preview
+    revision: d8e126719c8bf2b3ac5a3551bd1f07fcee767a90
+    pipeline_tag: text-generation
+    model_type: afmoe
+    architectures:
+      - AfmoeForCausalLM
+    tags:
+      - afmoe
+      - ar
+      - arxiv:2602.17004
+      - base_model:arcee-ai/Trinity-Large-Base
+      - base_model:finetune:arcee-ai/Trinity-Large-Base
+      - conversational
+      - custom_code
+      - de
+      - en
+      - endpoints_compatible
+      - es
+      - eval-results
+      - fr
+      - hi
+      - it
+      - ko
+      - license:other
+      - pt
+      - region:us
+      - ru
+      - safetensors
+      - text-generation
+      - transformers
+      - zh
+    config_context_length: 262144
+    tokenizer_model_max_length: 65536
+    chat_template_sha256: 79addedcccdaf5f834df81ac1ed54d3644c9a31ead3d34178cf7d897aa0f91f3
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-07-29T10:36:56.801316147Z

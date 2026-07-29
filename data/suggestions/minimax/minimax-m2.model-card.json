@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "minimax/minimax-m2",
+  "status": "pending",
+  "created_at": "2026-07-29T11:30:05.30210926Z",
+  "source": {
+    "url": "https://huggingface.co/MiniMaxAI/MiniMax-M2/resolve/757303d492a50514c312788b5247a4f696a4c6a3/README.md",
+    "revision": "757303d492a50514c312788b5247a4f696a4c6a3",
+    "sha256": "d798eb8928dafda7b5991c60e47fbbf148e7327d1149f110a64f0c80ffee3222"
+  },
+  "generator": {
+    "model": "qwen3.6-27b",
+    "wire_api": "responses"
+  },
+  "claims": [
+    {
+      "field": "description",
+      "value": "A text-generation model developed by MiniMax.",
+      "evidence": "pipeline_tag: text-generation",
+      "section": "---\npipeline_tag: text-generation",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "CapChat",
+        "ModalityTextIn",
+        "ModalityTextOut"
+      ],
+      "evidence": "pipeline_tag: text-generation",
+      "section": "---\npipeline_tag: text-generation",
+      "confidence": "high"
+    }
+  ]
+}

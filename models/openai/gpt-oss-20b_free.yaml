@@ -1,3 +1,4 @@
+schema_version: 2
 id: openai/gpt-oss-20b:free
 name: 'OpenAI: gpt-oss-20b (free)'
 provider: OpenAI
@@ -10,3 +11,70 @@ features:
   - CapFunctionCall
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:41:36.302565868Z
+upstream:
+  openrouter:
+    canonical_slug: openai/gpt-oss-20b
+    huggingface_id: openai/gpt-oss-20b
+    supported_parameters:
+      - frequency_penalty
+      - include_reasoning
+      - logprobs
+      - max_tokens
+      - presence_penalty
+      - reasoning
+      - reasoning_effort
+      - repetition_penalty
+      - response_format
+      - seed
+      - stop
+      - structured_outputs
+      - temperature
+      - tool_choice
+      - tools
+      - top_k
+      - top_logprobs
+      - top_p
+    input_modalities:
+      - text
+    output_modalities:
+      - text
+    knowledge_cutoff: "2024-06-30"
+    fetched_at: 2026-07-29T10:41:36.302566468Z
+  huggingface:
+    id: openai/gpt-oss-20b
+    revision: 6cee5e81ee83917806bbde320786a8fb61efebee
+    pipeline_tag: text-generation
+    model_type: gpt_oss
+    architectures:
+      - GptOssForCausalLM
+    license: apache-2.0
+    tags:
+      - 8-bit
+      - arxiv:2508.10925
+      - conversational
+      - deploy:azure
+      - deploy:sagemaker
+      - endpoints_compatible
+      - eval-results
+      - gpt_oss
+      - license:apache-2.0
+      - mxfp4
+      - region:us
+      - safetensors
+      - text-generation
+      - transformers
+      - vllm
+    config_context_length: 131072
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-07-29T10:41:37.835255095Z
+reasoning:
+  supported: true
+  mandatory: true
+  default_effort: medium
+  supported_efforts:
+    - high
+    - low
+    - medium

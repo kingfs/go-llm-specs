@@ -1,0 +1,91 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "mistralai/mistral-small-3.1-24b-instruct",
+  "status": "pending",
+  "created_at": "2026-07-29T11:33:03.632213214Z",
+  "source": {
+    "url": "https://huggingface.co/mistralai/Mistral-Small-3.1-24B-Instruct-2503/resolve/68faf511d618ef198fef186659617cfd2eb8e33a/README.md",
+    "revision": "68faf511d618ef198fef186659617cfd2eb8e33a",
+    "sha256": "1e10ef44015594d52960f5301cda262acb031ccec416a113fb7d29505bd24450"
+  },
+  "generator": {
+    "model": "qwen3.6-27b",
+    "wire_api": "responses"
+  },
+  "claims": [
+    {
+      "field": "description",
+      "value": "Mistral Small 3.1 (2503) is a 24B parameter instruction-finetuned model that adds state-of-the-art vision understanding and long context capabilities up to 128k tokens. It is an instruction-finetuned version of Mistral-Small-3.1-24B-Base-2503.",
+      "evidence": "Building upon Mistral Small 3 (2501), Mistral Small 3.1 (2503) **adds state-of-the-art vision understanding** and enhances **long context capabilities up to 128k tokens** without compromising text performance.",
+      "section": "Model Card for Mistral-Small-3.1-24B-Instruct-2503",
+      "confidence": "high"
+    },
+    {
+      "field": "context_length",
+      "value": 128000,
+      "evidence": "Context Window: A 128k context window.",
+      "section": "Key Features",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "ModalityTextIn",
+        "ModalityTextOut",
+        "ModalityImageIn"
+      ],
+      "evidence": "Vision capabilities enable the model to analyze images and provide insights based on visual content in addition to text.",
+      "section": "Key Features",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "ModalityTextIn",
+        "ModalityTextOut",
+        "ModalityImageIn",
+        "CapFunctionCall",
+        "CapJsonMode"
+      ],
+      "evidence": "Agent-Centric: Offers best-in-class agentic capabilities with native function calling and JSON outputting.",
+      "section": "Key Features",
+      "confidence": "high"
+    },
+    {
+      "field": "description",
+      "value": "Mistral Small 3.1 (2503) is a 24B parameter instruction-finetuned model under Apache 2.0 license.",
+      "evidence": "license: apache-2.0",
+      "section": "Model Card for Mistral-Small-3.1-24B-Instruct-2503",
+      "confidence": "high"
+    },
+    {
+      "field": "description",
+      "value": "Mistral Small 3.1 (2503) is a 24B parameter instruction-finetuned model deployable on a single RTX 4090 or 32GB RAM MacBook when quantized.",
+      "evidence": "Mistral Small 3.1 can be deployed locally and is exceptionally \"knowledge-dense,\" fitting within a single RTX 4090 or a 32GB RAM MacBook once quantized.",
+      "section": "Model Card for Mistral-Small-3.1-24B-Instruct-2503",
+      "confidence": "high"
+    },
+    {
+      "field": "description",
+      "value": "Mistral Small 3.1 (2503) supports 28 languages including English, French, German, Spanish, Portuguese, Italian, Japanese, Korean, Russian, Chinese, Arabic, and others.",
+      "evidence": "language: - en - fr - de - es - pt - it - ja - ko ...",
+      "section": "Model Card for Mistral-Small-3.1-24B-Instruct-2503",
+      "confidence": "high"
+    },
+    {
+      "field": "description",
+      "value": "Mistral Small 3.1 (2503) uses a Tekken tokenizer with a 131k vocabulary size.",
+      "evidence": "Tokenizer: Utilizes a Tekken tokenizer with a 131k vocabulary size.",
+      "section": "Key Features",
+      "confidence": "high"
+    },
+    {
+      "field": "description",
+      "value": "The recommended system prompt for general assistant use states the model's knowledge base was last updated on 2023-10-01.",
+      "evidence": "```\nsystem_prompt = \"\"\"You are Mistral Small 3.1, a Large Language Model (LLM) created by Mistral AI, a French startup headquartered in Paris.\nYou power an AI assistant called Le Chat.\nYour knowledge base was last updated on 2023-10-01.\nThe current date is {today}.\n\nWhen you're not sure about some information, you say that you don't have the information and don't make up anything.\nIf\n```",
+      "section": "Usage",
+      "confidence": "high"
+    }
+  ]
+}

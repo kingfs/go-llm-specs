@@ -1,3 +1,4 @@
+schema_version: 2
 id: kwaipilot/kat-coder-pro-v2
 name: 'Kwaipilot: KAT-Coder-Pro V2'
 provider: Kwaipilot
@@ -11,3 +12,30 @@ features:
   - CapJsonMode
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:38:44.074948154Z
+upstream:
+  openrouter:
+    canonical_slug: kwaipilot/kat-coder-pro-v2-20260327
+    supported_parameters:
+      - frequency_penalty
+      - logit_bias
+      - logprobs
+      - max_tokens
+      - min_p
+      - presence_penalty
+      - repetition_penalty
+      - response_format
+      - seed
+      - stop
+      - structured_outputs
+      - temperature
+      - tool_choice
+      - tools
+      - top_k
+      - top_logprobs
+      - top_p
+    input_modalities:
+      - text
+    output_modalities:
+      - text
+    fetched_at: 2026-07-29T10:38:44.074948294Z

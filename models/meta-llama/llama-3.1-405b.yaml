@@ -1,3 +1,4 @@
+schema_version: 2
 id: meta-llama/llama-3.1-405b
 name: 'Meta: Llama 3.1 405B (base)'
 provider: Meta
@@ -19,3 +20,4 @@ features:
   - CapChat
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:38:50.871205993Z

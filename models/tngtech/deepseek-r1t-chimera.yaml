@@ -1,3 +1,4 @@
+schema_version: 2
 id: tngtech/deepseek-r1t-chimera
 name: 'TNG: DeepSeek R1T Chimera'
 provider: Tngtech
@@ -16,3 +17,37 @@ features:
   - CapJsonMode
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:44:37.105662112Z
+upstream:
+  huggingface:
+    id: tngtech/DeepSeek-R1T-Chimera
+    revision: 3128bdb2b5235b876d612eafc53698c6a901c847
+    pipeline_tag: text-generation
+    model_type: deepseek_v3
+    architectures:
+      - DeepseekV3ForCausalLM
+    tags:
+      - arxiv:2506.14794
+      - base_model:deepseek-ai/DeepSeek-R1
+      - base_model:deepseek-ai/DeepSeek-V3-0324
+      - base_model:merge:deepseek-ai/DeepSeek-R1
+      - base_model:merge:deepseek-ai/DeepSeek-V3-0324
+      - conversational
+      - custom_code
+      - deepseek_v3
+      - doi:10.57967/hf/5330
+      - endpoints_compatible
+      - fp8
+      - license:mit
+      - region:us
+      - safetensors
+      - text-generation
+      - text-generation-inference
+      - transformers
+    config_context_length: 163840
+    tokenizer_model_max_length: 16384
+    chat_template_sha256: 4d1566b58721278bf355236797ce7a3ddff727a4cdb09dcad0cefac0eba796e4
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-07-29T10:44:39.597421739Z

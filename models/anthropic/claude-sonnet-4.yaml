@@ -1,3 +1,4 @@
+schema_version: 2
 id: anthropic/claude-sonnet-4
 name: 'Anthropic: Claude Sonnet 4'
 provider: Anthropic
@@ -18,3 +19,27 @@ features:
   - ModalityImageIn
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:36:50.940124104Z
+upstream:
+  openrouter:
+    canonical_slug: anthropic/claude-4-sonnet-20250522
+    supported_parameters:
+      - include_reasoning
+      - max_tokens
+      - reasoning
+      - stop
+      - temperature
+      - tool_choice
+      - tools
+      - top_k
+      - top_p
+    input_modalities:
+      - file
+      - image
+      - text
+    output_modalities:
+      - text
+    knowledge_cutoff: "2025-01-31"
+    fetched_at: 2026-07-29T10:36:50.940124294Z
+reasoning:
+  supported: true

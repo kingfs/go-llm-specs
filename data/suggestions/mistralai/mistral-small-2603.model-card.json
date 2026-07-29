@@ -1,0 +1,95 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "mistralai/mistral-small-2603",
+  "status": "pending",
+  "created_at": "2026-07-29T11:32:23.643656609Z",
+  "source": {
+    "url": "https://huggingface.co/mistralai/Mistral-Small-4-119B-2603/resolve/a11f36bebf709121056b1dbcc943d1c6afbe494d/README.md",
+    "revision": "a11f36bebf709121056b1dbcc943d1c6afbe494d",
+    "sha256": "310b84fbf666ec6a93fd153c166c314811fdeb283892e5aea9c8585b9629cd40"
+  },
+  "generator": {
+    "model": "qwen3.6-27b",
+    "wire_api": "responses"
+  },
+  "claims": [
+    {
+      "field": "features",
+      "value": [
+        "ModalityTextIn",
+        "ModalityImageIn",
+        "ModalityTextOut"
+      ],
+      "evidence": "Accepts both text and image input, with text output.",
+      "section": "Key Features",
+      "confidence": "high"
+    },
+    {
+      "field": "context_length",
+      "value": 262144,
+      "evidence": "256k context length.",
+      "section": "Key Features",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "CapFunctionCall",
+        "CapJsonMode"
+      ],
+      "evidence": "Agentic: Best-in-class agentic capabilities with native function calling and JSON output.",
+      "section": "Key Features",
+      "confidence": "high"
+    },
+    {
+      "field": "reasoning.supported",
+      "value": true,
+      "evidence": "Reasoning Mode: Toggle between fast instant reply mode and reasoning mode",
+      "section": "Key Features",
+      "confidence": "high"
+    },
+    {
+      "field": "description",
+      "value": "Multilingual model supporting 26 languages including English, French, German, Spanish, Portuguese, Italian, Japanese, Korean, Russian, Chinese, Arabic, and others. Apache 2.0 licensed.",
+      "evidence": "language: - en - fr - de - es - pt - it - ja - ko - ru - zh - ar - fa - id - ms - ne - pl - ro - sr - sv - tr - uk - vi - hi - bn",
+      "section": "license",
+      "confidence": "high"
+    },
+    {
+      "field": "description",
+      "value": "Mistral Small 4 119B is a MoE model with 128 experts (4 active) and 6.5B activated parameters per token. It supports text and image input with text output, function calling, JSON output, and configurable reasoning modes.",
+      "evidence": "MoE: 128 experts, 4 active. 119B parameters, with 6.5B activated per token.",
+      "section": "Key Features",
+      "confidence": "high"
+    },
+    {
+      "field": "context_length",
+      "value": 262144,
+      "evidence": "Supports a 256k context window.",
+      "section": "Key Features",
+      "confidence": "high"
+    },
+    {
+      "field": "description",
+      "value": "Hybrid general-purpose and reasoning model supporting text and image input. Features include function calling, JSON mode, configurable reasoning effort, 256k context window, and multilingual support for 26 languages.",
+      "evidence": "Multilingual: Supports dozens of languages, including English, French, Spanish, German, Italian, Portuguese, Dutch, Chinese, Japanese, Korean, and Arabic.",
+      "section": "Key Features",
+      "confidence": "high"
+    },
+    {
+      "field": "description",
+      "value": "General-purpose hybrid model with multimodal capabilities, efficient MoE architecture, and flexible mode switching between fast reply and reasoning modes.",
+      "evidence": "In a latency-optimized setup, Mistral Small 4 achieves a 40% reduction in end-to-end completion time",
+      "section": "Key Features",
+      "confidence": "low"
+    },
+    {
+      "field": "reasoning.parser",
+      "value": "mistral",
+      "evidence": "--tool-call-parser mistral --enable-auto-tool-choice --reasoning-parser mistral",
+      "section": "vLLM (Recommended)",
+      "confidence": "high"
+    }
+  ]
+}

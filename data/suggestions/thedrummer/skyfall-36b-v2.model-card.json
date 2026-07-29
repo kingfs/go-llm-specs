@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "thedrummer/skyfall-36b-v2",
+  "status": "pending",
+  "created_at": "2026-07-29T12:04:33.548190122Z",
+  "source": {
+    "url": "https://huggingface.co/TheDrummer/Skyfall-36B-v2/resolve/8d5f36e2fbf323fc17157ba8d8bc9716927825a5/README.md",
+    "revision": "8d5f36e2fbf323fc17157ba8d8bc9716927825a5",
+    "sha256": "464589167a0f99d80725e3589941a087ae67c505b2ba67339e0d9e553a815755"
+  },
+  "generator": {
+    "model": "qwen3.6-27b",
+    "wire_api": "responses"
+  },
+  "claims": [
+    {
+      "field": "features",
+      "value": [
+        "CapFunctionCall",
+        "CapJsonMode",
+        "ModalityTextIn",
+        "ModalityTextOut"
+      ],
+      "evidence": "Creativity, good writing style, good instruct, chain of thought capability, mathematics understanding, and solid tool use performance",
+      "section": "## Description",
+      "confidence": "low"
+    },
+    {
+      "field": "description",
+      "value": "Skyfall v2 is an upscaled version of Mistral Small 2501 with continued training for creativity and RP.",
+      "evidence": "Skyfall v2 is an upscaled version of Mistral Small 2501 with continued training for creativity and RP.",
+      "section": "# Skyfall 36B v2",
+      "confidence": "high"
+    },
+    {
+      "field": "description",
+      "value": "Supported chat templates include Mistral v7 Tekken, Metharme, and Alpaca.",
+      "evidence": "Supported Chat Templates - Mistral v7 Tekken (highly recommended) - Metharme (not recommended) - Alpaca (may be interesting, especially for cyoa / story)",
+      "section": "## Supported Chat Templates",
+      "confidence": "high"
+    }
+  ]
+}

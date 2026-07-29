@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "google/gemma-3-12b-it",
+  "status": "pending",
+  "created_at": "2026-07-29T11:25:01.071107439Z",
+  "source": {
+    "url": "https://huggingface.co/google/gemma-3-12b-it/resolve/96b6f1eccf38110c56df3a15bffe176da04bfd80/README.md",
+    "revision": "96b6f1eccf38110c56df3a15bffe176da04bfd80",
+    "sha256": "aafc5aa688e20beab2031b536477a84493a31e13eadd308d4b0d4b01f1aa52bb"
+  },
+  "generator": {
+    "model": "qwen3.6-27b",
+    "wire_api": "responses"
+  },
+  "claims": [
+    {
+      "field": "features",
+      "value": [
+        "CapChat",
+        "ModalityTextIn",
+        "ModalityTextOut",
+        "ModalityImageIn"
+      ],
+      "evidence": "Gemma 3 models are multimodal, handling text and image input and generating text output",
+      "section": "Model Information",
+      "confidence": "high"
+    },
+    {
+      "field": "context_length",
+      "value": 131072,
+      "evidence": "Gemma 3 has a large, 128K context window",
+      "section": "Model Information",
+      "confidence": "high"
+    },
+    {
+      "field": "max_output",
+      "value": 8192,
+      "evidence": "Total output context of 8192 tokens",
+      "section": "Model Information",
+      "confidence": "high"
+    },
+    {
+      "field": "description",
+      "value": "image-text-to-text",
+      "evidence": "pipeline_tag: image-text-to-text",
+      "section": "Model Information",
+      "confidence": "high"
+    }
+  ]
+}

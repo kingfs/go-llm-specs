@@ -47,9 +47,10 @@ upstream:
       - video
     output_modalities:
       - text
-    fetched_at: 2026-07-29T08:14:33.676801414Z
+    fetched_at: 2026-07-29T10:43:44.216329546Z
   huggingface:
     id: Qwen/Qwen3.6-27B
+    revision: 6a9e13bd6fc8f0983b9b99948120bc37f49c13e9
     pipeline_tag: image-text-to-text
     model_type: qwen3_5
     architectures:
@@ -67,7 +68,14 @@ upstream:
       - region:us
       - safetensors
       - transformers
-    fetched_at: 2026-07-29T08:14:34.168310611Z
+    tokenizer_model_max_length: 262144
+    processor_class: Qwen3VLProcessor
+    chat_template_sha256: 940a0c5b20beb9819e5ae5af4999504ff01f8cabbb5ceda6924cf4f1c41e0ca7
+    structured_files:
+      - config.json
+      - preprocessor_config.json
+      - tokenizer_config.json
+    fetched_at: 2026-07-29T10:43:46.242556044Z
 reasoning:
   supported: true
   default_enabled: true

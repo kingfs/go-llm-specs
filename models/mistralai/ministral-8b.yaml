@@ -1,3 +1,4 @@
+schema_version: 2
 id: mistralai/ministral-8b
 name: 'Mistral: Ministral 8B'
 provider: Mistral
@@ -10,3 +11,4 @@ features:
   - CapJsonMode
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:39:32.166441157Z

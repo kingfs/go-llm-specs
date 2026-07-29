@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "nvidia/llama-3.1-nemotron-70b-instruct",
+  "status": "pending",
+  "created_at": "2026-07-29T11:38:49.208342845Z",
+  "source": {
+    "url": "https://huggingface.co/nvidia/Llama-3.1-Nemotron-70B-Instruct/resolve/a83af1f4968437064635f6726fb745e5b615e863/README.md",
+    "revision": "a83af1f4968437064635f6726fb745e5b615e863",
+    "sha256": "fa61efdbf93861a987b6cf05535eb1f638bcc38afef826a9c4160db841026f65"
+  },
+  "generator": {
+    "model": "qwen3.6-27b",
+    "wire_api": "responses"
+  },
+  "claims": [
+    {
+      "field": "description",
+      "value": "Llama-3.1-Nemotron-70B-Instruct is a large language model customized by NVIDIA to improve the helpfulness of LLM generated responses.",
+      "evidence": "Llama-3.1-Nemotron-70B-Instruct is a large language model customized by NVIDIA to improve the helpfulness of LLM generated responses",
+      "section": "Description:",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "CapChat",
+        "ModalityTextIn",
+        "ModalityTextOut"
+      ],
+      "evidence": "This model reaches Arena Hard of 85.0, AlpacaEval 2 LC of 57.6 and GPT-4-Turbo MT-Bench of 8.98",
+      "section": "Description:",
+      "confidence": "high"
+    },
+    {
+      "field": "context_length",
+      "value": 131072,
+      "evidence": "Input Type(s): Text, Other Properties Related to Input: Max of 128k tokens",
+      "section": "Input:",
+      "confidence": "high"
+    },
+    {
+      "field": "max_output",
+      "value": 4096,
+      "evidence": "Output Type(s): Text, Other Properties Related to Output: Max of 4k tokens",
+      "section": "Output:",
+      "confidence": "high"
+    },
+    {
+      "field": "reasoning.parser",
+      "value": "Llama 3.1",
+      "evidence": "Network Architecture: Llama 3.1",
+      "section": "Model Architecture:",
+      "confidence": "high"
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "z-ai/glm-5.1",
+  "status": "pending",
+  "created_at": "2026-07-29T12:08:07.940580947Z",
+  "source": {
+    "url": "https://huggingface.co/zai-org/GLM-5.1/resolve/26e1bd6e011feb778d25ae34b09b07074139d92d/README.md",
+    "revision": "26e1bd6e011feb778d25ae34b09b07074139d92d",
+    "sha256": "74abfce79a1e140fa2c1db691bc3e90eda6ca7375962da44cf2c7ec4446b90a6"
+  },
+  "generator": {
+    "model": "qwen3.6-27b",
+    "wire_api": "responses"
+  },
+  "claims": [
+    {
+      "field": "description",
+      "value": "Next-generation flagship model for agentic engineering. Supports SGLang (v0.5.10+), vLLM (v0.19.0+), xLLM (v0.8.0+), Transformers (v0.5.3+), and KTransformers (v0.5.3+) for local deployment.",
+      "evidence": "GLM-5.1 is our next-generation flagship model for agentic engineering, with significantly stronger coding capabilities than its predecessor.",
+      "section": "Introduction",
+      "confidence": "high"
+    },
+    {
+      "field": "description",
+      "value": "Supports English and Chinese languages.",
+      "evidence": "language: - en - zh",
+      "section": "Header",
+      "confidence": "medium"
+    }
+  ]
+}

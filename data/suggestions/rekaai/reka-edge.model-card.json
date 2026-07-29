@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "rekaai/reka-edge",
+  "status": "pending",
+  "created_at": "2026-07-29T12:01:51.328753526Z",
+  "source": {
+    "url": "https://huggingface.co/RekaAI/reka-edge-2603/resolve/492c81c225fbf5f3263a8245b00827721b119a13/README.md",
+    "revision": "492c81c225fbf5f3263a8245b00827721b119a13",
+    "sha256": "9b0acce496f359de8983f963af3f243618c990e822d34ad0164157c3d94b553b"
+  },
+  "generator": {
+    "model": "qwen3.6-27b",
+    "wire_api": "responses"
+  },
+  "claims": [
+    {
+      "field": "description",
+      "value": "Reka Edge is a 7B multimodal vision-language model that accepts image/video+text inputs and generates text outputs, optimized for image understanding, video analysis, object detection, and agentic tool-use.",
+      "evidence": "pipeline_tag: image-text-to-text",
+      "section": "Reka Edge",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "ModalityImageIn",
+        "ModalityVideoIn",
+        "ModalityTextIn",
+        "ModalityTextOut"
+      ],
+      "evidence": "Pipeline tag is image-text-to-text",
+      "section": "Reka Edge",
+      "confidence": "high"
+    },
+    {
+      "field": "reasoning.parser",
+      "value": "With the \u003cthink\u003e and  tokens",
+      "evidence": "Reasoning parser is enabled with the \u003cthink\u003e and  tokens.",
+      "section": "Reasoning",
+      "confidence": "high"
+    },
+    {
+      "field": "description",
+      "value": "The model identifier is RekaAI/reka-edge-2603",
+      "evidence": "RekaAI/reka-edge-2603",
+      "section": "Quick Start",
+      "confidence": "high"
+    },
+    {
+      "field": "description",
+      "value": "331 tokens are used to encode an image of size 1024 x 1024",
+      "evidence": "Input tokens *For a 1024 x 1024 image*|331",
+      "section": "Benchmarks and metrics",
+      "confidence": "high"
+    }
+  ]
+}

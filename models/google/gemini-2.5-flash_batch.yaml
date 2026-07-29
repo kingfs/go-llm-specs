@@ -1,3 +1,4 @@
+schema_version: 2
 id: google/gemini-2.5-flash:batch
 name: 'Google: Gemini 2.5 Flash (batch)'
 provider: Google
@@ -15,3 +16,31 @@ features:
   - ModalityTextIn
   - ModalityTextOut
   - ModalityVideoIn
+discovered_at: 2026-07-29T10:38:01.951714995Z
+upstream:
+  openrouter:
+    canonical_slug: google/gemini-2.5-flash
+    supported_parameters:
+      - include_reasoning
+      - max_tokens
+      - reasoning
+      - response_format
+      - seed
+      - stop
+      - structured_outputs
+      - temperature
+      - tool_choice
+      - tools
+      - top_p
+    input_modalities:
+      - audio
+      - file
+      - image
+      - text
+      - video
+    output_modalities:
+      - text
+    knowledge_cutoff: "2025-01-31"
+    fetched_at: 2026-07-29T10:38:01.951715285Z
+reasoning:
+  supported: true

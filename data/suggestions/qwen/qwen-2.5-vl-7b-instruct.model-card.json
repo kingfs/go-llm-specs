@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "qwen/qwen-2.5-vl-7b-instruct",
+  "status": "pending",
+  "created_at": "2026-07-29T11:58:01.45482183Z",
+  "source": {
+    "url": "https://huggingface.co/Qwen/Qwen2.5-VL-7B-Instruct/resolve/cc594898137f460bfe9f0759e9844b3ce807cfb5/README.md",
+    "revision": "cc594898137f460bfe9f0759e9844b3ce807cfb5",
+    "sha256": "351ac9dabbf87085f5012d306640a96c9d60e98cc26d1a5033a61321c47b9cd4"
+  },
+  "generator": {
+    "model": "qwen3.6-27b",
+    "wire_api": "responses"
+  },
+  "claims": [
+    {
+      "field": "features",
+      "value": [
+        "ModalityImageIn",
+        "ModalityTextIn",
+        "ModalityTextOut"
+      ],
+      "evidence": "Qwen2.5-VL is not only proficient in recognizing common objects... analyzing texts, charts, icons, graphics, and layouts within images",
+      "section": "# Qwen2.5-VL-7B-Instruct",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "ModalityVideoIn",
+        "ModalityTextIn",
+        "ModalityTextOut",
+        "ModalityImageIn"
+      ],
+      "evidence": "Qwen2.5-VL can comprehend videos of over 1 hour",
+      "section": "# Qwen2.5-VL-7B-Instruct",
+      "confidence": "high"
+    },
+    {
+      "field": "description",
+      "value": "Instruction-tuned vision-language model with 7 billion parameters.",
+      "evidence": "This repo contains the instruction-tuned 7B Qwen2.5-VL model",
+      "section": "# Qwen2.5-VL-7B-Instruct",
+      "confidence": "high"
+    },
+    {
+      "field": "context_length",
+      "value": 16384,
+      "evidence": "The default range for the number of visual tokens per image in the model is 4-16384",
+      "section": "## Quickstart",
+      "confidence": "medium"
+    }
+  ]
+}

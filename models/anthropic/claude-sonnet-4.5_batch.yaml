@@ -1,3 +1,4 @@
+schema_version: 2
 id: anthropic/claude-sonnet-4.5:batch
 name: 'Anthropic: Claude Sonnet 4.5 (batch)'
 provider: Anthropic
@@ -12,3 +13,29 @@ features:
   - ModalityImageIn
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:36:51.799647258Z
+upstream:
+  openrouter:
+    canonical_slug: anthropic/claude-4.5-sonnet-20250929
+    supported_parameters:
+      - include_reasoning
+      - max_tokens
+      - reasoning
+      - response_format
+      - stop
+      - structured_outputs
+      - temperature
+      - tool_choice
+      - tools
+      - top_k
+      - top_p
+    input_modalities:
+      - file
+      - image
+      - text
+    output_modalities:
+      - text
+    knowledge_cutoff: "2025-01-31"
+    fetched_at: 2026-07-29T10:36:51.799647728Z
+reasoning:
+  supported: true

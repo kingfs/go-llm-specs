@@ -1,3 +1,4 @@
+schema_version: 2
 id: meta-llama/llama-guard-4-12b:free
 name: 'Meta: Llama Guard 4 12B (free)'
 provider: Meta
@@ -10,3 +11,4 @@ features:
   - ModalityImageIn
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:39:01.867210748Z

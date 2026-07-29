@@ -1,3 +1,4 @@
+schema_version: 2
 id: baidu/ernie-4.5-21b-a3b-thinking
 name: 'Baidu: ERNIE 4.5 21B A3B Thinking'
 provider: Baidu
@@ -9,3 +10,31 @@ features:
   - CapChat
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:37:05.198974998Z
+upstream:
+  huggingface:
+    id: baidu/ERNIE-4.5-21B-A3B-Thinking
+    revision: 4341bb42644d5422859509fa25d41544c57181f8
+    pipeline_tag: text-generation
+    model_type: ernie4_5_moe
+    architectures:
+      - Ernie4_5_MoeForCausalLM
+    tags:
+      - ERNIE4.5
+      - conversational
+      - deploy:azure
+      - en
+      - endpoints_compatible
+      - ernie4_5_moe
+      - license:apache-2.0
+      - region:us
+      - safetensors
+      - text-generation
+      - transformers
+      - zh
+    config_context_length: 131072
+    chat_template_sha256: e83166ce24da589a8988d6e138d75ed783d904f99daaef4d876f4459353cdeed
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-07-29T10:37:07.19632143Z

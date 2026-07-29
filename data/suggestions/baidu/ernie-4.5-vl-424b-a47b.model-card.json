@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "baidu/ernie-4.5-vl-424b-a47b",
+  "status": "pending",
+  "created_at": "2026-07-29T11:19:16.535089555Z",
+  "source": {
+    "url": "https://huggingface.co/baidu/ERNIE-4.5-VL-424B-A47B-PT/resolve/a3d5a8439d67c9a69003a1f7aac0961c6f1bc20d/README.md",
+    "revision": "a3d5a8439d67c9a69003a1f7aac0961c6f1bc20d",
+    "sha256": "0858ddd1c2535846bd25d3b959c2451891f30d16af52c997b147dcd8ee3c2447"
+  },
+  "generator": {
+    "model": "qwen3.6-27b",
+    "wire_api": "responses"
+  },
+  "claims": [
+    {
+      "field": "description",
+      "value": "ERNIE-4.5-VL-424B-A47B is a multimodal (Text \u0026 Vision) Mixture-of-Experts Chat model with 424B total parameters and 47B activated parameters per token. It has 54 layers, 64 Query heads and 8 Key/Value heads. It features 64 text experts with 8 activated and 64 vision experts with 8 activated. Training stage is post-training.",
+      "evidence": "a multimodal MoE Chat model based on ERNIE-4.5-VL-424B-A47B-Base, with 424B total parameters and 47B activated parameters",
+      "section": "## Model Overview",
+      "confidence": "medium"
+    },
+    {
+      "field": "context_length",
+      "value": 131072,
+      "evidence": "Context Length 131072",
+      "section": "## Model Overview",
+      "confidence": "medium"
+    },
+    {
+      "field": "features",
+      "value": [
+        "ModalityTextIn",
+        "ModalityImageIn",
+        "CapChat"
+      ],
+      "evidence": "supports both thinking and non-thinking modes.",
+      "section": "## ERNIE 4.5 Highlights",
+      "confidence": "low"
+    }
+  ]
+}

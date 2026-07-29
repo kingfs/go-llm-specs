@@ -1,3 +1,4 @@
+schema_version: 2
 id: mistralai/mistral-small-3.1-24b-instruct
 name: 'Mistral: Mistral Small 3.1 24B'
 provider: Mistral
@@ -12,3 +13,76 @@ features:
   - ModalityImageIn
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:39:46.254836687Z
+upstream:
+  openrouter:
+    canonical_slug: mistralai/mistral-small-3.1-24b-instruct-2503
+    huggingface_id: mistralai/Mistral-Small-3.1-24B-Instruct-2503
+    supported_parameters:
+      - frequency_penalty
+      - logit_bias
+      - logprobs
+      - max_tokens
+      - min_p
+      - presence_penalty
+      - repetition_penalty
+      - seed
+      - stop
+      - temperature
+      - top_k
+      - top_logprobs
+      - top_p
+    input_modalities:
+      - image
+      - text
+    output_modalities:
+      - text
+    knowledge_cutoff: "2023-10-31"
+    fetched_at: 2026-07-29T10:39:46.254837257Z
+  huggingface:
+    id: mistralai/Mistral-Small-3.1-24B-Instruct-2503
+    revision: 68faf511d618ef198fef186659617cfd2eb8e33a
+    model_type: mistral3
+    architectures:
+      - Mistral3ForConditionalGeneration
+    license: apache-2.0
+    tags:
+      - ar
+      - base_model:finetune:mistralai/Mistral-Small-3.1-24B-Base-2503
+      - base_model:mistralai/Mistral-Small-3.1-24B-Base-2503
+      - bn
+      - de
+      - en
+      - es
+      - eval-results
+      - fa
+      - fr
+      - hi
+      - id
+      - it
+      - ja
+      - ko
+      - license:apache-2.0
+      - mistral-common
+      - mistral3
+      - ms
+      - ne
+      - pl
+      - pt
+      - region:us
+      - ro
+      - ru
+      - safetensors
+      - sr
+      - sv
+      - tr
+      - uk
+      - vi
+      - vllm
+      - zh
+    processor_class: PixtralProcessor
+    structured_files:
+      - config.json
+      - preprocessor_config.json
+      - tokenizer_config.json
+    fetched_at: 2026-07-29T10:39:48.498951865Z

@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "qwen/qwen3-vl-32b-instruct",
+  "status": "pending",
+  "created_at": "2026-07-29T11:58:36.549965531Z",
+  "source": {
+    "url": "https://huggingface.co/Qwen/Qwen3-VL-32B-Instruct/resolve/0cfaf48183f594c314753d30a4c4974bc75f3ccb/README.md",
+    "revision": "0cfaf48183f594c314753d30a4c4974bc75f3ccb",
+    "sha256": "edd67474bf6940a2f0a1204842faa8541ce75b1461f355acc1cc7572dd297ea8"
+  },
+  "generator": {
+    "model": "qwen3.6-27b",
+    "wire_api": "responses"
+  },
+  "claims": [
+    {
+      "field": "description",
+      "value": "Qwen3-VL is a vision-language model in the Qwen series featuring comprehensive upgrades including superior text understanding and generation, deeper visual perception and reasoning, extended context length, enhanced spatial and video dynamics comprehension, and stronger agent interaction capabilities. This repository contains the weights for the Qwen3-VL-32B-Instruct edition.",
+      "evidence": "# Qwen3-VL-32B-Instruct",
+      "section": "Qwen3-VL-32B-Instruct",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "CapChat",
+        "ModalityTextIn",
+        "ModalityTextOut",
+        "ModalityImageIn"
+      ],
+      "evidence": "The code of Qwen3-VL has been in the latest Hugging Face transformers and we advise you to build from source",
+      "section": "Quickstart",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "CapChat",
+        "ModalityTextIn",
+        "ModalityTextOut",
+        "ModalityImageIn"
+      ],
+      "evidence": "# default: Load the model on the available device(s)",
+      "section": "Quickstart",
+      "confidence": "high"
+    },
+    {
+      "field": "context_length",
+      "value": 262144,
+      "evidence": "Long Context \u0026 Video Understanding: Native 256K context, expandable to 1M",
+      "section": "Key Enhancements",
+      "confidence": "high"
+    },
+    {
+      "field": "max_output",
+      "value": 16384,
+      "evidence": "export out_seq_length=16384",
+      "section": "Generation Hyperparameters",
+      "confidence": "high"
+    },
+    {
+      "field": "max_output",
+      "value": 32768,
+      "evidence": "export out_seq_length=32768",
+      "section": "Generation Hyperparameters",
+      "confidence": "high"
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "moonshotai/kimi-k2",
+  "status": "pending",
+  "created_at": "2026-07-29T11:35:48.432945816Z",
+  "source": {
+    "url": "https://huggingface.co/moonshotai/Kimi-K2-Instruct/resolve/fd1984e2b7a3350dbf7305fe73a4ede25c14de50/README.md",
+    "revision": "fd1984e2b7a3350dbf7305fe73a4ede25c14de50",
+    "sha256": "70ad412851722bb83761275d39f38bea9471ab89cfd84f681700aa3ea8f50577"
+  },
+  "generator": {
+    "model": "qwen3.6-27b",
+    "wire_api": "responses"
+  },
+  "claims": [
+    {
+      "field": "description",
+      "value": "Mixture-of-experts (MoE) language model with 32B activated parameters and 1T total parameters, trained with the Muon optimizer.",
+      "evidence": "Kimi K2 is a state-of-the-art mixture-of-experts (MoE) language model with 32 billion activated parameters and 1 trillion total parameters.",
+      "section": "## 1. Model Introduction",
+      "confidence": "high"
+    },
+    {
+      "field": "context_length",
+      "value": 131072,
+      "evidence": "| **Context Length** | 128K |",
+      "section": "## 2. Model Summary",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "CapChat",
+        "ModalityTextIn",
+        "ModalityTextOut"
+      ],
+      "evidence": "| **Vocabulary Size** | 160K |",
+      "section": "## 2. Model Summary",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "CapChat",
+        "CapFunctionCall",
+        "ModalityTextIn",
+        "ModalityTextOut"
+      ],
+      "evidence": "Agentic Intelligence: Specifically designed for tool use, reasoning, and autonomous problem-solving.",
+      "section": "## 1. Model Introduction",
+      "confidence": "medium"
+    },
+    {
+      "field": "features",
+      "value": [
+        "CapChat",
+        "ModalityTextIn",
+        "ModalityTextOut"
+      ],
+      "evidence": "| **Architecture** | Mixture-of-Experts (MoE) |",
+      "section": "## 2. Model Summary",
+      "confidence": "high"
+    }
+  ]
+}

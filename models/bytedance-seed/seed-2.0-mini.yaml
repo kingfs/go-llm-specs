@@ -1,3 +1,4 @@
+schema_version: 2
 id: bytedance-seed/seed-2.0-mini
 name: 'ByteDance Seed: Seed-2.0-Mini'
 provider: Bytedance-Seed
@@ -13,3 +14,35 @@ features:
   - ModalityTextIn
   - ModalityTextOut
   - ModalityVideoIn
+discovered_at: 2026-07-29T10:37:12.728114392Z
+upstream:
+  openrouter:
+    canonical_slug: bytedance-seed/seed-2.0-mini-20260224
+    supported_parameters:
+      - frequency_penalty
+      - include_reasoning
+      - max_tokens
+      - reasoning
+      - reasoning_effort
+      - response_format
+      - stop
+      - structured_outputs
+      - temperature
+      - tool_choice
+      - tools
+      - top_p
+    input_modalities:
+      - image
+      - text
+      - video
+    output_modalities:
+      - text
+    fetched_at: 2026-07-29T10:37:12.728114962Z
+reasoning:
+  supported: true
+  default_effort: medium
+  supported_efforts:
+    - high
+    - low
+    - medium
+    - minimal

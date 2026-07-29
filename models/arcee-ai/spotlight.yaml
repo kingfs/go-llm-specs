@@ -1,3 +1,4 @@
+schema_version: 2
 id: arcee-ai/spotlight
 name: 'Arcee AI: Spotlight'
 provider: Arcee-Ai
@@ -10,3 +11,4 @@ features:
   - ModalityImageIn
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:36:54.334138836Z

@@ -1,3 +1,4 @@
+schema_version: 2
 id: amazon/nova-pro-v1
 name: 'Amazon: Nova Pro 1.0'
 provider: Amazon
@@ -21,3 +22,21 @@ features:
   - ModalityImageIn
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:36:37.824947957Z
+upstream:
+  openrouter:
+    canonical_slug: amazon/nova-pro-v1
+    supported_parameters:
+      - max_tokens
+      - stop
+      - temperature
+      - tools
+      - top_k
+      - top_p
+    input_modalities:
+      - image
+      - text
+    output_modalities:
+      - text
+    knowledge_cutoff: "2024-10-31"
+    fetched_at: 2026-07-29T10:36:37.824948157Z

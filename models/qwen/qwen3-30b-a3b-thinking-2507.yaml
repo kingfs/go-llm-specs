@@ -1,3 +1,4 @@
+schema_version: 2
 id: qwen/qwen3-30b-a3b-thinking-2507
 name: 'Qwen: Qwen3 30B A3B Thinking 2507'
 provider: Qwen
@@ -17,3 +18,63 @@ features:
   - CapJsonMode
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:42:42.862340056Z
+upstream:
+  openrouter:
+    canonical_slug: qwen/qwen3-30b-a3b-thinking-2507
+    huggingface_id: Qwen/Qwen3-30B-A3B-Thinking-2507
+    supported_parameters:
+      - frequency_penalty
+      - include_reasoning
+      - max_tokens
+      - presence_penalty
+      - reasoning
+      - response_format
+      - seed
+      - stop
+      - temperature
+      - tool_choice
+      - tools
+      - top_k
+      - top_p
+    input_modalities:
+      - text
+    output_modalities:
+      - text
+    knowledge_cutoff: "2025-06-30"
+    fetched_at: 2026-07-29T10:42:42.862340496Z
+  huggingface:
+    id: Qwen/Qwen3-30B-A3B-Thinking-2507
+    revision: 144afc2f379b542fdd4e85a1fcd5e1f79112d95d
+    pipeline_tag: text-generation
+    model_type: qwen3_moe
+    architectures:
+      - Qwen3MoeForCausalLM
+    license: apache-2.0
+    tags:
+      - arxiv:2402.17463
+      - arxiv:2404.06654
+      - arxiv:2407.02490
+      - arxiv:2501.15383
+      - arxiv:2505.09388
+      - conversational
+      - deploy:azure
+      - deploy:sagemaker
+      - endpoints_compatible
+      - eval-results
+      - license:apache-2.0
+      - qwen3_moe
+      - region:us
+      - safetensors
+      - text-generation
+      - transformers
+    config_context_length: 262144
+    tokenizer_model_max_length: 1010000
+    chat_template_sha256: 615f196a2217165ba0d176b56b7cf27a4b922ff07b910b07ff11be44918fd266
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-07-29T10:42:45.084174881Z
+reasoning:
+  supported: true
+  mandatory: true

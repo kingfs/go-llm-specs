@@ -1,3 +1,4 @@
+schema_version: 2
 id: anthropic/claude-3-haiku
 name: 'Anthropic: Claude 3 Haiku'
 provider: Anthropic
@@ -22,3 +23,22 @@ features:
   - ModalityImageIn
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:36:40.291907833Z
+upstream:
+  openrouter:
+    canonical_slug: anthropic/claude-3-haiku
+    supported_parameters:
+      - max_tokens
+      - stop
+      - temperature
+      - tool_choice
+      - tools
+      - top_k
+      - top_p
+    input_modalities:
+      - image
+      - text
+    output_modalities:
+      - text
+    knowledge_cutoff: "2023-08-31"
+    fetched_at: 2026-07-29T10:36:40.291908353Z

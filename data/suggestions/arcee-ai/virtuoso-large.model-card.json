@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "arcee-ai/virtuoso-large",
+  "status": "pending",
+  "created_at": "2026-07-29T11:18:35.360329298Z",
+  "source": {
+    "url": "https://huggingface.co/arcee-ai/Virtuoso-Large/resolve/fd1911bb14e0cf3890f674d7756d202eec7a3a2b/README.md",
+    "revision": "fd1911bb14e0cf3890f674d7756d202eec7a3a2b",
+    "sha256": "1265c4b9e0e0d4a1d4a730d3d2b1498f50cb6c6dd80d87af138b91ba35a60af1"
+  },
+  "generator": {
+    "model": "qwen3.6-27b",
+    "wire_api": "responses"
+  },
+  "claims": [
+    {
+      "field": "description",
+      "value": "Virtuoso-Large (72B) is a general-purpose model based on the Qwen2.5-72B architecture. It is designed for complex tasks across domains, including advanced content creation, data summarization, knowledge synthesis, and multilingual support. Licensed under Qwen's Tongyi License.",
+      "evidence": "Architecture Base: Qwen2.5-72B",
+      "section": "Model Details",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "ModalityTextIn",
+        "ModalityTextOut"
+      ],
+      "evidence": "Architecture Base: Qwen2.5-72B",
+      "section": "Model Details",
+      "confidence": "high"
+    }
+  ]
+}

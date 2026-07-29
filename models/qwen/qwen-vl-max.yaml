@@ -1,3 +1,4 @@
+schema_version: 2
 id: qwen/qwen-vl-max
 name: 'Qwen: Qwen VL Max'
 provider: Qwen
@@ -13,3 +14,4 @@ features:
   - ModalityImageIn
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:42:23.847718092Z

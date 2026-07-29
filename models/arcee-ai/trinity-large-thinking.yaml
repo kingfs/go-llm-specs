@@ -1,3 +1,4 @@
+schema_version: 2
 id: arcee-ai/trinity-large-thinking
 name: 'Arcee AI: Trinity Large Thinking'
 provider: Arcee-Ai
@@ -10,3 +11,78 @@ features:
   - CapFunctionCall
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:36:57.332623299Z
+upstream:
+  openrouter:
+    canonical_slug: arcee-ai/trinity-large-thinking
+    huggingface_id: arcee-ai/Trinity-Large-Thinking
+    supported_parameters:
+      - frequency_penalty
+      - include_reasoning
+      - logit_bias
+      - logprobs
+      - max_tokens
+      - presence_penalty
+      - reasoning
+      - repetition_penalty
+      - response_format
+      - seed
+      - stop
+      - structured_outputs
+      - temperature
+      - tool_choice
+      - tools
+      - top_k
+      - top_logprobs
+      - top_p
+    input_modalities:
+      - text
+    output_modalities:
+      - text
+    fetched_at: 2026-07-29T10:36:57.332623519Z
+  huggingface:
+    id: arcee-ai/Trinity-Large-Thinking
+    revision: dc6a99b6b74202880e31491a445a94884c97890c
+    pipeline_tag: text-generation
+    model_type: afmoe
+    architectures:
+      - AfmoeForCausalLM
+    license: other
+    tags:
+      - afmoe
+      - agentic
+      - ar
+      - arxiv:2602.17004
+      - base_model:arcee-ai/Trinity-Large-Base
+      - base_model:finetune:arcee-ai/Trinity-Large-Base
+      - conversational
+      - custom_code
+      - de
+      - en
+      - endpoints_compatible
+      - es
+      - eval-results
+      - fr
+      - hi
+      - it
+      - ko
+      - license:other
+      - pt
+      - reasoning
+      - region:us
+      - ru
+      - safetensors
+      - text-generation
+      - thinking
+      - tool-calling
+      - transformers
+      - zh
+    config_context_length: 262144
+    tokenizer_model_max_length: 65536
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-07-29T10:36:59.264254798Z
+reasoning:
+  supported: true
+  mandatory: true

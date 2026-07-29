@@ -1,3 +1,4 @@
+schema_version: 2
 id: mistralai/mistral-tiny
 name: Mistral Tiny
 provider: Mistral
@@ -16,3 +17,4 @@ features:
   - CapJsonMode
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:39:51.127327272Z

@@ -1,3 +1,4 @@
+schema_version: 2
 id: allenai/olmo-2-0325-32b-instruct
 name: 'AllenAI: Olmo 2 32B Instruct'
 provider: Allenai
@@ -8,3 +9,34 @@ features:
   - CapChat
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:36:21.573991318Z
+upstream:
+  huggingface:
+    id: allenai/OLMo-2-0325-32B-Instruct
+    revision: b96024342a77a69aa0dda815c3454a671f477463
+    pipeline_tag: text-generation
+    model_type: olmo2
+    architectures:
+      - Olmo2ForCausalLM
+    tags:
+      - arxiv:2411.15124
+      - arxiv:2501.00656
+      - base_model:allenai/OLMo-2-0325-32B-DPO
+      - base_model:finetune:allenai/OLMo-2-0325-32B-DPO
+      - conversational
+      - dataset:allenai/RLVR-GSM-MATH-IF-Mixed-Constraints
+      - deploy:azure
+      - en
+      - endpoints_compatible
+      - license:apache-2.0
+      - olmo2
+      - region:us
+      - safetensors
+      - text-generation
+      - transformers
+    config_context_length: 4096
+    chat_template_sha256: 94d0837f9aaf2990f6492e3b5b6df62247f6b3d16bf5715f8bd3bddc5037bdc5
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-07-29T10:36:23.618815088Z

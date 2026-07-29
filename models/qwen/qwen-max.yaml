@@ -1,3 +1,4 @@
+schema_version: 2
 id: qwen/qwen-max
 name: 'Qwen: Qwen-Max '
 provider: Qwen
@@ -11,3 +12,4 @@ features:
   - CapJsonMode
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:42:21.676034483Z

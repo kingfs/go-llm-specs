@@ -1,3 +1,4 @@
+schema_version: 2
 id: mistralai/mistral-medium-3-5
 name: 'Mistral: Mistral Medium 3.5'
 provider: Mistral
@@ -11,3 +12,35 @@ features:
   - ModalityImageIn
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:39:38.809112868Z
+upstream:
+  openrouter:
+    canonical_slug: mistralai/mistral-medium-3.5-20260430
+    supported_parameters:
+      - frequency_penalty
+      - include_reasoning
+      - max_tokens
+      - presence_penalty
+      - reasoning
+      - reasoning_effort
+      - response_format
+      - seed
+      - stop
+      - structured_outputs
+      - temperature
+      - tool_choice
+      - tools
+      - top_p
+    input_modalities:
+      - file
+      - image
+      - text
+    output_modalities:
+      - text
+    fetched_at: 2026-07-29T10:39:38.809113468Z
+reasoning:
+  supported: true
+  default_effort: high
+  supported_efforts:
+    - high
+    - none

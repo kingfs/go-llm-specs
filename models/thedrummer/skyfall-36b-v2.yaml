@@ -1,3 +1,4 @@
+schema_version: 2
 id: thedrummer/skyfall-36b-v2
 name: 'TheDrummer: Skyfall 36B V2'
 provider: Thedrummer
@@ -9,3 +10,47 @@ features:
   - CapChat
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:44:30.117758867Z
+upstream:
+  openrouter:
+    canonical_slug: thedrummer/skyfall-36b-v2
+    huggingface_id: TheDrummer/Skyfall-36B-v2
+    supported_parameters:
+      - frequency_penalty
+      - logit_bias
+      - logprobs
+      - max_tokens
+      - presence_penalty
+      - repetition_penalty
+      - response_format
+      - seed
+      - stop
+      - structured_outputs
+      - temperature
+      - top_k
+      - top_logprobs
+      - top_p
+    input_modalities:
+      - text
+    output_modalities:
+      - text
+    knowledge_cutoff: "2024-06-30"
+    fetched_at: 2026-07-29T10:44:30.117759077Z
+  huggingface:
+    id: TheDrummer/Skyfall-36B-v2
+    revision: 8d5f36e2fbf323fc17157ba8d8bc9716927825a5
+    model_type: mistral
+    architectures:
+      - MistralForCausalLM
+    license: other
+    tags:
+      - license:other
+      - mistral
+      - region:us
+      - safetensors
+    config_context_length: 32768
+    chat_template_sha256: e96795d035203784313023391fe8d6fe456a2ceb83aed5dcd1cc87bf344b44d6
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-07-29T10:44:32.688287822Z

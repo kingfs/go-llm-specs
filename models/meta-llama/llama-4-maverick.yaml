@@ -1,3 +1,4 @@
+schema_version: 2
 id: meta-llama/llama-4-maverick
 name: 'Meta: Llama 4 Maverick'
 provider: Meta
@@ -18,3 +19,73 @@ features:
   - ModalityImageIn
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:38:58.518997912Z
+upstream:
+  openrouter:
+    canonical_slug: meta-llama/llama-4-maverick-17b-128e-instruct
+    huggingface_id: meta-llama/Llama-4-Maverick-17B-128E-Instruct
+    supported_parameters:
+      - frequency_penalty
+      - logit_bias
+      - logprobs
+      - max_tokens
+      - min_p
+      - presence_penalty
+      - repetition_penalty
+      - response_format
+      - seed
+      - stop
+      - structured_outputs
+      - temperature
+      - tool_choice
+      - tools
+      - top_k
+      - top_logprobs
+      - top_p
+    input_modalities:
+      - image
+      - text
+    output_modalities:
+      - text
+    knowledge_cutoff: "2024-08-31"
+    fetched_at: 2026-07-29T10:38:58.518998342Z
+  huggingface:
+    id: meta-llama/Llama-4-Maverick-17B-128E-Instruct
+    revision: 73d14711bcc77c16df3470856949c3764056b617
+    pipeline_tag: image-text-to-text
+    model_type: llama4
+    architectures:
+      - Llama4ForConditionalGeneration
+    license: other
+    tags:
+      - ar
+      - arxiv:2204.05149
+      - base_model:finetune:meta-llama/Llama-4-Maverick-17B-128E
+      - base_model:meta-llama/Llama-4-Maverick-17B-128E
+      - conversational
+      - de
+      - deploy:sagemaker
+      - en
+      - endpoints_compatible
+      - es
+      - eval-results
+      - facebook
+      - fr
+      - hi
+      - id
+      - image-text-to-text
+      - it
+      - license:other
+      - llama
+      - llama4
+      - meta
+      - pt
+      - pytorch
+      - region:us
+      - safetensors
+      - text-generation-inference
+      - th
+      - tl
+      - transformers
+      - vi
+    fetched_at: 2026-07-29T10:38:59.283428592Z

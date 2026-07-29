@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "sao10k/l3.3-euryale-70b",
+  "status": "pending",
+  "created_at": "2026-07-29T12:02:50.515790908Z",
+  "source": {
+    "url": "https://huggingface.co/Sao10K/L3.3-70B-Euryale-v2.3/resolve/e5737724a37ae00926e95acf663ca73d430dc8ad/README.md",
+    "revision": "e5737724a37ae00926e95acf663ca73d430dc8ad",
+    "sha256": "87ef14a23578458b33af048f2f0377e43aeb0a7f6530ded43b59d1214939795d"
+  },
+  "generator": {
+    "model": "qwen3.6-27b",
+    "wire_api": "responses"
+  },
+  "claims": [
+    {
+      "field": "description",
+      "value": "Successor to Euryale v2.2, trained on Llama 3.3 Instruct, not LoRA-extracted. Used for alignment/unalignment and roleplay/creative domains.",
+      "evidence": "base_model: meta-llama/Llama-3.3-70B-Instruct",
+      "section": "# L3.3-70B-Euryale-v2.3",
+      "confidence": "high"
+    },
+    {
+      "field": "context_length",
+      "value": 16384,
+      "evidence": "sequence_len: 16384",
+      "section": "See axolotl config",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "ModalityTextIn",
+        "ModalityTextOut"
+      ],
+      "evidence": "Prompt Format: Llama-3-Instruct",
+      "section": "# L3.3-70B-Euryale-v2.3",
+      "confidence": "high"
+    }
+  ]
+}

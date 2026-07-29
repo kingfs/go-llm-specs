@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "deepseek/deepseek-v3.2-exp",
+  "status": "pending",
+  "created_at": "2026-07-29T11:22:57.438803845Z",
+  "source": {
+    "url": "https://huggingface.co/deepseek-ai/DeepSeek-V3.2-Exp/resolve/194c67e12b1b0d6df0ef373ddcf215bc84027409/README.md",
+    "revision": "194c67e12b1b0d6df0ef373ddcf215bc84027409",
+    "sha256": "82ff33612f0f467423a3082dd300e923a94ac14bdec2f44ff22ce0f31ffd1bb4"
+  },
+  "generator": {
+    "model": "qwen3.6-27b",
+    "wire_api": "responses"
+  },
+  "claims": [
+    {
+      "field": "description",
+      "value": "DeepSeek-V3.2-Exp is an experimental model built upon V3.1-Terminus by introducing DeepSeek Sparse Attention (DSA), a sparse attention mechanism designed to explore and validate optimizations for training and inference efficiency in long-context scenarios.",
+      "evidence": "DeepSeek Sparse Attention (DSA) achieves fine-grained sparse attention for the first time, delivering substantial improvements in long-context training and inference efficiency",
+      "section": "## Introduction",
+      "confidence": "high"
+    },
+    {
+      "field": "serving.sglang_args",
+      "value": [
+        "--tp 8",
+        "--dp 8",
+        "--enable-dp-attention"
+      ],
+      "evidence": "python -m sglang.launch_server --model deepseek-ai/DeepSeek-V3.2-Exp --tp 8 --dp 8 --enable-dp-attention",
+      "section": "### SGLang",
+      "confidence": "high"
+    },
+    {
+      "field": "serving.vllm_args",
+      "value": [],
+      "evidence": "vLLM provides day-0 support of DeepSeek-V3.2-Exp. See the recipes for up-to-date details.",
+      "section": "### vLLM",
+      "confidence": "low"
+    },
+    {
+      "field": "features",
+      "value": [
+        "CapChat"
+      ],
+      "evidence": "DeepSeek-V3.2-Exp demonstrates performance on par with V3.1-Terminus.",
+      "section": "## Introduction",
+      "confidence": "high"
+    }
+  ]
+}

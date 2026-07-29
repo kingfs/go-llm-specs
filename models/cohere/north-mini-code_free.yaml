@@ -1,3 +1,4 @@
+schema_version: 2
 id: cohere/north-mini-code:free
 name: 'Cohere: North Mini Code (free)'
 provider: Cohere
@@ -10,3 +11,54 @@ features:
   - CapFunctionCall
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:37:21.08877243Z
+upstream:
+  openrouter:
+    canonical_slug: cohere/north-mini-code-20260617
+    huggingface_id: CohereLabs/North-Mini-Code-1.0
+    supported_parameters:
+      - frequency_penalty
+      - include_reasoning
+      - max_tokens
+      - presence_penalty
+      - reasoning
+      - seed
+      - stop
+      - temperature
+      - tool_choice
+      - tools
+      - top_k
+      - top_p
+    input_modalities:
+      - text
+    output_modalities:
+      - text
+    fetched_at: 2026-07-29T10:37:21.08877282Z
+  huggingface:
+    id: CohereLabs/North-Mini-Code-1.0
+    revision: d11e61a842617a22dc328552fa5bb86231ee4f37
+    pipeline_tag: text-generation
+    model_type: cohere2_moe
+    architectures:
+      - Cohere2MoeForCausalLM
+    license: apache-2.0
+    tags:
+      - agent
+      - chat
+      - code
+      - cohere2_moe
+      - conversational
+      - deploy:azure
+      - eval-results
+      - license:apache-2.0
+      - region:us
+      - safetensors
+      - text-generation
+      - transformers
+    config_context_length: 500000
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-07-29T10:37:23.033459102Z
+reasoning:
+  supported: true

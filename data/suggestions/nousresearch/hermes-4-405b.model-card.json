@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "nousresearch/hermes-4-405b",
+  "status": "pending",
+  "created_at": "2026-07-29T11:57:33.427083691Z",
+  "source": {
+    "url": "https://huggingface.co/NousResearch/Hermes-4-405B/resolve/88e3dce03c4a5535e2f4a2bcc08e939a2b302f82/README.md",
+    "revision": "88e3dce03c4a5535e2f4a2bcc08e939a2b302f82",
+    "sha256": "22796c394db0007851cf326489628ecac536d66042d85386a5931ebf0c5a4b48"
+  },
+  "generator": {
+    "model": "qwen3.6-27b",
+    "wire_api": "responses"
+  },
+  "claims": [
+    {
+      "field": "reasoning.supported",
+      "value": true,
+      "evidence": "reasoning that is top quality, improves math, code, STEM, logic, and even creative writing",
+      "section": "Model Description",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "CapFunctionCall",
+        "CapJsonMode"
+      ],
+      "evidence": "trained to produce valid JSON for given schemas and to repair malformed objects.",
+      "section": "What’s new vs Hermes 3",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "CapFunctionCall",
+        "CapChat"
+      ],
+      "evidence": "Hermes 4 supports function/tool calls *within* a single assistant turn",
+      "section": "Function Calling \u0026 Tool Use",
+      "confidence": "high"
+    },
+    {
+      "field": "description",
+      "value": "Frontier hybrid-mode reasoning model based on Llama-3.1-405B with structured outputs, function calling, and reasoning capabilities.",
+      "evidence": "Hermes 4 uses Llama-3-Chat format with role headers and special tags.",
+      "section": "Prompt Format",
+      "confidence": "high"
+    },
+    {
+      "field": "description",
+      "value": "Hybrid-mode reasoning model built on Llama-3.1-405B by Nous Research, featuring hybrid reasoning mode, schema adherence, and improved steerability.",
+      "evidence": "base_model: meta-llama/Meta-Llama-3.1-405B",
+      "section": "Model Description",
+      "confidence": "high"
+    }
+  ]
+}

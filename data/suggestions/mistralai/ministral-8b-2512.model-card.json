@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "mistralai/ministral-8b-2512",
+  "status": "pending",
+  "created_at": "2026-07-29T11:31:15.107928117Z",
+  "source": {
+    "url": "https://huggingface.co/mistralai/Ministral-3-8B-Instruct-2512/resolve/5b26027e7b19eeb4b7352e1fed3926375dd2cb4d/README.md",
+    "revision": "5b26027e7b19eeb4b7352e1fed3926375dd2cb4d",
+    "sha256": "4bb037def3dbb810ddde4a652dbdb442d1abe41559cc3a3173fd3d04e527b2ee"
+  },
+  "generator": {
+    "model": "qwen3.6-27b",
+    "wire_api": "responses"
+  },
+  "claims": [
+    {
+      "field": "features",
+      "value": [
+        "CapFunctionCall",
+        "ModalityTextIn",
+        "ModalityTextOut",
+        "ModalityImageIn"
+      ],
+      "evidence": "Ministral 3 8B Instruct model offers the following capabilities:\n- **Vision**: Enables the model to analyze images and provide insights based on visual content, in addition to text.",
+      "section": "Key Features",
+      "confidence": "high"
+    },
+    {
+      "field": "context_length",
+      "value": 262144,
+      "evidence": "**Large Context Window**: Supports a 256k context window.",
+      "section": "Key Features",
+      "confidence": "high"
+    },
+    {
+      "field": "description",
+      "value": "The Ministral 3 8B Instruct model is the FP8 instruct post-trained version in the Ministral 3 family, fine-tuned for instruction tasks, making it ideal for chat and instruction based use cases.",
+      "evidence": "This model is the instruct post-trained version in **FP8**, fine-tuned for instruction tasks, making it ideal for chat and instruction based use cases.",
+      "section": "Ministral 3 8B Instruct 2512",
+      "confidence": "high"
+    },
+    {
+      "field": "description",
+      "value": "Ministral 3 8B consists of two main architectural components: an 8.4B language model and a 0.4B vision encoder.",
+      "evidence": "Ministral 3 8B consists of two main architectural components: - **8.4B Language Model** - **0.4B Vision Encoder**",
+      "section": "Key Features",
+      "confidence": "high"
+    }
+  ]
+}

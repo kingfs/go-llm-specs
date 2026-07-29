@@ -1,3 +1,4 @@
+schema_version: 2
 id: perceptron/perceptron-mk1
 name: 'Perceptron: Perceptron Mk1'
 provider: Perceptron
@@ -12,3 +13,26 @@ features:
   - ModalityTextIn
   - ModalityTextOut
   - ModalityVideoIn
+discovered_at: 2026-07-29T10:41:53.787320284Z
+upstream:
+  openrouter:
+    canonical_slug: perceptron/perceptron-mk1-20260512
+    supported_parameters:
+      - frequency_penalty
+      - include_reasoning
+      - max_tokens
+      - presence_penalty
+      - reasoning
+      - structured_outputs
+      - temperature
+      - top_k
+      - top_p
+    input_modalities:
+      - image
+      - text
+      - video
+    output_modalities:
+      - text
+    fetched_at: 2026-07-29T10:41:53.787320754Z
+reasoning:
+  supported: true

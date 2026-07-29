@@ -1,3 +1,4 @@
+schema_version: 2
 id: stepfun/step-3.5-flash:free
 name: 'StepFun: Step 3.5 Flash (free)'
 provider: Stepfun
@@ -10,3 +11,4 @@ features:
   - CapFunctionCall
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:44:13.805324629Z

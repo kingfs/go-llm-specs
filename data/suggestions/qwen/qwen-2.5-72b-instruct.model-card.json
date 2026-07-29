@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "qwen/qwen-2.5-72b-instruct",
+  "status": "pending",
+  "created_at": "2026-07-29T11:44:13.542601756Z",
+  "source": {
+    "url": "https://huggingface.co/Qwen/Qwen2.5-72B-Instruct/resolve/495f39366efef23836d0cfae4fbe635880d2be31/README.md",
+    "revision": "495f39366efef23836d0cfae4fbe635880d2be31",
+    "sha256": "62d6f2176c0925b7c7e5ec6c5ee06cad83868bb21a8e25d58283e3d7707d3f79"
+  },
+  "generator": {
+    "model": "qwen3.6-27b",
+    "wire_api": "responses"
+  },
+  "claims": [
+    {
+      "field": "context_length",
+      "value": 131072,
+      "evidence": "Context Length: Full 131,072 tokens and generation 8192 tokens",
+      "section": "# Qwen2.5-72B-Instruct",
+      "confidence": "high"
+    },
+    {
+      "field": "max_output",
+      "value": 8192,
+      "evidence": "Context Length: Full 131,072 tokens and generation 8192 tokens",
+      "section": "# Qwen2.5-72B-Instruct",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "ModalityTextIn",
+        "ModalityTextOut",
+        "CapFunctionCall",
+        "CapJsonMode"
+      ],
+      "evidence": "Significant improvements in ... generating structured outputs especially JSON.",
+      "section": "# Qwen2.5-72B-Instruct",
+      "confidence": "medium"
+    },
+    {
+      "field": "description",
+      "value": "Qwen2.5-72B-Instruct is an instruction-tuned 72.7B parameter causal language model with long-context support up to 131,072 tokens and generation up to 8,192 tokens. It supports over 29 languages and has improved capabilities in coding, mathematics, instruction following, and generating structured JSON outputs.",
+      "evidence": "Long-context Support up to 128K tokens and can generate up to 8K tokens.",
+      "section": "# Qwen2.5-72B-Instruct",
+      "confidence": "high"
+    }
+  ]
+}

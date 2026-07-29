@@ -1,3 +1,4 @@
+schema_version: 2
 id: neversleep/llama-3.1-lumimaid-8b
 name: 'NeverSleep: Lumimaid v0.2 8B'
 provider: Neversleep
@@ -16,3 +17,4 @@ features:
   - CapJsonMode
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:40:16.459773413Z

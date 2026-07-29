@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "xiaomi/mimo-v2.5-pro",
+  "status": "pending",
+  "created_at": "2026-07-29T12:05:47.80890406Z",
+  "source": {
+    "url": "https://huggingface.co/XiaomiMiMo/MiMo-V2.5-Pro/resolve/21d1ecfecd7bd70f31be25ca49d7edd21f003659/README.md",
+    "revision": "21d1ecfecd7bd70f31be25ca49d7edd21f003659",
+    "sha256": "bec4fb89ce81dee2b0f86fe32dbcbc9d934f5346bdfa5776e467660602174c65"
+  },
+  "generator": {
+    "model": "qwen3.6-27b",
+    "wire_api": "responses"
+  },
+  "claims": [
+    {
+      "field": "description",
+      "value": "open-source MoE model with 1.02T total params and 42B active params",
+      "evidence": "MiMo-V2.5-Pro is an open-source Mixture-of-Experts (MoE) language model with 1.02T total parameters and 42B active parameters.",
+      "section": "# MiMo-V2.5-Pro",
+      "confidence": "high"
+    },
+    {
+      "field": "context_length",
+      "value": 1048576,
+      "evidence": "It utilizes the hybrid attention architecture and 3-layers Multi-Token Prediction (MTP) introduced in [MiMo-V2-Flash](https://github.com/XiaomiMiMo/MiMo-V2-Flash), with up to 1M tokens context length.",
+      "section": "# MiMo-V2.5-Pro",
+      "confidence": "high"
+    },
+    {
+      "field": "reasoning.supported",
+      "value": true,
+      "evidence": "The paradigm begins with Supervised Fine-Tuning (SFT) to build strong, foundational instruction-following skills... Next, in the Domain-Specialized Training stage... Finally, the process culminates in Multi-Teacher On-Policy Distillation (MOPD).",
+      "section": "## 4. Model Architecture \u0026 Training Process",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "ModalityTextIn",
+        "ModalityTextOut"
+      ],
+      "evidence": "MiMo V2.5 Pro delivers a major leap in long-context reasoning.",
+      "section": "## 3. Evaluation Results",
+      "confidence": "high"
+    },
+    {
+      "field": "serving.vllm_args",
+      "value": [],
+      "evidence": "Since inference engines are",
+      "section": "## 5. Deployment",
+      "confidence": "low"
+    },
+    {
+      "field": "serving.sglang_args",
+      "value": [],
+      "evidence": "Since inference engines are",
+      "section": "## 5. Deployment",
+      "confidence": "low"
+    },
+    {
+      "field": "description",
+      "value": "open-source MoE model with 1.02T total params and 42B active params; hybrid attention; 3-layers MTP; 1M context",
+      "evidence": "It utilizes the hybrid attention architecture and 3-layers Multi-Token Prediction (MTP) introduced in [MiMo-V2-Flash](https://github.com/XiaomiMiMo/MiMo-V2-Flash), with up to 1M tokens context length.",
+      "section": "# MiMo-V2.5-Pro",
+      "confidence": "high"
+    }
+  ]
+}

@@ -1,3 +1,4 @@
+schema_version: 2
 id: tngtech/deepseek-r1t2-chimera
 name: 'TNG: DeepSeek R1T2 Chimera'
 provider: Tngtech
@@ -11,3 +12,4 @@ features:
   - CapJsonMode
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:44:40.118324754Z

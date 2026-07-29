@@ -1,3 +1,4 @@
+schema_version: 2
 id: anthropic/claude-opus-4
 name: 'Anthropic: Claude Opus 4'
 provider: Anthropic
@@ -15,3 +16,26 @@ features:
   - ModalityImageIn
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:36:44.127854794Z
+upstream:
+  openrouter:
+    canonical_slug: anthropic/claude-4-opus-20250522
+    supported_parameters:
+      - include_reasoning
+      - max_tokens
+      - reasoning
+      - stop
+      - temperature
+      - tool_choice
+      - tools
+      - top_p
+    input_modalities:
+      - file
+      - image
+      - text
+    output_modalities:
+      - text
+    knowledge_cutoff: "2025-01-31"
+    fetched_at: 2026-07-29T10:36:44.127855294Z
+reasoning:
+  supported: true

@@ -1,3 +1,4 @@
+schema_version: 2
 id: openai/gpt-3.5-turbo-16k
 name: 'OpenAI: GPT-3.5 Turbo 16k'
 provider: OpenAI
@@ -11,3 +12,29 @@ features:
   - CapJsonMode
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:41:04.294566779Z
+upstream:
+  openrouter:
+    canonical_slug: openai/gpt-3.5-turbo-16k
+    supported_parameters:
+      - frequency_penalty
+      - logit_bias
+      - logprobs
+      - max_completion_tokens
+      - max_tokens
+      - presence_penalty
+      - response_format
+      - seed
+      - stop
+      - structured_outputs
+      - temperature
+      - tool_choice
+      - tools
+      - top_logprobs
+      - top_p
+    input_modalities:
+      - text
+    output_modalities:
+      - text
+    knowledge_cutoff: "2021-09-30"
+    fetched_at: 2026-07-29T10:41:04.294567129Z

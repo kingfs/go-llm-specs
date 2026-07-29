@@ -1,3 +1,4 @@
+schema_version: 2
 id: qwen/qwen3.6-plus:free
 name: 'Qwen: Qwen3.6 Plus (free)'
 provider: Qwen
@@ -13,3 +14,4 @@ features:
   - ModalityTextIn
   - ModalityTextOut
   - ModalityVideoIn
+discovered_at: 2026-07-29T10:43:50.407861825Z

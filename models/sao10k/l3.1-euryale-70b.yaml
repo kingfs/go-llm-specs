@@ -1,3 +1,4 @@
+schema_version: 2
 id: sao10k/l3.1-euryale-70b
 name: 'Sao10K: Llama 3.1 Euryale 70B v2.2'
 provider: Sao10k
@@ -11,3 +12,52 @@ features:
   - CapJsonMode
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:44:06.275947256Z
+upstream:
+  openrouter:
+    canonical_slug: sao10k/l3.1-euryale-70b
+    huggingface_id: Sao10K/L3.1-70B-Euryale-v2.2
+    supported_parameters:
+      - frequency_penalty
+      - logit_bias
+      - max_tokens
+      - min_p
+      - presence_penalty
+      - repetition_penalty
+      - response_format
+      - seed
+      - stop
+      - structured_outputs
+      - temperature
+      - tool_choice
+      - tools
+      - top_k
+      - top_p
+    input_modalities:
+      - text
+    output_modalities:
+      - text
+    knowledge_cutoff: "2023-12-31"
+    fetched_at: 2026-07-29T10:44:06.275947876Z
+  huggingface:
+    id: Sao10K/L3.1-70B-Euryale-v2.2
+    revision: 62b47ff8c2c24d326a7b960773b9c853400150b6
+    model_type: llama
+    architectures:
+      - LlamaForCausalLM
+    license: cc-by-nc-4.0
+    tags:
+      - dataset:Setiaku/Stheno-3.4-Creative-2
+      - dataset:Setiaku/Stheno-v3.4-Instruct
+      - en
+      - license:cc-by-nc-4.0
+      - llama
+      - pytorch
+      - region:us
+    config_context_length: 131072
+    tokenizer_model_max_length: 131072
+    chat_template_sha256: 8237a56e19eeec917fbd9b7876ec0932abf1fc2b535178321c8a38e0462f8862
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-07-29T10:44:08.538757804Z

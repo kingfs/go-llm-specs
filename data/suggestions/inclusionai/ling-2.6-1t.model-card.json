@@ -1,0 +1,84 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "inclusionai/ling-2.6-1t",
+  "status": "pending",
+  "created_at": "2026-07-29T11:27:25.592723615Z",
+  "source": {
+    "url": "https://huggingface.co/inclusionAI/Ling-2.6-1T/resolve/07b9e26bb1f97494b4fd62eed83f22722ffd560a/README.md",
+    "revision": "07b9e26bb1f97494b4fd62eed83f22722ffd560a",
+    "sha256": "1a4a0027dee37c19a945748b49506f10a09a39a356906afe013dd4e2894f3f7a"
+  },
+  "generator": {
+    "model": "qwen3.6-27b",
+    "wire_api": "responses"
+  },
+  "claims": [
+    {
+      "field": "context_length",
+      "value": 262144,
+      "evidence": "--context-length 262144",
+      "section": "SGLang",
+      "confidence": "medium"
+    },
+    {
+      "field": "reasoning.supported",
+      "value": true,
+      "evidence": "--speculative-algorithm EAGLE --speculative-num-steps 3 --speculative-eagle-topk 1 --speculative-num-draft-tokens 4",
+      "section": "SGLang",
+      "confidence": "low"
+    },
+    {
+      "field": "reasoning.parser",
+      "value": "qwen25",
+      "evidence": "--tool-call-parser qwen25",
+      "section": "SGLang",
+      "confidence": "low"
+    },
+    {
+      "field": "description",
+      "value": "Trillion-parameter model optimized for inference efficiency, token overhead, and agentic capabilities for coding and daily workflows.",
+      "evidence": "Tailored for real–world, complex scenarios, this trillion–parameter model introduces targeted optimizations across inference efficiency, token overhead, and agentic capabilities",
+      "section": "Ling-2.6-1T: A Trillion-Parameter Comprehensive Flagship Model for Complex Tasks",
+      "confidence": "high"
+    },
+    {
+      "field": "description",
+      "value": "Adopts a hybrid architecture combining MLA and Linear Attention.",
+      "evidence": "By adopting a hybrid architecture combining MLA and Linear Attention",
+      "section": "Ling-2.6-1T: A Trillion-Parameter Comprehensive Flagship Model for Complex Tasks",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "CapChat",
+        "CapFunctionCall"
+      ],
+      "evidence": "Designed for end–to–end engineering... integrates seamlessly with mainstream agent frameworks",
+      "section": "Ling-2.6-1T: A Trillion-Parameter Comprehensive Flagship Model for Complex Tasks",
+      "confidence": "low"
+    },
+    {
+      "field": "description",
+      "value": "Pipeline tag is text-generation.",
+      "evidence": "pipeline_tag: text-generation",
+      "section": "model card",
+      "confidence": "low"
+    },
+    {
+      "field": "description",
+      "value": "Achieved an Intelligence Index of 34 on Artificial Analysis with approximately 16M output tokens.",
+      "evidence": "This position underscores its ability to deliver high-tier intelligence with optimized token consumption.",
+      "section": "Unlocking Robust Intelligence with Superior Efficiency",
+      "confidence": "low"
+    },
+    {
+      "field": "description",
+      "value": "Strong performance on MRCR covering 16K to 256K context range.",
+      "evidence": "Context \u0026 Constraints: Strong performance on MRCR (16K–256K)",
+      "section": "Enhancing Execution Stability for Complex Multi-Step Tasks",
+      "confidence": "low"
+    }
+  ]
+}

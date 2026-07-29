@@ -1,3 +1,4 @@
+schema_version: 2
 id: meta-llama/llama-3-8b-instruct
 name: 'Meta: Llama 3 8B Instruct'
 provider: Meta
@@ -21,3 +22,4 @@ features:
   - CapJsonMode
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:38:50.425970837Z

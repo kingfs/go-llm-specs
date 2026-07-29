@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "qwen/qwen3-4b",
+  "status": "pending",
+  "created_at": "2026-07-29T11:49:13.057493952Z",
+  "source": {
+    "url": "https://huggingface.co/Qwen/Qwen3-4B/resolve/1cfa9a7208912126459214e8b04321603b3df60c/README.md",
+    "revision": "1cfa9a7208912126459214e8b04321603b3df60c",
+    "sha256": "a804d1062c2e716254dca2cc4f37e7b513b227c27580a34003688a3dae8ce85b"
+  },
+  "generator": {
+    "model": "qwen3.6-27b",
+    "wire_api": "responses"
+  },
+  "claims": [
+    {
+      "field": "description",
+      "value": "Qwen3-4B is a Causal Language Model with 4.0B parameters and 36 layers, supporting pretraining and post-training.",
+      "evidence": "Type: Causal Language Models",
+      "section": "Model Overview",
+      "confidence": "high"
+    },
+    {
+      "field": "context_length",
+      "value": 32768,
+      "evidence": "Context Length: 32,768 natively and 131,072 tokens with YaRN",
+      "section": "Model Overview",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "CapChat",
+        "CapFunctionCall",
+        "ModalityTextIn",
+        "ModalityTextOut"
+      ],
+      "evidence": "enable_thinking=True # Switches between thinking and non-thinking modes. Default is True.",
+      "section": "Quickstart",
+      "confidence": "high"
+    },
+    {
+      "field": "reasoning.supported",
+      "value": true,
+      "evidence": "reasoning.supported: True (QwQ (in thinking mode) ... mathematics, code generation, and commonsense logical reasoning)",
+      "section": "Qwen3 Highlights",
+      "confidence": "high"
+    },
+    {
+      "field": "reasoning.parser",
+      "value": "think_think_think",
+      "evidence": "parsing thinking content\ntry:\n    # rindex finding 151668 ()\n    index = len(output_ids) - output_ids[::-1].index(151668)",
+      "section": "Quickstart",
+      "confidence": "high"
+    }
+  ]
+}

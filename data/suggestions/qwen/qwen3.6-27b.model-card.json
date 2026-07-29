@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "qwen/qwen3.6-27b",
+  "status": "pending",
+  "created_at": "2026-07-29T12:00:46.989111718Z",
+  "source": {
+    "url": "https://huggingface.co/Qwen/Qwen3.6-27B/resolve/6a9e13bd6fc8f0983b9b99948120bc37f49c13e9/README.md",
+    "revision": "6a9e13bd6fc8f0983b9b99948120bc37f49c13e9",
+    "sha256": "de43836b86f3afd7cc57cb42be3ea8fcbd1904469f65325b3626f4e3697359c0"
+  },
+  "generator": {
+    "model": "qwen3.6-27b",
+    "wire_api": "responses"
+  },
+  "claims": [
+    {
+      "field": "description",
+      "value": "Causal Language Model with Vision Encoder, trained via pre-training and post-training, with a hidden dimension of 5120, 64 layers, multi-token prediction, gated DeltaNet and gated Attention, and padded token embeddings of 248,320.",
+      "evidence": "Type: Causal Language Model with Vision Encoder",
+      "section": "Model Overview",
+      "confidence": "high"
+    },
+    {
+      "field": "description",
+      "value": "27B parameter model using Causal Language Model with Vision Encoder, trained via pre-training and post-training, with hidden dimension 5120, 64 layers, multi-token prediction, gated DeltaNet and gated Attention, and padded token embeddings of 248,320.",
+      "evidence": "Number of Parameters: 27B",
+      "section": "Model Overview",
+      "confidence": "high"
+    },
+    {
+      "field": "context_length",
+      "value": 262144,
+      "evidence": "Context Length: 262,144 natively and extensible up to 1,010,000 tokens.",
+      "section": "Model Overview",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "CapChat",
+        "ModalityTextIn",
+        "ModalityTextOut",
+        "ModalityImageIn"
+      ],
+      "evidence": "hidden layout: 16 x (3 x (Gated DeltaNet -\u003e FFN) -\u003e 1 x (Gated Attention -\u003e FFN))",
+      "section": "Model Overview",
+      "confidence": "high"
+    }
+  ]
+}

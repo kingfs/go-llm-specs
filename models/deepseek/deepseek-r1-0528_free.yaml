@@ -1,3 +1,4 @@
+schema_version: 2
 id: deepseek/deepseek-r1-0528:free
 name: 'DeepSeek: R1 0528 (free)'
 provider: DeepSeek
@@ -15,3 +16,4 @@ features:
   - CapChat
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:37:40.275298737Z

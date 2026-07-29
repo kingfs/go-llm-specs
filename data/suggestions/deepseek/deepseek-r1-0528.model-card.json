@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "deepseek/deepseek-r1-0528",
+  "status": "pending",
+  "created_at": "2026-07-29T11:22:08.454149142Z",
+  "source": {
+    "url": "https://huggingface.co/deepseek-ai/DeepSeek-R1-0528/resolve/4236a6af538feda4548eca9ab308586007567f52/README.md",
+    "revision": "4236a6af538feda4548eca9ab308586007567f52",
+    "sha256": "5fc992941e42d809550a2b9c1dd09e12ea6e73ae75185ec3ac4d16fd124d405f"
+  },
+  "generator": {
+    "model": "qwen3.6-27b",
+    "wire_api": "responses"
+  },
+  "claims": [
+    {
+      "field": "max_output",
+      "value": 65536,
+      "evidence": "For all our models, the maximum generation length is set to 64K tokens.",
+      "section": "Evaluation Results",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "CapChat"
+      ],
+      "evidence": "System prompt is supported now.",
+      "section": "How to Run Locally",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "CapFunctionCall"
+      ],
+      "evidence": "enhanced support for function calling",
+      "section": "Introduction",
+      "confidence": "high"
+    },
+    {
+      "field": "description",
+      "value": "DeepSeek-R1-0528 is a post-trained reasoning model with improved depth of reasoning and inference capabilities, enhanced function calling support, and reduced hallucination rates, achieving state-of-the-art performance on math and code benchmarks.",
+      "evidence": "DeepSeek R1-0528-Qwen3-8B",
+      "section": "Introduction",
+      "confidence": "high"
+    }
+  ]
+}

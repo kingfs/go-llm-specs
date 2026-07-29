@@ -52,7 +52,7 @@ func run(root, id, output string) error {
 		}
 		doc := suggestion.Document{SchemaVersion: 1, Kind: "codex_policy", ModelID: model.ID, Status: "pending", CreatedAt: time.Now().UTC(), Source: suggestion.Source{URL: model.FilePath, SHA256: "registry-derived"}, Generator: suggestion.Generator{Model: "deterministic/codexsuggest", WireAPI: "none"}, Claims: claims}
 		if output == "" {
-			output = filepath.Join("data", "suggestions", filepath.FromSlash(model.ID)+".codex.json")
+			output = filepath.Join("data", "suggestions", filepath.FromSlash(strings.ReplaceAll(model.ID, ":", "_"))+".codex.json")
 		}
 		if err := suggestion.Save(output, doc); err != nil {
 			return err

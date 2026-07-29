@@ -1,3 +1,4 @@
+schema_version: 2
 id: allenai/olmo-3-7b-instruct
 name: 'AllenAI: Olmo 3 7B Instruct'
 provider: Allenai
@@ -10,3 +11,34 @@ features:
   - CapJsonMode
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:36:25.731261916Z
+upstream:
+  huggingface:
+    id: allenai/Olmo-3-7B-Instruct
+    revision: 6e5971d9eba42665f5bd5a0fcf047f299ce1dccc
+    pipeline_tag: text-generation
+    model_type: olmo3
+    architectures:
+      - Olmo3ForCausalLM
+    tags:
+      - arxiv:2512.13961
+      - base_model:allenai/Olmo-3-7B-Instruct-DPO
+      - base_model:finetune:allenai/Olmo-3-7B-Instruct-DPO
+      - conversational
+      - dataset:allenai/Dolci-Instruct-RL-7B
+      - deploy:azure
+      - deploy:sagemaker
+      - en
+      - endpoints_compatible
+      - license:apache-2.0
+      - olmo3
+      - region:us
+      - safetensors
+      - text-generation
+      - transformers
+    config_context_length: 65536
+    tokenizer_model_max_length: 65536
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-07-29T10:36:27.670352506Z

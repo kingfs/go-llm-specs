@@ -1,3 +1,4 @@
+schema_version: 2
 id: ~google/gemini-pro-latest
 name: Google Gemini Pro Latest
 provider: ~Google
@@ -15,3 +16,37 @@ features:
   - ModalityTextIn
   - ModalityTextOut
   - ModalityVideoIn
+discovered_at: 2026-07-29T10:45:25.476868643Z
+upstream:
+  openrouter:
+    canonical_slug: ~google/gemini-pro-latest
+    supported_parameters:
+      - include_reasoning
+      - max_tokens
+      - reasoning
+      - reasoning_effort
+      - response_format
+      - seed
+      - stop
+      - structured_outputs
+      - temperature
+      - tool_choice
+      - tools
+      - top_p
+    input_modalities:
+      - audio
+      - file
+      - image
+      - text
+      - video
+    output_modalities:
+      - text
+    fetched_at: 2026-07-29T10:45:25.476869203Z
+reasoning:
+  supported: true
+  mandatory: true
+  default_effort: medium
+  supported_efforts:
+    - high
+    - low
+    - medium

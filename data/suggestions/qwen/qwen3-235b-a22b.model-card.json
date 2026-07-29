@@ -1,0 +1,97 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "qwen/qwen3-235b-a22b",
+  "status": "pending",
+  "created_at": "2026-07-29T11:47:33.56912239Z",
+  "source": {
+    "url": "https://huggingface.co/Qwen/Qwen3-235B-A22B/resolve/8efa61729e24bd65b1d152b5ab5409052aa80e65/README.md",
+    "revision": "8efa61729e24bd65b1d152b5ab5409052aa80e65",
+    "sha256": "81eda49895c21136ddef6b2a4c31854b332d6de85f7475d754d2d871072766b5"
+  },
+  "generator": {
+    "model": "qwen3.6-27b",
+    "wire_api": "responses"
+  },
+  "claims": [
+    {
+      "field": "context_length",
+      "value": 32768,
+      "evidence": "Context Length: 32,768 natively and [131,072 tokens with YaRN](#processing-long-texts).",
+      "section": "Model Overview",
+      "confidence": "high"
+    },
+    {
+      "field": "description",
+      "value": "Total parameters: 235B, activated: 22B.",
+      "evidence": "Number of Parameters: 235B in total and 22B activated",
+      "section": "Model Overview",
+      "confidence": "high"
+    },
+    {
+      "field": "reasoning.supported",
+      "value": true,
+      "evidence": "Significantly enhancement in its reasoning capabilities",
+      "section": "Qwen3 Highlights",
+      "confidence": "high"
+    },
+    {
+      "field": "reasoning.parser",
+      "value": "reasoning_parser=qwen3",
+      "evidence": "parsing thinking content... rindex finding 151668 ()",
+      "section": "Quickstart",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "CapChat",
+        "ModalityTextIn",
+        "ModalityTextOut"
+      ],
+      "evidence": "enable_thinking=True # Switches between thinking and non-thinking modes. Default is True.",
+      "section": "Quickstart",
+      "confidence": "high"
+    },
+    {
+      "field": "description",
+      "value": "Causal language model supporting text generation with thinking mode switching.",
+      "evidence": "Pipeline_tag: text-generation",
+      "section": "model card header",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "CapFunctionCall",
+        "CapChat",
+        "ModalityTextIn",
+        "ModalityTextOut"
+      ],
+      "evidence": "Expertise in agent capabilities",
+      "section": "Qwen3 Highlights",
+      "confidence": "high"
+    },
+    {
+      "field": "description",
+      "value": "94 layers, 128 experts with 8 activated, GQA attention (64 Q heads, 4 KV heads).",
+      "evidence": "Number of Layers: 94",
+      "section": "Model Overview",
+      "confidence": "high"
+    },
+    {
+      "field": "context_length",
+      "value": 131072,
+      "evidence": "Context Length: 32,768 natively",
+      "section": "Model Overview",
+      "confidence": "high"
+    },
+    {
+      "field": "description",
+      "value": "Supports 100+ languages and dialects with multilingual instruction following and translation.",
+      "evidence": "Support of 100+ languages and dialects with strong capabilities for multilingual instruction following and translation.",
+      "section": "Qwen3 Highlights",
+      "confidence": "high"
+    }
+  ]
+}

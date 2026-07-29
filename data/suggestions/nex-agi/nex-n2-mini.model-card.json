@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "nex-agi/nex-n2-mini",
+  "status": "pending",
+  "created_at": "2026-07-29T11:36:30.480917567Z",
+  "source": {
+    "url": "https://huggingface.co/nex-agi/Nex-N2-mini/resolve/ca218dcb1fbe05f84d1807d180cb5d9bcb1c5c93/README.md",
+    "revision": "ca218dcb1fbe05f84d1807d180cb5d9bcb1c5c93",
+    "sha256": "faa8ddeeaeff18b2ca76bf4d4b3e98cf912378a650cc19f2c74acb72812bf50e"
+  },
+  "generator": {
+    "model": "qwen3.6-27b",
+    "wire_api": "responses"
+  },
+  "claims": [
+    {
+      "field": "description",
+      "value": "An agent model built on Qwen3.5-35B-A3B-Base, designed for real-world productivity scenarios with first-tier coding and agentic capabilities.",
+      "evidence": "Nex-N2 ships in two variants, both post-trained on the Qwen3.5 series: ... Nex-N2-mini (built on `Qwen3.5-35B-A3B-Base`)",
+      "section": "Performance",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "CapFunctionCall",
+        "ModalityTextIn",
+        "ModalityTextOut"
+      ],
+      "evidence": "tool calling",
+      "section": "Nex-N2",
+      "confidence": "medium"
+    },
+    {
+      "field": "reasoning.parser",
+      "value": "qwen3",
+      "evidence": "--reasoning-parser qwen3",
+      "section": "Usage",
+      "confidence": "high"
+    }
+  ]
+}

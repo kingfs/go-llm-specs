@@ -1,3 +1,4 @@
+schema_version: 2
 id: mistralai/mistral-7b-instruct-v0.3
 name: 'Mistral: Mistral 7B Instruct v0.3'
 provider: Mistral
@@ -28,3 +29,4 @@ features:
   - CapFunctionCall
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:39:35.894366467Z

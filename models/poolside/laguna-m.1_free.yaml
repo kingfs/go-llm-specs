@@ -1,3 +1,4 @@
+schema_version: 2
 id: poolside/laguna-m.1:free
 name: 'Poolside: Laguna M.1 (free)'
 provider: Poolside
@@ -10,3 +11,4 @@ features:
   - CapFunctionCall
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:41:59.277847667Z

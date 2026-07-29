@@ -1,3 +1,4 @@
+schema_version: 2
 id: liquid/lfm-2.2-6b
 name: 'LiquidAI: LFM2-2.6B'
 provider: Liquid
@@ -8,3 +9,4 @@ features:
   - CapChat
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:38:45.339827694Z

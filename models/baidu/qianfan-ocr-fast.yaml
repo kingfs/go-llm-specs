@@ -1,3 +1,4 @@
+schema_version: 2
 id: baidu/qianfan-ocr-fast
 name: 'Baidu: Qianfan-OCR-Fast'
 provider: Baidu
@@ -10,3 +11,4 @@ features:
   - ModalityImageIn
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:37:10.626189935Z

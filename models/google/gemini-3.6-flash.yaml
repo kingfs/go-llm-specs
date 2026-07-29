@@ -1,3 +1,4 @@
+schema_version: 2
 id: google/gemini-3.6-flash
 name: 'Google: Gemini 3.6 Flash'
 provider: Google
@@ -15,3 +16,39 @@ features:
   - ModalityTextIn
   - ModalityTextOut
   - ModalityVideoIn
+discovered_at: 2026-07-29T10:38:11.721368109Z
+upstream:
+  openrouter:
+    canonical_slug: google/gemini-3.6-flash-20260721
+    supported_parameters:
+      - include_reasoning
+      - max_tokens
+      - reasoning
+      - reasoning_effort
+      - response_format
+      - seed
+      - stop
+      - structured_outputs
+      - temperature
+      - tool_choice
+      - tools
+      - top_p
+    input_modalities:
+      - audio
+      - file
+      - image
+      - text
+      - video
+    output_modalities:
+      - text
+    fetched_at: 2026-07-29T10:38:11.721368639Z
+reasoning:
+  supported: true
+  mandatory: true
+  default_enabled: true
+  default_effort: medium
+  supported_efforts:
+    - high
+    - low
+    - medium
+    - minimal

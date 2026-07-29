@@ -1,3 +1,4 @@
+schema_version: 2
 id: moonshotai/kimi-k2-thinking
 name: 'MoonshotAI: Kimi K2 Thinking'
 provider: Moonshotai
@@ -17,3 +18,60 @@ features:
   - CapJsonMode
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:40:03.661826278Z
+upstream:
+  openrouter:
+    canonical_slug: moonshotai/kimi-k2-thinking-20251106
+    huggingface_id: moonshotai/Kimi-K2-Thinking
+    supported_parameters:
+      - frequency_penalty
+      - include_reasoning
+      - logprobs
+      - max_tokens
+      - presence_penalty
+      - reasoning
+      - repetition_penalty
+      - response_format
+      - seed
+      - stop
+      - structured_outputs
+      - temperature
+      - tool_choice
+      - tools
+      - top_k
+      - top_logprobs
+      - top_p
+    input_modalities:
+      - text
+    output_modalities:
+      - text
+    fetched_at: 2026-07-29T10:40:03.661826778Z
+  huggingface:
+    id: moonshotai/Kimi-K2-Thinking
+    revision: a51ccc050d73dab088bf7b0e2dd9b30ae85a4e55
+    pipeline_tag: text-generation
+    model_type: kimi_k2
+    architectures:
+      - DeepseekV3ForCausalLM
+    license: other
+    tags:
+      - compressed-tensors
+      - conversational
+      - custom_code
+      - endpoints_compatible
+      - eval-results
+      - kimi_k2
+      - license:other
+      - region:us
+      - safetensors
+      - text-generation
+      - transformers
+    config_context_length: 262144
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-07-29T10:40:05.686107199Z
+reasoning:
+  supported: true
+  mandatory: true
+  default_enabled: true

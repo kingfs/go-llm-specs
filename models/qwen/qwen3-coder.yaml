@@ -1,3 +1,4 @@
+schema_version: 2
 id: qwen/qwen3-coder
 name: 'Qwen: Qwen3 Coder 480B A35B'
 provider: Qwen
@@ -17,3 +18,58 @@ features:
   - CapJsonMode
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:42:51.183006584Z
+upstream:
+  openrouter:
+    canonical_slug: qwen/qwen3-coder-480b-a35b-07-25
+    huggingface_id: Qwen/Qwen3-Coder-480B-A35B-Instruct
+    supported_parameters:
+      - frequency_penalty
+      - logit_bias
+      - logprobs
+      - max_tokens
+      - min_p
+      - presence_penalty
+      - repetition_penalty
+      - response_format
+      - seed
+      - stop
+      - structured_outputs
+      - temperature
+      - tool_choice
+      - tools
+      - top_k
+      - top_logprobs
+      - top_p
+    input_modalities:
+      - text
+    output_modalities:
+      - text
+    knowledge_cutoff: "2025-06-30"
+    fetched_at: 2026-07-29T10:42:51.183007394Z
+  huggingface:
+    id: Qwen/Qwen3-Coder-480B-A35B-Instruct
+    revision: 9d90cf8fca1bf7b7acca42d3fc9ae694a2194069
+    pipeline_tag: text-generation
+    model_type: qwen3_moe
+    architectures:
+      - Qwen3MoeForCausalLM
+    license: apache-2.0
+    tags:
+      - arxiv:2505.09388
+      - conversational
+      - endpoints_compatible
+      - eval-results
+      - license:apache-2.0
+      - qwen3_moe
+      - region:us
+      - safetensors
+      - text-generation
+      - transformers
+    config_context_length: 262144
+    tokenizer_model_max_length: 1048576
+    chat_template_sha256: 88cd0adc27f1adc985392c39fee6bee53c03ef6b85d60074e966809704902ad4
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-07-29T10:42:53.473443619Z

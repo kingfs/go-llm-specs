@@ -1,3 +1,4 @@
+schema_version: 2
 id: openai/gpt-audio-mini
 name: 'OpenAI: GPT Audio Mini'
 provider: OpenAI
@@ -12,3 +13,29 @@ features:
   - ModalityAudioOut
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:41:30.76131708Z
+upstream:
+  openrouter:
+    canonical_slug: openai/gpt-audio-mini
+    supported_parameters:
+      - frequency_penalty
+      - logit_bias
+      - logprobs
+      - max_tokens
+      - presence_penalty
+      - response_format
+      - seed
+      - stop
+      - structured_outputs
+      - temperature
+      - tool_choice
+      - tools
+      - top_logprobs
+      - top_p
+    input_modalities:
+      - audio
+      - text
+    output_modalities:
+      - audio
+      - text
+    fetched_at: 2026-07-29T10:41:30.76131749Z

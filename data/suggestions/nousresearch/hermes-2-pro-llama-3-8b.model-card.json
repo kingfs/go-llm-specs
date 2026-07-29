@@ -1,0 +1,105 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "nousresearch/hermes-2-pro-llama-3-8b",
+  "status": "pending",
+  "created_at": "2026-07-29T11:37:33.173073824Z",
+  "source": {
+    "url": "https://huggingface.co/NousResearch/Hermes-2-Pro-Llama-3-8B/resolve/f798274b30e7d2d4797c369edcc0cc7473b6e6f2/README.md",
+    "revision": "f798274b30e7d2d4797c369edcc0cc7473b6e6f2",
+    "sha256": "c01d5f3eefd9318ee116df7cc1184b31ca8cba8ec3e2a90bad115ac78437bd4a"
+  },
+  "generator": {
+    "model": "qwen3.6-27b",
+    "wire_api": "responses"
+  },
+  "claims": [
+    {
+      "field": "description",
+      "value": "Hermes 2 Pro is an upgraded, retrained version of Nous Hermes 2, trained on an updated OpenHermes 2.5 Dataset plus an in-house Function Calling and JSON Mode dataset. It excels at function calling (90% evaluation score) and JSON structured outputs (84% score). Uses ChatML format with multi-turn function calling support. Added new tokens for agentic capabilities during streaming.",
+      "evidence": "Hermes 2 Pro is an upgraded, retrained version of Nous Hermes 2, consisting of an updated and cleaned version of the OpenHermes 2.5 Dataset",
+      "section": "Model Description",
+      "confidence": "high"
+    },
+    {
+      "field": "description",
+      "value": "This model is built on the Llama 3 8B base model from NousResearch, fine-tuned with ChatML, DPO, RLHF, function calling, and JSON mode capabilities.",
+      "evidence": "base_model: NousResearch/Meta-Llama-3-8B",
+      "section": "Hermes 2 Pro - Llama-3 8B",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "CapFunctionCall"
+      ],
+      "evidence": "scoring a 90% on our function calling evaluation built in partnership with Fireworks.AI",
+      "section": "Model Description",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "CapJsonMode"
+      ],
+      "evidence": "an 84% on our structured JSON Output evaluation",
+      "section": "Model Description",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "CapChat"
+      ],
+      "evidence": "Hermes 2 Pro uses ChatML as the prompt format",
+      "section": "Prompt Format",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "CapChat"
+      ],
+      "evidence": "This format enables OpenAI endpoint compatability",
+      "section": "Prompt Format",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "CapChat"
+      ],
+      "evidence": "tags: - Llama-3 - instruct - finetune - chatml - DPO - RLHF",
+      "section": "Hermes 2 Pro - Llama-3 8B",
+      "confidence": "high"
+    },
+    {
+      "field": "reasoning.parser",
+      "value": "Tool calls must be parsed by inference code; the model generates JSON tool call structures that follow a specific format with name and arguments fields.",
+      "evidence": "The model will then generate a tool call, which your inference code must parse",
+      "section": "Prompt Format for Function Calling",
+      "confidence": "high"
+    },
+    {
+      "field": "description",
+      "value": "The primary training dataset is teknium/OpenHermes-2.5, which provides the conversational and instruction-following data used for fine-tuning.",
+      "evidence": "datasets: - teknium/OpenHermes-2.5",
+      "section": "Hermes 2 Pro - Llama-3 8B",
+      "confidence": "high"
+    },
+    {
+      "field": "description",
+      "value": "The model uses the Llama 3 license.",
+      "evidence": "license: llama3",
+      "section": "Hermes 2 Pro - Llama-3 8B",
+      "confidence": "high"
+    },
+    {
+      "field": "description",
+      "value": "The model is trained on English language data.",
+      "evidence": "language: - en",
+      "section": "Hermes 2 Pro - Llama-3 8B",
+      "confidence": "high"
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "minimax/minimax-m2.7",
+  "status": "pending",
+  "created_at": "2026-07-29T11:29:57.023905121Z",
+  "source": {
+    "url": "https://huggingface.co/MiniMaxAI/MiniMax-M2.7/resolve/d494266a4affc0d2995ba1fa35c8481cbd84294b/README.md",
+    "revision": "d494266a4affc0d2995ba1fa35c8481cbd84294b",
+    "sha256": "0f0db2e90e0214e65578ba34049f39c23ef25dfef5fe6d146080f9d81c36d85b"
+  },
+  "generator": {
+    "model": "qwen3.6-27b",
+    "wire_api": "responses"
+  },
+  "claims": [
+    {
+      "field": "description",
+      "value": "MiniMax M2.7 is a text generation model.",
+      "evidence": "pipeline_tag: text-generation",
+      "section": "---\npipeline_tag: text-generation",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "ModalityTextIn",
+        "ModalityTextOut"
+      ],
+      "evidence": "library_name: transformers",
+      "section": "---\npipeline_tag: text-generation",
+      "confidence": "high"
+    }
+  ]
+}

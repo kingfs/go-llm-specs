@@ -1,3 +1,4 @@
+schema_version: 2
 id: z-ai/glm-4.5-air:free
 name: 'Z.ai: GLM 4.5 Air (free)'
 provider: Z-Ai
@@ -10,3 +11,4 @@ features:
   - CapFunctionCall
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:45:03.439852835Z

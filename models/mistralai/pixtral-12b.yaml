@@ -1,3 +1,4 @@
+schema_version: 2
 id: mistralai/pixtral-12b
 name: 'Mistral: Pixtral 12B'
 provider: Mistral
@@ -11,3 +12,4 @@ features:
   - ModalityImageIn
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:39:54.017724046Z

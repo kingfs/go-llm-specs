@@ -1,3 +1,4 @@
+schema_version: 2
 id: meta-llama/llama-4-scout
 name: 'Meta: Llama 4 Scout'
 provider: Meta
@@ -18,3 +19,70 @@ features:
   - ModalityImageIn
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:38:59.384214685Z
+upstream:
+  openrouter:
+    canonical_slug: meta-llama/llama-4-scout-17b-16e-instruct
+    huggingface_id: meta-llama/Llama-4-Scout-17B-16E-Instruct
+    supported_parameters:
+      - frequency_penalty
+      - logit_bias
+      - max_tokens
+      - min_p
+      - presence_penalty
+      - repetition_penalty
+      - response_format
+      - seed
+      - stop
+      - structured_outputs
+      - temperature
+      - tool_choice
+      - tools
+      - top_k
+      - top_p
+    input_modalities:
+      - image
+      - text
+    output_modalities:
+      - text
+    knowledge_cutoff: "2024-08-31"
+    fetched_at: 2026-07-29T10:38:59.384215255Z
+  huggingface:
+    id: meta-llama/Llama-4-Scout-17B-16E-Instruct
+    revision: 92f3b1597a195b523d8d9e5700e57e4fbb8f20d3
+    pipeline_tag: image-text-to-text
+    model_type: llama4
+    architectures:
+      - Llama4ForConditionalGeneration
+    license: other
+    tags:
+      - ar
+      - arxiv:2204.05149
+      - base_model:finetune:meta-llama/Llama-4-Scout-17B-16E
+      - base_model:meta-llama/Llama-4-Scout-17B-16E
+      - conversational
+      - de
+      - en
+      - endpoints_compatible
+      - es
+      - eval-results
+      - facebook
+      - fr
+      - hi
+      - id
+      - image-text-to-text
+      - it
+      - license:other
+      - llama
+      - llama4
+      - meta
+      - pt
+      - pytorch
+      - region:us
+      - safetensors
+      - text-generation-inference
+      - th
+      - tl
+      - transformers
+      - vi
+    fetched_at: 2026-07-29T10:39:00.141289528Z

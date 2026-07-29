@@ -1,3 +1,4 @@
+schema_version: 2
 id: nex-agi/deepseek-v3.1-nex-n1
 name: 'Nex AGI: DeepSeek V3.1 Nex N1'
 provider: Nex-Agi
@@ -14,3 +15,31 @@ features:
   - CapJsonMode
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:40:17.300032303Z
+upstream:
+  huggingface:
+    id: nex-agi/DeepSeek-V3.1-Nex-N1
+    revision: 2b4f8ae454950acf40eda250c7ff96d7814ab5bc
+    pipeline_tag: text-generation
+    model_type: deepseek_v3
+    architectures:
+      - DeepseekV3ForCausalLM
+    tags:
+      - arxiv:2512.04987
+      - conversational
+      - custom_code
+      - deepseek_v3
+      - endpoints_compatible
+      - fp8
+      - license:apache-2.0
+      - region:us
+      - safetensors
+      - text-generation
+      - text-generation-inference
+      - transformers
+    config_context_length: 204800
+    tokenizer_model_max_length: 16384
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-07-29T10:40:19.348299105Z

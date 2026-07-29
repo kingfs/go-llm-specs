@@ -1,3 +1,4 @@
+schema_version: 2
 id: z-ai/glm-4.5v
 name: 'Z.ai: GLM 4.5V'
 provider: Z-Ai
@@ -12,3 +13,61 @@ features:
   - ModalityImageIn
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:45:03.862265742Z
+upstream:
+  openrouter:
+    canonical_slug: z-ai/glm-4.5v
+    huggingface_id: zai-org/GLM-4.5V
+    supported_parameters:
+      - frequency_penalty
+      - include_reasoning
+      - max_tokens
+      - presence_penalty
+      - reasoning
+      - repetition_penalty
+      - response_format
+      - seed
+      - stop
+      - temperature
+      - tool_choice
+      - tools
+      - top_k
+      - top_p
+    input_modalities:
+      - image
+      - text
+    output_modalities:
+      - text
+    knowledge_cutoff: "2024-12-31"
+    fetched_at: 2026-07-29T10:45:03.862266172Z
+  huggingface:
+    id: zai-org/GLM-4.5V
+    revision: ed47433b37111465ec527affaaddceff371bca04
+    pipeline_tag: image-text-to-text
+    model_type: glm4v_moe
+    architectures:
+      - Glm4vMoeForConditionalGeneration
+    license: mit
+    tags:
+      - arxiv:2507.01006
+      - base_model:finetune:zai-org/GLM-4.5-Air-Base
+      - base_model:zai-org/GLM-4.5-Air-Base
+      - conversational
+      - en
+      - endpoints_compatible
+      - glm4v_moe
+      - image-text-to-text
+      - license:mit
+      - region:us
+      - safetensors
+      - transformers
+      - zh
+    tokenizer_model_max_length: 128000
+    processor_class: Glm4vProcessor
+    structured_files:
+      - config.json
+      - preprocessor_config.json
+      - tokenizer_config.json
+    fetched_at: 2026-07-29T10:45:06.427359319Z
+reasoning:
+  supported: true

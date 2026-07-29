@@ -1,3 +1,4 @@
+schema_version: 2
 id: deepseek/deepseek-v4-pro
 name: 'DeepSeek: DeepSeek V4 Pro'
 provider: DeepSeek
@@ -11,3 +12,67 @@ features:
   - CapJsonMode
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:37:52.029994502Z
+upstream:
+  openrouter:
+    canonical_slug: deepseek/deepseek-v4-pro-20260423
+    huggingface_id: deepseek-ai/DeepSeek-V4-Pro
+    supported_parameters:
+      - frequency_penalty
+      - include_reasoning
+      - logit_bias
+      - logprobs
+      - max_tokens
+      - min_p
+      - presence_penalty
+      - reasoning
+      - reasoning_effort
+      - repetition_penalty
+      - response_format
+      - seed
+      - stop
+      - structured_outputs
+      - temperature
+      - tool_choice
+      - tools
+      - top_k
+      - top_logprobs
+      - top_p
+    input_modalities:
+      - text
+    output_modalities:
+      - text
+    fetched_at: 2026-07-29T10:37:52.029994952Z
+  huggingface:
+    id: deepseek-ai/DeepSeek-V4-Pro
+    revision: b5968e9190ef611bbf34a7229255be88a0e937c1
+    pipeline_tag: text-generation
+    model_type: deepseek_v4
+    architectures:
+      - DeepseekV4ForCausalLM
+    license: mit
+    tags:
+      - 8-bit
+      - arxiv:2606.19348
+      - conversational
+      - deepseek_v4
+      - endpoints_compatible
+      - eval-results
+      - fp8
+      - license:mit
+      - region:us
+      - safetensors
+      - text-generation
+      - transformers
+    config_context_length: 1048576
+    tokenizer_model_max_length: 1048576
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-07-29T10:37:53.824731621Z
+reasoning:
+  supported: true
+  default_effort: high
+  supported_efforts:
+    - high
+    - xhigh

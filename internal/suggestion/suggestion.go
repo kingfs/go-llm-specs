@@ -57,14 +57,15 @@ func (d Document) Validate() error {
 		if claim.Confidence != "high" && claim.Confidence != "medium" && claim.Confidence != "low" {
 			return fmt.Errorf("claim %d has invalid confidence %q", i, claim.Confidence)
 		}
-		if err := validateClaimType(claim); err != nil {
+		if err := ValidateClaim(claim); err != nil {
 			return fmt.Errorf("claim %d: %w", i, err)
 		}
 	}
 	return nil
 }
 
-func validateClaimType(claim Claim) error {
+// ValidateClaim validates the field-specific value type of one AI claim.
+func ValidateClaim(claim Claim) error {
 	switch claim.Field {
 	case "description", "reasoning.parser", "codex.shell_type", "codex.apply_patch_tool_type":
 		var value string

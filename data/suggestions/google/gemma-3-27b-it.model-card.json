@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "google/gemma-3-27b-it",
+  "status": "pending",
+  "created_at": "2026-07-29T11:25:13.003214086Z",
+  "source": {
+    "url": "https://huggingface.co/google/gemma-3-27b-it/resolve/005ad3404e59d6023443cb575daa05336842228a/README.md",
+    "revision": "005ad3404e59d6023443cb575daa05336842228a",
+    "sha256": "acf81ddfe967d5d6ccc78ecca503c4dcf254feda73f3c8cb56dc06a8b07deb79"
+  },
+  "generator": {
+    "model": "qwen3.6-27b",
+    "wire_api": "responses"
+  },
+  "claims": [
+    {
+      "field": "context_length",
+      "value": 131072,
+      "evidence": "Gemma 3 has a large, 128K context window",
+      "section": "Description",
+      "confidence": "high"
+    },
+    {
+      "field": "max_output",
+      "value": 8192,
+      "evidence": "Total output context of 8192 tokens",
+      "section": "Inputs and outputs",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "CapChat",
+        "ModalityTextIn",
+        "ModalityTextOut",
+        "ModalityImageIn"
+      ],
+      "evidence": "Gemma 3 models are multimodal, handling text and image input and generating text output",
+      "section": "Description",
+      "confidence": "high"
+    },
+    {
+      "field": "description",
+      "value": "Gemma is a family of lightweight, state-of-the-art open models from Google, built from the same research and technology used to create the Gemini models. Gemma 3 models are multimodal, handling text and image input and generating text output, with open weights for both pre-trained variants and instruction-tuned variants. Gemma 3 has a large, 128K context window, multilingual support in over 140 languages, and is available in more sizes than previous versions. Gemma 3 models are well-suited for a variety of text generation and image understanding tasks, including question answering, summarization, and reasoning.",
+      "evidence": "Gemma is a family of lightweight, state-of-the-art open models from Google, built from the same research and technology used to create the Gemini models.",
+      "section": "Description",
+      "confidence": "high"
+    },
+    {
+      "field": "reasoning.supported",
+      "value": true,
+      "evidence": "The 27B model was trained with 14 trillion tokens",
+      "section": "Training Dataset",
+      "confidence": "high"
+    }
+  ]
+}

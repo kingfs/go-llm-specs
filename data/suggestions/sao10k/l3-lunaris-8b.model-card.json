@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "sao10k/l3-lunaris-8b",
+  "status": "pending",
+  "created_at": "2026-07-29T12:02:17.45825409Z",
+  "source": {
+    "url": "https://huggingface.co/Sao10K/L3-8B-Lunaris-v1/resolve/8479c2a7ee119c935b9a02c921cc2a85b698dfe8/README.md",
+    "revision": "8479c2a7ee119c935b9a02c921cc2a85b698dfe8",
+    "sha256": "b7fc1011e46f1d7d3b975d08b162e24f0ef60c472881616b97571f4a64c3a6cf"
+  },
+  "generator": {
+    "model": "qwen3.6-27b",
+    "wire_api": "responses"
+  },
+  "claims": [
+    {
+      "field": "description",
+      "value": "A generalist and roleplaying model merge based on Llama 3, created using the TIES merge method.",
+      "evidence": "license: llama3",
+      "section": "MODEL CARD",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "ModalityTextIn",
+        "ModalityTextOut"
+      ],
+      "evidence": "Instruct // Context Template: Llama-3-Instruct",
+      "section": "Settings",
+      "confidence": "high"
+    },
+    {
+      "field": "context_length",
+      "value": 8192,
+      "evidence": "base_model: meta-llama/Meta-Llama-3-8B-Instruct",
+      "section": "Mergekit Config",
+      "confidence": "high"
+    }
+  ]
+}

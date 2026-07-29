@@ -1,3 +1,4 @@
+schema_version: 2
 id: deepseek/deepseek-v4-flash:free
 name: 'DeepSeek: DeepSeek V4 Flash (free)'
 provider: DeepSeek
@@ -10,3 +11,4 @@ features:
   - CapFunctionCall
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:37:51.608851537Z

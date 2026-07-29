@@ -1,3 +1,4 @@
+schema_version: 2
 id: perplexity/sonar-pro
 name: 'Perplexity: Sonar Pro'
 provider: Perplexity
@@ -13,3 +14,21 @@ features:
   - ModalityImageIn
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:41:55.070450274Z
+upstream:
+  openrouter:
+    canonical_slug: perplexity/sonar-pro
+    supported_parameters:
+      - frequency_penalty
+      - max_tokens
+      - presence_penalty
+      - temperature
+      - top_k
+      - top_p
+      - web_search_options
+    input_modalities:
+      - image
+      - text
+    output_modalities:
+      - text
+    fetched_at: 2026-07-29T10:41:55.070450714Z

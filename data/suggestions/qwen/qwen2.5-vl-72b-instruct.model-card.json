@@ -1,0 +1,129 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "qwen/qwen2.5-vl-72b-instruct",
+  "status": "pending",
+  "created_at": "2026-07-29T11:46:10.528932443Z",
+  "source": {
+    "url": "https://huggingface.co/Qwen/Qwen2.5-VL-72B-Instruct/resolve/89c86200743eec961a297729e7990e8f2ddbc4c5/README.md",
+    "revision": "89c86200743eec961a297729e7990e8f2ddbc4c5",
+    "sha256": "f8f80c7896da5915b79a93ec5af1eea53c82018bbb57f820fcbbe6e8f1dc30c6"
+  },
+  "generator": {
+    "model": "qwen3.6-27b",
+    "wire_api": "responses"
+  },
+  "claims": [
+    {
+      "field": "serving.vllm_args",
+      "value": null,
+      "evidence": "The code of Qwen2.5-VL has been in the latest Hugging face transformers",
+      "section": "Requirements",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "ModalityTextOut"
+      ],
+      "evidence": "Qwen2.5-VL is not only proficient in recognizing common objects",
+      "section": "Introduction",
+      "confidence": "medium"
+    },
+    {
+      "field": "description",
+      "value": "Qwen2.5-VL-72B-Instruct is a vision-language model with 72B parameters. It supports image understanding, long video comprehension (1 hour+), visual localization via bounding boxes and points, and structured output generation for documents like invoices and forms. It also demonstrates agent capabilities for computer and phone use.",
+      "evidence": "Qwen2.5-VL can comprehend videos of over 1 hour",
+      "section": "Introduction",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [],
+      "evidence": "Qwen2.5-VL directly plays as a visual agent that can reason and dynamically direct tools",
+      "section": "Introduction",
+      "confidence": "medium"
+    },
+    {
+      "field": "description",
+      "value": "Qwen2.5-VL-72B-Instruct is a vision-language model with 72B parameters. It supports image understanding, long video comprehension (1 hour+), visual localization via bounding boxes and points, and structured output generation for documents like invoices and forms. It also demonstrates agent capabilities for computer and phone use.",
+      "evidence": "pipeline_tag: image-text-to-text",
+      "section": "Introduction",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "ModalityTextIn",
+        "ModalityTextOut",
+        "ModalityImageIn",
+        "ModalityVideoIn"
+      ],
+      "evidence": "ModalityTextIn",
+      "section": "Introduction",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "ModalityTextIn",
+        "ModalityTextOut",
+        "ModalityImageIn",
+        "ModalityVideoIn"
+      ],
+      "evidence": "Qwen2.5-VL directly plays as a visual agent that can reason and dynamically direct tools, which is capable of computer use and phone use.",
+      "section": "Introduction",
+      "confidence": "medium"
+    },
+    {
+      "field": "description",
+      "value": "Qwen2.5-VL-72B-Instruct is a vision-language model with 72B parameters. It supports image understanding, long video comprehension (1 hour+), visual localization via bounding boxes and points, and structured output generation for documents like invoices and forms. It also demonstrates agent capabilities for computer and phone use.",
+      "evidence": "Qwen2.5-VL can comprehend videos of over 1 hour",
+      "section": "Introduction",
+      "confidence": "medium"
+    },
+    {
+      "field": "features",
+      "value": [
+        "ModalityTextIn",
+        "ModalityTextOut",
+        "ModalityImageIn",
+        "ModalityVideoIn"
+      ],
+      "evidence": "Qwen2.5-VL can accurately localize objects in an image by generating bounding boxes or points",
+      "section": "Introduction",
+      "confidence": "medium"
+    },
+    {
+      "field": "description",
+      "value": "Qwen2.5-VL-72B-Instruct is a vision-language model with 72B parameters. It supports image understanding, long video comprehension (1 hour+), visual localization via bounding boxes and points, and structured output generation for documents like invoices and forms. It also demonstrates agent capabilities for computer and phone use.",
+      "evidence": "We have three models with 3, 7 and 72 billion parameters. This repo contains the instruction-tuned 72B Qwen2.5-VL model.",
+      "section": "Introduction",
+      "confidence": "medium"
+    },
+    {
+      "field": "features",
+      "value": [
+        "ModalityTextIn",
+        "ModalityTextOut",
+        "ModalityImageIn",
+        "ModalityVideoIn"
+      ],
+      "evidence": "Qwen2.5-VL supports structured outputs of their contents",
+      "section": "Introduction",
+      "confidence": "medium"
+    },
+    {
+      "field": "features",
+      "value": [
+        "ModalityTextIn",
+        "ModalityTextOut",
+        "ModalityImageIn",
+        "ModalityVideoIn"
+      ],
+      "evidence": "Qwen2.5-VL can accurately localize objects in an image by generating bounding boxes or points, and it can provide stable JSON outputs for coordinates and attributes.",
+      "section": "Introduction",
+      "confidence": "high"
+    }
+  ]
+}

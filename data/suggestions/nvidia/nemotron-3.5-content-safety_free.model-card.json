@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "nvidia/nemotron-3.5-content-safety:free",
+  "status": "pending",
+  "created_at": "2026-07-29T11:40:16.037671547Z",
+  "source": {
+    "url": "https://huggingface.co/nvidia/Nemotron-3.5-Content-Safety/resolve/35645ed3543b7e7ffaed2e788699e57a5051497c/README.md",
+    "revision": "35645ed3543b7e7ffaed2e788699e57a5051497c",
+    "sha256": "bb756aa3cb989cbb8fbba9c34650678e16dfac36f0f4a76000fdb06067ee35c3"
+  },
+  "generator": {
+    "model": "qwen3.6-27b",
+    "wire_api": "responses"
+  },
+  "claims": [
+    {
+      "field": "description",
+      "value": "A small language model based on Gemma-3-4B-it, fine-tuned on multimodal content-safety datasets, that unifies multimodal moderation with custom-policy reasoning capabilities.",
+      "evidence": "a small language model (SLM) that uses Google's Gemma-3-4B-it as the base",
+      "section": "Model Overview",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "ModalityTextIn",
+        "ModalityImageIn",
+        "ModalityTextOut"
+      ],
+      "evidence": "Input Type(s): Text, Image",
+      "section": "Input",
+      "confidence": "high"
+    },
+    {
+      "field": "reasoning.supported",
+      "value": true,
+      "evidence": "In custom policy mode, it can produce a concise reasoning trace before the final classification.",
+      "section": "Model Overview",
+      "confidence": "high"
+    },
+    {
+      "field": "reasoning.parser",
+      "value": "Text",
+      "evidence": "Input Type(s): Text, Image",
+      "section": "Input",
+      "confidence": "high"
+    }
+  ]
+}

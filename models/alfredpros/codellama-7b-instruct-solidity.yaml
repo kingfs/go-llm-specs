@@ -1,3 +1,4 @@
+schema_version: 2
 id: alfredpros/codellama-7b-instruct-solidity
 name: 'AlfredPros: CodeLLaMa 7B Instruct Solidity'
 provider: Alfredpros
@@ -9,3 +10,32 @@ features:
   - CapChat
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:36:16.162529153Z
+upstream:
+  huggingface:
+    id: AlfredPros/CodeLlama-7b-Instruct-Solidity
+    revision: 7733923287d809bc8394e3b706b788900ee79285
+    pipeline_tag: text-generation
+    model_type: llama
+    architectures:
+      - LlamaForCausalLM
+    tags:
+      - blockchain
+      - code
+      - dataset:AlfredPros/smart-contracts-instructions
+      - en
+      - endpoints_compatible
+      - license:llama2
+      - llama
+      - pytorch
+      - region:us
+      - smart contract
+      - solidity
+      - text-generation
+      - text-generation-inference
+      - transformers
+    config_context_length: 16384
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-07-29T10:36:18.19278255Z

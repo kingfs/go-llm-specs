@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "moonshotai/kimi-k2.5",
+  "status": "pending",
+  "created_at": "2026-07-29T11:34:58.69060492Z",
+  "source": {
+    "url": "https://huggingface.co/moonshotai/Kimi-K2.5/resolve/4d01dfe0332d63057c186e0b262165819efb6611/README.md",
+    "revision": "4d01dfe0332d63057c186e0b262165819efb6611",
+    "sha256": "d4c5bb7e1179bf0a12ea440fea2e65792c0b6bc4da5d87c509a72882d5ebe5fc"
+  },
+  "generator": {
+    "model": "qwen3.6-27b",
+    "wire_api": "responses"
+  },
+  "claims": [
+    {
+      "field": "description",
+      "value": "Kimi K2.5 is an open-source MoE model with 1T total parameters, 32B activated, 61 layers, 384 experts (8 selected + 1 shared), 160K vocab, and MoonViT vision encoder (400M params).",
+      "evidence": "Mixture-of-Experts (MoE)",
+      "section": "2. Model Summary",
+      "confidence": "high"
+    },
+    {
+      "field": "context_length",
+      "value": 262144,
+      "evidence": "Context Length | 256K",
+      "section": "2. Model Summary",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "CapChat",
+        "ModalityTextIn",
+        "ModalityTextOut",
+        "ModalityImageIn"
+      ],
+      "evidence": "pipeline_tag: image-text-to-text",
+      "section": "MODEL CARD",
+      "confidence": "high"
+    }
+  ]
+}

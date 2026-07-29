@@ -1,3 +1,4 @@
+schema_version: 2
 id: openai/gpt-5.5-pro
 name: 'OpenAI: GPT-5.5 Pro'
 provider: OpenAI
@@ -13,3 +14,33 @@ features:
   - ModalityImageIn
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:41:26.529955734Z
+upstream:
+  openrouter:
+    canonical_slug: openai/gpt-5.5-pro-20260423
+    supported_parameters:
+      - include_reasoning
+      - max_tokens
+      - reasoning
+      - reasoning_effort
+      - response_format
+      - seed
+      - structured_outputs
+      - tool_choice
+      - tools
+    input_modalities:
+      - file
+      - image
+      - text
+    output_modalities:
+      - text
+    knowledge_cutoff: "2025-12-01"
+    fetched_at: 2026-07-29T10:41:26.529956094Z
+reasoning:
+  supported: true
+  mandatory: true
+  default_effort: medium
+  supported_efforts:
+    - high
+    - medium
+    - xhigh

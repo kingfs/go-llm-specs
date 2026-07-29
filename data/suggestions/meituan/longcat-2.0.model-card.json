@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "meituan/longcat-2.0",
+  "status": "pending",
+  "created_at": "2026-07-29T11:27:56.984262041Z",
+  "source": {
+    "url": "https://huggingface.co/meituan-longcat/LongCat-2.0/resolve/834bf5ffe3047aa9f6cc7a64a9bc068b146b8274/README.md",
+    "revision": "834bf5ffe3047aa9f6cc7a64a9bc068b146b8274",
+    "sha256": "c0ae3a6a065cf9f74a112f64ee53ed3b341772d03c35ff909ec522b954c71b32"
+  },
+  "generator": {
+    "model": "qwen3.6-27b",
+    "wire_api": "responses"
+  },
+  "claims": [
+    {
+      "field": "features",
+      "value": [
+        "ModalityTextIn",
+        "ModalityTextOut"
+      ],
+      "evidence": "a large-scale MoE language model with 1.6 trillion total parameters",
+      "section": "## Model Introduction",
+      "confidence": "high"
+    },
+    {
+      "field": "context_length",
+      "value": 1048576,
+      "evidence": "train LongCat-2.0 on hundreds of billions of tokens of 1M-context data",
+      "section": "## Model Introduction",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "ModalityTextOut"
+      ],
+      "evidence": "pipeline_tag: text-generation",
+      "section": "---",
+      "confidence": "high"
+    }
+  ]
+}

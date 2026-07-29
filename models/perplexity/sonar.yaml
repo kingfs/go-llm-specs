@@ -1,3 +1,4 @@
+schema_version: 2
 id: perplexity/sonar
 name: 'Perplexity: Sonar'
 provider: Perplexity
@@ -9,3 +10,21 @@ features:
   - ModalityImageIn
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:41:54.211812862Z
+upstream:
+  openrouter:
+    canonical_slug: perplexity/sonar
+    supported_parameters:
+      - frequency_penalty
+      - max_tokens
+      - presence_penalty
+      - temperature
+      - top_k
+      - top_p
+      - web_search_options
+    input_modalities:
+      - image
+      - text
+    output_modalities:
+      - text
+    fetched_at: 2026-07-29T10:41:54.211813322Z

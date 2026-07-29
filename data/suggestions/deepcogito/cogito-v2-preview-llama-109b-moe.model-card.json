@@ -1,0 +1,103 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "deepcogito/cogito-v2-preview-llama-109b-moe",
+  "status": "pending",
+  "created_at": "2026-07-29T11:20:52.657499771Z",
+  "source": {
+    "url": "https://huggingface.co/deepcogito/cogito-v2-preview-llama-109B-MoE/resolve/b9b1d0a6028f514c21375056ceebef73d5288d50/README.md",
+    "revision": "b9b1d0a6028f514c21375056ceebef73d5288d50",
+    "sha256": "94d1a7d384a5ec6cfd02ab21b65fea79d83d692b02e34370529344d80def1d41"
+  },
+  "generator": {
+    "model": "qwen3.6-27b",
+    "wire_api": "responses"
+  },
+  "claims": [
+    {
+      "field": "description",
+      "value": "Cogito v2 hybrid reasoning LLMs with instruction tuning for coding, STEM, and multilingual tasks. They use Iterated Distillation and Amplification (IDA) alignment and support extended thinking (reasoning) and standard modes.",
+      "evidence": "Cogito v2 models are hybrid reasoning models. Each model can answer directly (standard LLM), or self-reflect before answering (like reasoning models).",
+      "section": "# Cogito v2 preview - 109B MoE",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "CapChat",
+        "CapFunctionCall",
+        "ModalityTextIn",
+        "ModalityTextOut"
+      ],
+      "evidence": "The models have been optimized for coding, STEM, instruction following and general helpfulness, and have significantly higher multilingual, coding and tool calling capabilities than size equivalent counterparts.",
+      "section": "# Cogito v2 preview - 109B MoE",
+      "confidence": "high"
+    },
+    {
+      "field": "reasoning.supported",
+      "value": true,
+      "evidence": "To enable thinking, you can do any one of the two methods:\n  - Set `enable_thinking=True` while applying the chat template.\n  - Add a specific system prompt, along with prefilling the response with \"\u003cthink\u003e\\n\".",
+      "section": "## Implementing extended thinking",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "CapChat",
+        "CapFunctionCall",
+        "ModalityTextIn",
+        "ModalityTextOut"
+      ],
+      "evidence": "Cogito models support tool calling (single, parallel, multiple and parallel_multiple) both in standard and extended thinking mode.",
+      "section": "# Tool Calling",
+      "confidence": "high"
+    },
+    {
+      "field": "context_length",
+      "value": 10000000,
+      "evidence": "This model is trained in over 30 languages and supports long contexts (upto 10M tokens).",
+      "section": "# Cogito v2 preview - 109B MoE",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "CapChat",
+        "CapFunctionCall",
+        "ModalityTextIn",
+        "ModalityTextOut"
+      ],
+      "evidence": "Cogito models support tool calling (single, parallel, multiple and parallel_multiple) both in standard and extended thinking mode.",
+      "section": "# Tool Calling",
+      "confidence": "medium"
+    },
+    {
+      "field": "description",
+      "value": "Cogito v2 hybrid reasoning LLMs with instruction tuning for coding, STEM, and multilingual tasks. They use Iterated Distillation and Amplification (IDA) alignment and support extended thinking (reasoning) and standard modes.",
+      "evidence": "model_id = \"deepcogito/cogito-v2-preview-llama-109B-MoE\"",
+      "section": "# Cogito v2 preview - 109B MoE",
+      "confidence": "medium"
+    },
+    {
+      "field": "description",
+      "value": "Cogito v2 hybrid reasoning LLMs with instruction tuning for coding, STEM, and multilingual tasks. They use Iterated Distillation and Amplification (IDA) alignment and support extended thinking (reasoning) and standard modes.",
+      "evidence": "The Cogito v2 LLMs are instruction tuned generative models. All models are released under an open license for commercial use.",
+      "section": "# Cogito v2 preview - 109B MoE",
+      "confidence": "medium"
+    },
+    {
+      "field": "description",
+      "value": "Cogito v2 hybrid reasoning LLMs with instruction tuning for coding, STEM, and multilingual tasks. They use Iterated Distillation and Amplification (IDA) alignment and support extended thinking (reasoning) and standard modes.",
+      "evidence": "base_model: - meta-llama/Llama-4-Scout-17B-16E",
+      "section": "# Cogito v2 preview - 109B MoE",
+      "confidence": "medium"
+    },
+    {
+      "field": "description",
+      "value": "Cogito v2 hybrid reasoning LLMs with instruction tuning for coding, STEM, and multilingual tasks. They use Iterated Distillation and Amplification (IDA) alignment and support extended thinking (reasoning) and standard modes.",
+      "evidence": "The LLMs are trained using **Iterated Distillation and Amplification (IDA)** - an scalable and efficient alignment strategy for superintelligence using iterative self-improvement.",
+      "section": "# Cogito v2 preview - 109B MoE",
+      "confidence": "low"
+    }
+  ]
+}

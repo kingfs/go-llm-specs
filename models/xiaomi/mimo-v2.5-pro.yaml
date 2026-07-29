@@ -1,3 +1,4 @@
+schema_version: 2
 id: xiaomi/mimo-v2.5-pro
 name: 'Xiaomi: MiMo-V2.5-Pro'
 provider: Xiaomi
@@ -11,3 +12,66 @@ features:
   - CapJsonMode
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:44:56.33820643Z
+upstream:
+  openrouter:
+    canonical_slug: xiaomi/mimo-v2.5-pro-20260422
+    huggingface_id: XiaomiMiMo/MiMo-V2.5-Pro
+    supported_parameters:
+      - frequency_penalty
+      - include_reasoning
+      - logit_bias
+      - logprobs
+      - max_tokens
+      - min_p
+      - presence_penalty
+      - reasoning
+      - repetition_penalty
+      - response_format
+      - seed
+      - stop
+      - structured_outputs
+      - temperature
+      - tool_choice
+      - tools
+      - top_k
+      - top_logprobs
+      - top_p
+    input_modalities:
+      - text
+    output_modalities:
+      - text
+    fetched_at: 2026-07-29T10:44:56.33820676Z
+  huggingface:
+    id: XiaomiMiMo/MiMo-V2.5-Pro
+    revision: 21d1ecfecd7bd70f31be25ca49d7edd21f003659
+    pipeline_tag: text-generation
+    model_type: mimo_v2
+    architectures:
+      - MiMoV2ForCausalLM
+    license: mit
+    tags:
+      - agent
+      - code
+      - conversational
+      - custom_code
+      - en
+      - eval-results
+      - fp8
+      - license:mit
+      - long-context
+      - mimo_v2
+      - region:us
+      - safetensors
+      - text-generation
+      - transformers
+      - zh
+    config_context_length: 1048576
+    tokenizer_model_max_length: 131272
+    chat_template_sha256: ff00a8f1b8a6734bbbca6b00e401866f7a13ce6de102c04043a4c0d4e1691372
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-07-29T10:44:58.277356206Z
+reasoning:
+  supported: true

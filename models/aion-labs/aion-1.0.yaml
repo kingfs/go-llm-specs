@@ -1,3 +1,4 @@
+schema_version: 2
 id: aion-labs/aion-1.0
 name: 'AionLabs: Aion-1.0'
 provider: Aion-Labs
@@ -9,3 +10,4 @@ features:
   - CapChat
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:36:11.986238927Z

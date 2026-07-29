@@ -1,3 +1,4 @@
+schema_version: 2
 id: eleutherai/llemma_7b
 name: 'EleutherAI: Llemma 7b'
 provider: Eleutherai
@@ -10,3 +11,33 @@ features:
   - CapFunctionCall
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:37:53.925741074Z
+upstream:
+  huggingface:
+    id: EleutherAI/llemma_7b
+    revision: e223eee41c53449e6ea6548c9b71c50865e4a85c
+    pipeline_tag: text-generation
+    model_type: llama
+    architectures:
+      - LlamaForCausalLM
+    tags:
+      - arxiv:2310.10631
+      - dataset:EleutherAI/proof-pile-2
+      - dataset:open-web-math/open-web-math
+      - en
+      - endpoints_compatible
+      - eval-results
+      - license:llama2
+      - llama
+      - math
+      - pytorch
+      - reasoning
+      - region:us
+      - text-generation
+      - text-generation-inference
+      - transformers
+    config_context_length: 4096
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-07-29T10:37:56.023107098Z
