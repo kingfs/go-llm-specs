@@ -20,7 +20,7 @@ When a Go product supports multiple LLM providers, the same problems tend to sho
 
 ## What You Get
 
-- Static registry: currently 800+ models, synchronized and generated into `models_gen.go`.
+- Static registry: hundreds of models, synchronized and generated into `models_gen.go`.
 - Unified model cards: ID, name, provider, family, series, summary, tags, context length, max output, and capabilities.
 - Alias resolution: lookup by model ID or alias, with case-insensitive alias matching.
 - Capability filters: query Vision, Tool Use, JSON mode, Embedding, Rerank, and other model capabilities with Go constants.
@@ -179,6 +179,8 @@ task translator
 task cardextract -- -model qwen/qwen3.6-27b -ai-model <local-model>
 task suggestion -- list
 task codexsuggest -- -model qwen/qwen3.6-27b
+task codexsuggest -- -allowlist codex-models.yaml -report .cache/codex-selection.json
+task codexsuggest -- -since 180d -serving-provider openrouter -report .cache/codex-recent.json
 task enrich
 task codexgen
 task modelprobe -- -base-url http://localhost:8000/v1 -model qwen3.6-27b -server vllm
@@ -189,6 +191,53 @@ task sync
 When changing model metadata, edit `models/**/*.yaml` and regenerate instead of hand-editing `models_gen.go`. See [docs/DEVELOPMENT.md](./docs/DEVELOPMENT.md) for maintainer details and [AGENTS.md](./AGENTS.md) for AI collaboration notes.
 
 Newly discovered or explicitly selected models can use schema v2 to store source-attributed OpenRouter, Hugging Face, reasoning, and Codex metadata. Historical records without a schema version remain v1 and are not bulk-migrated. Run `task enrich -- -model <provider/model>` for explicit enrichment and `task codexgen` to export records with `codex.enabled: true` to the standalone `dist/codex/third-party-models.json`. See the [Codex metadata pipeline](./docs/CODEX_METADATA_PIPELINE.md) for the complete trust model and deployment-probe boundaries.
+
+## Codex third-party model catalog
+
+The v0.6.0 `third-party-models.json` contains only `qwen3.6-27b` because the generator publishes only reviewed records with explicit `codex.enabled: true`. Codex can load this file. When the configured model exactly matches its `slug`, Codex no longer uses fallback metadata and the corresponding warning is eliminated:
+
+```bash
+gh release download v0.6.0 --pattern 'third-party-models.json*'
+```
+
+```toml
+# ~/.codex/config.toml
+model_catalog_json = "/absolute/path/to/third-party-models.json"
+```
+
+`model_catalog_json` replaces the bundled Codex catalog; it does not append to it. To retain bundled models, export them with the same Codex version and merge locally:
+
+```bash
+codex debug models --bundled > bundled-models.json
+task codexgen -- -bundled-catalog bundled-models.json -output merged-models.json
+```
+
+For a reviewed deployment set, create an allowlist whose slugs exactly match the API model names:
+
+```yaml
+models:
+  - id: qwen/qwen3.6-27b
+    slugs: [qwen3.6-27b]
+  - id: deepseek/deepseek-v3.2
+    slugs: [deepseek-v3.2]
+```
+
+```bash
+task codexsuggest -- -allowlist codex-models.yaml -report .cache/codex-selection.json
+task suggestion -- list
+task suggestion -- -fields codex.enabled,codex.slugs,codex.shell_type,codex.apply_patch_tool_type,codex.supports_parallel_tool_calls,codex.input_modalities apply data/suggestions/<provider>/<model>.codex.json
+task codexgen
+task codexcheck
+```
+
+OpenRouter users can select candidates by their actual upstream creation time:
+
+```bash
+task codexsuggest -- -since 180d -serving-provider openrouter \
+  -report .cache/codex-recent.json
+```
+
+“Recent” only selects candidates. Records that are not schema v2 chat/tool models with text input/output and a positive context window are listed as skipped. For vLLM, SGLang, or another provider, do not assume the OpenRouter ID is the serving slug; convert the candidates into an explicit allowlist first. After review and apply, `task codexgen` packages every eligible enabled model into one catalog. Exporting the entire registry is unsafe because it also contains embedding, reranking, audio, and records whose serving names or tool policies are not confirmed.
 
 ## License
 
