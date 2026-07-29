@@ -4,6 +4,8 @@ import (
 	"context"
 	"net/http"
 	"net/http/httptest"
+	"path/filepath"
+	"strings"
 	"sync/atomic"
 	"testing"
 	"time"
@@ -120,5 +122,32 @@ func TestRetryHonorsTransientFailure(t *testing.T) {
 	hf, err := fetchHF(context.Background(), server.Client(), retryPolicy{Attempts: 2}, server.URL, "Qwen/Test")
 	if err != nil || hf == nil || calls.Load() != 2 {
 		t.Fatalf("retry failed: model=%#v calls=%d err=%v", hf, calls.Load(), err)
+	}
+}
+
+func TestEnrichHFRepositoryUsesPinnedRevision(t *testing.T) {
+	server := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		if !strings.Contains(r.URL.Path, "/resolve/abc123/") {
+			t.Fatalf("repository file was not pinned to revision: %s", r.URL.Path)
+		}
+		switch filepath.Base(r.URL.Path) {
+		case "config.json":
+			_, _ = w.Write([]byte(`{"model_type":"qwen","architectures":["QwenModel"],"max_position_embeddings":32768}`))
+		case "tokenizer_config.json":
+			_, _ = w.Write([]byte(`{"model_max_length":16384,"chat_template":"template"}`))
+		case "preprocessor_config.json":
+			_, _ = w.Write([]byte(`{"processor_class":"QwenProcessor"}`))
+		}
+	}))
+	defer server.Close()
+	model := hfModel{ID: "Qwen/Test", SHA: "abc123"}
+	if err := enrichHFRepository(context.Background(), server.Client(), retryPolicy{Attempts: 1}, server.URL+"/api", &model); err != nil {
+		t.Fatal(err)
+	}
+	if model.Repository.ConfigContextLength != 32768 || model.Repository.TokenizerModelMaxLength != 16384 || model.Repository.ProcessorClass != "QwenProcessor" {
+		t.Fatalf("repository metadata missing: %#v", model.Repository)
+	}
+	if model.Repository.ChatTemplateSHA256 == "" || len(model.Repository.Files) != 3 {
+		t.Fatalf("repository evidence missing: %#v", model.Repository)
 	}
 }

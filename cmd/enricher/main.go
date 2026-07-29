@@ -2,6 +2,7 @@ package main
 
 import (
 	"context"
+	"crypto/sha256"
 	"encoding/json"
 	"errors"
 	"flag"
@@ -70,10 +71,20 @@ type openRouterReasoning struct {
 
 type hfModel struct {
 	ID          string         `json:"id"`
+	SHA         string         `json:"sha"`
 	PipelineTag string         `json:"pipeline_tag"`
 	Tags        []string       `json:"tags"`
 	Config      hfConfig       `json:"config"`
 	CardData    map[string]any `json:"cardData"`
+	Repository  hfRepository
+}
+
+type hfRepository struct {
+	ConfigContextLength     int
+	TokenizerModelMaxLength int
+	ProcessorClass          string
+	ChatTemplateSHA256      string
+	Files                   []string
 }
 
 type hfConfig struct {
@@ -190,6 +201,10 @@ func run(ctx context.Context, cfg config) error {
 				needsReview++
 				log.Printf("%s: ambiguous Hugging Face match; review required", model.ID)
 			} else if hf != nil {
+				if err := enrichHFRepository(ctx, hfClient, retry, cfg.HuggingFaceAPI, hf); err != nil {
+					failures[model.ID] = err.Error()
+					log.Printf("%s: Hugging Face repository enrichment failed: %v", model.ID, err)
+				}
 				modelChanged = enrichHuggingFace(model, *hf, time.Now().UTC()) || modelChanged
 			}
 		}
@@ -349,25 +364,133 @@ func fetchHF(ctx context.Context, client *http.Client, retry retryPolicy, base, 
 	return &model, nil
 }
 
+func enrichHFRepository(ctx context.Context, client *http.Client, retry retryPolicy, apiBase string, model *hfModel) error {
+	if model.ID == "" {
+		return errors.New("Hugging Face model ID is empty")
+	}
+	revision := model.SHA
+	if revision == "" {
+		revision = "main"
+	}
+	rawBase := strings.TrimSuffix(strings.TrimRight(apiBase, "/"), "/api")
+	for _, name := range []string{"config.json", "tokenizer_config.json", "preprocessor_config.json"} {
+		target := rawBase + "/" + model.ID + "/resolve/" + url.PathEscape(revision) + "/" + name
+		req, err := http.NewRequestWithContext(ctx, http.MethodGet, target, nil)
+		if err != nil {
+			return err
+		}
+		resp, err := doWithRetry(ctx, client, retry, req)
+		if err != nil {
+			return err
+		}
+		if resp.StatusCode == http.StatusNotFound {
+			_ = resp.Body.Close()
+			continue
+		}
+		if resp.StatusCode != http.StatusOK {
+			_ = resp.Body.Close()
+			return fmt.Errorf("Hugging Face %s returned %s", name, resp.Status)
+		}
+		var document map[string]any
+		err = json.NewDecoder(resp.Body).Decode(&document)
+		_ = resp.Body.Close()
+		if err != nil {
+			return fmt.Errorf("decode Hugging Face %s: %w", name, err)
+		}
+		model.Repository.Files = append(model.Repository.Files, name)
+		switch name {
+		case "config.json":
+			model.Repository.ConfigContextLength = firstPositiveInt(document, "max_position_embeddings", "seq_length", "model_max_length")
+			if model.Config.ModelType == "" {
+				model.Config.ModelType, _ = document["model_type"].(string)
+			}
+			if len(model.Config.Architectures) == 0 {
+				model.Config.Architectures = stringSlice(document["architectures"])
+			}
+		case "tokenizer_config.json":
+			model.Repository.TokenizerModelMaxLength = firstPositiveInt(document, "model_max_length")
+			if template, ok := document["chat_template"]; ok {
+				canonical, _ := json.Marshal(template)
+				digest := sha256.Sum256(canonical)
+				model.Repository.ChatTemplateSHA256 = fmt.Sprintf("%x", digest)
+			}
+		case "preprocessor_config.json":
+			for _, key := range []string{"processor_class", "image_processor_type", "feature_extractor_type"} {
+				if value, ok := document[key].(string); ok && value != "" {
+					model.Repository.ProcessorClass = value
+					break
+				}
+			}
+		}
+	}
+	return nil
+}
+
+func firstPositiveInt(document map[string]any, keys ...string) int {
+	for _, key := range keys {
+		if value, ok := document[key].(float64); ok && value > 0 && value <= float64(^uint(0)>>1) {
+			return int(value)
+		}
+	}
+	return 0
+}
+
+func stringSlice(value any) []string {
+	items, _ := value.([]any)
+	result := make([]string, 0, len(items))
+	for _, item := range items {
+		if text, ok := item.(string); ok {
+			result = append(result, text)
+		}
+	}
+	return result
+}
+
 func enrichHuggingFace(model *registry.Model, hf hfModel, fetchedAt time.Time) bool {
 	license, _ := hf.CardData["license"].(string)
 	before, _ := json.Marshal(model.Upstream.HuggingFace)
 	var extra map[string]any
+	var previous registry.HuggingFaceMetadata
 	if model.Upstream.HuggingFace != nil {
 		extra = model.Upstream.HuggingFace.Extra
+		previous = *model.Upstream.HuggingFace
+	}
+	structuredFiles := hf.Repository.Files
+	if len(structuredFiles) == 0 {
+		structuredFiles = previous.StructuredFiles
 	}
 	model.Upstream.HuggingFace = &registry.HuggingFaceMetadata{
-		ID:            hf.ID,
-		PipelineTag:   hf.PipelineTag,
-		ModelType:     hf.Config.ModelType,
-		Architectures: sortedUnique(hf.Config.Architectures),
-		License:       license,
-		Tags:          sortedUnique(hf.Tags),
-		FetchedAt:     &fetchedAt,
-		Extra:         extra,
+		ID:                      hf.ID,
+		Revision:                firstString(hf.SHA, previous.Revision),
+		PipelineTag:             hf.PipelineTag,
+		ModelType:               hf.Config.ModelType,
+		Architectures:           sortedUnique(hf.Config.Architectures),
+		License:                 license,
+		Tags:                    sortedUnique(hf.Tags),
+		ConfigContextLength:     firstInt(hf.Repository.ConfigContextLength, previous.ConfigContextLength),
+		TokenizerModelMaxLength: firstInt(hf.Repository.TokenizerModelMaxLength, previous.TokenizerModelMaxLength),
+		ProcessorClass:          firstString(hf.Repository.ProcessorClass, previous.ProcessorClass),
+		ChatTemplateSHA256:      firstString(hf.Repository.ChatTemplateSHA256, previous.ChatTemplateSHA256),
+		StructuredFiles:         sortedUnique(structuredFiles),
+		FetchedAt:               &fetchedAt,
+		Extra:                   extra,
 	}
 	after, _ := json.Marshal(model.Upstream.HuggingFace)
 	return !stringEqualIgnoringFetchedAt(before, after)
+}
+
+func firstString(value, fallback string) string {
+	if value != "" {
+		return value
+	}
+	return fallback
+}
+
+func firstInt(value, fallback int) int {
+	if value != 0 {
+		return value
+	}
+	return fallback
 }
 
 func modelSuffix(id string) string {

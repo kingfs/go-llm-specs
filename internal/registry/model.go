@@ -52,14 +52,20 @@ type OpenRouterMetadata struct {
 }
 
 type HuggingFaceMetadata struct {
-	ID            string         `yaml:"id" json:"id"`
-	PipelineTag   string         `yaml:"pipeline_tag,omitempty" json:"pipeline_tag,omitempty"`
-	ModelType     string         `yaml:"model_type,omitempty" json:"model_type,omitempty"`
-	Architectures []string       `yaml:"architectures,omitempty" json:"architectures,omitempty"`
-	License       string         `yaml:"license,omitempty" json:"license,omitempty"`
-	Tags          []string       `yaml:"tags,omitempty" json:"tags,omitempty"`
-	FetchedAt     *time.Time     `yaml:"fetched_at,omitempty" json:"fetched_at,omitempty"`
-	Extra         map[string]any `yaml:",inline" json:"-"`
+	ID                      string         `yaml:"id" json:"id"`
+	Revision                string         `yaml:"revision,omitempty" json:"revision,omitempty"`
+	PipelineTag             string         `yaml:"pipeline_tag,omitempty" json:"pipeline_tag,omitempty"`
+	ModelType               string         `yaml:"model_type,omitempty" json:"model_type,omitempty"`
+	Architectures           []string       `yaml:"architectures,omitempty" json:"architectures,omitempty"`
+	License                 string         `yaml:"license,omitempty" json:"license,omitempty"`
+	Tags                    []string       `yaml:"tags,omitempty" json:"tags,omitempty"`
+	ConfigContextLength     int            `yaml:"config_context_length,omitempty" json:"config_context_length,omitempty"`
+	TokenizerModelMaxLength int            `yaml:"tokenizer_model_max_length,omitempty" json:"tokenizer_model_max_length,omitempty"`
+	ProcessorClass          string         `yaml:"processor_class,omitempty" json:"processor_class,omitempty"`
+	ChatTemplateSHA256      string         `yaml:"chat_template_sha256,omitempty" json:"chat_template_sha256,omitempty"`
+	StructuredFiles         []string       `yaml:"structured_files,omitempty" json:"structured_files,omitempty"`
+	FetchedAt               *time.Time     `yaml:"fetched_at,omitempty" json:"fetched_at,omitempty"`
+	Extra                   map[string]any `yaml:",inline" json:"-"`
 }
 
 type ReasoningMetadata struct {

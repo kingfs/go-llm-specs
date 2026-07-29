@@ -51,10 +51,16 @@ upstream:
     fetched_at: 2026-07-29T02:00:00Z
   huggingface:
     id: Qwen/Qwen3.6-27B
+    revision: <immutable repository SHA>
     pipeline_tag: image-text-to-text
     model_type: qwen3_5
     architectures: [Qwen3_5ForConditionalGeneration]
     license: apache-2.0
+    config_context_length: 262144
+    tokenizer_model_max_length: 262144
+    processor_class: Qwen3_5Processor
+    chat_template_sha256: <digest>
+    structured_files: [config.json, preprocessor_config.json, tokenizer_config.json]
     fetched_at: 2026-07-29T02:00:00Z
 
 reasoning:
@@ -103,7 +109,8 @@ Every enrichment result records its source and fetch time. Model facts and deplo
 `cmd/enricher` enriches new or explicitly selected records. Initial adapters are:
 
 - OpenRouter structured fields already present in `data/models.json`.
-- Hugging Face Hub API and structured repository metadata.
+- Hugging Face Hub API plus `config.json`, `tokenizer_config.json`, and
+  `preprocessor_config.json` fetched at the API-reported immutable revision.
 
 Selection flags include `-new-only`, `-model`, `-provider`, `-source`, and `-dry-run`. Ambiguous Hugging Face matches are reported rather than written.
 
