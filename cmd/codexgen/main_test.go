@@ -72,7 +72,7 @@ func TestDefaultPolicyIncludesOpenWeightFamily(t *testing.T) {
 	model.Upstream.HuggingFace = &registry.HuggingFaceMetadata{ID: "Qwen/Qwen3.6-27B"}
 	policy := defaultPolicy{SchemaVersion: 1, Families: []policyFamily{{
 		Name: "qwen", IDPattern: `^qwen/qwen3\.[5-9].*`, RequireHuggingFace: true,
-		SlugStrategies: []string{"huggingface_id", "registry_id", "model_suffix"},
+		SlugStrategies: []string{"model_suffix"},
 	}}}
 	models, err := applyDefaultPolicy([]registry.Model{model}, policy)
 	if err != nil {
@@ -81,9 +81,21 @@ func TestDefaultPolicyIncludesOpenWeightFamily(t *testing.T) {
 	if models[0].Codex == nil || !models[0].Codex.Enabled {
 		t.Fatal("matching model was not enabled")
 	}
-	want := []string{"Qwen/Qwen3.6-27B", "qwen3.6-27b"}
+	want := []string{"qwen3.6-27b"}
 	if strings.Join(models[0].Codex.Slugs, ",") != strings.Join(want, ",") {
 		t.Fatalf("slugs = %#v", models[0].Codex.Slugs)
+	}
+}
+
+func TestModelSuffixPolicySlugIsLowercaseAndVendorFree(t *testing.T) {
+	model := codexReadyModel()
+	model.ID = "DeepSeek/DeepSeek-V3.1"
+	slugs, err := policySlugs(model, []string{"model_suffix"})
+	if err != nil {
+		t.Fatal(err)
+	}
+	if len(slugs) != 1 || slugs[0] != "deepseek-v3.1" {
+		t.Fatalf("slugs = %#v", slugs)
 	}
 }
 

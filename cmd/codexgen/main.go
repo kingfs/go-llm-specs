@@ -251,6 +251,7 @@ func policySlugs(model registry.Model, strategies []string) ([]string, error) {
 			slug = model.ID
 		case "model_suffix":
 			_, slug, _ = strings.Cut(model.ID, "/")
+			slug = strings.ToLower(slug)
 		case "huggingface_id":
 			if model.Upstream.HuggingFace != nil {
 				slug = model.Upstream.HuggingFace.ID

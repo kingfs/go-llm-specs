@@ -243,7 +243,7 @@ task codexsuggest -- -since 180d -serving-provider openrouter \
 
 这里的“最近”只负责筛选候选；非 schema v2、非 chat/tool、缺少文本输入输出或上下文信息的记录会写入 skipped 报告。对于 vLLM/SGLang 或其他供应商，不应假定 OpenRouter ID 就是 serving slug，请先把候选整理成上述显式清单。审核并 apply 后，下一次 `task codexgen` 会把所有合格且已启用的模型打包到同一个目录。不能直接把注册表中的全部模型导出，因为其中还包括 embedding、rerank、音频模型以及未确认服务名/工具策略的记录。
 
-Release catalog 还通过 [`data/codex/default-open-models.yaml`](./data/codex/default-open-models.yaml) 默认收录以下开放权重家族：Qwen 3.5 及以后、DeepSeek V3/R1 及以后、GLM-5 及以后、Kimi K2.7 及以后。只有具备 Hugging Face 来源且通过上述静态能力检查的型号才会进入；API 专有型号、路由别名及非 agent 模型不会仅凭名称被收录。每日同步发现符合 policy 的新模型后，`task codexgen` 会自动补充 catalog，显式 `codex.enabled: false` 仍可覆盖默认规则。
+Release catalog 还通过 [`data/codex/default-open-models.yaml`](./data/codex/default-open-models.yaml) 默认收录以下开放权重家族：Qwen 3.5 及以后、DeepSeek V3/R1 及以后、GLM-5 及以后、Kimi K2.7 及以后。只有具备 Hugging Face 来源且通过上述静态能力检查的型号才会进入；API 专有型号、路由别名及非 agent 模型不会仅凭名称被收录。默认 slug 统一为小写、无 vendor 前缀的模型短名，例如 `deepseek-v3.1`。每日同步发现符合 policy 的新模型后，`task codexgen` 会自动补充 catalog，显式 `codex.enabled: false` 仍可覆盖默认规则。
 
 ## 许可证
 

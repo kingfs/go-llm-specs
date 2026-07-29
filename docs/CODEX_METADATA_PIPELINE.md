@@ -128,7 +128,7 @@ It supports:
 
 The Codex schema version is pinned in project code and documented in the manifest. `used_fallback_model_metadata` is never emitted.
 
-By default, the generator also reads `data/codex/default-open-models.yaml`. This declarative policy currently selects open-weight Qwen 3.5+, DeepSeek V3/R1+, GLM-5+, and Kimi K2.7+ records. Policy selection requires Hugging Face metadata and the same schema/chat/tool/text/context checks as explicit exports. It derives common Hugging Face, registry, and short serving IDs, deduplicates case-insensitively, and never overrides an explicit `codex` block. Pass `-policy ''` to generate from explicit `codex.enabled` records only.
+By default, the generator also reads `data/codex/default-open-models.yaml`. This declarative policy currently selects open-weight Qwen 3.5+, DeepSeek V3/R1+, GLM-5+, and Kimi K2.7+ records. Policy selection requires Hugging Face metadata and the same schema/chat/tool/text/context checks as explicit exports. It emits one lowercase, vendor-free model suffix per selected model (for example `deepseek-v3.1`), deduplicates case-insensitively, and never overrides an explicit `codex` block. Pass `-policy ''` to generate from explicit `codex.enabled` records only.
 
 ### Codex candidate selection
 
