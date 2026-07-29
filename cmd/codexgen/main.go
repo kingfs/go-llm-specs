@@ -9,7 +9,6 @@ import (
 	"path/filepath"
 	"sort"
 	"strings"
-	"time"
 
 	"github.com/kingfs/go-llm-specs/internal/registry"
 )
@@ -22,6 +21,7 @@ type config struct {
 	ManifestOutput string
 	BundledCatalog string
 	ValidateOnly   bool
+	GeneratedAt    string
 }
 
 type modelsResponse struct {
@@ -78,7 +78,7 @@ type truncationPolicy struct {
 
 type manifest struct {
 	SchemaRevision string   `json:"schema_revision"`
-	GeneratedAt    string   `json:"generated_at"`
+	GeneratedAt    string   `json:"generated_at,omitempty"`
 	ModelCount     int      `json:"model_count"`
 	Slugs          []string `json:"slugs"`
 }
@@ -98,6 +98,7 @@ func parseFlags() config {
 	flag.StringVar(&cfg.ManifestOutput, "manifest", "", "manifest output path (default: <output>.manifest.json)")
 	flag.StringVar(&cfg.BundledCatalog, "bundled-catalog", "", "optional catalog from `codex debug models --bundled`")
 	flag.BoolVar(&cfg.ValidateOnly, "validate", false, "validate inputs without writing output")
+	flag.StringVar(&cfg.GeneratedAt, "generated-at", "", "optional RFC3339 timestamp for the manifest")
 	flag.Parse()
 	return cfg
 }
@@ -136,7 +137,7 @@ func run(cfg config) error {
 	if manifestPath == "" {
 		manifestPath = cfg.Output + ".manifest.json"
 	}
-	return writeManifest(manifestPath, all)
+	return writeManifest(manifestPath, all, cfg.GeneratedAt)
 }
 
 func generate(models []registry.Model) ([]json.RawMessage, error) {
@@ -363,7 +364,7 @@ func writeCatalog(path string, models []json.RawMessage) error {
 	return os.WriteFile(path, append(data, '\n'), 0o644)
 }
 
-func writeManifest(path string, models []json.RawMessage) error {
+func writeManifest(path string, models []json.RawMessage, generatedAt string) error {
 	if err := os.MkdirAll(filepath.Dir(path), 0o755); err != nil {
 		return err
 	}
@@ -378,7 +379,7 @@ func writeManifest(path string, models []json.RawMessage) error {
 	sort.Strings(slugs)
 	data, err := json.MarshalIndent(manifest{
 		SchemaRevision: codexSchemaRevision,
-		GeneratedAt:    time.Now().UTC().Format(time.RFC3339),
+		GeneratedAt:    generatedAt,
 		ModelCount:     len(models),
 		Slugs:          slugs,
 	}, "", "  ")

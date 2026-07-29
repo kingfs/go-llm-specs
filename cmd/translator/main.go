@@ -118,6 +118,7 @@ func run(cfg translatorConfig) error {
 	}
 
 	totalBatches := (len(pending) + cfg.BatchSize - 1) / cfg.BatchSize
+	failedBatches := 0
 	for i := 0; i < len(pending); i += cfg.BatchSize {
 		end := min(i+cfg.BatchSize, len(pending))
 		batch := pending[i:end]
@@ -127,6 +128,7 @@ func run(cfg translatorConfig) error {
 		translations, err := translateBatch(batch, cfg.APIKey, cfg.APIBase, cfg.Model)
 		if err != nil {
 			log.Printf("Batch %d failed: %v", batchIdx, err)
+			failedBatches++
 			continue
 		}
 
@@ -150,7 +152,9 @@ func run(cfg translatorConfig) error {
 			time.Sleep(cfg.RequestDelay)
 		}
 	}
-
+	if failedBatches > 0 {
+		return fmt.Errorf("translation completed with %d/%d failed batches", failedBatches, totalBatches)
+	}
 	return nil
 }
 

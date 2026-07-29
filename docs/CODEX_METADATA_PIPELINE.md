@@ -166,6 +166,27 @@ AI-assisted translation and model-card extraction are retryable enrichment jobs,
 
 Each phase is independently tested, committed, and pushed.
 
+## Implemented command examples
+
+```bash
+# Enrich only schema-v2/new records from structured sources.
+task enrich -- -new-only
+
+# Explicitly promote and enrich one selected historical record.
+task enrich -- -model qwen/qwen3.6-27b
+
+# Generate the standalone third-party catalog and manifest.
+task codexgen
+
+# Merge with a catalog captured from a pinned Codex installation.
+task codexgen -- -bundled-catalog data/codex/bundled-0.146.0.json
+
+# Probe an already-running local deployment; no model is started by this command.
+task modelprobe -- -base-url http://localhost:8000/v1 -model qwen3.6-27b -server vllm -output data/probes/qwen3.6-27b-vllm.json
+```
+
+The committed `dist/codex/models.json` is standalone. Users who also need OpenAI's bundled entries should capture them with their pinned Codex CLI and use the merge flag; the generator rejects collisions rather than silently overriding either catalog.
+
 ## Acceptance criteria
 
 - Existing v1 YAML files are byte-stable during validation-only and enrichment runs unless explicitly selected for change.

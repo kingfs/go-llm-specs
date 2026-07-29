@@ -81,3 +81,18 @@ func TestSelectModelsProtectsLegacyByDefault(t *testing.T) {
 		t.Fatalf("explicit legacy selection failed: %#v", selected)
 	}
 }
+
+func TestEnrichmentPreservesSourceExtensionFields(t *testing.T) {
+	model := registry.Model{
+		Upstream: registry.UpstreamMetadata{
+			OpenRouter:  &registry.OpenRouterMetadata{Extra: map[string]any{"future": "or"}},
+			HuggingFace: &registry.HuggingFaceMetadata{Extra: map[string]any{"future": "hf"}},
+		},
+		Reasoning: &registry.ReasoningMetadata{Extra: map[string]any{"future": "reasoning"}},
+	}
+	enrichOpenRouter(&model, openRouterModel{Reasoning: &openRouterReasoning{}}, time.Unix(1, 0).UTC())
+	enrichHuggingFace(&model, hfModel{ID: "Qwen/Test"}, time.Unix(1, 0).UTC())
+	if model.Upstream.OpenRouter.Extra["future"] != "or" || model.Upstream.HuggingFace.Extra["future"] != "hf" || model.Reasoning.Extra["future"] != "reasoning" {
+		t.Fatalf("extension fields were lost: %#v", model)
+	}
+}

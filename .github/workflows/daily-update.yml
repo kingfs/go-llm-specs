@@ -40,10 +40,16 @@ jobs:
       - name: Refresh upstream registry
         run: task generator
 
+      - name: Enrich new models from structured sources
+        run: task enrich -- -new-only
+
+      - name: Generate Codex model catalog
+        run: task codexgen
+
       - name: Check for upstream changes
         id: upstream_changes
         run: |
-          if git diff --quiet -- models/ models_gen.go data/models.json; then
+          if git diff --quiet -- models/ models_gen.go data/models.json dist/codex/; then
             echo "changed=false" >> "$GITHUB_OUTPUT"
           else
             echo "changed=true" >> "$GITHUB_OUTPUT"
@@ -61,14 +67,25 @@ jobs:
         if: steps.upstream_changes.outputs.changed == 'true'
         run: task generator
 
+      - name: Regenerate Codex catalog after translation
+        if: steps.upstream_changes.outputs.changed == 'true'
+        run: task codexgen
+
       - name: Check for synced changes
         id: changes
         run: |
-          if git diff --quiet -- models/ models_gen.go data/models.json; then
+          if git diff --quiet -- models/ models_gen.go data/models.json dist/codex/; then
             echo "changed=false" >> "$GITHUB_OUTPUT"
           else
             echo "changed=true" >> "$GITHUB_OUTPUT"
           fi
+
+      - name: Validate enriched registry and generated artifacts
+        run: |
+          task lint
+          task test
+          task build
+          task codexgen -- -validate
 
       - name: Evaluate release necessity
         id: releasecheck
@@ -81,7 +98,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add models_gen.go data/models.json models/
+          git add models_gen.go data/models.json models/ dist/codex/
           git commit -m "feat(data): sync upstream model registry [skip ci]"
           git push
 
@@ -121,6 +138,8 @@ jobs:
           task lint
           task test
           task fmt
+          task build
+          task codexgen -- -validate
 
       - name: Evaluate release necessity
         id: releasecheck

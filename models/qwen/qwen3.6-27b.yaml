@@ -1,3 +1,4 @@
+schema_version: 2
 id: qwen/qwen3.6-27b
 name: 'Qwen: Qwen3.6 27B'
 provider: Qwen
@@ -13,3 +14,79 @@ features:
   - ModalityTextIn
   - ModalityTextOut
   - ModalityVideoIn
+aliases:
+  - qwen3.6-27b
+discovered_at: 2026-07-29T08:14:33.676801234Z
+upstream:
+  openrouter:
+    canonical_slug: qwen/qwen3.6-27b-20260422
+    huggingface_id: Qwen/Qwen3.6-27B
+    supported_parameters:
+      - frequency_penalty
+      - include_reasoning
+      - logit_bias
+      - logprobs
+      - max_tokens
+      - min_p
+      - presence_penalty
+      - reasoning
+      - repetition_penalty
+      - response_format
+      - seed
+      - stop
+      - structured_outputs
+      - temperature
+      - tool_choice
+      - tools
+      - top_k
+      - top_logprobs
+      - top_p
+    input_modalities:
+      - image
+      - text
+      - video
+    output_modalities:
+      - text
+    fetched_at: 2026-07-29T08:14:33.676801414Z
+  huggingface:
+    id: Qwen/Qwen3.6-27B
+    pipeline_tag: image-text-to-text
+    model_type: qwen3_5
+    architectures:
+      - Qwen3_5ForConditionalGeneration
+    license: apache-2.0
+    tags:
+      - conversational
+      - deploy:azure
+      - deploy:sagemaker
+      - endpoints_compatible
+      - eval-results
+      - image-text-to-text
+      - license:apache-2.0
+      - qwen3_5
+      - region:us
+      - safetensors
+      - transformers
+    fetched_at: 2026-07-29T08:14:34.168310611Z
+reasoning:
+  supported: true
+  default_enabled: true
+codex:
+  enabled: true
+  slugs:
+    - qwen3.6-27b
+  shell_type: unified_exec
+  visibility: list
+  base_instructions: You are Codex, a coding agent. Work in the user's repository, follow instructions, use tools carefully, make requested changes, and verify your work.
+  supports_parallel_tool_calls: false
+  supports_reasoning_summary_parameter: false
+  support_verbosity: false
+  apply_patch_tool_type: freeform
+  web_search_tool_type: text
+  truncation_policy:
+    mode: tokens
+    limit: 10000
+  effective_context_window_percent: 90
+  input_modalities:
+    - text
+    - image

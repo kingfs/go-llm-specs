@@ -121,6 +121,14 @@ func run(ctx context.Context, cfg config) error {
 		model := &selected[i]
 		orModel, hasOpenRouter := upstream[model.ID]
 		modelChanged := false
+		if cfg.Model != "" && !model.IsV2() {
+			now := time.Now().UTC()
+			model.SchemaVersion = registry.CurrentSchemaVersion
+			if model.DiscoveredAt == nil {
+				model.DiscoveredAt = &now
+			}
+			modelChanged = true
+		}
 		if (cfg.Source == "all" || cfg.Source == "openrouter") && hasOpenRouter {
 			modelChanged = enrichOpenRouter(model, orModel, time.Now().UTC()) || modelChanged
 		}
@@ -194,6 +202,11 @@ func loadOpenRouter(path string) (map[string]openRouterModel, error) {
 
 func enrichOpenRouter(model *registry.Model, upstream openRouterModel, fetchedAt time.Time) bool {
 	before, _ := json.Marshal(model.Upstream.OpenRouter)
+	reasoningBefore, _ := json.Marshal(model.Reasoning)
+	var extra map[string]any
+	if model.Upstream.OpenRouter != nil {
+		extra = model.Upstream.OpenRouter.Extra
+	}
 	model.Upstream.OpenRouter = &registry.OpenRouterMetadata{
 		CanonicalSlug:       upstream.CanonicalSlug,
 		HuggingFaceID:       upstream.HuggingFaceID,
@@ -202,18 +215,25 @@ func enrichOpenRouter(model *registry.Model, upstream openRouterModel, fetchedAt
 		OutputModalities:    sortedUnique(upstream.Architecture.OutputModalities),
 		KnowledgeCutoff:     upstream.KnowledgeCutoff,
 		FetchedAt:           &fetchedAt,
+		Extra:               extra,
 	}
 	if upstream.Reasoning != nil {
+		var reasoningExtra map[string]any
+		if model.Reasoning != nil {
+			reasoningExtra = model.Reasoning.Extra
+		}
 		model.Reasoning = &registry.ReasoningMetadata{
 			Supported:        true,
 			Mandatory:        upstream.Reasoning.Mandatory,
 			DefaultEnabled:   upstream.Reasoning.DefaultEnabled,
 			DefaultEffort:    upstream.Reasoning.DefaultEffort,
 			SupportedEfforts: sortedUnique(upstream.Reasoning.SupportedEfforts),
+			Extra:            reasoningExtra,
 		}
 	}
 	after, _ := json.Marshal(model.Upstream.OpenRouter)
-	return !stringEqualIgnoringFetchedAt(before, after)
+	reasoningAfter, _ := json.Marshal(model.Reasoning)
+	return !stringEqualIgnoringFetchedAt(before, after) || !stringEqualIgnoringFetchedAt(reasoningBefore, reasoningAfter)
 }
 
 func resolveHuggingFace(ctx context.Context, client *http.Client, base string, model registry.Model, explicitID string) (*hfModel, string, error) {
@@ -281,6 +301,10 @@ func fetchHF(ctx context.Context, client *http.Client, base, id string) (*hfMode
 func enrichHuggingFace(model *registry.Model, hf hfModel, fetchedAt time.Time) bool {
 	license, _ := hf.CardData["license"].(string)
 	before, _ := json.Marshal(model.Upstream.HuggingFace)
+	var extra map[string]any
+	if model.Upstream.HuggingFace != nil {
+		extra = model.Upstream.HuggingFace.Extra
+	}
 	model.Upstream.HuggingFace = &registry.HuggingFaceMetadata{
 		ID:            hf.ID,
 		PipelineTag:   hf.PipelineTag,
@@ -289,6 +313,7 @@ func enrichHuggingFace(model *registry.Model, hf hfModel, fetchedAt time.Time) b
 		License:       license,
 		Tags:          sortedUnique(hf.Tags),
 		FetchedAt:     &fetchedAt,
+		Extra:         extra,
 	}
 	after, _ := json.Marshal(model.Upstream.HuggingFace)
 	return !stringEqualIgnoringFetchedAt(before, after)
