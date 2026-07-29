@@ -190,6 +190,7 @@ func executeProbes(ctx context.Context, client *http.Client, cfg config, key str
 
 func buildProbeCases(cfg config) []probeCase {
 	base := baseRequest(cfg, "Reply with exactly: ok")
+	setOutputTokenLimit(cfg, base, 256)
 	cases := []probeCase{{Name: "text_generation", Body: base}}
 
 	tools := []any{map[string]any{
@@ -217,15 +218,18 @@ func buildProbeCases(cfg config) []probeCase {
 		}}
 	}
 	toolBody := baseRequest(cfg, "Call get_weather for Shanghai.")
+	setOutputTokenLimit(cfg, toolBody, 256)
 	toolBody["tools"] = tools
 	cases = append(cases, probeCase{Name: "tool_calling", Body: toolBody})
 
 	parallelBody := baseRequest(cfg, "Call get_weather for Shanghai and Beijing.")
+	setOutputTokenLimit(cfg, parallelBody, 384)
 	parallelBody["tools"] = tools
 	parallelBody["parallel_tool_calls"] = true
 	cases = append(cases, probeCase{Name: "parallel_tool_calls", Body: parallelBody})
 
 	jsonBody := baseRequest(cfg, "Return JSON with one boolean field named ok.")
+	setOutputTokenLimit(cfg, jsonBody, 512)
 	if cfg.WireAPI == "responses" {
 		jsonBody["text"] = map[string]any{"format": map[string]any{"type": "json_object"}}
 	} else {
@@ -234,6 +238,7 @@ func buildProbeCases(cfg config) []probeCase {
 	cases = append(cases, probeCase{Name: "json_output", Body: jsonBody})
 
 	reasoningBody := baseRequest(cfg, "What is 2+2?")
+	setOutputTokenLimit(cfg, reasoningBody, 512)
 	reasoningBody["reasoning"] = map[string]any{"effort": "medium", "summary": "auto"}
 	cases = append(cases, probeCase{Name: "reasoning", Body: reasoningBody})
 
@@ -243,6 +248,14 @@ func buildProbeCases(cfg config) []probeCase {
 	}
 	sort.SliceStable(cases, func(i, j int) bool { return cases[i].Name < cases[j].Name })
 	return cases
+}
+
+func setOutputTokenLimit(cfg config, request map[string]any, limit int) {
+	if cfg.WireAPI == "responses" {
+		request["max_output_tokens"] = limit
+		return
+	}
+	request["max_tokens"] = limit
 }
 
 func baseRequest(cfg config, prompt string) map[string]any {
@@ -394,7 +407,7 @@ func responseEvidence(wireAPI string, document map[string]any) (string, int) {
 			}
 			for _, content := range asSlice(object["content"]) {
 				part, _ := content.(map[string]any)
-				if value, ok := part["text"].(string); ok {
+				if value, ok := part["text"].(string); ok && part["type"] == "output_text" {
 					texts = append(texts, value)
 				}
 			}

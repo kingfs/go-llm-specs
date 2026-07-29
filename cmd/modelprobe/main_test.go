@@ -87,6 +87,9 @@ func TestBuildResponsesProbeCases(t *testing.T) {
 		if _, exists := probe.Body["messages"]; exists {
 			t.Fatalf("responses probe contains chat messages: %s", probe.Name)
 		}
+		if probe.Name == "parallel_tool_calls" && probe.Body["max_output_tokens"] != 384 {
+			t.Fatalf("parallel probe token budget is too small: %#v", probe.Body)
+		}
 	}
 }
 
@@ -115,6 +118,13 @@ func TestValidateProbePayloadRejectsFalsePositive2xx(t *testing.T) {
 func TestValidateResponsesPayload(t *testing.T) {
 	payload := []byte(`{"output":[{"type":"function_call","name":"get_weather"},{"type":"function_call","name":"get_weather"}]}`)
 	if err := validateProbePayload("parallel_tool_calls", "responses", payload); err != nil {
+		t.Fatal(err)
+	}
+}
+
+func TestResponsesJSONIgnoresReasoningText(t *testing.T) {
+	payload := []byte(`{"output":[{"type":"reasoning","content":[{"type":"reasoning_text","text":"analysis"}]},{"type":"message","content":[{"type":"output_text","text":"{\"ok\":true}"}]}]}`)
+	if err := validateProbePayload("json_output", "responses", payload); err != nil {
 		t.Fatal(err)
 	}
 }
