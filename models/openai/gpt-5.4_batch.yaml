@@ -1,0 +1,15 @@
+id: openai/gpt-5.4:batch
+name: 'OpenAI: GPT-5.4 (batch)'
+provider: OpenAI
+description: GPT-5.4 is OpenAI’s latest frontier model, unifying the Codex and GPT lines into a single system. It features a 1M+ token context window (922K input, 128K output) with support for...
+description_cn: GPT-5.4 是 OpenAI 最新的前沿模型，将 Codex 和 GPT 系列整合为一个系统。它具有超过 1M 的上下文窗口（922K 输入，128K 输出），支持...
+context_length: 1050000
+max_output: 128000
+features:
+  - CapChat
+  - CapFunctionCall
+  - CapJsonMode
+  - ModalityFileIn
+  - ModalityImageIn
+  - ModalityTextIn
+  - ModalityTextOut

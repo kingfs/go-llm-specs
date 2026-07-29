@@ -1,0 +1,14 @@
+id: anthropic/claude-opus-4.1:batch
+name: 'Anthropic: Claude Opus 4.1 (batch)'
+provider: Anthropic
+description: Claude Opus 4.1 is an updated version of Anthropic’s flagship model, offering improved performance in coding, reasoning, and agentic tasks. It achieves 74.5% on SWE-bench Verified and shows notable gains...
+context_length: 200000
+max_output: 32000
+features:
+  - CapChat
+  - CapFunctionCall
+  - CapJsonMode
+  - ModalityFileIn
+  - ModalityImageIn
+  - ModalityTextIn
+  - ModalityTextOut

@@ -1,0 +1,14 @@
+id: anthropic/claude-opus-4.6:batch
+name: 'Anthropic: Claude Opus 4.6 (batch)'
+provider: Anthropic
+description: Opus 4.6 is Anthropic’s strongest model for coding and long-running professional tasks. It is built for agents that operate across entire workflows rather than single prompts, making it especially effective...
+context_length: 1000000
+max_output: 128000
+features:
+  - CapChat
+  - CapFunctionCall
+  - CapJsonMode
+  - ModalityFileIn
+  - ModalityImageIn
+  - ModalityTextIn
+  - ModalityTextOut

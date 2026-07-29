@@ -1,0 +1,15 @@
+id: openai/gpt-5:batch
+name: 'OpenAI: GPT-5 (batch)'
+provider: OpenAI
+description: GPT-5 is OpenAI’s most advanced model, offering major improvements in reasoning, code quality, and user experience. It is optimized for complex tasks that require step-by-step reasoning, instruction following, and accuracy...
+description_cn: GPT-5 是 OpenAI 最先进的模型，在推理、代码质量和用户体验上实现了重大改进。它优化用于需要逐步推理、跟随指令和准确性的复杂任务...
+context_length: 400000
+max_output: 128000
+features:
+  - CapChat
+  - CapFunctionCall
+  - CapJsonMode
+  - ModalityFileIn
+  - ModalityImageIn
+  - ModalityTextIn
+  - ModalityTextOut

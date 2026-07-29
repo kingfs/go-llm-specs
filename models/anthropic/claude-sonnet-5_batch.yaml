@@ -1,0 +1,14 @@
+id: anthropic/claude-sonnet-5:batch
+name: 'Anthropic: Claude Sonnet 5 (batch)'
+provider: Anthropic
+description: Sonnet 5 is Anthropic's most capable Sonnet-class model, with frontier performance across coding, agents, and professional work. It supports adaptive thinking with selectable reasoning effort levels (low, medium, high, max,...
+context_length: 1000000
+max_output: 128000
+features:
+  - CapChat
+  - CapFunctionCall
+  - CapJsonMode
+  - ModalityFileIn
+  - ModalityImageIn
+  - ModalityTextIn
+  - ModalityTextOut

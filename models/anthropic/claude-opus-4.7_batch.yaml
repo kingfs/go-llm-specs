@@ -1,0 +1,14 @@
+id: anthropic/claude-opus-4.7:batch
+name: 'Anthropic: Claude Opus 4.7 (batch)'
+provider: Anthropic
+description: Opus 4.7 is the next generation of Anthropic's Opus family, built for long-running, asynchronous agents. Building on the coding and agentic strengths of Opus 4.6, it delivers stronger performance on...
+context_length: 1000000
+max_output: 128000
+features:
+  - CapChat
+  - CapFunctionCall
+  - CapJsonMode
+  - ModalityFileIn
+  - ModalityImageIn
+  - ModalityTextIn
+  - ModalityTextOut

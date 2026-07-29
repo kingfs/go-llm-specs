@@ -1,0 +1,15 @@
+id: openai/gpt-5.4-mini:batch
+name: 'OpenAI: GPT-5.4 Mini (batch)'
+provider: OpenAI
+description: GPT-5.4 mini brings the core capabilities of GPT-5.4 to a faster, more efficient model optimized for high-throughput workloads. It supports text and image inputs with strong performance across reasoning, coding,...
+description_cn: GPT-5.4 mini 将 GPT-5.4 的核心能力带入一个更快、更高效的模型，优化用于高吞吐量工作负载。它支持文本和图像输入，在推理、编码等方面具有强性能...
+context_length: 400000
+max_output: 128000
+features:
+  - CapChat
+  - CapFunctionCall
+  - CapJsonMode
+  - ModalityFileIn
+  - ModalityImageIn
+  - ModalityTextIn
+  - ModalityTextOut

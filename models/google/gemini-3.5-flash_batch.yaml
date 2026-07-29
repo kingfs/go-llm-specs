@@ -1,0 +1,17 @@
+id: google/gemini-3.5-flash:batch
+name: 'Google: Gemini 3.5 Flash (batch)'
+provider: Google
+description: Gemini 3.5 Flash is Google's high-efficiency multimodal model, bringing near-Pro level coding and reasoning at Flash-tier cost and speed. It is highly optimized for coding proficiency and parallel agentic execution...
+description_cn: Gemini 3.5 Flash 是谷歌的高效多模态模型，以接近专业级的编码和推理能力，在闪电级成本和速度下运行。它高度优化了编码能力和并行代理执行...
+context_length: 1048576
+max_output: 65536
+features:
+  - CapChat
+  - CapFunctionCall
+  - CapJsonMode
+  - ModalityAudioIn
+  - ModalityFileIn
+  - ModalityImageIn
+  - ModalityTextIn
+  - ModalityTextOut
+  - ModalityVideoIn

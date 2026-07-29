@@ -1,0 +1,14 @@
+id: anthropic/claude-fable-5:batch
+name: 'Anthropic: Claude Fable 5 (batch)'
+provider: Anthropic
+description: Claude Fable 5 is a Mythos-class model from Anthropic, built for autonomous knowledge work and coding. It supports text, image, and file inputs with text output, with reasoning support and...
+context_length: 1000000
+max_output: 128000
+features:
+  - CapChat
+  - CapFunctionCall
+  - CapJsonMode
+  - ModalityFileIn
+  - ModalityImageIn
+  - ModalityTextIn
+  - ModalityTextOut

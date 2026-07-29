@@ -1,0 +1,15 @@
+id: openai/gpt-5.5:batch
+name: 'OpenAI: GPT-5.5 (batch)'
+provider: OpenAI
+description: GPT-5.5 is OpenAI’s frontier model designed for complex professional workloads, building on GPT-5.4 with stronger reasoning, higher reliability, and improved token efficiency on hard tasks. It features a 1M+ token...
+description_cn: GPT-5.5 是 OpenAI 专为复杂专业工作负载设计的前沿模型，建立在 GPT-5.4 之上，具有更强的推理、更高的可靠性以及在困难任务上的改进的令牌效率。它具有超过 1M 的令牌...
+context_length: 1050000
+max_output: 128000
+features:
+  - CapChat
+  - CapFunctionCall
+  - CapJsonMode
+  - ModalityFileIn
+  - ModalityImageIn
+  - ModalityTextIn
+  - ModalityTextOut

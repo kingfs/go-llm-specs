@@ -1,0 +1,14 @@
+id: anthropic/claude-opus-4.5:batch
+name: 'Anthropic: Claude Opus 4.5 (batch)'
+provider: Anthropic
+description: Claude Opus 4.5 is Anthropic’s frontier reasoning model optimized for complex software engineering, agentic workflows, and long-horizon computer use. It offers strong multimodal capabilities, competitive performance across real-world coding and...
+context_length: 200000
+max_output: 64000
+features:
+  - CapChat
+  - CapFunctionCall
+  - CapJsonMode
+  - ModalityFileIn
+  - ModalityImageIn
+  - ModalityTextIn
+  - ModalityTextOut
