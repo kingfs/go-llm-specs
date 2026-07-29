@@ -262,7 +262,13 @@ func buildAliasMap(processedModels []*ProcessedModel) map[string]string {
 
 func syncToDisk(apiModels []OpenRouterModel, localModels map[string]ModelRegistry, modelsDir string) error {
 	for _, upstream := range apiModels {
-		merged := mergeModelRegistry(upstream, localModels[upstream.ID])
+		local := localModels[upstream.ID]
+		if local.ID == "" {
+			now := time.Now().UTC()
+			local.SchemaVersion = registrymodel.CurrentSchemaVersion
+			local.DiscoveredAt = &now
+		}
+		merged := mergeModelRegistry(upstream, local)
 		if err := saveModelToDisk(merged, modelsDir); err != nil {
 			return fmt.Errorf("save model %s: %w", upstream.ID, err)
 		}

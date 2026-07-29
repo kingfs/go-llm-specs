@@ -4,6 +4,9 @@ import (
 	"bytes"
 	"fmt"
 	"os"
+	"path/filepath"
+	"sort"
+	"strings"
 
 	"gopkg.in/yaml.v3"
 )
@@ -14,6 +17,31 @@ func Decode(data []byte) (Model, error) {
 		return Model{}, err
 	}
 	return model, nil
+}
+
+func Scan(root string) ([]Model, error) {
+	var models []Model
+	err := filepath.Walk(root, func(path string, info os.FileInfo, err error) error {
+		if err != nil {
+			return err
+		}
+		if info.IsDir() || (!strings.HasSuffix(path, ".yaml") && !strings.HasSuffix(path, ".yml")) {
+			return nil
+		}
+		model, err := Load(path)
+		if err != nil {
+			return err
+		}
+		if model.ID != "" {
+			models = append(models, model)
+		}
+		return nil
+	})
+	if err != nil {
+		return nil, err
+	}
+	sort.Slice(models, func(i, j int) bool { return models[i].ID < models[j].ID })
+	return models, nil
 }
 
 func Encode(model Model) ([]byte, error) {
