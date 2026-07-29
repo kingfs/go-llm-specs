@@ -144,7 +144,22 @@ func applyClaim(model *registry.Model, claim suggestion.Claim) error {
 	case "max_output":
 		return json.Unmarshal(claim.Value, &model.MaxOutput)
 	case "features":
-		return json.Unmarshal(claim.Value, &model.Features)
+		var additions []string
+		if err := json.Unmarshal(claim.Value, &additions); err != nil {
+			return err
+		}
+		seen := map[string]bool{}
+		for _, feature := range model.Features {
+			seen[strings.ToLower(feature)] = true
+		}
+		for _, feature := range additions {
+			if !seen[strings.ToLower(feature)] {
+				model.Features = append(model.Features, feature)
+				seen[strings.ToLower(feature)] = true
+			}
+		}
+		sort.Strings(model.Features)
+		return nil
 	case "reasoning.supported":
 		if model.Reasoning == nil {
 			model.Reasoning = &registry.ReasoningMetadata{}

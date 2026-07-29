@@ -17,3 +17,14 @@ func TestApplyClaim(t *testing.T) {
 		t.Fatalf("got %d", model.ContextLen)
 	}
 }
+
+func TestApplyFeaturesMergesWithoutRemovingExisting(t *testing.T) {
+	model := registry.Model{Features: []string{"CapChat", "ModalityTextIn"}}
+	claim := suggestion.Claim{Field: "features", Value: json.RawMessage(`["ModalityImageIn","CapChat"]`)}
+	if err := applyClaim(&model, claim); err != nil {
+		t.Fatal(err)
+	}
+	if len(model.Features) != 3 {
+		t.Fatalf("features were replaced or duplicated: %v", model.Features)
+	}
+}
