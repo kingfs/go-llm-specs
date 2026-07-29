@@ -1,3 +1,4 @@
+schema_version: 2
 id: openai/gpt-4o:extended
 name: 'OpenAI: GPT-4o (extended)'
 provider: OpenAI
@@ -23,3 +24,4 @@ features:
   - ModalityImageIn
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:41:12.489362166Z

@@ -1,0 +1,106 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "gryphe/mythomax-l2-13b",
+  "status": "pending",
+  "created_at": "2026-07-29T11:26:38.841272759Z",
+  "source": {
+    "url": "https://huggingface.co/Gryphe/MythoMax-L2-13b/resolve/58e77dd48a65176f97f6f376c93efe9caad9c130/README.md",
+    "revision": "58e77dd48a65176f97f6f376c93efe9caad9c130",
+    "sha256": "b9a21aebaaa8587bcc98f14c4e25b0ae69877106ca326eb8a9f22584a545f200"
+  },
+  "generator": {
+    "model": "qwen3.6-27b",
+    "wire_api": "responses"
+  },
+  "claims": [
+    {
+      "field": "description",
+      "value": "A merge of Gryphe/MythoLogic-L2-13b and Huginn using a highly experimental tensor type merge technique.",
+      "evidence": "An improved, potentially even perfected variant of MythoMix, my MythoLogic-L2-13b and Huginn merge using a highly experimental tensor type merge technique.",
+      "section": "Model details",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "CapChat"
+      ],
+      "evidence": "This model is proficient at both roleplaying and storywriting due to its unique nature.",
+      "section": "Model details",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "CapChat"
+      ],
+      "evidence": "This model primarily uses Alpaca formatting",
+      "section": "Prompt Format",
+      "confidence": "high"
+    },
+    {
+      "field": "context_length",
+      "value": 8192,
+      "evidence": "MythoLogic-L2-13b",
+      "section": "Model details",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [],
+      "evidence": "CapChat",
+      "section": "Model details",
+      "confidence": "low"
+    },
+    {
+      "field": "features",
+      "value": [],
+      "evidence": "ModalityTextIn",
+      "section": "Model details",
+      "confidence": "low"
+    },
+    {
+      "field": "features",
+      "value": [],
+      "evidence": "ModalityTextOut",
+      "section": "Model details",
+      "confidence": "low"
+    },
+    {
+      "field": "features",
+      "value": [],
+      "evidence": "ModalityImageIn",
+      "section": "Model details",
+      "confidence": "low"
+    },
+    {
+      "field": "features",
+      "value": [],
+      "evidence": "ModalityAudioIn",
+      "section": "Model details",
+      "confidence": "low"
+    },
+    {
+      "field": "features",
+      "value": [],
+      "evidence": "ModalityAudioOut",
+      "section": "Model details",
+      "confidence": "low"
+    },
+    {
+      "field": "features",
+      "value": [],
+      "evidence": "ModalityVideoIn",
+      "section": "Model details",
+      "confidence": "low"
+    },
+    {
+      "field": "features",
+      "value": [],
+      "evidence": "CapFunctionCall",
+      "section": "Model details",
+      "confidence": "low"
+    }
+  ]
+}

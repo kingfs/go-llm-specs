@@ -1,3 +1,4 @@
+schema_version: 2
 id: mistralai/mistral-medium-3.1
 name: 'Mistral: Mistral Medium 3.1'
 provider: Mistral
@@ -17,3 +18,27 @@ features:
   - ModalityImageIn
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:39:39.226647646Z
+upstream:
+  openrouter:
+    canonical_slug: mistralai/mistral-medium-3.1
+    supported_parameters:
+      - frequency_penalty
+      - max_tokens
+      - presence_penalty
+      - response_format
+      - seed
+      - stop
+      - structured_outputs
+      - temperature
+      - tool_choice
+      - tools
+      - top_p
+    input_modalities:
+      - file
+      - image
+      - text
+    output_modalities:
+      - text
+    knowledge_cutoff: "2025-06-30"
+    fetched_at: 2026-07-29T10:39:39.226648286Z

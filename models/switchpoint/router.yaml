@@ -1,3 +1,4 @@
+schema_version: 2
 id: switchpoint/router
 name: Switchpoint Router
 provider: Switchpoint
@@ -13,3 +14,4 @@ features:
   - CapChat
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:44:16.452717917Z

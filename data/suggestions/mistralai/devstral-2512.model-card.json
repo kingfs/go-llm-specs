@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "mistralai/devstral-2512",
+  "status": "pending",
+  "created_at": "2026-07-29T11:30:32.051939648Z",
+  "source": {
+    "url": "https://huggingface.co/mistralai/Devstral-2-123B-Instruct-2512/resolve/1613bf01adb5e1c6fdc196b46e6b173eae75eb4a/README.md",
+    "revision": "1613bf01adb5e1c6fdc196b46e6b173eae75eb4a",
+    "sha256": "50bb4a063ccd7a4ec64fa4da4dc16f6c9168178d77eda86db84b84d7acdb5ea6"
+  },
+  "generator": {
+    "model": "qwen3.6-27b",
+    "wire_api": "responses"
+  },
+  "claims": [
+    {
+      "field": "context_length",
+      "value": 262144,
+      "evidence": "A 256k context window.",
+      "section": "Key Features",
+      "confidence": "high"
+    },
+    {
+      "field": "reasoning.parser",
+      "value": "mistral",
+      "evidence": "tool-call-parser mistral",
+      "section": "vLLM (recommended)",
+      "confidence": "high"
+    },
+    {
+      "field": "serving.vllm_args",
+      "value": [
+        "--tensor-parallel-size 8",
+        "--tool-call-parser mistral",
+        "--enable-auto-tool-choice"
+      ],
+      "evidence": "vllm serve mistralai/Devstral-2-123B-Instruct-2512 --tool-call-parser mistral --enable-auto-tool-choice --tensor-parallel-size 8",
+      "section": "vLLM (recommended)",
+      "confidence": "high"
+    },
+    {
+      "field": "description",
+      "value": "Agentic LLM for software engineering tasks, excelling at using tools to explore codebases and editing files. FP8 Instruct model.",
+      "evidence": "Devstral is an agentic LLM for software engineering tasks.",
+      "section": "Devstral 2 123B Instruct 2512",
+      "confidence": "high"
+    }
+  ]
+}

@@ -1,3 +1,4 @@
+schema_version: 2
 id: minimax/minimax-m2
 name: 'MiniMax: MiniMax M2'
 provider: Minimax
@@ -25,3 +26,65 @@ features:
   - CapJsonMode
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:39:10.055282398Z
+upstream:
+  openrouter:
+    canonical_slug: minimax/minimax-m2
+    huggingface_id: MiniMaxAI/MiniMax-M2
+    supported_parameters:
+      - frequency_penalty
+      - include_reasoning
+      - logprobs
+      - max_tokens
+      - presence_penalty
+      - reasoning
+      - repetition_penalty
+      - response_format
+      - seed
+      - stop
+      - structured_outputs
+      - temperature
+      - tool_choice
+      - tools
+      - top_k
+      - top_logprobs
+      - top_p
+    input_modalities:
+      - text
+    output_modalities:
+      - text
+    fetched_at: 2026-07-29T10:39:10.055283068Z
+  huggingface:
+    id: MiniMaxAI/MiniMax-M2
+    revision: 757303d492a50514c312788b5247a4f696a4c6a3
+    pipeline_tag: text-generation
+    model_type: minimax_m2
+    architectures:
+      - MiniMaxM2ForCausalLM
+    license: other
+    tags:
+      - arxiv:2504.07164
+      - arxiv:2509.06501
+      - arxiv:2509.13160
+      - conversational
+      - custom_code
+      - deploy:azure
+      - deploy:sagemaker
+      - endpoints_compatible
+      - eval-results
+      - fp8
+      - license:other
+      - minimax_m2
+      - region:us
+      - safetensors
+      - text-generation
+      - transformers
+    config_context_length: 196608
+    tokenizer_model_max_length: 40960000
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-07-29T10:39:12.066541846Z
+reasoning:
+  supported: true
+  mandatory: true

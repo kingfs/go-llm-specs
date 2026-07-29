@@ -1,3 +1,4 @@
+schema_version: 2
 id: inclusionai/ling-3.0-flash:free
 name: Ling-3.0-flash (free)
 provider: Inclusionai
@@ -10,3 +11,31 @@ features:
   - CapFunctionCall
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:38:39.523394503Z
+upstream:
+  openrouter:
+    canonical_slug: inclusionai/ling-3.0-flash-20260723
+    supported_parameters:
+      - frequency_penalty
+      - include_reasoning
+      - logprobs
+      - max_tokens
+      - presence_penalty
+      - reasoning
+      - repetition_penalty
+      - seed
+      - stop
+      - temperature
+      - tool_choice
+      - tools
+      - top_k
+      - top_logprobs
+      - top_p
+    input_modalities:
+      - text
+    output_modalities:
+      - text
+    fetched_at: 2026-07-29T10:38:39.523394853Z
+reasoning:
+  supported: true
+  default_enabled: true

@@ -43,13 +43,24 @@ jobs:
       - name: Enrich new models from structured sources
         run: task enrich -- -new-only
 
+      - name: Extract a bounded batch of new model-card suggestions
+        env:
+          LLM_API_KEY: ${{ secrets.GITHUB_TOKEN }}
+          LLM_BASE_URL: https://models.github.ai/inference
+          LLM_MODEL: openai/gpt-4o-mini
+          LLM_WIRE_API: chat
+          CARD_EXTRACT_LIMIT: '5'
+          CARD_EXTRACT_MAX_CHARS: '8000'
+          CARD_EXTRACT_DELAY: '2'
+        run: task cardextract-batch
+
       - name: Generate Codex model catalog
         run: task codexgen
 
       - name: Check for upstream changes
         id: upstream_changes
         run: |
-          if git diff --quiet -- models/ models_gen.go data/models.json dist/codex/; then
+          if git diff --quiet -- models/ models_gen.go data/models.json data/suggestions/ dist/codex/; then
             echo "changed=false" >> "$GITHUB_OUTPUT"
           else
             echo "changed=true" >> "$GITHUB_OUTPUT"
@@ -74,7 +85,7 @@ jobs:
       - name: Check for synced changes
         id: changes
         run: |
-          if git diff --quiet -- models/ models_gen.go data/models.json dist/codex/; then
+          if git diff --quiet -- models/ models_gen.go data/models.json data/suggestions/ dist/codex/; then
             echo "changed=false" >> "$GITHUB_OUTPUT"
           else
             echo "changed=true" >> "$GITHUB_OUTPUT"
@@ -108,6 +119,7 @@ jobs:
           add-paths: |
             models_gen.go
             data/models.json
+            data/suggestions/**
             models/**
             dist/codex/**
 

@@ -166,6 +166,9 @@ task suggestion -- -fields context_length,description apply \
   data/suggestions/qwen/qwen3.6-27b.model-card.json
 
 task codexsuggest -- -model qwen/qwen3.6-27b
+
+# Resume a local backfill for every HF-enriched record. Identical source revisions are reused.
+LLM_REASONING_EFFORT=none CARD_EXTRACT_MAX_CHARS=8000 task cardextract-batch
 ```
 
 `cardextractor` records the immutable Hugging Face revision, source-content SHA-256,

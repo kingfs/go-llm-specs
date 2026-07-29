@@ -1,3 +1,4 @@
+schema_version: 2
 id: anthropic/claude-opus-5-fast
 name: Claude Opus 5 (Fast)
 provider: Anthropic
@@ -19,3 +20,35 @@ features:
   - ModalityImageIn
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:36:50.520350932Z
+upstream:
+  openrouter:
+    canonical_slug: anthropic/claude-opus-5-fast-20260723
+    supported_parameters:
+      - include_reasoning
+      - max_tokens
+      - reasoning
+      - reasoning_effort
+      - response_format
+      - stop
+      - structured_outputs
+      - tool_choice
+      - tools
+      - verbosity
+    input_modalities:
+      - file
+      - image
+      - text
+    output_modalities:
+      - text
+    fetched_at: 2026-07-29T10:36:50.520351192Z
+reasoning:
+  supported: true
+  default_enabled: true
+  default_effort: high
+  supported_efforts:
+    - high
+    - low
+    - max
+    - medium
+    - xhigh

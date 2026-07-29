@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "nousresearch/hermes-3-llama-3.1-405b",
+  "status": "pending",
+  "created_at": "2026-07-29T11:37:45.746987983Z",
+  "source": {
+    "url": "https://huggingface.co/NousResearch/Hermes-3-Llama-3.1-405B/resolve/b9fe8ede1f5075f171b2c0a235e20ae4aba33767/README.md",
+    "revision": "b9fe8ede1f5075f171b2c0a235e20ae4aba33767",
+    "sha256": "7d8a4d102f3ee3e6271ba595c351b67bc039e1ee152db89450fbd4edb838d513"
+  },
+  "generator": {
+    "model": "qwen3.6-27b",
+    "wire_api": "responses"
+  },
+  "claims": [
+    {
+      "field": "description",
+      "value": "Hermes 3 405B is the latest flagship model in the Hermes series of LLMs by Nous Research. It is a full parameter finetune of Llama-3.1 405B. It is a generalist language model with advanced agentic capabilities, better roleplaying, reasoning, multi-turn conversation, and long context coherence.",
+      "evidence": "Hermes 3 is a generalist language model with many improvements over Hermes 2, including advanced agentic capabilities, much better roleplaying, reasoning, multi-turn conversation, long context coherence, and improvements across the board.",
+      "section": "## Model Description",
+      "confidence": "high"
+    },
+    {
+      "field": "context_length",
+      "value": 131072,
+      "evidence": "base_model: meta-llama/Meta-Llama-3.1-405B",
+      "section": "MODEL CARD:",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "CapChat",
+        "CapFunctionCall",
+        "CapJsonMode",
+        "ModalityTextIn",
+        "ModalityTextOut"
+      ],
+      "evidence": "Hermes 3 uses ChatML as the prompt format, opening up a much more structured system for engaging the LLM in multi-turn chat dialogue.",
+      "section": "# Prompt Format",
+      "confidence": "high"
+    }
+  ]
+}

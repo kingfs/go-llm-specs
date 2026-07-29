@@ -1,3 +1,4 @@
+schema_version: 2
 id: meta-llama/llama-3.2-1b-instruct
 name: 'Meta: Llama 3.2 1B Instruct'
 provider: Meta
@@ -23,3 +24,61 @@ features:
   - CapChat
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:38:55.140097474Z
+upstream:
+  openrouter:
+    canonical_slug: meta-llama/llama-3.2-1b-instruct
+    huggingface_id: meta-llama/Llama-3.2-1B-Instruct
+    supported_parameters:
+      - frequency_penalty
+      - logit_bias
+      - max_tokens
+      - min_p
+      - presence_penalty
+      - repetition_penalty
+      - seed
+      - stop
+      - temperature
+      - top_k
+      - top_p
+    input_modalities:
+      - text
+    output_modalities:
+      - text
+    knowledge_cutoff: "2023-12-31"
+    fetched_at: 2026-07-29T10:38:55.140098014Z
+  huggingface:
+    id: meta-llama/Llama-3.2-1B-Instruct
+    revision: 9213176726f574b556790deb65791e0c5aa438b6
+    pipeline_tag: text-generation
+    model_type: llama
+    architectures:
+      - LlamaForCausalLM
+    license: llama3.2
+    tags:
+      - arxiv:2204.05149
+      - arxiv:2405.16406
+      - conversational
+      - de
+      - deploy:sagemaker
+      - en
+      - endpoints_compatible
+      - es
+      - eval-results
+      - facebook
+      - fr
+      - hi
+      - it
+      - license:llama3.2
+      - llama
+      - llama-3
+      - meta
+      - pt
+      - pytorch
+      - region:us
+      - safetensors
+      - text-generation
+      - text-generation-inference
+      - th
+      - transformers
+    fetched_at: 2026-07-29T10:38:55.894473763Z

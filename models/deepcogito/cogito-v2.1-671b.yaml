@@ -1,3 +1,4 @@
+schema_version: 2
 id: deepcogito/cogito-v2.1-671b
 name: 'Deep Cogito: Cogito v2.1 671B'
 provider: Deepcogito
@@ -9,3 +10,29 @@ features:
   - CapJsonMode
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:37:29.770615072Z
+upstream:
+  openrouter:
+    canonical_slug: deepcogito/cogito-v2.1-671b-20251118
+    supported_parameters:
+      - frequency_penalty
+      - include_reasoning
+      - logit_bias
+      - max_tokens
+      - min_p
+      - presence_penalty
+      - reasoning
+      - repetition_penalty
+      - response_format
+      - stop
+      - structured_outputs
+      - temperature
+      - top_k
+      - top_p
+    input_modalities:
+      - text
+    output_modalities:
+      - text
+    fetched_at: 2026-07-29T10:37:29.770615662Z
+reasoning:
+  supported: true

@@ -1,3 +1,4 @@
+schema_version: 2
 id: anthracite-org/magnum-v4-72b
 name: Magnum v4 72B
 provider: Anthracite-Org
@@ -16,3 +17,64 @@ features:
   - CapJsonMode
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:36:38.248795194Z
+upstream:
+  openrouter:
+    canonical_slug: anthracite-org/magnum-v4-72b
+    huggingface_id: anthracite-org/magnum-v4-72b
+    supported_parameters:
+      - frequency_penalty
+      - logit_bias
+      - logprobs
+      - max_tokens
+      - min_p
+      - presence_penalty
+      - repetition_penalty
+      - response_format
+      - seed
+      - stop
+      - structured_outputs
+      - temperature
+      - top_a
+      - top_k
+      - top_logprobs
+      - top_p
+    input_modalities:
+      - text
+    output_modalities:
+      - text
+    knowledge_cutoff: "2024-06-30"
+    fetched_at: 2026-07-29T10:36:38.248795684Z
+  huggingface:
+    id: anthracite-org/magnum-v4-72b
+    revision: 3ea7aecd096b6323fcc4c01c6cef11364c75e6b5
+    pipeline_tag: text-generation
+    model_type: qwen2
+    architectures:
+      - Qwen2ForCausalLM
+    license: apache-2.0
+    tags:
+      - chat
+      - conversational
+      - dataset:anthracite-org/c2_logs_32k_llama3_qwen2_v1.2
+      - dataset:anthracite-org/kalo-opus-instruct-22k-no-refusal
+      - dataset:anthracite-org/kalo_misc_part2
+      - dataset:anthracite-org/kalo_opus_misc_240827
+      - dataset:anthracite-org/nopm_claude_writing_fixed
+      - dataset:lodrick-the-lafted/kalo-opus-instruct-3k-filtered
+      - en
+      - endpoints_compatible
+      - license:apache-2.0
+      - qwen2
+      - region:us
+      - safetensors
+      - text-generation
+      - text-generation-inference
+      - transformers
+    config_context_length: 32768
+    tokenizer_model_max_length: 131072
+    chat_template_sha256: 40982c421627e55d8b234715c416da4100b019f72822349601de3de24921c18c
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-07-29T10:36:40.190903433Z

@@ -1,3 +1,4 @@
+schema_version: 2
 id: openai/gpt-4o-audio-preview
 name: 'OpenAI: GPT-4o Audio'
 provider: OpenAI
@@ -13,3 +14,4 @@ features:
   - ModalityAudioOut
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:41:10.364461058Z

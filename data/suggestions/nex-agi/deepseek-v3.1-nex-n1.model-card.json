@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "nex-agi/deepseek-v3.1-nex-n1",
+  "status": "pending",
+  "created_at": "2026-07-29T11:36:15.299548217Z",
+  "source": {
+    "url": "https://huggingface.co/nex-agi/DeepSeek-V3.1-Nex-N1/resolve/2b4f8ae454950acf40eda250c7ff96d7814ab5bc/README.md",
+    "revision": "2b4f8ae454950acf40eda250c7ff96d7814ab5bc",
+    "sha256": "00ca44c71b4f669a023735f65a4b75f3f9517621c012fec89eab3a9fcc252978"
+  },
+  "generator": {
+    "model": "qwen3.6-27b",
+    "wire_api": "responses"
+  },
+  "claims": [
+    {
+      "field": "description",
+      "value": "DeepSeek-V3.1-Nex-N1 is the flagship of the Nex-N1 series, a post-trained model designed for agent autonomy, tool use, and productivity.",
+      "evidence": "DeepSeek-V3.1-Nex-N1 is the flagship release of the Nex-N1 series — a post-trained model designed to highlight agent autonomy, tool use, and real-world productivity.",
+      "section": "# Nex-N1",
+      "confidence": "high"
+    },
+    {
+      "field": "context_length",
+      "value": 131072,
+      "evidence": "For SWE-verified-bench, test results are based on an internal scaffold...using a 128k context length",
+      "section": "## Performance",
+      "confidence": "medium"
+    },
+    {
+      "field": "features",
+      "value": [
+        "CapFunctionCall",
+        "ModalityTextIn",
+        "ModalityTextOut"
+      ],
+      "evidence": "Full spectrum model matrix: From 8B to 671B parameters",
+      "section": "## Highlights",
+      "confidence": "high"
+    },
+    {
+      "field": "reasoning.supported",
+      "value": true,
+      "evidence": "Nex-series models support robust function-calling capabilities.",
+      "section": "### Function Calling",
+      "confidence": "high"
+    },
+    {
+      "field": "reasoning.parser",
+      "value": "qwen3_coder",
+      "evidence": "we modified the tool parser of `qwen3_coder`",
+      "section": "### Function Calling",
+      "confidence": "high"
+    }
+  ]
+}

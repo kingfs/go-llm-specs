@@ -1,3 +1,4 @@
+schema_version: 2
 id: cognitivecomputations/dolphin-mistral-24b-venice-edition
 name: 'Venice: Uncensored'
 provider: Cognitivecomputations
@@ -10,3 +11,51 @@ features:
   - CapJsonMode
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:37:15.537438625Z
+upstream:
+  openrouter:
+    canonical_slug: venice/uncensored
+    huggingface_id: cognitivecomputations/Dolphin-Mistral-24B-Venice-Edition
+    supported_parameters:
+      - frequency_penalty
+      - max_tokens
+      - presence_penalty
+      - response_format
+      - stop
+      - temperature
+      - top_k
+      - top_p
+    input_modalities:
+      - text
+    output_modalities:
+      - text
+    knowledge_cutoff: "2024-04-30"
+    fetched_at: 2026-07-29T10:37:15.537439215Z
+  huggingface:
+    id: dphn/Dolphin-Mistral-24B-Venice-Edition
+    revision: b23ff40b4a25e4f93de432bd896d4464479a9f79
+    pipeline_tag: text-generation
+    model_type: mistral3
+    architectures:
+      - Mistral3ForConditionalGeneration
+    license: apache-2.0
+    tags:
+      - base_model:finetune:mistralai/Mistral-Small-24B-Instruct-2501
+      - base_model:mistralai/Mistral-Small-24B-Instruct-2501
+      - conversational
+      - deploy:azure
+      - endpoints_compatible
+      - image-text-to-text
+      - license:apache-2.0
+      - mistral3
+      - region:us
+      - safetensors
+      - text-generation
+      - transformers
+    tokenizer_model_max_length: 131072
+    processor_class: PixtralProcessor
+    structured_files:
+      - config.json
+      - preprocessor_config.json
+      - tokenizer_config.json
+    fetched_at: 2026-07-29T10:37:18.097486103Z

@@ -1,3 +1,4 @@
+schema_version: 2
 id: meta-llama/llama-3.1-70b-instruct
 name: 'Meta: Llama 3.1 70B Instruct'
 provider: Meta
@@ -21,3 +22,68 @@ features:
   - CapJsonMode
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:38:52.368916606Z
+upstream:
+  openrouter:
+    canonical_slug: meta-llama/llama-3.1-70b-instruct
+    huggingface_id: meta-llama/Meta-Llama-3.1-70B-Instruct
+    supported_parameters:
+      - frequency_penalty
+      - logit_bias
+      - logprobs
+      - max_tokens
+      - min_p
+      - presence_penalty
+      - repetition_penalty
+      - response_format
+      - seed
+      - stop
+      - structured_outputs
+      - temperature
+      - tool_choice
+      - tools
+      - top_k
+      - top_logprobs
+      - top_p
+    input_modalities:
+      - text
+    output_modalities:
+      - text
+    knowledge_cutoff: "2023-12-31"
+    fetched_at: 2026-07-29T10:38:52.368916856Z
+  huggingface:
+    id: meta-llama/Llama-3.1-70B-Instruct
+    revision: 1605565b47bb9346c5515c34102e054115b4f98b
+    pipeline_tag: text-generation
+    model_type: llama
+    architectures:
+      - LlamaForCausalLM
+    license: llama3.1
+    tags:
+      - arxiv:2204.05149
+      - base_model:finetune:meta-llama/Llama-3.1-70B
+      - base_model:meta-llama/Llama-3.1-70B
+      - conversational
+      - de
+      - deploy:sagemaker
+      - en
+      - endpoints_compatible
+      - es
+      - eval-results
+      - facebook
+      - fr
+      - hi
+      - it
+      - license:llama3.1
+      - llama
+      - llama-3
+      - meta
+      - pt
+      - pytorch
+      - region:us
+      - safetensors
+      - text-generation
+      - text-generation-inference
+      - th
+      - transformers
+    fetched_at: 2026-07-29T10:38:53.436115314Z

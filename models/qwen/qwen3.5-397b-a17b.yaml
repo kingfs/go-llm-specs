@@ -1,3 +1,4 @@
+schema_version: 2
 id: qwen/qwen3.5-397b-a17b
 name: 'Qwen: Qwen3.5 397B A17B'
 provider: Qwen
@@ -13,3 +14,64 @@ features:
   - ModalityTextIn
   - ModalityTextOut
   - ModalityVideoIn
+discovered_at: 2026-07-29T10:43:38.60088443Z
+upstream:
+  openrouter:
+    canonical_slug: qwen/qwen3.5-397b-a17b-20260216
+    huggingface_id: Qwen/Qwen3.5-397B-A17B
+    supported_parameters:
+      - frequency_penalty
+      - include_reasoning
+      - logit_bias
+      - logprobs
+      - max_tokens
+      - min_p
+      - presence_penalty
+      - reasoning
+      - repetition_penalty
+      - response_format
+      - seed
+      - stop
+      - structured_outputs
+      - temperature
+      - tool_choice
+      - tools
+      - top_k
+      - top_logprobs
+      - top_p
+    input_modalities:
+      - image
+      - text
+      - video
+    output_modalities:
+      - text
+    fetched_at: 2026-07-29T10:43:38.60088472Z
+  huggingface:
+    id: Qwen/Qwen3.5-397B-A17B
+    revision: 8472618112abcbd45acbcdc58436aff4233c23f7
+    pipeline_tag: image-text-to-text
+    model_type: qwen3_5_moe
+    architectures:
+      - Qwen3_5MoeForConditionalGeneration
+    license: apache-2.0
+    tags:
+      - conversational
+      - deploy:azure
+      - endpoints_compatible
+      - eval-results
+      - image-text-to-text
+      - license:apache-2.0
+      - qwen3_5_moe
+      - region:us
+      - safetensors
+      - transformers
+    tokenizer_model_max_length: 262144
+    processor_class: Qwen3VLProcessor
+    chat_template_sha256: 79770cfcd562a1ec57f670709445ca5b4ccff2684ceae9072db7b61045135534
+    structured_files:
+      - config.json
+      - preprocessor_config.json
+      - tokenizer_config.json
+    fetched_at: 2026-07-29T10:43:40.90053156Z
+reasoning:
+  supported: true

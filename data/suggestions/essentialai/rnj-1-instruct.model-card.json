@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "essentialai/rnj-1-instruct",
+  "status": "pending",
+  "created_at": "2026-07-29T11:24:20.156295077Z",
+  "source": {
+    "url": "https://huggingface.co/EssentialAI/rnj-1-instruct/resolve/5ef96d7a82b2bff8009192979432c9bc64e870cd/README.md",
+    "revision": "5ef96d7a82b2bff8009192979432c9bc64e870cd",
+    "sha256": "8ab62846f8503e1595c97592ddd555fca5a35c98087cdbd9bc946cb54ec22fb5"
+  },
+  "generator": {
+    "model": "qwen3.6-27b",
+    "wire_api": "responses"
+  },
+  "claims": [
+    {
+      "field": "description",
+      "value": "Rnj-1 is a family of 8B parameter open-weight, dense models trained from scratch, with `rnj-1` as base model and `rnj-1-instruct` as post-trained instruction tuned variant.",
+      "evidence": "Rnj-1 is a family of 8B parameter open-weight, dense models trained from scratch",
+      "section": "# Rnj-1",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "ModalityTextIn",
+        "ModalityTextOut"
+      ],
+      "evidence": "base_model: - EssentialAI/rnj-1",
+      "section": "---",
+      "confidence": "high"
+    },
+    {
+      "field": "description",
+      "value": "The base model `rnj-1` is capable of domain specialization similar to `rnj-1-instruct`. ",
+      "evidence": "Both rnj-1 and rnj-1-instruct models are being made available for the community to extend",
+      "section": "### Rnj-1 models are designed to be extended",
+      "confidence": "high"
+    },
+    {
+      "field": "description",
+      "value": "Agentic coding is a target ability for the model, with strong performance on SWE-bench.",
+      "evidence": "`rnj-1-instruct` dominates the pack on agentic coding, one of our target abilities.",
+      "section": "### Highlights of abilities",
+      "confidence": "low"
+    },
+    {
+      "field": "description",
+      "value": "The model scored 20.8% on SWE-bench Verified bash-only mode.",
+      "evidence": "It scores 20.8% on SWE-bench Verified in bash-only mode, which is higher than Gemini 2.0 flash and Qwen2.5-Coder 32B Instruct under the same agentic framework.",
+      "section": "### Highlights of abilities",
+      "confidence": "low"
+    }
+  ]
+}

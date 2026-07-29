@@ -1,3 +1,4 @@
+schema_version: 2
 id: mistralai/mistral-saba
 name: 'Mistral: Saba'
 provider: Mistral
@@ -10,3 +11,26 @@ features:
   - CapJsonMode
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:39:41.658593769Z
+upstream:
+  openrouter:
+    canonical_slug: mistralai/mistral-saba-2502
+    supported_parameters:
+      - frequency_penalty
+      - max_tokens
+      - presence_penalty
+      - response_format
+      - seed
+      - stop
+      - structured_outputs
+      - temperature
+      - tool_choice
+      - tools
+      - top_p
+    input_modalities:
+      - file
+      - text
+    output_modalities:
+      - text
+    knowledge_cutoff: "2024-09-30"
+    fetched_at: 2026-07-29T10:39:41.658594229Z

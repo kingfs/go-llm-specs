@@ -1,3 +1,4 @@
+schema_version: 2
 id: openrouter/pareto-code
 name: Pareto Code Router
 provider: Openrouter
@@ -8,3 +9,12 @@ features:
   - CapChat
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:41:52.942078579Z
+upstream:
+  openrouter:
+    canonical_slug: openrouter/pareto-code
+    input_modalities:
+      - text
+    output_modalities:
+      - text
+    fetched_at: 2026-07-29T10:41:52.942079059Z

@@ -1,3 +1,4 @@
+schema_version: 2
 id: qwen/qwen3.5-plus-20260420
 name: 'Qwen: Qwen3.5 Plus 2026-04-20'
 provider: Qwen
@@ -13,3 +14,33 @@ features:
   - ModalityTextIn
   - ModalityTextOut
   - ModalityVideoIn
+discovered_at: 2026-07-29T10:43:43.790384768Z
+upstream:
+  openrouter:
+    canonical_slug: qwen/qwen3.5-plus-20260420
+    supported_parameters:
+      - frequency_penalty
+      - include_reasoning
+      - logprobs
+      - max_tokens
+      - presence_penalty
+      - reasoning
+      - response_format
+      - seed
+      - stop
+      - structured_outputs
+      - temperature
+      - tool_choice
+      - tools
+      - top_k
+      - top_logprobs
+      - top_p
+    input_modalities:
+      - image
+      - text
+      - video
+    output_modalities:
+      - text
+    fetched_at: 2026-07-29T10:43:43.790384908Z
+reasoning:
+  supported: true

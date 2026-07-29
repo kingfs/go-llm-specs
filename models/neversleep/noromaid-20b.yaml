@@ -1,3 +1,4 @@
+schema_version: 2
 id: neversleep/noromaid-20b
 name: Noromaid 20B
 provider: Neversleep
@@ -16,3 +17,4 @@ features:
   - CapJsonMode
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:40:16.87818037Z

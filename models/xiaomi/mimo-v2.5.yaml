@@ -1,3 +1,4 @@
+schema_version: 2
 id: xiaomi/mimo-v2.5
 name: 'Xiaomi: MiMo-V2.5'
 provider: Xiaomi
@@ -14,3 +15,74 @@ features:
   - ModalityTextIn
   - ModalityTextOut
   - ModalityVideoIn
+discovered_at: 2026-07-29T10:44:53.930256375Z
+upstream:
+  openrouter:
+    canonical_slug: xiaomi/mimo-v2.5-20260422
+    huggingface_id: XiaomiMiMo/MiMo-V2.5
+    supported_parameters:
+      - frequency_penalty
+      - include_reasoning
+      - logit_bias
+      - logprobs
+      - max_tokens
+      - min_p
+      - presence_penalty
+      - reasoning
+      - repetition_penalty
+      - response_format
+      - seed
+      - stop
+      - structured_outputs
+      - temperature
+      - tool_choice
+      - tools
+      - top_k
+      - top_logprobs
+      - top_p
+    input_modalities:
+      - audio
+      - image
+      - text
+      - video
+    output_modalities:
+      - text
+    fetched_at: 2026-07-29T10:44:53.930256665Z
+  huggingface:
+    id: XiaomiMiMo/MiMo-V2.5
+    revision: 63651580ca774f8504f676040460aed3e1244ac1
+    pipeline_tag: text-generation
+    model_type: mimo_v2
+    architectures:
+      - MiMoV2ForCausalLM
+    license: mit
+    tags:
+      - agent
+      - audio
+      - conversational
+      - custom_code
+      - en
+      - eval-results
+      - fp8
+      - license:mit
+      - long-context
+      - mimo_v2
+      - multimodal
+      - region:us
+      - safetensors
+      - text-generation
+      - transformers
+      - video-understanding
+      - vision-language
+      - zh
+    config_context_length: 1048576
+    tokenizer_model_max_length: 131072
+    processor_class: Qwen2_5_VLProcessor
+    chat_template_sha256: 3a2a9770e3ea8f9d5086138b13cab7604d077a598cdfb5e71fd2513a4c2e701f
+    structured_files:
+      - config.json
+      - preprocessor_config.json
+      - tokenizer_config.json
+    fetched_at: 2026-07-29T10:44:56.235858548Z
+reasoning:
+  supported: true

@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "bytedance/ui-tars-1.5-7b",
+  "status": "pending",
+  "created_at": "2026-07-29T11:19:29.880046961Z",
+  "source": {
+    "url": "https://huggingface.co/ByteDance-Seed/UI-TARS-1.5-7B/resolve/683d002dd99d8f95104d31e70391a39348857f4e/README.md",
+    "revision": "683d002dd99d8f95104d31e70391a39348857f4e",
+    "sha256": "35b7773a6f6876602717b46751e3cb1a3d1382d2ddc5a707fa00a238e1984bf3"
+  },
+  "generator": {
+    "model": "qwen3.6-27b",
+    "wire_api": "responses"
+  },
+  "claims": [
+    {
+      "field": "description",
+      "value": "Open-source multimodal agent built upon a vision-language model for GUI tasks.",
+      "evidence": "UI-TARS-1.5, an open-source multimodal agent built upon a powerful vision-language model.",
+      "section": "Introduction",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "CapChat",
+        "ModalityTextIn",
+        "ModalityTextOut",
+        "ModalityImageIn"
+      ],
+      "evidence": "UI-TARS-1.5, an open-source multimodal agent built upon a powerful vision-language model. It is capable of effectively performing diverse tasks within virtual worlds.",
+      "section": "Introduction",
+      "confidence": "high"
+    },
+    {
+      "field": "reasoning.supported",
+      "value": true,
+      "evidence": "integrates advanced reasoning enabled by reinforcement learning",
+      "section": "Introduction",
+      "confidence": "high"
+    },
+    {
+      "field": "description",
+      "value": "7B parameter variant of UI-TARS-1.5 optimized for general computer use, not game-based scenarios.",
+      "evidence": "The released UI-TARS-1.5-7B focuses primarily on enhancing general computer use capabilities",
+      "section": "Model Scale Comparison",
+      "confidence": "high"
+    }
+  ]
+}

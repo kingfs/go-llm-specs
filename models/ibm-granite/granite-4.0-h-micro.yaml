@@ -1,3 +1,4 @@
+schema_version: 2
 id: ibm-granite/granite-4.0-h-micro
 name: 'IBM: Granite 4.0 Micro'
 provider: Ibm-Granite
@@ -9,3 +10,54 @@ features:
   - CapChat
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:38:29.380343183Z
+upstream:
+  openrouter:
+    canonical_slug: ibm-granite/granite-4.0-h-micro
+    huggingface_id: ibm-granite/granite-4.0-h-micro
+    supported_parameters:
+      - frequency_penalty
+      - logit_bias
+      - logprobs
+      - max_tokens
+      - min_p
+      - presence_penalty
+      - repetition_penalty
+      - response_format
+      - seed
+      - stop
+      - temperature
+      - top_k
+      - top_logprobs
+      - top_p
+    input_modalities:
+      - text
+    output_modalities:
+      - text
+    fetched_at: 2026-07-29T10:38:29.380343593Z
+  huggingface:
+    id: ibm-granite/granite-4.0-h-micro
+    revision: d5f01a3ea75f088947be3aae039f4ad52837dfde
+    pipeline_tag: text-generation
+    model_type: granitemoehybrid
+    architectures:
+      - GraniteMoeHybridForCausalLM
+    license: apache-2.0
+    tags:
+      - arxiv:0000.00000
+      - conversational
+      - deploy:azure
+      - endpoints_compatible
+      - granite-4.0
+      - granitemoehybrid
+      - language
+      - license:apache-2.0
+      - region:us
+      - safetensors
+      - text-generation
+      - transformers
+    config_context_length: 131072
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-07-29T10:38:31.376026604Z

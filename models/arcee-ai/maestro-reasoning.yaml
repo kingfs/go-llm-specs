@@ -1,3 +1,4 @@
+schema_version: 2
 id: arcee-ai/maestro-reasoning
 name: 'Arcee AI: Maestro Reasoning'
 provider: Arcee-Ai
@@ -9,3 +10,4 @@ features:
   - CapChat
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:36:53.913450334Z

@@ -1,3 +1,4 @@
+schema_version: 2
 id: nvidia/nemotron-3-super-120b-a12b
 name: 'NVIDIA: Nemotron 3 Super'
 provider: Nvidia
@@ -16,3 +17,85 @@ features:
   - CapJsonMode
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:40:48.451488055Z
+upstream:
+  openrouter:
+    canonical_slug: nvidia/nemotron-3-super-120b-a12b-20230311
+    huggingface_id: nvidia/NVIDIA-Nemotron-3-Super-120B-A12B-FP8
+    supported_parameters:
+      - frequency_penalty
+      - include_reasoning
+      - logit_bias
+      - logprobs
+      - max_tokens
+      - min_p
+      - presence_penalty
+      - reasoning
+      - reasoning_effort
+      - repetition_penalty
+      - response_format
+      - seed
+      - stop
+      - structured_outputs
+      - temperature
+      - tool_choice
+      - tools
+      - top_k
+      - top_logprobs
+      - top_p
+    input_modalities:
+      - text
+    output_modalities:
+      - text
+    fetched_at: 2026-07-29T10:40:48.451488585Z
+  huggingface:
+    id: nvidia/NVIDIA-Nemotron-3-Super-120B-A12B-FP8
+    revision: 7d7e5797b8a3c7abbab54033b6004e93e8b6bc91
+    pipeline_tag: text-generation
+    model_type: nemotron_h
+    architectures:
+      - NemotronHForCausalLM
+    license: other
+    tags:
+      - arxiv:2512.20848
+      - arxiv:2512.20856
+      - conversational
+      - custom_code
+      - dataset:nvidia/nemotron-post-training-v3
+      - dataset:nvidia/nemotron-pre-training-datasets
+      - de
+      - deploy:azure
+      - deploy:sagemaker
+      - en
+      - endpoints_compatible
+      - es
+      - eval-results
+      - fr
+      - it
+      - ja
+      - latent-moe
+      - license:other
+      - modelopt
+      - mtp
+      - nemotron-3
+      - nemotron_h
+      - nvidia
+      - pytorch
+      - region:us
+      - safetensors
+      - text-generation
+      - transformers
+      - zh
+    config_context_length: 262144
+    tokenizer_model_max_length: 262144
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-07-29T10:40:50.434311839Z
+reasoning:
+  supported: true
+  default_enabled: true
+  default_effort: medium
+  supported_efforts:
+    - low
+    - medium

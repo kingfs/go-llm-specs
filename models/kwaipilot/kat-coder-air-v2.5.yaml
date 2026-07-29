@@ -1,3 +1,4 @@
+schema_version: 2
 id: kwaipilot/kat-coder-air-v2.5
 name: 'Kwaipilot: KAT-Coder-Air V2.5'
 provider: Kwaipilot
@@ -11,3 +12,25 @@ features:
   - CapJsonMode
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:38:43.238900866Z
+upstream:
+  openrouter:
+    canonical_slug: kwaipilot/kat-coder-air-v2.5-20260710
+    supported_parameters:
+      - frequency_penalty
+      - logprobs
+      - max_tokens
+      - presence_penalty
+      - response_format
+      - stop
+      - structured_outputs
+      - temperature
+      - tool_choice
+      - tools
+      - top_logprobs
+      - top_p
+    input_modalities:
+      - text
+    output_modalities:
+      - text
+    fetched_at: 2026-07-29T10:38:43.238901076Z

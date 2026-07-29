@@ -1,3 +1,4 @@
+schema_version: 2
 id: upstage/solar-pro-3
 name: 'Upstage: Solar Pro 3'
 provider: Upstage
@@ -10,3 +11,23 @@ features:
   - CapJsonMode
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:44:44.334716967Z
+upstream:
+  openrouter:
+    canonical_slug: upstage/solar-pro-3
+    supported_parameters:
+      - include_reasoning
+      - max_tokens
+      - reasoning
+      - response_format
+      - structured_outputs
+      - temperature
+      - tool_choice
+      - tools
+    input_modalities:
+      - text
+    output_modalities:
+      - text
+    fetched_at: 2026-07-29T10:44:44.334717567Z
+reasoning:
+  supported: true

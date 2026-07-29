@@ -1,0 +1,91 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "baidu/ernie-4.5-21b-a3b-thinking",
+  "status": "pending",
+  "created_at": "2026-07-29T11:19:01.998972754Z",
+  "source": {
+    "url": "https://huggingface.co/baidu/ERNIE-4.5-21B-A3B-Thinking/resolve/4341bb42644d5422859509fa25d41544c57181f8/README.md",
+    "revision": "4341bb42644d5422859509fa25d41544c57181f8",
+    "sha256": "b46ba203c179d77c52a07a4d470ca9e9d37d69ec6f6affe5d40453f18695d722"
+  },
+  "generator": {
+    "model": "qwen3.6-27b",
+    "wire_api": "responses"
+  },
+  "claims": [
+    {
+      "field": "description",
+      "value": "ERNIE-4.5-21B-A3B-Thinking is a text MoE post-trained model with 21B total parameters and 3B activated parameters per token.",
+      "evidence": "ERNIE-4.5-21B-A3B-Thinking is a text MoE post-trained model, with 21B total parameters and 3B activated parameters for each token.",
+      "section": "Model Overview",
+      "confidence": "high"
+    },
+    {
+      "field": "context_length",
+      "value": 131072,
+      "evidence": "Context Length|131072",
+      "section": "Model Overview",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "ModalityTextIn",
+        "ModalityTextOut"
+      ],
+      "evidence": "Modality|Text",
+      "section": "Model Overview",
+      "confidence": "high"
+    },
+    {
+      "field": "reasoning.parser",
+      "value": "ernie_x1",
+      "evidence": "--reasoning-parser ernie_x1",
+      "section": "Quickstart",
+      "confidence": "high"
+    },
+    {
+      "field": "reasoning.parser",
+      "value": "ernie_x1",
+      "evidence": "--tool-call-parser ernie_x1",
+      "section": "Quickstart",
+      "confidence": "high"
+    },
+    {
+      "field": "reasoning.supported",
+      "value": true,
+      "evidence": "The ERNIE-4.5-21B-A3B-Thinking model supports function call.",
+      "section": "Quickstart",
+      "confidence": "high"
+    },
+    {
+      "field": "reasoning.supported",
+      "value": true,
+      "evidence": "Enhanced 128K long-context understanding capabilities.",
+      "section": "Model Highlights",
+      "confidence": "high"
+    },
+    {
+      "field": "description",
+      "value": "Compatible with PyTorch, PaddlePaddle, vLLM, transformers, and FastDeploy.",
+      "evidence": "Both PyTorch and PaddlePaddle ecosystem tools, such as vLLM, transformers, and FastDeploy, are expected to be able to load and run this model.",
+      "section": "Quickstart",
+      "confidence": "high"
+    },
+    {
+      "field": "description",
+      "value": "Released under Apache License 2.0.",
+      "evidence": "license: apache-2.0",
+      "section": "license",
+      "confidence": "high"
+    },
+    {
+      "field": "description",
+      "value": "Supports English and Chinese languages.",
+      "evidence": "language: - en - zh",
+      "section": "license",
+      "confidence": "high"
+    }
+  ]
+}

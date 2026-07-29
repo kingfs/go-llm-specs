@@ -1,0 +1,72 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "arcee-ai/trinity-large-thinking",
+  "status": "pending",
+  "created_at": "2026-07-29T11:18:16.30066592Z",
+  "source": {
+    "url": "https://huggingface.co/arcee-ai/Trinity-Large-Thinking/resolve/dc6a99b6b74202880e31491a445a94884c97890c/README.md",
+    "revision": "dc6a99b6b74202880e31491a445a94884c97890c",
+    "sha256": "a58ea7404fbd429af75480224e43f714278dac9a40e735c598ea79b08dd7ef6d"
+  },
+  "generator": {
+    "model": "qwen3.6-27b",
+    "wire_api": "responses"
+  },
+  "claims": [
+    {
+      "field": "description",
+      "value": "Arcee's 398B parameter sparse MoE model with ~13B active parameters per token, post-trained with extended chain-of-thought reasoning and agentic RL for agentic workflows.",
+      "evidence": "a 398B-parameter sparse Mixture-of-Experts (MoE) model with approximately 13B active parameters per token",
+      "section": "Introduction",
+      "confidence": "high"
+    },
+    {
+      "field": "context_length",
+      "value": 524288,
+      "evidence": "Pretraining context length | 8,192\nContext length after extension | 512k",
+      "section": "Architecture",
+      "confidence": "high"
+    },
+    {
+      "field": "reasoning.supported",
+      "value": true,
+      "evidence": "--reasoning-parser deepseek_r1 — Parses `\u003cthink\u003e...` reasoning blocks and exposes them via the `reasoning_content` field in the API response",
+      "section": "vLLM",
+      "confidence": "high"
+    },
+    {
+      "field": "reasoning.parser",
+      "value": "deepseek_r1",
+      "evidence": "--reasoning-parser deepseek_r1 — Parses `\u003cthink\u003e...` reasoning blocks",
+      "section": "vLLM",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "CapChat",
+        "CapFunctionCall",
+        "ModalityTextIn",
+        "ModalityTextOut"
+      ],
+      "evidence": "tool-calling, thinking\nPurpose-built for tool calling, multi-step planning, and agent workflows\nNative reasoning traces: Extended chain-of-thought via `\u003cthink\u003e...` blocks",
+      "section": "Introduction",
+      "confidence": "high"
+    },
+    {
+      "field": "description",
+      "value": "Trinity-Large-Thinking is a reasoning-optimized variant of Arcee AI's Trinity-Large family — a 398B-parameter sparse Mixture-of-Experts (MoE) model with approximately 13B active parameters per token. Built on Trinity-Large-Base and post-trained with extended chain-of-thought reasoning and agentic RL. Supports English, Spanish, French, German, Italian, Portuguese, Russian, Arabic, Hindi, Korean, Chinese.",
+      "evidence": "language: - en - es - fr - fr - de - it - pt - ru - ar - hi - ko - zh",
+      "section": "Introduction",
+      "confidence": "high"
+    },
+    {
+      "field": "description",
+      "value": "Base model: arcee-ai/Trinity-Large-Base",
+      "evidence": "base_model: - arcee-ai/Trinity-Large-Base",
+      "section": "Introduction",
+      "confidence": "high"
+    }
+  ]
+}

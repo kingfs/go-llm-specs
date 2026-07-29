@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free",
+  "status": "pending",
+  "created_at": "2026-07-29T11:39:25.405373612Z",
+  "source": {
+    "url": "https://huggingface.co/nvidia/Nemotron-3-Nano-Omni-30B-A3B-Reasoning-BF16/resolve/24e67ea000b7c2837fc8f9488aa2008524fac8ba/README.md",
+    "revision": "24e67ea000b7c2837fc8f9488aa2008524fac8ba",
+    "sha256": "444462b23e6c12b07e6b467aa89d358275f257c2357462a5e6a7f7fd0068ba1b"
+  },
+  "generator": {
+    "model": "qwen3.6-27b",
+    "wire_api": "responses"
+  },
+  "claims": [
+    {
+      "field": "description",
+      "value": "Multimodal LLM unifying video, audio, image, and text understanding for enterprise Q\u0026A, summarization, and document intelligence workflows. Built on a 31B Mamba2-Transformer hybrid MoE backbone with ~3B active parameters per token, featuring integrated GUI, OCR, and speech transcription capabilities.",
+      "evidence": "NVIDIA Nemotron 3 Nano Omni is a multimodal large language model that unifies video, audio, image, and text understanding",
+      "section": "# Model Overview",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "ModalityTextIn",
+        "ModalityTextOut",
+        "ModalityImageIn",
+        "ModalityAudioIn",
+        "ModalityVideoIn"
+      ],
+      "evidence": "Total parameters | 31B (Mamba2-Transformer hybrid MoE)",
+      "section": "## At a Glance",
+      "confidence": "high"
+    },
+    {
+      "field": "reasoning.supported",
+      "value": true,
+      "evidence": "Reasoning mode | On by default; toggle via `enable_thinking`",
+      "section": "## At a Glance",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "CapJsonMode"
+      ],
+      "evidence": "Supports JSON output format",
+      "section": "**Other Properties Related to Output:**",
+      "confidence": "medium"
+    },
+    {
+      "field": "context_length",
+      "value": 262144,
+      "evidence": "Max context | 256k tokens",
+      "section": "## At a Glance",
+      "confidence": "high"
+    }
+  ]
+}

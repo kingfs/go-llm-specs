@@ -1,0 +1,114 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "qwen/qwq-32b",
+  "status": "pending",
+  "created_at": "2026-07-29T12:01:32.316815336Z",
+  "source": {
+    "url": "https://huggingface.co/Qwen/QwQ-32B/resolve/976055f8c83f394f35dbd3ab09a285a984907bd0/README.md",
+    "revision": "976055f8c83f394f35dbd3ab09a285a984907bd0",
+    "sha256": "c173a260c85b4d316a02bd977a55f24484bf0dbc96a72f0305b9e548b61d64ba"
+  },
+  "generator": {
+    "model": "qwen3.6-27b",
+    "wire_api": "responses"
+  },
+  "claims": [
+    {
+      "field": "description",
+      "value": "QwQ is the reasoning model of the Qwen series.",
+      "evidence": "QwQ is the reasoning model of the Qwen series.",
+      "section": "# QwQ-32B",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "ModalityTextIn",
+        "ModalityTextOut"
+      ],
+      "evidence": "Base model: Qwen/Qwen2.5-32B",
+      "section": "---",
+      "confidence": "high"
+    },
+    {
+      "field": "context_length",
+      "value": 131072,
+      "evidence": "Context Length: Full 131,072 tokens",
+      "section": "## Introduction",
+      "confidence": "high"
+    },
+    {
+      "field": "description",
+      "value": "The model has 32.5B parameters, with 31.0B non-embedding parameters, 64 layers, and 40 Q / 8 KV attention heads (GQA). Architecture uses transformers with RoPE, SwiGLU, RMSNorm, and Attention QKV bias.",
+      "evidence": "Number of Parameters: 32.5B",
+      "section": "## Introduction",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "ModalityTextIn",
+        "ModalityTextOut"
+      ],
+      "evidence": "Type: Causal Language Models",
+      "section": "## Introduction",
+      "confidence": "high"
+    },
+    {
+      "field": "description",
+      "value": "Uses GQA with 40 query and 8 key/value attention heads.",
+      "evidence": "Number of Attention Heads (GQA): 40 for Q and 8 for KV",
+      "section": "## Introduction",
+      "confidence": "high"
+    },
+    {
+      "field": "description",
+      "value": "Architecture: transformers with RoPE, SwiGLU, RMSNorm, and Attention QKV bias",
+      "evidence": "Architecture: transformers with RoPE, SwiGLU, RMSNorm, and Attention QKV bias",
+      "section": "## Introduction",
+      "confidence": "high"
+    },
+    {
+      "field": "description",
+      "value": "The model has 64 transformer layers.",
+      "evidence": "Number of Layers: 64",
+      "section": "## Introduction",
+      "confidence": "high"
+    },
+    {
+      "field": "description",
+      "value": "There are 31.0B non-embedding parameters.",
+      "evidence": "Number of Paramaters (Non-Embedding): 31.0B",
+      "section": "## Introduction",
+      "confidence": "high"
+    },
+    {
+      "field": "description",
+      "value": "Training stage includes pretraining, supervised finetuning, and reinforcement learning.",
+      "evidence": "Training Stage: Pretraining \u0026 Post-training (Supervised Finetuning and Reinforcement Learning)",
+      "section": "## Introduction",
+      "confidence": "medium"
+    },
+    {
+      "field": "features",
+      "value": [
+        "ModalityTextIn",
+        "ModalityTextOut"
+      ],
+      "evidence": "license: apache-2.0",
+      "section": "---",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "ModalityTextIn",
+        "ModalityTextOut"
+      ],
+      "evidence": "pipeline_tag: text-generation",
+      "section": "---",
+      "confidence": "high"
+    }
+  ]
+}

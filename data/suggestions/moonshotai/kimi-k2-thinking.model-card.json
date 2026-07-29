@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "moonshotai/kimi-k2-thinking",
+  "status": "pending",
+  "created_at": "2026-07-29T11:34:48.286391212Z",
+  "source": {
+    "url": "https://huggingface.co/moonshotai/Kimi-K2-Thinking/resolve/a51ccc050d73dab088bf7b0e2dd9b30ae85a4e55/README.md",
+    "revision": "a51ccc050d73dab088bf7b0e2dd9b30ae85a4e55",
+    "sha256": "936ee37a164402d454a64143607d83d24c80c0d87f8ffd5c766cf328d7f25a08"
+  },
+  "generator": {
+    "model": "qwen3.6-27b",
+    "wire_api": "responses"
+  },
+  "claims": [
+    {
+      "field": "description",
+      "value": "Open-source thinking model built as a thinking agent that reasons step-by-step while dynamically invoking tools, achieving state-of-the-art results on HLE, BrowseComp, and other benchmarks.",
+      "evidence": "Kimi K2 Thinking is the latest, most capable version of open-source thinking model",
+      "section": "## 1. Model Introduction",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "ModalityTextIn",
+        "ModalityTextOut"
+      ],
+      "evidence": "Architecture: Mixture-of-Experts (MoE)",
+      "section": "## 2. Model Summary",
+      "confidence": "high"
+    },
+    {
+      "field": "context_length",
+      "value": 262144,
+      "evidence": "Context Length: 256K",
+      "section": "## 2. Model Summary",
+      "confidence": "high"
+    },
+    {
+      "field": "reasoning.supported",
+      "value": true,
+      "evidence": "End-to-end trained to interleave chain-of-thought reasoning with function calls",
+      "section": "### Key Features",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "CapJsonMode"
+      ],
+      "evidence": "Native INT4 Quantization: Quantization-Aware Training (QAT) is employed in post-training stage to achieve lossless 2x speed-up in low-latency mode",
+      "section": "### Key Features",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "ModalityTextIn",
+        "ModalityTextOut"
+      ],
+      "evidence": "MoE Hidden Dimension (per Expert): 2048, Number of Experts: 384, Selected Experts per Token: 8, Activated Parameters: 32B, Total Parameters: 1T",
+      "section": "## 2. Model Summary",
+      "confidence": "high"
+    }
+  ]
+}

@@ -1,3 +1,4 @@
+schema_version: 2
 id: nex-agi/nex-n2-pro:free
 name: 'Nex AGI: Nex-N2-Pro (free)'
 provider: Nex-Agi
@@ -12,3 +13,4 @@ features:
   - ModalityImageIn
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:40:24.52584126Z

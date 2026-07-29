@@ -1,3 +1,4 @@
+schema_version: 2
 id: inception/mercury-2
 name: 'Inception: Mercury 2'
 provider: Inception
@@ -14,3 +15,32 @@ features:
   - CapJsonMode
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:38:33.736971265Z
+upstream:
+  openrouter:
+    canonical_slug: inception/mercury-2-20260304
+    supported_parameters:
+      - include_reasoning
+      - max_tokens
+      - reasoning
+      - reasoning_effort
+      - response_format
+      - stop
+      - structured_outputs
+      - temperature
+      - tool_choice
+      - tools
+    input_modalities:
+      - text
+    output_modalities:
+      - text
+    fetched_at: 2026-07-29T10:38:33.736971545Z
+reasoning:
+  supported: true
+  default_enabled: true
+  default_effort: medium
+  supported_efforts:
+    - high
+    - low
+    - medium
+    - none

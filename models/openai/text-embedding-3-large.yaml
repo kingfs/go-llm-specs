@@ -1,3 +1,4 @@
+schema_version: 2
 id: openai/text-embedding-3-large
 name: 'OpenAI: Text Embedding 3 Large'
 provider: OpenAI
@@ -9,3 +10,4 @@ features:
   - ModalityTextIn
 aliases:
   - text-embedding-3-large
+discovered_at: 2026-07-29T10:41:45.238870567Z

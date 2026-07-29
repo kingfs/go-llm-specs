@@ -1,0 +1,89 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "ibm-granite/granite-4.0-h-micro",
+  "status": "pending",
+  "created_at": "2026-07-29T11:26:54.56914203Z",
+  "source": {
+    "url": "https://huggingface.co/ibm-granite/granite-4.0-h-micro/resolve/d5f01a3ea75f088947be3aae039f4ad52837dfde/README.md",
+    "revision": "d5f01a3ea75f088947be3aae039f4ad52837dfde",
+    "sha256": "9674e751c1794b47efceb407575cfde7bded1beaeafe2089203a046a2f647f9a"
+  },
+  "generator": {
+    "model": "qwen3.6-27b",
+    "wire_api": "responses"
+  },
+  "claims": [
+    {
+      "field": "description",
+      "value": "Granite-4.0-H-Micro is a 3B parameter long-context instruct model finetuned from Granite-4.0-H-Micro-Base using open source and synthetic instruction datasets.",
+      "evidence": "Granite-4.0-H-Micro is a 3B parameter long-context instruct model",
+      "section": "Model Summary",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "CapChat",
+        "CapFunctionCall",
+        "ModalityTextIn",
+        "ModalityTextOut"
+      ],
+      "evidence": "Granite 4.0 instruct models feature improved instruction following (IF) and tool-calling capabilities",
+      "section": "Model Summary",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "CapChat",
+        "CapFunctionCall",
+        "ModalityTextIn",
+        "ModalityTextOut"
+      ],
+      "evidence": "Granite 4.0 instruct models feature improved instruction following (IF) and tool-calling capabilities, making them more effective in enterprise applications.",
+      "section": "Model Summary",
+      "confidence": "medium"
+    },
+    {
+      "field": "description",
+      "value": "Designed for general instruction response and AI assistants for multiple domains including business applications.",
+      "evidence": "The model is designed to respond to general instructions and can be used to build AI assistants for multiple domains",
+      "section": "Intended use",
+      "confidence": "high"
+    },
+    {
+      "field": "description",
+      "value": "Release date: October 2nd, 2025",
+      "evidence": "Release Date: October 2nd, 2025",
+      "section": "Model Summary",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "CapChat",
+        "CapFunctionCall",
+        "ModalityTextIn",
+        "ModalityTextOut"
+      ],
+      "evidence": "Expected output:\n\n\u003c|start_of_role|\u003esystem\u003c|end_of_role|\u003eYou are a helpful assistant with access to the following tools.",
+      "section": "Tool-calling",
+      "confidence": "medium"
+    },
+    {
+      "field": "description",
+      "value": "Supported languages include English, German, Spanish, French, Japanese, Portuguese, Arabic, Czech, Italian, Korean, Dutch, and Chinese.",
+      "evidence": "Supported Languages: English, German, Spanish, French, Japanese, Portuguese, Arabic, Czech, Italian, Korean, Dutch, and Chinese.",
+      "section": "Supported Languages",
+      "confidence": "low"
+    },
+    {
+      "field": "description",
+      "value": "License: Apache 2.0",
+      "evidence": "License: Apache 2.0",
+      "section": "Model Summary",
+      "confidence": "low"
+    }
+  ]
+}

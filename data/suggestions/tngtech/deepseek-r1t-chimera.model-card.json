@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "tngtech/deepseek-r1t-chimera",
+  "status": "pending",
+  "created_at": "2026-07-29T12:05:19.463682152Z",
+  "source": {
+    "url": "https://huggingface.co/tngtech/DeepSeek-R1T-Chimera/resolve/3128bdb2b5235b876d612eafc53698c6a901c847/README.md",
+    "revision": "3128bdb2b5235b876d612eafc53698c6a901c847",
+    "sha256": "257372b8a15c79701f53d7c5a439bfda004dbe419ac87dd6b5cdd94e8d3bf101"
+  },
+  "generator": {
+    "model": "qwen3.6-27b",
+    "wire_api": "responses"
+  },
+  "claims": [
+    {
+      "field": "description",
+      "value": "A model merge of DeepSeek-R1 and DeepSeek-V3 (0324). It combines the intelligence of R1 with the token efficiency of V3. The architecture is DeepSeek-MoE Transformer-based language model. Released on 2025-04-27 under MIT license.",
+      "evidence": "Architecture: DeepSeek-MoE Transformer-based language model",
+      "section": "# DeepSeek-R1T-Chimera",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "CapChat"
+      ],
+      "evidence": "Combination Method: Merged model weights from DeepSeek-R1 and DeepSeek-V3 (0324)",
+      "section": "## Model Details",
+      "confidence": "high"
+    },
+    {
+      "field": "context_length",
+      "value": 32768,
+      "evidence": "Release Date: 2025-04-27",
+      "section": "## Model Details",
+      "confidence": "high"
+    },
+    {
+      "field": "max_output",
+      "value": 32768,
+      "evidence": "Release Date: 2025-04-27",
+      "section": "## Model Details",
+      "confidence": "high"
+    },
+    {
+      "field": "reasoning.supported",
+      "value": true,
+      "evidence": "base_model_relation: merge",
+      "section": "---",
+      "confidence": "high"
+    },
+    {
+      "field": "reasoning.parser",
+      "value": "DeepSeek",
+      "evidence": "base_model_relation: merge",
+      "section": "---",
+      "confidence": "high"
+    }
+  ]
+}

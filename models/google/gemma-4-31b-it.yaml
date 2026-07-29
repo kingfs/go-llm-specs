@@ -1,3 +1,4 @@
+schema_version: 2
 id: google/gemma-4-31b-it
 name: 'Google: Gemma 4 31B'
 provider: Google
@@ -13,3 +14,65 @@ features:
   - ModalityTextIn
   - ModalityTextOut
   - ModalityVideoIn
+discovered_at: 2026-07-29T10:38:22.844429129Z
+upstream:
+  openrouter:
+    canonical_slug: google/gemma-4-31b-it-20260402
+    huggingface_id: google/gemma-4-31B-it
+    supported_parameters:
+      - frequency_penalty
+      - include_reasoning
+      - logit_bias
+      - logprobs
+      - max_tokens
+      - min_p
+      - presence_penalty
+      - reasoning
+      - repetition_penalty
+      - response_format
+      - seed
+      - stop
+      - structured_outputs
+      - temperature
+      - tool_choice
+      - tools
+      - top_a
+      - top_k
+      - top_logprobs
+      - top_p
+    input_modalities:
+      - image
+      - text
+      - video
+    output_modalities:
+      - text
+    fetched_at: 2026-07-29T10:38:22.844429809Z
+  huggingface:
+    id: google/gemma-4-31B-it
+    revision: 842da3794eaa0b77d5f08bae87a17459d91ff475
+    pipeline_tag: image-text-to-text
+    model_type: gemma4
+    architectures:
+      - Gemma4ForConditionalGeneration
+    license: apache-2.0
+    tags:
+      - arxiv:2607.02770
+      - base_model:finetune:google/gemma-4-31B
+      - base_model:google/gemma-4-31B
+      - conversational
+      - deploy:azure
+      - deploy:sagemaker
+      - endpoints_compatible
+      - eval-results
+      - gemma4
+      - image-text-to-text
+      - license:apache-2.0
+      - region:us
+      - safetensors
+      - transformers
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-07-29T10:38:24.771014961Z
+reasoning:
+  supported: true

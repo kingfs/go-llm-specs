@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "qwen/qwen3-vl-8b-thinking",
+  "status": "pending",
+  "created_at": "2026-07-29T11:59:01.816473785Z",
+  "source": {
+    "url": "https://huggingface.co/Qwen/Qwen3-VL-8B-Thinking/resolve/92f3c4b4feadd3a016ef468d103bb5f58b2a2c6b/README.md",
+    "revision": "92f3c4b4feadd3a016ef468d103bb5f58b2a2c6b",
+    "sha256": "1422c370346c2d6a1f382db769c6d600995ceead1c064f88220f9f9e7bb39cb6"
+  },
+  "generator": {
+    "model": "qwen3.6-27b",
+    "wire_api": "responses"
+  },
+  "claims": [
+    {
+      "field": "context_length",
+      "value": 262144,
+      "evidence": "Native 256K context, expandable to 1M; handles books and hours-long video with full recall",
+      "section": "# Qwen3-VL-8B-Thinking",
+      "confidence": "high"
+    },
+    {
+      "field": "description",
+      "value": "Pipeline tag is image-text-to-text, library_name is transformers.",
+      "evidence": "pipeline_tag: image-text-to-text",
+      "section": "---",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "CapChat",
+        "ModalityTextIn",
+        "ModalityTextOut",
+        "ModalityImageIn"
+      ],
+      "evidence": "Supported 32 languages (up from 19); robust in low light, blur, and tilt",
+      "section": "# Qwen3-VL-8B-Thinking",
+      "confidence": "high"
+    },
+    {
+      "field": "max_output",
+      "value": 40960,
+      "evidence": "out_seq_length=40960 (VL)",
+      "section": "## Quickstart",
+      "confidence": "high"
+    }
+  ]
+}

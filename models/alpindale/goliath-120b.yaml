@@ -1,3 +1,4 @@
+schema_version: 2
 id: alpindale/goliath-120b
 name: Goliath 120B
 provider: Alpindale
@@ -24,3 +25,29 @@ features:
   - CapJsonMode
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:36:34.019586651Z
+upstream:
+  huggingface:
+    id: alpindale/goliath-120b
+    revision: f199bc8644f81163d2ce099b6793f0f65775a62c
+    pipeline_tag: text-generation
+    model_type: llama
+    architectures:
+      - LlamaForCausalLM
+    tags:
+      - conversational
+      - en
+      - endpoints_compatible
+      - license:llama2
+      - llama
+      - merge
+      - region:us
+      - safetensors
+      - text-generation
+      - text-generation-inference
+      - transformers
+    config_context_length: 4096
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-07-29T10:36:36.049142959Z

@@ -1,3 +1,4 @@
+schema_version: 2
 id: tngtech/deepseek-r1t2-chimera:free
 name: 'TNG: DeepSeek R1T2 Chimera (free)'
 provider: Tngtech
@@ -8,3 +9,4 @@ features:
   - CapChat
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:44:40.666002699Z

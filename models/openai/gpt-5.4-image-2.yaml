@@ -1,3 +1,4 @@
+schema_version: 2
 id: openai/gpt-5.4-image-2
 name: 'OpenAI: GPT-5.4 Image 2'
 provider: OpenAI
@@ -13,3 +14,38 @@ features:
   - ModalityImageOut
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:41:23.147425032Z
+upstream:
+  openrouter:
+    canonical_slug: openai/gpt-5.4-image-2-20260421
+    supported_parameters:
+      - frequency_penalty
+      - include_reasoning
+      - logit_bias
+      - logprobs
+      - max_tokens
+      - presence_penalty
+      - reasoning
+      - reasoning_effort
+      - response_format
+      - seed
+      - stop
+      - structured_outputs
+      - top_logprobs
+    input_modalities:
+      - file
+      - image
+      - text
+    output_modalities:
+      - image
+      - text
+    fetched_at: 2026-07-29T10:41:23.147425512Z
+reasoning:
+  supported: true
+  default_effort: medium
+  supported_efforts:
+    - high
+    - low
+    - medium
+    - none
+    - xhigh

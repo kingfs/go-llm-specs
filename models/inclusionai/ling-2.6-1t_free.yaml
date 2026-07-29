@@ -1,3 +1,4 @@
+schema_version: 2
 id: inclusionai/ling-2.6-1t:free
 name: 'inclusionAI: Ling-2.6-1T (free)'
 provider: Inclusionai
@@ -11,3 +12,4 @@ features:
   - CapJsonMode
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:38:36.618994906Z

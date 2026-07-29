@@ -1,3 +1,4 @@
+schema_version: 2
 id: minimax/minimax-m2-her
 name: 'MiniMax: MiniMax M2-her'
 provider: Minimax
@@ -9,3 +10,16 @@ features:
   - CapChat
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:39:12.167703766Z
+upstream:
+  openrouter:
+    canonical_slug: minimax/minimax-m2-her-20260123
+    supported_parameters:
+      - max_tokens
+      - temperature
+      - top_p
+    input_modalities:
+      - text
+    output_modalities:
+      - text
+    fetched_at: 2026-07-29T10:39:12.167704276Z

@@ -1,3 +1,4 @@
+schema_version: 2
 id: inclusionai/ling-2.6-flash
 name: 'inclusionAI: Ling-2.6-flash'
 provider: Inclusionai
@@ -11,3 +12,52 @@ features:
   - CapJsonMode
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:38:37.042764449Z
+upstream:
+  openrouter:
+    canonical_slug: inclusionai/ling-2.6-flash-20260421
+    supported_parameters:
+      - frequency_penalty
+      - logprobs
+      - max_tokens
+      - presence_penalty
+      - repetition_penalty
+      - response_format
+      - seed
+      - stop
+      - structured_outputs
+      - temperature
+      - tool_choice
+      - tools
+      - top_k
+      - top_logprobs
+      - top_p
+    input_modalities:
+      - text
+    output_modalities:
+      - text
+    fetched_at: 2026-07-29T10:38:37.042764639Z
+  huggingface:
+    id: inclusionAI/Ling-2.6-flash
+    revision: 11236968749136a78d4b7cbfb786c4460f2f353e
+    pipeline_tag: text-generation
+    model_type: bailing_hybrid
+    architectures:
+      - BailingMoeV2_5ForCausalLM
+    tags:
+      - arxiv:2606.15079
+      - bailing_hybrid
+      - conversational
+      - custom_code
+      - en
+      - eval-results
+      - license:mit
+      - region:us
+      - safetensors
+      - text-generation
+    config_context_length: 131072
+    chat_template_sha256: acd906dac330ec5f16386b85dcaf78b1c5532b8593b31d8b835217e6ddc215e9
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-07-29T10:38:39.006560942Z

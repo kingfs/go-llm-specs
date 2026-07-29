@@ -1,3 +1,4 @@
+schema_version: 2
 id: allenai/olmo-3.1-32b-think
 name: 'AllenAI: Olmo 3.1 32B Think'
 provider: Allenai
@@ -10,3 +11,34 @@ features:
   - CapJsonMode
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:36:31.890406436Z
+upstream:
+  huggingface:
+    id: allenai/Olmo-3.1-32B-Think
+    revision: 832c3f543499af8fe68b88359501de9cb7840544
+    pipeline_tag: text-generation
+    model_type: olmo3
+    architectures:
+      - Olmo3ForCausalLM
+    tags:
+      - arxiv:2512.13961
+      - base_model:allenai/Olmo-3-32B-Think-DPO
+      - base_model:finetune:allenai/Olmo-3-32B-Think-DPO
+      - conversational
+      - dataset:allenai/Dolci-Think-RL
+      - en
+      - endpoints_compatible
+      - eval-results
+      - license:apache-2.0
+      - olmo3
+      - region:us
+      - safetensors
+      - text-generation
+      - transformers
+    config_context_length: 65536
+    tokenizer_model_max_length: 65536
+    chat_template_sha256: ab71fd411f74598bcc2e829a0b6d392f681082337437b9faaef84a9150b08f0d
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-07-29T10:36:33.918708241Z

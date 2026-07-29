@@ -1,3 +1,4 @@
+schema_version: 2
 id: microsoft/wizardlm-2-8x22b
 name: WizardLM-2 8x22B
 provider: Microsoft
@@ -24,3 +25,25 @@ features:
   - CapJsonMode
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:39:06.597473704Z
+upstream:
+  openrouter:
+    canonical_slug: microsoft/wizardlm-2-8x22b
+    huggingface_id: microsoft/WizardLM-2-8x22B
+    supported_parameters:
+      - frequency_penalty
+      - max_tokens
+      - presence_penalty
+      - repetition_penalty
+      - response_format
+      - seed
+      - stop
+      - temperature
+      - top_k
+      - top_p
+    input_modalities:
+      - text
+    output_modalities:
+      - text
+    knowledge_cutoff: "2024-04-30"
+    fetched_at: 2026-07-29T10:39:06.597474204Z

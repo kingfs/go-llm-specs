@@ -1,3 +1,4 @@
+schema_version: 2
 id: meta-llama/llama-3.1-405b-instruct
 name: 'Meta: Llama 3.1 405B Instruct'
 provider: Meta
@@ -24,3 +25,4 @@ features:
   - CapJsonMode
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:38:51.414706063Z

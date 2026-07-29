@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "minimax/minimax-m2.1",
+  "status": "pending",
+  "created_at": "2026-07-29T11:29:38.523078409Z",
+  "source": {
+    "url": "https://huggingface.co/MiniMaxAI/MiniMax-M2.1/resolve/cd97f59135f37b2a6bf09356e485d5e4aeb7dc9c/README.md",
+    "revision": "cd97f59135f37b2a6bf09356e485d5e4aeb7dc9c",
+    "sha256": "ab0acd159f6e95b91f436823f8eccaf198e7427d784b8cbcfd263e0981ea347c"
+  },
+  "generator": {
+    "model": "qwen3.6-27b",
+    "wire_api": "responses"
+  },
+  "claims": [
+    {
+      "field": "features",
+      "value": [
+        "CapChat",
+        "ModalityTextIn",
+        "ModalityTextOut"
+      ],
+      "evidence": "pipeline_tag: text-generation",
+      "section": "Model Card",
+      "confidence": "high"
+    }
+  ]
+}

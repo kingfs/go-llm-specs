@@ -1,3 +1,4 @@
+schema_version: 2
 id: qwen/qwen3-next-80b-a3b-thinking
 name: 'Qwen: Qwen3 Next 80B A3B Thinking'
 provider: Qwen
@@ -17,3 +18,65 @@ features:
   - CapJsonMode
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:43:07.720582246Z
+upstream:
+  openrouter:
+    canonical_slug: qwen/qwen3-next-80b-a3b-thinking-2509
+    huggingface_id: Qwen/Qwen3-Next-80B-A3B-Thinking
+    supported_parameters:
+      - frequency_penalty
+      - include_reasoning
+      - logit_bias
+      - logprobs
+      - max_tokens
+      - presence_penalty
+      - reasoning
+      - repetition_penalty
+      - response_format
+      - seed
+      - stop
+      - structured_outputs
+      - temperature
+      - tool_choice
+      - tools
+      - top_k
+      - top_logprobs
+      - top_p
+    input_modalities:
+      - text
+    output_modalities:
+      - text
+    knowledge_cutoff: "2025-09-30"
+    fetched_at: 2026-07-29T10:43:07.720582646Z
+  huggingface:
+    id: Qwen/Qwen3-Next-80B-A3B-Thinking
+    revision: e502dd4100cc68c0de57643fd4317ec93a128670
+    pipeline_tag: text-generation
+    model_type: qwen3_next
+    architectures:
+      - Qwen3NextForCausalLM
+    license: apache-2.0
+    tags:
+      - arxiv:2309.00071
+      - arxiv:2501.15383
+      - arxiv:2505.09388
+      - conversational
+      - deploy:azure
+      - endpoints_compatible
+      - eval-results
+      - license:apache-2.0
+      - qwen3_next
+      - region:us
+      - safetensors
+      - text-generation
+      - transformers
+    config_context_length: 262144
+    tokenizer_model_max_length: 1010000
+    chat_template_sha256: 615f196a2217165ba0d176b56b7cf27a4b922ff07b910b07ff11be44918fd266
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-07-29T10:43:09.758902795Z
+reasoning:
+  supported: true
+  mandatory: true

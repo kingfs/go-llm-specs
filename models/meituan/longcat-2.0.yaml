@@ -1,3 +1,4 @@
+schema_version: 2
 id: meituan/longcat-2.0
 name: 'Meituan: LongCat 2.0'
 provider: Meituan
@@ -10,3 +11,54 @@ features:
   - CapFunctionCall
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:38:47.469255347Z
+upstream:
+  openrouter:
+    canonical_slug: meituan/longcat-2.0-20260720
+    huggingface_id: meituan-longcat/LongCat-2.0
+    supported_parameters:
+      - frequency_penalty
+      - include_reasoning
+      - logit_bias
+      - max_tokens
+      - min_p
+      - presence_penalty
+      - reasoning
+      - repetition_penalty
+      - seed
+      - stop
+      - temperature
+      - tool_choice
+      - tools
+      - top_k
+      - top_p
+    input_modalities:
+      - text
+    output_modalities:
+      - text
+    fetched_at: 2026-07-29T10:38:47.469255497Z
+  huggingface:
+    id: meituan-longcat/LongCat-2.0
+    revision: 834bf5ffe3047aa9f6cc7a64a9bc068b146b8274
+    pipeline_tag: text-generation
+    architectures:
+      - LongcatCausalLM
+    license: mit
+    tags:
+      - LongCat-2.0
+      - conversational
+      - license:mit
+      - region:us
+      - safetensors
+      - text-generation
+      - transformers
+    config_context_length: 262144
+    tokenizer_model_max_length: 131072
+    chat_template_sha256: 3e8a49ef456ccb0d75e5f1e54d1c38057e805d205a8a74462adf71fb95ccb1ab
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-07-29T10:38:49.459723755Z
+reasoning:
+  supported: true
+  default_enabled: true

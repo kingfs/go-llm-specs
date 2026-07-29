@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "nvidia/nemotron-nano-9b-v2:free",
+  "status": "pending",
+  "created_at": "2026-07-29T11:40:59.812368223Z",
+  "source": {
+    "url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-Nano-9B-v2/resolve/6533e8de2c68e4536bf7c411d7a3ce5734111476/README.md",
+    "revision": "6533e8de2c68e4536bf7c411d7a3ce5734111476",
+    "sha256": "d26a1ecdcf18c498ead780a21baa2770694ec254bedd473ef68629314fe68385"
+  },
+  "generator": {
+    "model": "qwen3.6-27b",
+    "wire_api": "responses"
+  },
+  "claims": [
+    {
+      "field": "description",
+      "value": "NVIDIA-Nemotron-Nano-9B-v2 is a large language model trained from scratch by NVIDIA, designed as a unified model for both reasoning and non-reasoning tasks using a hybrid Mamba-2 and MLP architecture.",
+      "evidence": "NVIDIA-Nemotron-Nano-9B-v2 is a large language model (LLM) trained from scratch by NVIDIA, and designed as a unified model for both reasoning and non-reasoning tasks.",
+      "section": "Model Overview",
+      "confidence": "high"
+    },
+    {
+      "field": "description",
+      "value": "The model supports English and coding languages primarily, with German, French, Italian, Spanish, and Japanese also supported.",
+      "evidence": "Other non-English languages (German, French, Italian, Spanish and Japanese) are also supported.",
+      "section": "Use Case",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "ModalityTextIn",
+        "ModalityTextOut"
+      ],
+      "evidence": "Input Type(s): Text",
+      "section": "Input",
+      "confidence": "high"
+    },
+    {
+      "field": "reasoning.supported",
+      "value": true,
+      "evidence": "This model supports runtime “thinking” budget control. During inference, the user can specify how many tokens the model is allowed to \"think\".",
+      "section": "Reasoning Budget Control",
+      "confidence": "high"
+    },
+    {
+      "field": "description",
+      "value": "Data cutoff is September 2024",
+      "evidence": "Data Freshness: September 2024",
+      "section": "Model Dates",
+      "confidence": "high"
+    },
+    {
+      "field": "description",
+      "value": "In reasoning-on mode, AIME25=72.1%, MATH500=97.8%, GPQA=64.0%, LCB=71.1%",
+      "evidence": "AIME25 | 72.1% MATH500 | 97.8% GPQA | 64.0% LCB | 71.1%",
+      "section": "Benchmark Results (Reasoning On)",
+      "confidence": "high"
+    },
+    {
+      "field": "description",
+      "value": "BFCL v3 score is 66.9% in reasoning-on mode",
+      "evidence": "BFCL v3 | 66.9%",
+      "section": "Benchmark Results (Reasoning On)",
+      "confidence": "high"
+    }
+  ]
+}

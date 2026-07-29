@@ -1,3 +1,4 @@
+schema_version: 2
 id: morph/morph-v3-fast
 name: 'Morph: Morph V3 Fast'
 provider: Morph
@@ -17,3 +18,16 @@ features:
   - CapChat
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:40:15.624967226Z
+upstream:
+  openrouter:
+    canonical_slug: morph/morph-v3-fast
+    supported_parameters:
+      - max_tokens
+      - stop
+      - temperature
+    input_modalities:
+      - text
+    output_modalities:
+      - text
+    fetched_at: 2026-07-29T10:40:15.624968196Z

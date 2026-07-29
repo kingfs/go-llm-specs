@@ -1,3 +1,4 @@
+schema_version: 2
 id: inflection/inflection-3-productivity
 name: 'Inflection: Inflection 3 Productivity'
 provider: Inflection
@@ -19,3 +20,4 @@ features:
   - CapChat
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:38:42.823886633Z

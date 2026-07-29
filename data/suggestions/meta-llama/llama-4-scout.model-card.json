@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "meta-llama/llama-4-scout",
+  "status": "pending",
+  "created_at": "2026-07-29T11:28:53.514677476Z",
+  "source": {
+    "url": "https://huggingface.co/meta-llama/Llama-4-Scout-17B-16E-Instruct/resolve/92f3b1597a195b523d8d9e5700e57e4fbb8f20d3/README.md",
+    "revision": "92f3b1597a195b523d8d9e5700e57e4fbb8f20d3",
+    "sha256": "98e9cb01fdb568eb1cfb2df2ad4cf06460806b89c3dc5dd9ee57e98f6d985612"
+  },
+  "generator": {
+    "model": "qwen3.6-27b",
+    "wire_api": "responses"
+  },
+  "claims": [
+    {
+      "field": "description",
+      "value": "Base model is meta-llama/Llama-4-Scout-17B-16E",
+      "evidence": "base_model: - meta-llama/Llama-4-Scout-17B-16E",
+      "section": "## model card",
+      "confidence": "high"
+    },
+    {
+      "field": "description",
+      "value": "Library name is transformers",
+      "evidence": "library_name: transformers",
+      "section": "## model card",
+      "confidence": "high"
+    },
+    {
+      "field": "description",
+      "value": "Languages supported: ar, de, en, es, fr, hi, id, it, pt, th, tl, vi",
+      "evidence": "language: - ar - de - en - es - fr - hi - id - it - pt - th - tl - vi",
+      "section": "## model card",
+      "confidence": "high"
+    },
+    {
+      "field": "description",
+      "value": "Tags include facebook, meta, pytorch, llama, llama4",
+      "evidence": "tags: - facebook - meta - pytorch - llama - llama4",
+      "section": "## model card",
+      "confidence": "high"
+    }
+  ]
+}

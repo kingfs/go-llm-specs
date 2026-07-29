@@ -1,3 +1,4 @@
+schema_version: 2
 id: gryphe/mythomax-l2-13b
 name: MythoMax 13B
 provider: Gryphe
@@ -10,3 +11,55 @@ features:
   - CapJsonMode
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:38:27.378388366Z
+upstream:
+  openrouter:
+    canonical_slug: gryphe/mythomax-l2-13b
+    huggingface_id: Gryphe/MythoMax-L2-13b
+    supported_parameters:
+      - frequency_penalty
+      - logit_bias
+      - logprobs
+      - max_tokens
+      - min_p
+      - presence_penalty
+      - repetition_penalty
+      - response_format
+      - seed
+      - stop
+      - structured_outputs
+      - temperature
+      - top_a
+      - top_k
+      - top_logprobs
+      - top_p
+    input_modalities:
+      - text
+    output_modalities:
+      - text
+    knowledge_cutoff: "2023-06-30"
+    fetched_at: 2026-07-29T10:38:27.378388626Z
+  huggingface:
+    id: Gryphe/MythoMax-L2-13b
+    revision: 58e77dd48a65176f97f6f376c93efe9caad9c130
+    pipeline_tag: text-generation
+    model_type: llama
+    architectures:
+      - LlamaForCausalLM
+    license: other
+    tags:
+      - en
+      - endpoints_compatible
+      - license:other
+      - llama
+      - pytorch
+      - region:us
+      - text-generation
+      - text-generation-inference
+      - transformers
+    config_context_length: 4096
+    tokenizer_model_max_length: 4096
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-07-29T10:38:29.279344461Z

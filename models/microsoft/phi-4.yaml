@@ -1,3 +1,4 @@
+schema_version: 2
 id: microsoft/phi-4
 name: 'Microsoft: Phi 4'
 provider: Microsoft
@@ -15,3 +16,62 @@ features:
   - CapJsonMode
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:39:02.734213229Z
+upstream:
+  openrouter:
+    canonical_slug: microsoft/phi-4
+    huggingface_id: microsoft/phi-4
+    supported_parameters:
+      - frequency_penalty
+      - logit_bias
+      - max_tokens
+      - min_p
+      - presence_penalty
+      - repetition_penalty
+      - response_format
+      - seed
+      - stop
+      - structured_outputs
+      - temperature
+      - top_k
+      - top_p
+    input_modalities:
+      - text
+    output_modalities:
+      - text
+    knowledge_cutoff: "2024-06-30"
+    fetched_at: 2026-07-29T10:39:02.734213679Z
+  huggingface:
+    id: microsoft/phi-4
+    revision: 2db69c1c3e91a05d2c64a3185acfbaf36f744e25
+    pipeline_tag: text-generation
+    model_type: phi3
+    architectures:
+      - Phi3ForCausalLM
+    license: mit
+    tags:
+      - arxiv:2412.08905
+      - chat
+      - code
+      - conversational
+      - deploy:azure
+      - en
+      - endpoints_compatible
+      - eval-results
+      - license:mit
+      - math
+      - nlp
+      - phi
+      - phi3
+      - region:us
+      - safetensors
+      - text-generation
+      - text-generation-inference
+      - transformers
+    config_context_length: 16384
+    tokenizer_model_max_length: 16384
+    chat_template_sha256: 217e04ab3760e78e42d28da1a7576140b0ebd3b3bc267a896da234ad2f8f1d0f
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-07-29T10:39:04.609103709Z

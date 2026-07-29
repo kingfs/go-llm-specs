@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "qwen/qwen3-vl-235b-a22b-thinking",
+  "status": "pending",
+  "created_at": "2026-07-29T11:51:37.389542266Z",
+  "source": {
+    "url": "https://huggingface.co/Qwen/Qwen3-VL-235B-A22B-Thinking/resolve/6664affde68449468deb7527186455c7450c13c0/README.md",
+    "revision": "6664affde68449468deb7527186455c7450c13c0",
+    "sha256": "19653aec7f696af10b27868d210a829c4825dd766121c76c524173096684dbe1"
+  },
+  "generator": {
+    "model": "qwen3.6-27b",
+    "wire_api": "responses"
+  },
+  "claims": [
+    {
+      "field": "features",
+      "value": [
+        "CapFunctionCall"
+      ],
+      "evidence": "Operates PC/mobile GUIs—recognizes elements, understands functions, invokes tools, completes tasks.",
+      "section": "# Qwen3-VL-235B-A22B-Thinking",
+      "confidence": "high"
+    },
+    {
+      "field": "description",
+      "value": "Qwen3-VL is a vision-language model available in Dense and MoE architectures (235B-A22B) with Instruct and Thinking editions. Key capabilities include visual agent interaction, visual coding, spatial perception, long context/video understanding, enhanced multimodal reasoning, visual recognition, and expanded OCR.",
+      "evidence": "Meet Qwen3-VL — the most powerful vision-language model in the Qwen series to date.",
+      "section": "# Qwen3-VL-235B-A22B-Thinking",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "CapChat",
+        "ModalityVideoIn",
+        "ModalityTextIn",
+        "ModalityTextOut",
+        "ModalityImageIn"
+      ],
+      "evidence": "Handles books and hours-long video with full recall and second-level indexing.",
+      "section": "# Qwen3-VL-235B-A22B-Thinking",
+      "confidence": "high"
+    }
+  ]
+}

@@ -1,3 +1,4 @@
+schema_version: 2
 id: openai/gpt-4-0314
 name: 'OpenAI: GPT-4 (older v0314)'
 provider: OpenAI
@@ -11,3 +12,4 @@ features:
   - CapJsonMode
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:41:05.589270199Z

@@ -1,3 +1,4 @@
+schema_version: 2
 id: cohere/command-r7b-12-2024
 name: 'Cohere: Command R7B (12-2024)'
 provider: Cohere
@@ -16,3 +17,24 @@ features:
   - CapJsonMode
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:37:20.658620952Z
+upstream:
+  openrouter:
+    canonical_slug: cohere/command-r7b-12-2024
+    supported_parameters:
+      - frequency_penalty
+      - max_tokens
+      - presence_penalty
+      - response_format
+      - seed
+      - stop
+      - structured_outputs
+      - temperature
+      - top_k
+      - top_p
+    input_modalities:
+      - text
+    output_modalities:
+      - text
+    knowledge_cutoff: "2024-08-31"
+    fetched_at: 2026-07-29T10:37:20.658621412Z

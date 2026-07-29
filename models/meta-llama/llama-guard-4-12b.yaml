@@ -1,3 +1,4 @@
+schema_version: 2
 id: meta-llama/llama-guard-4-12b
 name: 'Meta: Llama Guard 4 12B'
 provider: Meta
@@ -17,3 +18,55 @@ features:
   - ModalityImageIn
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:39:01.099332159Z
+upstream:
+  openrouter:
+    canonical_slug: meta-llama/llama-guard-4-12b
+    huggingface_id: meta-llama/Llama-Guard-4-12B
+    supported_parameters:
+      - frequency_penalty
+      - logit_bias
+      - max_tokens
+      - min_p
+      - presence_penalty
+      - repetition_penalty
+      - response_format
+      - seed
+      - stop
+      - temperature
+      - top_k
+      - top_p
+    input_modalities:
+      - image
+      - text
+    output_modalities:
+      - text
+    knowledge_cutoff: "2024-08-31"
+    fetched_at: 2026-07-29T10:39:01.099332709Z
+  huggingface:
+    id: meta-llama/Llama-Guard-4-12B
+    revision: 87acb4b94e930c3d679e6e7ee9d57e2feab9ea71
+    pipeline_tag: image-text-to-text
+    model_type: llama4
+    architectures:
+      - Llama4ForConditionalGeneration
+    license: other
+    tags:
+      - arxiv:2407.21783
+      - arxiv:2503.05731
+      - conversational
+      - en
+      - endpoints_compatible
+      - facebook
+      - image-text-to-text
+      - license:other
+      - llama
+      - llama4
+      - meta
+      - pytorch
+      - region:us
+      - safetensors
+      - safety
+      - text-generation-inference
+      - transformers
+    fetched_at: 2026-07-29T10:39:01.766501852Z

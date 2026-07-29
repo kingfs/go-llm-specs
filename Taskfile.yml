@@ -44,6 +44,11 @@ tasks:
     cmds:
       - go run ./cmd/cardextractor {{.CLI_ARGS}}
 
+  cardextract-batch:
+    desc: Resume evidence-backed extraction for every HF-enriched model
+    cmds:
+      - bash scripts/extract-model-cards.sh
+
   suggestion:
     desc: Review and explicitly apply evidence-backed metadata suggestions
     cmds:

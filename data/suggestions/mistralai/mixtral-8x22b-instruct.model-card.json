@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "mistralai/mixtral-8x22b-instruct",
+  "status": "pending",
+  "created_at": "2026-07-29T11:33:35.900057578Z",
+  "source": {
+    "url": "https://huggingface.co/mistralai/Mixtral-8x22B-Instruct-v0.1/resolve/cc88a6cc19fbd17d9f1c0ee0b0d70a748dce698d/README.md",
+    "revision": "cc88a6cc19fbd17d9f1c0ee0b0d70a748dce698d",
+    "sha256": "e58da04e3d10cc44178c6ea21a77d0bf6bf403056c0337c6df62b6f81092fd7d"
+  },
+  "generator": {
+    "model": "qwen3.6-27b",
+    "wire_api": "responses"
+  },
+  "claims": [
+    {
+      "field": "description",
+      "value": "An instruct fine-tuned version of Mixtral-8x22B-v0.1 large language model.",
+      "evidence": "Mixtral-8x22B-Instruct-v0.1 Large Language Model (LLM) is an instruct fine-tuned version of the Mixtral-8x22B-v0.1",
+      "section": "# Model Card for Mixtral-8x22B-Instruct-v0.1",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "CapFunctionCall"
+      ],
+      "evidence": "- Tool, /AVAILABLE_TOOLS/, TOOL_RESULTS, /TOOL_RESULTS (implied by function calling support) and the tokenizer includes special tokens related to function calling",
+      "section": "# Function calling and special tokens",
+      "confidence": "high"
+    },
+    {
+      "field": "reasoning.parser",
+      "value": "transformers",
+      "evidence": "from transformers import AutoTokenizer ... tokens = tokenizer.apply_chat_template",
+      "section": "## Preparing inputs with Hugging Face `transformers`",
+      "confidence": "high"
+    }
+  ]
+}

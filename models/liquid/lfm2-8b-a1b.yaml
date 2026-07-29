@@ -1,3 +1,4 @@
+schema_version: 2
 id: liquid/lfm2-8b-a1b
 name: 'LiquidAI: LFM2-8B-A1B'
 provider: Liquid
@@ -8,3 +9,4 @@ features:
   - CapChat
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:38:46.609332572Z

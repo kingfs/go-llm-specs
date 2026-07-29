@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "z-ai/glm-4.6",
+  "status": "pending",
+  "created_at": "2026-07-29T12:06:59.300321612Z",
+  "source": {
+    "url": "https://huggingface.co/zai-org/GLM-4.6/resolve/be72194883d968d7923a07e2f61681ea9a2826d1/README.md",
+    "revision": "be72194883d968d7923a07e2f61681ea9a2826d1",
+    "sha256": "d96ae299bba652f051a0c2c3ac037abbeb06ad7804b17844d62662c70a0d276f"
+  },
+  "generator": {
+    "model": "qwen3.6-27b",
+    "wire_api": "responses"
+  },
+  "claims": [
+    {
+      "field": "context_length",
+      "value": 200000,
+      "evidence": "The context window has been expanded from 128K to 200K tokens",
+      "section": "Model Introduction",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "ModalityTextIn",
+        "ModalityTextOut"
+      ],
+      "evidence": "pipeline_tag: text-generation",
+      "section": "header",
+      "confidence": "high"
+    },
+    {
+      "field": "description",
+      "value": "GLM-4.6 improves on GLM-4.5 with a longer 200K token context window, superior coding performance, advanced reasoning with tool use support, more capable agents, and refined writing that aligns better with human preferences.",
+      "evidence": "GLM-4.6 shows a clear improvement in reasoning performance and supports tool use during inference",
+      "section": "Model Introduction",
+      "confidence": "high"
+    }
+  ]
+}

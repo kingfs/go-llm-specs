@@ -1,3 +1,4 @@
+schema_version: 2
 id: minimax/minimax-m1
 name: 'MiniMax: MiniMax M1'
 provider: Minimax
@@ -16,3 +17,29 @@ features:
   - CapFunctionCall
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:39:09.515993585Z
+upstream:
+  openrouter:
+    canonical_slug: minimax/minimax-m1
+    supported_parameters:
+      - frequency_penalty
+      - include_reasoning
+      - max_tokens
+      - presence_penalty
+      - reasoning
+      - repetition_penalty
+      - seed
+      - stop
+      - temperature
+      - tool_choice
+      - tools
+      - top_k
+      - top_p
+    input_modalities:
+      - text
+    output_modalities:
+      - text
+    knowledge_cutoff: "2024-06-30"
+    fetched_at: 2026-07-29T10:39:09.515994185Z
+reasoning:
+  supported: true

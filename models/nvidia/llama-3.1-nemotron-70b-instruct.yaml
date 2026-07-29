@@ -1,3 +1,4 @@
+schema_version: 2
 id: nvidia/llama-3.1-nemotron-70b-instruct
 name: 'NVIDIA: Llama 3.1 Nemotron 70B Instruct'
 provider: Nvidia
@@ -17,3 +18,23 @@ features:
   - CapJsonMode
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:40:39.557213482Z
+upstream:
+  huggingface:
+    id: nvidia/Llama-3.1-Nemotron-70B-Instruct
+    revision: a83af1f4968437064635f6726fb745e5b615e863
+    tags:
+      - arxiv:2310.05344
+      - arxiv:2311.09528
+      - arxiv:2406.08673
+      - arxiv:2410.01257
+      - base_model:finetune:meta-llama/Llama-3.1-70B-Instruct
+      - base_model:meta-llama/Llama-3.1-70B-Instruct
+      - dataset:nvidia/HelpSteer2
+      - en
+      - license:llama3.1
+      - llama3.1
+      - nemo
+      - nvidia
+      - region:us
+    fetched_at: 2026-07-29T10:40:41.089678978Z

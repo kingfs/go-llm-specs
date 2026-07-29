@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "qwen/qwen3.5-27b",
+  "status": "pending",
+  "created_at": "2026-07-29T11:59:36.533196672Z",
+  "source": {
+    "url": "https://huggingface.co/Qwen/Qwen3.5-27B/resolve/fc05daec18b0a78c049392ed2e771dde82bdf654/README.md",
+    "revision": "fc05daec18b0a78c049392ed2e771dde82bdf654",
+    "sha256": "ec2ae3362f9e91326b4e94b7c97e4bc694a028dfc57d80674e98d41383d4c836"
+  },
+  "generator": {
+    "model": "qwen3.6-27b",
+    "wire_api": "responses"
+  },
+  "claims": [
+    {
+      "field": "description",
+      "value": "Causal Language Model with Vision Encoder. 27B parameters, 64 layers, 5120 hidden dimension. Uses Gated DeltaNet and Gated Attention with sparse Mixture-of-Experts, trained with multi-step MTP.",
+      "evidence": "Number of Parameters: 27B",
+      "section": "Model Overview",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "ModalityTextIn",
+        "ModalityTextOut",
+        "ModalityImageIn"
+      ],
+      "evidence": "Type: Causal Language Model with Vision Encoder",
+      "section": "Model Overview",
+      "confidence": "high"
+    },
+    {
+      "field": "context_length",
+      "value": 262144,
+      "evidence": "Context Length: 262,144 natively and extensible up to 1,010,000 tokens.",
+      "section": "Model Overview",
+      "confidence": "high"
+    },
+    {
+      "field": "serving.vllm_args",
+      "value": null,
+      "evidence": "These artifacts are compatible with Hugging Face Transformers, vLLM, SGLang, KTransformers, etc.",
+      "section": "Model Overview",
+      "confidence": "high"
+    },
+    {
+      "field": "serving.sglang_args",
+      "value": null,
+      "evidence": "These artifacts are compatible with Hugging Face Transformers, vLLM, SGLang, KTransformers, etc.",
+      "section": "Model Overview",
+      "confidence": "high"
+    }
+  ]
+}

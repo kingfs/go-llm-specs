@@ -1,3 +1,4 @@
+schema_version: 2
 id: openai/gpt-oss-120b:exacto
 name: 'OpenAI: gpt-oss-120b (exacto)'
 provider: OpenAI
@@ -10,3 +11,4 @@ features:
   - CapJsonMode
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:41:33.45807763Z

@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "arcee-ai/trinity-large-preview",
+  "status": "pending",
+  "created_at": "2026-07-29T11:17:57.122247701Z",
+  "source": {
+    "url": "https://huggingface.co/arcee-ai/Trinity-Large-Preview/resolve/d8e126719c8bf2b3ac5a3551bd1f07fcee767a90/README.md",
+    "revision": "d8e126719c8bf2b3ac5a3551bd1f07fcee767a90",
+    "sha256": "6f8b27c21302fd9660a673a79c0d8ca7f71be26f6c78d64e606027ae6edccb67"
+  },
+  "generator": {
+    "model": "qwen3.6-27b",
+    "wire_api": "responses"
+  },
+  "claims": [
+    {
+      "field": "description",
+      "value": "A 398B-parameter sparse Mixture-of-Experts (MoE) model with approximately 13B active parameters per token. Part of Arcee AI's Trinity family, trained on more than 17 trillion tokens.",
+      "evidence": "Trinity-Large-Preview is a 398B-parameter sparse Mixture-of-Experts (MoE) model with approximately 13B active parameters per token.",
+      "section": "Introduction",
+      "confidence": "high"
+    },
+    {
+      "field": "context_length",
+      "value": 524288,
+      "evidence": "Context length after extension | 512k",
+      "section": "Architecture",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "CapChat",
+        "ModalityTextIn",
+        "ModalityTextOut"
+      ],
+      "evidence": "input_ids = tokenizer.apply_chat_template(messages, add_generation_prompt=True, return_tensors=\"pt\")",
+      "section": "Transformers",
+      "confidence": "low"
+    }
+  ]
+}

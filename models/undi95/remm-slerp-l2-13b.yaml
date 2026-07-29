@@ -1,3 +1,4 @@
+schema_version: 2
 id: undi95/remm-slerp-l2-13b
 name: ReMM SLERP 13B
 provider: Undi95
@@ -10,3 +11,55 @@ features:
   - CapJsonMode
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:44:42.050140817Z
+upstream:
+  openrouter:
+    canonical_slug: undi95/remm-slerp-l2-13b
+    huggingface_id: Undi95/ReMM-SLERP-L2-13B
+    supported_parameters:
+      - frequency_penalty
+      - logit_bias
+      - logprobs
+      - max_tokens
+      - min_p
+      - presence_penalty
+      - repetition_penalty
+      - response_format
+      - seed
+      - stop
+      - structured_outputs
+      - temperature
+      - top_a
+      - top_k
+      - top_logprobs
+      - top_p
+    input_modalities:
+      - text
+    output_modalities:
+      - text
+    knowledge_cutoff: "2023-06-30"
+    fetched_at: 2026-07-29T10:44:42.050141337Z
+  huggingface:
+    id: Undi95/ReMM-SLERP-L2-13B
+    revision: 9cf491450795628e28b8fd73f411977f7908c623
+    pipeline_tag: text-generation
+    model_type: llama
+    architectures:
+      - LlamaForCausalLM
+    license: cc-by-nc-4.0
+    tags:
+      - base_model:NousResearch/Nous-Hermes-Llama2-13b
+      - base_model:finetune:NousResearch/Nous-Hermes-Llama2-13b
+      - endpoints_compatible
+      - license:cc-by-nc-4.0
+      - llama
+      - pytorch
+      - region:us
+      - text-generation
+      - text-generation-inference
+      - transformers
+    config_context_length: 4096
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-07-29T10:44:44.23338561Z

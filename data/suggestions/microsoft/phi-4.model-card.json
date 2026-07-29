@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "microsoft/phi-4",
+  "status": "pending",
+  "created_at": "2026-07-29T11:29:24.487339682Z",
+  "source": {
+    "url": "https://huggingface.co/microsoft/phi-4/resolve/2db69c1c3e91a05d2c64a3185acfbaf36f744e25/README.md",
+    "revision": "2db69c1c3e91a05d2c64a3185acfbaf36f744e25",
+    "sha256": "83554e231aabb4ea385d0d7936f97ce922c1a8dc64ebc599e497543ec8e10a6a"
+  },
+  "generator": {
+    "model": "qwen3.6-27b",
+    "wire_api": "responses"
+  },
+  "claims": [
+    {
+      "field": "description",
+      "value": "phi-4 is a state-of-the-art open 14B parameter dense decoder-only Transformer model built upon synthetic datasets, filtered public domain websites, and acquired academic books and Q\u0026A datasets, trained on 9.8T tokens across 1920 H100-80G GPUs.",
+      "evidence": "**Description**         | `phi-4` is a state-of-the-art open model built upon a blend of synthetic datasets, data from filtered public domain websites, and acquired academic books and Q\u0026A datasets. The goal of this approach was to ensure that small capable models were trained with data focused on high quality and advanced reasoning.",
+      "section": "## Model Summary",
+      "confidence": "high"
+    },
+    {
+      "field": "context_length",
+      "value": 16384,
+      "evidence": "**Context length**      | 16K tokens",
+      "section": "## Model Summary",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "CapChat",
+        "ModalityTextIn",
+        "ModalityTextOut"
+      ],
+      "evidence": "**Inputs**              | Text, best suited for prompts in the chat format",
+      "section": "## Model Summary",
+      "confidence": "high"
+    }
+  ]
+}

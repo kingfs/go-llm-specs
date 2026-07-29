@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "qwen/qwen3-30b-a3b-instruct-2507",
+  "status": "pending",
+  "created_at": "2026-07-29T11:47:50.818063374Z",
+  "source": {
+    "url": "https://huggingface.co/Qwen/Qwen3-30B-A3B-Instruct-2507/resolve/0d7cf23991f47feeb3a57ecb4c9cee8ea4a17bfe/README.md",
+    "revision": "0d7cf23991f47feeb3a57ecb4c9cee8ea4a17bfe",
+    "sha256": "66cd28ccabb0a3503a4be8ca39c7ea9808d57312ab52f44c4175f9a6381a5fbd"
+  },
+  "generator": {
+    "model": "qwen3.6-27b",
+    "wire_api": "responses"
+  },
+  "claims": [
+    {
+      "field": "context_length",
+      "value": 262144,
+      "evidence": "Context Length: **262,144 natively**.",
+      "section": "Model Overview",
+      "confidence": "high"
+    },
+    {
+      "field": "description",
+      "value": "Qwen3-30B-A3B-Instruct-2507 is a causal language model with 30.5B total parameters and 3.3B activated parameters, 48 layers, 128 experts with 8 activated, using GQA (32 Q heads, 4 KV heads). Natively supports 262K context. Non-thinking mode only.",
+      "evidence": "Number of Parameters: 30.5B in total and 3.3B activated",
+      "section": "Model Overview",
+      "confidence": "high"
+    },
+    {
+      "field": "reasoning.supported",
+      "value": false,
+      "evidence": "We introduce the updated version of the **Qwen3-30B-A3B non-thinking mode**",
+      "section": "Highlights",
+      "confidence": "high"
+    },
+    {
+      "field": "reasoning.supported",
+      "value": false,
+      "evidence": "This model supports only non-thinking mode and does not generate ``\u003cthink\u003e`` blocks in its output.",
+      "section": "Model Overview",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "ModalityTextIn",
+        "ModalityTextOut"
+      ],
+      "evidence": "Enhanced capabilities** in **256K long-context understanding**.",
+      "section": "Highlights",
+      "confidence": "high"
+    },
+    {
+      "field": "reasoning.parser",
+      "value": "uses Qwen-Agent for tool-calling templates and parsers",
+      "evidence": "We recommend using [Qwen-Agent](https://github.com/QwenLM/Qwen-Agent) to make the best use of agentic ability of Qwen3. Qwen-Agent encapsulates tool-calling templates and tool-calling parsers internally",
+      "section": "Agentic Use",
+      "confidence": "medium"
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "tencent/hy3",
+  "status": "pending",
+  "created_at": "2026-07-29T12:04:07.269639055Z",
+  "source": {
+    "url": "https://huggingface.co/tencent/Hy3/resolve/a960ebc3da325ba167f069f76c41eb62c9280d22/README.md",
+    "revision": "a960ebc3da325ba167f069f76c41eb62c9280d22",
+    "sha256": "9ddea7626e3735a917444fc9c8270e3e486fd9003f7dd93f6e1af3518d12904c"
+  },
+  "generator": {
+    "model": "qwen3.6-27b",
+    "wire_api": "responses"
+  },
+  "claims": [
+    {
+      "field": "description",
+      "value": "Hy3 is a 295B-parameter Mixture-of-Experts (MoE) model with 21B active parameters and 3.8B MTP layer parameters, developed by the Tencent Hy Team.",
+      "evidence": "Hy3 is a 295B-parameter Mixture-of-Experts (MoE) model with 21B active parameters",
+      "section": "## Model Introduction",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "ModalityTextIn",
+        "ModalityTextOut",
+        "CapFunctionCall"
+      ],
+      "evidence": "Architecture: Mixture-of-Experts (MoE), Total Parameters: 295B, Activated Parameters: 21B, MTP Layer Parameters: 3.8B",
+      "section": "## Model Introduction",
+      "confidence": "high"
+    },
+    {
+      "field": "context_length",
+      "value": 262144,
+      "evidence": "Context Length | 256K",
+      "section": "## Model Introduction",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "ModalityTextIn",
+        "ModalityTextOut",
+        "CapFunctionCall"
+      ],
+      "evidence": "Number of Experts | 192 experts, top-8 activated",
+      "section": "## Model Introduction",
+      "confidence": "high"
+    },
+    {
+      "field": "reasoning.supported",
+      "value": true,
+      "evidence": "reasoning_effort: 'no_think' (default, direct response), 'low', 'high' (deep chain-of-thought)",
+      "section": "## Quickstart",
+      "confidence": "high"
+    }
+  ]
+}

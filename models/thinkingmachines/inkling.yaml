@@ -1,3 +1,4 @@
+schema_version: 2
 id: thinkingmachines/inkling
 name: 'Thinking Machines: Inkling'
 provider: Thinkingmachines
@@ -11,3 +12,67 @@ features:
   - ModalityImageIn
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:44:34.852834954Z
+upstream:
+  openrouter:
+    canonical_slug: thinkingmachines/inkling-20260715
+    huggingface_id: thinkingmachines/Inkling
+    supported_parameters:
+      - frequency_penalty
+      - include_reasoning
+      - logit_bias
+      - max_tokens
+      - min_p
+      - presence_penalty
+      - reasoning
+      - reasoning_effort
+      - repetition_penalty
+      - seed
+      - stop
+      - temperature
+      - tool_choice
+      - tools
+      - top_k
+      - top_p
+    input_modalities:
+      - audio
+      - image
+      - text
+    output_modalities:
+      - text
+    fetched_at: 2026-07-29T10:44:34.852835414Z
+  huggingface:
+    id: thinkingmachines/Inkling
+    revision: 828496eeae4c243ff1a22f7f28ff83694f2f7bc9
+    pipeline_tag: image-text-to-text
+    model_type: inkling_mm_model
+    architectures:
+      - InklingForConditionalGeneration
+    license: apache-2.0
+    tags:
+      - audio-text-to-text
+      - conversational
+      - endpoints_compatible
+      - eval-results
+      - image-text-to-text
+      - inkling_mm_model
+      - license:apache-2.0
+      - moe
+      - region:us
+      - safetensors
+      - transformers
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-07-29T10:44:37.004309627Z
+reasoning:
+  supported: true
+  default_enabled: true
+  default_effort: high
+  supported_efforts:
+    - high
+    - low
+    - max
+    - medium
+    - minimal
+    - none

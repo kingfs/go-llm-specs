@@ -1,3 +1,4 @@
+schema_version: 2
 id: inclusionai/ring-2.6-1t:free
 name: 'inclusionAI: Ring-2.6-1T (free)'
 provider: Inclusionai
@@ -10,3 +11,4 @@ features:
   - CapFunctionCall
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:38:41.980571665Z

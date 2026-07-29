@@ -1,3 +1,4 @@
+schema_version: 2
 id: nvidia/nemotron-3-ultra-550b-a55b
 name: 'NVIDIA: Nemotron 3 Ultra'
 provider: Nvidia
@@ -11,3 +12,82 @@ features:
   - CapJsonMode
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:40:52.268220218Z
+upstream:
+  openrouter:
+    canonical_slug: nvidia/nemotron-3-ultra-550b-a55b-20260604
+    huggingface_id: nvidia/NVIDIA-Nemotron-3-Ultra-550B-A55B-BF16
+    supported_parameters:
+      - frequency_penalty
+      - include_reasoning
+      - logit_bias
+      - max_tokens
+      - min_p
+      - presence_penalty
+      - reasoning
+      - reasoning_effort
+      - repetition_penalty
+      - response_format
+      - seed
+      - stop
+      - structured_outputs
+      - temperature
+      - tool_choice
+      - tools
+      - top_k
+      - top_p
+    input_modalities:
+      - text
+    output_modalities:
+      - text
+    fetched_at: 2026-07-29T10:40:52.268220778Z
+  huggingface:
+    id: nvidia/NVIDIA-Nemotron-3-Ultra-550B-A55B-BF16
+    revision: 624ba927cfbef0427354998700de3d51173c8c04
+    pipeline_tag: text-generation
+    model_type: nemotron_h
+    architectures:
+      - NemotronHForCausalLM
+    license: other
+    tags:
+      - ar
+      - conversational
+      - dataset:nvidia/nemotron-post-training-v3
+      - dataset:nvidia/nemotron-pre-training-datasets
+      - de
+      - en
+      - endpoints_compatible
+      - es
+      - eval-results
+      - fr
+      - he
+      - hi
+      - it
+      - ja
+      - ko
+      - latent-moe
+      - license:other
+      - mtp
+      - nemotron-3
+      - nemotron_h
+      - nvidia
+      - pt
+      - pytorch
+      - region:us
+      - safetensors
+      - text-generation
+      - transformers
+      - zh
+    config_context_length: 262144
+    tokenizer_model_max_length: 262144
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-07-29T10:40:54.173956477Z
+reasoning:
+  supported: true
+  default_enabled: true
+  default_effort: high
+  supported_efforts:
+    - high
+    - medium

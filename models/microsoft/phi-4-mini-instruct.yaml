@@ -1,3 +1,4 @@
+schema_version: 2
 id: microsoft/phi-4-mini-instruct
 name: 'Microsoft: Phi 4 Mini Instruct'
 provider: Microsoft
@@ -10,3 +11,59 @@ features:
   - CapJsonMode
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:39:04.710201898Z
+upstream:
+  huggingface:
+    id: microsoft/Phi-4-mini-instruct
+    revision: cfbefacb99257ffa30c83adab238a50856ac3083
+    pipeline_tag: text-generation
+    model_type: phi3
+    architectures:
+      - Phi3ForCausalLM
+    tags:
+      - ar
+      - arxiv:2503.01743
+      - code
+      - conversational
+      - cs
+      - custom_code
+      - da
+      - de
+      - deploy:sagemaker
+      - en
+      - endpoints_compatible
+      - es
+      - eval-results
+      - fi
+      - fr
+      - he
+      - hu
+      - it
+      - ja
+      - ko
+      - license:mit
+      - multilingual
+      - nl
+      - nlp
+      - "no"
+      - phi3
+      - pl
+      - pt
+      - region:us
+      - ru
+      - safetensors
+      - sv
+      - text-generation
+      - text-generation-inference
+      - th
+      - tr
+      - transformers
+      - uk
+      - zh
+    config_context_length: 131072
+    tokenizer_model_max_length: 131072
+    chat_template_sha256: bfa4551d27503182243014a8251e5dea592f5858f9541a61817869d0b390b3a7
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-07-29T10:39:06.496423153Z

@@ -1,3 +1,4 @@
+schema_version: 2
 id: cohere/command-a
 name: 'Cohere: Command A'
 provider: Cohere
@@ -12,3 +13,67 @@ features:
   - CapJsonMode
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:37:18.620504176Z
+upstream:
+  openrouter:
+    canonical_slug: cohere/command-a-03-2025
+    huggingface_id: CohereForAI/c4ai-command-a-03-2025
+    supported_parameters:
+      - frequency_penalty
+      - max_tokens
+      - presence_penalty
+      - response_format
+      - seed
+      - stop
+      - structured_outputs
+      - temperature
+      - top_k
+      - top_p
+    input_modalities:
+      - text
+    output_modalities:
+      - text
+    knowledge_cutoff: "2024-08-31"
+    fetched_at: 2026-07-29T10:37:18.620504446Z
+  huggingface:
+    id: CohereLabs/c4ai-command-a-03-2025
+    revision: 066daaa11d57404b07cc650d1068936d31431979
+    pipeline_tag: text-generation
+    model_type: cohere2
+    architectures:
+      - Cohere2ForCausalLM
+    license: cc-by-nc-4.0
+    tags:
+      - ar
+      - arxiv:2504.00698
+      - cohere2
+      - conversational
+      - cs
+      - de
+      - el
+      - en
+      - es
+      - eval-results
+      - fa
+      - fr
+      - he
+      - hi
+      - id
+      - it
+      - ja
+      - ko
+      - license:cc-by-nc-4.0
+      - nl
+      - pl
+      - pt
+      - region:us
+      - ro
+      - ru
+      - safetensors
+      - text-generation
+      - tr
+      - transformers
+      - uk
+      - vi
+      - zh
+    fetched_at: 2026-07-29T10:37:19.703427222Z

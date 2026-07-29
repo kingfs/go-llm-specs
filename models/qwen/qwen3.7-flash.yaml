@@ -1,3 +1,4 @@
+schema_version: 2
 id: qwen/qwen3.7-flash
 name: 'Qwen: Qwen3.7 Flash'
 provider: Qwen
@@ -13,3 +14,30 @@ features:
   - ModalityTextIn
   - ModalityTextOut
   - ModalityVideoIn
+discovered_at: 2026-07-29T10:43:50.859662668Z
+upstream:
+  openrouter:
+    canonical_slug: qwen/qwen3.7-flash-20260727
+    supported_parameters:
+      - include_reasoning
+      - logprobs
+      - max_tokens
+      - presence_penalty
+      - reasoning
+      - response_format
+      - seed
+      - temperature
+      - tool_choice
+      - tools
+      - top_logprobs
+      - top_p
+    input_modalities:
+      - image
+      - text
+      - video
+    output_modalities:
+      - text
+    fetched_at: 2026-07-29T10:43:50.859662848Z
+reasoning:
+  supported: true
+  default_enabled: true

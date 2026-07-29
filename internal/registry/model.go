@@ -86,9 +86,9 @@ type CodexMetadata struct {
 	SupportedInAPI                    *bool            `yaml:"supported_in_api,omitempty" json:"supported_in_api,omitempty"`
 	Priority                          int              `yaml:"priority,omitempty" json:"priority,omitempty"`
 	BaseInstructions                  string           `yaml:"base_instructions,omitempty" json:"base_instructions,omitempty"`
-	SupportsParallelToolCalls         bool             `yaml:"supports_parallel_tool_calls,omitempty" json:"supports_parallel_tool_calls,omitempty"`
-	SupportsReasoningSummaryParameter bool             `yaml:"supports_reasoning_summary_parameter,omitempty" json:"supports_reasoning_summary_parameter,omitempty"`
-	SupportVerbosity                  bool             `yaml:"support_verbosity,omitempty" json:"support_verbosity,omitempty"`
+	SupportsParallelToolCalls         bool             `yaml:"supports_parallel_tool_calls" json:"supports_parallel_tool_calls"`
+	SupportsReasoningSummaryParameter bool             `yaml:"supports_reasoning_summary_parameter" json:"supports_reasoning_summary_parameter"`
+	SupportVerbosity                  bool             `yaml:"support_verbosity" json:"support_verbosity"`
 	DefaultVerbosity                  string           `yaml:"default_verbosity,omitempty" json:"default_verbosity,omitempty"`
 	ApplyPatchToolType                string           `yaml:"apply_patch_tool_type,omitempty" json:"apply_patch_tool_type,omitempty"`
 	WebSearchToolType                 string           `yaml:"web_search_tool_type,omitempty" json:"web_search_tool_type,omitempty"`

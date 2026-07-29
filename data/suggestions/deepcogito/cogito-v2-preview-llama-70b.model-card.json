@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "deepcogito/cogito-v2-preview-llama-70b",
+  "status": "pending",
+  "created_at": "2026-07-29T11:21:21.441841862Z",
+  "source": {
+    "url": "https://huggingface.co/deepcogito/cogito-v2-preview-llama-70B/resolve/1e1d12e8eaebd6084a8dcf45ecdeaa2f4b8879ce/README.md",
+    "revision": "1e1d12e8eaebd6084a8dcf45ecdeaa2f4b8879ce",
+    "sha256": "29e0540f60fec4aacc5b629cb106e50913892423d46a8f376af29fa66b3bdd4d"
+  },
+  "generator": {
+    "model": "qwen3.6-27b",
+    "wire_api": "responses"
+  },
+  "claims": [
+    {
+      "field": "description",
+      "value": "Cogito v2 LLMs are instruction tuned generative models. They are hybrid reasoning models that can answer directly or self-reflect before answering.",
+      "evidence": "Cogito v2 LLMs are instruction tuned generative models.",
+      "section": "# Cogito v2 preview - 70B",
+      "confidence": "high"
+    },
+    {
+      "field": "context_length",
+      "value": 131072,
+      "evidence": "This model is trained in over 30 languages and supports a context length of 128k.",
+      "section": "# Cogito v2 preview - 70B",
+      "confidence": "high"
+    },
+    {
+      "field": "max_output",
+      "value": 512,
+      "evidence": "outputs = pipeline( messages, max_new_tokens=512, )",
+      "section": "# Usage",
+      "confidence": "medium"
+    },
+    {
+      "field": "features",
+      "value": [
+        "CapChat",
+        "CapFunctionCall",
+        "ModalityTextIn",
+        "ModalityTextOut"
+      ],
+      "evidence": "Cogito models support tool calling (single, parallel, multiple and parallel_multiple) both in standard and extended thinking mode.",
+      "section": "# Tool Calling",
+      "confidence": "high"
+    },
+    {
+      "field": "reasoning.supported",
+      "value": true,
+      "evidence": "By default, the model will answer in the standard mode. To enable thinking, you can do any one of the two methods: - Set `enable_thinking=True` while applying the chat template.",
+      "section": "## Implementing extended thinking",
+      "confidence": "high"
+    },
+    {
+      "field": "reasoning.parser",
+      "value": "\u003cthink\u003e",
+      "evidence": "Cogito v2 models are hybrid reasoning models. Each model can answer directly (standard LLM), or self-reflect before answering (like reasoning models).",
+      "section": "# Cogito v2 preview - 70B",
+      "confidence": "high"
+    }
+  ]
+}

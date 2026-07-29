@@ -1,3 +1,4 @@
+schema_version: 2
 id: anthropic/claude-opus-4.5:batch
 name: 'Anthropic: Claude Opus 4.5 (batch)'
 provider: Anthropic
@@ -12,3 +13,27 @@ features:
   - ModalityImageIn
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:36:45.835534946Z
+upstream:
+  openrouter:
+    canonical_slug: anthropic/claude-4.5-opus-20251124
+    supported_parameters:
+      - include_reasoning
+      - max_tokens
+      - reasoning
+      - response_format
+      - stop
+      - structured_outputs
+      - temperature
+      - tool_choice
+      - tools
+      - verbosity
+    input_modalities:
+      - file
+      - image
+      - text
+    output_modalities:
+      - text
+    fetched_at: 2026-07-29T10:36:45.835535306Z
+reasoning:
+  supported: true

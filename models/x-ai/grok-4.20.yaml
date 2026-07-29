@@ -1,3 +1,4 @@
+schema_version: 2
 id: x-ai/grok-4.20
 name: 'xAI: Grok 4.20'
 provider: X-Ai
@@ -17,3 +18,30 @@ features:
   - ModalityImageIn
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:44:48.612579915Z
+upstream:
+  openrouter:
+    canonical_slug: x-ai/grok-4.20-20260309
+    supported_parameters:
+      - include_reasoning
+      - logprobs
+      - max_tokens
+      - reasoning
+      - response_format
+      - seed
+      - structured_outputs
+      - temperature
+      - tool_choice
+      - tools
+      - top_logprobs
+      - top_p
+    input_modalities:
+      - file
+      - image
+      - text
+    output_modalities:
+      - text
+    knowledge_cutoff: "2025-09-01"
+    fetched_at: 2026-07-29T10:44:48.612580355Z
+reasoning:
+  supported: true

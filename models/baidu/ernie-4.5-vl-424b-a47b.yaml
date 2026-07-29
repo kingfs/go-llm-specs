@@ -1,3 +1,4 @@
+schema_version: 2
 id: baidu/ernie-4.5-vl-424b-a47b
 name: 'Baidu: ERNIE 4.5 VL 424B A47B '
 provider: Baidu
@@ -10,3 +11,58 @@ features:
   - ModalityImageIn
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:37:08.254289064Z
+upstream:
+  openrouter:
+    canonical_slug: baidu/ernie-4.5-vl-424b-a47b
+    huggingface_id: baidu/ERNIE-4.5-VL-424B-A47B-PT
+    supported_parameters:
+      - frequency_penalty
+      - include_reasoning
+      - max_tokens
+      - presence_penalty
+      - reasoning
+      - repetition_penalty
+      - seed
+      - stop
+      - temperature
+      - top_k
+      - top_p
+    input_modalities:
+      - image
+      - text
+    output_modalities:
+      - text
+    knowledge_cutoff: "2025-03-31"
+    fetched_at: 2026-07-29T10:37:08.254289454Z
+  huggingface:
+    id: baidu/ERNIE-4.5-VL-424B-A47B-PT
+    revision: a3d5a8439d67c9a69003a1f7aac0961c6f1bc20d
+    pipeline_tag: image-text-to-text
+    model_type: ernie4_5_moe_vl
+    architectures:
+      - Ernie4_5_VLMoeForConditionalGeneration
+    license: apache-2.0
+    tags:
+      - ERNIE4.5
+      - conversational
+      - custom_code
+      - en
+      - endpoints_compatible
+      - ernie4_5_moe_vl
+      - image-text-to-text
+      - license:apache-2.0
+      - region:us
+      - safetensors
+      - transformers
+      - zh
+    config_context_length: 131072
+    processor_class: Ernie4_5_VLProcessor
+    chat_template_sha256: 8328034b3062a40805891e07a26bb63c57f66e7b63160427a955db6b1cee5a15
+    structured_files:
+      - config.json
+      - preprocessor_config.json
+      - tokenizer_config.json
+    fetched_at: 2026-07-29T10:37:10.525186355Z
+reasoning:
+  supported: true

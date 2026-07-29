@@ -1,3 +1,4 @@
+schema_version: 2
 id: inclusionai/ring-2.6-1t
 name: 'inclusionAI: Ring-2.6-1T'
 provider: Inclusionai
@@ -11,3 +12,59 @@ features:
   - CapJsonMode
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:38:39.94158778Z
+upstream:
+  openrouter:
+    canonical_slug: inclusionai/ring-2.6-1t-20260508
+    supported_parameters:
+      - frequency_penalty
+      - include_reasoning
+      - max_tokens
+      - presence_penalty
+      - reasoning
+      - reasoning_effort
+      - repetition_penalty
+      - response_format
+      - seed
+      - stop
+      - temperature
+      - tool_choice
+      - tools
+      - top_k
+      - top_p
+    input_modalities:
+      - text
+    output_modalities:
+      - text
+    fetched_at: 2026-07-29T10:38:39.94158794Z
+  huggingface:
+    id: inclusionAI/Ring-2.6-1T
+    revision: 1e58be9318352541575130d4dbbdcc735fca7a03
+    pipeline_tag: text-generation
+    model_type: bailing_hybrid
+    architectures:
+      - BailingMoeV2_5ForCausalLM
+    tags:
+      - arxiv:2606.15079
+      - bailing_hybrid
+      - compressed-tensors
+      - conversational
+      - custom_code
+      - eval-results
+      - license:mit
+      - region:us
+      - safetensors
+      - text-generation
+      - transformers
+    config_context_length: 131072
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-07-29T10:38:41.87954453Z
+reasoning:
+  supported: true
+  mandatory: true
+  default_effort: high
+  supported_efforts:
+    - high
+    - xhigh

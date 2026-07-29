@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "nousresearch/hermes-3-llama-3.1-70b",
+  "status": "pending",
+  "created_at": "2026-07-29T11:37:56.023170382Z",
+  "source": {
+    "url": "https://huggingface.co/NousResearch/Hermes-3-Llama-3.1-70B/resolve/1fc86da0ce9cdb14cd775ad270bc7d1b4bf70ede/README.md",
+    "revision": "1fc86da0ce9cdb14cd775ad270bc7d1b4bf70ede",
+    "sha256": "ae8347995df2dc1024f96d12fa0c30a1500c2e22ecdac8933b71b2bd3c0df886"
+  },
+  "generator": {
+    "model": "qwen3.6-27b",
+    "wire_api": "responses"
+  },
+  "claims": [
+    {
+      "field": "features",
+      "value": [
+        "CapChat",
+        "CapFunctionCall",
+        "CapJsonMode"
+      ],
+      "evidence": "Hermes 3 uses ChatML as the prompt format, opening up a much more structured system for engaging the LLM in multi-turn chat dialogue.",
+      "section": "Prompt Format",
+      "confidence": "high"
+    },
+    {
+      "field": "description",
+      "value": "Hermes 3 is a fine-tune of meta-llama/Meta-Llama-3.1-70B by Nous Research.",
+      "evidence": "base_model: meta-llama/Meta-Llama-3.1-70B",
+      "section": "Model Description",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "ModalityTextIn",
+        "ModalityTextOut"
+      ],
+      "evidence": "This format enables OpenAI endpoint compatability",
+      "section": "Prompt Format",
+      "confidence": "high"
+    }
+  ]
+}

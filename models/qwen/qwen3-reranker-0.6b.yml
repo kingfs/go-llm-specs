@@ -1,12 +1,41 @@
+schema_version: 2
 id: qwen/qwen3-reranker-0.6b
-name: "Qwen: Qwen3 Reranker 0.6B"
+name: 'Qwen: Qwen3 Reranker 0.6B'
 provider: Qwen
-description: "Qwen3 0.6B's reranker model."
-description_cn: "Qwen3 0.6B 的 reranker 模型。"
-features:
-  - CapRerank   
-  - ModalityTextIn
+description: Qwen3 0.6B's reranker model.
+description_cn: Qwen3 0.6B 的 reranker 模型。
 context_length: 32768
-
+features:
+  - CapRerank
+  - ModalityTextIn
 aliases:
   - qwen3-reranker-0.6b
+discovered_at: 2026-07-29T10:43:09.860220829Z
+upstream:
+  huggingface:
+    id: Qwen/Qwen3-Reranker-0.6B
+    revision: e61197ed45024b0ed8a2d74b80b4d909f1255473
+    pipeline_tag: text-ranking
+    model_type: qwen3
+    architectures:
+      - Qwen3ForCausalLM
+    tags:
+      - arxiv:2506.05176
+      - base_model:Qwen/Qwen3-0.6B-Base
+      - base_model:finetune:Qwen/Qwen3-0.6B-Base
+      - endpoints_compatible
+      - license:apache-2.0
+      - qwen3
+      - region:us
+      - safetensors
+      - sentence-transformers
+      - text-generation
+      - text-ranking
+      - transformers
+    config_context_length: 40960
+    tokenizer_model_max_length: 131072
+    chat_template_sha256: c0e4127cd50e4194663b09f37a2f0b4155bdb8b173410a8765744482adefd734
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-07-29T10:43:12.071803069Z

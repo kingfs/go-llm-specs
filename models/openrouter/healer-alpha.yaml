@@ -1,3 +1,4 @@
+schema_version: 2
 id: openrouter/healer-alpha
 name: Healer Alpha
 provider: Openrouter
@@ -20,3 +21,4 @@ features:
   - ModalityTextIn
   - ModalityTextOut
   - ModalityVideoIn
+discovered_at: 2026-07-29T10:41:51.68289982Z

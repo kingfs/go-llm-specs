@@ -1,3 +1,4 @@
+schema_version: 2
 id: google/gemma-3-4b-it:free
 name: 'Google: Gemma 3 4B (free)'
 provider: Google
@@ -12,3 +13,4 @@ features:
   - ModalityImageIn
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:38:17.257829985Z

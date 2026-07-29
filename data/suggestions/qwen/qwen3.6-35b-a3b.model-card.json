@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "qwen/qwen3.6-35b-a3b",
+  "status": "pending",
+  "created_at": "2026-07-29T12:01:04.688704821Z",
+  "source": {
+    "url": "https://huggingface.co/Qwen/Qwen3.6-35B-A3B/resolve/995ad96eacd98c81ed38be0c5b274b04031597b0/README.md",
+    "revision": "995ad96eacd98c81ed38be0c5b274b04031597b0",
+    "sha256": "26e82f5fdad3797a7754a31c1fb8a6562dde31c6efe5c8e86aed4ef88719185a"
+  },
+  "generator": {
+    "model": "qwen3.6-27b",
+    "wire_api": "responses"
+  },
+  "claims": [
+    {
+      "field": "description",
+      "value": "A Causal Language Model with Vision Encoder. Total 35B parameters with 3B activated, 40 layers, 256 experts (8 routed + 1 shared), supporting multi-step MTP training.",
+      "evidence": "Type: Causal Language Model with Vision Encoder",
+      "section": "Model Overview",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "CapFunctionCall",
+        "ModalityTextIn",
+        "ModalityTextOut",
+        "ModalityImageIn"
+      ],
+      "evidence": "Number of Parameters: 35B in total and 3B activated",
+      "section": "Model Overview",
+      "confidence": "high"
+    },
+    {
+      "field": "context_length",
+      "value": 262144,
+      "evidence": "Context Length: 262,144 natively and extensible up to 1,010,000 tokens.",
+      "section": "Model Overview",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "ModalityTextIn",
+        "ModalityTextOut",
+        "ModalityImageIn"
+      ],
+      "evidence": "pipeline_tag: image-text-to-text",
+      "section": "Model Overview",
+      "confidence": "high"
+    }
+  ]
+}

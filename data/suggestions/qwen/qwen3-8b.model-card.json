@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "qwen/qwen3-8b",
+  "status": "pending",
+  "created_at": "2026-07-29T11:49:31.524454709Z",
+  "source": {
+    "url": "https://huggingface.co/Qwen/Qwen3-8B/resolve/b968826d9c46dd6066d109eabc6255188de91218/README.md",
+    "revision": "b968826d9c46dd6066d109eabc6255188de91218",
+    "sha256": "7f8c0b189695b4ee0820daa5e003896c51ceac53549fa4500bdc47f6b94bcfdd"
+  },
+  "generator": {
+    "model": "qwen3.6-27b",
+    "wire_api": "responses"
+  },
+  "claims": [
+    {
+      "field": "description",
+      "value": "Causal language model with 8.2B parameters and 36 layers.",
+      "evidence": "Number of Layers: 36",
+      "section": "# Qwen3-8B",
+      "confidence": "high"
+    },
+    {
+      "field": "context_length",
+      "value": 32768,
+      "evidence": "Context Length: 32,768 natively and 131,072 tokens with YaRN",
+      "section": "## Model Overview",
+      "confidence": "high"
+    },
+    {
+      "field": "max_output",
+      "value": 32768,
+      "evidence": "max_new_tokens=32768",
+      "section": "## Quickstart",
+      "confidence": "high"
+    },
+    {
+      "field": "reasoning.supported",
+      "value": true,
+      "evidence": "enable_thinking=True ... enable_thinking=False",
+      "section": "## Quickstart",
+      "confidence": "high"
+    },
+    {
+      "field": "reasoning.parser",
+      "value": "qwen3",
+      "evidence": "--reasoning-parser qwen3",
+      "section": "## Quickstart",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "CapChat",
+        "ModalityTextIn",
+        "ModalityTextOut"
+      ],
+      "evidence": "Type: Causal Language Models; modality TextIn and TextOut implied by text-generation pipeline_tag",
+      "section": "## Model Overview",
+      "confidence": "high"
+    }
+  ]
+}

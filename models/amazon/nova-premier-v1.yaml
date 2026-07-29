@@ -1,3 +1,4 @@
+schema_version: 2
 id: amazon/nova-premier-v1
 name: 'Amazon: Nova Premier 1.0'
 provider: Amazon
@@ -11,3 +12,20 @@ features:
   - ModalityImageIn
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:36:37.409391762Z
+upstream:
+  openrouter:
+    canonical_slug: amazon/nova-premier-v1
+    supported_parameters:
+      - max_tokens
+      - stop
+      - temperature
+      - tools
+      - top_k
+      - top_p
+    input_modalities:
+      - image
+      - text
+    output_modalities:
+      - text
+    fetched_at: 2026-07-29T10:36:37.409392322Z

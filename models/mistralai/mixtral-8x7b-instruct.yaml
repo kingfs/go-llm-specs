@@ -1,3 +1,4 @@
+schema_version: 2
 id: mistralai/mixtral-8x7b-instruct
 name: 'Mistral: Mixtral 8x7B Instruct'
 provider: Mistral
@@ -17,3 +18,4 @@ features:
   - CapJsonMode
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:39:53.590313696Z

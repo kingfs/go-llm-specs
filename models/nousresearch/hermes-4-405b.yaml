@@ -1,3 +1,4 @@
+schema_version: 2
 id: nousresearch/hermes-4-405b
 name: 'Nous: Hermes 4 405B'
 provider: Nous Research
@@ -16,3 +17,70 @@ features:
   - CapJsonMode
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:40:34.509455805Z
+upstream:
+  openrouter:
+    canonical_slug: nousresearch/hermes-4-405b
+    huggingface_id: NousResearch/Hermes-4-405B
+    supported_parameters:
+      - frequency_penalty
+      - include_reasoning
+      - max_tokens
+      - presence_penalty
+      - reasoning
+      - repetition_penalty
+      - response_format
+      - temperature
+      - top_k
+      - top_p
+    input_modalities:
+      - text
+    output_modalities:
+      - text
+    knowledge_cutoff: "2024-08-31"
+    fetched_at: 2026-07-29T10:40:34.509456315Z
+  huggingface:
+    id: NousResearch/Hermes-4-405B
+    revision: 88e3dce03c4a5535e2f4a2bcc08e939a2b302f82
+    pipeline_tag: text-generation
+    model_type: llama
+    architectures:
+      - LlamaForCausalLM
+    license: llama3
+    tags:
+      - Llama-3.1
+      - arxiv:2508.18255
+      - atropos
+      - base_model:finetune:meta-llama/Llama-3.1-405B
+      - base_model:meta-llama/Llama-3.1-405B
+      - chat
+      - chatml
+      - conversational
+      - dataforge
+      - en
+      - endpoints_compatible
+      - finetune
+      - function calling
+      - hybrid-mode
+      - instruct
+      - json mode
+      - license:llama3
+      - llama
+      - long context
+      - reasoning
+      - region:us
+      - roleplaying
+      - safetensors
+      - structured outputs
+      - text-generation
+      - text-generation-inference
+      - tool use
+      - transformers
+    config_context_length: 131072
+    tokenizer_model_max_length: 131072
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-07-29T10:40:36.733981208Z
+reasoning:
+  supported: true

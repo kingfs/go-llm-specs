@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "thinkingmachines/inkling",
+  "status": "pending",
+  "created_at": "2026-07-29T12:05:01.168036887Z",
+  "source": {
+    "url": "https://huggingface.co/thinkingmachines/Inkling/resolve/828496eeae4c243ff1a22f7f28ff83694f2f7bc9/README.md",
+    "revision": "828496eeae4c243ff1a22f7f28ff83694f2f7bc9",
+    "sha256": "6ae2471d8d94b21bbf91c6d73e17ee9d308c9eebc3b5ca898f21a47c2b0f1a7c"
+  },
+  "generator": {
+    "model": "qwen3.6-27b",
+    "wire_api": "responses"
+  },
+  "claims": [
+    {
+      "field": "description",
+      "value": "General-purpose multimodal model accepting text, image, and audio inputs to generate text outputs, intended for agentic systems, coding, chatbots, and multilingual use.",
+      "evidence": "Inkling is a general-purpose multimodal model that accepts text, image and audio inputs and generates text outputs.",
+      "section": "1. General Information",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "ModalityTextIn",
+        "ModalityTextOut",
+        "ModalityImageIn",
+        "ModalityAudioIn"
+      ],
+      "evidence": "Inkling accepts text input in UTF-8 encoding, image input in any pixel-based format ... and audio input in WAV format sampled at 16kHz",
+      "section": "3. Model Properties",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "ModalityTextIn",
+        "ModalityTextOut",
+        "ModalityImageIn",
+        "ModalityAudioIn"
+      ],
+      "evidence": "A 66-layer decoder-only transformer with a sparse Mixture-of-Experts (MoE) feed-forward backbone: each token is routed to 6 of 256 experts, plus 2 shared experts active on every token.",
+      "section": "3. Model Properties",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "ModalityTextIn",
+        "ModalityTextOut",
+        "ModalityImageIn",
+        "ModalityAudioIn",
+        "ModalityVideoIn"
+      ],
+      "evidence": "The model is natively multimodal — images and video are encoded via a hierarchical patch encoder, and audio via discrete token encoding",
+      "section": "3. Model Properties",
+      "confidence": "high"
+    }
+  ]
+}

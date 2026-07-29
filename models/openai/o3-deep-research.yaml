@@ -1,3 +1,4 @@
+schema_version: 2
 id: openai/o3-deep-research
 name: 'OpenAI: o3 Deep Research'
 provider: OpenAI
@@ -19,3 +20,33 @@ features:
   - ModalityImageIn
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:41:42.258139093Z
+upstream:
+  openrouter:
+    canonical_slug: openai/o3-deep-research-2025-06-26
+    supported_parameters:
+      - frequency_penalty
+      - include_reasoning
+      - logit_bias
+      - logprobs
+      - max_tokens
+      - presence_penalty
+      - reasoning
+      - response_format
+      - seed
+      - stop
+      - structured_outputs
+      - temperature
+      - tool_choice
+      - tools
+      - top_logprobs
+      - top_p
+    input_modalities:
+      - file
+      - image
+      - text
+    output_modalities:
+      - text
+    fetched_at: 2026-07-29T10:41:42.258139573Z
+reasoning:
+  supported: true

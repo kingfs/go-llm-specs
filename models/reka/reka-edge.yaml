@@ -1,3 +1,4 @@
+schema_version: 2
 id: reka/reka-edge
 name: Reka Edge
 provider: Reka
@@ -13,3 +14,4 @@ features:
   - ModalityTextIn
   - ModalityTextOut
   - ModalityVideoIn
+discovered_at: 2026-07-29T10:43:54.677364664Z

@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "eleutherai/llemma_7b",
+  "status": "pending",
+  "created_at": "2026-07-29T11:24:07.666780899Z",
+  "source": {
+    "url": "https://huggingface.co/EleutherAI/llemma_7b/resolve/e223eee41c53449e6ea6548c9b71c50865e4a85c/README.md",
+    "revision": "e223eee41c53449e6ea6548c9b71c50865e4a85c",
+    "sha256": "d5de12f66a47e4b68b3aff5d018fb91f8d04a0d4e8777b105fb5564466c6a218"
+  },
+  "generator": {
+    "model": "qwen3.6-27b",
+    "wire_api": "responses"
+  },
+  "claims": [
+    {
+      "field": "description",
+      "value": "Llemma 7B is a language model for mathematics, initialized with Code Llama 7B weights and trained on Proof-Pile-2 for 200B tokens.",
+      "evidence": "**Llemma 7B** is a language model for mathematics.",
+      "section": "## Evaluations",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "CapFunctionCall"
+      ],
+      "evidence": "Llemma has strong capabilities in computational mathematics tasks.",
+      "section": "### Tool Use and Theorem Proving",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "CapFunctionCall",
+        "ModalityTextIn",
+        "ModalityTextOut"
+      ],
+      "evidence": "Llemma models are particularly strong at chain-of-thought mathematical reasoning and using computational tools for mathematics, such as Python and formal theorem provers.",
+      "section": "## Evaluations",
+      "confidence": "high"
+    }
+  ]
+}

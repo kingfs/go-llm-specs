@@ -1,3 +1,4 @@
+schema_version: 2
 id: thedrummer/rocinante-12b
 name: 'TheDrummer: Rocinante 12B'
 provider: Thedrummer
@@ -23,3 +24,46 @@ features:
   - CapJsonMode
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:44:27.984438267Z
+upstream:
+  openrouter:
+    canonical_slug: thedrummer/rocinante-12b
+    huggingface_id: TheDrummer/Rocinante-12B-v1.1
+    supported_parameters:
+      - frequency_penalty
+      - logit_bias
+      - logprobs
+      - max_tokens
+      - presence_penalty
+      - repetition_penalty
+      - response_format
+      - seed
+      - stop
+      - structured_outputs
+      - temperature
+      - top_k
+      - top_logprobs
+      - top_p
+    input_modalities:
+      - text
+    output_modalities:
+      - text
+    knowledge_cutoff: "2024-04-30"
+    fetched_at: 2026-07-29T10:44:27.984438707Z
+  huggingface:
+    id: TheDrummer/Rocinante-12B-v1.1
+    revision: 2202ffd9615cdf6f840f5592f0408916eec22c03
+    model_type: mistral
+    architectures:
+      - MistralForCausalLM
+    license: other
+    tags:
+      - license:other
+      - mistral
+      - region:us
+      - safetensors
+    config_context_length: 1024000
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-07-29T10:44:30.016467872Z

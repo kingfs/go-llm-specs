@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "thedrummer/unslopnemo-12b",
+  "status": "pending",
+  "created_at": "2026-07-29T12:04:37.959419118Z",
+  "source": {
+    "url": "https://huggingface.co/TheDrummer/UnslopNemo-12B-v4.1/resolve/c20fadc8281ea8237acb8054f4a84524ca257478/README.md",
+    "revision": "c20fadc8281ea8237acb8054f4a84524ca257478",
+    "sha256": "6e37feddfeb0f745ed01a629ad555263f518512fddfadb4871c48de8f67664fc"
+  },
+  "generator": {
+    "model": "qwen3.6-27b",
+    "wire_api": "responses"
+  },
+  "claims": [
+    {
+      "field": "description",
+      "value": "Model information is on Kofi, not here.",
+      "evidence": "Model information is on Kofi, not here.",
+      "section": "Model Information",
+      "confidence": "high"
+    }
+  ]
+}

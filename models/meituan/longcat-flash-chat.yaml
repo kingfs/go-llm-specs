@@ -1,3 +1,4 @@
+schema_version: 2
 id: meituan/longcat-flash-chat
 name: 'Meituan: LongCat Flash Chat'
 provider: Meituan
@@ -15,3 +16,4 @@ features:
   - CapChat
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:38:49.560752442Z

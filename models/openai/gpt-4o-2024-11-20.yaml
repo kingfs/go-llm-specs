@@ -1,3 +1,4 @@
+schema_version: 2
 id: openai/gpt-4o-2024-11-20
 name: 'OpenAI: GPT-4o (2024-11-20)'
 provider: OpenAI
@@ -19,3 +20,32 @@ features:
   - ModalityImageIn
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:41:09.945327798Z
+upstream:
+  openrouter:
+    canonical_slug: openai/gpt-4o-2024-11-20
+    supported_parameters:
+      - frequency_penalty
+      - logit_bias
+      - logprobs
+      - max_tokens
+      - prediction
+      - presence_penalty
+      - response_format
+      - seed
+      - stop
+      - structured_outputs
+      - temperature
+      - tool_choice
+      - tools
+      - top_logprobs
+      - top_p
+      - web_search_options
+    input_modalities:
+      - file
+      - image
+      - text
+    output_modalities:
+      - text
+    knowledge_cutoff: "2023-10-31"
+    fetched_at: 2026-07-29T10:41:09.945328308Z

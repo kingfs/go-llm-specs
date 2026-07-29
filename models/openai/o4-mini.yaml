@@ -1,3 +1,4 @@
+schema_version: 2
 id: openai/o4-mini
 name: 'OpenAI: o4 Mini'
 provider: OpenAI
@@ -19,3 +20,26 @@ features:
   - ModalityImageIn
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:41:43.972228865Z
+upstream:
+  openrouter:
+    canonical_slug: openai/o4-mini-2025-04-16
+    supported_parameters:
+      - include_reasoning
+      - max_tokens
+      - reasoning
+      - response_format
+      - seed
+      - structured_outputs
+      - tool_choice
+      - tools
+    input_modalities:
+      - file
+      - image
+      - text
+    output_modalities:
+      - text
+    knowledge_cutoff: "2024-06-30"
+    fetched_at: 2026-07-29T10:41:43.972229185Z
+reasoning:
+  supported: true

@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "minimax/minimax-01",
+  "status": "pending",
+  "created_at": "2026-07-29T11:29:32.189461257Z",
+  "source": {
+    "url": "https://huggingface.co/MiniMaxAI/MiniMax-Text-01/resolve/a7351bf2bee0e1253919d349f1ad304e6dac13e9/README.md",
+    "revision": "a7351bf2bee0e1253919d349f1ad304e6dac13e9",
+    "sha256": "51ac50fe446a7a1121a62a9a921cb4640b35cefc13350fae3eb612f9def13656"
+  },
+  "generator": {
+    "model": "qwen3.6-27b",
+    "wire_api": "responses"
+  },
+  "claims": [
+    {
+      "field": "description",
+      "value": "MiniMax-01 is a text-generation model.",
+      "evidence": "pipeline_tag: text-generation",
+      "section": "Model Card",
+      "confidence": "medium"
+    }
+  ]
+}

@@ -1,3 +1,4 @@
+schema_version: 2
 id: xiaomi/mimo-v2-flash:free
 name: 'Xiaomi: MiMo-V2-Flash (free)'
 provider: Xiaomi
@@ -17,3 +18,4 @@ features:
   - CapJsonMode
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:44:52.546991053Z

@@ -1,3 +1,4 @@
+schema_version: 2
 id: deepseek/deepseek-r1-distill-llama-70b
 name: 'DeepSeek: R1 Distill Llama 70B'
 provider: DeepSeek
@@ -25,3 +26,55 @@ features:
   - CapJsonMode
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:37:40.696657365Z
+upstream:
+  openrouter:
+    canonical_slug: deepseek/deepseek-r1-distill-llama-70b
+    huggingface_id: deepseek-ai/DeepSeek-R1-Distill-Llama-70B
+    supported_parameters:
+      - frequency_penalty
+      - include_reasoning
+      - max_tokens
+      - presence_penalty
+      - reasoning
+      - repetition_penalty
+      - seed
+      - stop
+      - temperature
+      - top_k
+      - top_p
+    input_modalities:
+      - text
+    output_modalities:
+      - text
+    knowledge_cutoff: "2024-07-31"
+    fetched_at: 2026-07-29T10:37:40.696657975Z
+  huggingface:
+    id: deepseek-ai/DeepSeek-R1-Distill-Llama-70B
+    revision: b1c0b44b4369b597ad119a196caf79a9c40e141e
+    pipeline_tag: text-generation
+    model_type: llama
+    architectures:
+      - LlamaForCausalLM
+    license: mit
+    tags:
+      - arxiv:2501.12948
+      - conversational
+      - deploy:sagemaker
+      - endpoints_compatible
+      - license:mit
+      - llama
+      - region:us
+      - safetensors
+      - text-generation
+      - text-generation-inference
+      - transformers
+    config_context_length: 131072
+    tokenizer_model_max_length: 16384
+    chat_template_sha256: e020ba84d98a0d74b92c89a8c7b3377ccc4f745ac79c0e7fd6625d3d82c3861b
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-07-29T10:37:42.450295657Z
+reasoning:
+  supported: true

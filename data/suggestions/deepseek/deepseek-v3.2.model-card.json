@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "deepseek/deepseek-v3.2",
+  "status": "pending",
+  "created_at": "2026-07-29T11:23:14.372576843Z",
+  "source": {
+    "url": "https://huggingface.co/deepseek-ai/DeepSeek-V3.2/resolve/a7e62ac04ecb2c0a54d736dc46601c5606cf10a6/README.md",
+    "revision": "a7e62ac04ecb2c0a54d736dc46601c5606cf10a6",
+    "sha256": "22b9f57e1ece2df27f9de0e71377e19481f7a6892eca8bc23e73fcdffe1d845c"
+  },
+  "generator": {
+    "model": "qwen3.6-27b",
+    "wire_api": "responses"
+  },
+  "claims": [
+    {
+      "field": "description",
+      "value": "Efficient reasoning and agentic AI, built on DeepSeek Sparse Attention, scalable RL, and agentic task synthesis. High-compute variant DeepSeek-V3.2-Speciale surpasses GPT-5 with IMO gold-medal performance.",
+      "evidence": "We introduce DeepSeek-V3.2, a model that harmonizes high computational efficiency with superior reasoning and agent performance.",
+      "section": "# DeepSeek-V3.2: Efficient Reasoning \u0026 Agentic AI",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "CapChat",
+        "CapFunctionCall"
+      ],
+      "evidence": "DeepSeek-V3.2 introduces significant updates...primary changes involve a revised format for tool calling and the introduction of a 'thinking with tools' capability.",
+      "section": "## Chat Template",
+      "confidence": "high"
+    },
+    {
+      "field": "reasoning.supported",
+      "value": true,
+      "evidence": "DeepSeek-V3.2 introduces significant updates...primary changes involve a revised format for tool calling",
+      "section": "## Chat Template",
+      "confidence": "high"
+    }
+  ]
+}

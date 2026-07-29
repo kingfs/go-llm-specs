@@ -1,0 +1,78 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "opengvlab/internvl3-78b",
+  "status": "pending",
+  "created_at": "2026-07-29T11:42:16.471263804Z",
+  "source": {
+    "url": "https://huggingface.co/OpenGVLab/InternVL3-78B/resolve/4a42b163cc0e222e97b10b562eee98da6bf26077/README.md",
+    "revision": "4a42b163cc0e222e97b10b562eee98da6bf26077",
+    "sha256": "b6753178c09e0768450d9fc5930310e455bea19f8e7486d3f1d790fd8aeb7a63"
+  },
+  "generator": {
+    "model": "qwen3.6-27b",
+    "wire_api": "responses"
+  },
+  "claims": [
+    {
+      "field": "description",
+      "value": "InternVL3 is a multimodal large language model. InternVL3-78B uses InternViT-6B and Qwen2.5-72B.",
+      "evidence": "advanced multimodal large language model (MLLM)",
+      "section": "Introduction",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "CapChat",
+        "ModalityImageIn",
+        "ModalityTextIn",
+        "ModalityTextOut",
+        "ModalityVideoIn"
+      ],
+      "evidence": "internlve multimodal data (e.g., image-text, video-text",
+      "section": "Native Multimodal Pre-Training",
+      "confidence": "medium"
+    },
+    {
+      "field": "features",
+      "value": [
+        "CapChat",
+        "CapFunctionCall",
+        "ModalityImageIn",
+        "ModalityTextIn",
+        "ModalityTextOut",
+        "ModalityVideoIn"
+      ],
+      "evidence": "extend training samples for tool use, 3D scene understanding, GUI operations, long context tasks",
+      "section": "Supervised Fine-Tuning",
+      "confidence": "medium"
+    },
+    {
+      "field": "features",
+      "value": [
+        "CapChat",
+        "ModalityImageIn",
+        "ModalityTextIn",
+        "ModalityTextOut",
+        "ModalityVideoIn"
+      ],
+      "evidence": "following the 'ViT-MLP-LLM' paradigm. ... randomly initialized MLP projector.",
+      "section": "Model Architecture",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "CapChat",
+        "ModalityImageIn",
+        "ModalityTextIn",
+        "ModalityTextOut",
+        "ModalityVideoIn"
+      ],
+      "evidence": "base_model: [OpenGVLab/InternVL3-78B-Instruct]",
+      "section": "YAML Metadata",
+      "confidence": "high"
+    }
+  ]
+}

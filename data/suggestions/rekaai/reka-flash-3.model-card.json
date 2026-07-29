@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "rekaai/reka-flash-3",
+  "status": "pending",
+  "created_at": "2026-07-29T12:02:09.080328764Z",
+  "source": {
+    "url": "https://huggingface.co/RekaAI/reka-flash-3/resolve/8d251ecb02eca9f0f4aa052b29ef922628d2806f/README.md",
+    "revision": "8d251ecb02eca9f0f4aa052b29ef922628d2806f",
+    "sha256": "5dabdf0d6474d629bf38c29e90465969c0a1266a3b0e410dcac2353de4832707"
+  },
+  "generator": {
+    "model": "qwen3.6-27b",
+    "wire_api": "responses"
+  },
+  "claims": [
+    {
+      "field": "description",
+      "value": "A 21B general-purpose reasoning model trained from scratch using synthetic and public datasets for SFT, followed by RLOO with model-based and rule-based rewards.",
+      "evidence": "Reka Flash 3 is a 21B general-purpose reasoning model that was trained from scratch.",
+      "section": "# Reka Flash 3",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "ModalityTextIn",
+        "ModalityTextOut"
+      ],
+      "evidence": "For multi-round conversations, it is recommended to drop the reasoning traces in the previous assistant round to save tokens for the model to think.",
+      "section": "## Model Details",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "ModalityTextIn",
+        "ModalityTextOut"
+      ],
+      "evidence": "Reka Flash 3 uses cl100k_base tokenizer and adds no additional special tokens.",
+      "section": "## Model Details",
+      "confidence": "high"
+    },
+    {
+      "field": "reasoning.supported",
+      "value": true,
+      "evidence": "Generation should stop on seeing the string `\u003csep\u003e` or seeing the special token `\u003c/reasoning\u003e`.",
+      "section": "## Model Details",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "ModalityTextIn",
+        "ModalityTextOut"
+      ],
+      "evidence": "The model often thinks in English when prompted with questions in non-English languages.",
+      "section": "## Model Details",
+      "confidence": "high"
+    }
+  ]
+}

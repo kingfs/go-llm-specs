@@ -1,3 +1,4 @@
+schema_version: 2
 id: qwen/qwen3-vl-8b-thinking
 name: 'Qwen: Qwen3 VL 8B Thinking'
 provider: Qwen
@@ -18,3 +19,64 @@ features:
   - ModalityImageIn
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:43:29.010819243Z
+upstream:
+  openrouter:
+    canonical_slug: qwen/qwen3-vl-8b-thinking
+    huggingface_id: Qwen/Qwen3-VL-8B-Thinking
+    supported_parameters:
+      - frequency_penalty
+      - include_reasoning
+      - logprobs
+      - max_tokens
+      - presence_penalty
+      - reasoning
+      - response_format
+      - seed
+      - stop
+      - structured_outputs
+      - temperature
+      - tool_choice
+      - tools
+      - top_k
+      - top_logprobs
+      - top_p
+    input_modalities:
+      - image
+      - text
+    output_modalities:
+      - text
+    fetched_at: 2026-07-29T10:43:29.010819673Z
+  huggingface:
+    id: Qwen/Qwen3-VL-8B-Thinking
+    revision: 92f3c4b4feadd3a016ef468d103bb5f58b2a2c6b
+    pipeline_tag: image-text-to-text
+    model_type: qwen3_vl
+    architectures:
+      - Qwen3VLForConditionalGeneration
+    license: apache-2.0
+    tags:
+      - arxiv:2308.12966
+      - arxiv:2409.12191
+      - arxiv:2502.13923
+      - arxiv:2505.09388
+      - conversational
+      - deploy:azure
+      - endpoints_compatible
+      - image-text-to-text
+      - license:apache-2.0
+      - qwen3_vl
+      - region:us
+      - safetensors
+      - transformers
+    tokenizer_model_max_length: 262144
+    processor_class: Qwen3VLProcessor
+    chat_template_sha256: 0815e1c0f7d4f5864525fd22a73917be89b4e921b14018ac13a81044a383fb28
+    structured_files:
+      - config.json
+      - preprocessor_config.json
+      - tokenizer_config.json
+    fetched_at: 2026-07-29T10:43:31.774607357Z
+reasoning:
+  supported: true
+  mandatory: true

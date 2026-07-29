@@ -1,3 +1,4 @@
+schema_version: 2
 id: qwen/qwen-plus
 name: 'Qwen: Qwen-Plus'
 provider: Qwen
@@ -11,3 +12,28 @@ features:
   - CapJsonMode
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:42:22.11692774Z
+upstream:
+  openrouter:
+    canonical_slug: qwen/qwen-plus-2025-01-25
+    supported_parameters:
+      - frequency_penalty
+      - logprobs
+      - max_tokens
+      - presence_penalty
+      - response_format
+      - seed
+      - stop
+      - structured_outputs
+      - temperature
+      - tool_choice
+      - tools
+      - top_k
+      - top_logprobs
+      - top_p
+    input_modalities:
+      - text
+    output_modalities:
+      - text
+    knowledge_cutoff: "2025-03-31"
+    fetched_at: 2026-07-29T10:42:22.11692823Z

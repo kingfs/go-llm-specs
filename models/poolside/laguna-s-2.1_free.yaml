@@ -1,3 +1,4 @@
+schema_version: 2
 id: poolside/laguna-s-2.1:free
 name: 'Poolside: Laguna S 2.1 (free)'
 provider: Poolside
@@ -10,3 +11,49 @@ features:
   - CapFunctionCall
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:42:02.035280713Z
+upstream:
+  openrouter:
+    canonical_slug: poolside/laguna-s-2.1-20260720
+    huggingface_id: poolside/Laguna-S-2.1
+    supported_parameters:
+      - include_reasoning
+      - max_tokens
+      - reasoning
+      - temperature
+      - tool_choice
+      - tools
+    input_modalities:
+      - text
+    output_modalities:
+      - text
+    fetched_at: 2026-07-29T10:42:02.035281533Z
+  huggingface:
+    id: poolside/Laguna-S-2.1
+    revision: 00af5a51782109b587a3b3bbf11875e566036fa7
+    pipeline_tag: text-generation
+    model_type: laguna
+    architectures:
+      - LagunaForCausalLM
+    license: openmdw-1.1
+    tags:
+      - conversational
+      - custom_code
+      - eval-results
+      - laguna
+      - laguna-s-2.1
+      - license:openmdw-1.1
+      - region:us
+      - safetensors
+      - text-generation
+      - transformers
+      - vllm
+    config_context_length: 1048576
+    chat_template_sha256: 1e45e238d274e1d2c0712b34bbd96a794fed423e10a632026ec3ac1dc1ae4d68
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-07-29T10:42:03.628895587Z
+reasoning:
+  supported: true
+  default_enabled: true

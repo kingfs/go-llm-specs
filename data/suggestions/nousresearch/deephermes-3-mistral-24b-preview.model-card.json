@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "nousresearch/deephermes-3-mistral-24b-preview",
+  "status": "pending",
+  "created_at": "2026-07-29T11:37:02.393222332Z",
+  "source": {
+    "url": "https://huggingface.co/NousResearch/DeepHermes-3-Mistral-24B-Preview/resolve/48072dc6c0594a3198eb862c13613c4ab1119009/README.md",
+    "revision": "48072dc6c0594a3198eb862c13613c4ab1119009",
+    "sha256": "cf46bc469f20279d7eb1f420258394b936a825d196047aeac7177509daae7613"
+  },
+  "generator": {
+    "model": "qwen3.6-27b",
+    "wire_api": "responses"
+  },
+  "claims": [
+    {
+      "field": "description",
+      "value": "Latest Hermes series LLM that unifies reasoning (long chains of thought) and normal response modes into one model, toggled by system prompt. Improved LLM annotation, judgement, and function calling. Hybrid reasoning model using a system prompt to toggle between intuitive responses and long chain of thought reasoning.",
+      "evidence": "DeepHermes 3 Preview is the latest version of our flag",
+      "section": "## Model Description",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "CapChat",
+        "ModalityTextIn",
+        "ModalityTextOut"
+      ],
+      "evidence": "DeepHermes 3 now uses Llama-Chat format",
+      "section": "## Prompt Format",
+      "confidence": "high"
+    }
+  ]
+}

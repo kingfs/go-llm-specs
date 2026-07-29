@@ -1,3 +1,4 @@
+schema_version: 2
 id: z-ai/glm-5-turbo
 name: 'Z.ai: GLM 5 Turbo'
 provider: Z-Ai
@@ -11,3 +12,25 @@ features:
   - CapJsonMode
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:45:18.71395591Z
+upstream:
+  openrouter:
+    canonical_slug: z-ai/glm-5-turbo-20260315
+    supported_parameters:
+      - include_reasoning
+      - max_tokens
+      - reasoning
+      - response_format
+      - temperature
+      - tool_choice
+      - tools
+      - top_k
+      - top_p
+    input_modalities:
+      - text
+    output_modalities:
+      - text
+    fetched_at: 2026-07-29T10:45:18.71395658Z
+reasoning:
+  supported: true
+  default_enabled: true

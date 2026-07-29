@@ -1,3 +1,4 @@
+schema_version: 2
 id: anthropic/claude-opus-4.5
 name: 'Anthropic: Claude Opus 4.5'
 name_cn: Claude 4.5 Opus
@@ -20,3 +21,29 @@ features:
 aliases:
   - claude-opus-4.5
   - opus-4.5
+discovered_at: 2026-07-29T10:36:45.40738599Z
+upstream:
+  openrouter:
+    canonical_slug: anthropic/claude-4.5-opus-20251124
+    supported_parameters:
+      - include_reasoning
+      - max_completion_tokens
+      - max_tokens
+      - reasoning
+      - response_format
+      - stop
+      - structured_outputs
+      - temperature
+      - tool_choice
+      - tools
+      - top_k
+      - verbosity
+    input_modalities:
+      - file
+      - image
+      - text
+    output_modalities:
+      - text
+    fetched_at: 2026-07-29T10:36:45.40738674Z
+reasoning:
+  supported: true

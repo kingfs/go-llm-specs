@@ -1,3 +1,4 @@
+schema_version: 2
 id: meta-llama/llama-3.1-405b-instruct:free
 name: 'Meta: Llama 3.1 405B Instruct (free)'
 provider: Meta
@@ -22,3 +23,4 @@ features:
   - CapChat
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:38:51.953750106Z

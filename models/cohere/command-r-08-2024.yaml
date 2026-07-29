@@ -1,3 +1,4 @@
+schema_version: 2
 id: cohere/command-r-08-2024
 name: 'Cohere: Command R (08-2024)'
 provider: Cohere
@@ -21,3 +22,26 @@ features:
   - CapJsonMode
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:37:19.80412052Z
+upstream:
+  openrouter:
+    canonical_slug: cohere/command-r-08-2024
+    supported_parameters:
+      - frequency_penalty
+      - max_tokens
+      - presence_penalty
+      - response_format
+      - seed
+      - stop
+      - structured_outputs
+      - temperature
+      - tool_choice
+      - tools
+      - top_k
+      - top_p
+    input_modalities:
+      - text
+    output_modalities:
+      - text
+    knowledge_cutoff: "2024-03-31"
+    fetched_at: 2026-07-29T10:37:19.80412113Z

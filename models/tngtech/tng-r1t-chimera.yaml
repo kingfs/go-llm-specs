@@ -1,3 +1,4 @@
+schema_version: 2
 id: tngtech/tng-r1t-chimera
 name: 'TNG: R1T Chimera'
 provider: Tngtech
@@ -33,3 +34,4 @@ features:
   - CapJsonMode
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:44:41.084638354Z

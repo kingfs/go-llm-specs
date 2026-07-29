@@ -1,3 +1,4 @@
+schema_version: 2
 id: writer/palmyra-x5
 name: 'Writer: Palmyra X5'
 provider: Writer
@@ -9,3 +10,18 @@ features:
   - CapChat
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:44:45.173392838Z
+upstream:
+  openrouter:
+    canonical_slug: writer/palmyra-x5-20250428
+    supported_parameters:
+      - max_tokens
+      - stop
+      - temperature
+      - top_k
+      - top_p
+    input_modalities:
+      - text
+    output_modalities:
+      - text
+    fetched_at: 2026-07-29T10:44:45.173393288Z

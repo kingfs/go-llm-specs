@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "undi95/remm-slerp-l2-13b",
+  "status": "pending",
+  "created_at": "2026-07-29T12:05:26.567412142Z",
+  "source": {
+    "url": "https://huggingface.co/Undi95/ReMM-SLERP-L2-13B/resolve/9cf491450795628e28b8fd73f411977f7908c623/README.md",
+    "revision": "9cf491450795628e28b8fd73f411977f7908c623",
+    "sha256": "5a175d675a4622ea6dd514970dba4cd3b780f9b247d46eda9aa7d51e21c1e1fb"
+  },
+  "generator": {
+    "model": "qwen3.6-27b",
+    "wire_api": "responses"
+  },
+  "claims": [
+    {
+      "field": "description",
+      "value": "ReMM-SLERP is an updated recreation of the original MythoMax-L2-B13, merged using SLERP.",
+      "evidence": "This repo contains fp16 files of ReMM-SLERP",
+      "section": "## Description",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "ModalityTextIn",
+        "ModalityTextOut"
+      ],
+      "evidence": "Prompt template: Alpaca",
+      "section": "## Prompt template: Alpaca",
+      "confidence": "high"
+    }
+  ]
+}

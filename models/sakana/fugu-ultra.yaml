@@ -1,3 +1,4 @@
+schema_version: 2
 id: sakana/fugu-ultra
 name: 'Sakana: Fugu Ultra'
 provider: Sakana
@@ -12,3 +13,30 @@ features:
   - ModalityImageIn
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:44:00.611006002Z
+upstream:
+  openrouter:
+    canonical_slug: sakana/fugu-ultra-20260615
+    supported_parameters:
+      - include_reasoning
+      - reasoning
+      - reasoning_effort
+      - structured_outputs
+      - tool_choice
+      - tools
+      - web_search_options
+    input_modalities:
+      - image
+      - text
+    output_modalities:
+      - text
+    fetched_at: 2026-07-29T10:44:00.611006202Z
+reasoning:
+  supported: true
+  mandatory: true
+  default_enabled: true
+  default_effort: xhigh
+  supported_efforts:
+    - high
+    - max
+    - xhigh

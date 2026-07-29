@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "allenai/olmo-3-7b-think",
+  "status": "pending",
+  "created_at": "2026-07-29T11:16:33.755393119Z",
+  "source": {
+    "url": "https://huggingface.co/allenai/Olmo-3-7B-Think/resolve/d97e442d7cc678210054dbcc9b440894d62c89a4/README.md",
+    "revision": "d97e442d7cc678210054dbcc9b440894d62c89a4",
+    "sha256": "b088b4625e2c298a538592416461e3743be6a9dca35e52fa55944169043b93f5"
+  },
+  "generator": {
+    "model": "qwen3.6-27b",
+    "wire_api": "responses"
+  },
+  "claims": [
+    {
+      "field": "description",
+      "value": "Olmo 3 Think 7B is a 7B parameter autoregressive language model from the Olmo 3 family (7B and 32B) developed by Allen Institute for AI (Ai2), licensed under Apache 2.0, supporting English text-only input and output, trained on Dolma 3 and post-trained on Dolci datasets.",
+      "evidence": "We introduce Olmo 3, a new family of 7B and 32B models both Instruct and Think variants.",
+      "section": "## Model Details",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "CapChat",
+        "ModalityTextIn",
+        "ModalityTextOut"
+      ],
+      "evidence": "- Olmo 3 is supported in transformers 4.57.0 or higher:\npip install transformers\u003e=4.57.0",
+      "section": "## Installation",
+      "confidence": "high"
+    },
+    {
+      "field": "description",
+      "value": "A Transformer-style autoregressive language model. Language: English. License: Apache 2.0.",
+      "evidence": "- Model type: a Transformer style autoregressive language model.\n- Language(s) (NLP): English\n- License: This model is licensed under Apache 2.0.",
+      "section": "## Model Details",
+      "confidence": "high"
+    }
+  ]
+}

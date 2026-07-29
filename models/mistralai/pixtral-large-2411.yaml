@@ -1,3 +1,4 @@
+schema_version: 2
 id: mistralai/pixtral-large-2411
 name: 'Mistral: Pixtral Large 2411'
 provider: Mistral
@@ -18,3 +19,4 @@ features:
   - ModalityImageIn
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:39:54.446936599Z

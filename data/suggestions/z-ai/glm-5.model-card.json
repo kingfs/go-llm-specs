@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "z-ai/glm-5",
+  "status": "pending",
+  "created_at": "2026-07-29T12:08:38.268124813Z",
+  "source": {
+    "url": "https://huggingface.co/zai-org/GLM-5/resolve/4e6698ba8e85059d749020e3c4d2123719f23926/README.md",
+    "revision": "4e6698ba8e85059d749020e3c4d2123719f23926",
+    "sha256": "e6b66fa440163fb6ec4efaed61c8183988a31823371b284f4b2fe518432e03b4"
+  },
+  "generator": {
+    "model": "qwen3.6-27b",
+    "wire_api": "responses"
+  },
+  "claims": [
+    {
+      "field": "description",
+      "value": "GLM-5 is a sparse mixture-of-experts model with 744B total parameters and 40B active parameters, using DeepSeek Sparse Attention and asynchronous RL training. It is targeted at complex systems engineering and long-horizon agentic tasks.",
+      "evidence": "GLM-5, targeting complex systems engineering and long-horizon agentic tasks.",
+      "section": "Introduction",
+      "confidence": "high"
+    }
+  ]
+}

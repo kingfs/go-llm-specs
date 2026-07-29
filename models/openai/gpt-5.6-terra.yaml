@@ -1,3 +1,4 @@
+schema_version: 2
 id: openai/gpt-5.6-terra
 name: 'OpenAI: GPT-5.6 Terra'
 provider: OpenAI
@@ -13,3 +14,37 @@ features:
   - ModalityImageIn
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:41:29.051339203Z
+upstream:
+  openrouter:
+    canonical_slug: openai/gpt-5.6-terra-20260709
+    supported_parameters:
+      - include_reasoning
+      - max_completion_tokens
+      - max_tokens
+      - reasoning
+      - reasoning_effort
+      - response_format
+      - seed
+      - structured_outputs
+      - tool_choice
+      - tools
+    input_modalities:
+      - file
+      - image
+      - text
+    output_modalities:
+      - text
+    knowledge_cutoff: "2026-02-16"
+    fetched_at: 2026-07-29T10:41:29.051339873Z
+reasoning:
+  supported: true
+  default_enabled: true
+  default_effort: medium
+  supported_efforts:
+    - high
+    - low
+    - max
+    - medium
+    - none
+    - xhigh

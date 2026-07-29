@@ -1,3 +1,4 @@
+schema_version: 2
 id: moonshotai/kimi-k2
 name: 'MoonshotAI: Kimi K2 0711'
 provider: Moonshotai
@@ -11,3 +12,52 @@ features:
   - CapJsonMode
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:39:59.146259187Z
+upstream:
+  openrouter:
+    canonical_slug: moonshotai/kimi-k2
+    huggingface_id: moonshotai/Kimi-K2-Instruct
+    supported_parameters:
+      - frequency_penalty
+      - max_tokens
+      - presence_penalty
+      - repetition_penalty
+      - seed
+      - stop
+      - temperature
+      - tool_choice
+      - tools
+      - top_k
+      - top_p
+    input_modalities:
+      - text
+    output_modalities:
+      - text
+    knowledge_cutoff: "2024-12-31"
+    fetched_at: 2026-07-29T10:39:59.146259797Z
+  huggingface:
+    id: moonshotai/Kimi-K2-Instruct
+    revision: fd1984e2b7a3350dbf7305fe73a4ede25c14de50
+    pipeline_tag: text-generation
+    model_type: kimi_k2
+    architectures:
+      - DeepseekV3ForCausalLM
+    license: other
+    tags:
+      - conversational
+      - custom_code
+      - doi:10.57967/hf/5976
+      - endpoints_compatible
+      - eval-results
+      - fp8
+      - kimi_k2
+      - license:other
+      - region:us
+      - safetensors
+      - text-generation
+      - transformers
+    config_context_length: 131072
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-07-29T10:40:01.109096323Z

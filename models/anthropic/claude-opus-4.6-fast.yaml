@@ -1,3 +1,4 @@
+schema_version: 2
 id: anthropic/claude-opus-4.6-fast
 name: 'Anthropic: Claude Opus 4.6 (Fast)'
 provider: Anthropic
@@ -18,3 +19,4 @@ features:
   - ModalityImageIn
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:36:46.686970811Z

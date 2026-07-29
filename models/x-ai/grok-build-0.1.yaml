@@ -1,3 +1,4 @@
+schema_version: 2
 id: x-ai/grok-build-0.1
 name: 'xAI: Grok Build 0.1'
 provider: X-Ai
@@ -11,3 +12,33 @@ features:
   - ModalityImageIn
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:44:51.127970505Z
+upstream:
+  openrouter:
+    canonical_slug: x-ai/grok-build-0.1-20260520
+    supported_parameters:
+      - frequency_penalty
+      - include_reasoning
+      - logprobs
+      - max_tokens
+      - presence_penalty
+      - reasoning
+      - response_format
+      - seed
+      - stop
+      - structured_outputs
+      - temperature
+      - tool_choice
+      - tools
+      - top_logprobs
+      - top_p
+    input_modalities:
+      - file
+      - image
+      - text
+    output_modalities:
+      - text
+    fetched_at: 2026-07-29T10:44:51.127971135Z
+reasoning:
+  supported: true
+  mandatory: true

@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "qwen/qwen3-next-80b-a3b-instruct",
+  "status": "pending",
+  "created_at": "2026-07-29T11:50:30.092574047Z",
+  "source": {
+    "url": "https://huggingface.co/Qwen/Qwen3-Next-80B-A3B-Instruct/resolve/9c7f2fbe84465e40164a94cc16cd30b6999b0cc7/README.md",
+    "revision": "9c7f2fbe84465e40164a94cc16cd30b6999b0cc7",
+    "sha256": "59075a5d9538f1069bb4ec4d328cabb04a61d882841f7d7efe4fd713008fb273"
+  },
+  "generator": {
+    "model": "qwen3.6-27b",
+    "wire_api": "responses"
+  },
+  "claims": [
+    {
+      "field": "description",
+      "value": "80B total parameters, 3B activated MoE. Features hybrid Gated DeltaNet and Gated Attention, 512 MoE experts with 10 activated. 48 layers, hidden dim 2048, 16K context native up to 256K, extensible to 1M.",
+      "evidence": "Hybrid Layout: 12 * (3 * (Gated DeltaNet -\u003e MoE) -\u003e 1 * (Gated Attention -\u003e MoE))",
+      "section": "## Model Overview",
+      "confidence": "high"
+    },
+    {
+      "field": "description",
+      "value": "This is a text-in, text-out instruct model for Qwen3-Next.",
+      "evidence": "Qwen3-Next-80B-A3B-Instruct supports only instruct (non-thinking) mode",
+      "section": "## Model Overview",
+      "confidence": "high"
+    },
+    {
+      "field": "context_length",
+      "value": 262144,
+      "evidence": "Context Length: 262,144 natively and extensible up to, 1,010,000 tokens",
+      "section": "## Model Overview",
+      "confidence": "high"
+    },
+    {
+      "field": "serving.sglang_args",
+      "value": [
+        "--max-model-len",
+        "131072",
+        "--mem-fraction-static",
+        "0.8"
+      ],
+      "evidence": "--max-model-len 131072 --mem-fraction-static 0.8",
+      "section": "## Deployment",
+      "confidence": "low"
+    },
+    {
+      "field": "features",
+      "value": [],
+      "evidence": "Multi-Token Prediction (MTP) is not generally available in Hugging Face Transformers.",
+      "section": "## Quickstart",
+      "confidence": "high"
+    },
+    {
+      "field": "description",
+      "value": "Outperforms smaller models with 10% training cost and 10x throughput for 32K context; matches Qwen3-235B-A22B on benchmarks.",
+      "evidence": "Qwen3-Next-80B-A3B-Instruct performs on par with Qwen3-235B-A22B-Instruct-2507 on certain benchmarks",
+      "section": "## Highlights",
+      "confidence": "high"
+    }
+  ]
+}

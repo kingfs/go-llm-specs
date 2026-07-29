@@ -1,0 +1,102 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "moonshotai/kimi-dev-72b",
+  "status": "pending",
+  "created_at": "2026-07-29T11:34:21.486902525Z",
+  "source": {
+    "url": "https://huggingface.co/moonshotai/Kimi-Dev-72B/resolve/8791d7981945752a51f692d66f2bbfb3573c9722/README.md",
+    "revision": "8791d7981945752a51f692d66f2bbfb3573c9722",
+    "sha256": "91cc7034a24a788f842590f71019941a8489ddd6791e0a9c349a5be18b7f38c2"
+  },
+  "generator": {
+    "model": "qwen3.6-27b",
+    "wire_api": "responses"
+  },
+  "claims": [
+    {
+      "field": "description",
+      "value": "Kimi-Dev-72B is an open-source coding LLM for software engineering tasks, built on Qwen/Qwen2.5-72B, optimized via large-scale reinforcement learning.",
+      "evidence": "base_model: - Qwen/Qwen2.5-72B",
+      "section": "MODEL CARD:",
+      "confidence": "high"
+    },
+    {
+      "field": "description",
+      "value": "Kimi-Dev-72B is an open-source coding LLM for software engineering tasks, built on Qwen/Qwen2.5-72B, licensed under MIT.",
+      "evidence": "license: mit",
+      "section": "MODEL CARD:",
+      "confidence": "high"
+    },
+    {
+      "field": "description",
+      "value": "Kimi-Dev-72B is a coding LLM focused on code, SWE-bench, software, and issue resolution tasks, based on Qwen2.5-72B.",
+      "evidence": "tags: - code - swebench - software - issue-resolving",
+      "section": "MODEL CARD:",
+      "confidence": "high"
+    },
+    {
+      "field": "description",
+      "value": "Kimi-Dev-72B is an open-source coding LLM designed for issue resolution.",
+      "evidence": "Introducing Kimi-Dev: \u003cbr\u003eA Strong and Open-source Coding LLM for Issue Resolution",
+      "section": "MODEL CARD:",
+      "confidence": "medium"
+    },
+    {
+      "field": "description",
+      "value": "Kimi-Dev-72B achieves 60.4% performance on SWE-bench Verified.",
+      "evidence": "Kimi-Dev-72B achieves 60.4% performance on SWE-bench Verified.",
+      "section": "MODEL CARD:",
+      "confidence": "high"
+    },
+    {
+      "field": "description",
+      "value": "Kimi-Dev-72B is optimized via large-scale reinforcement learning.",
+      "evidence": "Kimi-Dev-72B is optimized via large-scale reinforcement learning.",
+      "section": "MODEL CARD:",
+      "confidence": "medium"
+    },
+    {
+      "field": "description",
+      "value": "Based on Qwen/Qwen2.5-72B.",
+      "evidence": "base_model: - Qwen/Qwen2.5-72B",
+      "section": "MODEL CARD:",
+      "confidence": "high"
+    },
+    {
+      "field": "description",
+      "value": "Kimi-Dev-72B is a strong open-source coding LLM for issue resolution.",
+      "evidence": "title = {Introducing Kimi-Dev: A Strong and Open-source Coding LLM for Issue Resolution}",
+      "section": "MODEL CARD:",
+      "confidence": "high"
+    },
+    {
+      "field": "description",
+      "value": "Developed by the Kimi-Dev Team.",
+      "evidence": "author = {{Kimi-Dev Team}}",
+      "section": "MODEL CARD:",
+      "confidence": "medium"
+    },
+    {
+      "field": "description",
+      "value": "Released in June 2025.",
+      "evidence": "year = {2025}, month = {June}",
+      "section": "MODEL CARD:",
+      "confidence": "medium"
+    },
+    {
+      "field": "description",
+      "value": "Uses the transformers library.",
+      "evidence": "library_name: transformers",
+      "section": "MODEL CARD:",
+      "confidence": "high"
+    },
+    {
+      "field": "description",
+      "value": "Available at https://www.moonshot.cn/Kimi-Dev.",
+      "evidence": "url = {\\url{https://www.moonshot.cn/Kimi-Dev}}",
+      "section": "MODEL CARD:",
+      "confidence": "high"
+    }
+  ]
+}

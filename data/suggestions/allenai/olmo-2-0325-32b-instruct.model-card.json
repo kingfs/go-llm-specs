@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "allenai/olmo-2-0325-32b-instruct",
+  "status": "pending",
+  "created_at": "2026-07-29T11:01:36.012660332Z",
+  "source": {
+    "url": "https://huggingface.co/allenai/OLMo-2-0325-32B-Instruct/resolve/b96024342a77a69aa0dda815c3454a671f477463/README.md",
+    "revision": "b96024342a77a69aa0dda815c3454a671f477463",
+    "sha256": "b078b9ea225ebdc647330aef43aa81d8c1ec549d606672c1931bf388f5f00f9d"
+  },
+  "generator": {
+    "model": "qwen3.6-27b",
+    "wire_api": "responses"
+  },
+  "claims": [
+    {
+      "field": "description",
+      "value": "Post-trained variant of OLMo-2 32B March 2025, fine-tuned via SFT on Tülu 3, DPO, and RLVR on RLVR-GSM-MATH-IF-Mixed-Constraints.",
+      "evidence": "OLMo 2 32B Instruct March 2025 is post-trained variant of the OLMo-2 32B March 2025 model",
+      "section": "Model description",
+      "confidence": "high"
+    },
+    {
+      "field": "description",
+      "value": "Finetuned from allenai/OLMo-2-0325-32B-DPO.",
+      "evidence": "Finetuned from model: allenai/OLMo-2-0325-32B-DPO",
+      "section": "Model description",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "ModalityTextIn",
+        "ModalityTextOut",
+        "CapChat"
+      ],
+      "evidence": "The chat template for our models is formatted as:\n\u003c|user|\u003e\nHow are you doing?\n\u003c|assistant|\u003e",
+      "section": "Using the model",
+      "confidence": "high"
+    },
+    {
+      "field": "description",
+      "value": "Primarily English text generation model trained for chat and reasoning tasks.",
+      "evidence": "Language(s) (NLP): Primarily English",
+      "section": "Model description",
+      "confidence": "high"
+    }
+  ]
+}

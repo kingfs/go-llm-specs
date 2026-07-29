@@ -1,3 +1,4 @@
+schema_version: 2
 id: mistralai/mistral-small-3.2-24b-instruct
 name: 'Mistral: Mistral Small 3.2 24B'
 provider: Mistral
@@ -18,3 +19,77 @@ features:
   - ModalityImageIn
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:39:49.015477695Z
+upstream:
+  openrouter:
+    canonical_slug: mistralai/mistral-small-3.2-24b-instruct-2506
+    huggingface_id: mistralai/Mistral-Small-3.2-24B-Instruct-2506
+    supported_parameters:
+      - frequency_penalty
+      - logit_bias
+      - logprobs
+      - max_tokens
+      - min_p
+      - presence_penalty
+      - repetition_penalty
+      - response_format
+      - seed
+      - stop
+      - structured_outputs
+      - temperature
+      - tool_choice
+      - tools
+      - top_k
+      - top_logprobs
+      - top_p
+    input_modalities:
+      - image
+      - text
+    output_modalities:
+      - text
+    knowledge_cutoff: "2023-10-31"
+    fetched_at: 2026-07-29T10:39:49.015478185Z
+  huggingface:
+    id: mistralai/Mistral-Small-3.2-24B-Instruct-2506
+    revision: 95a6d26c4bfb886c58daf9d3f7332c857cb27b43
+    model_type: mistral3
+    architectures:
+      - Mistral3ForConditionalGeneration
+    license: apache-2.0
+    tags:
+      - ar
+      - base_model:finetune:mistralai/Mistral-Small-3.1-24B-Base-2503
+      - base_model:mistralai/Mistral-Small-3.1-24B-Base-2503
+      - bn
+      - de
+      - deploy:sagemaker
+      - en
+      - es
+      - fa
+      - fr
+      - hi
+      - id
+      - it
+      - ja
+      - ko
+      - license:apache-2.0
+      - mistral-common
+      - mistral3
+      - ms
+      - ne
+      - pl
+      - pt
+      - region:us
+      - ro
+      - ru
+      - safetensors
+      - sr
+      - sv
+      - tr
+      - uk
+      - vi
+      - vllm
+      - zh
+    structured_files:
+      - config.json
+    fetched_at: 2026-07-29T10:39:50.605678642Z

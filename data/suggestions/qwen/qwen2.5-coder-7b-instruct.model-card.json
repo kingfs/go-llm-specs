@@ -1,0 +1,97 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "qwen/qwen2.5-coder-7b-instruct",
+  "status": "pending",
+  "created_at": "2026-07-29T11:45:29.510569059Z",
+  "source": {
+    "url": "https://huggingface.co/Qwen/Qwen2.5-Coder-7B-Instruct/resolve/c03e6d358207e414f1eca0bb1891e29f1db0e242/README.md",
+    "revision": "c03e6d358207e414f1eca0bb1891e29f1db0e242",
+    "sha256": "3c090be37f829adc1e4cdb78733667437732541470430ab2cd785d7f0d460077"
+  },
+  "generator": {
+    "model": "qwen3.6-27b",
+    "wire_api": "responses"
+  },
+  "claims": [
+    {
+      "field": "features",
+      "value": [
+        "ModalityTextIn",
+        "ModalityTextOut",
+        "CapFunctionCall"
+      ],
+      "evidence": "Qwen2.5-Coder brings the following improvements upon CodeQwen1.5: - Significantly improvements in code generation, code reasoning and code fixing.",
+      "section": "# Qwen2.5-Coder-7B-Instruct",
+      "confidence": "high"
+    },
+    {
+      "field": "description",
+      "value": "Causal Language Model",
+      "evidence": "Type: Causal Language Models",
+      "section": "# Qwen2.5-Coder-7B-Instruct",
+      "confidence": "medium"
+    },
+    {
+      "field": "description",
+      "value": "A causal language model with 7.61B parameters.",
+      "evidence": "Number of Parameters: 7.61B",
+      "section": "# Qwen2.5-Coder-7B-Instruct",
+      "confidence": "medium"
+    },
+    {
+      "field": "description",
+      "value": "Trained on pretraining \u0026 post-training.",
+      "evidence": "Training Stage: Pretraining \u0026 Post-training",
+      "section": "# Qwen2.5-Coder-7B-Instruct",
+      "confidence": "medium"
+    },
+    {
+      "field": "context_length",
+      "value": 131072,
+      "evidence": "Long-context Support up to 128K tokens.",
+      "section": "# Qwen2.5-Coder-7B-Instruct",
+      "confidence": "high"
+    },
+    {
+      "field": "description",
+      "value": "28 attention heads for Q and 4 for KV (GQA).",
+      "evidence": "Number of Attention Heads (GQA): 28 for Q and 4 for KV",
+      "section": "# Qwen2.5-Coder-7B-Instruct",
+      "confidence": "high"
+    },
+    {
+      "field": "description",
+      "value": "Transformer architecture with RoPE, SwiGLU, RMSNorm, and Attention QKV bias.",
+      "evidence": "Architecture: transformers with RoPE, SwiGLU, RMSNorm, and Attention QKV bias",
+      "section": "# Qwen2.5-Coder-7B-Instruct",
+      "confidence": "high"
+    },
+    {
+      "field": "description",
+      "value": "Has 28 layers.",
+      "evidence": "Number of Layers: 28",
+      "section": "# Qwen2.5-Coder-7B-Instruct",
+      "confidence": "medium"
+    },
+    {
+      "field": "serving.vllm_args",
+      "value": [
+        "--rope-scaling-factor",
+        "4.0"
+      ],
+      "evidence": "The current config.json is set for context length up to 32,768 tokens. To handle extensive inputs exceeding 32,768 tokens, we utilize YaRN... to enable YaRN: { \"rope_scaling\": { \"factor\": 4.0, \"original_max_position_embeddings\": 32768, \"type\": \"yarn\" } }",
+      "section": "## Quickstart",
+      "confidence": "high"
+    },
+    {
+      "field": "serving.vllm_args",
+      "value": [
+        "--quantization"
+      ],
+      "evidence": "For deployment, we recommend using vLLM.",
+      "section": "## Quickstart",
+      "confidence": "high"
+    }
+  ]
+}

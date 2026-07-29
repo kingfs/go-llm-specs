@@ -1,3 +1,4 @@
+schema_version: 2
 id: tencent/hy3-preview
 name: 'Tencent: Hy3 preview'
 provider: Tencent
@@ -10,3 +11,55 @@ features:
   - CapFunctionCall
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:44:21.591972752Z
+upstream:
+  openrouter:
+    canonical_slug: tencent/hy3-preview-20260421
+    huggingface_id: tencent/Hy3-preview
+    supported_parameters:
+      - include_reasoning
+      - max_tokens
+      - reasoning
+      - reasoning_effort
+      - seed
+      - temperature
+      - tool_choice
+      - tools
+      - top_p
+    input_modalities:
+      - text
+    output_modalities:
+      - text
+    fetched_at: 2026-07-29T10:44:21.591973332Z
+  huggingface:
+    id: tencent/Hy3-preview
+    revision: 549c2b3a0fd5b9a6c6059a9935bf0d59ab69d75a
+    pipeline_tag: text-generation
+    model_type: hy_v3
+    architectures:
+      - HYV3ForCausalLM
+    license: other
+    tags:
+      - conversational
+      - endpoints_compatible
+      - eval-results
+      - hy_v3
+      - license:other
+      - region:us
+      - safetensors
+      - text-generation
+      - transformers
+    config_context_length: 262144
+    chat_template_sha256: 3f1672794dd26df7901d5ab514c816db636437d5cccde1557063f3dad479554e
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-07-29T10:44:24.636213927Z
+reasoning:
+  supported: true
+  default_enabled: true
+  default_effort: high
+  supported_efforts:
+    - high
+    - low
+    - none

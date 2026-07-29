@@ -1,3 +1,4 @@
+schema_version: 2
 id: minimax/minimax-m3:batch
 name: 'MiniMax: MiniMax M3 (batch)'
 provider: Minimax
@@ -12,3 +13,66 @@ features:
   - ModalityTextIn
   - ModalityTextOut
   - ModalityVideoIn
+discovered_at: 2026-07-29T10:39:21.634002071Z
+upstream:
+  openrouter:
+    canonical_slug: minimax/minimax-m3-20260531
+    huggingface_id: MiniMaxAI/Minimax-M3
+    supported_parameters:
+      - frequency_penalty
+      - include_reasoning
+      - logit_bias
+      - max_tokens
+      - min_p
+      - presence_penalty
+      - reasoning
+      - repetition_penalty
+      - response_format
+      - stop
+      - structured_outputs
+      - temperature
+      - tool_choice
+      - tools
+      - top_k
+      - top_p
+    input_modalities:
+      - image
+      - text
+      - video
+    output_modalities:
+      - text
+    fetched_at: 2026-07-29T10:39:21.634002631Z
+  huggingface:
+    id: MiniMaxAI/MiniMax-M3
+    revision: f0e1c1e04d40177e4673a22097036854f536e9c0
+    pipeline_tag: image-text-to-text
+    model_type: minimax_m3_vl
+    architectures:
+      - MiniMaxM3SparseForConditionalGeneration
+    license: other
+    tags:
+      - agent
+      - arxiv:2606.13392
+      - coding
+      - conversational
+      - custom_code
+      - endpoints_compatible
+      - eval-results
+      - image-text-to-text
+      - license:other
+      - minimax_m3_vl
+      - moe
+      - multimodal
+      - region:us
+      - safetensors
+      - transformers
+      - video
+    tokenizer_model_max_length: 40960000
+    processor_class: MiniMaxVLProcessor
+    structured_files:
+      - config.json
+      - preprocessor_config.json
+      - tokenizer_config.json
+    fetched_at: 2026-07-29T10:39:23.703974758Z
+reasoning:
+  supported: true

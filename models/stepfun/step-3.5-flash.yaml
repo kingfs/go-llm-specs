@@ -1,3 +1,4 @@
+schema_version: 2
 id: stepfun/step-3.5-flash
 name: 'StepFun: Step 3.5 Flash'
 provider: Stepfun
@@ -10,3 +11,53 @@ features:
   - CapFunctionCall
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:44:11.200795383Z
+upstream:
+  openrouter:
+    canonical_slug: stepfun/step-3.5-flash
+    huggingface_id: stepfun-ai/Step-3.5-Flash
+    supported_parameters:
+      - frequency_penalty
+      - include_reasoning
+      - max_tokens
+      - reasoning
+      - temperature
+      - tool_choice
+      - tools
+      - top_k
+      - top_p
+    input_modalities:
+      - text
+    output_modalities:
+      - text
+    fetched_at: 2026-07-29T10:44:11.200795863Z
+  huggingface:
+    id: stepfun-ai/Step-3.5-Flash
+    revision: ab446a3de5e171ea341227e24bb1f090e1b771f7
+    pipeline_tag: text-generation
+    model_type: step3p5
+    architectures:
+      - Step3p5ForCausalLM
+    license: apache-2.0
+    tags:
+      - arxiv:2507.19427
+      - arxiv:2601.05593
+      - arxiv:2602.10604
+      - conversational
+      - custom_code
+      - eval-results
+      - license:apache-2.0
+      - region:us
+      - safetensors
+      - step3p5
+      - text-generation
+      - transformers
+    config_context_length: 262144
+    tokenizer_model_max_length: 131072
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-07-29T10:44:13.703986956Z
+reasoning:
+  supported: true
+  mandatory: true

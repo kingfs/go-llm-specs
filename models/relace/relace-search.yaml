@@ -1,3 +1,4 @@
+schema_version: 2
 id: relace/relace-search
 name: 'Relace: Relace Search'
 provider: Relace
@@ -15,3 +16,21 @@ features:
   - CapFunctionCall
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:44:00.194132201Z
+upstream:
+  openrouter:
+    canonical_slug: relace/relace-search-20251208
+    supported_parameters:
+      - max_tokens
+      - response_format
+      - seed
+      - stop
+      - temperature
+      - tool_choice
+      - tools
+      - top_p
+    input_modalities:
+      - text
+    output_modalities:
+      - text
+    fetched_at: 2026-07-29T10:44:00.194132441Z

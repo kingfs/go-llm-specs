@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "allenai/olmo-3.1-32b-think",
+  "status": "pending",
+  "created_at": "2026-07-29T11:17:21.513622524Z",
+  "source": {
+    "url": "https://huggingface.co/allenai/Olmo-3.1-32B-Think/resolve/832c3f543499af8fe68b88359501de9cb7840544/README.md",
+    "revision": "832c3f543499af8fe68b88359501de9cb7840544",
+    "sha256": "c05bdaee720b14bb292769e0c20256e2c01fb5c7dcebded4ebec854656402971"
+  },
+  "generator": {
+    "model": "qwen3.6-27b",
+    "wire_api": "responses"
+  },
+  "claims": [
+    {
+      "field": "description",
+      "value": "The allenai/olmo-3.1-32b-think model is a 32B autoregressive language model in the Olmo 3.1 family, developed by the Allen Institute for AI. It is based on the Olmo-3-32B-Think-DPO checkpoint, trained on Dolma 3 and post-trained on Dolci datasets. Released under Apache 2.0 for research and educational use.",
+      "evidence": "base_model: allenai/Olmo-3-32B-Think-DPO",
+      "section": "Model Card for Olmo 3.1 32B Think",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "ModalityTextIn",
+        "ModalityTextOut"
+      ],
+      "evidence": "language(s) (NLP): English",
+      "section": "### Model Description",
+      "confidence": "high"
+    }
+  ]
+}

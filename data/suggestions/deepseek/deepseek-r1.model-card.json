@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "deepseek/deepseek-r1",
+  "status": "pending",
+  "created_at": "2026-07-29T11:22:29.372980185Z",
+  "source": {
+    "url": "https://huggingface.co/deepseek-ai/DeepSeek-R1/resolve/56d4cbbb4d29f4355bab4b9a39ccb717a14ad5ad/README.md",
+    "revision": "56d4cbbb4d29f4355bab4b9a39ccb717a14ad5ad",
+    "sha256": "47e0ab0f591a2ab95a3095b649342eba19489c86a058e95f2289df1656bfaf39"
+  },
+  "generator": {
+    "model": "qwen3.6-27b",
+    "wire_api": "responses"
+  },
+  "claims": [
+    {
+      "field": "context_length",
+      "value": 131072,
+      "evidence": "| DeepSeek-R1   | 671B | 37B |  128K   |",
+      "section": "Model Downloads",
+      "confidence": "high"
+    },
+    {
+      "field": "description",
+      "value": "First-generation reasoning model incorporating cold-start data before RL. Achieves performance comparable to OpenAI-o1 across math, code, and reasoning tasks.",
+      "evidence": "DeepSeek-R1 achieves performance comparable to OpenAI-o1 across math, code, and reasoning tasks.",
+      "section": "Introduction",
+      "confidence": "high"
+    },
+    {
+      "field": "description",
+      "value": "Trained based on DeepSeek-V3-Base architecture.",
+      "evidence": "DeepSeek-R1-Zero \u0026 DeepSeek-R1 are trained based on DeepSeek-V3-Base.",
+      "section": "Model Downloads",
+      "confidence": "high"
+    }
+  ]
+}

@@ -1,0 +1,110 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "qwen/qwen3-next-80b-a3b-thinking",
+  "status": "pending",
+  "created_at": "2026-07-29T11:51:03.288219156Z",
+  "source": {
+    "url": "https://huggingface.co/Qwen/Qwen3-Next-80B-A3B-Thinking/resolve/e502dd4100cc68c0de57643fd4317ec93a128670/README.md",
+    "revision": "e502dd4100cc68c0de57643fd4317ec93a128670",
+    "sha256": "29ec8607dc7f9845c04e6d4ce4aff33107891e9d7fe493c5c7b665b61ddf6f63"
+  },
+  "generator": {
+    "model": "qwen3.6-27b",
+    "wire_api": "responses"
+  },
+  "claims": [
+    {
+      "field": "context_length",
+      "value": 262144,
+      "evidence": "Context Length: 262,144 natively and extensible up to 1,010,000 tokens",
+      "section": "Model Overview",
+      "confidence": "high"
+    },
+    {
+      "field": "description",
+      "value": "Qwen3-Next-80B-A3B-Thinking is a Causal Language Model with 80B total parameters and 3B activated parameters, using hybrid attention and high-sparsity MoE. It supports thinking mode for complex reasoning tasks.",
+      "evidence": "Type: Causal Language Models",
+      "section": "Model Overview",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "CapFunctionCall"
+      ],
+      "evidence": "Number of Parameters: 80B in total and 3B activated",
+      "section": "Model Overview",
+      "confidence": "high"
+    },
+    {
+      "field": "reasoning.supported",
+      "value": true,
+      "evidence": "Qwen3-Next-80B-A3B-Thinking supports only thinking mode. To enforce model thinking, the default chat template automatically includes `\u003cthink\u003e`.",
+      "section": "Model Overview",
+      "confidence": "high"
+    },
+    {
+      "field": "serving.vllm_args",
+      "value": [],
+      "evidence": "It is recommended to adopt a dedicated inference framework, e.g., SGLang and vLLM, for inference tasks.",
+      "section": "Quickstart",
+      "confidence": "high"
+    },
+    {
+      "field": "serving.sglang_args",
+      "value": [],
+      "evidence": "It is recommended to adopt a dedicated inference framework, e.g., SGLang and vLLM, for inference tasks.",
+      "section": "Quickstart",
+      "confidence": "high"
+    },
+    {
+      "field": "description",
+      "value": "Supports native context length of 262,144 tokens, extensible up to 1,010,000 tokens. Uses Hybrid Attention combining Gated DeltaNet and Gated Attention for ultra-long context modeling.",
+      "evidence": "Context Length: 262,144 natively and extensible up to 1,010,000 tokens",
+      "section": "Model Overview",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "CapFunctionCall"
+      ],
+      "evidence": "Multi-Token Prediction (MTP): Boosts pretraining model performance and accelerates inference.",
+      "section": "Highlights",
+      "confidence": "high"
+    },
+    {
+      "field": "description",
+      "value": "Qwen3-Next-80B-A3B-Thinking is the first Qwen3-Next model featuring Hybrid Attention (Gated DeltaNet + Gated Attention), High-Sparsity MoE, Stability Optimizations, and Multi-Token Prediction (MTP).",
+      "evidence": "Qwen3-Next-80B-A3B is the first installment in the Qwen3-Next series and features the following key enchancements: Hybrid Attention, High-Sparsity Mixture-of-Experts (MoE), Stability Optimizations, Multi-Token Prediction (MTP)",
+      "section": "Highlights",
+      "confidence": "high"
+    },
+    {
+      "field": "description",
+      "value": "Supports only thinking mode. Default chat template automatically includes `\u003cthink\u003e`. Output may contain only `` without explicit opening tag.",
+      "evidence": "Qwen3-Next-80B-A3B-Thinking supports only thinking mode. To enforce model thinking, the default chat template automatically includes `\u003cthink\u003e`.",
+      "section": "Model Overview",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "CapFunctionCall"
+      ],
+      "evidence": "Number of Activated Experts: 10\nNumber of Shared Experts: 1",
+      "section": "Model Overview",
+      "confidence": "high"
+    },
+    {
+      "field": "serving.vllm_args",
+      "value": [
+        "--tokenizer-mode=auto"
+      ],
+      "evidence": "With earlier versions, you will encounter the following error: KeyError: 'qwen3_next'",
+      "section": "Quickstart",
+      "confidence": "high"
+    }
+  ]
+}

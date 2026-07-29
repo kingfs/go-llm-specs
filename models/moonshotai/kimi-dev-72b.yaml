@@ -1,3 +1,4 @@
+schema_version: 2
 id: moonshotai/kimi-dev-72b
 name: 'MoonshotAI: Kimi Dev 72B'
 provider: Moonshotai
@@ -10,3 +11,35 @@ features:
   - CapJsonMode
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:39:56.99943101Z
+upstream:
+  huggingface:
+    id: moonshotai/Kimi-Dev-72B
+    revision: 8791d7981945752a51f692d66f2bbfb3573c9722
+    pipeline_tag: text-generation
+    model_type: qwen2
+    architectures:
+      - Qwen2ForCausalLM
+    tags:
+      - base_model:Qwen/Qwen2.5-72B
+      - base_model:finetune:Qwen/Qwen2.5-72B
+      - code
+      - conversational
+      - endpoints_compatible
+      - issue-resolving
+      - license:mit
+      - qwen2
+      - region:us
+      - safetensors
+      - software
+      - swebench
+      - text-generation
+      - text-generation-inference
+      - transformers
+    config_context_length: 131072
+    tokenizer_model_max_length: 131072
+    chat_template_sha256: 1b9e595207f87408eed044771cbe4ec90e70cfa58990e7a64e53e1f4197fc210
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-07-29T10:39:59.044406977Z

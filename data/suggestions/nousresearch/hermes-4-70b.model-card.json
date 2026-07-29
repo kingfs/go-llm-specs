@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "nousresearch/hermes-4-70b",
+  "status": "pending",
+  "created_at": "2026-07-29T11:57:48.105086164Z",
+  "source": {
+    "url": "https://huggingface.co/NousResearch/Hermes-4-70B/resolve/d5dec2bd6b3930a09ddefd0b7fc6523fe0720d09/README.md",
+    "revision": "d5dec2bd6b3930a09ddefd0b7fc6523fe0720d09",
+    "sha256": "bd684476ee8f2a900620275f24ae3c24f00fcf77b1a0042c5714e904e7359c25"
+  },
+  "generator": {
+    "model": "qwen3.6-27b",
+    "wire_api": "responses"
+  },
+  "claims": [
+    {
+      "field": "description",
+      "value": "Hermes 4 70B is a frontier, hybrid-mode reasoning model based on Llama-3.1-70B by Nous Research.",
+      "evidence": "Hermes 4 70B is a frontier, hybrid-mode reasoning model based on Llama-3.1-70B",
+      "section": "Model Description",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "CapChat",
+        "CapFunctionCall"
+      ],
+      "evidence": "reasoning that is top quality, expressive, improves math, code, STEM, logic, and even creative writing",
+      "section": "What’s new vs Hermes 3",
+      "confidence": "medium"
+    },
+    {
+      "field": "features",
+      "value": [
+        "CapChat",
+        "CapFunctionCall",
+        "ModalityTextIn",
+        "ModalityTextOut"
+      ],
+      "evidence": "Hermes 4 supports function/tool calls within a single assistant turn, produced after it's reasoning",
+      "section": "Function Calling \u0026 Tool Use",
+      "confidence": "high"
+    }
+  ]
+}

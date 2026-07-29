@@ -1,3 +1,4 @@
+schema_version: 2
 id: aion-labs/aion-2.0
 name: 'AionLabs: Aion-2.0'
 provider: Aion-Labs
@@ -9,3 +10,24 @@ features:
   - CapChat
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:36:12.826476786Z
+upstream:
+  openrouter:
+    canonical_slug: aion-labs/aion-2.0-20260223
+    supported_parameters:
+      - include_reasoning
+      - max_tokens
+      - reasoning
+      - response_format
+      - temperature
+      - tool_choice
+      - tools
+      - top_p
+    input_modalities:
+      - text
+    output_modalities:
+      - text
+    fetched_at: 2026-07-29T10:36:12.826477066Z
+reasoning:
+  supported: true
+  mandatory: true

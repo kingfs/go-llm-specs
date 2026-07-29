@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "mistralai/mistral-nemo",
+  "status": "pending",
+  "created_at": "2026-07-29T11:31:36.43822478Z",
+  "source": {
+    "url": "https://huggingface.co/mistralai/Mistral-Nemo-Instruct-2407/resolve/04d8a90549d23fc6bd7f642064003592df51e9b3/README.md",
+    "revision": "04d8a90549d23fc6bd7f642064003592df51e9b3",
+    "sha256": "4829fd3313ea0ed4a1bd26f37fa79c66d0eed325fa6fcac0c1c6f11115f69b83"
+  },
+  "generator": {
+    "model": "qwen3.6-27b",
+    "wire_api": "responses"
+  },
+  "claims": [
+    {
+      "field": "context_length",
+      "value": 131072,
+      "evidence": "Trained with a 128k context window",
+      "section": "Key features",
+      "confidence": "high"
+    },
+    {
+      "field": "description",
+      "value": "Released under the Apache 2 License",
+      "evidence": "Released under the Apache 2 License",
+      "section": "Key features",
+      "confidence": "high"
+    },
+    {
+      "field": "description",
+      "value": "Instruct fine-tuned version of Mistral-Nemo-Base-2407, trained jointly by Mistral AI and NVIDIA, outperforming existing models smaller or similar in size.",
+      "evidence": "The Mistral-Nemo-Instruct-2407 Large Language Model (LLM) is an instruct fine-tuned version of the Mistral-Nemo-Base-2407",
+      "section": "Key features",
+      "confidence": "high"
+    },
+    {
+      "field": "description",
+      "value": "Trained on multilingual and code data",
+      "evidence": "Trained on a large proportion of multilingual and code data",
+      "section": "Key features",
+      "confidence": "high"
+    },
+    {
+      "field": "description",
+      "value": "Transformer model with 40 layers, 5120 dim, 128 head dim, SwiGLU activation, 32 heads, 8 kv-heads (GQA), 2^17 vocab size, Rotary embeddings theta=1M",
+      "evidence": "Mistral Nemo is a transformer model, with the following architecture choices: ... Vocabulary size: 2**17 ~= 128k",
+      "section": "Model Architecture",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "ModalityTextIn",
+        "ModalityTextOut"
+      ],
+      "evidence": "Trained with a 128k context window",
+      "section": "Key features",
+      "confidence": "high"
+    }
+  ]
+}

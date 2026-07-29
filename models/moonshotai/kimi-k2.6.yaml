@@ -1,3 +1,4 @@
+schema_version: 2
 id: moonshotai/kimi-k2.6
 name: 'MoonshotAI: Kimi K2.6'
 provider: Moonshotai
@@ -12,3 +13,64 @@ features:
   - ModalityImageIn
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:40:08.19608857Z
+upstream:
+  openrouter:
+    canonical_slug: moonshotai/kimi-k2.6-20260420
+    huggingface_id: moonshotai/Kimi-K2.6
+    supported_parameters:
+      - frequency_penalty
+      - include_reasoning
+      - logit_bias
+      - logprobs
+      - max_tokens
+      - min_p
+      - parallel_tool_calls
+      - presence_penalty
+      - reasoning
+      - repetition_penalty
+      - response_format
+      - seed
+      - stop
+      - structured_outputs
+      - temperature
+      - tool_choice
+      - tools
+      - top_k
+      - top_logprobs
+      - top_p
+    input_modalities:
+      - image
+      - text
+    output_modalities:
+      - text
+    fetched_at: 2026-07-29T10:40:08.196089Z
+  huggingface:
+    id: moonshotai/Kimi-K2.6
+    revision: 7eb5002f6aadc958aed6a9177b7ed26bb94011bb
+    pipeline_tag: image-text-to-text
+    model_type: kimi_k25
+    architectures:
+      - KimiK25ForConditionalGeneration
+    license: other
+    tags:
+      - arxiv:2602.02276
+      - compressed-tensors
+      - conversational
+      - custom_code
+      - eval-results
+      - feature-extraction
+      - image-text-to-text
+      - kimi_k25
+      - license:other
+      - region:us
+      - safetensors
+      - transformers
+    structured_files:
+      - config.json
+      - preprocessor_config.json
+      - tokenizer_config.json
+    fetched_at: 2026-07-29T10:40:10.431091802Z
+reasoning:
+  supported: true
+  default_enabled: true

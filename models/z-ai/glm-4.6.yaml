@@ -1,3 +1,4 @@
+schema_version: 2
 id: z-ai/glm-4.6
 name: 'Z.ai: GLM 4.6'
 provider: Z-Ai
@@ -25,3 +26,61 @@ features:
   - CapJsonMode
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:45:06.528811856Z
+upstream:
+  openrouter:
+    canonical_slug: z-ai/glm-4.6
+    huggingface_id: zai-org/GLM-4.6
+    supported_parameters:
+      - frequency_penalty
+      - include_reasoning
+      - logit_bias
+      - max_tokens
+      - min_p
+      - presence_penalty
+      - reasoning
+      - repetition_penalty
+      - response_format
+      - seed
+      - stop
+      - structured_outputs
+      - temperature
+      - tool_choice
+      - tools
+      - top_k
+      - top_p
+    input_modalities:
+      - text
+    output_modalities:
+      - text
+    knowledge_cutoff: "2025-03-31"
+    fetched_at: 2026-07-29T10:45:06.528812436Z
+  huggingface:
+    id: zai-org/GLM-4.6
+    revision: be72194883d968d7923a07e2f61681ea9a2826d1
+    pipeline_tag: text-generation
+    model_type: glm4_moe
+    architectures:
+      - Glm4MoeForCausalLM
+    license: mit
+    tags:
+      - arxiv:2508.06471
+      - conversational
+      - en
+      - endpoints_compatible
+      - eval-results
+      - glm4_moe
+      - license:mit
+      - region:us
+      - safetensors
+      - text-generation
+      - transformers
+      - zh
+    config_context_length: 202752
+    tokenizer_model_max_length: 128000
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-07-29T10:45:09.748186292Z
+reasoning:
+  supported: true

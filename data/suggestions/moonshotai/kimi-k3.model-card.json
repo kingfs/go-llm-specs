@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "moonshotai/kimi-k3",
+  "status": "pending",
+  "created_at": "2026-07-29T11:35:59.288463618Z",
+  "source": {
+    "url": "https://huggingface.co/moonshotai/Kimi-K3/resolve/9f62e4e9fffbd0a83ddd60e1c209d828994b3569/README.md",
+    "revision": "9f62e4e9fffbd0a83ddd60e1c209d828994b3569",
+    "sha256": "cfb691d615403d2ec0c3b1db237ad4ed9ecdd9b6771f411e37dedad5429580ec"
+  },
+  "generator": {
+    "model": "qwen3.6-27b",
+    "wire_api": "responses"
+  },
+  "claims": [
+    {
+      "field": "description",
+      "value": "An open-weight, native multimodal agentic model with 2.8T parameters, 104B activated parameters, and a 1-million-token context window. It features Kimi Delta Attention and supports text, images, and video understanding.",
+      "evidence": "Kimi K3 is an open-weight, native multimodal agentic model",
+      "section": "## 1. Model Introduction",
+      "confidence": "high"
+    },
+    {
+      "field": "context_length",
+      "value": 1048576,
+      "evidence": "It is a 2.8T-parameter model built on Kimi Delta Attention (KDA)",
+      "section": "## 1. Model Introduction",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "CapChat",
+        "ModalityTextIn",
+        "ModalityTextOut",
+        "ModalityImageIn"
+      ],
+      "evidence": "It is a 2.8T-parameter model built on Kimi Delta Attention (KDA)",
+      "section": "## 1. Model Introduction",
+      "confidence": "high"
+    }
+  ]
+}

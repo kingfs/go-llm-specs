@@ -1,0 +1,100 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "qwen/qwen-2.5-coder-32b-instruct",
+  "status": "pending",
+  "created_at": "2026-07-29T11:45:01.707282035Z",
+  "source": {
+    "url": "https://huggingface.co/Qwen/Qwen2.5-Coder-32B-Instruct/resolve/381fc969f78efac66bc87ff7ddeadb7e73c218a7/README.md",
+    "revision": "381fc969f78efac66bc87ff7ddeadb7e73c218a7",
+    "sha256": "a5a35b614244ebc10946c05972f4b0d8785406214afac5c6c08ce793e9272ead"
+  },
+  "generator": {
+    "model": "qwen3.6-27b",
+    "wire_api": "responses"
+  },
+  "claims": [
+    {
+      "field": "features",
+      "value": [
+        "CapChat",
+        "CapFunctionCall",
+        "ModalityTextIn",
+        "ModalityTextOut"
+      ],
+      "evidence": "Qwen2.5-Coder brings the following improvements upon CodeQwen1.5:\n- Significantly improvements in **code generation**, **code reasoning** and **code fixing**.",
+      "section": "# Qwen2.5-Coder-32B-Instruct",
+      "confidence": "high"
+    },
+    {
+      "field": "description",
+      "value": "Instruction-tuned 32B Code-Specific Qwen large language model with 32.5B parameters.",
+      "evidence": "Number of Parameters: 32.5B",
+      "section": "# Qwen2.5-Coder-32B-Instruct",
+      "confidence": "high"
+    },
+    {
+      "field": "context_length",
+      "value": 131072,
+      "evidence": "Context Length: Full 131,072 tokens",
+      "section": "# Qwen2.5-Coder-32B-Instruct",
+      "confidence": "high"
+    },
+    {
+      "field": "description",
+      "value": "Supports long-context up to 128K tokens using YaRN extrapolation.",
+      "evidence": "**Long-context Support** up to 128K tokens.",
+      "section": "# Qwen2.5-Coder-32B-Instruct",
+      "confidence": "high"
+    },
+    {
+      "field": "description",
+      "value": "Type: Causal Language Models. Architecture: transformers with RoPE, SwiGLU, RMSNorm, and Attention QKV bias.",
+      "evidence": "Architecture: transformers with RoPE, SwiGLU, RMSNorm, and Attention QKV bias",
+      "section": "# Qwen2.5-Coder-32B-Instruct",
+      "confidence": "high"
+    },
+    {
+      "field": "description",
+      "value": "Contains 64 layers.",
+      "evidence": "Number of Layers: 64",
+      "section": "# Qwen2.5-Coder-32B-Instruct",
+      "confidence": "medium"
+    },
+    {
+      "field": "description",
+      "value": "Uses GQA with 40 Q heads and 8 KV heads.",
+      "evidence": "Number of Attention Heads (GQA): 40 for Q and 8 for KV",
+      "section": "# Qwen2.5-Coder-32B-Instruct",
+      "confidence": "medium"
+    },
+    {
+      "field": "description",
+      "value": "Recommended serving framework is vLLM.",
+      "evidence": "We recommend using vLLM.",
+      "section": "### Processing Long Texts",
+      "confidence": "high"
+    },
+    {
+      "field": "description",
+      "value": "Performance benchmarks and GPU memory requirements are available in the official documentation.",
+      "evidence": "For requirements on GPU memory and the respective throughput, see results [here](https://qwen.readthedocs.io/en/latest/benchmark/speed_benchmark.html).",
+      "section": "## Evaluation \u0026 Performance",
+      "confidence": "high"
+    },
+    {
+      "field": "description",
+      "value": "Has 31.0B non-embedding parameters.",
+      "evidence": "Number of Paramaters (Non-Embedding): 31.0B",
+      "section": "# Qwen2.5-Coder-32B-Instruct",
+      "confidence": "medium"
+    },
+    {
+      "field": "description",
+      "value": "Licensed under Apache 2.0.",
+      "evidence": "license: apache-2.0",
+      "section": "# Qwen2.5-Coder-32B-Instruct",
+      "confidence": "medium"
+    }
+  ]
+}

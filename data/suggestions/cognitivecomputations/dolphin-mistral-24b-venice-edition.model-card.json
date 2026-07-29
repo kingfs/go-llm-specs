@@ -1,0 +1,84 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "cognitivecomputations/dolphin-mistral-24b-venice-edition",
+  "status": "pending",
+  "created_at": "2026-07-29T11:19:50.013962552Z",
+  "source": {
+    "url": "https://huggingface.co/dphn/Dolphin-Mistral-24B-Venice-Edition/resolve/b23ff40b4a25e4f93de432bd896d4464479a9f79/README.md",
+    "revision": "b23ff40b4a25e4f93de432bd896d4464479a9f79",
+    "sha256": "1b2a90c6d32af4568ba3d151bf4c576b6dc151b4700978379f471c77fbc0badf"
+  },
+  "generator": {
+    "model": "qwen3.6-27b",
+    "wire_api": "responses"
+  },
+  "claims": [
+    {
+      "field": "description",
+      "value": "Dolphin Mistral 24B Venice Edition is a general purpose model derived from Mistral-Small-24B-Instruct-2501, created in collaboration with Venice.ai for the Venice ecosystem.",
+      "evidence": "Dolphin aims to be a general purpose model, similar to the models behind ChatGPT, Claude, Gemini.",
+      "section": "What is Dolphin Mistral 24B Venice Edition?",
+      "confidence": "medium"
+    },
+    {
+      "field": "description",
+      "value": "Base model: mistralai/Mistral-Small-24B-Instruct-2501",
+      "evidence": "base_model: - mistralai/Mistral-Small-24B-Instruct-2501",
+      "section": "MODEL CARD:",
+      "confidence": "high"
+    },
+    {
+      "field": "description",
+      "value": "License: apache-2.0",
+      "evidence": "license: apache-2.0",
+      "section": "MODEL CARD:",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "ModalityTextIn",
+        "ModalityTextOut"
+      ],
+      "evidence": "We maintained Mistral's default chat template for this model.",
+      "section": "Chat Template",
+      "confidence": "high"
+    },
+    {
+      "field": "context_length",
+      "value": 131072,
+      "evidence": "--max-model-len 131072",
+      "section": "vLLM",
+      "confidence": "high"
+    },
+    {
+      "field": "max_output",
+      "value": 512,
+      "evidence": "sampling_params = SamplingParams(max_tokens=512, temperature=0.15)",
+      "section": "vLLM",
+      "confidence": "high"
+    },
+    {
+      "field": "serving.vllm_args",
+      "value": [
+        "--tool-call-parser",
+        "mistral",
+        "--enable-auto-tool-choice"
+      ],
+      "evidence": "--tool-call-parser mistral --enable-auto-tool-choice",
+      "section": "vLLM",
+      "confidence": "high"
+    },
+    {
+      "field": "serving.vllm_args",
+      "value": [
+        "--limit-mm-per-prompt",
+        "{\"image\": 10}"
+      ],
+      "evidence": "--limit-mm-per-prompt '{\"image\": 10}'",
+      "section": "vLLM",
+      "confidence": "high"
+    }
+  ]
+}

@@ -1,3 +1,4 @@
+schema_version: 2
 id: deepseek/deepseek-v3.1-terminus:exacto
 name: 'DeepSeek: DeepSeek V3.1 Terminus (exacto)'
 provider: DeepSeek
@@ -13,3 +14,4 @@ features:
   - CapJsonMode
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:37:44.855094801Z

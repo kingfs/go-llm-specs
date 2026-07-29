@@ -1,3 +1,4 @@
+schema_version: 2
 id: google/gemini-2.0-flash-lite-001
 name: 'Google: Gemini 2.0 Flash Lite'
 provider: Google
@@ -15,3 +16,4 @@ features:
   - ModalityTextIn
   - ModalityTextOut
   - ModalityVideoIn
+discovered_at: 2026-07-29T10:37:59.002155931Z

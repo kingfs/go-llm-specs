@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "sao10k/l3.1-euryale-70b",
+  "status": "pending",
+  "created_at": "2026-07-29T12:02:40.53721907Z",
+  "source": {
+    "url": "https://huggingface.co/Sao10K/L3.1-70B-Euryale-v2.2/resolve/62b47ff8c2c24d326a7b960773b9c853400150b6/README.md",
+    "revision": "62b47ff8c2c24d326a7b960773b9c853400150b6",
+    "sha256": "79ba8e2d713a36efb07a905f10c6d7b351a7c7ef1b6187e0303877aa5a3de09c"
+  },
+  "generator": {
+    "model": "qwen3.6-27b",
+    "wire_api": "responses"
+  },
+  "claims": [
+    {
+      "field": "description",
+      "value": "Llama-3.1-70B-Euryale-v2.2 is a finetuned model trained on multi-turn conversational instruct and creative writing/roleplay datasets.",
+      "evidence": "Llama-3.1-70B-Euryale-v2.2",
+      "section": "# Llama-3.1-70B-Euryale-v2.2",
+      "confidence": "high"
+    },
+    {
+      "field": "description",
+      "value": "A large language model based on Llama 3.1 70B.",
+      "evidence": "This model has went through a single stage finetuning process, over 2 epochs.",
+      "section": "# Llama-3.1-70B-Euryale-v2.2",
+      "confidence": "high"
+    },
+    {
+      "field": "description",
+      "value": "A large language model based on Llama 3.1 70B.",
+      "evidence": "language:\n- en",
+      "section": "language:",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "CapChat"
+      ],
+      "evidence": "Included Multi-turn Conversation-based Instruct Datasets to boost multi-turn coherency.",
+      "section": "Changes since Euryale v2.1",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "CapChat"
+      ],
+      "evidence": "Included Datasets Targeting System Prompt Adherence.",
+      "section": "Changes since Euryale v2.1",
+      "confidence": "high"
+    },
+    {
+      "field": "description",
+      "value": "A large language model based on Llama 3.1 70B.",
+      "evidence": "Use the L3 Instruct Formatting - Euryale 2.1 Preset Works Well",
+      "section": "Prompting Format:",
+      "confidence": "high"
+    }
+  ]
+}

@@ -1,0 +1,83 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "xiaomi/mimo-v2.5",
+  "status": "pending",
+  "created_at": "2026-07-29T12:06:09.835774718Z",
+  "source": {
+    "url": "https://huggingface.co/XiaomiMiMo/MiMo-V2.5/resolve/63651580ca774f8504f676040460aed3e1244ac1/README.md",
+    "revision": "63651580ca774f8504f676040460aed3e1244ac1",
+    "sha256": "6978657125e4e6c6d9176bceba76d39f8f2ef82733be0b809c9e094dd44349f7"
+  },
+  "generator": {
+    "model": "qwen3.6-27b",
+    "wire_api": "responses"
+  },
+  "claims": [
+    {
+      "field": "description",
+      "value": "A native omnimodal model with strong agentic capabilities, supporting text, image, video, and audio understanding within a unified architecture.",
+      "evidence": "MiMo-V2.5 is a native omnimodal model with strong agentic capabilities",
+      "section": "# MiMo-V2.5",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "CapChat",
+        "ModalityTextIn",
+        "ModalityTextOut",
+        "ModalityImageIn",
+        "ModalityVideoIn",
+        "ModalityAudioIn"
+      ],
+      "evidence": "Built upon the MiMo-V2-Flash backbone and extended with dedicated vision and audio encoders",
+      "section": "# MiMo-V2.5",
+      "confidence": "high"
+    },
+    {
+      "field": "context_length",
+      "value": 1048576,
+      "evidence": "Context Length: Up to 1M tokens",
+      "section": "## Model Summary",
+      "confidence": "high"
+    },
+    {
+      "field": "context_length",
+      "value": 1048576,
+      "evidence": "The context window supports up to 1M tokens",
+      "section": "# MiMo-V2.5",
+      "confidence": "low"
+    },
+    {
+      "field": "reasoning.supported",
+      "value": true,
+      "evidence": "MiMo-V2.5's core language backbone inherits from the MiMo-V2-Flash architecture, a sparse MoE model",
+      "section": "## 4. Model Architecture",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "CapFunctionCall"
+      ],
+      "evidence": "Post-training incorporates SFT, large-scale agentic RL, and Multi-Teacher On-Policy Distillation (MOPD)",
+      "section": "# MiMo-V2.5",
+      "confidence": "medium"
+    },
+    {
+      "field": "description",
+      "value": "Native omnimodal model trained on ~48T tokens, using sparse MoE architecture (310B total, 15B activated parameters) with hybrid sliding window attention. Supports text, image, video, and audio inputs within a 1M token context window.",
+      "evidence": "MiMo-V2.5 is trained on a total of ~48T tokens. Text Pre-training",
+      "section": "## 5. Training Process",
+      "confidence": "high"
+    },
+    {
+      "field": "context_length",
+      "value": 1048576,
+      "evidence": "| Model | Context Length | ... | MiMo-V2.5 | 1M |",
+      "section": "## 2. Downloads",
+      "confidence": "high"
+    }
+  ]
+}

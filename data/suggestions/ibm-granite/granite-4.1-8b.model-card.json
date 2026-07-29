@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "ibm-granite/granite-4.1-8b",
+  "status": "pending",
+  "created_at": "2026-07-29T11:27:05.775943168Z",
+  "source": {
+    "url": "https://huggingface.co/ibm-granite/granite-4.1-8b/resolve/1504002f650e656a0a3789d99574df12e3e94ed0/README.md",
+    "revision": "1504002f650e656a0a3789d99574df12e3e94ed0",
+    "sha256": "e30ed44ab81b5610ef35555964f1f55bad2d24a9a9ff994bfd4a9a397d7ab6db"
+  },
+  "generator": {
+    "model": "qwen3.6-27b",
+    "wire_api": "responses"
+  },
+  "claims": [
+    {
+      "field": "description",
+      "value": "8B parameter long-context instruct model finetuned from Granite-4.1-8B-Base using open source and internally collected synthetic datasets, with enhanced tool calling, instruction following, and chat capabilities.",
+      "evidence": "Granite-4.1-8B is a 8B parameter long-context instruct model finetuned from *Granite-4.1-8B-Base*",
+      "section": "# Granite-4.1-8B",
+      "confidence": "medium"
+    },
+    {
+      "field": "features",
+      "value": [
+        "CapChat",
+        "CapFunctionCall",
+        "ModalityTextIn",
+        "ModalityTextOut"
+      ],
+      "evidence": "the model is designed to follow general instructions and can serve as the foundation for AI assistants across diverse domains, including business applications, as well as for LLM agents equipped with tool-use capabilities.",
+      "section": "# Granite-4.1-8B",
+      "confidence": "medium"
+    }
+  ]
+}

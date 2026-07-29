@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "moonshotai/kimi-k2.6",
+  "status": "pending",
+  "created_at": "2026-07-29T11:35:10.851383621Z",
+  "source": {
+    "url": "https://huggingface.co/moonshotai/Kimi-K2.6/resolve/7eb5002f6aadc958aed6a9177b7ed26bb94011bb/README.md",
+    "revision": "7eb5002f6aadc958aed6a9177b7ed26bb94011bb",
+    "sha256": "4283a45ec0ebc0e9ffa6150d02ba3eac4b7064ae58aaf0174ef418f5cae376d9"
+  },
+  "generator": {
+    "model": "qwen3.6-27b",
+    "wire_api": "responses"
+  },
+  "claims": [
+    {
+      "field": "description",
+      "value": "Kimi K2.6 is an open-source, native multimodal agentic model based on a Mixture-of-Experts (MoE) architecture. It supports image and text input with text output. The model features long-horizon coding, coding-driven design, and swarm-based task orchestration capabilities.",
+      "evidence": "pipeline_tag: image-text-to-text",
+      "section": "Model Introduction",
+      "confidence": "high"
+    },
+    {
+      "field": "context_length",
+      "value": 262144,
+      "evidence": "Context Length | 256K",
+      "section": "Model Summary",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "CapChat",
+        "ModalityTextIn",
+        "ModalityTextOut",
+        "ModalityImageIn"
+      ],
+      "evidence": "pipeline_tag: image-text-to-text",
+      "section": "Model Introduction",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "CapFunctionCall"
+      ],
+      "evidence": "Architecture | Mixture-of-Experts (MoE)",
+      "section": "Model Summary",
+      "confidence": "high"
+    }
+  ]
+}

@@ -1,3 +1,4 @@
+schema_version: 2
 id: tencent/hunyuan-a13b-instruct
 name: 'Tencent: Hunyuan A13B Instruct'
 provider: Tencent
@@ -10,3 +11,52 @@ features:
   - CapJsonMode
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:44:16.874048287Z
+upstream:
+  openrouter:
+    canonical_slug: tencent/hunyuan-a13b-instruct
+    huggingface_id: tencent/Hunyuan-A13B-Instruct
+    supported_parameters:
+      - frequency_penalty
+      - include_reasoning
+      - max_tokens
+      - reasoning
+      - response_format
+      - structured_outputs
+      - temperature
+      - top_k
+      - top_p
+    input_modalities:
+      - text
+    output_modalities:
+      - text
+    knowledge_cutoff: "2025-03-31"
+    fetched_at: 2026-07-29T10:44:16.874048447Z
+  huggingface:
+    id: tencent/Hunyuan-A13B-Instruct
+    revision: 290ddb9a56ed23c2c83a1c8081533e58925df952
+    pipeline_tag: text-generation
+    model_type: hunyuan_v1_moe
+    architectures:
+      - HunYuanMoEV1ForCausalLM
+    license: other
+    tags:
+      - conversational
+      - custom_code
+      - endpoints_compatible
+      - eval-results
+      - hunyuan_v1_moe
+      - license:other
+      - region:us
+      - safetensors
+      - text-generation
+      - transformers
+    config_context_length: 32768
+    tokenizer_model_max_length: 262144
+    chat_template_sha256: e9c46e57ea87661ba774c754d6c07c5ab2a43679f3b46feabf57ee01c63226cb
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-07-29T10:44:19.09722651Z
+reasoning:
+  supported: true

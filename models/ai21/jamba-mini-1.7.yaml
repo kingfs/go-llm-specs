@@ -1,3 +1,4 @@
+schema_version: 2
 id: ai21/jamba-mini-1.7
 name: 'AI21: Jamba Mini 1.7'
 provider: Ai21
@@ -11,3 +12,4 @@ features:
   - CapJsonMode
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:36:11.565242149Z

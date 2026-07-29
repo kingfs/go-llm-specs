@@ -1,3 +1,4 @@
+schema_version: 2
 id: sao10k/l3-lunaris-8b
 name: 'Sao10K: Llama 3 8B Lunaris'
 provider: Sao10k
@@ -20,3 +21,53 @@ features:
   - CapJsonMode
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:44:01.462253338Z
+upstream:
+  openrouter:
+    canonical_slug: sao10k/l3-lunaris-8b
+    huggingface_id: Sao10K/L3-8B-Lunaris-v1
+    supported_parameters:
+      - frequency_penalty
+      - logit_bias
+      - max_tokens
+      - min_p
+      - presence_penalty
+      - repetition_penalty
+      - response_format
+      - seed
+      - stop
+      - structured_outputs
+      - temperature
+      - top_k
+      - top_p
+    input_modalities:
+      - text
+    output_modalities:
+      - text
+    knowledge_cutoff: "2023-12-31"
+    fetched_at: 2026-07-29T10:44:01.462253628Z
+  huggingface:
+    id: Sao10K/L3-8B-Lunaris-v1
+    revision: 8479c2a7ee119c935b9a02c921cc2a85b698dfe8
+    pipeline_tag: text-generation
+    model_type: llama
+    architectures:
+      - LlamaForCausalLM
+    license: llama3
+    tags:
+      - conversational
+      - en
+      - endpoints_compatible
+      - license:llama3
+      - llama
+      - region:us
+      - safetensors
+      - text-generation
+      - text-generation-inference
+      - transformers
+    config_context_length: 8192
+    chat_template_sha256: 12058019800dad3b18914dab709b17a2432a3110df88a7b08f349d2b72e9f60a
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-07-29T10:44:03.933236446Z

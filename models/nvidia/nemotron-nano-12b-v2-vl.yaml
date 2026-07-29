@@ -1,3 +1,4 @@
+schema_version: 2
 id: nvidia/nemotron-nano-12b-v2-vl
 name: 'NVIDIA: Nemotron Nano 12B 2 VL'
 provider: Nvidia
@@ -26,3 +27,4 @@ features:
   - ModalityTextIn
   - ModalityTextOut
   - ModalityVideoIn
+discovered_at: 2026-07-29T10:40:58.617279028Z

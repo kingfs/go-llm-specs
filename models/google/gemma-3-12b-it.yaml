@@ -1,3 +1,4 @@
+schema_version: 2
 id: google/gemma-3-12b-it
 name: 'Google: Gemma 3 12B'
 provider: Google
@@ -12,3 +13,81 @@ features:
   - ModalityImageIn
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:38:14.061953602Z
+upstream:
+  openrouter:
+    canonical_slug: google/gemma-3-12b-it
+    huggingface_id: google/gemma-3-12b-it
+    supported_parameters:
+      - frequency_penalty
+      - logit_bias
+      - max_tokens
+      - min_p
+      - presence_penalty
+      - repetition_penalty
+      - response_format
+      - seed
+      - stop
+      - structured_outputs
+      - temperature
+      - tool_choice
+      - tools
+      - top_k
+      - top_p
+    input_modalities:
+      - image
+      - text
+    output_modalities:
+      - text
+    knowledge_cutoff: "2024-08-31"
+    fetched_at: 2026-07-29T10:38:14.061954512Z
+  huggingface:
+    id: google/gemma-3-12b-it
+    revision: 96b6f1eccf38110c56df3a15bffe176da04bfd80
+    pipeline_tag: image-text-to-text
+    model_type: gemma3
+    architectures:
+      - Gemma3ForConditionalGeneration
+    license: gemma
+    tags:
+      - arxiv:1705.03551
+      - arxiv:1810.12440
+      - arxiv:1903.00161
+      - arxiv:1904.09728
+      - arxiv:1905.07830
+      - arxiv:1905.10044
+      - arxiv:1907.10641
+      - arxiv:1908.02660
+      - arxiv:1910.11856
+      - arxiv:1911.01547
+      - arxiv:1911.11641
+      - arxiv:2009.03300
+      - arxiv:2103.03874
+      - arxiv:2104.12756
+      - arxiv:2106.03193
+      - arxiv:2107.03374
+      - arxiv:2108.07732
+      - arxiv:2110.14168
+      - arxiv:2203.10244
+      - arxiv:2210.03057
+      - arxiv:2304.06364
+      - arxiv:2311.12022
+      - arxiv:2311.16502
+      - arxiv:2312.11805
+      - arxiv:2404.12390
+      - arxiv:2404.16816
+      - arxiv:2502.12404
+      - arxiv:2502.21228
+      - base_model:finetune:google/gemma-3-12b-pt
+      - base_model:google/gemma-3-12b-pt
+      - conversational
+      - endpoints_compatible
+      - eval-results
+      - gemma3
+      - image-text-to-text
+      - license:gemma
+      - region:us
+      - safetensors
+      - text-generation-inference
+      - transformers
+    fetched_at: 2026-07-29T10:38:14.716099331Z

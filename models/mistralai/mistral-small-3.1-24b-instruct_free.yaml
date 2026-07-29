@@ -1,3 +1,4 @@
+schema_version: 2
 id: mistralai/mistral-small-3.1-24b-instruct:free
 name: 'Mistral: Mistral Small 3.1 24B (free)'
 provider: Mistral
@@ -11,3 +12,4 @@ features:
   - ModalityImageIn
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:39:48.600122053Z

@@ -1,3 +1,4 @@
+schema_version: 2
 id: qwen/qwen3-235b-a22b
 name: 'Qwen: Qwen3 235B A22B'
 provider: Qwen
@@ -11,3 +12,57 @@ features:
   - CapJsonMode
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:42:33.331665588Z
+upstream:
+  openrouter:
+    canonical_slug: qwen/qwen3-235b-a22b-04-28
+    huggingface_id: Qwen/Qwen3-235B-A22B
+    supported_parameters:
+      - frequency_penalty
+      - include_reasoning
+      - max_tokens
+      - presence_penalty
+      - reasoning
+      - response_format
+      - seed
+      - stop
+      - temperature
+      - tool_choice
+      - tools
+      - top_k
+      - top_p
+    input_modalities:
+      - text
+    output_modalities:
+      - text
+    knowledge_cutoff: "2025-03-31"
+    fetched_at: 2026-07-29T10:42:33.331666188Z
+  huggingface:
+    id: Qwen/Qwen3-235B-A22B
+    revision: 8efa61729e24bd65b1d152b5ab5409052aa80e65
+    pipeline_tag: text-generation
+    model_type: qwen3_moe
+    architectures:
+      - Qwen3MoeForCausalLM
+    license: apache-2.0
+    tags:
+      - arxiv:2309.00071
+      - arxiv:2505.09388
+      - conversational
+      - endpoints_compatible
+      - eval-results
+      - license:apache-2.0
+      - qwen3_moe
+      - region:us
+      - safetensors
+      - text-generation
+      - transformers
+    config_context_length: 40960
+    tokenizer_model_max_length: 131072
+    chat_template_sha256: d7d7b7a694907104724f66d29e96b811c834ab8d1a40ef59f00469049fee7794
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-07-29T10:42:35.125014346Z
+reasoning:
+  supported: true

@@ -1,3 +1,4 @@
+schema_version: 2
 id: allenai/olmo-3-7b-think
 name: 'AllenAI: Olmo 3 7B Think'
 provider: Allenai
@@ -10,3 +11,33 @@ features:
   - CapJsonMode
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:36:27.771222715Z
+upstream:
+  huggingface:
+    id: allenai/Olmo-3-7B-Think
+    revision: d97e442d7cc678210054dbcc9b440894d62c89a4
+    pipeline_tag: text-generation
+    model_type: olmo3
+    architectures:
+      - Olmo3ForCausalLM
+    tags:
+      - arxiv:2512.13961
+      - base_model:allenai/Olmo-3-7B-Think-DPO
+      - base_model:finetune:allenai/Olmo-3-7B-Think-DPO
+      - conversational
+      - dataset:allenai/Dolci-Think-RL-7B
+      - deploy:azure
+      - en
+      - endpoints_compatible
+      - license:apache-2.0
+      - olmo3
+      - region:us
+      - safetensors
+      - text-generation
+      - transformers
+    config_context_length: 65536
+    tokenizer_model_max_length: 65536
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-07-29T10:36:29.708858193Z

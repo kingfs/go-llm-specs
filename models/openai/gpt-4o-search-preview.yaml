@@ -1,3 +1,4 @@
+schema_version: 2
 id: openai/gpt-4o-search-preview
 name: 'OpenAI: GPT-4o Search Preview'
 provider: OpenAI
@@ -10,3 +11,4 @@ features:
   - CapJsonMode
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:41:12.066122079Z

@@ -1,3 +1,4 @@
+schema_version: 2
 id: arcee-ai/trinity-mini
 name: 'Arcee AI: Trinity Mini'
 provider: Arcee-Ai
@@ -11,3 +12,41 @@ features:
   - CapJsonMode
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:36:59.781398379Z
+upstream:
+  huggingface:
+    id: arcee-ai/Trinity-Mini
+    revision: cdb81e8130815fec299cccc8f8700004b8366e1e
+    pipeline_tag: text-generation
+    model_type: afmoe
+    architectures:
+      - AfmoeForCausalLM
+    tags:
+      - afmoe
+      - ar
+      - base_model:arcee-ai/Trinity-Mini-Base
+      - base_model:finetune:arcee-ai/Trinity-Mini-Base
+      - conversational
+      - custom_code
+      - de
+      - en
+      - endpoints_compatible
+      - es
+      - fr
+      - hi
+      - it
+      - ko
+      - license:other
+      - pt
+      - region:us
+      - ru
+      - safetensors
+      - text-generation
+      - transformers
+      - zh
+    config_context_length: 131072
+    tokenizer_model_max_length: 65536
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-07-29T10:37:01.782120282Z

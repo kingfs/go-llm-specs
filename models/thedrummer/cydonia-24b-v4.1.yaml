@@ -1,3 +1,4 @@
+schema_version: 2
 id: thedrummer/cydonia-24b-v4.1
 name: 'TheDrummer: Cydonia 24B V4.1'
 provider: Thedrummer
@@ -10,3 +11,45 @@ features:
   - CapJsonMode
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:44:25.575840038Z
+upstream:
+  openrouter:
+    canonical_slug: thedrummer/cydonia-24b-v4.1
+    huggingface_id: thedrummer/cydonia-24b-v4.1
+    supported_parameters:
+      - frequency_penalty
+      - logit_bias
+      - logprobs
+      - max_tokens
+      - presence_penalty
+      - repetition_penalty
+      - response_format
+      - seed
+      - stop
+      - structured_outputs
+      - temperature
+      - top_k
+      - top_logprobs
+      - top_p
+    input_modalities:
+      - text
+    output_modalities:
+      - text
+    knowledge_cutoff: "2024-04-30"
+    fetched_at: 2026-07-29T10:44:25.575840638Z
+  huggingface:
+    id: TheDrummer/Cydonia-24B-v4.1
+    revision: 717e35eceb939ee36c7cdd35559c3e0af66d5d24
+    model_type: mistral
+    architectures:
+      - MistralForCausalLM
+    tags:
+      - mistral
+      - region:us
+      - safetensors
+    config_context_length: 131072
+    tokenizer_model_max_length: 131072
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-07-29T10:44:27.883138982Z

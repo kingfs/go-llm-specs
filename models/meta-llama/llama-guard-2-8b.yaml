@@ -1,3 +1,4 @@
+schema_version: 2
 id: meta-llama/llama-guard-2-8b
 name: 'Meta: LlamaGuard 2 8B'
 provider: Meta
@@ -26,3 +27,4 @@ features:
   - CapChat
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:39:00.242006362Z

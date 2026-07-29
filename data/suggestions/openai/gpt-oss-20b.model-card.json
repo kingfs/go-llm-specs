@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "openai/gpt-oss-20b",
+  "status": "pending",
+  "created_at": "2026-07-29T11:41:42.895490731Z",
+  "source": {
+    "url": "https://huggingface.co/openai/gpt-oss-20b/resolve/6cee5e81ee83917806bbde320786a8fb61efebee/README.md",
+    "revision": "6cee5e81ee83917806bbde320786a8fb61efebee",
+    "sha256": "03c2fcf292549176757b85c911e7dcf527aef3e4241d64b6caec94af3ecf3ac2"
+  },
+  "generator": {
+    "model": "qwen3.6-27b",
+    "wire_api": "responses"
+  },
+  "claims": [
+    {
+      "field": "description",
+      "value": "GPT-OSS-20b is a lower-latency model with 21B parameters and 3.6B active parameters.",
+      "evidence": "gpt-oss-20b — for lower latency, and local or specialized use cases (21B parameters with 3.6B active parameters)",
+      "section": "# Highlights",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [],
+      "evidence": "The models were post-trained with MXFP4 quantization of the MoE weights... the gpt-oss-20b model run within 16GB of memory.",
+      "section": "# Highlights",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "CapFunctionCall"
+      ],
+      "evidence": "Function calling with defined schemas",
+      "section": "# Tool use",
+      "confidence": "high"
+    },
+    {
+      "field": "reasoning.parser",
+      "value": "harmony",
+      "evidence": "Both models were trained on our harmony response format and should only be used with the harmony format",
+      "section": "# Highlights",
+      "confidence": "high"
+    }
+  ]
+}

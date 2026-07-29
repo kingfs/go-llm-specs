@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "minimax/minimax-m2.5",
+  "status": "pending",
+  "created_at": "2026-07-29T11:29:50.723510084Z",
+  "source": {
+    "url": "https://huggingface.co/MiniMaxAI/MiniMax-M2.5/resolve/f710177d938eff80b684d42c5aa84b382612f21f/README.md",
+    "revision": "f710177d938eff80b684d42c5aa84b382612f21f",
+    "sha256": "642d714a6305c13415c435a128bf737adb0e33016102efea4ba0406f88262464"
+  },
+  "generator": {
+    "model": "qwen3.6-27b",
+    "wire_api": "responses"
+  },
+  "claims": [
+    {
+      "field": "description",
+      "value": "MiniMax-M2.5 is a text-generation model with a modified-MIT license, available via the transformers library.",
+      "evidence": "pipeline_tag: text-generation",
+      "section": "# MiniMax-M2.5",
+      "confidence": "high"
+    },
+    {
+      "field": "context_length",
+      "value": 1048576,
+      "evidence": "MiniMax-M2.5 has a context length of 1M tokens and is natively multilingual, supporting 100+ languages.",
+      "section": "# Model Details",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "ModalityTextIn",
+        "ModalityTextOut",
+        "ModalityImageIn",
+        "ModalityAudioIn"
+      ],
+      "evidence": "MiniMax-M2.5 has a context length of 1M tokens and is natively multilingual, supporting 100+ languages. M2.5 is a multimodal model that supports text input/output, image input, and audio input.",
+      "section": "# Model Details",
+      "confidence": "medium"
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "google/gemma-3-4b-it",
+  "status": "pending",
+  "created_at": "2026-07-29T11:25:25.770298398Z",
+  "source": {
+    "url": "https://huggingface.co/google/gemma-3-4b-it/resolve/093f9f388b31de276ce2de164bdc2081324b9767/README.md",
+    "revision": "093f9f388b31de276ce2de164bdc2081324b9767",
+    "sha256": "b30fe785e4cf90140a80e86a3940727097c6dbdb5442514b6e2b148abc627b05"
+  },
+  "generator": {
+    "model": "qwen3.6-27b",
+    "wire_api": "responses"
+  },
+  "claims": [
+    {
+      "field": "description",
+      "value": "Gemma 3 is a multimodal family of open models from Google supporting text and image input with text output. The 4B instruction-tuned variant uses 4 trillion tokens for training and supports 128K context, multilingual input in 140+ languages, and image analysis tasks.",
+      "evidence": "Gemma 3 models are multimodal, handling text and image input and generating text output",
+      "section": "Description",
+      "confidence": "high"
+    },
+    {
+      "field": "context_length",
+      "value": 131072,
+      "evidence": "Total input context of 128K tokens for the 4B, 12B, and 27B sizes, and 32K tokens for the 1B size",
+      "section": "Inputs and outputs",
+      "confidence": "high"
+    },
+    {
+      "field": "max_output",
+      "value": 8192,
+      "evidence": "Total output context of 8192 tokens",
+      "section": "Inputs and outputs",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "ModalityTextIn",
+        "ModalityTextOut",
+        "ModalityImageIn"
+      ],
+      "evidence": "Gemma 3 models are multimodal, handling text and image input and generating text output",
+      "section": "Description",
+      "confidence": "high"
+    },
+    {
+      "field": "reasoning.supported",
+      "value": true,
+      "evidence": "Gemma 3 models are multimodal, handling text and image input and generating text output, with open weights for both pre-trained variants and instruction-tuned variants.",
+      "section": "Description",
+      "confidence": "high"
+    },
+    {
+      "field": "reasoning.parser",
+      "value": "Text string, Image (normalized to 896x896, 256 tokens)",
+      "evidence": "Images, normalized to 896 x 896 resolution and encoded to 256 tokens each",
+      "section": "Inputs and outputs",
+      "confidence": "high"
+    }
+  ]
+}

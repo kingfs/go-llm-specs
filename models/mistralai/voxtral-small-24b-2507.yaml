@@ -1,3 +1,4 @@
+schema_version: 2
 id: mistralai/voxtral-small-24b-2507
 name: 'Mistral: Voxtral Small 24B 2507'
 provider: Mistral
@@ -11,3 +12,59 @@ features:
   - ModalityAudioIn
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:39:54.874223203Z
+upstream:
+  openrouter:
+    canonical_slug: mistralai/voxtral-small-24b-2507
+    huggingface_id: mistralai/Voxtral-Small-24B-2507
+    supported_parameters:
+      - frequency_penalty
+      - max_tokens
+      - presence_penalty
+      - response_format
+      - seed
+      - stop
+      - structured_outputs
+      - temperature
+      - tool_choice
+      - tools
+      - top_p
+    input_modalities:
+      - audio
+      - file
+      - text
+    output_modalities:
+      - text
+    fetched_at: 2026-07-29T10:39:54.874223643Z
+  huggingface:
+    id: mistralai/Voxtral-Small-24B-2507
+    revision: da5b42409f279fdd92febee0511a6c32828569c1
+    pipeline_tag: audio-text-to-text
+    model_type: voxtral
+    architectures:
+      - VoxtralForConditionalGeneration
+    license: apache-2.0
+    tags:
+      - arxiv:2507.13264
+      - audio-text-to-text
+      - base_model:finetune:mistralai/Mistral-Small-24B-Base-2501
+      - base_model:mistralai/Mistral-Small-24B-Base-2501
+      - de
+      - en
+      - es
+      - eval-results
+      - fr
+      - hi
+      - it
+      - license:apache-2.0
+      - nl
+      - pt
+      - region:us
+      - safetensors
+      - vllm
+      - voxtral
+    processor_class: VoxtralProcessor
+    structured_files:
+      - config.json
+      - preprocessor_config.json
+    fetched_at: 2026-07-29T10:39:56.898314568Z

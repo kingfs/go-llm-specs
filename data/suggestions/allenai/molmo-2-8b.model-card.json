@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "allenai/molmo-2-8b",
+  "status": "pending",
+  "created_at": "2026-07-29T10:58:59.38228176Z",
+  "source": {
+    "url": "https://huggingface.co/allenai/Molmo2-8B/resolve/e28fa28597e5ec5e0cca2201dd8ab33d48bc4a1b/README.md",
+    "revision": "e28fa28597e5ec5e0cca2201dd8ab33d48bc4a1b",
+    "sha256": "6f9f14978ab597c1ddb86b8925b8f9d2c83263f54e0293decf4631fb551b14b0"
+  },
+  "generator": {
+    "model": "qwen3.6-27b",
+    "wire_api": "responses"
+  },
+  "claims": [
+    {
+      "field": "description",
+      "value": "An open vision-language model family by Ai2 supporting image, video, and multi-image understanding and grounding. Molmo2-8B is built on Qwen3-8B with a SigLIP 2 vision backbone.",
+      "evidence": "Molmo2 is a family of open vision-language models developed by the Allen Institute for AI (Ai2) that support image, video and multi-image understanding and grounding.",
+      "section": "# Molmo2-8B",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "CapChat",
+        "ModalityTextIn",
+        "ModalityTextOut",
+        "ModalityImageIn",
+        "ModalityVideoIn"
+      ],
+      "evidence": "Molmo2 is a family of open vision-language models developed by the Allen Institute for AI (Ai2) that support image, video and multi-image understanding and grounding.",
+      "section": "# Molmo2-8B",
+      "confidence": "high"
+    }
+  ]
+}

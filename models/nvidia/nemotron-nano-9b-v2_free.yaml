@@ -1,3 +1,4 @@
+schema_version: 2
 id: nvidia/nemotron-nano-9b-v2:free
 name: 'NVIDIA: Nemotron Nano 9B V2 (free)'
 provider: Nvidia
@@ -13,3 +14,72 @@ features:
   - CapJsonMode
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:41:00.631288761Z
+upstream:
+  openrouter:
+    canonical_slug: nvidia/nemotron-nano-9b-v2
+    huggingface_id: nvidia/NVIDIA-Nemotron-Nano-9B-v2
+    supported_parameters:
+      - include_reasoning
+      - max_tokens
+      - reasoning
+      - response_format
+      - seed
+      - structured_outputs
+      - temperature
+      - tool_choice
+      - tools
+      - top_p
+    input_modalities:
+      - text
+    output_modalities:
+      - text
+    knowledge_cutoff: "2025-03-31"
+    fetched_at: 2026-07-29T10:41:00.631289621Z
+  huggingface:
+    id: nvidia/NVIDIA-Nemotron-Nano-9B-v2
+    revision: 6533e8de2c68e4536bf7c411d7a3ce5734111476
+    pipeline_tag: text-generation
+    model_type: nemotron_h
+    architectures:
+      - NemotronHForCausalLM
+    license: other
+    tags:
+      - arxiv:2412.02595
+      - arxiv:2504.03624
+      - arxiv:2508.14444
+      - base_model:finetune:nvidia/NVIDIA-Nemotron-Nano-12B-v2
+      - base_model:nvidia/NVIDIA-Nemotron-Nano-12B-v2
+      - conversational
+      - custom_code
+      - dataset:nvidia/Nemotron-CC-Math-v1
+      - dataset:nvidia/Nemotron-CC-v2
+      - dataset:nvidia/Nemotron-Post-Training-Dataset-v1
+      - dataset:nvidia/Nemotron-Post-Training-Dataset-v2
+      - dataset:nvidia/Nemotron-Pretraining-Dataset-sample
+      - dataset:nvidia/Nemotron-Pretraining-SFT-v1
+      - de
+      - deploy:azure
+      - en
+      - endpoints_compatible
+      - es
+      - fr
+      - it
+      - ja
+      - license:other
+      - nemotron_h
+      - nvidia
+      - pytorch
+      - region:us
+      - safetensors
+      - text-generation
+      - transformers
+    config_context_length: 131072
+    tokenizer_model_max_length: 131072
+    chat_template_sha256: 511e868f105020dde67b01efd9722bf4ddf626eeeb8eb93277cb07e1a1156304
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-07-29T10:41:02.927718652Z
+reasoning:
+  supported: true

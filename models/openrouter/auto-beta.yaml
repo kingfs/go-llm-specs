@@ -1,3 +1,4 @@
+schema_version: 2
 id: openrouter/auto-beta
 name: Auto Router (Beta)
 provider: Openrouter
@@ -15,3 +16,41 @@ features:
   - ModalityTextIn
   - ModalityTextOut
   - ModalityVideoIn
+discovered_at: 2026-07-29T10:41:49.547328182Z
+upstream:
+  openrouter:
+    canonical_slug: openrouter/auto-beta
+    supported_parameters:
+      - frequency_penalty
+      - include_reasoning
+      - logit_bias
+      - logprobs
+      - max_tokens
+      - min_p
+      - prediction
+      - presence_penalty
+      - reasoning
+      - reasoning_effort
+      - repetition_penalty
+      - response_format
+      - seed
+      - stop
+      - structured_outputs
+      - temperature
+      - tool_choice
+      - tools
+      - top_a
+      - top_k
+      - top_logprobs
+      - top_p
+      - web_search_options
+    input_modalities:
+      - audio
+      - file
+      - image
+      - text
+      - video
+    output_modalities:
+      - image
+      - text
+    fetched_at: 2026-07-29T10:41:49.547328682Z

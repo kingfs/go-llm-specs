@@ -1,3 +1,4 @@
+schema_version: 2
 id: allenai/molmo-2-8b
 name: 'AllenAI: Molmo2 8B'
 provider: Allenai
@@ -11,3 +12,43 @@ features:
   - ModalityTextIn
   - ModalityTextOut
   - ModalityVideoIn
+discovered_at: 2026-07-29T10:36:18.724512328Z
+upstream:
+  huggingface:
+    id: allenai/Molmo2-8B
+    revision: e28fa28597e5ec5e0cca2201dd8ab33d48bc4a1b
+    pipeline_tag: image-text-to-text
+    model_type: molmo2
+    architectures:
+      - Molmo2ForConditionalGeneration
+    tags:
+      - base_model:Qwen/Qwen3-8B
+      - base_model:finetune:Qwen/Qwen3-8B
+      - conversational
+      - custom_code
+      - dataset:allenai/Molmo2-AskModelAnything
+      - dataset:allenai/Molmo2-Cap
+      - dataset:allenai/Molmo2-MultiImagePoint
+      - dataset:allenai/Molmo2-MultiImageQA
+      - dataset:allenai/Molmo2-SynMultiImageQA
+      - dataset:allenai/Molmo2-VideoCapQA
+      - dataset:allenai/Molmo2-VideoPoint
+      - dataset:allenai/Molmo2-VideoSubtitleQA
+      - dataset:allenai/Molmo2-VideoTrack
+      - en
+      - image-text-to-text
+      - license:apache-2.0
+      - molmo
+      - molmo2
+      - multimodal
+      - olmo
+      - region:us
+      - safetensors
+      - transformers
+    tokenizer_model_max_length: 131072
+    processor_class: Molmo2Processor
+    structured_files:
+      - config.json
+      - preprocessor_config.json
+      - tokenizer_config.json
+    fetched_at: 2026-07-29T10:36:21.013202593Z

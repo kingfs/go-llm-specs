@@ -1,3 +1,4 @@
+schema_version: 2
 id: nousresearch/hermes-3-llama-3.1-70b
 name: 'Nous: Hermes 3 70B Instruct'
 provider: Nous Research
@@ -21,3 +22,71 @@ features:
   - CapJsonMode
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:40:32.337081081Z
+upstream:
+  openrouter:
+    canonical_slug: nousresearch/hermes-3-llama-3.1-70b
+    huggingface_id: NousResearch/Hermes-3-Llama-3.1-70B
+    supported_parameters:
+      - frequency_penalty
+      - logit_bias
+      - max_tokens
+      - min_p
+      - presence_penalty
+      - repetition_penalty
+      - response_format
+      - seed
+      - stop
+      - structured_outputs
+      - temperature
+      - top_k
+      - top_p
+    input_modalities:
+      - text
+    output_modalities:
+      - text
+    knowledge_cutoff: "2023-12-31"
+    fetched_at: 2026-07-29T10:40:32.337081861Z
+  huggingface:
+    id: NousResearch/Hermes-3-Llama-3.1-70B
+    revision: 1fc86da0ce9cdb14cd775ad270bc7d1b4bf70ede
+    pipeline_tag: text-generation
+    model_type: llama
+    architectures:
+      - LlamaForCausalLM
+    license: llama3
+    tags:
+      - Llama-3
+      - arxiv:2408.11857
+      - axolotl
+      - base_model:finetune:meta-llama/Llama-3.1-70B
+      - base_model:meta-llama/Llama-3.1-70B
+      - chat
+      - chatml
+      - conversational
+      - deploy:azure
+      - distillation
+      - en
+      - endpoints_compatible
+      - eval-results
+      - finetune
+      - function calling
+      - gpt4
+      - instruct
+      - json mode
+      - license:llama3
+      - llama
+      - region:us
+      - roleplaying
+      - safetensors
+      - synthetic data
+      - text-generation
+      - text-generation-inference
+      - transformers
+    config_context_length: 131072
+    tokenizer_model_max_length: 131072
+    chat_template_sha256: 5b775fa8f3767b894fab0cc443b842a8097e7cd0f3bd506515e4e8889230f09f
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-07-29T10:40:34.408219908Z

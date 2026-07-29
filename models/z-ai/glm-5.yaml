@@ -1,3 +1,4 @@
+schema_version: 2
 id: z-ai/glm-5
 name: 'Z.ai: GLM 5'
 provider: Z-Ai
@@ -11,3 +12,63 @@ features:
   - CapJsonMode
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:45:16.622309439Z
+upstream:
+  openrouter:
+    canonical_slug: z-ai/glm-5-20260211
+    huggingface_id: zai-org/GLM-5
+    supported_parameters:
+      - frequency_penalty
+      - include_reasoning
+      - logit_bias
+      - logprobs
+      - max_tokens
+      - min_p
+      - presence_penalty
+      - reasoning
+      - repetition_penalty
+      - response_format
+      - seed
+      - stop
+      - structured_outputs
+      - temperature
+      - tool_choice
+      - tools
+      - top_k
+      - top_logprobs
+      - top_p
+    input_modalities:
+      - text
+    output_modalities:
+      - text
+    fetched_at: 2026-07-29T10:45:16.622310069Z
+  huggingface:
+    id: zai-org/GLM-5
+    revision: 4e6698ba8e85059d749020e3c4d2123719f23926
+    pipeline_tag: text-generation
+    model_type: glm_moe_dsa
+    architectures:
+      - GlmMoeDsaForCausalLM
+    license: mit
+    tags:
+      - arxiv:2602.15763
+      - conversational
+      - en
+      - endpoints_compatible
+      - eval-results
+      - glm_moe_dsa
+      - license:mit
+      - region:us
+      - safetensors
+      - text-generation
+      - transformers
+      - zh
+    config_context_length: 202752
+    tokenizer_model_max_length: 202752
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-07-29T10:45:18.612533661Z
+reasoning:
+  supported: true
+  default_enabled: true

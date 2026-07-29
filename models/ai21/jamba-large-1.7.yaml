@@ -1,3 +1,4 @@
+schema_version: 2
 id: ai21/jamba-large-1.7
 name: 'AI21: Jamba Large 1.7'
 provider: Ai21
@@ -11,3 +12,35 @@ features:
   - CapJsonMode
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:36:10.576093349Z
+upstream:
+  openrouter:
+    canonical_slug: ai21/jamba-large-1.7
+    huggingface_id: ai21labs/AI21-Jamba-Large-1.7
+    supported_parameters:
+      - max_tokens
+      - response_format
+      - stop
+      - temperature
+      - tool_choice
+      - tools
+      - top_p
+    input_modalities:
+      - text
+    output_modalities:
+      - text
+    knowledge_cutoff: "2024-08-31"
+    fetched_at: 2026-07-29T10:36:10.576093729Z
+  huggingface:
+    id: ai21labs/AI21-Jamba-Large-1.7
+    revision: f95d1c3c9ac9028a9306e717047b5515e73c1dd1
+    model_type: jamba
+    architectures:
+      - JambaForCausalLM
+    license: other
+    tags:
+      - jamba
+      - license:other
+      - region:us
+      - safetensors
+    fetched_at: 2026-07-29T10:36:11.464584712Z

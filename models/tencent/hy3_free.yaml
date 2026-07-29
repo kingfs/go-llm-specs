@@ -1,3 +1,4 @@
+schema_version: 2
 id: tencent/hy3:free
 name: 'Tencent: Hy3 (free)'
 provider: Tencent
@@ -11,3 +12,4 @@ features:
   - CapJsonMode
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:44:25.152123501Z

@@ -1,3 +1,4 @@
+schema_version: 2
 id: opengvlab/internvl3-78b
 name: 'OpenGVLab: InternVL3 78B'
 provider: Opengvlab
@@ -14,3 +15,41 @@ features:
   - ModalityImageIn
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:41:45.663708494Z
+upstream:
+  huggingface:
+    id: OpenGVLab/InternVL3-78B
+    revision: 4a42b163cc0e222e97b10b562eee98da6bf26077
+    pipeline_tag: image-text-to-text
+    model_type: internvl_chat
+    architectures:
+      - InternVLChatModel
+    tags:
+      - arxiv:2312.14238
+      - arxiv:2404.16821
+      - arxiv:2411.10442
+      - arxiv:2412.05271
+      - arxiv:2412.09616
+      - arxiv:2504.10479
+      - base_model:OpenGVLab/InternVL3-78B-Instruct
+      - base_model:finetune:OpenGVLab/InternVL3-78B-Instruct
+      - conversational
+      - custom_code
+      - dataset:OpenGVLab/MMPR-v1.2
+      - feature-extraction
+      - image-text-to-text
+      - internvl
+      - internvl_chat
+      - license:other
+      - multilingual
+      - region:us
+      - safetensors
+      - transformers
+    tokenizer_model_max_length: 8192
+    processor_class: CLIPFeatureExtractor
+    chat_template_sha256: ad63f5d8de91c04037f7bf7eac49e3161992bd874214a84c43e77b5d93f8676b
+    structured_files:
+      - config.json
+      - preprocessor_config.json
+      - tokenizer_config.json
+    fetched_at: 2026-07-29T10:41:48.551980774Z

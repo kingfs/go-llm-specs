@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "thedrummer/cydonia-24b-v4.1",
+  "status": "pending",
+  "created_at": "2026-07-29T12:04:14.991955064Z",
+  "source": {
+    "url": "https://huggingface.co/TheDrummer/Cydonia-24B-v4.1/resolve/717e35eceb939ee36c7cdd35559c3e0af66d5d24/README.md",
+    "revision": "717e35eceb939ee36c7cdd35559c3e0af66d5d24",
+    "sha256": "d457c88c357dcb10e8140ac8d46c2d47820da2afbfa4b89f8eca3ef18f9ce11c"
+  },
+  "generator": {
+    "model": "qwen3.6-27b",
+    "wire_api": "responses"
+  },
+  "claims": [
+    {
+      "field": "description",
+      "value": "Cydonia 24B v4.1, a model based on Mistral-Small-3.2-24B-Instruct-2507. Usage specifies 'Mistral v7 Tekken'.",
+      "evidence": "base_model: - mistralai/Mistral-Small-3.2-24B-Instruct-2507",
+      "section": "Drummer proudly presents...",
+      "confidence": "high"
+    },
+    {
+      "field": "description",
+      "value": "Model described as 'Cydonia Evolved again.'",
+      "evidence": "## Description \u003e Cydonia Evolved again.",
+      "section": "Description",
+      "confidence": "high"
+    }
+  ]
+}

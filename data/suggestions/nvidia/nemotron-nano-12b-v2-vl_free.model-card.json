@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "nvidia/nemotron-nano-12b-v2-vl:free",
+  "status": "pending",
+  "created_at": "2026-07-29T11:40:27.181942905Z",
+  "source": {
+    "url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-Nano-12B-v2-VL-BF16/resolve/5d250e2e111dc5e1434131bdf3d590c27a878ade/README.md",
+    "revision": "5d250e2e111dc5e1434131bdf3d590c27a878ade",
+    "sha256": "8e663888f46e14408cb635e69c6d700cc7c980ae41df9b78157571e0b834c3ef"
+  },
+  "generator": {
+    "model": "qwen3.6-27b",
+    "wire_api": "responses"
+  },
+  "claims": [
+    {
+      "field": "description",
+      "value": "NVIDIA Nemotron Nano v2 12B VL model enables multi-image reasoning and video understanding, along with strong document intelligence, visual Q\u0026A and summarization capabilities. It supports up to 4 images of documents with long text prompts for summarization and VQA.",
+      "evidence": "NVIDIA Nemotron Nano v2 12B VL model enables multi-image reasoning and video understanding, along with strong document intelligence, visual Q\u0026A and summarization capabilities.",
+      "section": "Model Overview",
+      "confidence": "high"
+    },
+    {
+      "field": "context_length",
+      "value": 131072,
+      "evidence": "Input + Output Token: 128K",
+      "section": "Input:",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "CapChat",
+        "ModalityTextIn",
+        "ModalityTextOut",
+        "ModalityImageIn",
+        "ModalityVideoIn"
+      ],
+      "evidence": "Input Type(s): Image, Video, Text",
+      "section": "Input:",
+      "confidence": "high"
+    }
+  ]
+}

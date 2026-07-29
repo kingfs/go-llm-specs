@@ -1,3 +1,4 @@
+schema_version: 2
 id: mistralai/codestral-2508
 name: 'Mistral: Codestral 2508'
 provider: Mistral
@@ -16,3 +17,27 @@ features:
   - CapJsonMode
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:39:23.805118881Z
+upstream:
+  openrouter:
+    canonical_slug: mistralai/codestral-2508
+    supported_parameters:
+      - frequency_penalty
+      - max_tokens
+      - prediction
+      - presence_penalty
+      - response_format
+      - seed
+      - stop
+      - structured_outputs
+      - temperature
+      - tool_choice
+      - tools
+      - top_p
+    input_modalities:
+      - file
+      - text
+    output_modalities:
+      - text
+    knowledge_cutoff: "2025-03-31"
+    fetched_at: 2026-07-29T10:39:23.805119311Z

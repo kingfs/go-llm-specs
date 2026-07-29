@@ -1,3 +1,4 @@
+schema_version: 2
 id: bytedance-seed/seed-1.6-flash
 name: 'ByteDance Seed: Seed 1.6 Flash'
 provider: Bytedance-Seed
@@ -13,3 +14,28 @@ features:
   - ModalityTextIn
   - ModalityTextOut
   - ModalityVideoIn
+discovered_at: 2026-07-29T10:37:11.885725058Z
+upstream:
+  openrouter:
+    canonical_slug: bytedance-seed/seed-1.6-flash-20250625
+    supported_parameters:
+      - frequency_penalty
+      - include_reasoning
+      - max_tokens
+      - reasoning
+      - response_format
+      - stop
+      - structured_outputs
+      - temperature
+      - tool_choice
+      - tools
+      - top_p
+    input_modalities:
+      - image
+      - text
+      - video
+    output_modalities:
+      - text
+    fetched_at: 2026-07-29T10:37:11.885725598Z
+reasoning:
+  supported: true

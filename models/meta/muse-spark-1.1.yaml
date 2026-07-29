@@ -1,3 +1,4 @@
+schema_version: 2
 id: meta/muse-spark-1.1
 name: 'Meta: Muse Spark 1.1'
 provider: Meta
@@ -14,3 +15,39 @@ features:
   - ModalityTextIn
   - ModalityTextOut
   - ModalityVideoIn
+discovered_at: 2026-07-29T10:39:02.285061504Z
+upstream:
+  openrouter:
+    canonical_slug: meta/muse-spark-1.1-20260709
+    supported_parameters:
+      - include_reasoning
+      - max_tokens
+      - reasoning
+      - reasoning_effort
+      - repetition_penalty
+      - response_format
+      - structured_outputs
+      - temperature
+      - tool_choice
+      - tools
+      - top_k
+      - top_p
+    input_modalities:
+      - audio
+      - file
+      - image
+      - text
+      - video
+    output_modalities:
+      - text
+    fetched_at: 2026-07-29T10:39:02.285061974Z
+reasoning:
+  supported: true
+  mandatory: true
+  default_effort: medium
+  supported_efforts:
+    - high
+    - low
+    - medium
+    - minimal
+    - xhigh

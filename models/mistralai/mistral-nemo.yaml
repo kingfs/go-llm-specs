@@ -1,3 +1,4 @@
+schema_version: 2
 id: mistralai/mistral-nemo
 name: 'Mistral: Mistral Nemo'
 provider: Mistral
@@ -21,3 +22,66 @@ features:
   - CapJsonMode
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:39:39.642724348Z
+upstream:
+  openrouter:
+    canonical_slug: mistralai/mistral-nemo
+    huggingface_id: mistralai/Mistral-Nemo-Instruct-2407
+    supported_parameters:
+      - frequency_penalty
+      - logit_bias
+      - logprobs
+      - max_tokens
+      - min_p
+      - presence_penalty
+      - repetition_penalty
+      - response_format
+      - seed
+      - stop
+      - structured_outputs
+      - temperature
+      - tool_choice
+      - tools
+      - top_k
+      - top_logprobs
+      - top_p
+    input_modalities:
+      - text
+    output_modalities:
+      - text
+    knowledge_cutoff: "2024-04-30"
+    fetched_at: 2026-07-29T10:39:39.642724698Z
+  huggingface:
+    id: mistralai/Mistral-Nemo-Instruct-2407
+    revision: 04d8a90549d23fc6bd7f642064003592df51e9b3
+    model_type: mistral
+    architectures:
+      - MistralForCausalLM
+    license: apache-2.0
+    tags:
+      - base_model:finetune:mistralai/Mistral-Nemo-Base-2407
+      - base_model:mistralai/Mistral-Nemo-Base-2407
+      - de
+      - deploy:azure
+      - deploy:sagemaker
+      - en
+      - es
+      - eval-results
+      - fr
+      - it
+      - ja
+      - license:apache-2.0
+      - mistral
+      - mistral-common
+      - pt
+      - region:us
+      - ru
+      - safetensors
+      - vllm
+      - zh
+    config_context_length: 131072
+    chat_template_sha256: a0a5aa4eaec3e69b25dd3a09f7019f83317e115d2b9b1ab1aff57f2d77ccc327
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-07-29T10:39:41.556053584Z

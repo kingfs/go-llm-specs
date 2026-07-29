@@ -1,3 +1,4 @@
+schema_version: 2
 id: google/gemini-2.5-flash-preview-09-2025
 name: 'Google: Gemini 2.5 Flash Preview 09-2025'
 provider: Google
@@ -18,3 +19,4 @@ features:
   - ModalityTextIn
   - ModalityTextOut
   - ModalityVideoIn
+discovered_at: 2026-07-29T10:38:01.529047163Z

@@ -1,3 +1,4 @@
+schema_version: 2
 id: mistralai/mixtral-8x22b-instruct
 name: 'Mistral: Mixtral 8x22B Instruct'
 provider: Mistral
@@ -24,3 +25,55 @@ features:
   - CapJsonMode
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:39:51.556985804Z
+upstream:
+  openrouter:
+    canonical_slug: mistralai/mixtral-8x22b-instruct
+    huggingface_id: mistralai/Mixtral-8x22B-Instruct-v0.1
+    supported_parameters:
+      - frequency_penalty
+      - max_tokens
+      - presence_penalty
+      - response_format
+      - seed
+      - stop
+      - structured_outputs
+      - temperature
+      - tool_choice
+      - tools
+      - top_p
+    input_modalities:
+      - file
+      - text
+    output_modalities:
+      - text
+    knowledge_cutoff: "2024-01-31"
+    fetched_at: 2026-07-29T10:39:51.556986174Z
+  huggingface:
+    id: mistralai/Mixtral-8x22B-Instruct-v0.1
+    revision: cc88a6cc19fbd17d9f1c0ee0b0d70a748dce698d
+    model_type: mixtral
+    architectures:
+      - MixtralForCausalLM
+    license: apache-2.0
+    tags:
+      - base_model:finetune:mistralai/Mixtral-8x22B-v0.1
+      - base_model:mistralai/Mixtral-8x22B-v0.1
+      - de
+      - en
+      - es
+      - eval-results
+      - fr
+      - it
+      - license:apache-2.0
+      - mistral-common
+      - mixtral
+      - region:us
+      - safetensors
+      - vllm
+    config_context_length: 65536
+    chat_template_sha256: b3fcbc404295814f21f15e626e6403753def5c2359d8e797d3aea5fd47f47a72
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-07-29T10:39:53.488375558Z

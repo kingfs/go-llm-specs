@@ -1,3 +1,4 @@
+schema_version: 2
 id: x-ai/grok-3-beta
 name: 'xAI: Grok 3 Beta'
 provider: X-Ai
@@ -15,3 +16,4 @@ features:
   - CapJsonMode
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:44:46.018501899Z

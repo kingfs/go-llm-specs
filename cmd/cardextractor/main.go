@@ -20,9 +20,12 @@ import (
 
 type config struct {
 	ModelsDir, ModelID, Input, Output, HFBase string
+	SuggestionsDir                            string
 	APIBase, APIKeyEnv, AIModel, WireAPI      string
+	ReasoningEffort                           string
 	MaxChars                                  int
 	Timeout                                   time.Duration
+	SkipCurrent                               bool
 }
 
 type aiClaims struct {
@@ -43,13 +46,16 @@ func parseFlags() config {
 	flag.StringVar(&cfg.ModelID, "model", "", "registry model ID")
 	flag.StringVar(&cfg.Input, "input", "", "optional local model-card Markdown path")
 	flag.StringVar(&cfg.Output, "output", "", "suggestion output path")
+	flag.StringVar(&cfg.SuggestionsDir, "suggestions-dir", "data/suggestions", "directory used for content-addressed suggestion reuse")
 	flag.StringVar(&cfg.HFBase, "hf-base", "https://huggingface.co", "Hugging Face base URL")
 	flag.StringVar(&cfg.APIBase, "api-base", envOr("LLM_BASE_URL", "http://localhost:8000/v1"), "OpenAI-compatible API base URL")
 	flag.StringVar(&cfg.APIKeyEnv, "api-key-env", "LLM_API_KEY", "environment variable containing API key")
 	flag.StringVar(&cfg.AIModel, "ai-model", envOr("LLM_MODEL", ""), "extractor model serving ID")
 	flag.StringVar(&cfg.WireAPI, "wire-api", "responses", "wire API: responses or chat")
+	flag.StringVar(&cfg.ReasoningEffort, "reasoning-effort", "low", "optional Responses reasoning effort")
 	flag.IntVar(&cfg.MaxChars, "max-chars", 60000, "maximum model-card characters sent to AI")
 	flag.DurationVar(&cfg.Timeout, "timeout", 5*time.Minute, "AI and download timeout")
+	flag.BoolVar(&cfg.SkipCurrent, "skip-current", true, "skip when output matches source revision and SHA")
 	flag.Parse()
 	return cfg
 }
@@ -69,9 +75,31 @@ func run(ctx context.Context, cfg config) error {
 	if len(content) > cfg.MaxChars {
 		content = content[:cfg.MaxChars]
 	}
+	digest := sha256.Sum256(content)
+	digestText := fmt.Sprintf("%x", digest)
+	output := cfg.Output
+	if output == "" {
+		output = filepath.Join(cfg.SuggestionsDir, filepath.FromSlash(safeSuggestionID(model.ID))+".model-card.json")
+	}
+	if cfg.SkipCurrent {
+		if existing, loadErr := suggestion.Load(output); loadErr == nil && existing.Source.Revision == revision && existing.Source.SHA256 == digestText {
+			fmt.Printf("current suggestion already exists at %s\n", output)
+			return nil
+		}
+	}
+	if reused, reuseErr := findReusable(cfg.SuggestionsDir, output, revision, digestText); reuseErr != nil {
+		return reuseErr
+	} else if reused != nil {
+		reused.ModelID, reused.CreatedAt, reused.Status = model.ID, time.Now().UTC(), "pending"
+		if err := suggestion.Save(output, *reused); err != nil {
+			return err
+		}
+		fmt.Printf("reused %d claims from identical source at %s\n", len(reused.Claims), output)
+		return nil
+	}
 	client, err := aiclient.New(aiclient.Config{
 		BaseURL: cfg.APIBase, APIKey: strings.TrimSpace(os.Getenv(cfg.APIKeyEnv)), Model: cfg.AIModel,
-		WireAPI: cfg.WireAPI, Timeout: cfg.Timeout, Retries: 2,
+		WireAPI: cfg.WireAPI, Timeout: cfg.Timeout, Retries: 2, ReasoningEffort: cfg.ReasoningEffort, JSONSchema: claimsSchema(),
 	})
 	if err != nil {
 		return err
@@ -80,22 +108,65 @@ func run(ctx context.Context, cfg config) error {
 	if err := client.JSON(ctx, extractionPrompt(model, string(content)), &extracted); err != nil {
 		return err
 	}
-	digest := sha256.Sum256(content)
+	validClaims := make([]suggestion.Claim, 0, len(extracted.Claims))
+	for _, claim := range extracted.Claims {
+		if err := suggestion.ValidateClaim(claim); err != nil {
+			fmt.Fprintf(os.Stderr, "dropping invalid %s claim: %v\n", claim.Field, err)
+			continue
+		}
+		validClaims = append(validClaims, claim)
+	}
+	if len(validClaims) == 0 {
+		return fmt.Errorf("AI response contained no valid claims")
+	}
 	document := suggestion.Document{
 		SchemaVersion: suggestion.CurrentSchemaVersion, Kind: "model_card", ModelID: model.ID,
 		Status: "pending", CreatedAt: time.Now().UTC(),
-		Source:    suggestion.Source{URL: sourceURL, Revision: revision, SHA256: fmt.Sprintf("%x", digest)},
-		Generator: suggestion.Generator{Model: cfg.AIModel, WireAPI: cfg.WireAPI}, Claims: extracted.Claims,
-	}
-	output := cfg.Output
-	if output == "" {
-		output = filepath.Join("data", "suggestions", filepath.FromSlash(model.ID)+".model-card.json")
+		Source:    suggestion.Source{URL: sourceURL, Revision: revision, SHA256: digestText},
+		Generator: suggestion.Generator{Model: cfg.AIModel, WireAPI: cfg.WireAPI}, Claims: validClaims,
 	}
 	if err := suggestion.Save(output, document); err != nil {
 		return err
 	}
 	fmt.Printf("wrote %d pending claims to %s\n", len(document.Claims), output)
 	return nil
+}
+
+func safeSuggestionID(id string) string { return strings.ReplaceAll(id, ":", "_") }
+
+func claimsSchema() map[string]any {
+	claim := map[string]any{
+		"type": "object", "additionalProperties": false,
+		"required": []string{"field", "value", "evidence", "section", "confidence"},
+		"properties": map[string]any{
+			"field": map[string]any{"type": "string", "enum": []string{"description", "context_length", "max_output", "features", "reasoning.supported", "reasoning.parser", "serving.vllm_args", "serving.sglang_args"}},
+			"value": map[string]any{}, "evidence": map[string]any{"type": "string"}, "section": map[string]any{"type": "string"},
+			"confidence": map[string]any{"type": "string", "enum": []string{"high", "medium", "low"}},
+		},
+	}
+	return map[string]any{"type": "object", "additionalProperties": false, "required": []string{"claims"}, "properties": map[string]any{"claims": map[string]any{"type": "array", "maxItems": 12, "items": claim}}}
+}
+
+func findReusable(root, target, revision, digest string) (*suggestion.Document, error) {
+	var match *suggestion.Document
+	err := filepath.Walk(root, func(path string, info os.FileInfo, err error) error {
+		if os.IsNotExist(err) {
+			return nil
+		}
+		if err != nil || info.IsDir() || path == target || !strings.HasSuffix(path, ".model-card.json") {
+			return err
+		}
+		document, loadErr := suggestion.Load(path)
+		if loadErr != nil {
+			return loadErr
+		}
+		if document.Source.Revision == revision && document.Source.SHA256 == digest {
+			copy := document
+			match = &copy
+		}
+		return nil
+	})
+	return match, err
 }
 
 func findModel(root, id string) (registry.Model, error) {

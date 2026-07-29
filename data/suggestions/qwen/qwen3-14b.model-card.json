@@ -1,0 +1,72 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "qwen/qwen3-14b",
+  "status": "pending",
+  "created_at": "2026-07-29T11:46:34.199197952Z",
+  "source": {
+    "url": "https://huggingface.co/Qwen/Qwen3-14B/resolve/40c069824f4251a91eefaf281ebe4c544efd3e18/README.md",
+    "revision": "40c069824f4251a91eefaf281ebe4c544efd3e18",
+    "sha256": "2bc71840fcdba93a08f5e3e28fde446fd1cc9a6c35e094a666ca64238af61bb5"
+  },
+  "generator": {
+    "model": "qwen3.6-27b",
+    "wire_api": "responses"
+  },
+  "claims": [
+    {
+      "field": "description",
+      "value": "Causal Language Model. 14.8B total parameters (13.2B non-embedding). 40 layers with GQA (40 Q heads, 8 KV heads). Natively supports 32,768 context length, up to 131,072 with YaRN. Supports seamless switching between thinking and non-thinking modes in a single model.",
+      "evidence": "Type: Causal Language Models",
+      "section": "Model Overview",
+      "confidence": "high"
+    },
+    {
+      "field": "context_length",
+      "value": 32768,
+      "evidence": "Context Length: 32,768 natively and [131,072 tokens with YaRN](#processing-long-texts).",
+      "section": "Model Overview",
+      "confidence": "high"
+    },
+    {
+      "field": "max_output",
+      "value": 32768,
+      "evidence": "generated_ids = model.generate(**model_inputs, max_new_tokens=32768)",
+      "section": "Quickstart",
+      "confidence": "medium"
+    },
+    {
+      "field": "features",
+      "value": [
+        "CapFunctionCall"
+      ],
+      "evidence": "enabling precise integration with external tools in both thinking and unthinking modes",
+      "section": "Qwen3 Highlights",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "ModalityTextIn",
+        "ModalityTextOut"
+      ],
+      "evidence": "uniquely support of seamless switching between thinking mode (for complex logical reasoning, math, and coding) and non-thinking mode",
+      "section": "Qwen3 Highlights",
+      "confidence": "high"
+    },
+    {
+      "field": "reasoning.supported",
+      "value": true,
+      "evidence": "model.generate(**model_inputs, max_new_tokens=32768)",
+      "section": "Quickstart",
+      "confidence": "high"
+    },
+    {
+      "field": "reasoning.parser",
+      "value": "qwen3",
+      "evidence": "parsing thinking content: index = len(output_ids) - output_ids[::-1].index(151668)",
+      "section": "Quickstart",
+      "confidence": "high"
+    }
+  ]
+}

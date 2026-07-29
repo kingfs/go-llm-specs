@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "qwen/qwen-2.5-7b-instruct",
+  "status": "pending",
+  "created_at": "2026-07-29T11:44:28.004286524Z",
+  "source": {
+    "url": "https://huggingface.co/Qwen/Qwen2.5-7B-Instruct/resolve/a09a35458c702b33eeacc393d103063234e8bc28/README.md",
+    "revision": "a09a35458c702b33eeacc393d103063234e8bc28",
+    "sha256": "f366f33bbf6bcadbb7d87f0a21a7b65584a56b8d58b0743c77c88bee625b93a6"
+  },
+  "generator": {
+    "model": "qwen3.6-27b",
+    "wire_api": "responses"
+  },
+  "claims": [
+    {
+      "field": "description",
+      "value": "Qwen2.5-7B-Instruct is a Causal Language Model with RoPE, SwiGLU, RMSNorm, and Attention QKV bias, 7.61B parameters, 28 layers, GQA 28 Q/4 KV heads.",
+      "evidence": "Type: Causal Language Models",
+      "section": "# Qwen2.5-7B-Instruct",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "ModalityTextIn",
+        "ModalityTextOut"
+      ],
+      "evidence": "Number of Layers: 28",
+      "section": "# Qwen2.5-7B-Instruct",
+      "confidence": "high"
+    },
+    {
+      "field": "context_length",
+      "value": 131072,
+      "evidence": "Context Length: Full 131,072 tokens and generation 8192 tokens",
+      "section": "# Qwen2.5-7B-Instruct",
+      "confidence": "high"
+    },
+    {
+      "field": "max_output",
+      "value": 8192,
+      "evidence": "Context Length: Full 131,072 tokens and generation 8192 tokens",
+      "section": "# Qwen2.5-7B-Instruct",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "CapJsonMode"
+      ],
+      "evidence": "Significant improvements in ... generating structured outputs especially JSON.",
+      "section": "# Qwen2.5-7B-Instruct",
+      "confidence": "high"
+    }
+  ]
+}

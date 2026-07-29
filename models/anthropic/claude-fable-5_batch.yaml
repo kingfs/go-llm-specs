@@ -1,3 +1,4 @@
+schema_version: 2
 id: anthropic/claude-fable-5:batch
 name: 'Anthropic: Claude Fable 5 (batch)'
 provider: Anthropic
@@ -12,3 +13,35 @@ features:
   - ModalityImageIn
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:36:42.860978882Z
+upstream:
+  openrouter:
+    canonical_slug: anthropic/claude-5-fable-20260609
+    supported_parameters:
+      - include_reasoning
+      - max_tokens
+      - reasoning
+      - reasoning_effort
+      - response_format
+      - stop
+      - structured_outputs
+      - tool_choice
+      - tools
+      - verbosity
+    input_modalities:
+      - file
+      - image
+      - text
+    output_modalities:
+      - text
+    fetched_at: 2026-07-29T10:36:42.860979412Z
+reasoning:
+  supported: true
+  mandatory: true
+  default_effort: high
+  supported_efforts:
+    - high
+    - low
+    - max
+    - medium
+    - xhigh

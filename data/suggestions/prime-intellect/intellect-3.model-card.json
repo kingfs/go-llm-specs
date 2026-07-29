@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "prime-intellect/intellect-3",
+  "status": "pending",
+  "created_at": "2026-07-29T11:43:59.546590945Z",
+  "source": {
+    "url": "https://huggingface.co/PrimeIntellect/INTELLECT-3/resolve/ff39d4a4688989f3f28868923d030c28e1b7d81c/README.md",
+    "revision": "ff39d4a4688989f3f28868923d030c28e1b7d81c",
+    "sha256": "1a5876b9d2ca77f5b48b2f56dba94667a815796832baff79af2aee68b4b738af"
+  },
+  "generator": {
+    "model": "qwen3.6-27b",
+    "wire_api": "responses"
+  },
+  "claims": [
+    {
+      "field": "description",
+      "value": "A 106B total parameter (12B active) Mixture-of-Experts reasoning model post-trained from GLM-4.5-Air-Base using SFT and large-scale reinforcement learning.",
+      "evidence": "**INTELLECT-3** is a 106B (A12B) parameter Mixture-of-Experts reasoning model",
+      "section": "Introduction",
+      "confidence": "high"
+    },
+    {
+      "field": "reasoning.parser",
+      "value": "deepseek_r1",
+      "evidence": "reasoning-parser deepseek_r1",
+      "section": "Serving with vLLM",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "ModalityTextIn",
+        "ModalityTextOut"
+      ],
+      "evidence": "trained with large-scale RL... mixture-of-experts",
+      "section": "Introduction",
+      "confidence": "high"
+    }
+  ]
+}

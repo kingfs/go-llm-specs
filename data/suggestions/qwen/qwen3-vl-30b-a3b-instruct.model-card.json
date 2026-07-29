@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "qwen/qwen3-vl-30b-a3b-instruct",
+  "status": "pending",
+  "created_at": "2026-07-29T11:51:59.765462609Z",
+  "source": {
+    "url": "https://huggingface.co/Qwen/Qwen3-VL-30B-A3B-Instruct/resolve/9c4b90e1e4ba969fd3b5378b57d966d725f1b86c/README.md",
+    "revision": "9c4b90e1e4ba969fd3b5378b57d966d725f1b86c",
+    "sha256": "37d278ac62511b5267c1a65d83d5c93a1234c7c3aafc68fb5be48a385269aef5"
+  },
+  "generator": {
+    "model": "qwen3.6-27b",
+    "wire_api": "responses"
+  },
+  "claims": [
+    {
+      "field": "description",
+      "value": "Qwen3-VL-30B-A3B-Instruct is a vision-language model with MoE architecture, supporting multimodal inference (images, text, video) for tasks like visual grounding, OCR, GUI navigation, and code generation. It uses interleaved-MRoPE positional embeddings and DeepStack feature fusion. Supports native 256K context, expandable to 1M. Handles 32 languages OCR, video temporal modeling, and spatial reasoning including 3D grounding. Includes visual coding (Draw.io/HTML/CSS/JS from images/videos) and visual agent capabilities for PC/mobile GUIs.",
+      "evidence": "Pipeline tag image-text-to-text, model accepts image inputs and outputs text",
+      "section": "## Quickstart",
+      "confidence": "medium"
+    },
+    {
+      "field": "context_length",
+      "value": 262144,
+      "evidence": "Native 256K context, expandable to 1M",
+      "section": "## Quickstart",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "ModalityTextIn",
+        "ModalityTextOut",
+        "ModalityImageIn",
+        "ModalityVideoIn",
+        "CapFunctionCall"
+      ],
+      "evidence": "supports 32 languages (up from 19)",
+      "section": "## Quickstart",
+      "confidence": "high"
+    },
+    {
+      "field": "reasoning.parser",
+      "value": "Visual Agent: Operates PC/mobile GUIs—recognizes elements, understands functions, invokes tools, completes tasks.",
+      "evidence": "Visual Agent: Operates PC/mobile GUIs—recognizes elements, understands functions, invokes tools, completes tasks.",
+      "section": "## Quickstart",
+      "confidence": "low"
+    }
+  ]
+}

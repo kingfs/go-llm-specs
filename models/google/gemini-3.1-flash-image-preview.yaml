@@ -1,3 +1,4 @@
+schema_version: 2
 id: google/gemini-3.1-flash-image-preview
 name: 'Google: Nano Banana 2 (Gemini 3.1 Flash Image Preview)'
 provider: Google
@@ -12,3 +13,31 @@ features:
   - ModalityImageOut
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:38:06.669483682Z
+upstream:
+  openrouter:
+    canonical_slug: google/gemini-3.1-flash-image-preview-20260226
+    supported_parameters:
+      - include_reasoning
+      - max_tokens
+      - reasoning
+      - reasoning_effort
+      - response_format
+      - seed
+      - structured_outputs
+      - temperature
+      - top_p
+    input_modalities:
+      - image
+      - text
+    output_modalities:
+      - image
+      - text
+    fetched_at: 2026-07-29T10:38:06.669484042Z
+reasoning:
+  supported: true
+  default_enabled: true
+  default_effort: minimal
+  supported_efforts:
+    - high
+    - minimal

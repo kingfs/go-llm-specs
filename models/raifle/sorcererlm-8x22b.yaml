@@ -1,3 +1,4 @@
+schema_version: 2
 id: raifle/sorcererlm-8x22b
 name: SorcererLM 8x22B
 provider: Raifle
@@ -18,3 +19,4 @@ features:
   - CapChat
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:43:54.254154597Z

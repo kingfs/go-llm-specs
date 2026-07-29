@@ -1,3 +1,4 @@
+schema_version: 2
 id: alibaba/tongyi-deepresearch-30b-a3b
 name: Tongyi DeepResearch 30B A3B
 provider: Qwen
@@ -17,3 +18,4 @@ features:
   - CapJsonMode
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:36:18.293641145Z

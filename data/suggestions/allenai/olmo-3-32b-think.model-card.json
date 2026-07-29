@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "allenai/olmo-3-32b-think",
+  "status": "pending",
+  "created_at": "2026-07-29T11:02:50.378212564Z",
+  "source": {
+    "url": "https://huggingface.co/allenai/Olmo-3-32B-Think/resolve/f2edda15216e738ef2bb73771e11890e152b2112/README.md",
+    "revision": "f2edda15216e738ef2bb73771e11890e152b2112",
+    "sha256": "b9acc997544025cba7c1d798a0a5e527cded599954f244ba6b5ab4da2110ea2d"
+  },
+  "generator": {
+    "model": "qwen3.6-27b",
+    "wire_api": "responses"
+  },
+  "claims": [
+    {
+      "field": "description",
+      "value": "Olmo 3 is a family of 7B and 32B Transformer autoregressive language models in Instruct and Think variants, pre-trained on Dolma 3 and post-trained on Dolci datasets.",
+      "evidence": "We introduce Olmo 3, a new family of 7B and 32B models both Instruct and Think variants.",
+      "section": "Model Details",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "CapChat",
+        "ModalityTextIn",
+        "ModalityTextOut"
+      ],
+      "evidence": "The chat template for this model is formatted as:",
+      "section": "Chat template",
+      "confidence": "high"
+    }
+  ]
+}

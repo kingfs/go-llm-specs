@@ -1,3 +1,4 @@
+schema_version: 2
 id: deepcogito/cogito-v2-preview-llama-405b
 name: 'Deep Cogito: Cogito V2 Preview Llama 405B'
 provider: Deepcogito
@@ -11,3 +12,30 @@ features:
   - CapJsonMode
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:37:25.58964874Z
+upstream:
+  huggingface:
+    id: deepcogito/cogito-v2-preview-llama-405B
+    revision: c30a7a0d87be5a6f02ba926c945f5aa1e949d57a
+    pipeline_tag: text-generation
+    model_type: llama
+    architectures:
+      - LlamaForCausalLM
+    tags:
+      - base_model:finetune:meta-llama/Llama-3.1-405B
+      - base_model:meta-llama/Llama-3.1-405B
+      - conversational
+      - endpoints_compatible
+      - license:llama3.1
+      - llama
+      - region:us
+      - safetensors
+      - text-generation
+      - text-generation-inference
+      - transformers
+    config_context_length: 131072
+    tokenizer_model_max_length: 131072
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-07-29T10:37:27.611063395Z

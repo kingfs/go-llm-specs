@@ -1,3 +1,4 @@
+schema_version: 2
 id: moonshotai/kimi-k2:free
 name: 'MoonshotAI: Kimi K2 0711 (free)'
 provider: Moonshotai
@@ -8,3 +9,4 @@ features:
   - CapChat
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:40:13.235733424Z

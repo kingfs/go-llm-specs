@@ -1,0 +1,106 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "openai/gpt-oss-120b",
+  "status": "pending",
+  "created_at": "2026-07-29T11:41:27.050924364Z",
+  "source": {
+    "url": "https://huggingface.co/openai/gpt-oss-120b/resolve/b5c939de8f754692c1647ca79fbf85e8c1e70f8a/README.md",
+    "revision": "b5c939de8f754692c1647ca79fbf85e8c1e70f8a",
+    "sha256": "92b0408cf5dce04e4c5e4e5f2be0361da710d3650baefd7d7519badd1c687919"
+  },
+  "generator": {
+    "model": "qwen3.6-27b",
+    "wire_api": "responses"
+  },
+  "claims": [
+    {
+      "field": "description",
+      "value": "OpenAI's open-weight model for text generation, supporting reasoning, agentic tasks, and developer use cases.",
+      "evidence": "pipeline_tag: text-generation",
+      "section": "Header",
+      "confidence": "high"
+    },
+    {
+      "field": "serving.vllm_args",
+      "value": [
+        "--quantization mxfp4",
+        "--dtype auto",
+        "--max-model-len 32768"
+      ],
+      "evidence": "vllm\n",
+      "section": "Header",
+      "confidence": "high"
+    },
+    {
+      "field": "description",
+      "value": "MoE model with 117B total parameters and 5.1B active parameters, quantized to MXFP4 for single 80GB GPU deployment.",
+      "evidence": "The models were post-trained with MXFP4 quantization of the MoE weights",
+      "section": "Highlights",
+      "confidence": "medium"
+    },
+    {
+      "field": "description",
+      "value": "Supports configurable reasoning effort (low, medium, high) with full access to chain-of-thought reasoning.",
+      "evidence": "Full chain-of-thought: Gain complete access to the model’s reasoning process",
+      "section": "Highlights",
+      "confidence": "high"
+    },
+    {
+      "field": "description",
+      "value": "Native support for function calling, web browsing, Python code execution, and Structured Outputs.",
+      "evidence": "Agentic capabilities: Use the models’ native capabilities for function calling",
+      "section": "Highlights",
+      "confidence": "high"
+    },
+    {
+      "field": "description",
+      "value": "Trained on the harmony response format; must be used with this format to work correctly.",
+      "evidence": "Both models were trained on our harmony response format",
+      "section": "Highlights",
+      "confidence": "high"
+    },
+    {
+      "field": "description",
+      "value": "Fully fine-tunable for specialized use cases.",
+      "evidence": "Fine-tunable: Fully customize models to your specific use case through parameter fine-tuning.",
+      "section": "Highlights",
+      "confidence": "high"
+    },
+    {
+      "field": "description",
+      "value": "Released under Apache 2.0 license, allowing free commercial deployment and customization.",
+      "evidence": "license: apache-2.0",
+      "section": "Header",
+      "confidence": "high"
+    },
+    {
+      "field": "description",
+      "value": "Officially supported via vLLM.",
+      "evidence": "vllm serve openai/gpt-oss-120b",
+      "section": "vLLM",
+      "confidence": "low"
+    },
+    {
+      "field": "description",
+      "value": "Officially supported via Hugging Face Transformers.",
+      "evidence": "You can use gpt-oss-120b and gpt-oss-20b with Transformers.",
+      "section": "Transformers",
+      "confidence": "low"
+    },
+    {
+      "field": "description",
+      "value": "Supports three reasoning levels (low, medium, high) adjustable via system prompts.",
+      "evidence": "Configurable reasoning effort: Easily adjust the reasoning effort (low, medium, high)",
+      "section": "Reasoning levels",
+      "confidence": "medium"
+    },
+    {
+      "field": "description",
+      "value": "Supports web browsing as a built-in tool.",
+      "evidence": "web browsing (using built-in browsing tools)",
+      "section": "Tool use",
+      "confidence": "medium"
+    }
+  ]
+}

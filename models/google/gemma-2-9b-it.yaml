@@ -1,3 +1,4 @@
+schema_version: 2
 id: google/gemma-2-9b-it
 name: 'Google: Gemma 2 9B'
 provider: Google
@@ -18,3 +19,47 @@ features:
   - CapChat
   - ModalityTextIn
   - ModalityTextOut
+discovered_at: 2026-07-29T10:38:13.311753586Z
+upstream:
+  huggingface:
+    id: google/gemma-2-9b-it
+    revision: 11c9b309abf73637e4b6f9a3fa1e92e615547819
+    pipeline_tag: text-generation
+    tags:
+      - arxiv:1705.03551
+      - arxiv:1804.06876
+      - arxiv:1804.09301
+      - arxiv:1809.02789
+      - arxiv:1811.00937
+      - arxiv:1904.09728
+      - arxiv:1905.07830
+      - arxiv:1905.10044
+      - arxiv:1907.10641
+      - arxiv:1911.01547
+      - arxiv:1911.11641
+      - arxiv:2009.03300
+      - arxiv:2009.11462
+      - arxiv:2101.11718
+      - arxiv:2103.03874
+      - arxiv:2107.03374
+      - arxiv:2108.07732
+      - arxiv:2109.07958
+      - arxiv:2110.08193
+      - arxiv:2110.14168
+      - arxiv:2203.09509
+      - arxiv:2206.04615
+      - arxiv:2304.06364
+      - base_model:finetune:google/gemma-2-9b
+      - base_model:google/gemma-2-9b
+      - conversational
+      - deploy:sagemaker
+      - endpoints_compatible
+      - eval-results
+      - gemma2
+      - license:gemma
+      - region:us
+      - safetensors
+      - text-generation
+      - text-generation-inference
+      - transformers
+    fetched_at: 2026-07-29T10:38:13.961264269Z
