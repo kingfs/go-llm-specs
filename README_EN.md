@@ -147,7 +147,10 @@ Maintainer-facing files:
 .
 ├── cmd/
 │   ├── generator/      # sync upstream metadata and generate the static registry
-│   └── translator/     # incrementally fill Chinese descriptions
+│   ├── translator/     # incrementally fill Chinese descriptions
+│   ├── enricher/       # collect rich metadata from structured sources
+│   ├── codexgen/       # generate Codex models.json
+│   └── modelprobe/     # probe vLLM/SGLang and compatible endpoints
 ├── data/
 │   └── models.json     # cached upstream payload
 ├── models/             # human-maintained YAML model definitions
@@ -173,11 +176,19 @@ task test
 task build
 task generator
 task translator
+task cardextract -- -model qwen/qwen3.6-27b -ai-model <local-model>
+task suggestion -- list
+task codexsuggest -- -model qwen/qwen3.6-27b
+task enrich
+task codexgen
+task modelprobe -- -base-url http://localhost:8000/v1 -model qwen3.6-27b -server vllm
 task releasecheck
 task sync
 ```
 
 When changing model metadata, edit `models/**/*.yaml` and regenerate instead of hand-editing `models_gen.go`. See [docs/DEVELOPMENT.md](./docs/DEVELOPMENT.md) for maintainer details and [AGENTS.md](./AGENTS.md) for AI collaboration notes.
+
+Newly discovered or explicitly selected models can use schema v2 to store source-attributed OpenRouter, Hugging Face, reasoning, and Codex metadata. Historical records without a schema version remain v1 and are not bulk-migrated. Run `task enrich -- -model <provider/model>` for explicit enrichment and `task codexgen` to export records with `codex.enabled: true` to the standalone `dist/codex/third-party-models.json`. See the [Codex metadata pipeline](./docs/CODEX_METADATA_PIPELINE.md) for the complete trust model and deployment-probe boundaries.
 
 ## License
 

@@ -15,23 +15,10 @@ import (
 	"time"
 
 	"github.com/joho/godotenv"
-	"gopkg.in/yaml.v3"
+	registrymodel "github.com/kingfs/go-llm-specs/internal/registry"
 )
 
-type ModelRegistry struct {
-	ID            string   `yaml:"id"`
-	Name          string   `yaml:"name"`
-	NameCN        string   `yaml:"name_cn,omitempty"`
-	Provider      string   `yaml:"provider"`
-	Description   string   `yaml:"description,omitempty"`
-	DescriptionCN string   `yaml:"description_cn,omitempty"`
-	ContextLen    int      `yaml:"context_length"`
-	MaxOutput     int      `yaml:"max_output,omitempty"`
-	Features      []string `yaml:"features,omitempty"`
-	Aliases       []string `yaml:"aliases,omitempty"`
-
-	filePath string `yaml:"-"`
-}
+type ModelRegistry = registrymodel.Model
 
 type ChatMessage struct {
 	Role    string `json:"role"`
@@ -125,12 +112,13 @@ func run(cfg translatorConfig) error {
 
 	if cfg.DryRun {
 		for _, model := range pending {
-			log.Printf("dry-run: %s (%s)", model.ID, model.filePath)
+			log.Printf("dry-run: %s (%s)", model.ID, model.FilePath)
 		}
 		return nil
 	}
 
 	totalBatches := (len(pending) + cfg.BatchSize - 1) / cfg.BatchSize
+	failedBatches := 0
 	for i := 0; i < len(pending); i += cfg.BatchSize {
 		end := min(i+cfg.BatchSize, len(pending))
 		batch := pending[i:end]
@@ -140,6 +128,7 @@ func run(cfg translatorConfig) error {
 		translations, err := translateBatch(batch, cfg.APIKey, cfg.APIBase, cfg.Model)
 		if err != nil {
 			log.Printf("Batch %d failed: %v", batchIdx, err)
+			failedBatches++
 			continue
 		}
 
@@ -163,7 +152,9 @@ func run(cfg translatorConfig) error {
 			time.Sleep(cfg.RequestDelay)
 		}
 	}
-
+	if failedBatches > 0 {
+		return fmt.Errorf("translation completed with %d/%d failed batches", failedBatches, totalBatches)
+	}
 	return nil
 }
 
@@ -177,15 +168,8 @@ func scanRegistry(root string) ([]*ModelRegistry, error) {
 			return nil
 		}
 
-		f, err := os.Open(path)
-		if err != nil {
-			return err
-		}
-		defer f.Close()
-
-		var m ModelRegistry
-		if err := yaml.NewDecoder(f).Decode(&m); err == nil && m.ID != "" {
-			m.filePath = path
+		m, err := registrymodel.Load(path)
+		if err == nil && m.ID != "" {
 			models = append(models, &m)
 		}
 		return nil
@@ -225,13 +209,7 @@ func collectPendingTranslations(registry []*ModelRegistry, cfg translatorConfig)
 }
 
 func saveModel(m *ModelRegistry) error {
-	var buf bytes.Buffer
-	enc := yaml.NewEncoder(&buf)
-	enc.SetIndent(2)
-	if err := enc.Encode(m); err != nil {
-		return err
-	}
-	return os.WriteFile(m.filePath, buf.Bytes(), 0o644)
+	return registrymodel.Save(m.FilePath, *m)
 }
 
 func translateBatch(batch []*ModelRegistry, key, base, model string) (map[string]string, error) {

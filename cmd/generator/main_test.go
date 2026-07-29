@@ -1,6 +1,10 @@
 package main
 
-import "testing"
+import (
+	"testing"
+
+	registrymodel "github.com/kingfs/go-llm-specs/internal/registry"
+)
 
 func TestMergeModelRegistryLocalOverridesWin(t *testing.T) {
 	upstream := OpenRouterModel{
@@ -51,6 +55,28 @@ func TestMergeModelRegistryLocalOverridesWin(t *testing.T) {
 	}
 	if len(merged.Aliases) != 1 || merged.Aliases[0] != "custom-alias" {
 		t.Fatalf("unexpected merged aliases: %#v", merged.Aliases)
+	}
+}
+
+func TestMergeModelRegistryPreservesRichAndUnknownFields(t *testing.T) {
+	local := ModelRegistry{
+		ID:            "test/model",
+		Name:          "Local",
+		Provider:      "Test",
+		SchemaVersion: 2,
+		Codex: &registrymodel.CodexMetadata{
+			Enabled: true,
+			Slugs:   []string{"served-model"},
+		},
+		Extra: map[string]any{"future": "preserved"},
+	}
+	merged := mergeModelRegistry(OpenRouterModel{
+		ID:            "test/model",
+		Name:          "Upstream",
+		ContextLength: 2048,
+	}, local)
+	if merged.Codex == nil || !merged.Codex.Enabled || merged.Extra["future"] != "preserved" {
+		t.Fatalf("rich metadata was lost: %#v", merged)
 	}
 }
 

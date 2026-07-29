@@ -4,23 +4,23 @@ on:
   push:
     branches:
       - master
+  pull_request:
+    branches:
+      - master
   schedule:
     - cron: '0 2 * * *'
   workflow_dispatch:
 
 jobs:
   sync-upstream:
-    if: github.event_name != 'push'
+    if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
     runs-on: ubuntu-latest
     permissions:
       contents: write
       models: read
+      pull-requests: write
     outputs:
       changed: ${{ steps.changes.outputs.changed }}
-      release_needed: ${{ steps.releasecheck.outputs.release_needed }}
-      next_tag: ${{ steps.releasecheck.outputs.next_tag }}
-      release_body: ${{ steps.releasecheck.outputs.release_body }}
-      release_summary: ${{ steps.releasecheck.outputs.release_summary }}
     steps:
       - name: Checkout code
         uses: actions/checkout@v5
@@ -40,10 +40,16 @@ jobs:
       - name: Refresh upstream registry
         run: task generator
 
+      - name: Enrich new models from structured sources
+        run: task enrich -- -new-only
+
+      - name: Generate Codex model catalog
+        run: task codexgen
+
       - name: Check for upstream changes
         id: upstream_changes
         run: |
-          if git diff --quiet -- models/ models_gen.go data/models.json; then
+          if git diff --quiet -- models/ models_gen.go data/models.json dist/codex/; then
             echo "changed=false" >> "$GITHUB_OUTPUT"
           else
             echo "changed=true" >> "$GITHUB_OUTPUT"
@@ -61,39 +67,67 @@ jobs:
         if: steps.upstream_changes.outputs.changed == 'true'
         run: task generator
 
+      - name: Regenerate Codex catalog after translation
+        if: steps.upstream_changes.outputs.changed == 'true'
+        run: task codexgen
+
       - name: Check for synced changes
         id: changes
         run: |
-          if git diff --quiet -- models/ models_gen.go data/models.json; then
+          if git diff --quiet -- models/ models_gen.go data/models.json dist/codex/; then
             echo "changed=false" >> "$GITHUB_OUTPUT"
           else
             echo "changed=true" >> "$GITHUB_OUTPUT"
           fi
 
-      - name: Evaluate release necessity
-        id: releasecheck
+      - name: Validate enriched registry and generated artifacts
         run: |
-          task releasecheck -- -github-output "$GITHUB_OUTPUT" -format text > /tmp/releasecheck.txt
-          cat /tmp/releasecheck.txt
+          task lint
+          task test
+          task build
+          task codexgen -- -validate
 
-      - name: Commit and push synced data
+      - name: Install pinned Codex CLI
+        run: npm install --global @openai/codex@0.146.0
+
+      - name: Load catalog through pinned Codex CLI
+        run: task codexcheck
+
+      - name: Create reviewable model sync pull request
         if: steps.changes.outputs.changed == 'true'
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add models_gen.go data/models.json models/
-          git commit -m "feat(data): sync upstream model registry [skip ci]"
-          git push
-
-      - name: Create release for upstream changes
-        if: steps.releasecheck.outputs.release_needed == 'true'
-        uses: softprops/action-gh-release@v2
+        uses: peter-evans/create-pull-request@v7
         with:
-          tag_name: ${{ steps.releasecheck.outputs.next_tag }}
-          name: Release ${{ steps.releasecheck.outputs.next_tag }}
-          body: ${{ steps.releasecheck.outputs.release_body }}
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          branch: automation/model-sync
+          delete-branch: true
+          commit-message: 'feat(data): sync upstream model registry'
+          title: 'feat(data): sync upstream model registry'
+          body: |
+            Automated OpenRouter discovery, structured enrichment, registry generation,
+            and Codex catalog validation. Review source attribution and capability changes
+            before merging.
+          add-paths: |
+            models_gen.go
+            data/models.json
+            models/**
+            dist/codex/**
+
+  validate-pull-request:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-go@v6
+        with:
+          go-version: '1.25'
+      - name: Install Task and pinned Codex CLI
+        run: |
+          go install github.com/go-task/task/v3/cmd/task@latest
+          echo "$(go env GOPATH)/bin" >> "$GITHUB_PATH"
+          npm install --global @openai/codex@0.146.0
+      - name: Validate repository and Codex catalog
+        run: |
+          task ci
+          task codexcheck
 
   release-from-push:
     if: github.event_name == 'push' && github.actor != 'github-actions[bot]'
@@ -121,6 +155,13 @@ jobs:
           task lint
           task test
           task fmt
+          task build
+          task codexgen -- -validate
+
+      - name: Install pinned Codex CLI and load catalog
+        run: |
+          npm install --global @openai/codex@0.146.0
+          task codexcheck
 
       - name: Evaluate release necessity
         id: releasecheck

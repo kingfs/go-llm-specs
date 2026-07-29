@@ -1,0 +1,8 @@
+{
+  "schema_revision": "openai/codex@fe01054a28fa4bd04716d9ceadb410f2443a50ce",
+  "catalog_kind": "standalone-third-party",
+  "model_count": 1,
+  "slugs": [
+    "qwen3.6-27b"
+  ]
+}
