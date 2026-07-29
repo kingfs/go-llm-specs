@@ -3,14 +3,17 @@ package main
 import (
 	"context"
 	"encoding/json"
+	"errors"
 	"flag"
 	"fmt"
 	"log"
 	"net/http"
 	"net/url"
 	"os"
+	"path/filepath"
 	"reflect"
 	"sort"
+	"strconv"
 	"strings"
 	"time"
 	"unicode"
@@ -30,6 +33,13 @@ type config struct {
 	NewOnly        bool
 	DryRun         bool
 	Timeout        time.Duration
+	UpgradeV1      bool
+	Limit          int
+	Delay          time.Duration
+	Retries        int
+	RetryBackoff   time.Duration
+	Checkpoint     string
+	FailureReport  string
 }
 
 type openRouterResponse struct {
@@ -71,6 +81,11 @@ type hfConfig struct {
 	ModelType     string   `json:"model_type"`
 }
 
+type retryPolicy struct {
+	Attempts int
+	Backoff  time.Duration
+}
+
 func main() {
 	cfg := parseFlags()
 	if err := run(context.Background(), cfg); err != nil {
@@ -89,6 +104,13 @@ func parseFlags() config {
 	flag.BoolVar(&cfg.NewOnly, "new-only", true, "only enrich schema-v2 records unless -model is set")
 	flag.BoolVar(&cfg.DryRun, "dry-run", false, "report changes without writing YAML")
 	flag.DurationVar(&cfg.Timeout, "timeout", 20*time.Second, "HTTP request timeout")
+	flag.BoolVar(&cfg.UpgradeV1, "upgrade-v1", false, "allow selected legacy records to be promoted to schema v2")
+	flag.IntVar(&cfg.Limit, "limit", 0, "maximum number of models to process (0 means unlimited)")
+	flag.DurationVar(&cfg.Delay, "delay", 0, "delay between models")
+	flag.IntVar(&cfg.Retries, "retries", 3, "HTTP retries for rate limits and transient failures")
+	flag.DurationVar(&cfg.RetryBackoff, "retry-backoff", time.Second, "initial exponential retry delay")
+	flag.StringVar(&cfg.Checkpoint, "checkpoint", "", "optional JSON checkpoint used to resume a batch")
+	flag.StringVar(&cfg.FailureReport, "failure-report", "", "optional JSON report for per-model failures")
 	flag.Parse()
 	return cfg
 }
@@ -97,11 +119,22 @@ func run(ctx context.Context, cfg config) error {
 	if cfg.Source != "all" && cfg.Source != "openrouter" && cfg.Source != "huggingface" {
 		return fmt.Errorf("unsupported source %q", cfg.Source)
 	}
+	if cfg.Limit < 0 || cfg.Retries < 0 || cfg.Delay < 0 || cfg.RetryBackoff < 0 {
+		return fmt.Errorf("limit, retries, delay, and retry-backoff cannot be negative")
+	}
 	models, err := registry.Scan(cfg.ModelsDir)
 	if err != nil {
 		return err
 	}
 	selected := selectModels(models, cfg)
+	completed, err := loadCheckpoint(cfg.Checkpoint)
+	if err != nil {
+		return err
+	}
+	selected = filterCompleted(selected, completed)
+	if cfg.Limit > 0 && len(selected) > cfg.Limit {
+		selected = selected[:cfg.Limit]
+	}
 	if len(selected) == 0 {
 		log.Println("No models selected for enrichment")
 		return nil
@@ -115,13 +148,22 @@ func run(ctx context.Context, cfg config) error {
 		}
 	}
 	hfClient := &http.Client{Timeout: cfg.Timeout}
+	retry := retryPolicy{Attempts: cfg.Retries + 1, Backoff: cfg.RetryBackoff}
 	changed := 0
 	needsReview := 0
+	failures := make(map[string]string)
 	for i := range selected {
+		if i > 0 && cfg.Delay > 0 {
+			select {
+			case <-ctx.Done():
+				return ctx.Err()
+			case <-time.After(cfg.Delay):
+			}
+		}
 		model := &selected[i]
 		orModel, hasOpenRouter := upstream[model.ID]
 		modelChanged := false
-		if cfg.Model != "" && !model.IsV2() {
+		if !model.IsV2() && (cfg.Model != "" || cfg.UpgradeV1) {
 			now := time.Now().UTC()
 			model.SchemaVersion = registry.CurrentSchemaVersion
 			if model.DiscoveredAt == nil {
@@ -140,8 +182,9 @@ func run(ctx context.Context, cfg config) error {
 			if hfID == "" && hasOpenRouter {
 				hfID = orModel.HuggingFaceID
 			}
-			hf, status, err := resolveHuggingFace(ctx, hfClient, cfg.HuggingFaceAPI, *model, hfID)
+			hf, status, err := resolveHuggingFace(ctx, hfClient, retry, cfg.HuggingFaceAPI, *model, hfID)
 			if err != nil {
+				failures[model.ID] = err.Error()
 				log.Printf("%s: Hugging Face enrichment failed: %v", model.ID, err)
 			} else if status == "ambiguous" {
 				needsReview++
@@ -150,18 +193,26 @@ func run(ctx context.Context, cfg config) error {
 				modelChanged = enrichHuggingFace(model, *hf, time.Now().UTC()) || modelChanged
 			}
 		}
-		if !modelChanged {
-			continue
+		if modelChanged {
+			changed++
 		}
-		changed++
-		if cfg.DryRun {
+		if modelChanged && cfg.DryRun {
 			log.Printf("dry-run: would update %s", model.ID)
-			continue
+		} else if modelChanged {
+			if err := registry.Save(model.FilePath, *model); err != nil {
+				return err
+			}
+			log.Printf("updated %s", model.ID)
 		}
-		if err := registry.Save(model.FilePath, *model); err != nil {
-			return err
+		if _, failed := failures[model.ID]; !failed {
+			completed[model.ID] = true
+			if err := saveCheckpoint(cfg.Checkpoint, completed); err != nil {
+				return err
+			}
 		}
-		log.Printf("updated %s", model.ID)
+	}
+	if err := writeFailureReport(cfg.FailureReport, failures); err != nil {
+		return err
 	}
 	log.Printf("Enrichment complete: selected=%d changed=%d needs_review=%d", len(selected), changed, needsReview)
 	return nil
@@ -176,7 +227,7 @@ func selectModels(models []registry.Model, cfg config) []registry.Model {
 		if cfg.Provider != "" && !strings.EqualFold(model.Provider, cfg.Provider) {
 			continue
 		}
-		if cfg.Model == "" && cfg.NewOnly && !model.IsV2() {
+		if !model.IsV2() && cfg.Model == "" && (cfg.NewOnly || !cfg.UpgradeV1) {
 			continue
 		}
 		selected = append(selected, model)
@@ -236,9 +287,9 @@ func enrichOpenRouter(model *registry.Model, upstream openRouterModel, fetchedAt
 	return !stringEqualIgnoringFetchedAt(before, after) || !stringEqualIgnoringFetchedAt(reasoningBefore, reasoningAfter)
 }
 
-func resolveHuggingFace(ctx context.Context, client *http.Client, base string, model registry.Model, explicitID string) (*hfModel, string, error) {
+func resolveHuggingFace(ctx context.Context, client *http.Client, retry retryPolicy, base string, model registry.Model, explicitID string) (*hfModel, string, error) {
 	if explicitID != "" {
-		hf, err := fetchHF(ctx, client, base, explicitID)
+		hf, err := fetchHF(ctx, client, retry, base, explicitID)
 		return hf, "exact", err
 	}
 	query := modelSuffix(model.ID)
@@ -247,7 +298,7 @@ func resolveHuggingFace(ctx context.Context, client *http.Client, base string, m
 	if err != nil {
 		return nil, "", err
 	}
-	resp, err := client.Do(req)
+	resp, err := doWithRetry(ctx, client, retry, req)
 	if err != nil {
 		return nil, "", err
 	}
@@ -275,12 +326,12 @@ func resolveHuggingFace(ctx context.Context, client *http.Client, base string, m
 	return &matches[0], "matched", nil
 }
 
-func fetchHF(ctx context.Context, client *http.Client, base, id string) (*hfModel, error) {
+func fetchHF(ctx context.Context, client *http.Client, retry retryPolicy, base, id string) (*hfModel, error) {
 	req, err := http.NewRequestWithContext(ctx, http.MethodGet, strings.TrimRight(base, "/")+"/models/"+id, nil)
 	if err != nil {
 		return nil, err
 	}
-	resp, err := client.Do(req)
+	resp, err := doWithRetry(ctx, client, retry, req)
 	if err != nil {
 		return nil, err
 	}
@@ -366,4 +417,94 @@ func stringEqualIgnoringFetchedAt(left, right []byte) bool {
 	delete(a, "fetched_at")
 	delete(b, "fetched_at")
 	return reflect.DeepEqual(a, b)
+}
+
+func doWithRetry(ctx context.Context, client *http.Client, policy retryPolicy, template *http.Request) (*http.Response, error) {
+	attempts := policy.Attempts
+	if attempts < 1 {
+		attempts = 1
+	}
+	for attempt := 0; attempt < attempts; attempt++ {
+		req := template.Clone(ctx)
+		resp, err := client.Do(req)
+		if err == nil && resp.StatusCode != http.StatusTooManyRequests && resp.StatusCode < 500 {
+			return resp, nil
+		}
+		if attempt == attempts-1 {
+			return resp, err
+		}
+		if resp != nil {
+			_ = resp.Body.Close()
+		}
+		wait := policy.Backoff * time.Duration(1<<attempt)
+		if resp != nil {
+			if seconds, parseErr := strconv.Atoi(resp.Header.Get("Retry-After")); parseErr == nil && seconds >= 0 {
+				wait = time.Duration(seconds) * time.Second
+			}
+		}
+		select {
+		case <-ctx.Done():
+			return nil, ctx.Err()
+		case <-time.After(wait):
+		}
+	}
+	return nil, errors.New("retry loop exhausted")
+}
+
+func loadCheckpoint(path string) (map[string]bool, error) {
+	completed := make(map[string]bool)
+	if path == "" {
+		return completed, nil
+	}
+	data, err := os.ReadFile(path)
+	if os.IsNotExist(err) {
+		return completed, nil
+	}
+	if err != nil {
+		return nil, err
+	}
+	if err := json.Unmarshal(data, &completed); err != nil {
+		return nil, fmt.Errorf("load checkpoint: %w", err)
+	}
+	return completed, nil
+}
+
+func filterCompleted(models []registry.Model, completed map[string]bool) []registry.Model {
+	result := make([]registry.Model, 0, len(models))
+	for _, model := range models {
+		if !completed[model.ID] {
+			result = append(result, model)
+		}
+	}
+	return result
+}
+
+func saveCheckpoint(path string, completed map[string]bool) error {
+	if path == "" {
+		return nil
+	}
+	return writeJSONAtomic(path, completed)
+}
+
+func writeFailureReport(path string, failures map[string]string) error {
+	if path == "" {
+		return nil
+	}
+	return writeJSONAtomic(path, map[string]any{"failure_count": len(failures), "failures": failures})
+}
+
+func writeJSONAtomic(path string, value any) error {
+	data, err := json.MarshalIndent(value, "", "  ")
+	if err != nil {
+		return err
+	}
+	data = append(data, '\n')
+	if err := os.MkdirAll(filepath.Dir(path), 0o755); err != nil {
+		return err
+	}
+	temporary := path + ".tmp"
+	if err := os.WriteFile(temporary, data, 0o644); err != nil {
+		return err
+	}
+	return os.Rename(temporary, path)
 }

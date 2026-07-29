@@ -4,6 +4,7 @@ import (
 	"context"
 	"net/http"
 	"net/http/httptest"
+	"sync/atomic"
 	"testing"
 	"time"
 
@@ -39,7 +40,7 @@ func TestResolveHuggingFaceByDeterministicSearch(t *testing.T) {
 	}))
 	defer server.Close()
 
-	hf, status, err := resolveHuggingFace(context.Background(), server.Client(), server.URL, registry.Model{
+	hf, status, err := resolveHuggingFace(context.Background(), server.Client(), retryPolicy{Attempts: 1}, server.URL, registry.Model{
 		ID:       "qwen/qwen3.6-27b",
 		Provider: "Qwen",
 	}, "")
@@ -58,7 +59,7 @@ func TestResolveHuggingFaceRejectsAmbiguousMatches(t *testing.T) {
 	}))
 	defer server.Close()
 
-	hf, status, err := resolveHuggingFace(context.Background(), server.Client(), server.URL, registry.Model{ID: "qwen/example", Provider: "Qwen"}, "")
+	hf, status, err := resolveHuggingFace(context.Background(), server.Client(), retryPolicy{Attempts: 1}, server.URL, registry.Model{ID: "qwen/example", Provider: "Qwen"}, "")
 	if err != nil {
 		t.Fatal(err)
 	}
@@ -80,6 +81,14 @@ func TestSelectModelsProtectsLegacyByDefault(t *testing.T) {
 	if len(selected) != 1 || selected[0].ID != "old/model" {
 		t.Fatalf("explicit legacy selection failed: %#v", selected)
 	}
+	selected = selectModels(models, config{NewOnly: false, UpgradeV1: false})
+	if len(selected) != 1 || selected[0].ID != "new/model" {
+		t.Fatalf("new-only=false bypassed upgrade guard: %#v", selected)
+	}
+	selected = selectModels(models, config{NewOnly: false, UpgradeV1: true})
+	if len(selected) != 2 {
+		t.Fatalf("explicit upgrade did not select legacy records: %#v", selected)
+	}
 }
 
 func TestEnrichmentPreservesSourceExtensionFields(t *testing.T) {
@@ -94,5 +103,22 @@ func TestEnrichmentPreservesSourceExtensionFields(t *testing.T) {
 	enrichHuggingFace(&model, hfModel{ID: "Qwen/Test"}, time.Unix(1, 0).UTC())
 	if model.Upstream.OpenRouter.Extra["future"] != "or" || model.Upstream.HuggingFace.Extra["future"] != "hf" || model.Reasoning.Extra["future"] != "reasoning" {
 		t.Fatalf("extension fields were lost: %#v", model)
+	}
+}
+
+func TestRetryHonorsTransientFailure(t *testing.T) {
+	var calls atomic.Int32
+	server := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		if calls.Add(1) == 1 {
+			w.Header().Set("Retry-After", "0")
+			http.Error(w, "busy", http.StatusTooManyRequests)
+			return
+		}
+		_, _ = w.Write([]byte(`{"id":"Qwen/Test"}`))
+	}))
+	defer server.Close()
+	hf, err := fetchHF(context.Background(), server.Client(), retryPolicy{Attempts: 2}, server.URL, "Qwen/Test")
+	if err != nil || hf == nil || calls.Load() != 2 {
+		t.Fatalf("retry failed: model=%#v calls=%d err=%v", hf, calls.Load(), err)
 	}
 }
