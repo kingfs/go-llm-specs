@@ -151,6 +151,28 @@ discover new OpenRouter models
 
 AI-assisted translation and model-card extraction are retryable enrichment jobs, not prerequisites for deterministic generation. They must handle HTTP 429, honor `Retry-After`, checkpoint per batch, and expose partial failure. GitHub Models is suitable for a small daily set; historical backfills should use BYOK or a local model.
 
+### Evidence-backed AI suggestions
+
+Natural-language model cards are processed through a review layer rather than written directly to YAML:
+
+```bash
+LLM_BASE_URL=http://localhost:8000/v1 LLM_MODEL=<serving-slug> \
+  task cardextract -- -model qwen/qwen3.6-27b -wire-api responses \
+  -api-key-env LLM_API_KEY
+
+task suggestion -- list
+task suggestion -- show data/suggestions/qwen/qwen3.6-27b.model-card.json
+task suggestion -- -fields context_length,description apply \
+  data/suggestions/qwen/qwen3.6-27b.model-card.json
+
+task codexsuggest -- -model qwen/qwen3.6-27b
+```
+
+`cardextractor` records the immutable Hugging Face revision, source-content SHA-256,
+generator model, typed claims, exact evidence quotes, and confidence. Suggestions begin
+as `pending`; applying all fields implicitly is forbidden. API keys are read only from the
+environment and are never persisted in suggestion documents.
+
 ## Compatibility rules
 
 - Missing `schema_version` means v1.
@@ -181,7 +203,8 @@ task enrich -- -new-only
 
 # Safely migrate a reviewed batch of historical records; failures remain resumable.
 task enrich -- -new-only=false -upgrade-v1 -limit 20 -delay 1s \
-  -checkpoint .cache/enrich-checkpoint.json -failure-report .cache/enrich-failures.json
+  -allowlist models-to-migrate.txt -checkpoint .cache/enrich-checkpoint.json \
+  -failure-report .cache/enrich-failures.json
 
 # Explicitly promote and enrich one selected historical record.
 task enrich -- -model qwen/qwen3.6-27b

@@ -41,6 +41,7 @@ type config struct {
 	RetryBackoff   time.Duration
 	Checkpoint     string
 	FailureReport  string
+	Allowlist      string
 }
 
 type openRouterResponse struct {
@@ -122,6 +123,7 @@ func parseFlags() config {
 	flag.DurationVar(&cfg.RetryBackoff, "retry-backoff", time.Second, "initial exponential retry delay")
 	flag.StringVar(&cfg.Checkpoint, "checkpoint", "", "optional JSON checkpoint used to resume a batch")
 	flag.StringVar(&cfg.FailureReport, "failure-report", "", "optional JSON report for per-model failures")
+	flag.StringVar(&cfg.Allowlist, "allowlist", "", "optional newline-delimited model ID allowlist")
 	flag.Parse()
 	return cfg
 }
@@ -138,6 +140,11 @@ func run(ctx context.Context, cfg config) error {
 		return err
 	}
 	selected := selectModels(models, cfg)
+	allowlist, err := loadAllowlist(cfg.Allowlist)
+	if err != nil {
+		return err
+	}
+	selected = filterAllowlist(selected, allowlist)
 	completed, err := loadCheckpoint(cfg.Checkpoint)
 	if err != nil {
 		return err
@@ -596,6 +603,37 @@ func filterCompleted(models []registry.Model, completed map[string]bool) []regis
 	result := make([]registry.Model, 0, len(models))
 	for _, model := range models {
 		if !completed[model.ID] {
+			result = append(result, model)
+		}
+	}
+	return result
+}
+
+func loadAllowlist(path string) (map[string]bool, error) {
+	if path == "" {
+		return nil, nil
+	}
+	data, err := os.ReadFile(path)
+	if err != nil {
+		return nil, err
+	}
+	result := map[string]bool{}
+	for _, line := range strings.Split(string(data), "\n") {
+		line = strings.TrimSpace(strings.SplitN(line, "#", 2)[0])
+		if line != "" {
+			result[strings.ToLower(line)] = true
+		}
+	}
+	return result, nil
+}
+
+func filterAllowlist(models []registry.Model, allowlist map[string]bool) []registry.Model {
+	if allowlist == nil {
+		return models
+	}
+	result := make([]registry.Model, 0, len(models))
+	for _, model := range models {
+		if allowlist[strings.ToLower(model.ID)] {
 			result = append(result, model)
 		}
 	}

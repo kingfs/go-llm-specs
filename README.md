@@ -176,6 +176,9 @@ task test
 task build
 task generator
 task translator
+task cardextract -- -model qwen/qwen3.6-27b -ai-model <local-model>
+task suggestion -- list
+task codexsuggest -- -model qwen/qwen3.6-27b
 task enrich
 task codexgen
 task modelprobe -- -base-url http://localhost:8000/v1 -model qwen3.6-27b -server vllm

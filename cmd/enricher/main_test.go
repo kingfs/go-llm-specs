@@ -125,6 +125,14 @@ func TestRetryHonorsTransientFailure(t *testing.T) {
 	}
 }
 
+func TestFilterAllowlist(t *testing.T) {
+	models := []registry.Model{{ID: "qwen/one"}, {ID: "qwen/two"}}
+	filtered := filterAllowlist(models, map[string]bool{"qwen/two": true})
+	if len(filtered) != 1 || filtered[0].ID != "qwen/two" {
+		t.Fatalf("got %#v", filtered)
+	}
+}
+
 func TestEnrichHFRepositoryUsesPinnedRevision(t *testing.T) {
 	server := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		if !strings.Contains(r.URL.Path, "/resolve/abc123/") {
