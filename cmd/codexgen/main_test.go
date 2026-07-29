@@ -66,6 +66,50 @@ func TestGenerateRejectsDuplicateSlugs(t *testing.T) {
 	}
 }
 
+func TestDefaultPolicyIncludesOpenWeightFamily(t *testing.T) {
+	model := codexReadyModel()
+	model.Codex = nil
+	model.Upstream.HuggingFace = &registry.HuggingFaceMetadata{ID: "Qwen/Qwen3.6-27B"}
+	policy := defaultPolicy{SchemaVersion: 1, Families: []policyFamily{{
+		Name: "qwen", IDPattern: `^qwen/qwen3\.[5-9].*`, RequireHuggingFace: true,
+		SlugStrategies: []string{"huggingface_id", "registry_id", "model_suffix"},
+	}}}
+	models, err := applyDefaultPolicy([]registry.Model{model}, policy)
+	if err != nil {
+		t.Fatal(err)
+	}
+	if models[0].Codex == nil || !models[0].Codex.Enabled {
+		t.Fatal("matching model was not enabled")
+	}
+	want := []string{"Qwen/Qwen3.6-27B", "qwen3.6-27b"}
+	if strings.Join(models[0].Codex.Slugs, ",") != strings.Join(want, ",") {
+		t.Fatalf("slugs = %#v", models[0].Codex.Slugs)
+	}
+}
+
+func TestDefaultPolicyRequiresHuggingFaceAndHonorsExplicitOptOut(t *testing.T) {
+	withoutWeights := codexReadyModel()
+	withoutWeights.Codex = nil
+	explicitOptOut := codexReadyModel()
+	explicitOptOut.ID = "qwen/qwen3.7-open"
+	explicitOptOut.Codex = &registry.CodexMetadata{Enabled: false}
+	explicitOptOut.Upstream.HuggingFace = &registry.HuggingFaceMetadata{ID: "Qwen/Qwen3.7-Open"}
+	policy := defaultPolicy{SchemaVersion: 1, Families: []policyFamily{{
+		Name: "qwen", IDPattern: `^qwen/qwen3\.[5-9].*`, RequireHuggingFace: true,
+		SlugStrategies: []string{"registry_id"},
+	}}}
+	models, err := applyDefaultPolicy([]registry.Model{withoutWeights, explicitOptOut}, policy)
+	if err != nil {
+		t.Fatal(err)
+	}
+	if models[0].Codex != nil {
+		t.Fatal("model without weights was included")
+	}
+	if models[1].Codex == nil || models[1].Codex.Enabled {
+		t.Fatal("explicit opt-out was not preserved")
+	}
+}
+
 func TestMergeCatalogsPreservesRawBundledFields(t *testing.T) {
 	base := []json.RawMessage{json.RawMessage(`{"slug":"official","future_field":true}`)}
 	addition := []json.RawMessage{json.RawMessage(`{"slug":"third-party"}`)}

@@ -194,15 +194,19 @@ task sync
 
 ## Codex 第三方模型目录
 
-v0.6.0 的 `third-party-models.json` 只有 `qwen3.6-27b`，因为生成器只发布经过审核且显式设置 `codex.enabled: true` 的模型。这份文件可供 Codex 使用；当配置的模型名与目录中的 `slug` 精确一致时，Codex 不再回退到 fallback metadata，因而可消除对应的 metadata warning：
+`third-party-models.json` 可直接供 Codex 使用；当配置的模型名与目录中的 `slug` 一致时，Codex 不再回退到 fallback metadata，因而可消除对应的 metadata warning。catalog 文件没有强制目录，推荐放在 `~/.codex/third-party-models.json`，并在 Codex 的用户配置 `~/.codex/config.toml` 中填写其绝对路径：
 
 ```bash
-gh release download v0.6.0 --pattern 'third-party-models.json*'
+mkdir -p ~/.codex
+gh release download v0.6.1 \
+  --pattern 'third-party-models.json' \
+  --dir ~/.codex
 ```
 
 ```toml
 # ~/.codex/config.toml
-model_catalog_json = "/absolute/path/to/third-party-models.json"
+# Linux 普通用户示例；请替换为自己的绝对路径，不能依赖 ~ 展开。
+model_catalog_json = "/home/your-user/.codex/third-party-models.json"
 ```
 
 注意：`model_catalog_json` 会替换当前 Codex 自带的模型目录，并非追加。需要同时保留内置模型时，应使用同一 Codex 版本导出并在本地合并：
@@ -238,6 +242,8 @@ task codexsuggest -- -since 180d -serving-provider openrouter \
 ```
 
 这里的“最近”只负责筛选候选；非 schema v2、非 chat/tool、缺少文本输入输出或上下文信息的记录会写入 skipped 报告。对于 vLLM/SGLang 或其他供应商，不应假定 OpenRouter ID 就是 serving slug，请先把候选整理成上述显式清单。审核并 apply 后，下一次 `task codexgen` 会把所有合格且已启用的模型打包到同一个目录。不能直接把注册表中的全部模型导出，因为其中还包括 embedding、rerank、音频模型以及未确认服务名/工具策略的记录。
+
+Release catalog 还通过 [`data/codex/default-open-models.yaml`](./data/codex/default-open-models.yaml) 默认收录以下开放权重家族：Qwen 3.5 及以后、DeepSeek V3/R1 及以后、GLM-5 及以后、Kimi K2.7 及以后。只有具备 Hugging Face 来源且通过上述静态能力检查的型号才会进入；API 专有型号、路由别名及非 agent 模型不会仅凭名称被收录。每日同步发现符合 policy 的新模型后，`task codexgen` 会自动补充 catalog，显式 `codex.enabled: false` 仍可覆盖默认规则。
 
 ## 许可证
 

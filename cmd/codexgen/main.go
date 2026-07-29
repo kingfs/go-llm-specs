@@ -7,10 +7,12 @@ import (
 	"fmt"
 	"os"
 	"path/filepath"
+	"regexp"
 	"sort"
 	"strings"
 
 	"github.com/kingfs/go-llm-specs/internal/registry"
+	"gopkg.in/yaml.v3"
 )
 
 const codexSchemaRevision = "openai/codex@fe01054a28fa4bd04716d9ceadb410f2443a50ce"
@@ -22,6 +24,19 @@ type config struct {
 	BundledCatalog string
 	ValidateOnly   bool
 	GeneratedAt    string
+	PolicyPath     string
+}
+
+type defaultPolicy struct {
+	SchemaVersion int            `yaml:"schema_version"`
+	Families      []policyFamily `yaml:"families"`
+}
+
+type policyFamily struct {
+	Name               string   `yaml:"name"`
+	IDPattern          string   `yaml:"id_pattern"`
+	RequireHuggingFace bool     `yaml:"require_hugging_face"`
+	SlugStrategies     []string `yaml:"slug_strategies"`
 }
 
 type modelsResponse struct {
@@ -100,6 +115,7 @@ func parseFlags() config {
 	flag.StringVar(&cfg.BundledCatalog, "bundled-catalog", "", "optional catalog from `codex debug models --bundled`")
 	flag.BoolVar(&cfg.ValidateOnly, "validate", false, "validate inputs without writing output")
 	flag.StringVar(&cfg.GeneratedAt, "generated-at", "", "optional RFC3339 timestamp for the manifest")
+	flag.StringVar(&cfg.PolicyPath, "policy", "data/codex/default-open-models.yaml", "default open-model inclusion policy (empty disables it)")
 	flag.Parse()
 	return cfg
 }
@@ -108,6 +124,16 @@ func run(cfg config) error {
 	models, err := registry.Scan(cfg.ModelsDir)
 	if err != nil {
 		return err
+	}
+	if cfg.PolicyPath != "" {
+		policy, err := loadDefaultPolicy(cfg.PolicyPath)
+		if err != nil {
+			return fmt.Errorf("load default policy: %w", err)
+		}
+		models, err = applyDefaultPolicy(models, policy)
+		if err != nil {
+			return fmt.Errorf("apply default policy: %w", err)
+		}
 	}
 	generated, err := generate(models)
 	if err != nil {
@@ -139,6 +165,109 @@ func run(cfg config) error {
 		manifestPath = cfg.Output + ".manifest.json"
 	}
 	return writeManifest(manifestPath, all, cfg.GeneratedAt)
+}
+
+func loadDefaultPolicy(path string) (defaultPolicy, error) {
+	data, err := os.ReadFile(path)
+	if err != nil {
+		return defaultPolicy{}, err
+	}
+	var policy defaultPolicy
+	if err := yaml.Unmarshal(data, &policy); err != nil {
+		return defaultPolicy{}, err
+	}
+	if policy.SchemaVersion != 1 || len(policy.Families) == 0 {
+		return defaultPolicy{}, errors.New("policy requires schema_version 1 and at least one family")
+	}
+	return policy, nil
+}
+
+func applyDefaultPolicy(models []registry.Model, policy defaultPolicy) ([]registry.Model, error) {
+	patterns := make([]*regexp.Regexp, len(policy.Families))
+	for i, family := range policy.Families {
+		if family.Name == "" || len(family.SlugStrategies) == 0 {
+			return nil, fmt.Errorf("policy family %d requires name and slug_strategies", i)
+		}
+		pattern, err := regexp.Compile(family.IDPattern)
+		if err != nil {
+			return nil, fmt.Errorf("family %q: %w", family.Name, err)
+		}
+		patterns[i] = pattern
+	}
+	result := append([]registry.Model(nil), models...)
+	for i := range result {
+		model := &result[i]
+		// Any explicit Codex block, including enabled: false, is authoritative.
+		if model.Codex != nil {
+			continue
+		}
+		for familyIndex, family := range policy.Families {
+			if !patterns[familyIndex].MatchString(strings.ToLower(model.ID)) {
+				continue
+			}
+			if family.RequireHuggingFace && (model.Upstream.HuggingFace == nil || model.Upstream.HuggingFace.ID == "") {
+				continue
+			}
+			if reason := policyIneligibleReason(*model); reason != "" {
+				continue
+			}
+			slugs, err := policySlugs(*model, family.SlugStrategies)
+			if err != nil {
+				return nil, fmt.Errorf("family %q model %s: %w", family.Name, model.ID, err)
+			}
+			model.Codex = &registry.CodexMetadata{
+				Enabled:                   true,
+				Slugs:                     slugs,
+				ShellType:                 "unified_exec",
+				ApplyPatchToolType:        "freeform",
+				SupportsParallelToolCalls: false,
+				InputModalities:           codexModalities(model.Features),
+			}
+			break
+		}
+	}
+	return result, nil
+}
+
+func policyIneligibleReason(model registry.Model) string {
+	if !model.IsV2() || model.ContextLen <= 0 {
+		return "schema v2 and positive context are required"
+	}
+	for _, feature := range []string{"CapChat", "CapFunctionCall", "ModalityTextIn", "ModalityTextOut"} {
+		if !hasFeature(model.Features, feature) {
+			return "missing " + feature
+		}
+	}
+	return ""
+}
+
+func policySlugs(model registry.Model, strategies []string) ([]string, error) {
+	seen := map[string]bool{}
+	var slugs []string
+	for _, strategy := range strategies {
+		var slug string
+		switch strategy {
+		case "registry_id":
+			slug = model.ID
+		case "model_suffix":
+			_, slug, _ = strings.Cut(model.ID, "/")
+		case "huggingface_id":
+			if model.Upstream.HuggingFace != nil {
+				slug = model.Upstream.HuggingFace.ID
+			}
+		default:
+			return nil, fmt.Errorf("unknown slug strategy %q", strategy)
+		}
+		key := strings.ToLower(slug)
+		if slug != "" && !seen[key] {
+			seen[key] = true
+			slugs = append(slugs, slug)
+		}
+	}
+	if len(slugs) == 0 {
+		return nil, errors.New("slug strategies produced no serving IDs")
+	}
+	return slugs, nil
 }
 
 func generate(models []registry.Model) ([]json.RawMessage, error) {

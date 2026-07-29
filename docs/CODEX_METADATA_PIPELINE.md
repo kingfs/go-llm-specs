@@ -128,6 +128,8 @@ It supports:
 
 The Codex schema version is pinned in project code and documented in the manifest. `used_fallback_model_metadata` is never emitted.
 
+By default, the generator also reads `data/codex/default-open-models.yaml`. This declarative policy currently selects open-weight Qwen 3.5+, DeepSeek V3/R1+, GLM-5+, and Kimi K2.7+ records. Policy selection requires Hugging Face metadata and the same schema/chat/tool/text/context checks as explicit exports. It derives common Hugging Face, registry, and short serving IDs, deduplicates case-insensitively, and never overrides an explicit `codex` block. Pass `-policy ''` to generate from explicit `codex.enabled` records only.
+
 ### Codex candidate selection
 
 `cmd/codexsuggest` has three mutually exclusive selection modes. Every mode writes reviewable `pending` suggestions; none directly enables a model:
@@ -265,18 +267,19 @@ The committed `dist/codex/third-party-models.json` is intentionally named as a s
 For example:
 
 ```bash
-gh release download v0.6.0 --pattern 'third-party-models.json*'
+mkdir -p ~/.codex
+gh release download v0.6.1 --pattern 'third-party-models.json' --dir ~/.codex
 
 # Direct use: exact catalog slugs avoid fallback metadata warnings.
 # ~/.codex/config.toml:
-# model_catalog_json = "/absolute/path/to/third-party-models.json"
+# model_catalog_json = "/home/your-user/.codex/third-party-models.json"
 
 # Preserve the bundled entries by generating a version-local merged catalog.
 codex debug models --bundled > bundled-models.json
 task codexgen -- -bundled-catalog bundled-models.json -output merged-models.json
 ```
 
-The v0.6.0 asset contains one entry because only `qwen3.6-27b` had an approved Codex policy at release time. A later catalog grows only when suggestions are explicitly reviewed and applied. The full model registry is not a valid Codex catalog: it includes non-chat modalities and records without verified serving slugs or Codex tool policy.
+The catalog grows through either explicitly reviewed `codex` metadata or the narrow open-model policy above. The full model registry is not a valid Codex catalog: it includes non-chat modalities and records without verified serving slugs or Codex tool policy.
 
 ## Acceptance criteria
 

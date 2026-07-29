@@ -194,15 +194,19 @@ Newly discovered or explicitly selected models can use schema v2 to store source
 
 ## Codex third-party model catalog
 
-The v0.6.0 `third-party-models.json` contains only `qwen3.6-27b` because the generator publishes only reviewed records with explicit `codex.enabled: true`. Codex can load this file. When the configured model exactly matches its `slug`, Codex no longer uses fallback metadata and the corresponding warning is eliminated:
+Codex can load `third-party-models.json`. When the configured model matches a catalog `slug`, Codex no longer uses fallback metadata and the corresponding warning is eliminated. The catalog has no mandatory location; `~/.codex/third-party-models.json` is recommended. Point the Codex user configuration at its absolute path:
 
 ```bash
-gh release download v0.6.0 --pattern 'third-party-models.json*'
+mkdir -p ~/.codex
+gh release download v0.6.1 \
+  --pattern 'third-party-models.json' \
+  --dir ~/.codex
 ```
 
 ```toml
 # ~/.codex/config.toml
-model_catalog_json = "/absolute/path/to/third-party-models.json"
+# Replace this with your absolute path; do not rely on ~ expansion.
+model_catalog_json = "/home/your-user/.codex/third-party-models.json"
 ```
 
 `model_catalog_json` replaces the bundled Codex catalog; it does not append to it. To retain bundled models, export them with the same Codex version and merge locally:
@@ -238,6 +242,8 @@ task codexsuggest -- -since 180d -serving-provider openrouter \
 ```
 
 “Recent” only selects candidates. Records that are not schema v2 chat/tool models with text input/output and a positive context window are listed as skipped. For vLLM, SGLang, or another provider, do not assume the OpenRouter ID is the serving slug; convert the candidates into an explicit allowlist first. After review and apply, `task codexgen` packages every eligible enabled model into one catalog. Exporting the entire registry is unsafe because it also contains embedding, reranking, audio, and records whose serving names or tool policies are not confirmed.
+
+The Release catalog also uses [`data/codex/default-open-models.yaml`](./data/codex/default-open-models.yaml) to include these open-weight families by default: Qwen 3.5+, DeepSeek V3/R1+, GLM-5+, and Kimi K2.7+. A model must have a Hugging Face source and pass the static capability checks above. API-only models, routing aliases, and non-agent models are not included by name alone. After daily sync discovers a new matching model, `task codexgen` adds it automatically; an explicit `codex.enabled: false` remains authoritative.
 
 ## License
 
