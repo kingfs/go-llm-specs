@@ -185,7 +185,7 @@ task sync
 
 When changing model metadata, edit `models/**/*.yaml` and regenerate instead of hand-editing `models_gen.go`. See [docs/DEVELOPMENT.md](./docs/DEVELOPMENT.md) for maintainer details and [AGENTS.md](./AGENTS.md) for AI collaboration notes.
 
-Newly discovered or explicitly selected models can use schema v2 to store source-attributed OpenRouter, Hugging Face, reasoning, and Codex metadata. Historical records without a schema version remain v1 and are not bulk-migrated. Run `task enrich -- -model <provider/model>` for explicit enrichment and `task codexgen` to export records with `codex.enabled: true` to `dist/codex/models.json`. See the [Codex metadata pipeline](./docs/CODEX_METADATA_PIPELINE.md) for the complete trust model and deployment-probe boundaries.
+Newly discovered or explicitly selected models can use schema v2 to store source-attributed OpenRouter, Hugging Face, reasoning, and Codex metadata. Historical records without a schema version remain v1 and are not bulk-migrated. Run `task enrich -- -model <provider/model>` for explicit enrichment and `task codexgen` to export records with `codex.enabled: true` to the standalone `dist/codex/third-party-models.json`. See the [Codex metadata pipeline](./docs/CODEX_METADATA_PIPELINE.md) for the complete trust model and deployment-probe boundaries.
 
 ## License
 

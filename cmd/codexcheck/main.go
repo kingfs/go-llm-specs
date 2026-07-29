@@ -21,7 +21,7 @@ type modelsResponse struct {
 func main() {
 	var binary, catalog string
 	flag.StringVar(&binary, "codex-bin", "codex", "Codex CLI binary")
-	flag.StringVar(&catalog, "catalog", "dist/codex/models.json", "generated model catalog")
+	flag.StringVar(&catalog, "catalog", "dist/codex/third-party-models.json", "generated model catalog")
 	flag.Parse()
 	if err := check(binary, catalog); err != nil {
 		fmt.Fprintln(os.Stderr, err)

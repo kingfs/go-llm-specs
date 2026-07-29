@@ -185,7 +185,7 @@ task sync
 
 本地覆盖模型信息时，请修改 `models/**/*.yaml`，不要手改 `models_gen.go`。更完整的维护说明见 [docs/DEVELOPMENT.md](./docs/DEVELOPMENT.md)，AI 协作说明见 [AGENTS.md](./AGENTS.md)。
 
-新发现或显式选择的模型可以使用 schema v2 保存来源可追溯的 OpenRouter、Hugging Face、reasoning 和 Codex metadata；没有声明版本的历史模型仍按 v1 读取，不会被批量迁移。运行 `task enrich -- -model <provider/model>` 可显式 enrichment，运行 `task codexgen` 会将 `codex.enabled: true` 的模型输出到 `dist/codex/models.json`。完整设计和本地部署探测边界见 [Codex metadata pipeline](./docs/CODEX_METADATA_PIPELINE.md)。
+新发现或显式选择的模型可以使用 schema v2 保存来源可追溯的 OpenRouter、Hugging Face、reasoning 和 Codex metadata；没有声明版本的历史模型仍按 v1 读取，不会被批量迁移。运行 `task enrich -- -model <provider/model>` 可显式 enrichment，运行 `task codexgen` 会将 `codex.enabled: true` 的模型输出到独立第三方目录 `dist/codex/third-party-models.json`。完整设计和本地部署探测边界见 [Codex metadata pipeline](./docs/CODEX_METADATA_PIPELINE.md)。
 
 ## 许可证
 

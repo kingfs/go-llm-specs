@@ -172,6 +172,10 @@ Each phase is independently tested, committed, and pushed.
 # Enrich only schema-v2/new records from structured sources.
 task enrich -- -new-only
 
+# Safely migrate a reviewed batch of historical records; failures remain resumable.
+task enrich -- -new-only=false -upgrade-v1 -limit 20 -delay 1s \
+  -checkpoint .cache/enrich-checkpoint.json -failure-report .cache/enrich-failures.json
+
 # Explicitly promote and enrich one selected historical record.
 task enrich -- -model qwen/qwen3.6-27b
 
@@ -183,9 +187,13 @@ task codexgen -- -bundled-catalog data/codex/bundled-0.146.0.json
 
 # Probe an already-running local deployment; no model is started by this command.
 task modelprobe -- -base-url http://localhost:8000/v1 -model qwen3.6-27b -server vllm -output data/probes/qwen3.6-27b-vllm.json
+
+# Import semantically verified results into one schema-v2 registry record.
+task modelprobe -- -base-url http://localhost:8000/v1 -model qwen3.6-27b \
+  -server vllm -import-model qwen/qwen3.6-27b
 ```
 
-The committed `dist/codex/models.json` is standalone. Users who also need OpenAI's bundled entries should capture them with their pinned Codex CLI and use the merge flag; the generator rejects collisions rather than silently overriding either catalog.
+The committed `dist/codex/third-party-models.json` is intentionally named as a standalone third-party catalog. Using it directly replaces Codex's bundled catalog. Users who also need bundled entries should capture them with their pinned Codex CLI and use the merge flag; the generator rejects collisions rather than silently overriding either catalog.
 
 ## Acceptance criteria
 

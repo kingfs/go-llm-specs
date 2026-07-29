@@ -78,6 +78,7 @@ type truncationPolicy struct {
 
 type manifest struct {
 	SchemaRevision string   `json:"schema_revision"`
+	CatalogKind    string   `json:"catalog_kind"`
 	GeneratedAt    string   `json:"generated_at,omitempty"`
 	ModelCount     int      `json:"model_count"`
 	Slugs          []string `json:"slugs"`
@@ -94,7 +95,7 @@ func main() {
 func parseFlags() config {
 	var cfg config
 	flag.StringVar(&cfg.ModelsDir, "models-dir", "models", "directory containing model YAML files")
-	flag.StringVar(&cfg.Output, "output", "dist/codex/models.json", "output catalog path")
+	flag.StringVar(&cfg.Output, "output", "dist/codex/third-party-models.json", "output catalog path")
 	flag.StringVar(&cfg.ManifestOutput, "manifest", "", "manifest output path (default: <output>.manifest.json)")
 	flag.StringVar(&cfg.BundledCatalog, "bundled-catalog", "", "optional catalog from `codex debug models --bundled`")
 	flag.BoolVar(&cfg.ValidateOnly, "validate", false, "validate inputs without writing output")
@@ -379,6 +380,7 @@ func writeManifest(path string, models []json.RawMessage, generatedAt string) er
 	sort.Strings(slugs)
 	data, err := json.MarshalIndent(manifest{
 		SchemaRevision: codexSchemaRevision,
+		CatalogKind:    "standalone-third-party",
 		GeneratedAt:    generatedAt,
 		ModelCount:     len(models),
 		Slugs:          slugs,
