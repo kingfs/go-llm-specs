@@ -79,6 +79,11 @@ tasks:
     cmds:
       - go run ./cmd/codexcheck {{.CLI_ARGS}}
 
+  codexinstall:
+    desc: Download, merge, validate, and configure the latest Codex catalog
+    cmds:
+      - sh scripts/install-codex-catalog.sh {{.CLI_ARGS}}
+
   modelprobe:
     desc: Probe an already-running OpenAI-compatible model deployment
     cmds:

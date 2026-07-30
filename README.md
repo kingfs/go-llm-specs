@@ -194,22 +194,21 @@ task sync
 
 ## Codex 第三方模型目录
 
-`third-party-models.json` 可直接供 Codex 使用；当配置的模型名与目录中的 `slug` 一致时，Codex 不再回退到 fallback metadata，因而可消除对应的 metadata warning。catalog 文件没有强制目录，推荐放在 `~/.codex/third-party-models.json`，并在 Codex 的用户配置 `~/.codex/config.toml` 中填写其绝对路径：
+`third-party-models.json` 可供 Codex 使用；当配置的模型名与目录中的 `slug` 一致时，Codex 不再回退到 fallback metadata，因而可消除对应的 metadata warning。`model_catalog_json` 会替换而非追加 Codex 内置目录，因此推荐使用安装脚本：它会下载最新 release、导出本机 Codex 的内置模型、按本机 schema 合并并验证目录，然后备份和更新 `~/.codex/config.toml`。
 
 ```bash
-mkdir -p ~/.codex
-gh release download v0.6.1 \
-  --pattern 'third-party-models.json' \
-  --dir ~/.codex
+curl -fsSL https://raw.githubusercontent.com/kingfs/go-llm-specs/master/scripts/install-codex-catalog.sh | sh
 ```
 
-```toml
-# ~/.codex/config.toml
-# Linux 普通用户示例；请替换为自己的绝对路径，不能依赖 ~ 展开。
-model_catalog_json = "/home/your-user/.codex/third-party-models.json"
+在仓库内也可以运行：
+
+```bash
+task codexinstall
 ```
 
-注意：`model_catalog_json` 会替换当前 Codex 自带的模型目录，并非追加。需要同时保留内置模型时，应使用同一 Codex 版本导出并在本地合并：
+默认输出为 `~/.codex/models.json`。可以用 `--config` 和 `--output` 指定其他位置。脚本只修改顶层 `model_catalog_json`；更新已有配置前会创建 `config.toml.bak`。若本机 Codex schema 与 release 产物仍不兼容，脚本会在改动配置前停止，并输出 Codex 的实际解析错误。
+
+需要手工合并时，应始终使用同一台机器、同一 Codex 版本导出的内置目录：
 
 ```bash
 codex debug models --bundled > bundled-models.json

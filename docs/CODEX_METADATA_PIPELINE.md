@@ -262,19 +262,15 @@ task modelprobe -- -base-url http://localhost:8000/v1 -model qwen3.6-27b \
   -server vllm -import-model qwen/qwen3.6-27b
 ```
 
-The committed `dist/codex/third-party-models.json` is intentionally named as a standalone third-party catalog. Using it directly replaces Codex's bundled catalog. Users who also need bundled entries should capture them with their pinned Codex CLI and use the merge flag; the generator rejects collisions rather than silently overriding either catalog.
-
-For example:
+The committed `dist/codex/third-party-models.json` is intentionally named as a standalone third-party catalog. Using it directly replaces Codex's bundled catalog. The recommended installer downloads the latest release asset, captures the installed Codex CLI's bundled catalog, fills only locally required schema fields reported by that CLI, validates the merged result, and then safely updates the user configuration:
 
 ```bash
-mkdir -p ~/.codex
-gh release download v0.6.1 --pattern 'third-party-models.json' --dir ~/.codex
+curl -fsSL https://raw.githubusercontent.com/kingfs/go-llm-specs/master/scripts/install-codex-catalog.sh | sh
+```
 
-# Direct use: exact catalog slugs avoid fallback metadata warnings.
-# ~/.codex/config.toml:
-# model_catalog_json = "/home/your-user/.codex/third-party-models.json"
+Users performing the merge manually should capture bundled entries with their pinned Codex CLI and use the merge flag; the generator rejects collisions rather than silently overriding either catalog. For example:
 
-# Preserve the bundled entries by generating a version-local merged catalog.
+```bash
 codex debug models --bundled > bundled-models.json
 task codexgen -- -bundled-catalog bundled-models.json -output merged-models.json
 ```

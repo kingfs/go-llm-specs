@@ -194,22 +194,21 @@ Newly discovered or explicitly selected models can use schema v2 to store source
 
 ## Codex third-party model catalog
 
-Codex can load `third-party-models.json`. When the configured model matches a catalog `slug`, Codex no longer uses fallback metadata and the corresponding warning is eliminated. The catalog has no mandatory location; `~/.codex/third-party-models.json` is recommended. Point the Codex user configuration at its absolute path:
+Codex can load `third-party-models.json`. When the configured model matches a catalog `slug`, Codex no longer uses fallback metadata and the corresponding warning is eliminated. Because `model_catalog_json` replaces rather than extends the bundled catalog, the installer is recommended. It downloads the latest release, exports the installed Codex CLI's bundled models, merges and validates against the local schema, then backs up and updates `~/.codex/config.toml`.
 
 ```bash
-mkdir -p ~/.codex
-gh release download v0.6.1 \
-  --pattern 'third-party-models.json' \
-  --dir ~/.codex
+curl -fsSL https://raw.githubusercontent.com/kingfs/go-llm-specs/master/scripts/install-codex-catalog.sh | sh
 ```
 
-```toml
-# ~/.codex/config.toml
-# Replace this with your absolute path; do not rely on ~ expansion.
-model_catalog_json = "/home/your-user/.codex/third-party-models.json"
+From a repository checkout, you can instead run:
+
+```bash
+task codexinstall
 ```
 
-`model_catalog_json` replaces the bundled Codex catalog; it does not append to it. To retain bundled models, export them with the same Codex version and merge locally:
+The default output is `~/.codex/models.json`; use `--config` and `--output` for other locations. The script only edits the top-level `model_catalog_json` and creates `config.toml.bak` before updating an existing configuration. If the local Codex schema is still incompatible with the release artifact, it stops before changing the configuration and reports Codex's parser error.
+
+For a manual merge, always export the bundled catalog from the same machine and Codex version:
 
 ```bash
 codex debug models --bundled > bundled-models.json

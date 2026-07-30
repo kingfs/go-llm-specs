@@ -467,11 +467,11 @@ func init() {
 			FamilyVal:     {{ printf "%q" .Family }},
 			SeriesVal:     {{ printf "%q" .Series }},
 			SummaryVal:    {{ printf "%q" .Summary }},
-			TagList:       []string{ {{ range $i, $tag := .Tags }}{{ if $i }}, {{ end }}"{{ $tag }}"{{ end }} },
+			TagList:       []string{ {{- range $i, $tag := .Tags }}{{ if $i }}, {{ end }}"{{ $tag }}"{{ end -}} },
 			ContextLenVal: {{ .ContextLen }},
 			MaxOutputVal:  {{ .MaxOutput }},
 			FeaturesVal:   {{ .Features }},
-			AliasList:     []string{ {{ range $i, $alias := .Aliases }}{{ if $i }}, {{ end }}"{{ $alias }}"{{ end }} },
+			AliasList:     []string{ {{- range $i, $alias := .Aliases }}{{ if $i }}, {{ end }}"{{ $alias }}"{{ end -}} },
 		},
 		{{- end }}
 	}
