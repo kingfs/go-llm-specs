@@ -3,6 +3,7 @@ id: anthropic/claude-opus-4.5:batch
 name: 'Anthropic: Claude Opus 4.5 (batch)'
 provider: Anthropic
 description: Claude Opus 4.5 is Anthropic’s frontier reasoning model optimized for complex software engineering, agentic workflows, and long-horizon computer use. It offers strong multimodal capabilities, competitive performance across real-world coding and...
+description_cn: Claude Opus 4.5 是 Anthropic 的前沿推理模型，针对复杂软件工程、代理工作流程和长时间计算机使用进行了优化。提供强大的多模态能力，在现实世界的编码中表现竞争力...
 context_length: 200000
 max_output: 64000
 features:

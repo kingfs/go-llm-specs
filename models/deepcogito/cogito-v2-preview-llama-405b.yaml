@@ -21,6 +21,7 @@ upstream:
     model_type: llama
     architectures:
       - LlamaForCausalLM
+    license: llama3.1
     tags:
       - base_model:finetune:meta-llama/Llama-3.1-405B
       - base_model:meta-llama/Llama-3.1-405B
@@ -38,4 +39,4 @@ upstream:
     structured_files:
       - config.json
       - tokenizer_config.json
-    fetched_at: 2026-07-29T10:37:27.611063395Z
+    fetched_at: 2026-07-30T04:44:21.074493634Z

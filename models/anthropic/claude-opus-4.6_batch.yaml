@@ -3,6 +3,7 @@ id: anthropic/claude-opus-4.6:batch
 name: 'Anthropic: Claude Opus 4.6 (batch)'
 provider: Anthropic
 description: Opus 4.6 is Anthropic’s strongest model for coding and long-running professional tasks. It is built for agents that operate across entire workflows rather than single prompts, making it especially effective...
+description_cn: Opus 4.6 是 Anthropic 最强大的编码和长时间专业任务模型。它旨在用于跨整个工作流程而非单一提示的代理，因此在实施方面特别有效...
 context_length: 1000000
 max_output: 128000
 features:

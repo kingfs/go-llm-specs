@@ -33,7 +33,7 @@ upstream:
     output_modalities:
       - text
     knowledge_cutoff: "2025-03-31"
-    fetched_at: 2026-07-29T10:37:02.303613805Z
+    fetched_at: 2026-07-30T04:44:14.391643784Z
   huggingface:
     id: arcee-ai/Virtuoso-Large
     revision: fd1911bb14e0cf3890f674d7756d202eec7a3a2b
@@ -41,6 +41,7 @@ upstream:
     model_type: qwen2
     architectures:
       - Qwen2ForCausalLM
+    license: other
     tags:
       - base_model:Qwen/Qwen2.5-72B
       - base_model:finetune:Qwen/Qwen2.5-72B
@@ -59,4 +60,4 @@ upstream:
     structured_files:
       - config.json
       - tokenizer_config.json
-    fetched_at: 2026-07-29T10:37:04.256862724Z
+    fetched_at: 2026-07-30T04:44:14.982966691Z

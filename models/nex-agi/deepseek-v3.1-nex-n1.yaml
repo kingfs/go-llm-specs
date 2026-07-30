@@ -24,6 +24,7 @@ upstream:
     model_type: deepseek_v3
     architectures:
       - DeepseekV3ForCausalLM
+    license: apache-2.0
     tags:
       - arxiv:2512.04987
       - conversational
@@ -42,4 +43,4 @@ upstream:
     structured_files:
       - config.json
       - tokenizer_config.json
-    fetched_at: 2026-07-29T10:40:19.348299105Z
+    fetched_at: 2026-07-30T04:45:06.085742172Z

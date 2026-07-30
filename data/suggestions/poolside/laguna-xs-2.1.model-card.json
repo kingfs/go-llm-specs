@@ -3,28 +3,35 @@
   "kind": "model_card",
   "model_id": "poolside/laguna-xs-2.1",
   "status": "pending",
-  "created_at": "2026-07-29T11:43:10.898182053Z",
+  "created_at": "2026-07-30T04:46:57.296115817Z",
   "source": {
-    "url": "https://huggingface.co/poolside/Laguna-XS-2.1/resolve/205dc65dd4bda946c50da6b7522b215734fa107b/README.md",
-    "revision": "205dc65dd4bda946c50da6b7522b215734fa107b",
+    "url": "https://huggingface.co/poolside/Laguna-XS-2.1/resolve/e9df9a59996d790b94b70f3fef343fe1d9e34bdf/README.md",
+    "revision": "e9df9a59996d790b94b70f3fef343fe1d9e34bdf",
     "sha256": "8c56bfd29988e0dfef22d39e9a9a83199ec84ee8eb22523d57b01f232793c08a"
   },
   "generator": {
-    "model": "qwen3.6-27b",
-    "wire_api": "responses"
+    "model": "openai/gpt-4o-mini",
+    "wire_api": "chat"
   },
   "claims": [
     {
       "field": "description",
-      "value": "33B total parameter Mixture-of-Experts model with 3B activated parameters per token designed for agentic coding and long-horizon work on a local machine.",
-      "evidence": "Laguna XS 2.1 is a 33B total parameter Mixture-of-Experts model with 3B activated parameters per token",
+      "value": "Laguna XS 2.1 is a 33B total parameter Mixture-of-Experts model with 3B activated parameters per token designed for agentic coding and long-horizon work.",
+      "evidence": "Laguna XS 2.1 is a 33B total parameter Mixture-of-Experts model with 3B activated parameters per token designed for agentic coding and long-horizon work.",
       "section": "# Laguna XS 2.1",
       "confidence": "high"
     },
     {
       "field": "context_length",
       "value": 262144,
-      "evidence": "Context window: 262,144 tokens",
+      "evidence": "Context window: 262,144 tokens.",
+      "section": "## Model overview",
+      "confidence": "high"
+    },
+    {
+      "field": "max_output",
+      "value": 512,
+      "evidence": "Sliding Window: 512 tokens.",
       "section": "## Model overview",
       "confidence": "high"
     },
@@ -34,14 +41,7 @@
         "ModalityTextIn",
         "ModalityTextOut"
       ],
-      "evidence": "Modality: text-to-text",
-      "section": "## Model overview",
-      "confidence": "high"
-    },
-    {
-      "field": "reasoning.supported",
-      "value": true,
-      "evidence": "Reasoning support: interleaved thinking with preserved thinking",
+      "evidence": "Modality: text-to-text.",
       "section": "## Model overview",
       "confidence": "high"
     }

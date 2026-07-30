@@ -20,6 +20,7 @@ upstream:
     model_type: olmo3
     architectures:
       - Olmo3ForCausalLM
+    license: apache-2.0
     tags:
       - arxiv:2512.13961
       - base_model:allenai/Olmo-3-7B-Think-DPO
@@ -40,4 +41,4 @@ upstream:
     structured_files:
       - config.json
       - tokenizer_config.json
-    fetched_at: 2026-07-29T10:36:29.708858193Z
+    fetched_at: 2026-07-30T04:44:05.853290339Z

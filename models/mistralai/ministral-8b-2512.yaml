@@ -19,10 +19,8 @@ upstream:
     huggingface_id: mistralai/Ministral-3-8B-Instruct-2512
     supported_parameters:
       - frequency_penalty
-      - logprobs
       - max_tokens
       - presence_penalty
-      - repetition_penalty
       - response_format
       - seed
       - stop
@@ -30,14 +28,13 @@ upstream:
       - temperature
       - tool_choice
       - tools
-      - top_logprobs
       - top_p
     input_modalities:
       - image
       - text
     output_modalities:
       - text
-    fetched_at: 2026-07-29T10:39:32.591057593Z
+    fetched_at: 2026-07-30T04:44:53.351024604Z
   huggingface:
     id: mistralai/Ministral-3-8B-Instruct-2512
     revision: 5b26027e7b19eeb4b7352e1fed3926375dd2cb4d
@@ -70,4 +67,4 @@ upstream:
     structured_files:
       - config.json
       - tokenizer_config.json
-    fetched_at: 2026-07-29T10:39:34.508262086Z
+    fetched_at: 2026-07-30T04:44:54.015349754Z

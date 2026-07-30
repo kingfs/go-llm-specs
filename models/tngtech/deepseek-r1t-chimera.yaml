@@ -26,6 +26,7 @@ upstream:
     model_type: deepseek_v3
     architectures:
       - DeepseekV3ForCausalLM
+    license: mit
     tags:
       - arxiv:2506.14794
       - base_model:deepseek-ai/DeepSeek-R1
@@ -50,4 +51,4 @@ upstream:
     structured_files:
       - config.json
       - tokenizer_config.json
-    fetched_at: 2026-07-29T10:44:39.597421739Z
+    fetched_at: 2026-07-30T04:46:08.81946972Z

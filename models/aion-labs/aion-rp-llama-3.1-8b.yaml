@@ -23,13 +23,14 @@ upstream:
     output_modalities:
       - text
     knowledge_cutoff: "2023-12-31"
-    fetched_at: 2026-07-29T10:36:14.085083082Z
+    fetched_at: 2026-07-30T04:44:01.667550068Z
   huggingface:
     id: aion-labs/Aion-RP-Llama-3.1-8B
     revision: 8ae617bc85c5d6698c3323863c42098d1998f7bb
     model_type: llama
     architectures:
       - LlamaForCausalLM
+    license: apache-2.0
     tags:
       - base_model:finetune:meta-llama/Llama-3.1-8B
       - base_model:meta-llama/Llama-3.1-8B
@@ -43,4 +44,4 @@ upstream:
     structured_files:
       - config.json
       - tokenizer_config.json
-    fetched_at: 2026-07-29T10:36:16.061609918Z
+    fetched_at: 2026-07-30T04:44:02.255696303Z

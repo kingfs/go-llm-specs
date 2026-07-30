@@ -26,6 +26,7 @@ upstream:
     model_type: qwen2
     architectures:
       - Qwen2ForCausalLM
+    license: apache-2.0
     tags:
       - arxiv:2309.00071
       - arxiv:2407.10671
@@ -55,4 +56,4 @@ upstream:
     structured_files:
       - config.json
       - tokenizer_config.json
-    fetched_at: 2026-07-29T10:42:26.43379208Z
+    fetched_at: 2026-07-30T04:45:36.0863734Z

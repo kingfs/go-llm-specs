@@ -20,6 +20,7 @@ upstream:
     model_type: qwen2
     architectures:
       - Qwen2ForCausalLM
+    license: mit
     tags:
       - base_model:Qwen/Qwen2.5-72B
       - base_model:finetune:Qwen/Qwen2.5-72B
@@ -42,4 +43,4 @@ upstream:
     structured_files:
       - config.json
       - tokenizer_config.json
-    fetched_at: 2026-07-29T10:39:59.044406977Z
+    fetched_at: 2026-07-30T04:45:00.572200947Z

@@ -25,6 +25,10 @@ upstream:
     id: google/gemma-2-9b-it
     revision: 11c9b309abf73637e4b6f9a3fa1e92e615547819
     pipeline_tag: text-generation
+    model_type: gemma2
+    architectures:
+      - Gemma2ForCausalLM
+    license: gemma
     tags:
       - arxiv:1705.03551
       - arxiv:1804.06876
@@ -62,4 +66,4 @@ upstream:
       - text-generation
       - text-generation-inference
       - transformers
-    fetched_at: 2026-07-29T10:38:13.961264269Z
+    fetched_at: 2026-07-30T04:44:33.214347452Z

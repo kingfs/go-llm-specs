@@ -18,6 +18,7 @@ upstream:
     model_type: olmo2
     architectures:
       - Olmo2ForCausalLM
+    license: apache-2.0
     tags:
       - arxiv:2411.15124
       - arxiv:2501.00656
@@ -39,4 +40,4 @@ upstream:
     structured_files:
       - config.json
       - tokenizer_config.json
-    fetched_at: 2026-07-29T10:36:23.618815088Z
+    fetched_at: 2026-07-30T04:44:04.180809743Z

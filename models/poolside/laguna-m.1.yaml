@@ -21,6 +21,7 @@ upstream:
     model_type: laguna
     architectures:
       - LagunaForCausalLM
+    license: apache-2.0
     tags:
       - bf16
       - conversational
@@ -39,4 +40,4 @@ upstream:
     structured_files:
       - config.json
       - tokenizer_config.json
-    fetched_at: 2026-07-29T10:41:59.176683332Z
+    fetched_at: 2026-07-30T04:45:29.910929073Z

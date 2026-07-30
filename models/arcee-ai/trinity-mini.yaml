@@ -21,6 +21,7 @@ upstream:
     model_type: afmoe
     architectures:
       - AfmoeForCausalLM
+    license: other
     tags:
       - afmoe
       - ar
@@ -49,4 +50,4 @@ upstream:
     structured_files:
       - config.json
       - tokenizer_config.json
-    fetched_at: 2026-07-29T10:37:01.782120282Z
+    fetched_at: 2026-07-30T04:44:14.295160791Z

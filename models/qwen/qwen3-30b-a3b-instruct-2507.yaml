@@ -22,7 +22,6 @@ upstream:
       - logit_bias
       - logprobs
       - max_tokens
-      - min_p
       - presence_penalty
       - repetition_penalty
       - response_format
@@ -40,7 +39,7 @@ upstream:
     output_modalities:
       - text
     knowledge_cutoff: "2025-06-30"
-    fetched_at: 2026-07-29T10:42:40.996706605Z
+    fetched_at: 2026-07-30T04:45:39.777127114Z
   huggingface:
     id: Qwen/Qwen3-30B-A3B-Instruct-2507
     revision: 0d7cf23991f47feeb3a57ecb4c9cee8ea4a17bfe
@@ -72,4 +71,4 @@ upstream:
     structured_files:
       - config.json
       - tokenizer_config.json
-    fetched_at: 2026-07-29T10:42:42.761092015Z
+    fetched_at: 2026-07-30T04:45:40.356948099Z

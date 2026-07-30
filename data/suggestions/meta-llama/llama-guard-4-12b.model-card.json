@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "meta-llama/llama-guard-4-12b",
+  "status": "pending",
+  "created_at": "2026-07-30T04:46:44.64397378Z",
+  "source": {
+    "url": "https://huggingface.co/meta-llama/Llama-Guard-4-12B/resolve/87acb4b94e930c3d679e6e7ee9d57e2feab9ea71/README.md",
+    "revision": "87acb4b94e930c3d679e6e7ee9d57e2feab9ea71",
+    "sha256": "e57802f1272cd29aeb0f8a7c825a45ff322c45012f82bedc7f738e6a5bba13a1"
+  },
+  "generator": {
+    "model": "openai/gpt-4o-mini",
+    "wire_api": "chat"
+  },
+  "claims": [
+    {
+      "field": "description",
+      "value": "Llama 4 is a foundational large language model developed by Meta, which includes machine-learning model code, trained model weights, and inference-enabling code.",
+      "evidence": "‘Llama 4’ means the foundational large language models and software and algorithms, including machine-learning model code, trained model weights, inference-enabling code...",
+      "section": "LLAMA 4 COMMUNITY LICENSE AGREEMENT",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "CapChat",
+        "CapFunctionCall",
+        "CapJsonMode",
+        "ModalityTextIn",
+        "ModalityTextOut"
+      ],
+      "evidence": "N/A",
+      "section": "N/A",
+      "confidence": "low"
+    },
+    {
+      "field": "reasoning.supported",
+      "value": null,
+      "evidence": "N/A",
+      "section": "N/A",
+      "confidence": "low"
+    },
+    {
+      "field": "serving.vllm_args",
+      "value": null,
+      "evidence": "N/A",
+      "section": "N/A",
+      "confidence": "low"
+    },
+    {
+      "field": "serving.sglang_args",
+      "value": null,
+      "evidence": "N/A",
+      "section": "N/A",
+      "confidence": "low"
+    }
+  ]
+}

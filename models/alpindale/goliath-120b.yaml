@@ -34,6 +34,7 @@ upstream:
     model_type: llama
     architectures:
       - LlamaForCausalLM
+    license: llama2
     tags:
       - conversational
       - en
@@ -50,4 +51,4 @@ upstream:
     structured_files:
       - config.json
       - tokenizer_config.json
-    fetched_at: 2026-07-29T10:36:36.049142959Z
+    fetched_at: 2026-07-30T04:44:07.65166863Z

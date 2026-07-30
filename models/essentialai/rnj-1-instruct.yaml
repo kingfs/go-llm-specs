@@ -19,6 +19,7 @@ upstream:
     model_type: gemma3_text
     architectures:
       - Gemma3ForCausalLM
+    license: apache-2.0
     tags:
       - base_model:EssentialAI/rnj-1
       - base_model:finetune:EssentialAI/rnj-1
@@ -37,4 +38,4 @@ upstream:
     structured_files:
       - config.json
       - tokenizer_config.json
-    fetched_at: 2026-07-29T10:37:58.069709421Z
+    fetched_at: 2026-07-30T04:44:29.548924281Z

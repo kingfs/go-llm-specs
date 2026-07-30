@@ -20,6 +20,7 @@ upstream:
     model_type: phi3
     architectures:
       - Phi3ForCausalLM
+    license: mit
     tags:
       - ar
       - arxiv:2503.01743
@@ -66,4 +67,4 @@ upstream:
     structured_files:
       - config.json
       - tokenizer_config.json
-    fetched_at: 2026-07-29T10:39:06.496423153Z
+    fetched_at: 2026-07-30T04:44:46.637577587Z

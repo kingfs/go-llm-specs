@@ -21,6 +21,7 @@ upstream:
     model_type: llama
     architectures:
       - LlamaForCausalLM
+    license: llama3
     tags:
       - DPO
       - Llama-3
@@ -53,4 +54,4 @@ upstream:
     structured_files:
       - config.json
       - tokenizer_config.json
-    fetched_at: 2026-07-29T10:40:29.643786872Z
+    fetched_at: 2026-07-30T04:45:08.684703237Z

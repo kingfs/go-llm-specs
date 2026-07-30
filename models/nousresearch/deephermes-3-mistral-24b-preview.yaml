@@ -26,6 +26,7 @@ upstream:
     model_type: mistral
     architectures:
       - MistralForCausalLM
+    license: apache-2.0
     tags:
       - Mistral-Small
       - axolotl
@@ -59,4 +60,4 @@ upstream:
     structured_files:
       - config.json
       - tokenizer_config.json
-    fetched_at: 2026-07-29T10:40:27.248811372Z
+    fetched_at: 2026-07-30T04:45:08.09602928Z

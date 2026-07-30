@@ -3,6 +3,7 @@ id: anthropic/claude-opus-4.1:batch
 name: 'Anthropic: Claude Opus 4.1 (batch)'
 provider: Anthropic
 description: Claude Opus 4.1 is an updated version of Anthropic’s flagship model, offering improved performance in coding, reasoning, and agentic tasks. It achieves 74.5% on SWE-bench Verified and shows notable gains...
+description_cn: Claude Opus 4.1 是 Anthropic 的旗舰模型的更新版本，在编码、推理和代理任务中提供了更好的性能。在 SWE-bench Verified 上取得 74.5% 的成绩，并显示出显著的提升...
 context_length: 200000
 max_output: 32000
 features:

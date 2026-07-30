@@ -20,6 +20,7 @@ upstream:
     model_type: qwen2_5_vl
     architectures:
       - Qwen2_5_VLForConditionalGeneration
+    license: apache-2.0
     tags:
       - arxiv:2309.00071
       - arxiv:2502.13923
@@ -44,4 +45,4 @@ upstream:
       - config.json
       - preprocessor_config.json
       - tokenizer_config.json
-    fetched_at: 2026-07-29T10:42:28.868617397Z
+    fetched_at: 2026-07-30T04:45:36.609191247Z
