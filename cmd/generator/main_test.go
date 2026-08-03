@@ -1,10 +1,32 @@
 package main
 
 import (
+	"go/format"
+	"os"
+	"path/filepath"
 	"testing"
 
 	registrymodel "github.com/kingfs/go-llm-specs/internal/registry"
 )
+
+func TestGenerateCodeWritesFormattedGo(t *testing.T) {
+	outputPath := filepath.Join(t.TempDir(), "models_gen.go")
+	if err := generateCode(outputPath, nil, map[string]string{"short": "provider/model"}); err != nil {
+		t.Fatalf("generate code: %v", err)
+	}
+
+	generated, err := os.ReadFile(outputPath)
+	if err != nil {
+		t.Fatalf("read generated code: %v", err)
+	}
+	formatted, err := format.Source(generated)
+	if err != nil {
+		t.Fatalf("generated invalid Go: %v", err)
+	}
+	if string(generated) != string(formatted) {
+		t.Fatal("generated registry is not gofmt-formatted")
+	}
+}
 
 func TestMergeModelRegistryLocalOverridesWin(t *testing.T) {
 	upstream := OpenRouterModel{
