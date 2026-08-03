@@ -20,7 +20,6 @@ upstream:
       - include_reasoning
       - max_tokens
       - reasoning
-      - stop
       - temperature
       - tool_choice
       - tools
@@ -28,7 +27,7 @@ upstream:
       - text
     output_modalities:
       - text
-    fetched_at: 2026-07-29T10:41:59.699341937Z
+    fetched_at: 2026-08-03T07:49:49.116454151Z
   huggingface:
     id: poolside/Laguna-S-2.1
     revision: 00af5a51782109b587a3b3bbf11875e566036fa7
@@ -54,7 +53,7 @@ upstream:
     structured_files:
       - config.json
       - tokenizer_config.json
-    fetched_at: 2026-07-29T10:42:01.933876992Z
+    fetched_at: 2026-08-03T07:49:49.425180333Z
 reasoning:
   supported: true
   default_enabled: true

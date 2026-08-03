@@ -1,0 +1,55 @@
+schema_version: 2
+id: thinkingmachines/inkling-small
+name: 'Thinking Machines: Inkling Small'
+provider: Thinkingmachines
+description: Inkling Small is an open-weight multimodal mixture-of-experts model from Thinking Machines Lab, with 12B active parameters out of 276B total. It is positioned as the smaller, more efficient member of...
+context_length: 524288
+features:
+  - CapChat
+  - CapFunctionCall
+  - ModalityAudioIn
+  - ModalityImageIn
+  - ModalityTextIn
+  - ModalityTextOut
+discovered_at: 2026-08-03T07:48:48.245297344Z
+upstream:
+  openrouter:
+    canonical_slug: thinkingmachines/inkling-small-20260730
+    huggingface_id: thinkingmachines/Inkling-Small
+    supported_parameters:
+      - frequency_penalty
+      - include_reasoning
+      - logit_bias
+      - logprobs
+      - max_tokens
+      - min_p
+      - presence_penalty
+      - reasoning
+      - reasoning_effort
+      - repetition_penalty
+      - seed
+      - stop
+      - temperature
+      - tool_choice
+      - tools
+      - top_k
+      - top_logprobs
+      - top_p
+    input_modalities:
+      - audio
+      - image
+      - text
+    output_modalities:
+      - text
+    fetched_at: 2026-08-03T07:50:20.525891483Z
+reasoning:
+  supported: true
+  default_enabled: true
+  default_effort: high
+  supported_efforts:
+    - high
+    - low
+    - max
+    - medium
+    - minimal
+    - none
