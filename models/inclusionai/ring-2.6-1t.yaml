@@ -36,7 +36,7 @@ upstream:
       - text
     output_modalities:
       - text
-    fetched_at: 2026-07-29T10:38:39.94158794Z
+    fetched_at: 2026-07-30T04:44:40.058105049Z
   huggingface:
     id: inclusionAI/Ring-2.6-1T
     revision: 1e58be9318352541575130d4dbbdcc735fca7a03
@@ -44,6 +44,7 @@ upstream:
     model_type: bailing_hybrid
     architectures:
       - BailingMoeV2_5ForCausalLM
+    license: mit
     tags:
       - arxiv:2606.15079
       - bailing_hybrid
@@ -60,7 +61,7 @@ upstream:
     structured_files:
       - config.json
       - tokenizer_config.json
-    fetched_at: 2026-07-29T10:38:41.87954453Z
+    fetched_at: 2026-07-30T04:44:40.634482014Z
 reasoning:
   supported: true
   mandatory: true

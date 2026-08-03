@@ -36,7 +36,7 @@ upstream:
       - text
     output_modalities:
       - text
-    fetched_at: 2026-07-29T10:38:37.042764639Z
+    fetched_at: 2026-07-30T04:44:39.270175992Z
   huggingface:
     id: inclusionAI/Ling-2.6-flash
     revision: 11236968749136a78d4b7cbfb786c4460f2f353e
@@ -44,6 +44,7 @@ upstream:
     model_type: bailing_hybrid
     architectures:
       - BailingMoeV2_5ForCausalLM
+    license: mit
     tags:
       - arxiv:2606.15079
       - bailing_hybrid
@@ -60,4 +61,4 @@ upstream:
     structured_files:
       - config.json
       - tokenizer_config.json
-    fetched_at: 2026-07-29T10:38:39.006560942Z
+    fetched_at: 2026-07-30T04:44:39.872023713Z

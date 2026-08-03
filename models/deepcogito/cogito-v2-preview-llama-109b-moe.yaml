@@ -20,6 +20,7 @@ upstream:
     model_type: llama4
     architectures:
       - Llama4ForConditionalGeneration
+    license: llama4
     tags:
       - base_model:finetune:meta-llama/Llama-4-Scout-17B-16E
       - base_model:meta-llama/Llama-4-Scout-17B-16E
@@ -38,4 +39,4 @@ upstream:
       - config.json
       - preprocessor_config.json
       - tokenizer_config.json
-    fetched_at: 2026-07-29T10:37:25.488666305Z
+    fetched_at: 2026-07-30T04:44:20.336593844Z

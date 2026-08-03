@@ -20,6 +20,7 @@ upstream:
     model_type: llama
     architectures:
       - LlamaForCausalLM
+    license: llama2
     tags:
       - arxiv:2310.10631
       - dataset:EleutherAI/proof-pile-2
@@ -40,4 +41,4 @@ upstream:
     structured_files:
       - config.json
       - tokenizer_config.json
-    fetched_at: 2026-07-29T10:37:56.023107098Z
+    fetched_at: 2026-07-30T04:44:28.942353704Z

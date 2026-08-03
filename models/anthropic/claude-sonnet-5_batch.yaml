@@ -3,6 +3,7 @@ id: anthropic/claude-sonnet-5:batch
 name: 'Anthropic: Claude Sonnet 5 (batch)'
 provider: Anthropic
 description: Sonnet 5 is Anthropic's most capable Sonnet-class model, with frontier performance across coding, agents, and professional work. It supports adaptive thinking with selectable reasoning effort levels (low, medium, high, max,...
+description_cn: Sonnet 5 是 Anthropic 功能最强大的 Sonnet 级模型，在编码、代理和专业工作中实现了前沿性能。支持可选的推理努力水平（低、中、高、最大），具备自适应思维...
 context_length: 1000000
 max_output: 128000
 features:

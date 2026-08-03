@@ -21,6 +21,7 @@ upstream:
     model_type: glm4_moe
     architectures:
       - Glm4MoeForCausalLM
+    license: mit
     tags:
       - agentic
       - base_model:finetune:zai-org/GLM-4.5-Air-Base
@@ -46,4 +47,4 @@ upstream:
     structured_files:
       - config.json
       - tokenizer_config.json
-    fetched_at: 2026-07-29T10:42:13.116675345Z
+    fetched_at: 2026-07-30T04:45:33.156103223Z

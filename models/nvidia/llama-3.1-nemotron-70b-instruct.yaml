@@ -23,6 +23,7 @@ upstream:
   huggingface:
     id: nvidia/Llama-3.1-Nemotron-70B-Instruct
     revision: a83af1f4968437064635f6726fb745e5b615e863
+    license: llama3.1
     tags:
       - arxiv:2310.05344
       - arxiv:2311.09528
@@ -37,4 +38,4 @@ upstream:
       - nemo
       - nvidia
       - region:us
-    fetched_at: 2026-07-29T10:40:41.089678978Z
+    fetched_at: 2026-07-30T04:45:11.47884691Z

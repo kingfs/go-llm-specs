@@ -3,6 +3,7 @@ id: google/gemini-2.5-flash-lite:batch
 name: 'Google: Gemini 2.5 Flash Lite (batch)'
 provider: Google
 description: Gemini 2.5 Flash-Lite is a lightweight reasoning model in the Gemini 2.5 family, optimized for ultra-low latency and cost efficiency. It offers improved throughput, faster token generation, and better performance...
+description_cn: Gemini 2.5 Flash-Lite 是 Gemini 2.5 系列中的轻量级推理模型，针对超低延迟和成本效率进行了优化。提供更高的吞吐量，更快的代币生成，以及更好的性能...
 context_length: 1048576
 max_output: 65535
 features:

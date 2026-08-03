@@ -24,6 +24,7 @@ upstream:
     model_type: internvl_chat
     architectures:
       - InternVLChatModel
+    license: other
     tags:
       - arxiv:2312.14238
       - arxiv:2404.16821
@@ -52,4 +53,4 @@ upstream:
       - config.json
       - preprocessor_config.json
       - tokenizer_config.json
-    fetched_at: 2026-07-29T10:41:48.551980774Z
+    fetched_at: 2026-07-30T04:45:27.568575777Z

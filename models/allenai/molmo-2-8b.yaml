@@ -21,6 +21,7 @@ upstream:
     model_type: molmo2
     architectures:
       - Molmo2ForConditionalGeneration
+    license: apache-2.0
     tags:
       - base_model:Qwen/Qwen3-8B
       - base_model:finetune:Qwen/Qwen3-8B
@@ -51,4 +52,4 @@ upstream:
       - config.json
       - preprocessor_config.json
       - tokenizer_config.json
-    fetched_at: 2026-07-29T10:36:21.013202593Z
+    fetched_at: 2026-07-30T04:44:03.524478015Z
