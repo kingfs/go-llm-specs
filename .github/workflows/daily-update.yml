@@ -44,6 +44,7 @@ jobs:
         run: task enrich -- -new-only
 
       - name: Extract a bounded batch of new model-card suggestions
+        continue-on-error: true
         env:
           LLM_API_KEY: ${{ secrets.GITHUB_TOKEN }}
           LLM_BASE_URL: https://models.github.ai/inference
@@ -68,11 +69,12 @@ jobs:
 
       - name: Translate missing Chinese descriptions
         if: steps.upstream_changes.outputs.changed == 'true'
+        continue-on-error: true
         env:
           LLM_API_KEY: ${{ secrets.GITHUB_TOKEN }}
           LLM_BASE_URL: https://models.github.ai/inference
           LLM_MODEL: openai/gpt-4o-mini
-        run: task translator
+        run: task translator -- -limit 10
 
       - name: Regenerate compiled registry after translation
         if: steps.upstream_changes.outputs.changed == 'true'
