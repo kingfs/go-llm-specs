@@ -19,6 +19,7 @@ upstream:
     huggingface_id: TheDrummer/UnslopNemo-12B-v4.1
     supported_parameters:
       - frequency_penalty
+      - logit_bias
       - logprobs
       - max_tokens
       - presence_penalty
@@ -30,6 +31,7 @@ upstream:
       - temperature
       - tool_choice
       - tools
+      - top_k
       - top_logprobs
       - top_p
     input_modalities:
@@ -37,7 +39,7 @@ upstream:
     output_modalities:
       - text
     knowledge_cutoff: "2024-04-30"
-    fetched_at: 2026-07-29T10:44:32.789655476Z
+    fetched_at: 2026-08-03T07:50:12.926700812Z
   huggingface:
     id: TheDrummer/UnslopNemo-12B-v4.1
     revision: c20fadc8281ea8237acb8054f4a84524ca257478
@@ -52,4 +54,4 @@ upstream:
     structured_files:
       - config.json
       - tokenizer_config.json
-    fetched_at: 2026-07-29T10:44:34.751488139Z
+    fetched_at: 2026-08-03T07:50:13.239215906Z

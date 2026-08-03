@@ -29,6 +29,7 @@ upstream:
     supported_parameters:
       - frequency_penalty
       - logit_bias
+      - logprobs
       - max_tokens
       - min_p
       - presence_penalty
@@ -39,13 +40,14 @@ upstream:
       - structured_outputs
       - temperature
       - top_k
+      - top_logprobs
       - top_p
     input_modalities:
       - text
     output_modalities:
       - text
     knowledge_cutoff: "2023-12-31"
-    fetched_at: 2026-07-29T10:44:01.462253628Z
+    fetched_at: 2026-08-03T07:50:08.637438153Z
   huggingface:
     id: Sao10K/L3-8B-Lunaris-v1
     revision: 8479c2a7ee119c935b9a02c921cc2a85b698dfe8
@@ -56,6 +58,7 @@ upstream:
     license: llama3
     tags:
       - conversational
+      - deploy:azure
       - en
       - endpoints_compatible
       - license:llama3
@@ -70,4 +73,4 @@ upstream:
     structured_files:
       - config.json
       - tokenizer_config.json
-    fetched_at: 2026-07-29T10:44:03.933236446Z
+    fetched_at: 2026-08-03T07:50:08.946322407Z

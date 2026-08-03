@@ -1,0 +1,78 @@
+schema_version: 2
+id: deepseek/deepseek-v4-flash-0731
+name: 'DeepSeek: DeepSeek V4 Flash 0731'
+provider: DeepSeek
+description: DeepSeek V4 Flash 0731 is a sparse mixture-of-experts model from DeepSeek, with 13B active parameters out of 284B total. This re-post-trained revision is suited for coding, reasoning, and agent workflows.
+context_length: 1048576
+max_output: 65536
+features:
+  - CapChat
+  - CapFunctionCall
+  - CapJsonMode
+  - ModalityTextIn
+  - ModalityTextOut
+discovered_at: 2026-08-03T07:48:48.245003108Z
+upstream:
+  openrouter:
+    canonical_slug: deepseek/deepseek-v4-flash-20260731
+    huggingface_id: deepseek-ai/DeepSeek-V4-Flash-0731
+    supported_parameters:
+      - frequency_penalty
+      - include_reasoning
+      - logit_bias
+      - logprobs
+      - max_tokens
+      - min_p
+      - presence_penalty
+      - reasoning
+      - reasoning_effort
+      - repetition_penalty
+      - response_format
+      - seed
+      - stop
+      - structured_outputs
+      - temperature
+      - tool_choice
+      - tools
+      - top_a
+      - top_k
+      - top_logprobs
+      - top_p
+    input_modalities:
+      - text
+    output_modalities:
+      - text
+    fetched_at: 2026-08-03T07:49:06.489845175Z
+  huggingface:
+    id: deepseek-ai/DeepSeek-V4-Flash-0731
+    revision: 7872f01b1d1fe23eabc4c98b48bffcef5a386062
+    pipeline_tag: text-generation
+    model_type: deepseek_v4
+    architectures:
+      - DeepseekV4ForCausalLM
+    license: mit
+    tags:
+      - 8-bit
+      - arxiv:2606.19348
+      - deepseek_v4
+      - endpoints_compatible
+      - fp8
+      - license:mit
+      - region:us
+      - safetensors
+      - text-generation
+      - transformers
+    config_context_length: 1048576
+    tokenizer_model_max_length: 1048576
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-08-03T07:49:06.814418303Z
+reasoning:
+  supported: true
+  default_enabled: true
+  default_effort: high
+  supported_efforts:
+    - high
+    - low
+    - max

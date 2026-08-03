@@ -22,7 +22,6 @@ upstream:
     supported_parameters:
       - include_reasoning
       - max_completion_tokens
-      - max_tokens
       - reasoning
       - reasoning_effort
       - response_format
@@ -35,7 +34,7 @@ upstream:
       - text
     output_modalities:
       - text
-    fetched_at: 2026-07-29T10:41:18.503819467Z
+    fetched_at: 2026-08-03T07:49:42.021985676Z
 reasoning:
   supported: true
   mandatory: true

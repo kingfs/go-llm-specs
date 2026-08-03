@@ -48,7 +48,7 @@ upstream:
     output_modalities:
       - text
     knowledge_cutoff: "2024-01-31"
-    fetched_at: 2026-07-29T10:39:51.556986174Z
+    fetched_at: 2026-08-03T07:49:27.661664488Z
   huggingface:
     id: mistralai/Mixtral-8x22B-Instruct-v0.1
     revision: cc88a6cc19fbd17d9f1c0ee0b0d70a748dce698d
@@ -60,6 +60,7 @@ upstream:
       - base_model:finetune:mistralai/Mixtral-8x22B-v0.1
       - base_model:mistralai/Mixtral-8x22B-v0.1
       - de
+      - deploy:azure
       - en
       - es
       - eval-results
@@ -76,4 +77,4 @@ upstream:
     structured_files:
       - config.json
       - tokenizer_config.json
-    fetched_at: 2026-07-29T10:39:53.488375558Z
+    fetched_at: 2026-08-03T07:49:27.982404183Z
