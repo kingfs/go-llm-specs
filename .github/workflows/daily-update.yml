@@ -15,10 +15,12 @@ jobs:
   sync-upstream:
     if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
     runs-on: ubuntu-latest
+    concurrency:
+      group: daily-model-sync
+      cancel-in-progress: false
     permissions:
       contents: write
       models: read
-      pull-requests: write
     outputs:
       changed: ${{ steps.changes.outputs.changed }}
     steps:
@@ -106,24 +108,31 @@ jobs:
       - name: Load catalog through pinned Codex CLI
         run: task codexcheck
 
-      - name: Create reviewable model sync pull request
+      - name: Evaluate release necessity
         if: steps.changes.outputs.changed == 'true'
-        uses: peter-evans/create-pull-request@v7
+        id: releasecheck
+        run: |
+          task releasecheck -- -github-output "$GITHUB_OUTPUT" -format text > /tmp/releasecheck.txt
+          cat /tmp/releasecheck.txt
+
+      - name: Commit and push synced data
+        if: steps.changes.outputs.changed == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add models_gen.go data/models.json data/suggestions/ models/ dist/codex/
+          git commit -m "feat(data): sync upstream model registry [skip ci]"
+          git push
+
+      - name: Create release for upstream changes
+        if: steps.releasecheck.outputs.release_needed == 'true'
+        uses: softprops/action-gh-release@v2
         with:
-          branch: automation/model-sync
-          delete-branch: true
-          commit-message: 'feat(data): sync upstream model registry'
-          title: 'feat(data): sync upstream model registry'
-          body: |
-            Automated OpenRouter discovery, structured enrichment, registry generation,
-            and Codex catalog validation. Review source attribution and capability changes
-            before merging.
-          add-paths: |
-            models_gen.go
-            data/models.json
-            data/suggestions/**
-            models/**
-            dist/codex/**
+          tag_name: ${{ steps.releasecheck.outputs.next_tag }}
+          name: Release ${{ steps.releasecheck.outputs.next_tag }}
+          body: ${{ steps.releasecheck.outputs.release_body }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
   validate-pull-request:
     if: github.event_name == 'pull_request'
