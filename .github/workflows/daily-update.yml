@@ -131,6 +131,8 @@ jobs:
           tag_name: ${{ steps.releasecheck.outputs.next_tag }}
           name: Release ${{ steps.releasecheck.outputs.next_tag }}
           body: ${{ steps.releasecheck.outputs.release_body }}
+          files: dist/codex/third-party-models.json
+          fail_on_unmatched_files: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
@@ -199,5 +201,7 @@ jobs:
           tag_name: ${{ steps.releasecheck.outputs.next_tag }}
           name: Release ${{ steps.releasecheck.outputs.next_tag }}
           body: ${{ steps.releasecheck.outputs.release_body }}
+          files: dist/codex/third-party-models.json
+          fail_on_unmatched_files: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
