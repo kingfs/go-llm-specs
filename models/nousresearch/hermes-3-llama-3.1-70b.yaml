@@ -46,7 +46,7 @@ upstream:
     output_modalities:
       - text
     knowledge_cutoff: "2023-12-31"
-    fetched_at: 2026-07-29T10:40:32.337081861Z
+    fetched_at: 2026-08-04T04:52:58.248508224Z
   huggingface:
     id: NousResearch/Hermes-3-Llama-3.1-70B
     revision: 1fc86da0ce9cdb14cd775ad270bc7d1b4bf70ede
@@ -68,7 +68,6 @@ upstream:
       - distillation
       - en
       - endpoints_compatible
-      - eval-results
       - finetune
       - function calling
       - gpt4
@@ -89,4 +88,4 @@ upstream:
     structured_files:
       - config.json
       - tokenizer_config.json
-    fetched_at: 2026-07-29T10:40:34.408219908Z
+    fetched_at: 2026-08-04T04:52:58.545215121Z

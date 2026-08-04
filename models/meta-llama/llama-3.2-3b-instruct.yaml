@@ -50,7 +50,7 @@ upstream:
     output_modalities:
       - text
     knowledge_cutoff: "2023-12-31"
-    fetched_at: 2026-07-29T10:38:55.995108188Z
+    fetched_at: 2026-08-04T04:52:43.87961391Z
   huggingface:
     id: meta-llama/Llama-3.2-3B-Instruct
     revision: 0cb88a4f764b7a12671c53f0838cd831a0843b95
@@ -68,7 +68,6 @@ upstream:
       - en
       - endpoints_compatible
       - es
-      - eval-results
       - facebook
       - fr
       - hi
@@ -85,4 +84,4 @@ upstream:
       - text-generation-inference
       - th
       - transformers
-    fetched_at: 2026-07-29T10:38:56.740917168Z
+    fetched_at: 2026-08-04T04:52:44.017344795Z

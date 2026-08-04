@@ -1,0 +1,55 @@
+schema_version: 2
+id: qwen/qwen3.8-max
+name: 'Qwen: Qwen3.8 Max'
+provider: Qwen
+description: Qwen3.8 Max is the flagship model in Alibaba's Qwen3.8 series, the general-availability successor to the Qwen3.8 Max Preview. It is a multimodal reasoning model intended for complex reasoning, visual understanding,...
+context_length: 1000000
+max_output: 131072
+features:
+  - CapChat
+  - CapFunctionCall
+  - CapJsonMode
+  - ModalityImageIn
+  - ModalityTextIn
+  - ModalityTextOut
+  - ModalityVideoIn
+discovered_at: 2026-08-04T04:52:16.623375042Z
+upstream:
+  openrouter:
+    canonical_slug: qwen/qwen3.8-max-20260803
+    supported_parameters:
+      - frequency_penalty
+      - include_reasoning
+      - logprobs
+      - max_tokens
+      - presence_penalty
+      - reasoning
+      - reasoning_effort
+      - response_format
+      - seed
+      - stop
+      - structured_outputs
+      - temperature
+      - tool_choice
+      - tools
+      - top_k
+      - top_logprobs
+      - top_p
+    input_modalities:
+      - image
+      - text
+      - video
+    output_modalities:
+      - text
+    fetched_at: 2026-08-04T04:53:27.105441559Z
+reasoning:
+  supported: true
+  mandatory: true
+  default_enabled: true
+  default_effort: xhigh
+  supported_efforts:
+    - high
+    - low
+    - medium
+    - minimal
+    - xhigh

@@ -52,7 +52,7 @@ upstream:
     output_modalities:
       - text
     knowledge_cutoff: "2024-06-30"
-    fetched_at: 2026-07-29T10:42:13.217862612Z
+    fetched_at: 2026-08-04T04:53:13.4058086Z
   huggingface:
     id: Qwen/Qwen2.5-72B-Instruct
     revision: 495f39366efef23836d0cfae4fbe635880d2be31
@@ -72,7 +72,6 @@ upstream:
       - deploy:sagemaker
       - en
       - endpoints_compatible
-      - eval-results
       - license:other
       - qwen2
       - region:us
@@ -86,4 +85,4 @@ upstream:
     structured_files:
       - config.json
       - tokenizer_config.json
-    fetched_at: 2026-07-29T10:42:15.021165993Z
+    fetched_at: 2026-08-04T04:53:13.688348509Z
