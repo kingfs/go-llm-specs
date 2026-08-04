@@ -2,6 +2,7 @@ schema_version: 2
 id: moonshotai/kimi-k2.7-code
 name: 'MoonshotAI: Kimi K2.7 Code'
 provider: Moonshotai
+developer: moonshotai
 description: 'MoonshotAI: Kimi K2.7 Code is a coding-focused model in Moonshot AI''s Kimi K2 family, built to complete end-to-end programming tasks reliably over long contexts. It uses a native multimodal mixture-of-experts...'
 description_cn: 'MoonshotAI: Kimi K2.7 Code 是 Moonshot AI 的 Kimi K2 系列中的一个专注于编码的模型，旨在可靠地完成长期上下文中的端到端编程任务。它使用原生多模态专家混合...'
 context_length: 262144
@@ -15,6 +16,13 @@ features:
   - ModalityTextOut
   - ModalityVideoIn
 discovered_at: 2026-07-29T10:40:10.97401849Z
+links:
+  model_card: https://huggingface.co/moonshotai/Kimi-K2.7-Code
+identifiers:
+  huggingface:
+    - moonshotai/Kimi-K2.7-Code
+  openrouter:
+    - moonshotai/kimi-k2.7-code
 upstream:
   openrouter:
     canonical_slug: moonshotai/kimi-k2.7-code-20260612

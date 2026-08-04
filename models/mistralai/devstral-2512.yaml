@@ -2,6 +2,7 @@ schema_version: 2
 id: mistralai/devstral-2512
 name: 'Mistral: Devstral 2 2512'
 provider: Mistral
+developer: mistral
 description: |-
   Devstral 2 is a state-of-the-art open-source model by Mistral AI specializing in agentic coding. It is a 123B-parameter dense transformer model supporting a 256K context window.
 
@@ -18,6 +19,11 @@ features:
   - ModalityTextIn
   - ModalityTextOut
 discovered_at: 2026-07-29T10:39:24.226519191Z
+links:
+  model_card: https://huggingface.co/mistralai/Devstral-2-123B-Instruct-2512
+identifiers:
+  huggingface:
+    - mistralai/Devstral-2-123B-Instruct-2512
 upstream:
   openrouter:
     canonical_slug: mistralai/devstral-2512

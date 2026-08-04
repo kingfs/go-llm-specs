@@ -2,6 +2,7 @@ schema_version: 2
 id: meituan/longcat-2.0
 name: 'Meituan: LongCat 2.0'
 provider: Meituan
+developer: Meituan
 description: LongCat 2.0 is a sparse mixture-of-experts language model from Meituan, with 48B active parameters out of 1.6T total. It is suited for coding, repository-level changes, long-horizon problem solving, and agentic...
 description_cn: LongCat 2.0 是美团的一种稀疏专家混合语言模型，拥有 48B 活跃参数，总量为 1.6T。它适用于编码、仓库级别的更改、长远问题解决和代理...
 context_length: 1048756
@@ -12,6 +13,13 @@ features:
   - ModalityTextIn
   - ModalityTextOut
 discovered_at: 2026-07-29T10:38:47.469255347Z
+links:
+  model_card: https://huggingface.co/meituan-longcat/LongCat-2.0
+identifiers:
+  huggingface:
+    - meituan-longcat/LongCat-2.0
+  openrouter:
+    - meituan/longcat-2.0
 upstream:
   openrouter:
     canonical_slug: meituan/longcat-2.0-20260720

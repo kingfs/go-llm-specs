@@ -2,6 +2,7 @@ schema_version: 2
 id: meta-llama/llama-guard-4-12b:free
 name: 'Meta: Llama Guard 4 12B (free)'
 provider: Meta
+developer: meta
 description: Llama Guard 4 is a Llama 4 Scout-derived multimodal pretrained model, fine-tuned for content safety classification. Similar to previous versions, it can be used to classify content in both LLM...
 description_cn: Llama Guard 4 是基于 Llama 4 Scout 衍生的多模态预训练模型，经过微调用于内容安全分类。与先前版本类似，可用于对大语言模型……中的内容进行分类。
 context_length: 163840

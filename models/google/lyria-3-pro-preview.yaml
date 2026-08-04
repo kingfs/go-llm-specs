@@ -2,6 +2,7 @@ schema_version: 2
 id: google/lyria-3-pro-preview
 name: 'Google: Lyria 3 Pro Preview'
 provider: Google
+developer: google
 description: Full-length songs are priced at $0.08 per song. Lyria 3 is Google's family of music generation models, available through the Gemini API. With Lyria 3, you can generate high-quality, 48kHz stereo audio from text prompts or from images. These models deliver structural coherence, including vocals, timed lyrics, and full instrumental arrangements. Lyria 3 Pro can generate full-length songs with verses, choruses, bridges.
 description_cn: 完整歌曲每首定价 0.08 美元。Lyria 3 是 Google 的音乐生成模型系列，通过 Gemini API 提供。借助 Lyria 3，您可以根据文本提示或图像生成高质量的 48kHz 立体声音频。这些模型具备结构连贯性，包含人声、定时歌词和完整器乐编排。Lyria 3 Pro 可生成包含主歌、副歌和桥段的完整歌曲。
 context_length: 1048576
@@ -14,6 +15,9 @@ features:
   - ModalityTextIn
   - ModalityTextOut
 discovered_at: 2026-07-29T10:38:26.958909892Z
+identifiers:
+  openrouter:
+    - google/lyria-3-pro-preview
 upstream:
   openrouter:
     canonical_slug: google/lyria-3-pro-preview-20260330

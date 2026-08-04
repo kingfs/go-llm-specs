@@ -2,6 +2,7 @@ schema_version: 2
 id: meta-llama/llama-3-70b-instruct
 name: 'Meta: Llama 3 70B Instruct'
 provider: Meta
+developer: meta
 description: |-
   Meta's latest class of model (Llama 3) launched with a variety of sizes & flavors. This 70B instruct-tuned version was optimized for high quality dialogue usecases.
 

@@ -2,6 +2,7 @@ schema_version: 2
 id: openai/o3-deep-research
 name: 'OpenAI: o3 Deep Research'
 provider: OpenAI
+developer: openai
 description: |-
   o3-deep-research is OpenAI's advanced model for deep research, designed to tackle complex, multi-step research tasks.
 

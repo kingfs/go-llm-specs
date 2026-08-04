@@ -2,6 +2,7 @@ schema_version: 2
 id: qwen/qwen3.6-27b
 name: 'Qwen: Qwen3.6 27B'
 provider: Qwen
+developer: qwen
 description: Qwen3.6 27B is a dense 27-billion-parameter language model from the Qwen Team at Alibaba, released in April 2026. It features hybrid multimodal capabilities — accepting text, image, and video inputs...
 description_cn: Qwen3.6 27B是阿里巴巴Qwen团队于2026年4月发布的密集27亿参数语言模型，具备混合多模态能力——接受文本、图像和视频输入...
 context_length: 262144
@@ -17,6 +18,13 @@ features:
 aliases:
   - qwen3.6-27b
 discovered_at: 2026-07-29T08:14:33.676801234Z
+links:
+  model_card: https://huggingface.co/Qwen/Qwen3.6-27B
+identifiers:
+  huggingface:
+    - Qwen/Qwen3.6-27B
+  openrouter:
+    - qwen/qwen3.6-27b
 upstream:
   openrouter:
     canonical_slug: qwen/qwen3.6-27b-20260422

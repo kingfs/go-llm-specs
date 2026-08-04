@@ -44,7 +44,7 @@ func (d Document) Validate() error {
 	if d.SchemaVersion != CurrentSchemaVersion || d.ModelID == "" || d.Kind == "" {
 		return fmt.Errorf("invalid suggestion identity")
 	}
-	if d.Status != "pending" && d.Status != "accepted" && d.Status != "rejected" {
+	if d.Status != "pending" && d.Status != "accepted" && d.Status != "partially_accepted" && d.Status != "rejected" {
 		return fmt.Errorf("invalid suggestion status %q", d.Status)
 	}
 	for i, claim := range d.Claims {

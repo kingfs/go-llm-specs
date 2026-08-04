@@ -2,6 +2,7 @@ schema_version: 2
 id: nex-agi/nex-n2-pro:free
 name: 'Nex AGI: Nex-N2-Pro (free)'
 provider: Nex-Agi
+developer: nex-agi
 description: Nex-N2-Pro is an agentic mixture-of-experts model from Nex AGI, with 17B active parameters out of 397B total. Built on the Qwen3.5 architecture, it accepts text and image input and produces...
 description_cn: Nex-N2-Pro是Nex AGI的一个智能专家混合模型，具有17B的活跃参数，总计397B。基于Qwen3.5架构，支持文本和图像输入，并生成...
 context_length: 262144

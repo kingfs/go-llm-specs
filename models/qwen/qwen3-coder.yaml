@@ -2,6 +2,7 @@ schema_version: 2
 id: qwen/qwen3-coder
 name: 'Qwen: Qwen3 Coder 480B A35B'
 provider: Qwen
+developer: qwen
 description: |-
   Qwen3-Coder-480B-A35B-Instruct is a Mixture-of-Experts (MoE) code generation model developed by the Qwen team. It is optimized for agentic coding tasks such as function calling, tool use, and long-context reasoning over repositories. The model features 480 billion total parameters, with 35 billion active per forward pass (8 out of 160 experts).
 
@@ -19,6 +20,13 @@ features:
   - ModalityTextIn
   - ModalityTextOut
 discovered_at: 2026-07-29T10:42:51.183006584Z
+links:
+  model_card: https://huggingface.co/Qwen/Qwen3-Coder-480B-A35B-Instruct
+identifiers:
+  huggingface:
+    - Qwen/Qwen3-Coder-480B-A35B-Instruct
+  openrouter:
+    - qwen/qwen3-coder
 upstream:
   openrouter:
     canonical_slug: qwen/qwen3-coder-480b-a35b-07-25

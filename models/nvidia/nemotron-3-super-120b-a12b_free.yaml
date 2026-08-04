@@ -2,6 +2,7 @@ schema_version: 2
 id: nvidia/nemotron-3-super-120b-a12b:free
 name: 'NVIDIA: Nemotron 3 Super (free)'
 provider: Nvidia
+developer: nvidia
 description: "NVIDIA Nemotron 3 Super is a 120B-parameter open hybrid MoE model, activating just 12B parameters for maximum compute efficiency and accuracy in complex multi-agent applications. Built on a hybrid Mamba-Transformer Mixture-of-Experts architecture with multi-token prediction (MTP), it delivers over 50% higher token generation compared to leading open models.\n \nThe model features a 1M token context window for long-term agent coherence, cross-document reasoning, and multi-step task planning. Latent MoE enables calling 4 experts for the inference cost of only one, improving intelligence and generalization. Multi-environment RL training across 10+ environments delivers leading accuracy on benchmarks including AIME 2025, TerminalBench, and SWE-Bench Verified.\n \nFully open with weights, datasets, and recipes under the NVIDIA Open License, Nemotron 3 Super allows easy customization and secure deployment anywhere — from workstation to cloud."
 description_cn: |-
   NVIDIA Nemotron 3 Super 是一款开源混合专家（MoE）大模型，总参数量达 1200 亿，每推理仅激活 120 亿参数，以实现复杂多智能体应用中的极致计算效率与精度。该模型基于混合 Mamba-Transformer MoE 架构，并支持多 token 预测（MTP），其 token 生成速度较主流开源模型提升超 50%。
@@ -18,6 +19,13 @@ features:
   - ModalityTextIn
   - ModalityTextOut
 discovered_at: 2026-07-29T10:40:50.53617339Z
+links:
+  model_card: https://huggingface.co/nvidia/NVIDIA-Nemotron-3-Super-120B-A12B-FP8
+identifiers:
+  huggingface:
+    - nvidia/NVIDIA-Nemotron-3-Super-120B-A12B-FP8
+  openrouter:
+    - nvidia/nemotron-3-super-120b-a12b:free
 upstream:
   openrouter:
     canonical_slug: nvidia/nemotron-3-super-120b-a12b-20230311

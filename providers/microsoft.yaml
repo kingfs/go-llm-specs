@@ -1,0 +1,11 @@
+schema_version: 1
+id: microsoft
+name: Microsoft
+kind: company
+official:
+  homepage: https://www.microsoft.com/en-us/ai
+  model_catalog: https://ai.azure.com/explore/models
+organizations:
+  huggingface: [microsoft]
+discovery:
+  huggingface: true

@@ -2,6 +2,7 @@ schema_version: 2
 id: google/gemini-3.1-flash-image
 name: 'Google: Nano Banana 2 (Gemini 3.1 Flash Image)'
 provider: Google
+developer: google
 description: Gemini 3.1 Flash Image, a.k.a. "Nano Banana 2," is Google’s latest state of the art image generation and editing model, delivering Pro-level visual quality at Flash speed. It combines advanced...
 description_cn: Gemini 3.1 Flash Image，亦称 "Nano Banana 2"，是谷歌最新的尖端图像生成和编辑模型，提供专业级的视觉质量，速度极快。它结合了先进的...
 context_length: 131072
@@ -14,6 +15,9 @@ features:
   - ModalityTextIn
   - ModalityTextOut
 discovered_at: 2026-07-29T10:38:06.24465081Z
+identifiers:
+  openrouter:
+    - google/gemini-3.1-flash-image
 upstream:
   openrouter:
     canonical_slug: google/gemini-3.1-flash-image-20260528

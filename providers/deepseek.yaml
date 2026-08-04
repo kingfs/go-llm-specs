@@ -1,0 +1,11 @@
+schema_version: 1
+id: deepseek
+name: DeepSeek
+official:
+  homepage: https://www.deepseek.com/
+  documentation: https://api-docs.deepseek.com/
+organizations:
+  huggingface: [deepseek-ai]
+  github: [deepseek-ai]
+discovery:
+  huggingface: true

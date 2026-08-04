@@ -2,6 +2,7 @@ schema_version: 2
 id: z-ai/glm-4-32b
 name: 'Z.ai: GLM 4 32B '
 provider: Z-Ai
+developer: zai
 description: |-
   GLM 4 32B is a cost-effective foundation language model.
 

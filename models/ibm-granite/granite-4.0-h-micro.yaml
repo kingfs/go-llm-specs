@@ -2,6 +2,7 @@ schema_version: 2
 id: ibm-granite/granite-4.0-h-micro
 name: 'IBM: Granite 4.0 Micro'
 provider: Ibm-Granite
+developer: ibm-granite
 description: 'Granite-4.0-H-Micro is a 3B parameter from the Granite 4 family of models. These models are the latest in a series of models released by IBM. They are fine-tuned for long context tool calling. '
 description_cn: Granite-4.0-H-Micro 是 IBM Granite 4 系列中的一个 30 亿参数模型。该系列是 IBM 最新发布的模型家族，专为长上下文工具调用场景进行了微调。
 context_length: 131000
@@ -11,6 +12,13 @@ features:
   - ModalityTextIn
   - ModalityTextOut
 discovered_at: 2026-07-29T10:38:29.380343183Z
+links:
+  model_card: https://huggingface.co/ibm-granite/granite-4.0-h-micro
+identifiers:
+  huggingface:
+    - ibm-granite/granite-4.0-h-micro
+  openrouter:
+    - ibm-granite/granite-4.0-h-micro
 upstream:
   openrouter:
     canonical_slug: ibm-granite/granite-4.0-h-micro

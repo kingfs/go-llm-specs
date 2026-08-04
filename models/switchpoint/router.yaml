@@ -2,6 +2,7 @@ schema_version: 2
 id: switchpoint/router
 name: Switchpoint Router
 provider: Switchpoint
+developer: switchpoint
 description: "Switchpoint AI's router instantly analyzes your request and directs it to the optimal AI from an ever-evolving library. \n\nAs the world of LLMs advances, our router gets smarter, ensuring you always benefit from the industry's newest models without changing your workflow.\n\nThis model is configured for a simple, flat rate per response here on OpenRouter. It's powered by the full routing engine from [Switchpoint AI](https://www.switchpoint.dev)."
 description_cn: |-
   Switchpoint AI 的路由模型可即时分析您的请求，并将其动态分发至不断演进的 AI 模型库中最优选项。

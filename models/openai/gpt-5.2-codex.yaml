@@ -2,6 +2,7 @@ schema_version: 2
 id: openai/gpt-5.2-codex
 name: 'OpenAI: GPT-5.2-Codex'
 provider: OpenAI
+developer: openai
 description: |-
   GPT-5.2-Codex is an upgraded version of GPT-5.1-Codex optimized for software engineering and coding workflows. It is designed for both interactive development sessions and long, independent execution of complex engineering tasks. The model supports building projects from scratch, feature development, debugging, large-scale refactoring, and code review. Compared to GPT-5.1-Codex, 5.2-Codex is more steerable, adheres closely to developer instructions, and produces cleaner, higher-quality code outputs. Reasoning effort can be adjusted with the `reasoning.effort` parameter. Read the [docs here](https://openrouter.ai/docs/use-cases/reasoning-tokens#reasoning-effort-level)
 
@@ -20,6 +21,9 @@ features:
   - ModalityTextIn
   - ModalityTextOut
 discovered_at: 2026-07-29T10:41:20.617128703Z
+identifiers:
+  openrouter:
+    - openai/gpt-5.2-codex
 upstream:
   openrouter:
     canonical_slug: openai/gpt-5.2-codex-20260114

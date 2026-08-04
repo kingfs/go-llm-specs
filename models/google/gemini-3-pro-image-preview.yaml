@@ -2,6 +2,7 @@ schema_version: 2
 id: google/gemini-3-pro-image-preview
 name: 'Google: Nano Banana Pro (Gemini 3 Pro Image Preview)'
 provider: Google
+developer: google
 description: |-
   Nano Banana Pro is Google’s most advanced image-generation and editing model, built on Gemini 3 Pro. It extends the original Nano Banana with significantly improved multimodal reasoning, real-world grounding, and high-fidelity visual synthesis. The model generates context-rich graphics, from infographics and diagrams to cinematic composites, and can incorporate real-time information via Search grounding.
 
@@ -20,6 +21,9 @@ features:
   - ModalityTextIn
   - ModalityTextOut
 discovered_at: 2026-07-29T10:38:05.392704235Z
+identifiers:
+  openrouter:
+    - google/gemini-3-pro-image-preview
 upstream:
   openrouter:
     canonical_slug: google/gemini-3-pro-image-preview-20251120

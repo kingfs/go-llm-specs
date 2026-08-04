@@ -2,6 +2,7 @@ schema_version: 2
 id: qwen/qwen3-vl-8b-instruct
 name: 'Qwen: Qwen3 VL 8B Instruct'
 provider: Qwen
+developer: qwen
 description: |-
   Qwen3-VL-8B-Instruct is a multimodal vision-language model from the Qwen3-VL series, built for high-fidelity understanding and reasoning across text, images, and video. It features improved multimodal fusion with Interleaved-MRoPE for long-horizon temporal reasoning, DeepStack for fine-grained visual-text alignment, and text-timestamp alignment for precise event localization.
 
@@ -20,6 +21,17 @@ features:
   - ModalityTextIn
   - ModalityTextOut
 discovered_at: 2026-07-29T10:43:26.287579888Z
+links:
+  model_card: https://huggingface.co/Qwen/Qwen3-VL-8B-Instruct
+identifiers:
+  huggingface:
+    - Qwen/Qwen3-VL-8B-Instruct
+  openrouter:
+    - qwen/qwen3-vl-8b-instruct
+provenance:
+  reasoning.supported:
+    source: official_model_card
+    url: https://huggingface.co/Qwen/Qwen3-VL-8B-Instruct/resolve/0c351dd01ed87e9c1b53cbc748cba10e6187ff3b/README.md
 upstream:
   openrouter:
     canonical_slug: qwen/qwen3-vl-8b-instruct
@@ -79,3 +91,5 @@ upstream:
       - preprocessor_config.json
       - tokenizer_config.json
     fetched_at: 2026-07-29T10:43:28.909458617Z
+reasoning:
+  supported: true

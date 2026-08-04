@@ -68,6 +68,9 @@ type ProcessedModel struct {
 	ID            string
 	Name          string
 	Provider      string
+	Developer     string
+	OfficialURL   string
+	ModelCardURL  string
 	Description   string
 	DescriptionCN string
 	Family        string
@@ -88,6 +91,8 @@ type generatorConfig struct {
 	OutputGo         string
 	SyncRegistry     bool
 	FetchOnly        bool
+	CacheOnly        bool
+	Check            bool
 	UseCacheFallback bool
 	HTTPTimeout      time.Duration
 }
@@ -113,6 +118,8 @@ func parseFlags() generatorConfig {
 	flag.StringVar(&cfg.OutputGo, "output-go", "models_gen.go", "generated Go registry output path")
 	flag.BoolVar(&cfg.SyncRegistry, "sync-registry", true, "write fetched upstream data back into models directory before codegen")
 	flag.BoolVar(&cfg.FetchOnly, "fetch-only", false, "only fetch/cache upstream metadata, skip registry sync and code generation")
+	flag.BoolVar(&cfg.CacheOnly, "cache-only", false, "read the existing upstream cache without making a network request")
+	flag.BoolVar(&cfg.Check, "check", false, "verify the committed generated registry matches current YAML")
 	flag.BoolVar(&cfg.UseCacheFallback, "use-cache-fallback", true, "fall back to the cached raw upstream payload when HTTP fetch fails")
 	flag.DurationVar(&cfg.HTTPTimeout, "timeout", 30*time.Second, "HTTP timeout used when fetching upstream models")
 	flag.Parse()
@@ -154,6 +161,9 @@ func run(cfg generatorConfig) error {
 	processedModels := buildProcessedModels(finalModels)
 	aliasMap := buildAliasMap(processedModels)
 
+	if cfg.Check {
+		return checkGeneratedCode(cfg.OutputGo, processedModels, aliasMap)
+	}
 	if err := generateCode(cfg.OutputGo, processedModels, aliasMap); err != nil {
 		return fmt.Errorf("generate code: %w", err)
 	}
@@ -162,14 +172,47 @@ func run(cfg generatorConfig) error {
 	return nil
 }
 
+func checkGeneratedCode(outputPath string, models []*ProcessedModel, aliasMap map[string]string) error {
+	tmp, err := os.CreateTemp("", "llm-specs-models-*.go")
+	if err != nil {
+		return err
+	}
+	tmpPath := tmp.Name()
+	if err := tmp.Close(); err != nil {
+		return err
+	}
+	defer os.Remove(tmpPath)
+	if err := generateCode(tmpPath, models, aliasMap); err != nil {
+		return err
+	}
+	want, err := os.ReadFile(tmpPath)
+	if err != nil {
+		return err
+	}
+	got, err := os.ReadFile(outputPath)
+	if err != nil {
+		return err
+	}
+	if !bytes.Equal(got, want) {
+		return fmt.Errorf("%s is stale; run task generator", outputPath)
+	}
+	return nil
+}
+
 func buildProcessedModels(finalModels map[string]ModelRegistry) []*ProcessedModel {
 	processedModels := make([]*ProcessedModel, 0, len(finalModels))
 
 	for id, m := range finalModels {
+		if m.Lifecycle != "" && m.Lifecycle != "active" {
+			continue
+		}
 		p := &ProcessedModel{
 			ID:            id,
 			Name:          m.Name,
 			Provider:      m.Provider,
+			Developer:     m.Developer,
+			OfficialURL:   m.Links.Official,
+			ModelCardURL:  m.Links.ModelCard,
 			Description:   m.Description,
 			DescriptionCN: m.DescriptionCN,
 			ContextLen:    m.ContextLen,
@@ -282,30 +325,47 @@ func mergeModelRegistry(upstream OpenRouterModel, local ModelRegistry) ModelRegi
 	// Start from the complete local object so v2 and forward-compatible fields
 	// survive synchronization. Upstream only fills fields that are not locally set.
 	merged := local
+	if merged.Provenance == nil {
+		merged.Provenance = make(map[string]registrymodel.Provenance)
+	}
 	if merged.ID == "" {
 		merged.ID = upstream.ID
+		merged.Provenance["id"] = registrymodel.Provenance{Source: "openrouter"}
 	}
 	if merged.Name == "" {
 		merged.Name = upstream.Name
+		merged.Provenance["name"] = registrymodel.Provenance{Source: "openrouter"}
 	}
 	if merged.Provider == "" {
 		merged.Provider = normalizeProvider(strings.Split(upstream.ID, "/")[0])
+		merged.Provenance["provider"] = registrymodel.Provenance{Source: "openrouter"}
+	}
+	if merged.Developer == "" {
+		merged.Developer = normalizeDeveloperID(merged.Provider)
 	}
 	if merged.Description == "" {
 		merged.Description = upstream.Description
+		merged.Provenance["description"] = registrymodel.Provenance{Source: "openrouter"}
 	}
 	if merged.ContextLen <= 0 {
 		merged.ContextLen = upstream.ContextLength
+		merged.Provenance["context_length"] = registrymodel.Provenance{Source: "openrouter"}
 	}
 	if merged.MaxOutput <= 0 {
 		merged.MaxOutput = upstream.TopProvider.MaxCompletionTokens
+		merged.Provenance["max_output"] = registrymodel.Provenance{Source: "openrouter"}
 	}
 	if len(merged.Features) == 0 {
 		merged.Features = stringsToFeatures(calculateFeatures(upstream))
+		merged.Provenance["features"] = registrymodel.Provenance{Source: "openrouter"}
+	}
+	if !containsFold(merged.Identifiers.OpenRouter, upstream.ID) {
+		merged.Identifiers.OpenRouter = append(merged.Identifiers.OpenRouter, upstream.ID)
 	}
 
 	merged.Features = normalizeStringList(merged.Features)
 	merged.Aliases = normalizeStringList(merged.Aliases)
+	merged.Identifiers.OpenRouter = normalizeStringList(merged.Identifiers.OpenRouter)
 
 	if len(merged.Features) == 0 {
 		merged.Features = []string{"CapChat"}
@@ -315,6 +375,23 @@ func mergeModelRegistry(upstream OpenRouterModel, local ModelRegistry) ModelRegi
 	}
 
 	return merged
+}
+
+func normalizeDeveloperID(providerName string) string {
+	normalized := strings.ToLower(providerName)
+	normalized = strings.NewReplacer(" ", "", "-", "", "_", "", ".", "").Replace(normalized)
+	switch normalized {
+	case "metallama":
+		return "meta"
+	case "mistralai":
+		return "mistral"
+	case "xai":
+		return "xai"
+	case "zai", "zhipuai", "thudm":
+		return "zai"
+	default:
+		return normalized
+	}
 }
 
 func stringsToFeatures(featureExpr string) []string {
@@ -453,17 +530,19 @@ func normalizeProvider(idPrefix string) string {
 }
 
 const modelTemplate = `// Code generated by llm-specs-gen. DO NOT EDIT.
-// Generated at: {{ .GeneratedAt }}
 
 package llmspecs
 
 func init() {
 	staticRegistry = map[string]*modelData{
 		{{- range .Models }}
-		"{{ .ID }}": {
-			IDVal:         "{{ .ID }}",
-			NameVal:       "{{ .Name }}",
-			ProviderVal:   "{{ .Provider }}",
+		{{ printf "%q" .ID }}: {
+			IDVal:         {{ printf "%q" .ID }},
+			NameVal:       {{ printf "%q" .Name }},
+			ProviderVal:   {{ printf "%q" .Provider }},
+			DeveloperVal:  {{ printf "%q" .Developer }},
+			OfficialURLVal: {{ printf "%q" .OfficialURL }},
+			ModelCardURLVal: {{ printf "%q" .ModelCardURL }},
 			DescVal:       {{ printf "%q" .Description }},
 			DescCNVal:     {{ printf "%q" .DescriptionCN }},
 			FamilyVal:     {{ printf "%q" .Family }},
@@ -480,7 +559,7 @@ func init() {
 
 	aliasIndex = map[string]string{
 		{{- range $alias, $id := .AliasMap }}
-		"{{ $alias }}": "{{ $id }}",
+		{{ printf "%q" $alias }}: {{ printf "%q" $id }},
 		{{- end }}
 	}
 }
@@ -493,14 +572,9 @@ func generateCode(outputPath string, models []*ProcessedModel, aliasMap map[stri
 	}
 
 	data := struct {
-		GeneratedAt string
-		Models      []*ProcessedModel
-		AliasMap    map[string]string
-	}{
-		GeneratedAt: time.Now().UTC().Format(time.RFC3339),
-		Models:      models,
-		AliasMap:    aliasMap,
-	}
+		Models   []*ProcessedModel
+		AliasMap map[string]string
+	}{Models: models, AliasMap: aliasMap}
 
 	var generated bytes.Buffer
 	if err := tmpl.Execute(&generated, data); err != nil {
@@ -514,6 +588,9 @@ func generateCode(outputPath string, models []*ProcessedModel, aliasMap map[stri
 }
 
 func fetchSourceModels(cfg generatorConfig) ([]OpenRouterModel, error) {
+	if cfg.CacheOnly {
+		return loadOpenRouterModelsFromCache(cfg.CachePath, nil)
+	}
 	switch strings.ToLower(cfg.Source) {
 	case "openrouter":
 		return fetchOpenRouterModels(cfg.APIURL, cfg.CachePath, cfg.UseCacheFallback, cfg.HTTPTimeout)
@@ -570,7 +647,11 @@ func loadOpenRouterModelsFromCache(cachePath string, fetchErr error) ([]OpenRout
 		return nil, fetchErr
 	}
 
-	log.Printf("Fetch failed (%v), attempting cache fallback from %s", fetchErr, cachePath)
+	if fetchErr != nil {
+		log.Printf("Fetch failed (%v), attempting cache fallback from %s", fetchErr, cachePath)
+	} else {
+		log.Printf("Loading upstream models from cache %s", cachePath)
+	}
 	body, err := os.ReadFile(cachePath)
 	if err != nil {
 		return nil, errors.Join(fetchErr, fmt.Errorf("read cache %s: %w", cachePath, err))

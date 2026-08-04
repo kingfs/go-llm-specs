@@ -2,6 +2,7 @@ schema_version: 2
 id: openai/gpt-5.6-luna-pro
 name: 'OpenAI: GPT-5.6 Luna Pro'
 provider: OpenAI
+developer: openai
 description: |-
   GPT-5.6 Luna Pro is the same underlying model as [GPT-5.6 Luna](https://openrouter.ai/openai/gpt-5.6-luna), served with `reasoning.mode` set to `pro` for higher-quality responses on complex tasks.
 
@@ -21,6 +22,9 @@ features:
   - ModalityTextIn
   - ModalityTextOut
 discovered_at: 2026-07-29T10:41:27.790900648Z
+identifiers:
+  openrouter:
+    - openai/gpt-5.6-luna-pro
 upstream:
   openrouter:
     canonical_slug: openai/gpt-5.6-luna-pro-20260709

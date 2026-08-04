@@ -2,6 +2,7 @@ schema_version: 2
 id: qwen/qwen3-vl-8b-thinking
 name: 'Qwen: Qwen3 VL 8B Thinking'
 provider: Qwen
+developer: qwen
 description: |-
   Qwen3-VL-8B-Thinking is the reasoning-optimized variant of the Qwen3-VL-8B multimodal model, designed for advanced visual and textual reasoning across complex scenes, documents, and temporal sequences. It integrates enhanced multimodal alignment and long-context processing (native 256K, expandable to 1M tokens) for tasks such as scientific visual analysis, causal inference, and mathematical reasoning over image or video inputs.
 
@@ -20,6 +21,13 @@ features:
   - ModalityTextIn
   - ModalityTextOut
 discovered_at: 2026-07-29T10:43:29.010819243Z
+links:
+  model_card: https://huggingface.co/Qwen/Qwen3-VL-8B-Thinking
+identifiers:
+  huggingface:
+    - Qwen/Qwen3-VL-8B-Thinking
+  openrouter:
+    - qwen/qwen3-vl-8b-thinking
 upstream:
   openrouter:
     canonical_slug: qwen/qwen3-vl-8b-thinking

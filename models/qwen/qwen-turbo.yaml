@@ -2,6 +2,7 @@ schema_version: 2
 id: qwen/qwen-turbo
 name: 'Qwen: Qwen-Turbo'
 provider: Qwen
+developer: qwen
 description: Qwen-Turbo, based on Qwen2.5, is a 1M context model that provides fast speed and low cost, suitable for simple tasks.
 description_cn: Qwen-Turbo 基于 Qwen2.5，上下文长度达 1M，具备高速度与低成本特性，适用于简单任务。
 context_length: 131072

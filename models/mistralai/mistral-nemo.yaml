@@ -2,6 +2,7 @@ schema_version: 2
 id: mistralai/mistral-nemo
 name: 'Mistral: Mistral Nemo'
 provider: Mistral
+developer: mistral
 description: |-
   A 12B parameter model with a 128k token context length built by Mistral in collaboration with NVIDIA.
 
@@ -23,6 +24,13 @@ features:
   - ModalityTextIn
   - ModalityTextOut
 discovered_at: 2026-07-29T10:39:39.642724348Z
+links:
+  model_card: https://huggingface.co/mistralai/Mistral-Nemo-Instruct-2407
+identifiers:
+  huggingface:
+    - mistralai/Mistral-Nemo-Instruct-2407
+  openrouter:
+    - mistralai/mistral-nemo
 upstream:
   openrouter:
     canonical_slug: mistralai/mistral-nemo

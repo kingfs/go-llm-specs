@@ -54,7 +54,7 @@ task translator -- -dry-run -id-prefix qwen/
 
 - `cmd/releasecheck` compares the latest git tag with the current `models_gen.go`.
 - It triggers a release for model additions/removals and significant metadata changes.
-- It ignores `context_length` and `max_output` changes when they are the only differences.
+- It treats `context_length` and `max_output` corrections as release-worthy model facts.
 - This is the source of truth used by GitHub Actions to decide whether a new tag should be published.
 
 ## Validation

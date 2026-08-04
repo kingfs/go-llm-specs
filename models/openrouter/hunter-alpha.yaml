@@ -2,6 +2,7 @@ schema_version: 2
 id: openrouter/hunter-alpha
 name: Hunter Alpha
 provider: Openrouter
+developer: openrouter
 description: |-
   Hunter Alpha is a 1 Trillion parameter + 1M token context frontier intelligence model built for agentic use. It excels at long-horizon planning, complex reasoning, and sustained multi-step task execution, with the reliability and instruction-following precision that frameworks like OpenClaw need.
 

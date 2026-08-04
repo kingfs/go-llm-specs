@@ -2,6 +2,7 @@ schema_version: 2
 id: nvidia/nemotron-nano-12b-v2-vl
 name: 'NVIDIA: Nemotron Nano 12B 2 VL'
 provider: Nvidia
+developer: nvidia
 description: |-
   NVIDIA Nemotron Nano 2 VL is a 12-billion-parameter open multimodal reasoning model designed for video understanding and document intelligence. It introduces a hybrid Transformer-Mamba architecture, combining transformer-level accuracy with Mamba’s memory-efficient sequence modeling for significantly higher throughput and lower latency.
 

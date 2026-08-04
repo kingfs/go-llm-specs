@@ -1,0 +1,13 @@
+schema_version: 1
+id: mistral
+name: Mistral
+aliases: [Mistral AI]
+official:
+  homepage: https://mistral.ai/
+  documentation: https://docs.mistral.ai/getting-started/models/models_overview/
+  model_catalog: https://docs.mistral.ai/getting-started/models/models_overview/
+organizations:
+  huggingface: [mistralai]
+  github: [mistralai]
+discovery:
+  huggingface: true

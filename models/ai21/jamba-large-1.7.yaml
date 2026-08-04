@@ -2,6 +2,7 @@ schema_version: 2
 id: ai21/jamba-large-1.7
 name: 'AI21: Jamba Large 1.7'
 provider: Ai21
+developer: Ai21
 description: Jamba Large 1.7 is the latest model in the Jamba open family, offering improvements in grounding, instruction-following, and overall efficiency. Built on a hybrid SSM-Transformer architecture with a 256K context window, it delivers more accurate, contextually grounded responses and better steerability than previous versions.
 description_cn: Jamba Large 1.7 是 Jamba 开源系列的最新模型，在事实依据、指令遵循和整体效率方面均有提升。该模型基于混合 SSM-Transformer 架构，支持 256K 上下文窗口，相比前代版本可提供更准确、上下文关联更强的响应以及更优的可控性。
 context_length: 256000
@@ -13,6 +14,13 @@ features:
   - ModalityTextIn
   - ModalityTextOut
 discovered_at: 2026-07-29T10:36:10.576093349Z
+links:
+  model_card: https://huggingface.co/ai21labs/AI21-Jamba-Large-1.7
+identifiers:
+  huggingface:
+    - ai21labs/AI21-Jamba-Large-1.7
+  openrouter:
+    - ai21/jamba-large-1.7
 upstream:
   openrouter:
     canonical_slug: ai21/jamba-large-1.7

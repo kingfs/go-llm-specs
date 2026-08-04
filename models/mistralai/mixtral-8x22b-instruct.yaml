@@ -2,6 +2,7 @@ schema_version: 2
 id: mistralai/mixtral-8x22b-instruct
 name: 'Mistral: Mixtral 8x22B Instruct'
 provider: Mistral
+developer: mistral
 description: |-
   Mistral's official instruct fine-tuned version of [Mixtral 8x22B](/models/mistralai/mixtral-8x22b). It uses 39B active parameters out of 141B, offering unparalleled cost efficiency for its size. Its strengths include:
   - strong math, coding, and reasoning
@@ -26,6 +27,16 @@ features:
   - ModalityTextIn
   - ModalityTextOut
 discovered_at: 2026-07-29T10:39:51.556985804Z
+links:
+  model_card: https://huggingface.co/mistralai/Mixtral-8x22B-Instruct-v0.1
+identifiers:
+  huggingface:
+    - mistralai/Mixtral-8x22B-Instruct-v0.1
+  openrouter:
+    - mistralai/mixtral-8x22b-instruct
+provenance:
+  max_output:
+    source: openrouter
 upstream:
   openrouter:
     canonical_slug: mistralai/mixtral-8x22b-instruct

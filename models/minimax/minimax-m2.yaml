@@ -2,6 +2,7 @@ schema_version: 2
 id: minimax/minimax-m2
 name: 'MiniMax: MiniMax M2'
 provider: Minimax
+developer: minimax
 description: |-
   MiniMax-M2 is a compact, high-efficiency large language model optimized for end-to-end coding and agentic workflows. With 10 billion activated parameters (230 billion total), it delivers near-frontier intelligence across general reasoning, tool use, and multi-step task execution while maintaining low latency and deployment efficiency.
 
@@ -27,6 +28,13 @@ features:
   - ModalityTextIn
   - ModalityTextOut
 discovered_at: 2026-07-29T10:39:10.055282398Z
+links:
+  model_card: https://huggingface.co/MiniMaxAI/MiniMax-M2
+identifiers:
+  huggingface:
+    - MiniMaxAI/MiniMax-M2
+  openrouter:
+    - minimax/minimax-m2
 upstream:
   openrouter:
     canonical_slug: minimax/minimax-m2

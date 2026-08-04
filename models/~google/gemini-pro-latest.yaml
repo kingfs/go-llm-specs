@@ -2,6 +2,7 @@ schema_version: 2
 id: ~google/gemini-pro-latest
 name: Google Gemini Pro Latest
 provider: ~Google
+developer: ~Google
 description: This model always redirects to the latest model in the Google Gemini Pro family.
 description_cn: 该模型始终重定向到Google Gemini Pro系列中的最新模型。
 context_length: 1048576
@@ -17,6 +18,9 @@ features:
   - ModalityTextOut
   - ModalityVideoIn
 discovered_at: 2026-07-29T10:45:25.476868643Z
+identifiers:
+  openrouter:
+    - ~google/gemini-pro-latest
 upstream:
   openrouter:
     canonical_slug: ~google/gemini-pro-latest

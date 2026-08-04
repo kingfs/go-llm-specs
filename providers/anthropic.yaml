@@ -1,0 +1,7 @@
+schema_version: 1
+id: anthropic
+name: Anthropic
+official:
+  homepage: https://www.anthropic.com/
+  documentation: https://docs.anthropic.com/en/docs/about-claude/models
+  model_catalog: https://docs.anthropic.com/en/docs/about-claude/models

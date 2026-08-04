@@ -2,6 +2,7 @@ schema_version: 2
 id: amazon/nova-micro-v1
 name: 'Amazon: Nova Micro 1.0'
 provider: Amazon
+developer: amazon
 description: Amazon Nova Micro 1.0 is a text-only model that delivers the lowest latency responses in the Amazon Nova family of models at a very low cost. With a context length of 128K tokens and optimized for speed and cost, Amazon Nova Micro excels at tasks such as text summarization, translation, content classification, interactive chat, and brainstorming. It has  simple mathematical reasoning and coding abilities.
 description_cn: Amazon Nova Micro 1.0 是纯文本模型，在 Amazon Nova 系列中提供最低延迟的响应，且成本极低。其上下文长度达 12.8 万 token，针对速度与成本进行了优化，擅长文本摘要、翻译、内容分类、交互式聊天和头脑风暴等任务，并具备基础的数学推理与编码能力。
 context_length: 128000
@@ -12,6 +13,9 @@ features:
   - ModalityTextIn
   - ModalityTextOut
 discovered_at: 2026-07-29T10:36:36.987202837Z
+identifiers:
+  openrouter:
+    - amazon/nova-micro-v1
 upstream:
   openrouter:
     canonical_slug: amazon/nova-micro-v1

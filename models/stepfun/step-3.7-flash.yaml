@@ -2,6 +2,7 @@ schema_version: 2
 id: stepfun/step-3.7-flash
 name: 'StepFun: Step 3.7 Flash'
 provider: Stepfun
+developer: Stepfun
 description: Step 3.7 Flash is StepFun's latest high-efficiency multimodal Mixture-of-Experts model. It pairs a 196B-parameter language backbone with a vision encoder for native image and video understanding, activating roughly 11B parameters...
 description_cn: Step 3.7 Flash 是 StepFun 最新的高效多模态专家混合模型。它将 196B 参数的语言骨干与视觉编码器配对，以实现原生的图像和视频理解，激活大约 11B 参数...
 context_length: 256000
@@ -15,6 +16,13 @@ features:
   - ModalityTextOut
   - ModalityVideoIn
 discovered_at: 2026-07-29T10:44:14.225668432Z
+links:
+  model_card: https://huggingface.co/stepfun-ai/Step-3.7-Flash
+identifiers:
+  huggingface:
+    - stepfun-ai/Step-3.7-Flash
+  openrouter:
+    - stepfun/step-3.7-flash
 upstream:
   openrouter:
     canonical_slug: stepfun/step-3.7-flash-20260528

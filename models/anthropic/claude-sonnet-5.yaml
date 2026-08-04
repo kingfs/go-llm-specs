@@ -2,6 +2,7 @@ schema_version: 2
 id: anthropic/claude-sonnet-5
 name: 'Anthropic: Claude Sonnet 5'
 provider: Anthropic
+developer: anthropic
 description: Sonnet 5 is Anthropic's most capable Sonnet-class model, with frontier performance across coding, agents, and professional work. It supports adaptive thinking with selectable reasoning effort levels (low, medium, high, max,...
 description_cn: Sonnet 5 是 Anthropic 最强大的 Sonnet 系列模型，在编码、代理和专业工作方面表现出色。支持可选择的推理努力水平（低、中、高、最大......
 context_length: 1000000
@@ -15,6 +16,9 @@ features:
   - ModalityTextIn
   - ModalityTextOut
 discovered_at: 2026-07-29T10:36:52.641136134Z
+identifiers:
+  openrouter:
+    - anthropic/claude-sonnet-5
 upstream:
   openrouter:
     canonical_slug: anthropic/claude-sonnet-5-20260630

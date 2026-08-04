@@ -2,6 +2,7 @@ schema_version: 2
 id: openai/gpt-5.5-pro
 name: 'OpenAI: GPT-5.5 Pro'
 provider: OpenAI
+developer: openai
 description: GPT-5.5 Pro is OpenAI’s high-capability model optimized for deep reasoning and accuracy on complex, high-stakes workloads. It features a 1M+ token context window (922K input, 128K output) with support for...
 description_cn: GPT-5.5 Pro是OpenAI优化用于深度推理和复杂高风险工作负载准确性的高能力模型。它具有超过1M的上下文窗口（922K输入，128K输出），支持...
 context_length: 1050000
@@ -15,6 +16,9 @@ features:
   - ModalityTextIn
   - ModalityTextOut
 discovered_at: 2026-07-29T10:41:26.529955734Z
+identifiers:
+  openrouter:
+    - openai/gpt-5.5-pro
 upstream:
   openrouter:
     canonical_slug: openai/gpt-5.5-pro-20260423

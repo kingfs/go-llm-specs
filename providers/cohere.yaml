@@ -1,0 +1,12 @@
+schema_version: 1
+id: cohere
+name: Cohere
+kind: company
+official:
+  homepage: https://cohere.com/
+  documentation: https://docs.cohere.com/docs/models
+  model_catalog: https://docs.cohere.com/docs/models
+organizations:
+  huggingface: [CohereLabs]
+discovery:
+  huggingface: true

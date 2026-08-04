@@ -1,0 +1,8 @@
+schema_version: 1
+id: perplexity
+name: Perplexity
+kind: company
+official:
+  homepage: https://www.perplexity.ai/
+  documentation: https://docs.perplexity.ai/
+  model_catalog: https://docs.perplexity.ai/getting-started/models/models

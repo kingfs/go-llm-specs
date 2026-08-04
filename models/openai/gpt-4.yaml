@@ -2,6 +2,7 @@ schema_version: 2
 id: openai/gpt-4
 name: 'OpenAI: GPT-4'
 provider: OpenAI
+developer: openai
 description: 'OpenAI''s flagship model, GPT-4 is a large-scale multimodal language model capable of solving difficult problems with greater accuracy than previous models due to its broader general knowledge and advanced reasoning capabilities. Training data: up to Sep 2021.'
 description_cn: OpenAI 旗舰模型 GPT-4 是一款大规模多模态语言模型，凭借更广泛的知识储备和更强的推理能力，在解决复杂问题方面比以往模型更为精准。训练数据截止至 2021 年 9 月。
 context_length: 8191
@@ -13,6 +14,9 @@ features:
   - ModalityTextIn
   - ModalityTextOut
 discovered_at: 2026-07-29T10:41:05.145320631Z
+identifiers:
+  openrouter:
+    - openai/gpt-4
 upstream:
   openrouter:
     canonical_slug: openai/gpt-4

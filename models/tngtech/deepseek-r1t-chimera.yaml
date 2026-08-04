@@ -2,6 +2,7 @@ schema_version: 2
 id: tngtech/deepseek-r1t-chimera
 name: 'TNG: DeepSeek R1T Chimera'
 provider: Tngtech
+developer: tngtech
 description: |-
   DeepSeek-R1T-Chimera is created by merging DeepSeek-R1 and DeepSeek-V3 (0324), combining the reasoning capabilities of R1 with the token efficiency improvements of V3. It is based on a DeepSeek-MoE Transformer architecture and is optimized for general text generation tasks.
 
@@ -18,6 +19,11 @@ features:
   - ModalityTextIn
   - ModalityTextOut
 discovered_at: 2026-07-29T10:44:37.105662112Z
+links:
+  model_card: https://huggingface.co/tngtech/DeepSeek-R1T-Chimera
+identifiers:
+  huggingface:
+    - tngtech/DeepSeek-R1T-Chimera
 upstream:
   huggingface:
     id: tngtech/DeepSeek-R1T-Chimera

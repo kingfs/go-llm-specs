@@ -2,6 +2,7 @@ schema_version: 2
 id: openai/text-embedding-3-large
 name: 'OpenAI: Text Embedding 3 Large'
 provider: OpenAI
+developer: openai
 description: OpenAI's most capable embedding model.
 description_cn: OpenAI 功能最强大的嵌入模型。
 context_length: 8192

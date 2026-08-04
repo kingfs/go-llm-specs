@@ -2,6 +2,7 @@ schema_version: 2
 id: google/gemma-4-26b-a4b-it:free
 name: 'Google: Gemma 4 26B A4B  (free)'
 provider: Google
+developer: google
 description: Gemma 4 26B A4B IT is an instruction-tuned Mixture-of-Experts (MoE) model from Google DeepMind. Despite 25.2B total parameters, only 3.8B activate per token during inference — delivering near-31B quality at...
 description_cn: Gemma 4 26B A4B IT 是 Google DeepMind 推出的指令微调混合专家（MoE）模型。尽管总参数量达 252 亿，但每次推理仅激活 38 亿参数，以极低计算成本实现接近 310 亿参数模型的质量……
 context_length: 262144
@@ -15,6 +16,13 @@ features:
   - ModalityTextOut
   - ModalityVideoIn
 discovered_at: 2026-07-29T10:38:21.205023697Z
+links:
+  model_card: https://huggingface.co/google/gemma-4-26B-A4B-it
+identifiers:
+  huggingface:
+    - google/gemma-4-26B-A4B-it
+  openrouter:
+    - google/gemma-4-26b-a4b-it:free
 upstream:
   openrouter:
     canonical_slug: google/gemma-4-26b-a4b-it-20260403

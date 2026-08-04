@@ -2,6 +2,7 @@ schema_version: 2
 id: qwen/qwen3-30b-a3b
 name: 'Qwen: Qwen3 30B A3B'
 provider: Qwen
+developer: qwen
 description: |-
   Qwen3, the latest generation in the Qwen large language model series, features both dense and mixture-of-experts (MoE) architectures to excel in reasoning, multilingual support, and advanced agent tasks. Its unique ability to switch seamlessly between a thinking mode for complex reasoning and a non-thinking mode for efficient dialogue ensures versatile, high-quality performance.
 
@@ -19,6 +20,13 @@ features:
   - ModalityTextIn
   - ModalityTextOut
 discovered_at: 2026-07-29T10:42:39.06566132Z
+links:
+  model_card: https://huggingface.co/Qwen/Qwen3-30B-A3B
+identifiers:
+  huggingface:
+    - Qwen/Qwen3-30B-A3B
+  openrouter:
+    - qwen/qwen3-30b-a3b
 upstream:
   openrouter:
     canonical_slug: qwen/qwen3-30b-a3b-04-28

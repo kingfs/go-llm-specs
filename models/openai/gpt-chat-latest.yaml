@@ -2,6 +2,7 @@ schema_version: 2
 id: openai/gpt-chat-latest
 name: 'OpenAI: GPT Chat Latest'
 provider: OpenAI
+developer: openai
 description: GPT Chat Latest points to OpenAI's stable API alias `chat-latest` that always resolves to the latest Instant chat model used in ChatGPT. As OpenAI rolls out new Instant model updates...
 description_cn: GPT Chat Latest 指向 OpenAI 的稳定 API 别名 `chat-latest`，始终解析为 ChatGPT 中使用的最新即时聊天模型。随着 OpenAI 推出新的即时模型更新...
 context_length: 400000
@@ -15,6 +16,9 @@ features:
   - ModalityTextIn
   - ModalityTextOut
 discovered_at: 2026-07-29T10:41:31.181151265Z
+identifiers:
+  openrouter:
+    - openai/gpt-chat-latest
 upstream:
   openrouter:
     canonical_slug: openai/gpt-chat-latest-20260505

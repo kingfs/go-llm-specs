@@ -2,6 +2,7 @@ schema_version: 2
 id: openrouter/owl-alpha
 name: Owl Alpha
 provider: Openrouter
+developer: openrouter
 description: Owl Alpha is a high-performance foundation model designed for agentic workloads. Natively supports tool use, and long-context tasks, with strong performance in code generation, automated workflows, and complex instruction execution....
 description_cn: Owl Alpha 是一款高性能基础模型，旨在处理代理工作负载。原生支持工具使用和长上下文任务，在代码生成、自动化工作流程和复杂指令执行方面表现强劲....
 context_length: 1048756

@@ -2,6 +2,7 @@ schema_version: 2
 id: anthropic/claude-3.5-haiku
 name: 'Anthropic: Claude 3.5 Haiku'
 provider: Anthropic
+developer: anthropic
 description: |-
   Claude 3.5 Haiku features offers enhanced capabilities in speed, coding accuracy, and tool use. Engineered to excel in real-time applications, it delivers quick response times that are essential for dynamic tasks such as chat interactions and immediate coding suggestions.
 

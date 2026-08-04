@@ -2,6 +2,7 @@ schema_version: 2
 id: z-ai/glm-4.6
 name: 'Z.ai: GLM 4.6'
 provider: Z-Ai
+developer: zai
 description: |-
   Compared with GLM-4.5, this generation brings several key improvements:
 
@@ -27,6 +28,13 @@ features:
   - ModalityTextIn
   - ModalityTextOut
 discovered_at: 2026-07-29T10:45:06.528811856Z
+links:
+  model_card: https://huggingface.co/zai-org/GLM-4.6
+identifiers:
+  huggingface:
+    - zai-org/GLM-4.6
+  openrouter:
+    - z-ai/glm-4.6
 upstream:
   openrouter:
     canonical_slug: z-ai/glm-4.6

@@ -2,6 +2,7 @@ schema_version: 2
 id: ~openai/gpt-latest
 name: OpenAI GPT Latest
 provider: ~Openai
+developer: ~Openai
 description: This model always redirects to the latest model in the OpenAI GPT family.
 description_cn: 该模型始终重定向到OpenAI GPT系列中的最新模型。
 context_length: 1050000
@@ -15,6 +16,9 @@ features:
   - ModalityTextIn
   - ModalityTextOut
 discovered_at: 2026-07-29T10:45:26.31270224Z
+identifiers:
+  openrouter:
+    - ~openai/gpt-latest
 upstream:
   openrouter:
     canonical_slug: ~openai/gpt-latest

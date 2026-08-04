@@ -2,6 +2,7 @@ schema_version: 2
 id: google/gemma-4-31b-it:free
 name: 'Google: Gemma 4 31B (free)'
 provider: Google
+developer: google
 description: Gemma 4 31B Instruct is Google DeepMind's 30.7B dense multimodal model supporting text and image input with text output. Features a 256K token context window, configurable thinking/reasoning mode, native function...
 description_cn: Gemma 4 31B Instruct 是 Google DeepMind 推出的 307 亿参数稠密多模态模型，支持文本和图像输入并生成文本输出。具备 25.6 万 token 上下文窗口、可配置的思维/推理模式、原生函数……
 context_length: 262144
@@ -15,6 +16,13 @@ features:
   - ModalityTextOut
   - ModalityVideoIn
 discovered_at: 2026-07-29T10:38:24.872026402Z
+links:
+  model_card: https://huggingface.co/google/gemma-4-31B-it
+identifiers:
+  huggingface:
+    - google/gemma-4-31B-it
+  openrouter:
+    - google/gemma-4-31b-it:free
 upstream:
   openrouter:
     canonical_slug: google/gemma-4-31b-it-20260402

@@ -2,6 +2,7 @@ schema_version: 2
 id: z-ai/glm-5.1
 name: 'Z.ai: GLM 5.1'
 provider: Z-Ai
+developer: zai
 description: GLM-5.1 delivers a major leap in coding capability, with particularly significant gains in handling long-horizon tasks. Unlike previous models built around minute-level interactions, GLM-5.1 can work independently and continuously on...
 description_cn: GLM-5.1 在编程能力上实现重大飞跃，尤其在处理长周期任务方面提升显著。不同于以往围绕分钟级交互构建的模型，GLM-5.1 能够独立、持续地工作于……
 context_length: 202752
@@ -13,6 +14,13 @@ features:
   - ModalityTextIn
   - ModalityTextOut
 discovered_at: 2026-07-29T10:45:19.132463116Z
+links:
+  model_card: https://huggingface.co/zai-org/GLM-5.1
+identifiers:
+  huggingface:
+    - zai-org/GLM-5.1
+  openrouter:
+    - z-ai/glm-5.1
 upstream:
   openrouter:
     canonical_slug: z-ai/glm-5.1-20260406

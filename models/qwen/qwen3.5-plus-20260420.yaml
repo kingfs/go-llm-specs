@@ -2,6 +2,7 @@ schema_version: 2
 id: qwen/qwen3.5-plus-20260420
 name: 'Qwen: Qwen3.5 Plus 2026-04-20'
 provider: Qwen
+developer: qwen
 description: Qwen3.5 Plus (April 2026) is a large-scale multimodal language model from Alibaba. It accepts text, image, and video input and produces text output, with a 1M token context window. This...
 description_cn: Qwen3.5 Plus（2026年4月）是阿里巴巴推出的大规模多模态语言模型，接受文本、图像和视频输入，并生成文本输出，具有1M令牌上下文窗口。这...
 context_length: 1000000
@@ -15,6 +16,9 @@ features:
   - ModalityTextOut
   - ModalityVideoIn
 discovered_at: 2026-07-29T10:43:43.790384768Z
+identifiers:
+  openrouter:
+    - qwen/qwen3.5-plus-20260420
 upstream:
   openrouter:
     canonical_slug: qwen/qwen3.5-plus-20260420

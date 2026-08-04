@@ -2,6 +2,7 @@ schema_version: 2
 id: xiaomi/mimo-v2.5
 name: 'Xiaomi: MiMo-V2.5'
 provider: Xiaomi
+developer: Xiaomi
 description: MiMo-V2.5 is a native omnimodal model by Xiaomi. It delivers Pro-level agentic performance at roughly half the inference cost, while surpassing MiMo-V2-Omni in multimodal perception across image and video understanding...
 description_cn: MiMo-V2.5 是小米推出的本地全模态模型。它以大约一半的推理成本提供专业级代理性能，同时在图像和视频理解的多模态感知上超过了 MiMo-V2-Omni，...
 context_length: 1048576
@@ -16,6 +17,13 @@ features:
   - ModalityTextOut
   - ModalityVideoIn
 discovered_at: 2026-07-29T10:44:53.930256375Z
+links:
+  model_card: https://huggingface.co/XiaomiMiMo/MiMo-V2.5
+identifiers:
+  huggingface:
+    - XiaomiMiMo/MiMo-V2.5
+  openrouter:
+    - xiaomi/mimo-v2.5
 upstream:
   openrouter:
     canonical_slug: xiaomi/mimo-v2.5-20260422

@@ -2,6 +2,7 @@ schema_version: 2
 id: thedrummer/skyfall-36b-v2
 name: 'TheDrummer: Skyfall 36B V2'
 provider: Thedrummer
+developer: Thedrummer
 description: Skyfall 36B v2 is an enhanced iteration of Mistral Small 2501, specifically fine-tuned for improved creativity, nuanced writing, role-playing, and coherent storytelling.
 description_cn: Skyfall 36B v2 是 Mistral Small 2501 的增强版本，经过专门微调，显著提升了创造力、细腻文风、角色扮演能力及连贯叙事表现。
 context_length: 32768
@@ -11,6 +12,13 @@ features:
   - ModalityTextIn
   - ModalityTextOut
 discovered_at: 2026-07-29T10:44:30.117758867Z
+links:
+  model_card: https://huggingface.co/TheDrummer/Skyfall-36B-v2
+identifiers:
+  huggingface:
+    - TheDrummer/Skyfall-36B-v2
+  openrouter:
+    - thedrummer/skyfall-36b-v2
 upstream:
   openrouter:
     canonical_slug: thedrummer/skyfall-36b-v2

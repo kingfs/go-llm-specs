@@ -2,6 +2,7 @@ schema_version: 2
 id: perplexity/sonar-pro-search
 name: 'Perplexity: Sonar Pro Search'
 provider: Perplexity
+developer: perplexity
 description: |-
   Exclusively available on the OpenRouter API, Sonar Pro's new Pro Search mode is Perplexity's most advanced agentic search system. It is designed for deeper reasoning and analysis. Pricing is based on tokens plus $18 per thousand requests. This model powers the Pro Search mode on the Perplexity platform.
 
@@ -20,6 +21,9 @@ features:
   - ModalityTextIn
   - ModalityTextOut
 discovered_at: 2026-07-29T10:41:55.489486641Z
+identifiers:
+  openrouter:
+    - perplexity/sonar-pro-search
 upstream:
   openrouter:
     canonical_slug: perplexity/sonar-pro-search

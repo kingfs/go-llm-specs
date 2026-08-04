@@ -2,6 +2,7 @@ schema_version: 2
 id: z-ai/glm-5v-turbo
 name: 'Z.ai: GLM 5V Turbo'
 provider: Z-Ai
+developer: zai
 description: GLM-5V-Turbo is Z.ai’s first native multimodal agent foundation model, built for vision-based coding and agent-driven tasks. It natively handles image, video, and text inputs, excels at long-horizon planning, complex coding, and task execution, and works seamlessly with agents to complete the full loop of “perceive → plan → execute“.
 description_cn: GLM-5V-Turbo 是 Z.ai 首款原生多模态智能体基础模型，专为视觉编程与智能体驱动任务打造。它原生支持图像、视频和文本输入，在长周期规划、复杂编程与任务执行方面表现出色，并能与智能体无缝协作，完整实现“感知 → 规划 → 执行”的闭环流程。
 context_length: 202752
@@ -15,6 +16,9 @@ features:
   - ModalityTextOut
   - ModalityVideoIn
 discovered_at: 2026-07-29T10:45:22.964702849Z
+identifiers:
+  openrouter:
+    - z-ai/glm-5v-turbo
 upstream:
   openrouter:
     canonical_slug: z-ai/glm-5v-turbo-20260401

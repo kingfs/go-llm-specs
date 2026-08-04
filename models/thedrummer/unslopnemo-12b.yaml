@@ -2,6 +2,7 @@ schema_version: 2
 id: thedrummer/unslopnemo-12b
 name: 'TheDrummer: UnslopNemo 12B'
 provider: Thedrummer
+developer: Thedrummer
 description: UnslopNemo v4.1 is the latest addition from the creator of Rocinante, designed for adventure writing and role-play scenarios.
 description_cn: UnslopNemo v4.1 是 Rocinante 创作者推出的最新模型，专为冒险题材写作和角色扮演场景设计。
 context_length: 32768
@@ -13,6 +14,13 @@ features:
   - ModalityTextIn
   - ModalityTextOut
 discovered_at: 2026-07-29T10:44:32.789654936Z
+links:
+  model_card: https://huggingface.co/TheDrummer/UnslopNemo-12B-v4.1
+identifiers:
+  huggingface:
+    - TheDrummer/UnslopNemo-12B-v4.1
+  openrouter:
+    - thedrummer/unslopnemo-12b
 upstream:
   openrouter:
     canonical_slug: thedrummer/unslopnemo-12b

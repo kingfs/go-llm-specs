@@ -2,6 +2,7 @@ schema_version: 2
 id: qwen/qwen3-235b-a22b-2507
 name: 'Qwen: Qwen3 235B A22B Instruct 2507'
 provider: Qwen
+developer: qwen
 description: |-
   Qwen3-235B-A22B-Instruct-2507 is a multilingual, instruction-tuned mixture-of-experts language model based on the Qwen3-235B architecture, with 22B active parameters per forward pass. It is optimized for general-purpose text generation, including instruction following, logical reasoning, math, code, and tool usage. The model supports a native 262K context length and does not implement "thinking mode" (<think> blocks).
 
@@ -19,6 +20,13 @@ features:
   - ModalityTextIn
   - ModalityTextOut
 discovered_at: 2026-07-29T10:42:35.226297595Z
+links:
+  model_card: https://huggingface.co/Qwen/Qwen3-235B-A22B-Instruct-2507
+identifiers:
+  huggingface:
+    - Qwen/Qwen3-235B-A22B-Instruct-2507
+  openrouter:
+    - qwen/qwen3-235b-a22b-2507
 upstream:
   openrouter:
     canonical_slug: qwen/qwen3-235b-a22b-07-25

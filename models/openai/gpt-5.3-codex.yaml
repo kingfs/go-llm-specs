@@ -2,6 +2,7 @@ schema_version: 2
 id: openai/gpt-5.3-codex
 name: 'OpenAI: GPT-5.3-Codex'
 provider: OpenAI
+developer: openai
 description: |-
   GPT-5.3-Codex is OpenAI’s most advanced agentic coding model, combining the frontier software engineering performance of GPT-5.2-Codex with the broader reasoning and professional knowledge capabilities of GPT-5.2. It achieves state-of-the-art results on SWE-Bench Pro and strong performance on Terminal-Bench 2.0 and OSWorld-Verified, reflecting improved multi-language coding, terminal proficiency, and real-world computer-use skills. The model is optimized for long-running, tool-using workflows and supports interactive steering during execution, making it suitable for complex development tasks, debugging, deployment, and iterative product work.
 
@@ -20,6 +21,9 @@ features:
   - ModalityTextIn
   - ModalityTextOut
 discovered_at: 2026-07-29T10:41:22.297543978Z
+identifiers:
+  openrouter:
+    - openai/gpt-5.3-codex
 upstream:
   openrouter:
     canonical_slug: openai/gpt-5.3-codex-20260224

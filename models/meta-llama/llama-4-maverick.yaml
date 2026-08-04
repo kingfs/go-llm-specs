@@ -2,6 +2,7 @@ schema_version: 2
 id: meta-llama/llama-4-maverick
 name: 'Meta: Llama 4 Maverick'
 provider: Meta
+developer: meta
 description: |-
   Llama 4 Maverick 17B Instruct (128E) is a high-capacity multimodal language model from Meta, built on a mixture-of-experts (MoE) architecture with 128 experts and 17 billion active parameters per forward pass (400B total). It supports multilingual text and image input, and produces multilingual text and code output across 12 supported languages. Optimized for vision-language tasks, Maverick is instruction-tuned for assistant-like behavior, image reasoning, and general-purpose multimodal interaction.
 
@@ -20,6 +21,13 @@ features:
   - ModalityTextIn
   - ModalityTextOut
 discovered_at: 2026-07-29T10:38:58.518997912Z
+links:
+  model_card: https://huggingface.co/meta-llama/Llama-4-Maverick-17B-128E-Instruct
+identifiers:
+  huggingface:
+    - meta-llama/Llama-4-Maverick-17B-128E-Instruct
+  openrouter:
+    - meta-llama/llama-4-maverick
 upstream:
   openrouter:
     canonical_slug: meta-llama/llama-4-maverick-17b-128e-instruct

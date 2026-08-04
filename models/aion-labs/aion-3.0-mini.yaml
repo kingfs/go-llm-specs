@@ -2,6 +2,7 @@ schema_version: 2
 id: aion-labs/aion-3.0-mini
 name: 'AionLabs: Aion-3.0-Mini'
 provider: Aion-Labs
+developer: Aion-Labs
 description: Aion-3.0 Mini is a multi-model roleplaying and storytelling system from AionLabs, built on the DeepSeek family of models. It uses a collaborative generation process in which multiple specialized models each...
 description_cn: Aion-3.0 Mini是AionLabs推出的多模型角色扮演和叙事系统，基于DeepSeek模型系列。它采用协作生成过程，多个专用模型共同...
 context_length: 131072
@@ -13,6 +14,9 @@ features:
   - ModalityTextIn
   - ModalityTextOut
 discovered_at: 2026-07-29T10:36:13.663607899Z
+identifiers:
+  openrouter:
+    - aion-labs/aion-3.0-mini
 upstream:
   openrouter:
     canonical_slug: aion-labs/aion-3.0-mini-20260707

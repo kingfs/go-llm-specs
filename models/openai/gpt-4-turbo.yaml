@@ -3,6 +3,7 @@ id: openai/gpt-4-turbo
 name: 'OpenAI: GPT-4 Turbo'
 name_cn: GPT-4 Turbo
 provider: OpenAI
+developer: openai
 description: |-
   The latest GPT-4 Turbo model with vision capabilities. Vision requests can now use JSON mode and function calling.
 
@@ -21,6 +22,9 @@ aliases:
   - gpt-4-turbo
   - gpt4t
 discovered_at: 2026-07-29T10:41:06.438094453Z
+identifiers:
+  openrouter:
+    - openai/gpt-4-turbo
 upstream:
   openrouter:
     canonical_slug: openai/gpt-4-turbo

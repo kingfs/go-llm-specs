@@ -2,6 +2,7 @@ schema_version: 2
 id: sakana/fugu-ultra
 name: 'Sakana: Fugu Ultra'
 provider: Sakana
+developer: Sakana
 description: 'Fugu Ultra is the higher-performance model in Sakana AI''s Fugu family. Rather than a single monolithic model, Fugu is a learned multi-agent orchestration system: a language model trained to route...'
 description_cn: Fugu Ultra是Sakana AI的Fugu系列中的高性能模型。它并不是一个单一的整体模型，而是一个学习型多代理系统：一个经过训练的语言模型，用于路由...
 context_length: 1000000
@@ -14,6 +15,9 @@ features:
   - ModalityTextIn
   - ModalityTextOut
 discovered_at: 2026-07-29T10:44:00.611006002Z
+identifiers:
+  openrouter:
+    - sakana/fugu-ultra
 upstream:
   openrouter:
     canonical_slug: sakana/fugu-ultra-20260615

@@ -30,6 +30,53 @@ func TestEnrichOpenRouter(t *testing.T) {
 	if got := model.Upstream.OpenRouter.SupportedParameters; len(got) != 2 || got[0] != "reasoning" {
 		t.Fatalf("parameters not normalized: %v", got)
 	}
+	if model.Provenance["reasoning"].Source != "openrouter" {
+		t.Fatalf("reasoning provenance was not recorded: %#v", model.Provenance)
+	}
+}
+
+func TestEnrichOpenRouterPreservesNonOpenRouterReasoning(t *testing.T) {
+	model := registry.Model{
+		Reasoning: &registry.ReasoningMetadata{Supported: true, Mandatory: true},
+		Provenance: map[string]registry.Provenance{
+			"reasoning": {Source: "official_model_card"},
+		},
+	}
+	enrichOpenRouter(&model, openRouterModel{
+		Reasoning: &openRouterReasoning{DefaultEnabled: true},
+	}, time.Unix(1, 0).UTC())
+	if !model.Reasoning.Mandatory || model.Reasoning.DefaultEnabled {
+		t.Fatalf("official reasoning was overwritten: %#v", model.Reasoning)
+	}
+	if model.Provenance["reasoning"].Source != "official_model_card" {
+		t.Fatalf("official provenance was overwritten: %#v", model.Provenance)
+	}
+}
+
+func TestEnrichOpenRouterDoesNotRefreshPersistedReasoning(t *testing.T) {
+	model := registry.Model{
+		Reasoning: &registry.ReasoningMetadata{Supported: true, Mandatory: true},
+		Provenance: map[string]registry.Provenance{
+			"reasoning": {Source: "openrouter"},
+		},
+	}
+	enrichOpenRouter(&model, openRouterModel{
+		Reasoning: &openRouterReasoning{DefaultEnabled: true},
+	}, time.Unix(1, 0).UTC())
+	if !model.Reasoning.Mandatory || model.Reasoning.DefaultEnabled {
+		t.Fatalf("persisted reasoning was overwritten: %#v", model.Reasoning)
+	}
+}
+
+func TestOfficialHFContextDoesNotOverridePersistedValue(t *testing.T) {
+	model := registry.Model{ContextLen: 32768, Provenance: map[string]registry.Provenance{"context_length": {Source: "openrouter"}}}
+	hf := hfModel{ID: "Qwen/Example", Repository: hfRepository{ConfigContextLength: 131072}}
+	if !enrichHuggingFace(&model, hf, time.Unix(1, 0).UTC()) {
+		t.Fatal("expected enrichment change")
+	}
+	if model.ContextLen != 32768 || model.Provenance["context_length"].Source != "openrouter" {
+		t.Fatalf("persisted context was overwritten: %#v", model)
+	}
 }
 
 func TestResolveHuggingFaceByDeterministicSearch(t *testing.T) {
@@ -73,7 +120,7 @@ func TestResolveHuggingFaceRejectsAmbiguousMatches(t *testing.T) {
 func TestSelectModelsProtectsLegacyByDefault(t *testing.T) {
 	models := []registry.Model{
 		{ID: "old/model", SchemaVersion: 0},
-		{ID: "new/model", SchemaVersion: 2},
+		{ID: "new/model", SchemaVersion: 2, Identifiers: registry.ModelIdentifiers{OpenRouter: []string{"new/model"}}},
 	}
 	selected := selectModels(models, config{NewOnly: true})
 	if len(selected) != 1 || selected[0].ID != "new/model" {
@@ -130,6 +177,24 @@ func TestFilterAllowlist(t *testing.T) {
 	filtered := filterAllowlist(models, map[string]bool{"qwen/two": true})
 	if len(filtered) != 1 || filtered[0].ID != "qwen/two" {
 		t.Fatalf("got %#v", filtered)
+	}
+}
+
+func TestNeedsEnrichmentSelectsOnlyMissingSources(t *testing.T) {
+	complete := registry.Model{Upstream: registry.UpstreamMetadata{
+		OpenRouter:  &registry.OpenRouterMetadata{},
+		HuggingFace: &registry.HuggingFaceMetadata{ID: "Org/Model"},
+	}}
+	if needsEnrichment(complete, "all") {
+		t.Fatal("complete model selected")
+	}
+	missingOR := registry.Model{Identifiers: registry.ModelIdentifiers{OpenRouter: []string{"org/model"}}}
+	if !needsEnrichment(missingOR, "all") {
+		t.Fatal("missing OpenRouter metadata not selected")
+	}
+	missingHF := registry.Model{Identifiers: registry.ModelIdentifiers{HuggingFace: []string{"Org/Model"}}, Upstream: registry.UpstreamMetadata{OpenRouter: &registry.OpenRouterMetadata{}}}
+	if !needsEnrichment(missingHF, "all") {
+		t.Fatal("missing Hugging Face metadata not selected")
 	}
 }
 

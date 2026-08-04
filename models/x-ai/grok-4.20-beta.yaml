@@ -2,6 +2,7 @@ schema_version: 2
 id: x-ai/grok-4.20-beta
 name: 'xAI: Grok 4.20 Beta'
 provider: X-Ai
+developer: xai
 description: |-
   Grok 4.20 Beta is xAI's newest flagship model with industry-leading speed and agentic tool calling capabilities. It combines the lowest hallucination rate on the market with strict prompt adherance, delivering consistently precise and truthful responses.
 

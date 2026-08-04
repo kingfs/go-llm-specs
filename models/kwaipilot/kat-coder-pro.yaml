@@ -2,6 +2,7 @@ schema_version: 2
 id: kwaipilot/kat-coder-pro
 name: 'Kwaipilot: KAT-Coder-Pro V1'
 provider: Kwaipilot
+developer: kwaipilot
 description: "KAT-Coder-Pro V1 is KwaiKAT's most advanced agentic coding model in the KAT-Coder series. Designed specifically for agentic coding tasks, it excels in real-world software engineering scenarios, achieving 73.4% solve rate on the SWE-Bench Verified benchmark. \n\nThe model has been optimized for tool-use capability, multi-turn interaction, instruction following, generalization, and comprehensive capabilities through a multi-stage training process, including mid-training, supervised fine-tuning (SFT), reinforcement fine-tuning (RFT), and scalable agentic RL."
 description_cn: |-
   KAT-Coder-Pro V1 是快手 KwaiKAT 推出的 KAT-Coder 系列中最先进的智能体编程模型，专为智能体编程任务设计，在真实软件工程场景中表现卓越，在 SWE-Bench Verified 基准测试中达到 73.4% 的解决率。

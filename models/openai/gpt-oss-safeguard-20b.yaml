@@ -2,6 +2,7 @@ schema_version: 2
 id: openai/gpt-oss-safeguard-20b
 name: 'OpenAI: gpt-oss-safeguard-20b'
 provider: OpenAI
+developer: openai
 description: |-
   gpt-oss-safeguard-20b is a safety reasoning model from OpenAI built upon gpt-oss-20b. This open-weight, 21B-parameter Mixture-of-Experts (MoE) model offers lower latency for safety tasks like content classification, LLM filtering, and trust & safety labeling.
 
@@ -19,6 +20,13 @@ features:
   - ModalityTextIn
   - ModalityTextOut
 discovered_at: 2026-07-29T10:41:37.936457105Z
+links:
+  model_card: https://huggingface.co/openai/gpt-oss-safeguard-20b
+identifiers:
+  huggingface:
+    - openai/gpt-oss-safeguard-20b
+  openrouter:
+    - openai/gpt-oss-safeguard-20b
 upstream:
   openrouter:
     canonical_slug: openai/gpt-oss-safeguard-20b

@@ -2,6 +2,7 @@ schema_version: 2
 id: neversleep/noromaid-20b
 name: Noromaid 20B
 provider: Neversleep
+developer: neversleep
 description: |-
   A collab between IkariDev and Undi. This merge is suitable for RP, ERP, and general knowledge.
 

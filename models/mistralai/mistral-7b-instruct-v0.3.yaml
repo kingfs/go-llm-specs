@@ -2,6 +2,7 @@ schema_version: 2
 id: mistralai/mistral-7b-instruct-v0.3
 name: 'Mistral: Mistral 7B Instruct v0.3'
 provider: Mistral
+developer: mistral
 description: |-
   A high-performing, industry-standard 7.3B parameter model, with optimizations for speed and context length.
 
@@ -30,3 +31,32 @@ features:
   - ModalityTextIn
   - ModalityTextOut
 discovered_at: 2026-07-29T10:39:35.894366467Z
+links:
+  model_card: https://huggingface.co/mistralai/Mistral-7B-Instruct-v0.3
+identifiers:
+  huggingface:
+    - mistralai/Mistral-7B-Instruct-v0.3
+upstream:
+  huggingface:
+    id: mistralai/Mistral-7B-Instruct-v0.3
+    revision: c170c708c41dac9275d15a8fff4eca08d52bab71
+    model_type: mistral
+    architectures:
+      - MistralForCausalLM
+    license: apache-2.0
+    tags:
+      - base_model:finetune:mistralai/Mistral-7B-v0.3
+      - base_model:mistralai/Mistral-7B-v0.3
+      - deploy:sagemaker
+      - license:apache-2.0
+      - mistral
+      - mistral-common
+      - region:us
+      - safetensors
+      - vllm
+    config_context_length: 32768
+    chat_template_sha256: b3fcbc404295814f21f15e626e6403753def5c2359d8e797d3aea5fd47f47a72
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-08-04T12:42:46.355038956Z

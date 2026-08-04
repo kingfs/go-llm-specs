@@ -2,6 +2,7 @@ schema_version: 2
 id: qwen/qwen3-30b-a3b-instruct-2507
 name: 'Qwen: Qwen3 30B A3B Instruct 2507'
 provider: Qwen
+developer: qwen
 description: Qwen3-30B-A3B-Instruct-2507 is a 30.5B-parameter mixture-of-experts language model from Qwen, with 3.3B active parameters per inference. It operates in non-thinking mode and is designed for high-quality instruction following, multilingual understanding, and agentic tool use. Post-trained on instruction data, it demonstrates competitive performance across reasoning (AIME, ZebraLogic), coding (MultiPL-E, LiveCodeBench), and alignment (IFEval, WritingBench) benchmarks. It outperforms its non-instruct variant on subjective and open-ended tasks while retaining strong factual and coding performance.
 description_cn: Qwen3-30B-A3B-Instruct-2507 是千问推出的 305 亿参数混合专家（MoE）语言模型，每次推理激活 33 亿参数。该模型运行于非推理模式，专为高质量指令遵循、多语言理解及智能体工具调用而设计。经指令数据后训练，其在推理（AIME、ZebraLogic）、代码（MultiPL-E、LiveCodeBench）和对齐（IFEval、WritingBench）等基准测试中表现优异。相比非指令微调版本，该模型在主观性和开放式任务上表现更佳，同时保持强大的事实性和代码能力。
 context_length: 262144
@@ -13,6 +14,17 @@ features:
   - ModalityTextIn
   - ModalityTextOut
 discovered_at: 2026-07-29T10:42:40.996706195Z
+links:
+  model_card: https://huggingface.co/Qwen/Qwen3-30B-A3B-Instruct-2507
+identifiers:
+  huggingface:
+    - Qwen/Qwen3-30B-A3B-Instruct-2507
+  openrouter:
+    - qwen/qwen3-30b-a3b-instruct-2507
+provenance:
+  reasoning.supported:
+    source: official_model_card
+    url: https://huggingface.co/Qwen/Qwen3-30B-A3B-Instruct-2507/resolve/0d7cf23991f47feeb3a57ecb4c9cee8ea4a17bfe/README.md
 upstream:
   openrouter:
     canonical_slug: qwen/qwen3-30b-a3b-instruct-2507
@@ -72,3 +84,5 @@ upstream:
       - config.json
       - tokenizer_config.json
     fetched_at: 2026-07-30T04:45:40.356948099Z
+reasoning:
+  supported: false

@@ -2,6 +2,7 @@ schema_version: 2
 id: google/gemini-3.5-flash-lite:batch
 name: 'Google: Gemini 3.5 Flash Lite (batch)'
 provider: Google
+developer: google
 description: Gemini 3.5 Flash Lite is a high-efficiency model from Google with upgraded agentic capabilities. It is suited for subagents that execute focused tasks within complex, multi-agent workflows.
 description_cn: Gemini 3.5 Flash Lite 是谷歌的一款高效模型，具备升级的代理能力。它适合在复杂的多代理工作流程中执行专注任务的子代理。
 context_length: 1048576

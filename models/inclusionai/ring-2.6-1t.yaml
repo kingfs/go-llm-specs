@@ -2,6 +2,7 @@ schema_version: 2
 id: inclusionai/ring-2.6-1t
 name: 'inclusionAI: Ring-2.6-1T'
 provider: Inclusionai
+developer: Inclusionai
 description: Ring-2.6-1T is a 1T-parameter-scale thinking model with 63B active parameters, built for real-world agent workflows that require both strong capability and operational efficiency. It is optimized for coding agents, tool...
 description_cn: Ring-2.6-1T是一个具有63B活跃参数的1T参数规模思维模型，旨在用于需要强大能力和操作效率的实际代理工作流程。它针对编码代理、工具进行了优化...
 context_length: 262144
@@ -13,6 +14,13 @@ features:
   - ModalityTextIn
   - ModalityTextOut
 discovered_at: 2026-07-29T10:38:39.94158778Z
+links:
+  model_card: https://huggingface.co/inclusionAI/Ring-2.6-1T
+identifiers:
+  huggingface:
+    - inclusionAI/Ring-2.6-1T
+  openrouter:
+    - inclusionai/ring-2.6-1t
 upstream:
   openrouter:
     canonical_slug: inclusionai/ring-2.6-1t-20260508

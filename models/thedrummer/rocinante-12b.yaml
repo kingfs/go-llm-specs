@@ -2,6 +2,7 @@ schema_version: 2
 id: thedrummer/rocinante-12b
 name: 'TheDrummer: Rocinante 12B'
 provider: Thedrummer
+developer: Thedrummer
 description: |-
   Rocinante 12B is designed for engaging storytelling and rich prose.
 
@@ -25,6 +26,13 @@ features:
   - ModalityTextIn
   - ModalityTextOut
 discovered_at: 2026-07-29T10:44:27.984438267Z
+links:
+  model_card: https://huggingface.co/TheDrummer/Rocinante-12B-v1.1
+identifiers:
+  huggingface:
+    - TheDrummer/Rocinante-12B-v1.1
+  openrouter:
+    - thedrummer/rocinante-12b
 upstream:
   openrouter:
     canonical_slug: thedrummer/rocinante-12b

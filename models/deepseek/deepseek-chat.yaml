@@ -2,6 +2,7 @@ schema_version: 2
 id: deepseek/deepseek-chat
 name: 'DeepSeek: DeepSeek V3'
 provider: DeepSeek
+developer: deepseek
 description: |-
   DeepSeek-V3 is the latest model from the DeepSeek team, building upon the instruction following and coding abilities of the previous versions. Pre-trained on nearly 15 trillion tokens, the reported evaluations reveal that the model outperforms other open-source models and rivals leading closed-source models.
 
@@ -19,6 +20,13 @@ features:
   - ModalityTextIn
   - ModalityTextOut
 discovered_at: 2026-07-29T10:37:30.197287609Z
+links:
+  model_card: https://huggingface.co/deepseek-ai/DeepSeek-V3
+identifiers:
+  huggingface:
+    - deepseek-ai/DeepSeek-V3
+  openrouter:
+    - deepseek/deepseek-chat
 upstream:
   openrouter:
     canonical_slug: deepseek/deepseek-chat-v3

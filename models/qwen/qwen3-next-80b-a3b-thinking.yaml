@@ -2,6 +2,7 @@ schema_version: 2
 id: qwen/qwen3-next-80b-a3b-thinking
 name: 'Qwen: Qwen3 Next 80B A3B Thinking'
 provider: Qwen
+developer: qwen
 description: |-
   Qwen3-Next-80B-A3B-Thinking is a reasoning-first chat model in the Qwen3-Next line that outputs structured “thinking” traces by default. It’s designed for hard multi-step problems; math proofs, code synthesis/debugging, logic, and agentic planning, and reports strong results across knowledge, reasoning, coding, alignment, and multilingual evaluations. Compared with prior Qwen3 variants, it emphasizes stability under long chains of thought and efficient scaling during inference, and it is tuned to follow complex instructions while reducing repetitive or off-task behavior.
 
@@ -19,6 +20,13 @@ features:
   - ModalityTextIn
   - ModalityTextOut
 discovered_at: 2026-07-29T10:43:07.720582246Z
+links:
+  model_card: https://huggingface.co/Qwen/Qwen3-Next-80B-A3B-Thinking
+identifiers:
+  huggingface:
+    - Qwen/Qwen3-Next-80B-A3B-Thinking
+  openrouter:
+    - qwen/qwen3-next-80b-a3b-thinking
 upstream:
   openrouter:
     canonical_slug: qwen/qwen3-next-80b-a3b-thinking-2509

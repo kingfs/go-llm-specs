@@ -113,7 +113,7 @@ func parseFlags() config {
 	flag.StringVar(&cfg.Source, "source", "all", "enrichment source: all, openrouter, or huggingface")
 	flag.StringVar(&cfg.Model, "model", "", "explicit model ID to enrich")
 	flag.StringVar(&cfg.Provider, "provider", "", "optional provider filter")
-	flag.BoolVar(&cfg.NewOnly, "new-only", true, "only enrich schema-v2 records unless -model is set")
+	flag.BoolVar(&cfg.NewOnly, "new-only", true, "only enrich schema-v2 records with missing structured source data unless -model is set")
 	flag.BoolVar(&cfg.DryRun, "dry-run", false, "report changes without writing YAML")
 	flag.DurationVar(&cfg.Timeout, "timeout", 20*time.Second, "HTTP request timeout")
 	flag.BoolVar(&cfg.UpgradeV1, "upgrade-v1", false, "allow selected legacy records to be promoted to schema v2")
@@ -197,6 +197,9 @@ func run(ctx context.Context, cfg config) error {
 			if model.Upstream.HuggingFace != nil {
 				hfID = model.Upstream.HuggingFace.ID
 			}
+			if hfID == "" && len(model.Identifiers.HuggingFace) == 1 {
+				hfID = model.Identifiers.HuggingFace[0]
+			}
 			if hfID == "" && hasOpenRouter {
 				hfID = orModel.HuggingFaceID
 			}
@@ -252,9 +255,24 @@ func selectModels(models []registry.Model, cfg config) []registry.Model {
 		if !model.IsV2() && cfg.Model == "" && (cfg.NewOnly || !cfg.UpgradeV1) {
 			continue
 		}
+		if cfg.NewOnly && cfg.Model == "" && !needsEnrichment(model, cfg.Source) {
+			continue
+		}
 		selected = append(selected, model)
 	}
 	return selected
+}
+
+func needsEnrichment(model registry.Model, source string) bool {
+	if source == "" {
+		source = "all"
+	}
+	hasHFIdentity := len(model.Identifiers.HuggingFace) > 0 ||
+		(model.Upstream.OpenRouter != nil && model.Upstream.OpenRouter.HuggingFaceID != "")
+	hasOpenRouterIdentity := len(model.Identifiers.OpenRouter) > 0
+	needsOpenRouter := (source == "all" || source == "openrouter") && hasOpenRouterIdentity && model.Upstream.OpenRouter == nil
+	needsHF := (source == "all" || source == "huggingface") && hasHFIdentity && model.Upstream.HuggingFace == nil
+	return needsOpenRouter || needsHF
 }
 
 func loadOpenRouter(path string) (map[string]openRouterModel, error) {
@@ -290,7 +308,7 @@ func enrichOpenRouter(model *registry.Model, upstream openRouterModel, fetchedAt
 		FetchedAt:           &fetchedAt,
 		Extra:               extra,
 	}
-	if upstream.Reasoning != nil {
+	if upstream.Reasoning != nil && model.Reasoning == nil {
 		var reasoningExtra map[string]any
 		if model.Reasoning != nil {
 			reasoningExtra = model.Reasoning.Extra
@@ -303,6 +321,10 @@ func enrichOpenRouter(model *registry.Model, upstream openRouterModel, fetchedAt
 			SupportedEfforts: sortedUnique(upstream.Reasoning.SupportedEfforts),
 			Extra:            reasoningExtra,
 		}
+		if model.Provenance == nil {
+			model.Provenance = make(map[string]registry.Provenance)
+		}
+		model.Provenance["reasoning"] = registry.Provenance{Source: "openrouter"}
 	}
 	after, _ := json.Marshal(model.Upstream.OpenRouter)
 	reasoningAfter, _ := json.Marshal(model.Reasoning)
@@ -455,7 +477,7 @@ func stringSlice(value any) []string {
 
 func enrichHuggingFace(model *registry.Model, hf hfModel, fetchedAt time.Time) bool {
 	license, _ := hf.CardData["license"].(string)
-	before, _ := json.Marshal(model.Upstream.HuggingFace)
+	before, _ := json.Marshal(model)
 	var extra map[string]any
 	var previous registry.HuggingFaceMetadata
 	if model.Upstream.HuggingFace != nil {
@@ -482,7 +504,19 @@ func enrichHuggingFace(model *registry.Model, hf hfModel, fetchedAt time.Time) b
 		FetchedAt:               &fetchedAt,
 		Extra:                   extra,
 	}
-	after, _ := json.Marshal(model.Upstream.HuggingFace)
+	officialContext := hf.Repository.ConfigContextLength
+	if officialContext > 0 && officialContext < 100_000_000 && model.ContextLen <= 0 {
+		model.ContextLen = officialContext
+		if model.Provenance == nil {
+			model.Provenance = make(map[string]registry.Provenance)
+		}
+		model.Provenance["context_length"] = registry.Provenance{Source: "official_huggingface_config", URL: "https://huggingface.co/" + hf.ID}
+	}
+	model.Identifiers.HuggingFace = sortedUnique(append(model.Identifiers.HuggingFace, hf.ID))
+	if model.Links.ModelCard == "" {
+		model.Links.ModelCard = "https://huggingface.co/" + hf.ID
+	}
+	after, _ := json.Marshal(model)
 	return !stringEqualIgnoringFetchedAt(before, after)
 }
 

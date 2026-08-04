@@ -11,6 +11,7 @@ import (
 	"sort"
 	"strings"
 
+	"github.com/kingfs/go-llm-specs/internal/provider"
 	"github.com/kingfs/go-llm-specs/internal/registry"
 	"gopkg.in/yaml.v3"
 )
@@ -25,6 +26,7 @@ type config struct {
 	ValidateOnly   bool
 	GeneratedAt    string
 	PolicyPath     string
+	ProvidersDir   string
 }
 
 type defaultPolicy struct {
@@ -116,6 +118,7 @@ func parseFlags() config {
 	flag.BoolVar(&cfg.ValidateOnly, "validate", false, "validate inputs without writing output")
 	flag.StringVar(&cfg.GeneratedAt, "generated-at", "", "optional RFC3339 timestamp for the manifest")
 	flag.StringVar(&cfg.PolicyPath, "policy", "data/codex/default-open-models.yaml", "default open-model inclusion policy (empty disables it)")
+	flag.StringVar(&cfg.ProvidersDir, "providers-dir", "providers", "authoritative publisher catalog directory")
 	flag.Parse()
 	return cfg
 }
@@ -134,6 +137,14 @@ func run(cfg config) error {
 		if err != nil {
 			return fmt.Errorf("apply default policy: %w", err)
 		}
+	}
+	publishers, err := provider.Scan(cfg.ProvidersDir)
+	if err != nil {
+		return fmt.Errorf("load publisher catalog: %w", err)
+	}
+	models, err = enforceCodexAuthority(models, publishers)
+	if err != nil {
+		return err
 	}
 	generated, err := generate(models)
 	if err != nil {
@@ -165,6 +176,56 @@ func run(cfg config) error {
 		manifestPath = cfg.Output + ".manifest.json"
 	}
 	return writeManifest(manifestPath, all, cfg.GeneratedAt)
+}
+
+// enforceCodexAuthority separates historical collection from executable
+// Codex metadata. A model may remain in the museum without an authoritative
+// publisher identity, but it cannot be exported as a runnable Codex model.
+func enforceCodexAuthority(models []registry.Model, publishers []provider.Provider) ([]registry.Model, error) {
+	byID := make(map[string]provider.Provider, len(publishers))
+	for _, publisher := range publishers {
+		byID[strings.ToLower(publisher.ID)] = publisher
+		for _, alias := range publisher.Aliases {
+			byID[strings.ToLower(alias)] = publisher
+		}
+	}
+	for i := range models {
+		model := &models[i]
+		if model.Codex == nil || !model.Codex.Enabled {
+			continue
+		}
+		publisher, ok := byID[strings.ToLower(model.Developer)]
+		if !ok || !officialHuggingFaceIdentity(*model, publisher) {
+			// Explicit Codex blocks are human assertions and should fail loudly;
+			// policy-derived entries are omitted until their identity is verified.
+			if model.FilePath != "" && hasExplicitCodexBlock(model.FilePath) {
+				return nil, fmt.Errorf("%s: Codex export requires a cataloged publisher and pinned official Hugging Face model card", model.ID)
+			}
+			model.Codex = nil
+		}
+	}
+	return models, nil
+}
+
+func officialHuggingFaceIdentity(model registry.Model, publisher provider.Provider) bool {
+	if model.Upstream.HuggingFace == nil || model.Upstream.HuggingFace.ID == "" || model.Upstream.HuggingFace.Revision == "" {
+		return false
+	}
+	parts := strings.SplitN(model.Upstream.HuggingFace.ID, "/", 2)
+	if len(parts) != 2 || !strings.EqualFold(strings.TrimSuffix(model.Links.ModelCard, "/"), "https://huggingface.co/"+model.Upstream.HuggingFace.ID) {
+		return false
+	}
+	for _, organization := range publisher.Organizations.HuggingFace {
+		if strings.EqualFold(organization, parts[0]) {
+			return true
+		}
+	}
+	return false
+}
+
+func hasExplicitCodexBlock(path string) bool {
+	data, err := os.ReadFile(path)
+	return err == nil && regexp.MustCompile(`(?m)^codex:`).Match(data)
 }
 
 func loadDefaultPolicy(path string) (defaultPolicy, error) {

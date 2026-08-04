@@ -2,6 +2,7 @@ schema_version: 2
 id: google/gemini-3-flash-preview:batch
 name: 'Google: Gemini 3 Flash Preview (batch)'
 provider: Google
+developer: google
 description: Gemini 3 Flash Preview is a high speed, high value thinking model designed for agentic workflows, multi turn chat, and coding assistance. It delivers near Pro level reasoning and tool...
 description_cn: Gemini 3 Flash Preview 是一种高速、高价值的思维模型，设计用于代理工作流程、多轮对话和编程辅助。它提供接近专业级的推理和工具...
 context_length: 1048576

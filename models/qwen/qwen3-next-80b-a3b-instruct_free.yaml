@@ -2,6 +2,7 @@ schema_version: 2
 id: qwen/qwen3-next-80b-a3b-instruct:free
 name: 'Qwen: Qwen3 Next 80B A3B Instruct (free)'
 provider: Qwen
+developer: qwen
 description: |-
   Qwen3-Next-80B-A3B-Instruct is an instruction-tuned chat model in the Qwen3-Next series optimized for fast, stable responses without “thinking” traces. It targets complex tasks across reasoning, code generation, knowledge QA, and multilingual use, while remaining robust on alignment and formatting. Compared with prior Qwen3 instruct variants, it focuses on higher throughput and stability on ultra-long inputs and multi-turn dialogues, making it well-suited for RAG, tool use, and agentic workflows that require consistent final answers rather than visible chain-of-thought.
 

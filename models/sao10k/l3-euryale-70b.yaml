@@ -2,6 +2,7 @@ schema_version: 2
 id: sao10k/l3-euryale-70b
 name: 'Sao10k: Llama 3 Euryale 70B v2.1'
 provider: Sao10k
+developer: sao10k
 description: |-
   Euryale 70B v2.1 is a model focused on creative roleplay from [Sao10k](https://ko-fi.com/sao10k).
 

@@ -2,6 +2,7 @@ schema_version: 2
 id: liquid/lfm-2-24b-a2b
 name: 'LiquidAI: LFM2-24B-A2B'
 provider: Liquid
+developer: liquid
 description: LFM2-24B-A2B is the largest model in the LFM2 family of hybrid architectures designed for efficient on-device deployment. Built as a 24B parameter Mixture-of-Experts model with only 2B active parameters per token, it delivers high-quality generation while maintaining low inference costs. The model fits within 32 GB of RAM, making it practical to run on consumer laptops and desktops without sacrificing capability.
 description_cn: LFM2-24B-A2B 是 LFM2 混合架构系列中规模最大的模型，专为高效端侧部署而设计。该模型采用 240 亿参数的混合专家（MoE）架构，每 token 仅激活 20 亿参数，在保证高质量生成的同时显著降低推理成本。模型内存占用低于 32 GB，可在普通消费级笔记本或台式机上高效运行，无需牺牲性能。
 context_length: 32768

@@ -2,6 +2,7 @@ schema_version: 2
 id: google/gemma-3-4b-it
 name: 'Google: Gemma 3 4B'
 provider: Google
+developer: google
 description: Gemma 3 introduces multimodality, supporting vision-language input and text outputs. It handles context windows up to 128k tokens, understands over 140 languages, and offers improved math, reasoning, and chat capabilities, including structured outputs and function calling.
 description_cn: Gemma 3 引入多模态能力，支持视觉-语言输入与文本输出，可处理长达 128k token 的上下文，支持超过 140 种语言，并在数学、推理和对话能力方面均有提升，包括结构化输出与函数调用功能。
 context_length: 131072
@@ -14,6 +15,17 @@ features:
   - ModalityTextIn
   - ModalityTextOut
 discovered_at: 2026-07-29T10:38:16.494603257Z
+links:
+  model_card: https://huggingface.co/google/gemma-3-4b-it
+identifiers:
+  huggingface:
+    - google/gemma-3-4b-it
+  openrouter:
+    - google/gemma-3-4b-it
+provenance:
+  reasoning.supported:
+    source: official_model_card
+    url: https://huggingface.co/google/gemma-3-4b-it/resolve/093f9f388b31de276ce2de164bdc2081324b9767/README.md
 upstream:
   openrouter:
     canonical_slug: google/gemma-3-4b-it
@@ -90,3 +102,5 @@ upstream:
       - text-generation-inference
       - transformers
     fetched_at: 2026-07-29T10:38:17.156491422Z
+reasoning:
+  supported: true

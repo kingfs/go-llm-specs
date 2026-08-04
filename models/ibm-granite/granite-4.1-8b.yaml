@@ -2,6 +2,7 @@ schema_version: 2
 id: ibm-granite/granite-4.1-8b
 name: 'IBM: Granite 4.1 8B'
 provider: Ibm-Granite
+developer: ibm-granite
 description: Granite 4.1 8B is a dense, decoder-only 8-billion-parameter language model from IBM, part of the Granite 4.1 family. It supports a 131K-token context window and is designed for enterprise tasks...
 description_cn: Granite 4.1 8B 是 IBM 的一款密集型仅解码器 80 亿参数语言模型，属于 Granite 4.1 系列。它支持 131K 代币的上下文窗口，并旨在用于企业任务...
 context_length: 131072
@@ -13,6 +14,13 @@ features:
   - ModalityTextIn
   - ModalityTextOut
 discovered_at: 2026-07-29T10:38:31.477093536Z
+links:
+  model_card: https://huggingface.co/ibm-granite/granite-4.1-8b
+identifiers:
+  huggingface:
+    - ibm-granite/granite-4.1-8b
+  openrouter:
+    - ibm-granite/granite-4.1-8b
 upstream:
   openrouter:
     canonical_slug: ibm-granite/granite-4.1-8b-20260429

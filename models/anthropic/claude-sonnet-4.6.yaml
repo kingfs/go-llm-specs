@@ -2,6 +2,7 @@ schema_version: 2
 id: anthropic/claude-sonnet-4.6
 name: 'Anthropic: Claude Sonnet 4.6'
 provider: Anthropic
+developer: anthropic
 description: Sonnet 4.6 is Anthropic's most capable Sonnet-class model yet, with frontier performance across coding, agents, and professional work. It excels at iterative development, complex codebase navigation, end-to-end project management with memory, polished document creation, and confident computer use for web QA and workflow automation.
 description_cn: Sonnet 4.6 是 Anthropic 迄今能力最强的 Sonnet 级别模型，在编码、智能体及专业工作方面均达到前沿水平。它在迭代开发、复杂代码库导航、带记忆的端到端项目管理、高质量文档生成，以及用于网页问答与工作流自动化的可靠计算机操作方面表现卓越。
 context_length: 1000000
@@ -14,6 +15,9 @@ features:
   - ModalityTextIn
   - ModalityTextOut
 discovered_at: 2026-07-29T10:36:52.218868041Z
+identifiers:
+  openrouter:
+    - anthropic/claude-sonnet-4.6
 upstream:
   openrouter:
     canonical_slug: anthropic/claude-4.6-sonnet-20260217

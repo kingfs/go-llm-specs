@@ -2,6 +2,7 @@ schema_version: 2
 id: openrouter/bodybuilder
 name: Body Builder (beta)
 provider: Openrouter
+developer: openrouter
 description: |-
   Transform your natural language requests into structured OpenRouter API request objects. Describe what you want to accomplish with AI models, and Body Builder will construct the appropriate API calls. Example: "count to 10 using gemini and opus."
 
@@ -20,6 +21,12 @@ features:
   - ModalityTextIn
   - ModalityTextOut
 discovered_at: 2026-07-29T10:41:49.973562299Z
+identifiers:
+  openrouter:
+    - openrouter/bodybuilder
+provenance:
+  max_output:
+    source: openrouter
 upstream:
   openrouter:
     canonical_slug: openrouter/bodybuilder

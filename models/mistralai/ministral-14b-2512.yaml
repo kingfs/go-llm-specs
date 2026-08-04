@@ -2,6 +2,7 @@ schema_version: 2
 id: mistralai/ministral-14b-2512
 name: 'Mistral: Ministral 3 14B 2512'
 provider: Mistral
+developer: mistral
 description: The largest model in the Ministral 3 family, Ministral 3 14B offers frontier capabilities and performance comparable to its larger Mistral Small 3.2 24B counterpart. A powerful and efficient language model with vision capabilities.
 description_cn: Ministral 3 系列中最大的模型 Ministral 3 14B 具备前沿能力，性能可媲美更大的 Mistral Small 3.2 24B 模型，是一款兼具强大性能与高效性的多模态语言模型。
 context_length: 262144
@@ -13,6 +14,16 @@ features:
   - ModalityTextIn
   - ModalityTextOut
 discovered_at: 2026-07-29T10:39:27.598589264Z
+links:
+  model_card: https://huggingface.co/mistralai/Ministral-3-14B-Instruct-2512
+identifiers:
+  huggingface:
+    - mistralai/Ministral-3-14B-Instruct-2512
+  openrouter:
+    - mistralai/ministral-14b-2512
+provenance:
+  max_output:
+    source: openrouter
 upstream:
   openrouter:
     canonical_slug: mistralai/ministral-14b-2512

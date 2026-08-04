@@ -2,6 +2,7 @@ schema_version: 2
 id: mistralai/mistral-small-3.2-24b-instruct
 name: 'Mistral: Mistral Small 3.2 24B'
 provider: Mistral
+developer: mistral
 description: |-
   Mistral-Small-3.2-24B-Instruct-2506 is an updated 24B parameter model from Mistral optimized for instruction following, repetition reduction, and improved function calling. Compared to the 3.1 release, version 3.2 significantly improves accuracy on WildBench and Arena Hard, reduces infinite generations, and delivers gains in tool use and structured output tasks.
 
@@ -20,6 +21,13 @@ features:
   - ModalityTextIn
   - ModalityTextOut
 discovered_at: 2026-07-29T10:39:49.015477695Z
+links:
+  model_card: https://huggingface.co/mistralai/Mistral-Small-3.2-24B-Instruct-2506
+identifiers:
+  huggingface:
+    - mistralai/Mistral-Small-3.2-24B-Instruct-2506
+  openrouter:
+    - mistralai/mistral-small-3.2-24b-instruct
 upstream:
   openrouter:
     canonical_slug: mistralai/mistral-small-3.2-24b-instruct-2506

@@ -2,6 +2,7 @@ schema_version: 2
 id: openai/gpt-4o-2024-08-06
 name: 'OpenAI: GPT-4o (2024-08-06)'
 provider: OpenAI
+developer: openai
 description: |-
   The 2024-08-06 version of GPT-4o offers improved performance in structured outputs, with the ability to supply a JSON schema in the respone_format. Read more [here](https://openai.com/index/introducing-structured-outputs-in-the-api/).
 
@@ -25,6 +26,9 @@ features:
   - ModalityTextIn
   - ModalityTextOut
 discovered_at: 2026-07-29T10:41:09.522979529Z
+identifiers:
+  openrouter:
+    - openai/gpt-4o-2024-08-06
 upstream:
   openrouter:
     canonical_slug: openai/gpt-4o-2024-08-06

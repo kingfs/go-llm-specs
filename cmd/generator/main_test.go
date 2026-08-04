@@ -28,6 +28,39 @@ func TestGenerateCodeWritesFormattedGo(t *testing.T) {
 	}
 }
 
+func TestGenerateCodeIsDeterministic(t *testing.T) {
+	outputPath := filepath.Join(t.TempDir(), "models_gen.go")
+	if err := generateCode(outputPath, nil, nil); err != nil {
+		t.Fatal(err)
+	}
+	first, err := os.ReadFile(outputPath)
+	if err != nil {
+		t.Fatal(err)
+	}
+	if err := generateCode(outputPath, nil, nil); err != nil {
+		t.Fatal(err)
+	}
+	second, err := os.ReadFile(outputPath)
+	if err != nil {
+		t.Fatal(err)
+	}
+	if string(first) != string(second) {
+		t.Fatal("identical inputs produced different generated code")
+	}
+}
+
+func TestBuildProcessedModelsExcludesLifecycleCandidates(t *testing.T) {
+	models := map[string]ModelRegistry{
+		"org/active":    {ID: "org/active", Name: "Active"},
+		"org/candidate": {ID: "org/candidate", Name: "Candidate", Lifecycle: "candidate"},
+		"org/rejected":  {ID: "org/rejected", Name: "Rejected", Lifecycle: "rejected"},
+	}
+	processed := buildProcessedModels(models)
+	if len(processed) != 1 || processed[0].ID != "org/active" {
+		t.Fatalf("candidate leaked into generated registry: %#v", processed)
+	}
+}
+
 func TestMergeModelRegistryLocalOverridesWin(t *testing.T) {
 	upstream := OpenRouterModel{
 		ID:            "openai/example",
@@ -102,6 +135,21 @@ func TestMergeModelRegistryPreservesRichAndUnknownFields(t *testing.T) {
 	}
 }
 
+func TestMergeNeverOverwritesPersistedFacts(t *testing.T) {
+	local := ModelRegistry{ID: "test/model", Name: "Old", ContextLen: 1, Provenance: map[string]registrymodel.Provenance{
+		"name": {Source: "openrouter"}, "context_length": {Source: "openrouter"},
+	}}
+	merged := mergeModelRegistry(OpenRouterModel{ID: "test/model", Name: "New", ContextLength: 2048}, local)
+	if merged.Name != "Old" || merged.ContextLen != 1 {
+		t.Fatalf("persisted facts were overwritten because of stale provenance: %#v", merged)
+	}
+	local.Name, local.ContextLen, local.Provenance = "Human", 4096, nil
+	merged = mergeModelRegistry(OpenRouterModel{ID: "test/model", Name: "New", ContextLength: 2048}, local)
+	if merged.Name != "Human" || merged.ContextLen != 4096 {
+		t.Fatalf("human facts were overwritten: %#v", merged)
+	}
+}
+
 func TestStringsToFeatures(t *testing.T) {
 	features := stringsToFeatures("ModalityTextIn | ModalityTextOut | CapFunctionCall")
 	if len(features) != 3 {
@@ -109,5 +157,13 @@ func TestStringsToFeatures(t *testing.T) {
 	}
 	if features[0] != "CapFunctionCall" {
 		t.Fatalf("expected normalized sort order, got %#v", features)
+	}
+}
+
+func TestNormalizeDeveloperID(t *testing.T) {
+	for input, want := range map[string]string{"Meta Llama": "meta", "Mistral AI": "mistral", "X-Ai": "xai", "OpenAI": "openai"} {
+		if got := normalizeDeveloperID(input); got != want {
+			t.Fatalf("normalizeDeveloperID(%q) = %q, want %q", input, got, want)
+		}
 	}
 }

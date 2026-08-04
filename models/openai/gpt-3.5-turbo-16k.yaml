@@ -2,6 +2,7 @@ schema_version: 2
 id: openai/gpt-3.5-turbo-16k
 name: 'OpenAI: GPT-3.5 Turbo 16k'
 provider: OpenAI
+developer: openai
 description: 'This model offers four times the context length of gpt-3.5-turbo, allowing it to support approximately 20 pages of text in a single request at a higher cost. Training data: up to Sep 2021.'
 description_cn: 该模型的上下文长度是 gpt-3.5-turbo 的四倍，单次请求可处理约 20 页文本，但成本更高。训练数据截止至 2021 年 9 月。
 context_length: 16385
@@ -13,6 +14,9 @@ features:
   - ModalityTextIn
   - ModalityTextOut
 discovered_at: 2026-07-29T10:41:04.294566779Z
+identifiers:
+  openrouter:
+    - openai/gpt-3.5-turbo-16k
 upstream:
   openrouter:
     canonical_slug: openai/gpt-3.5-turbo-16k

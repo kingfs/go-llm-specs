@@ -2,6 +2,7 @@ schema_version: 2
 id: openrouter/auto
 name: Auto Router
 provider: Openrouter
+developer: openrouter
 description: |-
   Your prompt will be processed by a meta-model and routed to one of dozens of models (see below), optimizing for the best possible output.
 
@@ -115,6 +116,12 @@ features:
   - ModalityTextIn
   - ModalityTextOut
 discovered_at: 2026-07-29T10:41:49.069223135Z
+identifiers:
+  openrouter:
+    - openrouter/auto
+provenance:
+  max_output:
+    source: openrouter
 upstream:
   openrouter:
     canonical_slug: openrouter/auto

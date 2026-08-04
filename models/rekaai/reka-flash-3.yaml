@@ -2,6 +2,7 @@ schema_version: 2
 id: rekaai/reka-flash-3
 name: 'Reka: Flash 3'
 provider: Rekaai
+developer: Rekaai
 description: |-
   Reka Flash 3 is a general-purpose, instruction-tuned large language model with 21 billion parameters, developed by Reka. It excels at general chat, coding tasks, instruction-following, and function calling. Featuring a 32K context length and optimized through reinforcement learning (RLOO), it provides competitive performance comparable to proprietary models within a smaller parameter footprint. Ideal for low-latency, local, or on-device deployments, Reka Flash 3 is compact, supports efficient quantization (down to 11GB at 4-bit precision), and employs explicit reasoning tags ("<reasoning>") to indicate its internal thought process.
 
@@ -18,6 +19,13 @@ features:
   - ModalityTextIn
   - ModalityTextOut
 discovered_at: 2026-07-29T10:43:57.501429696Z
+links:
+  model_card: https://huggingface.co/RekaAI/reka-flash-3
+identifiers:
+  huggingface:
+    - RekaAI/reka-flash-3
+  openrouter:
+    - rekaai/reka-flash-3
 upstream:
   openrouter:
     canonical_slug: rekaai/reka-flash-3

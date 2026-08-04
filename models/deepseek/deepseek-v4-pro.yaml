@@ -2,6 +2,7 @@ schema_version: 2
 id: deepseek/deepseek-v4-pro
 name: 'DeepSeek: DeepSeek V4 Pro'
 provider: DeepSeek
+developer: deepseek
 description: DeepSeek V4 Pro is a large-scale Mixture-of-Experts model from DeepSeek with 1.6T total parameters and 49B activated parameters, supporting a 1M-token context window. It is designed for advanced reasoning, coding,...
 description_cn: DeepSeek V4 Pro 是一个大规模的专家混合模型，拥有1.6万亿总参数和490亿激活参数，支持100万标记的上下文窗口。它旨在进行高级推理、编码...
 context_length: 1048576
@@ -13,6 +14,13 @@ features:
   - ModalityTextIn
   - ModalityTextOut
 discovered_at: 2026-07-29T10:37:52.029994502Z
+links:
+  model_card: https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro
+identifiers:
+  huggingface:
+    - deepseek-ai/DeepSeek-V4-Pro
+  openrouter:
+    - deepseek/deepseek-v4-pro
 upstream:
   openrouter:
     canonical_slug: deepseek/deepseek-v4-pro-20260423

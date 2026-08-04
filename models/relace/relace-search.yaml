@@ -2,6 +2,7 @@ schema_version: 2
 id: relace/relace-search
 name: 'Relace: Relace Search'
 provider: Relace
+developer: Relace
 description: "The relace-search model uses 4-12 `view_file` and `grep` tools in parallel to explore a codebase and return relevant files to the user request. \n\nIn contrast to RAG, relace-search performs agentic multi-step reasoning to produce highly precise results 4x faster than any frontier model. It's designed to serve as a subagent that passes its findings to an \"oracle\" coding agent, who orchestrates/performs the rest of the coding task.\n\nTo use relace-search you need to build an appropriate agent harness, and parse the response for relevant information to hand off to the oracle. Read more about it in the [Relace documentation](https://docs.relace.ai/docs/fast-agentic-search/agent)."
 description_cn: |-
   relace-search 模型通过并行调用 4–12 个 `view_file` 和 `grep` 工具来探索代码库，并返回与用户请求相关的文件。
@@ -17,6 +18,9 @@ features:
   - ModalityTextIn
   - ModalityTextOut
 discovered_at: 2026-07-29T10:44:00.194132201Z
+identifiers:
+  openrouter:
+    - relace/relace-search
 upstream:
   openrouter:
     canonical_slug: relace/relace-search-20251208

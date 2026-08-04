@@ -2,6 +2,7 @@ schema_version: 2
 id: qwen/qwen3.7-max
 name: 'Qwen: Qwen3.7 Max'
 provider: Qwen
+developer: qwen
 description: Qwen3.7-Max is the flagship model in Alibaba's Qwen3.7 series. It supports text input and output and is designed for agent-centric workloads, with particular strengths in coding, office and productivity tasks,...
 description_cn: Qwen3.7-Max是阿里巴巴Qwen3.7系列的旗舰模型。它支持文本输入和输出，旨在满足以代理为中心的工作负载，特别擅长编码、办公和生产力任务，...
 context_length: 1000000
@@ -13,6 +14,9 @@ features:
   - ModalityTextIn
   - ModalityTextOut
 discovered_at: 2026-07-29T10:43:51.277174423Z
+identifiers:
+  openrouter:
+    - qwen/qwen3.7-max
 upstream:
   openrouter:
     canonical_slug: qwen/qwen3.7-max-20260520

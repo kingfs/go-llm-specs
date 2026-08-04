@@ -2,6 +2,7 @@ schema_version: 2
 id: qwen/qwen3.8-max
 name: 'Qwen: Qwen3.8 Max'
 provider: Qwen
+developer: qwen
 description: Qwen3.8 Max is the flagship model in Alibaba's Qwen3.8 series, the general-availability successor to the Qwen3.8 Max Preview. It is a multimodal reasoning model intended for complex reasoning, visual understanding,...
 context_length: 1000000
 max_output: 131072
@@ -14,6 +15,9 @@ features:
   - ModalityTextOut
   - ModalityVideoIn
 discovered_at: 2026-08-04T04:52:16.623375042Z
+identifiers:
+  openrouter:
+    - qwen/qwen3.8-max
 upstream:
   openrouter:
     canonical_slug: qwen/qwen3.8-max-20260803

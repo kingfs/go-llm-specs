@@ -2,6 +2,7 @@ schema_version: 2
 id: ~openai/gpt-mini-latest
 name: OpenAI GPT Mini Latest
 provider: ~Openai
+developer: ~Openai
 description: This model always redirects to the latest model in the OpenAI GPT Mini family.
 description_cn: 该模型始终重定向到OpenAI GPT Mini系列中的最新模型。
 context_length: 400000
@@ -15,6 +16,9 @@ features:
   - ModalityTextIn
   - ModalityTextOut
 discovered_at: 2026-07-29T10:45:26.743811332Z
+identifiers:
+  openrouter:
+    - ~openai/gpt-mini-latest
 upstream:
   openrouter:
     canonical_slug: ~openai/gpt-mini-latest

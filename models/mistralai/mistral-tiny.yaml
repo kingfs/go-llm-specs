@@ -2,6 +2,7 @@ schema_version: 2
 id: mistralai/mistral-tiny
 name: Mistral Tiny
 provider: Mistral
+developer: mistral
 description: |-
   Note: This model is being deprecated. Recommended replacement is the newer [Ministral 8B](/mistral/ministral-8b)
 

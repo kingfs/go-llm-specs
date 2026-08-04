@@ -2,6 +2,7 @@ schema_version: 2
 id: google/gemini-3.1-flash-lite-image
 name: 'Google: Nano Banana 2 Lite (Gemini 3.1 Flash Lite Image)'
 provider: Google
+developer: google
 description: Nano Banana 2 Lite (Gemini 3.1 Flash Lite Image) is Google's fastest, most cost-efficient Gemini image model, built for high-velocity developer pipelines and rapid-fire visual exploration. It delivers text-to-image generation...
 description_cn: Nano Banana 2 Lite（Gemini 3.1 Flash Lite 图像）是 Google最快、成本最低的 Gemini 图像模型，专为高速开发者流程和快速视觉探索而构建。它提供文本到图像的生成......
 context_length: 65536
@@ -14,6 +15,9 @@ features:
   - ModalityTextIn
   - ModalityTextOut
 discovered_at: 2026-07-29T10:38:07.512505956Z
+identifiers:
+  openrouter:
+    - google/gemini-3.1-flash-lite-image
 upstream:
   openrouter:
     canonical_slug: google/gemini-3.1-flash-lite-image-20260630

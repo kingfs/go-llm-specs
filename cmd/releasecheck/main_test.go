@@ -60,7 +60,7 @@ func TestParseSnapshot(t *testing.T) {
 	}
 }
 
-func TestCompareSnapshotsIgnoresCapacityOnlyChanges(t *testing.T) {
+func TestCompareSnapshotsReleasesOnCapacityChanges(t *testing.T) {
 	base := map[string]snapshotModel{
 		"openai/a": {ID: "openai/a", Name: "A", Provider: "OpenAI", ContextLen: 1, MaxOutput: 2},
 	}
@@ -69,11 +69,11 @@ func TestCompareSnapshotsIgnoresCapacityOnlyChanges(t *testing.T) {
 	}
 
 	rep := compareSnapshots("v0.1.0", current, base)
-	if rep.ReleaseNeeded {
-		t.Fatalf("expected no release for ignored-only changes: %#v", rep)
+	if !rep.ReleaseNeeded {
+		t.Fatalf("expected release for capacity changes: %#v", rep)
 	}
-	if len(rep.IgnoredOnlyModels) != 1 {
-		t.Fatalf("expected ignored-only diff, got %#v", rep.IgnoredOnlyModels)
+	if len(rep.UpdatedModels) != 1 {
+		t.Fatalf("expected significant capacity diff, got %#v", rep.UpdatedModels)
 	}
 }
 

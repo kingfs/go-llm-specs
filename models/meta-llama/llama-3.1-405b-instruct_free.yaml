@@ -2,6 +2,7 @@ schema_version: 2
 id: meta-llama/llama-3.1-405b-instruct:free
 name: 'Meta: Llama 3.1 405B Instruct (free)'
 provider: Meta
+developer: meta
 description: |-
   The highly anticipated 400B class of Llama3 is here! Clocking in at 128k context with impressive eval scores, the Meta AI team continues to push the frontier of open-source LLMs.
 

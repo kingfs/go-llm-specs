@@ -2,6 +2,7 @@ schema_version: 2
 id: cohere/command-r-08-2024
 name: 'Cohere: Command R (08-2024)'
 provider: Cohere
+developer: cohere
 description: |-
   command-r-08-2024 is an update of the [Command R](/models/cohere/command-r) with improved performance for multilingual retrieval-augmented generation (RAG) and tool use. More broadly, it is better at math, code and reasoning and is competitive with the previous version of the larger Command R+ model.
 
@@ -23,6 +24,9 @@ features:
   - ModalityTextIn
   - ModalityTextOut
 discovered_at: 2026-07-29T10:37:19.80412052Z
+identifiers:
+  openrouter:
+    - cohere/command-r-08-2024
 upstream:
   openrouter:
     canonical_slug: cohere/command-r-08-2024

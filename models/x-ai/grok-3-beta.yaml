@@ -2,6 +2,7 @@ schema_version: 2
 id: x-ai/grok-3-beta
 name: 'xAI: Grok 3 Beta'
 provider: X-Ai
+developer: xai
 description: "Grok 3 is the latest model from xAI. It's their flagship model that excels at enterprise use cases like data extraction, coding, and text summarization. Possesses deep domain knowledge in finance, healthcare, law, and science.\n\nExcels in structured tasks and benchmarks like GPQA, LCB, and MMLU-Pro where it outperforms Grok 3 Mini even on high thinking. \n\nNote: That there are two xAI endpoints for this model. By default when using this model we will always route you to the base endpoint. If you want the fast endpoint you can add `provider: { sort: throughput}`, to sort by throughput instead. \n"
 description_cn: |-
   Grok 3 是 xAI 最新推出的旗舰模型，在企业级应用场景（如数据提取、编程和文本摘要）中表现卓越，并在金融、医疗、法律和科学等领域具备深厚的领域知识。

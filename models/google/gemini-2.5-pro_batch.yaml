@@ -2,6 +2,7 @@ schema_version: 2
 id: google/gemini-2.5-pro:batch
 name: 'Google: Gemini 2.5 Pro (batch)'
 provider: Google
+developer: google
 description: Gemini 2.5 Pro is Google’s state-of-the-art AI model designed for advanced reasoning, coding, mathematics, and scientific tasks. It employs “thinking” capabilities, enabling it to reason through responses with enhanced accuracy...
 description_cn: Gemini 2.5 Pro 是谷歌的先进 AI 模型，专门设计用于高级推理、编码、数学和科学任务。它采用“思考”能力，使其在响应中具有更高的准确性...
 context_length: 1048576

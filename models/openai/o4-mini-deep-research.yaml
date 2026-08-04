@@ -2,6 +2,7 @@ schema_version: 2
 id: openai/o4-mini-deep-research
 name: 'OpenAI: o4 Mini Deep Research'
 provider: OpenAI
+developer: openai
 description: |-
   o4-mini-deep-research is OpenAI's faster, more affordable deep research model—ideal for tackling complex, multi-step research tasks.
 

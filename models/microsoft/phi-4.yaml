@@ -2,6 +2,7 @@ schema_version: 2
 id: microsoft/phi-4
 name: 'Microsoft: Phi 4'
 provider: Microsoft
+developer: microsoft
 description: "[Microsoft Research](/microsoft) Phi-4 is designed to perform well in complex reasoning tasks and can operate efficiently in situations with limited memory or where quick responses are needed. \n\nAt 14 billion parameters, it was trained on a mix of high-quality synthetic datasets, data from curated websites, and academic materials. It has undergone careful improvement to follow instructions accurately and maintain strong safety standards. It works best with English language inputs.\n\nFor more information, please see [Phi-4 Technical Report](https://arxiv.org/pdf/2412.08905)\n"
 description_cn: |-
   [Microsoft Research](/microsoft) Phi-4 专为复杂推理任务设计，可在内存受限或需快速响应的场景中高效运行。
@@ -17,6 +18,13 @@ features:
   - ModalityTextIn
   - ModalityTextOut
 discovered_at: 2026-07-29T10:39:02.734213229Z
+links:
+  model_card: https://huggingface.co/microsoft/phi-4
+identifiers:
+  huggingface:
+    - microsoft/phi-4
+  openrouter:
+    - microsoft/phi-4
 upstream:
   openrouter:
     canonical_slug: microsoft/phi-4

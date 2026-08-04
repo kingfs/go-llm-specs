@@ -2,6 +2,7 @@ schema_version: 2
 id: mistralai/ministral-3b-2512
 name: 'Mistral: Ministral 3 3B 2512'
 provider: Mistral
+developer: mistral
 description: The smallest model in the Ministral 3 family, Ministral 3 3B is a powerful, efficient tiny language model with vision capabilities.
 description_cn: Ministral 3 系列中最小的模型 Ministral 3 3B 是一款高效、强大的微型多模态语言模型。
 context_length: 131072
@@ -13,6 +14,16 @@ features:
   - ModalityTextIn
   - ModalityTextOut
 discovered_at: 2026-07-29T10:39:30.118295614Z
+links:
+  model_card: https://huggingface.co/mistralai/Ministral-3-3B-Instruct-2512
+identifiers:
+  huggingface:
+    - mistralai/Ministral-3-3B-Instruct-2512
+  openrouter:
+    - mistralai/ministral-3b-2512
+provenance:
+  max_output:
+    source: openrouter
 upstream:
   openrouter:
     canonical_slug: mistralai/ministral-3b-2512

@@ -2,6 +2,7 @@ schema_version: 2
 id: anthropic/claude-opus-4.8:batch
 name: 'Anthropic: Claude Opus 4.8 (batch)'
 provider: Anthropic
+developer: anthropic
 description: Claude Opus 4.8 is Anthropic's most capable generally available model in the Opus family. It supports text, image, and file inputs with text output, with reasoning support and a 1M-token...
 description_cn: Claude Opus 4.8 是 Anthropic 在 Opus 系列中最强大的通用可用模型。支持文本、图像和文件输入，输出文本，具备推理支持和 1M 代币...
 context_length: 1000000

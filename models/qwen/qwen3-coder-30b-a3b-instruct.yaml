@@ -2,6 +2,7 @@ schema_version: 2
 id: qwen/qwen3-coder-30b-a3b-instruct
 name: 'Qwen: Qwen3 Coder 30B A3B Instruct'
 provider: Qwen
+developer: qwen
 description: "Qwen3-Coder-30B-A3B-Instruct is a 30.5B parameter Mixture-of-Experts (MoE) model with 128 experts (8 active per forward pass), designed for advanced code generation, repository-scale understanding, and agentic tool use. Built on the Qwen3 architecture, it supports a native context length of 256K tokens (extendable to 1M with Yarn) and performs strongly in tasks involving function calls, browser use, and structured code completion.\n\nThis model is optimized for instruction-following without “thinking mode”, and integrates well with OpenAI-compatible tool-use formats. "
 description_cn: |-
   Qwen3-Coder-30B-A3B-Instruct 是一款 305 亿参数的混合专家（MoE）模型，包含 128 个专家（每次前向传播激活 8 个），专为高级代码生成、仓库级理解及智能体工具调用而设计。基于 Qwen3 架构，原生支持 256K token 上下文长度（通过 Yarn 可扩展至 1M），在函数调用、浏览器操作和结构化代码补全等任务中表现强劲。
@@ -16,6 +17,13 @@ features:
   - ModalityTextIn
   - ModalityTextOut
 discovered_at: 2026-07-29T10:42:53.574705221Z
+links:
+  model_card: https://huggingface.co/Qwen/Qwen3-Coder-30B-A3B-Instruct
+identifiers:
+  huggingface:
+    - Qwen/Qwen3-Coder-30B-A3B-Instruct
+  openrouter:
+    - qwen/qwen3-coder-30b-a3b-instruct
 upstream:
   openrouter:
     canonical_slug: qwen/qwen3-coder-30b-a3b-instruct

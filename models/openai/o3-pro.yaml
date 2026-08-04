@@ -2,6 +2,7 @@ schema_version: 2
 id: openai/o3-pro
 name: 'OpenAI: o3 Pro'
 provider: OpenAI
+developer: openai
 description: |-
   The o-series of models are trained with reinforcement learning to think before they answer and perform complex reasoning. The o3-pro model uses more compute to think harder and provide consistently better answers.
 
@@ -21,6 +22,9 @@ features:
   - ModalityTextIn
   - ModalityTextOut
 discovered_at: 2026-07-29T10:41:43.548719909Z
+identifiers:
+  openrouter:
+    - openai/o3-pro
 upstream:
   openrouter:
     canonical_slug: openai/o3-pro-2025-06-10

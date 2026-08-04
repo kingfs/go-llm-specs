@@ -2,6 +2,7 @@ schema_version: 2
 id: raifle/sorcererlm-8x22b
 name: SorcererLM 8x22B
 provider: Raifle
+developer: raifle
 description: |-
   SorcererLM is an advanced RP and storytelling model, built as a Low-rank 16-bit LoRA fine-tuned on [WizardLM-2 8x22B](/microsoft/wizardlm-2-8x22b).
 

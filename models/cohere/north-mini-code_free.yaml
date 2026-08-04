@@ -2,6 +2,7 @@ schema_version: 2
 id: cohere/north-mini-code:free
 name: 'Cohere: North Mini Code (free)'
 provider: Cohere
+developer: cohere
 description: North Mini Code is Cohere's first agentic coding model and the debut of its North family. A sparse mixture-of-experts model with 30B total parameters and 3B active, it is optimized...
 description_cn: North Mini Code 是 Cohere 首个智能编码模型，也是其 North 系列的首发。它是一个稀疏的专家混合模型，拥有 300 亿总参数和 30 亿活跃参数，经过优化...
 context_length: 256000
@@ -12,6 +13,13 @@ features:
   - ModalityTextIn
   - ModalityTextOut
 discovered_at: 2026-07-29T10:37:21.08877243Z
+links:
+  model_card: https://huggingface.co/CohereLabs/North-Mini-Code-1.0
+identifiers:
+  huggingface:
+    - CohereLabs/North-Mini-Code-1.0
+  openrouter:
+    - cohere/north-mini-code:free
 upstream:
   openrouter:
     canonical_slug: cohere/north-mini-code-20260617

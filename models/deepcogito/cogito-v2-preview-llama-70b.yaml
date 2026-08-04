@@ -2,6 +2,7 @@ schema_version: 2
 id: deepcogito/cogito-v2-preview-llama-70b
 name: 'Deep Cogito: Cogito V2 Preview Llama 70B'
 provider: Deepcogito
+developer: deepcogito
 description: Cogito v2 70B is a dense hybrid reasoning model that combines direct answering capabilities with advanced self-reflection. Built with iterative policy improvement, it delivers strong performance across reasoning tasks while maintaining efficiency through shorter reasoning chains and improved intuition.
 description_cn: Cogito v2 70B 是一款稠密型混合推理模型，兼具直接作答能力与高级自省机制。通过迭代策略优化构建，在保持较短推理链和更强直觉的同时，在各类推理任务中展现出卓越性能。
 context_length: 32768
@@ -12,6 +13,11 @@ features:
   - ModalityTextIn
   - ModalityTextOut
 discovered_at: 2026-07-29T10:37:27.711988461Z
+links:
+  model_card: https://huggingface.co/deepcogito/cogito-v2-preview-llama-70B
+identifiers:
+  huggingface:
+    - deepcogito/cogito-v2-preview-llama-70B
 upstream:
   huggingface:
     id: deepcogito/cogito-v2-preview-llama-70B

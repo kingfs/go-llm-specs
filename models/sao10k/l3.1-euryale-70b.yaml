@@ -2,6 +2,7 @@ schema_version: 2
 id: sao10k/l3.1-euryale-70b
 name: 'Sao10K: Llama 3.1 Euryale 70B v2.2'
 provider: Sao10k
+developer: Sao10k
 description: Euryale L3.1 70B v2.2 is a model focused on creative roleplay from [Sao10k](https://ko-fi.com/sao10k). It is the successor of [Euryale L3 70B v2.1](/models/sao10k/l3-euryale-70b).
 description_cn: Euryale L3.1 70B v2.2 是由 [Sao10k](https://ko-fi.com/sao10k) 开发的专注于创意角色扮演的模型，是 [Euryale L3 70B v2.1](/models/sao10k/l3-euryale-70b) 的继任版本。
 context_length: 131072
@@ -13,6 +14,13 @@ features:
   - ModalityTextIn
   - ModalityTextOut
 discovered_at: 2026-07-29T10:44:06.275947256Z
+links:
+  model_card: https://huggingface.co/Sao10K/L3.1-70B-Euryale-v2.2
+identifiers:
+  huggingface:
+    - Sao10K/L3.1-70B-Euryale-v2.2
+  openrouter:
+    - sao10k/l3.1-euryale-70b
 upstream:
   openrouter:
     canonical_slug: sao10k/l3.1-euryale-70b

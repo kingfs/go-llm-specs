@@ -1,0 +1,12 @@
+schema_version: 1
+id: moonshotai
+name: Moonshot AI
+aliases: [Moonshotai, Kimi]
+official:
+  homepage: https://www.moonshot.ai/
+  documentation: https://platform.moonshot.ai/docs/
+organizations:
+  huggingface: [moonshotai]
+  github: [MoonshotAI]
+discovery:
+  huggingface: true

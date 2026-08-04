@@ -2,6 +2,7 @@ schema_version: 2
 id: qwen/qwen3-coder-flash
 name: 'Qwen: Qwen3 Coder Flash'
 provider: Qwen
+developer: qwen
 description: Qwen3 Coder Flash is Alibaba's fast and cost efficient version of their proprietary Qwen3 Coder Plus. It is a powerful coding agent model specializing in autonomous programming via tool calling and environment interaction, combining coding proficiency with versatile general-purpose abilities.
 description_cn: Qwen3 Coder Flash 是阿里巴巴推出的 Qwen3 Coder Plus 的快速且高性价比版本。该模型是一款强大的编程智能体，专注于通过工具调用与环境交互实现自主编程，兼具卓越的编码能力与通用任务处理能力。
 context_length: 1000000
@@ -13,6 +14,9 @@ features:
   - ModalityTextIn
   - ModalityTextOut
 discovered_at: 2026-07-29T10:42:56.093517779Z
+identifiers:
+  openrouter:
+    - qwen/qwen3-coder-flash
 upstream:
   openrouter:
     canonical_slug: qwen/qwen3-coder-flash

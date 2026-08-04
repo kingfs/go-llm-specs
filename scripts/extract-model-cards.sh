@@ -39,5 +39,10 @@ while IFS= read -r file; do
   processed=$((processed + 1))
   if [ "$limit" -gt 0 ] && [ "$processed" -ge "$limit" ]; then break; fi
   sleep "$delay"
-done < <(find "$models_dir" -type f -name '*.yaml' -exec grep -l '^  huggingface:' {} + | sort)
+done < <(
+  {
+    find "$models_dir" -type f \( -name '*.yaml' -o -name '*.yml' \) -exec grep -l '^lifecycle: candidate' {} +
+    find "$models_dir" -type f \( -name '*.yaml' -o -name '*.yml' \) -exec grep -l '^  huggingface:' {} +
+  } | awk '!seen[$0]++'
+)
 echo "card extraction batch complete: processed=$processed checkpoint=$checkpoint failures=$failures"

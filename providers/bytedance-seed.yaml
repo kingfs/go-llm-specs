@@ -1,0 +1,11 @@
+schema_version: 1
+id: bytedance-seed
+name: ByteDance Seed
+kind: company
+official:
+  homepage: https://seed.bytedance.com/
+  model_catalog: https://huggingface.co/ByteDance-Seed
+organizations:
+  huggingface: [ByteDance-Seed]
+discovery:
+  huggingface: true

@@ -2,6 +2,7 @@ schema_version: 2
 id: qwen/qwen3-4b
 name: 'Qwen: Qwen3 4B'
 provider: Qwen
+developer: qwen
 description: Qwen3-4B is a 4 billion parameter dense language model from the Qwen3 series, designed to support both general-purpose and reasoning-intensive tasks. It introduces a dual-mode architecture—thinking and non-thinking—allowing dynamic switching between high-precision logical reasoning and efficient dialogue generation. This makes it well-suited for multi-turn chat, instruction following, and complex agent workflows.
 description_cn: Qwen3-4B 是 Qwen3 系列中的 40 亿参数稠密语言模型，兼顾通用任务与高推理需求场景。该模型采用双模式架构——“思考”与“非思考”模式，可动态切换高精度逻辑推理与高效对话生成，非常适合多轮对话、指令遵循及复杂智能体工作流。
 context_length: 131072
@@ -13,6 +14,15 @@ features:
   - ModalityTextIn
   - ModalityTextOut
 discovered_at: 2026-07-29T10:42:47.00672503Z
+links:
+  model_card: https://huggingface.co/Qwen/Qwen3-4B
+identifiers:
+  huggingface:
+    - Qwen/Qwen3-4B
+provenance:
+  reasoning.supported:
+    source: official_model_card
+    url: https://huggingface.co/Qwen/Qwen3-4B/resolve/1cfa9a7208912126459214e8b04321603b3df60c/README.md
 upstream:
   huggingface:
     id: Qwen/Qwen3-4B
@@ -45,3 +55,5 @@ upstream:
       - config.json
       - tokenizer_config.json
     fetched_at: 2026-07-30T04:45:42.087772057Z
+reasoning:
+  supported: true

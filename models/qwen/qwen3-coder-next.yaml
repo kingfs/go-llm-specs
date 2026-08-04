@@ -2,6 +2,7 @@ schema_version: 2
 id: qwen/qwen3-coder-next
 name: 'Qwen: Qwen3 Coder Next'
 provider: Qwen
+developer: qwen
 description: |-
   Qwen3-Coder-Next is an open-weight causal language model optimized for coding agents and local development workflows. It uses a sparse MoE design with 80B total parameters and only 3B activated per token, delivering performance comparable to models with 10 to 20x higher active compute, which makes it well suited for cost-sensitive, always-on agent deployment.
 
@@ -19,6 +20,13 @@ features:
   - ModalityTextIn
   - ModalityTextOut
 discovered_at: 2026-07-29T10:42:56.511242307Z
+links:
+  model_card: https://huggingface.co/Qwen/Qwen3-Coder-Next
+identifiers:
+  huggingface:
+    - Qwen/Qwen3-Coder-Next
+  openrouter:
+    - qwen/qwen3-coder-next
 upstream:
   openrouter:
     canonical_slug: qwen/qwen3-coder-next-2025-02-03

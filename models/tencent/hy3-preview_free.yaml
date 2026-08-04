@@ -2,6 +2,7 @@ schema_version: 2
 id: tencent/hy3-preview:free
 name: 'Tencent: Hy3 preview (free)'
 provider: Tencent
+developer: tencent
 description: Hy3 preview is a high-efficiency Mixture-of-Experts model from Tencent designed for agentic workflows and production use. It supports configurable reasoning levels across disabled, low, and high modes, allowing it to...
 description_cn: Hy3预览是来自腾讯的高效专家混合模型，专为代理工作流程和生产使用而设计。它支持不同的推理级别，涵盖禁用、低和高模式，使其能够...
 context_length: 262144

@@ -2,6 +2,7 @@ schema_version: 2
 id: inclusionai/ling-3.0-flash:free
 name: Ling-3.0-flash (free)
 provider: Inclusionai
+developer: Inclusionai
 description: '*Ling-3.0-flash* is a *124B-parameter Mixture-of-Experts (MoE) model*, with approximately *5.1B parameters activated per token*. The model is designed with *token efficiency and production-scale agentic inference* as key priorities, enabling developers...'
 description_cn: '*Ling-3.0-flash* 是一个 *124B参数的专家混合模型 (MoE)*，每个token大约激活 *5.1B参数*。该模型的设计重点是 *token效率和生产规模应用推理*，使开发者能够...'
 context_length: 262144
@@ -12,6 +13,9 @@ features:
   - ModalityTextIn
   - ModalityTextOut
 discovered_at: 2026-07-29T10:38:39.523394503Z
+identifiers:
+  openrouter:
+    - inclusionai/ling-3.0-flash:free
 upstream:
   openrouter:
     canonical_slug: inclusionai/ling-3.0-flash-20260723

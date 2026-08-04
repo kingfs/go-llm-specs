@@ -2,6 +2,7 @@ schema_version: 2
 id: mistralai/codestral-2508
 name: 'Mistral: Codestral 2508'
 provider: Mistral
+developer: mistral
 description: |-
   Mistral's cutting-edge language model for coding released end of July 2025. Codestral specializes in low-latency, high-frequency tasks such as fill-in-the-middle (FIM), code correction and test generation.
 
@@ -18,6 +19,12 @@ features:
   - ModalityTextIn
   - ModalityTextOut
 discovered_at: 2026-07-29T10:39:23.805118881Z
+identifiers:
+  openrouter:
+    - mistralai/codestral-2508
+provenance:
+  max_output:
+    source: openrouter
 upstream:
   openrouter:
     canonical_slug: mistralai/codestral-2508

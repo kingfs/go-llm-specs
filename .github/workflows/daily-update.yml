@@ -19,6 +19,7 @@ jobs:
       group: daily-model-sync
       cancel-in-progress: false
     permissions:
+      actions: write
       contents: write
       models: read
     outputs:
@@ -36,14 +37,20 @@ jobs:
 
       - name: Install Task
         run: |
-          go install github.com/go-task/task/v3/cmd/task@latest
+          go install github.com/go-task/task/v3/cmd/task@v3.45.4
           echo "$(go env GOPATH)/bin" >> "$GITHUB_PATH"
 
       - name: Refresh upstream registry
-        run: task generator
+        run: task generator -- -use-cache-fallback=false
 
-      - name: Enrich new models from structured sources
-        run: task enrich -- -new-only
+      - name: Discover releases from subscribed official Hugging Face organizations
+        run: task catalog-discover
+
+      - name: Refresh OpenRouter-attributed structured facts from the immutable cache
+        run: task enrich -- -source openrouter -new-only=false
+
+      - name: Enrich only models missing official Hugging Face structured facts
+        run: task enrich -- -source huggingface -new-only -failure-report data/enrichment-failures.json
 
       - name: Extract a bounded batch of new model-card suggestions
         continue-on-error: true
@@ -57,20 +64,13 @@ jobs:
           CARD_EXTRACT_DELAY: '2'
         run: task cardextract-batch
 
-      - name: Generate Codex model catalog
-        run: task codexgen
+      - name: Apply safe high-confidence official model-card claims
+        run: task suggestion -- auto-apply
 
-      - name: Check for upstream changes
-        id: upstream_changes
-        run: |
-          if git diff --quiet -- models/ models_gen.go data/models.json data/suggestions/ dist/codex/; then
-            echo "changed=false" >> "$GITHUB_OUTPUT"
-          else
-            echo "changed=true" >> "$GITHUB_OUTPUT"
-          fi
+      - name: Promote fully enriched official candidates
+        run: task catalog-promote
 
       - name: Translate missing Chinese descriptions
-        if: steps.upstream_changes.outputs.changed == 'true'
         continue-on-error: true
         env:
           LLM_API_KEY: ${{ secrets.GITHUB_TOKEN }}
@@ -79,28 +79,27 @@ jobs:
         run: task translator -- -limit 10
 
       - name: Regenerate compiled registry after translation
-        if: steps.upstream_changes.outputs.changed == 'true'
-        run: task generator
+        run: task generator-offline
 
       - name: Regenerate Codex catalog after translation
-        if: steps.upstream_changes.outputs.changed == 'true'
         run: task codexgen
-
-      - name: Check for synced changes
-        id: changes
-        run: |
-          if git diff --quiet -- models/ models_gen.go data/models.json data/suggestions/ dist/codex/; then
-            echo "changed=false" >> "$GITHUB_OUTPUT"
-          else
-            echo "changed=true" >> "$GITHUB_OUTPUT"
-          fi
 
       - name: Validate enriched registry and generated artifacts
         run: |
+          task catalog-audit
           task lint
           task test
           task build
           task codexgen -- -validate
+
+      - name: Check for synced changes
+        id: changes
+        run: |
+          if [ -z "$(git status --porcelain -- models/ providers/ models_gen.go data/models.json data/catalog-audit.json data/catalog-discovery.json data/enrichment-failures.json data/suggestions/ dist/codex/)" ]; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
 
       - name: Install pinned Codex CLI
         run: npm install --global @openai/codex@0.146.0
@@ -120,8 +119,8 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add models_gen.go data/models.json data/suggestions/ models/ dist/codex/
-          git commit -m "feat(data): sync upstream model registry [skip ci]"
+          git add models_gen.go data/models.json data/catalog-audit.json data/catalog-discovery.json data/enrichment-failures.json data/suggestions/ models/ providers/ dist/codex/
+          git commit -m "feat(data): sync upstream model registry"
           git push
 
       - name: Create release for upstream changes
@@ -136,6 +135,15 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
+  deploy-pages-after-sync:
+    needs: sync-upstream
+    if: needs.sync-upstream.outputs.changed == 'true'
+    uses: ./.github/workflows/pages.yml
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+
   validate-pull-request:
     if: github.event_name == 'pull_request'
     runs-on: ubuntu-latest
@@ -146,7 +154,7 @@ jobs:
           go-version: '1.26'
       - name: Install Task and pinned Codex CLI
         run: |
-          go install github.com/go-task/task/v3/cmd/task@latest
+          go install github.com/go-task/task/v3/cmd/task@v3.45.4
           echo "$(go env GOPATH)/bin" >> "$GITHUB_PATH"
           npm install --global @openai/codex@0.146.0
       - name: Validate repository and Codex catalog
@@ -172,7 +180,7 @@ jobs:
 
       - name: Install Task
         run: |
-          go install github.com/go-task/task/v3/cmd/task@latest
+          go install github.com/go-task/task/v3/cmd/task@v3.45.4
           echo "$(go env GOPATH)/bin" >> "$GITHUB_PATH"
 
       - name: Validate repository

@@ -2,6 +2,7 @@ schema_version: 2
 id: anthropic/claude-opus-4.6
 name: 'Anthropic: Claude Opus 4.6'
 provider: Anthropic
+developer: anthropic
 description: |
   Opus 4.6 is Anthropic’s strongest model for coding and long-running professional tasks. It is built for agents that operate across entire workflows rather than single prompts, making it especially effective for large codebases, complex refactors, and multi-step debugging that unfolds over time. The model shows deeper contextual understanding, stronger problem decomposition, and greater reliability on hard engineering tasks than prior generations.
 
@@ -24,6 +25,9 @@ features:
   - ModalityTextIn
   - ModalityTextOut
 discovered_at: 2026-07-29T10:36:46.25243153Z
+identifiers:
+  openrouter:
+    - anthropic/claude-opus-4.6
 upstream:
   openrouter:
     canonical_slug: anthropic/claude-4.6-opus-20260205

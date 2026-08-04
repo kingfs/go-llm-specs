@@ -2,6 +2,7 @@ schema_version: 2
 id: stepfun/step-3.5-flash:free
 name: 'StepFun: Step 3.5 Flash (free)'
 provider: Stepfun
+developer: stepfun
 description: Step 3.5 Flash is StepFun's most capable open-source foundation model. Built on a sparse Mixture of Experts (MoE) architecture, it selectively activates only 11B of its 196B parameters per token. It is a reasoning model that is incredibly speed efficient even at long contexts.
 description_cn: Step 3.5 Flash 是 StepFun 最强大的开源基础模型。基于稀疏混合专家（MoE）架构，每处理一个 token 仅激活其 1960 亿参数中的 110 亿。该模型在长上下文场景下仍具备卓越的推理速度与效率。
 context_length: 256000

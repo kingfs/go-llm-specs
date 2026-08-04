@@ -2,6 +2,7 @@ schema_version: 2
 id: qwen/qwen3.5-122b-a10b
 name: 'Qwen: Qwen3.5-122B-A10B'
 provider: Qwen
+developer: qwen
 description: The Qwen3.5 122B-A10B native vision-language model is built on a hybrid architecture that integrates a linear attention mechanism with a sparse mixture-of-experts model, achieving higher inference efficiency. In terms of overall performance, this model is second only to Qwen3.5-397B-A17B. Its text capabilities significantly outperform those of Qwen3-235B-2507, and its visual capabilities surpass those of Qwen3-VL-235B.
 description_cn: Qwen3.5 122B-A10B 原生视觉语言模型采用混合架构，融合线性注意力机制与稀疏混合专家（MoE）模型，实现更高推理效率。整体性能仅次于 Qwen3.5-397B-A17B，其文本能力显著优于 Qwen3-235B-2507，视觉能力亦超越 Qwen3-VL-235B。
 context_length: 262144
@@ -15,6 +16,13 @@ features:
   - ModalityTextOut
   - ModalityVideoIn
 discovered_at: 2026-07-29T10:43:31.875947373Z
+links:
+  model_card: https://huggingface.co/Qwen/Qwen3.5-122B-A10B
+identifiers:
+  huggingface:
+    - Qwen/Qwen3.5-122B-A10B
+  openrouter:
+    - qwen/qwen3.5-122b-a10b
 upstream:
   openrouter:
     canonical_slug: qwen/qwen3.5-122b-a10b-20260224

@@ -2,6 +2,7 @@ schema_version: 2
 id: minimax/minimax-01
 name: 'MiniMax: MiniMax-01'
 provider: Minimax
+developer: minimax
 description: |-
   MiniMax-01 is a combines MiniMax-Text-01 for text generation and MiniMax-VL-01 for image understanding. It has 456 billion parameters, with 45.9 billion parameters activated per inference, and can handle a context of up to 4 million tokens.
 
@@ -22,6 +23,13 @@ features:
   - ModalityTextIn
   - ModalityTextOut
 discovered_at: 2026-07-29T10:39:07.014597057Z
+links:
+  model_card: https://huggingface.co/MiniMaxAI/MiniMax-Text-01
+identifiers:
+  huggingface:
+    - MiniMaxAI/MiniMax-Text-01
+  openrouter:
+    - minimax/minimax-01
 upstream:
   openrouter:
     canonical_slug: minimax/minimax-01

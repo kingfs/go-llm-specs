@@ -2,6 +2,7 @@ schema_version: 2
 id: anthracite-org/magnum-v4-72b
 name: Magnum v4 72B
 provider: Anthracite-Org
+developer: Anthracite-Org
 description: |-
   This is a series of models designed to replicate the prose quality of the Claude 3 models, specifically Sonnet(https://openrouter.ai/anthropic/claude-3.5-sonnet) and Opus(https://openrouter.ai/anthropic/claude-3-opus).
 
@@ -18,6 +19,13 @@ features:
   - ModalityTextIn
   - ModalityTextOut
 discovered_at: 2026-07-29T10:36:38.248795194Z
+links:
+  model_card: https://huggingface.co/anthracite-org/magnum-v4-72b
+identifiers:
+  huggingface:
+    - anthracite-org/magnum-v4-72b
+  openrouter:
+    - anthracite-org/magnum-v4-72b
 upstream:
   openrouter:
     canonical_slug: anthracite-org/magnum-v4-72b

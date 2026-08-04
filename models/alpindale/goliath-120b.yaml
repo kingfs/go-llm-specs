@@ -2,6 +2,7 @@ schema_version: 2
 id: alpindale/goliath-120b
 name: Goliath 120B
 provider: Alpindale
+developer: alpindale
 description: |-
   A large LLM created by combining two fine-tuned Llama 70B models into one 120B model. Combines Xwin and Euryale.
 
@@ -26,6 +27,11 @@ features:
   - ModalityTextIn
   - ModalityTextOut
 discovered_at: 2026-07-29T10:36:34.019586651Z
+links:
+  model_card: https://huggingface.co/alpindale/goliath-120b
+identifiers:
+  huggingface:
+    - alpindale/goliath-120b
 upstream:
   huggingface:
     id: alpindale/goliath-120b

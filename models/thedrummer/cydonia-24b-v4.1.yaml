@@ -2,6 +2,7 @@ schema_version: 2
 id: thedrummer/cydonia-24b-v4.1
 name: 'TheDrummer: Cydonia 24B V4.1'
 provider: Thedrummer
+developer: Thedrummer
 description: Uncensored and creative writing model based on Mistral Small 3.2 24B with good recall, prompt adherence, and intelligence.
 description_cn: 基于 Mistral Small 3.2 24B 构建的无审查创意写作模型，具备良好的记忆能力、提示遵循性与智能水平。
 context_length: 131072
@@ -12,6 +13,13 @@ features:
   - ModalityTextIn
   - ModalityTextOut
 discovered_at: 2026-07-29T10:44:25.575840038Z
+links:
+  model_card: https://huggingface.co/TheDrummer/Cydonia-24B-v4.1
+identifiers:
+  huggingface:
+    - TheDrummer/Cydonia-24B-v4.1
+  openrouter:
+    - thedrummer/cydonia-24b-v4.1
 upstream:
   openrouter:
     canonical_slug: thedrummer/cydonia-24b-v4.1

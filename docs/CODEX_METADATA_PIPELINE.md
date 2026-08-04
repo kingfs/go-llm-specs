@@ -9,15 +9,13 @@ This document defines the implementation plan for enriching newly discovered mod
 - Preserve every existing `models/**/*.yaml` record without requiring migration.
 - Store richer, source-attributed metadata for newly discovered or explicitly selected models.
 - Collect deterministic metadata from OpenRouter and Hugging Face.
-- Record observed serving capabilities separately from model-intrinsic facts.
 - Generate a deterministic Codex `ModelsResponse` catalog.
-- Probe OpenAI-compatible deployments, including vLLM and SGLang, without requiring a GPU in the normal CI path.
 - Keep AI-generated claims advisory until reviewed.
 
 ## Non-goals
 
 - Bulk-enrich all historical records.
-- Start large models on GitHub-hosted runners.
+- Record or infer the constraints of individual model deployments.
 - Infer runtime compatibility solely from model-card prose.
 - Copy OpenAI's private model behavior to unrelated third-party models.
 - Treat OpenRouter routing metadata as proof of local vLLM or SGLang behavior.
@@ -90,13 +88,12 @@ Unknown YAML fields must survive load/save cycles. All commands share one regist
 ## Source priority
 
 1. Human-maintained YAML overrides.
-2. A verified deployment probe for runtime behavior.
-3. Official provider/model structured APIs.
-4. Official Hugging Face or ModelScope structured files.
-5. OpenRouter structured metadata.
-6. AI-extracted suggestions with evidence; never automatically promoted to verified runtime facts.
+2. Official provider/model structured APIs and documentation.
+3. Official Hugging Face or ModelScope structured files.
+4. OpenRouter structured metadata.
+5. AI-extracted suggestions with evidence; never automatically promoted to verified model facts.
 
-Every enrichment result records its source and fetch time. Model facts and deployment observations are kept separate because the same weights may behave differently behind OpenRouter, vLLM, SGLang, or an official API.
+Every enrichment result records its source and fetch time. Deployment-specific constraints are outside this repository because they do not describe the publisher's model specification.
 
 ## Commands
 
@@ -112,7 +109,7 @@ Every enrichment result records its source and fetch time. Model facts and deplo
 - Hugging Face Hub API plus `config.json`, `tokenizer_config.json`, and
   `preprocessor_config.json` fetched at the API-reported immutable revision.
 
-Selection flags include `-new-only`, `-model`, `-provider`, `-source`, and `-dry-run`. Ambiguous Hugging Face matches are reported rather than written.
+Selection flags include `-new-only`, `-model`, `-provider`, `-source`, and `-dry-run`. `-new-only` selects records missing the requested structured source metadata. Ambiguous Hugging Face matches are reported rather than written.
 
 ### Codex generator
 
@@ -159,12 +156,6 @@ models:
 The time selector reads the Unix `created` field in `data/models.json`. It intentionally does not use `discovered_at`, because a historical migration may give many old records the same migration timestamp. `YYYY-MM-DD` and RFC3339 cutoffs are also accepted.
 
 Recent OpenRouter IDs are used as slugs only with the explicit `-serving-provider openrouter` switch. Without it, eligible records are reported as missing a serving slug so an operator can map them for vLLM, SGLang, or a provider API. The report records included and skipped candidates with reasons. Static eligibility requires schema v2, positive context length, chat, function calling, and text input/output capabilities.
-
-### Deployment probe
-
-`cmd/modelprobe` runs non-destructive requests against an already-running OpenAI-compatible endpoint. It tests discovery, text generation, tool calls, parallel tool calls, JSON output, reasoning parameters, and optional image input. It writes an observation report; it does not directly mutate YAML.
-
-Large-model startup is outside normal GitHub-hosted CI. vLLM/SGLang probes run locally or on a self-hosted GPU runner and commit reviewable reports.
 
 ## Automation workflow
 
@@ -220,7 +211,7 @@ environment and are never persisted in suggestion documents.
 - Unknown YAML fields survive round trips.
 - A Codex export requires explicit `codex.enabled`.
 - Runtime capability defaults are conservative.
-- `supports_parallel_tool_calls`, Responses-specific reasoning fields, and image-detail support require provider documentation or a probe.
+- `supports_parallel_tool_calls`, Responses-specific reasoning fields, and image-detail support require publisher documentation; these Codex policy fields do not redefine model-intrinsic facts.
 - A catalog's `slug` must match the actual serving API model name. Registry aliases are not automatically Codex aliases.
 - Generated output is stable for identical inputs.
 
@@ -229,7 +220,7 @@ environment and are never persisted in suggestion documents.
 1. Shared schema, lossless round-trip, and legacy protection.
 2. Rich OpenRouter fields and Hugging Face enrichment.
 3. Codex catalog generation and validation.
-4. OpenAI-compatible deployment probing.
+4. Publisher catalog, audit, and official-organization discovery.
 5. Task, CI, documentation, and end-to-end verification.
 
 Each phase is independently tested, committed, and pushed.
@@ -254,12 +245,9 @@ task codexgen
 # Merge with a catalog captured from a pinned Codex installation.
 task codexgen -- -bundled-catalog data/codex/bundled-0.146.0.json
 
-# Probe an already-running local deployment; no model is started by this command.
-task modelprobe -- -base-url http://localhost:8000/v1 -model qwen3.6-27b -server vllm -output data/probes/qwen3.6-27b-vllm.json
-
-# Import semantically verified results into one schema-v2 registry record.
-task modelprobe -- -base-url http://localhost:8000/v1 -model qwen3.6-27b \
-  -server vllm -import-model qwen/qwen3.6-27b
+# Audit publisher coverage and discover candidates from configured official organizations.
+task catalog-audit
+task catalog-discover
 ```
 
 The committed `dist/codex/third-party-models.json` is intentionally named as a standalone third-party catalog. Using it directly replaces Codex's bundled catalog. The recommended installer downloads the latest release asset, captures the installed Codex CLI's bundled catalog, fills only locally required schema fields reported by that CLI, validates the merged result, and then safely updates the user configuration:
@@ -283,5 +271,5 @@ The catalog grows through either explicitly reviewed `codex` metadata or the nar
 - Rich v2 fields survive generator and translator round trips.
 - Hugging Face enrichment can populate Qwen/Qwen3.6-27B from structured API data without AI.
 - Codex generation emits a catalog accepted by the pinned schema and contains a configured `qwen3.6-27b` slug without fallback metadata.
-- A mock OpenAI-compatible server can exercise every probe branch in unit tests.
+- Publisher catalog and discovery reports are deterministic for identical inputs.
 - `task lint`, `task test`, `task fmt`, and `task build` pass.

@@ -2,6 +2,7 @@ schema_version: 2
 id: google/gemma-3n-e4b-it:free
 name: 'Google: Gemma 3n 4B (free)'
 provider: Google
+developer: google
 description: |-
   Gemma 3n E4B-it is optimized for efficient execution on mobile and low-resource devices, such as phones, laptops, and tablets. It supports multimodal inputs—including text, visual data, and audio—enabling diverse tasks such as text generation, speech recognition, translation, and image analysis. Leveraging innovations like Per-Layer Embedding (PLE) caching and the MatFormer architecture, Gemma 3n dynamically manages memory usage and computational load by selectively activating model parameters, significantly reducing runtime resource requirements.
 

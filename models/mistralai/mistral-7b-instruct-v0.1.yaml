@@ -2,6 +2,7 @@ schema_version: 2
 id: mistralai/mistral-7b-instruct-v0.1
 name: 'Mistral: Mistral 7B Instruct v0.1'
 provider: Mistral
+developer: mistral
 description: A 7.3B parameter model that outperforms Llama 2 13B on all benchmarks, with optimizations for speed and context length.
 description_cn: 一款拥有 73 亿参数的模型，在所有基准测试中均优于 Llama 2 13B，并针对推理速度和上下文长度进行了优化。
 context_length: 2824
@@ -11,3 +12,39 @@ features:
   - ModalityTextIn
   - ModalityTextOut
 discovered_at: 2026-07-29T10:39:35.038979489Z
+links:
+  model_card: https://huggingface.co/mistralai/Mistral-7B-Instruct-v0.1
+identifiers:
+  huggingface:
+    - mistralai/Mistral-7B-Instruct-v0.1
+upstream:
+  huggingface:
+    id: mistralai/Mistral-7B-Instruct-v0.1
+    revision: ec5deb64f2c6e6fa90c1abf74a91d5c93a9669ca
+    pipeline_tag: text-generation
+    model_type: mistral
+    architectures:
+      - MistralForCausalLM
+    license: apache-2.0
+    tags:
+      - arxiv:2310.06825
+      - base_model:finetune:mistralai/Mistral-7B-v0.1
+      - base_model:mistralai/Mistral-7B-v0.1
+      - conversational
+      - eval-results
+      - finetuned
+      - license:apache-2.0
+      - mistral
+      - mistral-common
+      - pytorch
+      - region:us
+      - safetensors
+      - text-generation
+      - text-generation-inference
+      - transformers
+    config_context_length: 32768
+    chat_template_sha256: 84456bdb46adc491bc76d014a8714423b70d9231697dd1dc91168f71c2a987f8
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-08-04T12:42:43.243938118Z

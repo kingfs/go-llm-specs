@@ -2,6 +2,7 @@ schema_version: 2
 id: alibaba/tongyi-deepresearch-30b-a3b
 name: Tongyi DeepResearch 30B A3B
 provider: Qwen
+developer: qwen
 description: |-
   Tongyi DeepResearch is an agentic large language model developed by Tongyi Lab, with 30 billion total parameters activating only 3 billion per token. It's optimized for long-horizon, deep information-seeking tasks and delivers state-of-the-art performance on benchmarks like Humanity's Last Exam, BrowserComp, BrowserComp-ZH, WebWalkerQA, GAIA, xbench-DeepSearch, and FRAMES. This makes it superior for complex agentic search, reasoning, and multi-step problem-solving compared to prior models.
 

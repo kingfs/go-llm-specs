@@ -2,6 +2,7 @@ schema_version: 2
 id: xiaomi/mimo-v2.5-pro
 name: 'Xiaomi: MiMo-V2.5-Pro'
 provider: Xiaomi
+developer: Xiaomi
 description: MiMo-V2.5-Pro is Xiaomi’s flagship model, delivering strong performance in general agentic capabilities, complex software engineering, and long-horizon tasks, with top rankings on benchmarks such as ClawEval, GDPVal, and SWE-bench Pro....
 description_cn: MiMo-V2.5-Pro 是小米的旗舰模型，在通用代理能力、复杂软件工程和长远任务上表现强劲，在 ClawEval、GDPVal 和 SWE-bench Pro 等基准测试中名列前茅....
 context_length: 1048576
@@ -13,6 +14,13 @@ features:
   - ModalityTextIn
   - ModalityTextOut
 discovered_at: 2026-07-29T10:44:56.33820643Z
+links:
+  model_card: https://huggingface.co/XiaomiMiMo/MiMo-V2.5-Pro
+identifiers:
+  huggingface:
+    - XiaomiMiMo/MiMo-V2.5-Pro
+  openrouter:
+    - xiaomi/mimo-v2.5-pro
 upstream:
   openrouter:
     canonical_slug: xiaomi/mimo-v2.5-pro-20260422

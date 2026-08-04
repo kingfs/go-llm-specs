@@ -2,6 +2,7 @@ schema_version: 2
 id: mistralai/voxtral-small-24b-2507
 name: 'Mistral: Voxtral Small 24B 2507'
 provider: Mistral
+developer: mistral
 description: Voxtral Small is an enhancement of Mistral Small 3, incorporating state-of-the-art audio input capabilities while retaining best-in-class text performance. It excels at speech transcription, translation and audio understanding. Input audio is priced at $100 per million seconds.
 description_cn: Voxtral Small 是 Mistral Small 3 的增强版，在保留业界领先的文本性能的同时，集成了先进的音频输入能力，擅长语音转录、翻译和音频理解。音频输入定价为每百万秒 100 美元。
 context_length: 32000
@@ -13,6 +14,19 @@ features:
   - ModalityTextIn
   - ModalityTextOut
 discovered_at: 2026-07-29T10:39:54.874223203Z
+links:
+  model_card: https://huggingface.co/mistralai/Voxtral-Small-24B-2507
+identifiers:
+  huggingface:
+    - mistralai/Voxtral-Small-24B-2507
+  openrouter:
+    - mistralai/voxtral-small-24b-2507
+provenance:
+  max_output:
+    source: openrouter
+  reasoning.supported:
+    source: official_model_card
+    url: https://huggingface.co/mistralai/Voxtral-Small-24B-2507/resolve/da5b42409f279fdd92febee0511a6c32828569c1/README.md
 upstream:
   openrouter:
     canonical_slug: mistralai/voxtral-small-24b-2507
@@ -68,3 +82,5 @@ upstream:
       - config.json
       - preprocessor_config.json
     fetched_at: 2026-07-29T10:39:56.898314568Z
+reasoning:
+  supported: true

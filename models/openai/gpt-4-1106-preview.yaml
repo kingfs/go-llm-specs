@@ -2,6 +2,7 @@ schema_version: 2
 id: openai/gpt-4-1106-preview
 name: 'OpenAI: GPT-4 Turbo (older v1106)'
 provider: OpenAI
+developer: openai
 description: |-
   The latest GPT-4 Turbo model with vision capabilities. Vision requests can now use JSON mode and function calling.
 

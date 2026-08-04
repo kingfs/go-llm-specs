@@ -2,6 +2,7 @@ schema_version: 2
 id: qwen/qwen3-coder-plus
 name: 'Qwen: Qwen3 Coder Plus'
 provider: Qwen
+developer: qwen
 description: Qwen3 Coder Plus is Alibaba's proprietary version of the Open Source Qwen3 Coder 480B A35B. It is a powerful coding agent model specializing in autonomous programming via tool calling and environment interaction, combining coding proficiency with versatile general-purpose abilities.
 description_cn: Qwen3 Coder Plus 是阿里巴巴基于开源 Qwen3 Coder 480B A35B 打造的专有版本，是一款强大的编码智能体模型，专注于通过工具调用和环境交互实现自主编程，兼具卓越的编码能力与通用任务处理能力。
 context_length: 1000000
@@ -13,6 +14,9 @@ features:
   - ModalityTextIn
   - ModalityTextOut
 discovered_at: 2026-07-29T10:42:59.540707452Z
+identifiers:
+  openrouter:
+    - qwen/qwen3-coder-plus
 upstream:
   openrouter:
     canonical_slug: qwen/qwen3-coder-plus

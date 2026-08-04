@@ -2,6 +2,7 @@ schema_version: 2
 id: minimax/minimax-m3
 name: 'MiniMax: MiniMax M3'
 provider: Minimax
+developer: minimax
 description: MiniMax-M3 is a multimodal foundation model from MiniMax. It supports text, image, and video inputs with text output, a 1M-token context window, and is suited for long-horizon agentic work, coding,...
 description_cn: MiniMax-M3 是 MiniMax 的多模态基础模型。它支持文本、图像和视频输入，并生成文本输出，具有 100 万个标记的上下文窗口，适合长远代理工作、编码等。
 context_length: 1048576
@@ -15,6 +16,13 @@ features:
   - ModalityTextOut
   - ModalityVideoIn
 discovered_at: 2026-07-29T10:39:18.999788454Z
+links:
+  model_card: https://huggingface.co/MiniMaxAI/MiniMax-M3
+identifiers:
+  huggingface:
+    - MiniMaxAI/MiniMax-M3
+  openrouter:
+    - minimax/minimax-m3
 upstream:
   openrouter:
     canonical_slug: minimax/minimax-m3-20260531

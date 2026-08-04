@@ -2,6 +2,7 @@ schema_version: 2
 id: poolside/laguna-m.1
 name: 'Poolside: Laguna M.1'
 provider: Poolside
+developer: poolside
 description: Laguna M.1 is the flagship coding agent model from [Poolside](https://poolside.ai/), optimized for complex software engineering tasks. Designed for agentic coding workflows, it supports tool calling and reasoning, with a 256K...
 description_cn: Laguna M.1是[Poolside](https://poolside.ai/)的旗舰编码代理模型，优化用于复杂的软件工程任务。专为代理编码工作流程设计，支持工具调用和推理，具有256K...
 context_length: 262144
@@ -13,6 +14,11 @@ features:
   - ModalityTextIn
   - ModalityTextOut
 discovered_at: 2026-07-29T10:41:56.331890705Z
+links:
+  model_card: https://huggingface.co/poolside/Laguna-M.1
+identifiers:
+  huggingface:
+    - poolside/Laguna-M.1
 upstream:
   huggingface:
     id: poolside/Laguna-M.1

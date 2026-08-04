@@ -2,6 +2,7 @@ schema_version: 2
 id: qwen/qwen-plus-2025-07-28:thinking
 name: 'Qwen: Qwen Plus 0728 (thinking)'
 provider: Qwen
+developer: qwen
 description: Qwen Plus 0728, based on the Qwen3 foundation model, is a 1 million context hybrid reasoning model with a balanced performance, speed, and cost combination.
 description_cn: Qwen Plus 0728 基于 Qwen3 基础模型，是一款支持百万上下文的混合推理模型，在性能、速度与成本之间取得均衡。
 context_length: 1000000
@@ -13,6 +14,9 @@ features:
   - ModalityTextIn
   - ModalityTextOut
 discovered_at: 2026-07-29T10:42:22.985354037Z
+identifiers:
+  openrouter:
+    - qwen/qwen-plus-2025-07-28:thinking
 upstream:
   openrouter:
     canonical_slug: qwen/qwen-plus-2025-07-28

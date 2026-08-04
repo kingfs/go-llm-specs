@@ -2,6 +2,7 @@ schema_version: 2
 id: openai/gpt-5-mini:batch
 name: 'OpenAI: GPT-5 Mini (batch)'
 provider: OpenAI
+developer: openai
 description: GPT-5 Mini is a compact version of GPT-5, designed to handle lighter-weight reasoning tasks. It provides the same instruction-following and safety-tuning benefits as GPT-5, but with reduced latency and cost....
 description_cn: GPT-5 Mini 是 GPT-5 的紧凑版本，设计用于处理较轻量的推理任务。它提供与 GPT-5 相同的指令跟随和安全调优的好处，但延迟和成本降低...
 context_length: 400000

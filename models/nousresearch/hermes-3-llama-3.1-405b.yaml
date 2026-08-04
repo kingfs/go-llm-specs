@@ -2,6 +2,7 @@ schema_version: 2
 id: nousresearch/hermes-3-llama-3.1-405b
 name: 'Nous: Hermes 3 405B Instruct'
 provider: Nous Research
+developer: nousresearch
 description: |-
   Hermes 3 is a generalist language model with many improvements over Hermes 2, including advanced agentic capabilities, much better roleplaying, reasoning, multi-turn conversation, long context coherence, and improvements across the board.
 
@@ -27,6 +28,13 @@ features:
   - ModalityTextIn
   - ModalityTextOut
 discovered_at: 2026-07-29T10:40:29.745094327Z
+links:
+  model_card: https://huggingface.co/NousResearch/Hermes-3-Llama-3.1-405B
+identifiers:
+  huggingface:
+    - NousResearch/Hermes-3-Llama-3.1-405B
+  openrouter:
+    - nousresearch/hermes-3-llama-3.1-405b
 upstream:
   openrouter:
     canonical_slug: nousresearch/hermes-3-llama-3.1-405b

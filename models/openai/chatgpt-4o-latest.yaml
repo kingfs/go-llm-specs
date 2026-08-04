@@ -2,6 +2,7 @@ schema_version: 2
 id: openai/chatgpt-4o-latest
 name: 'OpenAI: ChatGPT-4o'
 provider: OpenAI
+developer: openai
 description: |-
   OpenAI ChatGPT 4o is continually updated by OpenAI to point to the current version of GPT-4o used by ChatGPT. It therefore differs slightly from the API version of [GPT-4o](/models/openai/gpt-4o) in that it has additional RLHF. It is intended for research and evaluation.
 

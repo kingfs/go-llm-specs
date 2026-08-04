@@ -1,0 +1,6 @@
+{
+  "failure_count": 1,
+  "failures": {
+    "microsoft/wizardlm-2-8x22b": "Hugging Face model request returned 401 Unauthorized"
+  }
+}

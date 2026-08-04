@@ -2,6 +2,7 @@ schema_version: 2
 id: qwen/qwen3.6-flash
 name: 'Qwen: Qwen3.6 Flash'
 provider: Qwen
+developer: qwen
 description: Qwen3.6 Flash is a fast, efficient language model from Alibaba's Qwen 3.6 series. It supports text, image, and video input with a 1M token context window. Tiered pricing kicks in...
 description_cn: Qwen3.6 Flash是阿里巴巴Qwen 3.6系列中的快速、高效语言模型，支持文本、图像和视频输入，具有1M令牌上下文窗口。分层定价开始于...
 context_length: 1000000
@@ -15,6 +16,9 @@ features:
   - ModalityTextOut
   - ModalityVideoIn
 discovered_at: 2026-07-29T10:43:48.716611752Z
+identifiers:
+  openrouter:
+    - qwen/qwen3.6-flash
 upstream:
   openrouter:
     canonical_slug: qwen/qwen3.6-flash

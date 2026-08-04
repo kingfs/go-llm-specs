@@ -2,6 +2,7 @@ schema_version: 2
 id: openrouter/pony-alpha
 name: Pony Alpha
 provider: Openrouter
+developer: openrouter
 description: |-
   Pony is a cutting-edge foundation model with strong performance in coding, agentic workflows, reasoning, and roleplay, making it well suited for hands-on coding and real-world use.
 

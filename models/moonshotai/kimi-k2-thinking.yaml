@@ -2,6 +2,7 @@ schema_version: 2
 id: moonshotai/kimi-k2-thinking
 name: 'MoonshotAI: Kimi K2 Thinking'
 provider: Moonshotai
+developer: moonshotai
 description: |-
   Kimi K2 Thinking is Moonshot AI’s most advanced open reasoning model to date, extending the K2 series into agentic, long-horizon reasoning. Built on the trillion-parameter Mixture-of-Experts (MoE) architecture introduced in Kimi K2, it activates 32 billion parameters per forward pass and supports 256 k-token context windows. The model is optimized for persistent step-by-step thought, dynamic tool invocation, and complex reasoning workflows that span hundreds of turns. It interleaves step-by-step reasoning with tool use, enabling autonomous research, coding, and writing that can persist for hundreds of sequential actions without drift.
 
@@ -19,6 +20,13 @@ features:
   - ModalityTextIn
   - ModalityTextOut
 discovered_at: 2026-07-29T10:40:03.661826278Z
+links:
+  model_card: https://huggingface.co/moonshotai/Kimi-K2-Thinking
+identifiers:
+  huggingface:
+    - moonshotai/Kimi-K2-Thinking
+  openrouter:
+    - moonshotai/kimi-k2-thinking
 upstream:
   openrouter:
     canonical_slug: moonshotai/kimi-k2-thinking-20251106

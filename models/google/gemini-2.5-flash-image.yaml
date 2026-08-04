@@ -2,6 +2,7 @@ schema_version: 2
 id: google/gemini-2.5-flash-image
 name: 'Google: Nano Banana (Gemini 2.5 Flash Image)'
 provider: Google
+developer: google
 description: Gemini 2.5 Flash Image, a.k.a. "Nano Banana," is now generally available. It is a state of the art image generation model with contextual understanding. It is capable of image generation, edits, and multi-turn conversations. Aspect ratios can be controlled with the [image_config API Parameter](https://openrouter.ai/docs/features/multimodal/image-generation#image-aspect-ratio-configuration)
 description_cn: Gemini 2.5 Flash Image（又称“Nano Banana”）现已正式上线。这是一款具备上下文理解能力的前沿图像生成模型，支持图像生成、编辑及多轮对话。可通过 [image_config API 参数](https://openrouter.ai/docs/features/multimodal/image-generation#image-aspect-ratio-configuration) 控制图像宽高比。
 context_length: 32768
@@ -14,6 +15,9 @@ features:
   - ModalityTextIn
   - ModalityTextOut
 discovered_at: 2026-07-29T10:37:59.842773508Z
+identifiers:
+  openrouter:
+    - google/gemini-2.5-flash-image
 upstream:
   openrouter:
     canonical_slug: google/gemini-2.5-flash-image

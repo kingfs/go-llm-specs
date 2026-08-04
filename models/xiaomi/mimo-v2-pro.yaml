@@ -2,6 +2,7 @@ schema_version: 2
 id: xiaomi/mimo-v2-pro
 name: 'Xiaomi: MiMo-V2-Pro'
 provider: Xiaomi
+developer: xiaomi
 description: MiMo-V2-Pro is Xiaomi's flagship foundation model, featuring over 1T total parameters and a 1M context length, deeply optimized for agentic scenarios. It is highly adaptable to general agent frameworks like OpenClaw. It ranks among the global top tier in the standard PinchBench and ClawBench benchmarks, with perceived performance approaching that of Opus 4.6. MiMo-V2-Pro is designed to serve as the brain of agent systems, orchestrating complex workflows, driving production engineering tasks, and delivering results reliably.
 description_cn: MiMo-V2-Pro 是小米的旗舰基础模型，总参数量超 1 万亿，上下文长度达 100 万，专为智能体场景深度优化。该模型高度适配 OpenClaw 等通用智能体框架，在标准 PinchBench 和 ClawBench 基准测试中位列全球顶尖水平，感知性能接近 Opus 4.6。MiMo-V2-Pro 旨在作为智能体系统的“大脑”，协调复杂工作流、驱动生产级工程任务，并稳定可靠地交付结果。
 context_length: 1048576

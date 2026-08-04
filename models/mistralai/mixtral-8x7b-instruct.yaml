@@ -2,6 +2,7 @@ schema_version: 2
 id: mistralai/mixtral-8x7b-instruct
 name: 'Mistral: Mixtral 8x7B Instruct'
 provider: Mistral
+developer: mistral
 description: |-
   Mixtral 8x7B Instruct is a pretrained generative Sparse Mixture of Experts, by Mistral AI, for chat and instruction use. Incorporates 8 experts (feed-forward networks) for a total of 47 billion parameters.
 

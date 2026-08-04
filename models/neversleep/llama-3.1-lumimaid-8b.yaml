@@ -2,6 +2,7 @@ schema_version: 2
 id: neversleep/llama-3.1-lumimaid-8b
 name: 'NeverSleep: Lumimaid v0.2 8B'
 provider: Neversleep
+developer: neversleep
 description: |-
   Lumimaid v0.2 8B is a finetune of [Llama 3.1 8B](/models/meta-llama/llama-3.1-8b-instruct) with a "HUGE step up dataset wise" compared to Lumimaid v0.1. Sloppy chats output were purged.
 

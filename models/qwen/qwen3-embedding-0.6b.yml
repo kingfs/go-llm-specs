@@ -2,6 +2,7 @@ schema_version: 2
 id: qwen/qwen3-embedding-0.6b
 name: 'Qwen: Qwen3 Embedding 0.6B'
 provider: Qwen
+developer: qwen
 description: Qwen3 0.6B's embedding model.
 description_cn: Qwen3 0.6B 的嵌入模型。
 context_length: 32768
@@ -11,6 +12,11 @@ features:
 aliases:
   - qwen3-embedding-0.6b
 discovered_at: 2026-07-29T10:43:01.227838999Z
+links:
+  model_card: https://huggingface.co/Qwen/Qwen3-Embedding-0.6B
+identifiers:
+  huggingface:
+    - Qwen/Qwen3-Embedding-0.6B
 upstream:
   huggingface:
     id: Qwen/Qwen3-Embedding-0.6B

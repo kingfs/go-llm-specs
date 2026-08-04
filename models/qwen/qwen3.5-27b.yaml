@@ -2,6 +2,7 @@ schema_version: 2
 id: qwen/qwen3.5-27b
 name: 'Qwen: Qwen3.5-27B'
 provider: Qwen
+developer: qwen
 description: The Qwen3.5 27B native vision-language Dense model incorporates a linear attention mechanism, delivering fast response times while balancing inference speed and performance. Its overall capabilities are comparable to those of the Qwen3.5-122B-A10B.
 description_cn: Qwen3.5 27B 原生视觉语言稠密模型集成了线性注意力机制，在推理速度与性能之间取得良好平衡，响应迅速。其综合能力与 Qwen3.5-122B-A10B 相当。
 context_length: 262144
@@ -15,6 +16,13 @@ features:
   - ModalityTextOut
   - ModalityVideoIn
 discovered_at: 2026-07-29T10:43:34.210465259Z
+links:
+  model_card: https://huggingface.co/Qwen/Qwen3.5-27B
+identifiers:
+  huggingface:
+    - Qwen/Qwen3.5-27B
+  openrouter:
+    - qwen/qwen3.5-27b
 upstream:
   openrouter:
     canonical_slug: qwen/qwen3.5-27b-20260224

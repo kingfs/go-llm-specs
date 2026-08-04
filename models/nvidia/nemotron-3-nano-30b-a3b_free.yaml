@@ -2,6 +2,7 @@ schema_version: 2
 id: nvidia/nemotron-3-nano-30b-a3b:free
 name: 'NVIDIA: Nemotron 3 Nano 30B A3B (free)'
 provider: Nvidia
+developer: nvidia
 description: |-
   NVIDIA Nemotron 3 Nano 30B A3B is a small language MoE model with highest compute efficiency and accuracy for developers to build specialized agentic AI systems.
 
@@ -21,6 +22,16 @@ features:
   - ModalityTextIn
   - ModalityTextOut
 discovered_at: 2026-07-29T10:40:44.374169037Z
+links:
+  model_card: https://huggingface.co/nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B-BF16
+identifiers:
+  huggingface:
+    - nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B-BF16
+  openrouter:
+    - nvidia/nemotron-3-nano-30b-a3b:free
+provenance:
+  max_output:
+    source: openrouter
 upstream:
   openrouter:
     canonical_slug: nvidia/nemotron-3-nano-30b-a3b

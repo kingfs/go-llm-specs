@@ -2,6 +2,7 @@ schema_version: 2
 id: perplexity/sonar-reasoning-pro
 name: 'Perplexity: Sonar Reasoning Pro'
 provider: Perplexity
+developer: perplexity
 description: |-
   Note: Sonar Pro pricing includes Perplexity search pricing. See [details here](https://docs.perplexity.ai/guides/pricing#detailed-pricing-breakdown-for-sonar-reasoning-pro-and-sonar-pro)
 
@@ -17,6 +18,12 @@ features:
   - ModalityTextIn
   - ModalityTextOut
 discovered_at: 2026-07-29T10:41:55.910670023Z
+identifiers:
+  openrouter:
+    - perplexity/sonar-reasoning-pro
+provenance:
+  max_output:
+    source: openrouter
 upstream:
   openrouter:
     canonical_slug: perplexity/sonar-reasoning-pro

@@ -2,6 +2,7 @@ schema_version: 2
 id: openrouter/fusion
 name: 'OpenRouter: Fusion'
 provider: Openrouter
+developer: openrouter
 description: Fusion turns your prompt into a small multi-model deliberation. A panel of expert models (see below) analyzes your prompt in parallel with web search and web fetch enabled, then a...
 description_cn: Fusion将您的提示转换为一个小型多模型讨论。一组专家模型（见下文）与启用网页搜索和网页抓取的情况下并行分析您的提示，然后...
 context_length: 128000
@@ -10,6 +11,12 @@ features:
   - ModalityTextIn
   - ModalityTextOut
 discovered_at: 2026-07-29T10:41:51.250850625Z
+identifiers:
+  openrouter:
+    - openrouter/fusion
+provenance:
+  max_output:
+    source: openrouter
 upstream:
   openrouter:
     canonical_slug: openrouter/fusion

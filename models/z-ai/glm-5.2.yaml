@@ -2,6 +2,7 @@ schema_version: 2
 id: z-ai/glm-5.2
 name: 'Z.ai: GLM 5.2'
 provider: Z-Ai
+developer: zai
 description: GLM-5.2 is Z.ai’s flagship model for the era of long-horizon tasks. With a truly usable 1M-token context window, it can handle project-level engineering context, execute long-running tasks more reliably, follow...
 description_cn: GLM-5.2是Z.ai在长期任务时代的旗舰模型。具有真正可用的100万标记上下文窗口，它可以处理项目级工程上下文，更可靠地执行长期任务，跟随...
 context_length: 1048576
@@ -13,6 +14,13 @@ features:
   - ModalityTextIn
   - ModalityTextOut
 discovered_at: 2026-07-29T10:45:21.25492806Z
+links:
+  model_card: https://huggingface.co/zai-org/GLM-5.2
+identifiers:
+  huggingface:
+    - zai-org/GLM-5.2
+  openrouter:
+    - z-ai/glm-5.2
 upstream:
   openrouter:
     canonical_slug: z-ai/glm-5.2-20260616

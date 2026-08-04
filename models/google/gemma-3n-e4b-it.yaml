@@ -2,6 +2,7 @@ schema_version: 2
 id: google/gemma-3n-e4b-it
 name: 'Google: Gemma 3n 4B'
 provider: Google
+developer: google
 description: |-
   Gemma 3n E4B-it is optimized for efficient execution on mobile and low-resource devices, such as phones, laptops, and tablets. It supports multimodal inputs—including text, visual data, and audio—enabling diverse tasks such as text generation, speech recognition, translation, and image analysis. Leveraging innovations like Per-Layer Embedding (PLE) caching and the MatFormer architecture, Gemma 3n dynamically manages memory usage and computational load by selectively activating model parameters, significantly reducing runtime resource requirements.
 
@@ -11,11 +12,26 @@ description_cn: |-
 
   该模型支持广泛的语种（训练涵盖 140 多种语言），并具备灵活的 32K tokens 上下文窗口。Gemma 3n 可根据任务或设备能力选择性加载参数，优化内存与计算效率，非常适合注重隐私、支持离线运行的应用及端侧 AI 解决方案。[阅读博客文章了解更多](https://developers.googleblog.com/en/introducing-gemma-3n/)
 context_length: 32768
+max_output: 32768
 features:
   - CapChat
   - ModalityTextIn
   - ModalityTextOut
 discovered_at: 2026-07-29T10:38:18.092790426Z
+links:
+  model_card: https://huggingface.co/google/gemma-3n-E4B-it
+identifiers:
+  huggingface:
+    - google/gemma-3n-E4B-it
+  openrouter:
+    - google/gemma-3n-e4b-it
+provenance:
+  max_output:
+    source: official_model_card
+    url: https://huggingface.co/google/gemma-3n-E4B-it/resolve/c1221e9c62e34a43ab7ffacd1be0ea71f126ef10/README.md
+  reasoning.supported:
+    source: official_model_card
+    url: https://huggingface.co/google/gemma-3n-E4B-it/resolve/c1221e9c62e34a43ab7ffacd1be0ea71f126ef10/README.md
 upstream:
   openrouter:
     canonical_slug: google/gemma-3n-e4b-it
@@ -80,3 +96,5 @@ upstream:
       - transformers
       - video-text-to-text
     fetched_at: 2026-07-29T10:38:18.80906786Z
+reasoning:
+  supported: true

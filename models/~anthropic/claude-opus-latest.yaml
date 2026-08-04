@@ -2,6 +2,7 @@ schema_version: 2
 id: ~anthropic/claude-opus-latest
 name: 'Anthropic: Claude Opus Latest'
 provider: ~Anthropic
+developer: ~Anthropic
 description: This model always redirects to the latest model in the Claude Opus family.
 description_cn: 此模型始终重定向至 Claude Opus 系列中的最新版本。
 context_length: 1000000
@@ -14,6 +15,9 @@ features:
   - ModalityTextIn
   - ModalityTextOut
 discovered_at: 2026-07-29T10:45:24.221612132Z
+identifiers:
+  openrouter:
+    - ~anthropic/claude-opus-latest
 upstream:
   openrouter:
     canonical_slug: ~anthropic/claude-opus-latest

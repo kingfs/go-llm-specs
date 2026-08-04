@@ -12,6 +12,8 @@ type Model struct {
 	Name          string                `yaml:"name" json:"name"`
 	NameCN        string                `yaml:"name_cn,omitempty" json:"name_cn,omitempty"`
 	Provider      string                `yaml:"provider" json:"provider"`
+	Developer     string                `yaml:"developer,omitempty" json:"developer,omitempty"`
+	Lifecycle     string                `yaml:"lifecycle,omitempty" json:"lifecycle,omitempty"`
 	Description   string                `yaml:"description,omitempty" json:"description,omitempty"`
 	DescriptionCN string                `yaml:"description_cn,omitempty" json:"description_cn,omitempty"`
 	ContextLen    int                   `yaml:"context_length" json:"context_length"`
@@ -19,13 +21,59 @@ type Model struct {
 	Features      []string              `yaml:"features,omitempty" json:"features,omitempty"`
 	Aliases       []string              `yaml:"aliases,omitempty" json:"aliases,omitempty"`
 	DiscoveredAt  *time.Time            `yaml:"discovered_at,omitempty" json:"discovered_at,omitempty"`
+	Links         ModelLinks            `yaml:"links,omitempty" json:"links,omitempty"`
+	Identifiers   ModelIdentifiers      `yaml:"identifiers,omitempty" json:"identifiers,omitempty"`
+	Provenance    map[string]Provenance `yaml:"provenance,omitempty" json:"provenance,omitempty"`
 	Upstream      UpstreamMetadata      `yaml:"upstream,omitempty" json:"upstream,omitempty"`
 	Reasoning     *ReasoningMetadata    `yaml:"reasoning,omitempty" json:"reasoning,omitempty"`
 	Codex         *CodexMetadata        `yaml:"codex,omitempty" json:"codex,omitempty"`
-	Deployments   map[string]Deployment `yaml:"deployments,omitempty" json:"deployments,omitempty"`
 	Extra         map[string]any        `yaml:",inline" json:"-"`
 
 	FilePath string `yaml:"-" json:"-"`
+}
+
+// ModelLinks contains publication links for the model itself. Official is the
+// publisher's canonical model page or announcement; the remaining links may
+// point to official organization accounts on third-party hosts.
+type ModelLinks struct {
+	Official      string   `yaml:"official,omitempty" json:"official,omitempty"`
+	Announcement  string   `yaml:"announcement,omitempty" json:"announcement,omitempty"`
+	Documentation string   `yaml:"documentation,omitempty" json:"documentation,omitempty"`
+	ModelCard     string   `yaml:"model_card,omitempty" json:"model_card,omitempty"`
+	Paper         string   `yaml:"paper,omitempty" json:"paper,omitempty"`
+	Repository    string   `yaml:"repository,omitempty" json:"repository,omitempty"`
+	License       string   `yaml:"license,omitempty" json:"license,omitempty"`
+	Other         []string `yaml:"other,omitempty" json:"other,omitempty"`
+}
+
+func (l ModelLinks) IsZero() bool {
+	return l.Official == "" && l.Announcement == "" && l.Documentation == "" &&
+		l.ModelCard == "" && l.Paper == "" && l.Repository == "" &&
+		l.License == "" && len(l.Other) == 0
+}
+
+// ModelIdentifiers maps the stable registry record to names assigned by the
+// publisher and discovery catalogs. These are identities, not aliases exposed
+// by a particular inference deployment.
+type ModelIdentifiers struct {
+	Official    []string `yaml:"official,omitempty" json:"official,omitempty"`
+	HuggingFace []string `yaml:"huggingface,omitempty" json:"huggingface,omitempty"`
+	ModelScope  []string `yaml:"modelscope,omitempty" json:"modelscope,omitempty"`
+	OpenRouter  []string `yaml:"openrouter,omitempty" json:"openrouter,omitempty"`
+}
+
+func (i ModelIdentifiers) IsZero() bool {
+	return len(i.Official) == 0 && len(i.HuggingFace) == 0 &&
+		len(i.ModelScope) == 0 && len(i.OpenRouter) == 0
+}
+
+// Provenance records why a compiled top-level model fact was selected. It is
+// intentionally field-addressed so conflicting sources can be audited without
+// changing the convenient human-readable model fields.
+type Provenance struct {
+	Source      string     `yaml:"source" json:"source"`
+	URL         string     `yaml:"url,omitempty" json:"url,omitempty"`
+	RetrievedAt *time.Time `yaml:"retrieved_at,omitempty" json:"retrieved_at,omitempty"`
 }
 
 func (m Model) IsV2() bool { return m.SchemaVersion >= CurrentSchemaVersion }
@@ -104,13 +152,3 @@ type TruncationPolicy struct {
 }
 
 func (t TruncationPolicy) IsZero() bool { return t.Mode == "" && t.Limit == 0 }
-
-type Deployment struct {
-	ModelSlug            string          `yaml:"model_slug,omitempty" json:"model_slug,omitempty"`
-	ServerVersion        string          `yaml:"server_version,omitempty" json:"server_version,omitempty"`
-	WireAPIs             []string        `yaml:"wire_apis,omitempty" json:"wire_apis,omitempty"`
-	ContextLength        int             `yaml:"context_length,omitempty" json:"context_length,omitempty"`
-	VerifiedCapabilities map[string]bool `yaml:"verified_capabilities,omitempty" json:"verified_capabilities,omitempty"`
-	TestedAt             *time.Time      `yaml:"tested_at,omitempty" json:"tested_at,omitempty"`
-	Extra                map[string]any  `yaml:",inline" json:"-"`
-}

@@ -2,6 +2,7 @@ schema_version: 2
 id: cohere/command-r7b-12-2024
 name: 'Cohere: Command R7B (12-2024)'
 provider: Cohere
+developer: cohere
 description: |-
   Command R7B (12-2024) is a small, fast update of the Command R+ model, delivered in December 2024. It excels at RAG, tool use, agents, and similar tasks requiring complex reasoning and multiple steps.
 
@@ -18,6 +19,9 @@ features:
   - ModalityTextIn
   - ModalityTextOut
 discovered_at: 2026-07-29T10:37:20.658620952Z
+identifiers:
+  openrouter:
+    - cohere/command-r7b-12-2024
 upstream:
   openrouter:
     canonical_slug: cohere/command-r7b-12-2024

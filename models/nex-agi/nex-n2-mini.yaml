@@ -2,6 +2,7 @@ schema_version: 2
 id: nex-agi/nex-n2-mini
 name: 'Nex AGI: Nex-N2-Mini'
 provider: Nex-Agi
+developer: Nex-Agi
 description: Nex-N2-Mini is an open-source agentic mixture-of-experts model from Nex AGI, the smaller sibling in the Nex-N2 series. It accepts text and image input and is built for coding, tool use,...
 description_cn: Nex-N2-Mini 是来自 Nex AGI 的开源代理混合专家模型，是 Nex-N2 系列中更小的兄弟。它接受文本和图像输入，旨在进行编码、工具使用等。
 context_length: 262144
@@ -14,6 +15,13 @@ features:
   - ModalityTextIn
   - ModalityTextOut
 discovered_at: 2026-07-29T10:40:19.449723946Z
+links:
+  model_card: https://huggingface.co/nex-agi/Nex-N2-mini
+identifiers:
+  huggingface:
+    - nex-agi/Nex-N2-mini
+  openrouter:
+    - nex-agi/nex-n2-mini
 upstream:
   openrouter:
     canonical_slug: nex-agi/nex-n2-mini

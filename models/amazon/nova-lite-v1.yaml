@@ -2,6 +2,7 @@ schema_version: 2
 id: amazon/nova-lite-v1
 name: 'Amazon: Nova Lite 1.0'
 provider: Amazon
+developer: amazon
 description: |-
   Amazon Nova Lite 1.0 is a very low-cost multimodal model from Amazon that focused on fast processing of image, video, and text inputs to generate text output. Amazon Nova Lite can handle real-time customer interactions, document analysis, and visual question-answering tasks with high accuracy.
 
@@ -19,6 +20,9 @@ features:
   - ModalityTextIn
   - ModalityTextOut
 discovered_at: 2026-07-29T10:36:36.569547798Z
+identifiers:
+  openrouter:
+    - amazon/nova-lite-v1
 upstream:
   openrouter:
     canonical_slug: amazon/nova-lite-v1

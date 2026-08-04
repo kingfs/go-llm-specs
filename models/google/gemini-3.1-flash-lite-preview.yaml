@@ -2,6 +2,7 @@ schema_version: 2
 id: google/gemini-3.1-flash-lite-preview
 name: 'Google: Gemini 3.1 Flash Lite Preview'
 provider: Google
+developer: google
 description: Gemini 3.1 Flash Lite Preview is Google's high-efficiency model optimized for high-volume use cases. It outperforms Gemini 2.5 Flash Lite on overall quality and approaches Gemini 2.5 Flash performance across key capabilities. Improvements span audio input/ASR, RAG snippet ranking, translation, data extraction, and code completion. Supports full thinking levels (minimal, low, medium, high) for fine-grained cost/performance trade-offs. Priced at half the cost of Gemini 3 Flash.
 description_cn: Gemini 3.1 Flash Lite 预览版是谷歌针对高吞吐量用例优化的高效率模型。其整体质量优于 Gemini 2.5 Flash Lite，并在关键能力上接近 Gemini 2.5 Flash。改进涵盖音频输入/语音识别（ASR）、RAG 片段排序、翻译、数据提取及代码补全。支持完整的推理强度级别（最低、低、中、高），便于精细调节成本与性能的平衡。定价仅为 Gemini 3 Flash 的一半。
 context_length: 1048576
@@ -17,6 +18,9 @@ features:
   - ModalityTextOut
   - ModalityVideoIn
 discovered_at: 2026-07-29T10:38:07.931663732Z
+identifiers:
+  openrouter:
+    - google/gemini-3.1-flash-lite-preview
 upstream:
   openrouter:
     canonical_slug: google/gemini-3.1-flash-lite-preview-20260303

@@ -2,6 +2,7 @@ schema_version: 2
 id: z-ai/glm-4.6v
 name: 'Z.ai: GLM 4.6V'
 provider: Z-Ai
+developer: zai
 description: GLM-4.6V is a large multimodal model designed for high-fidelity visual understanding and long-context reasoning across images, documents, and mixed media. It supports up to 128K tokens, processes complex page layouts and charts directly as visual inputs, and integrates native multimodal function calling to connect perception with downstream tool execution. The model also enables interleaved image-text generation and UI reconstruction workflows, including screenshot-to-HTML synthesis and iterative visual editing.
 description_cn: GLM-4.6V 是一款大型多模态模型，专为高保真视觉理解及跨图像、文档和混合媒体的长上下文推理而设计。该模型支持高达 128K tokens，可直接将复杂页面布局和图表作为视觉输入进行处理，并集成原生多模态函数调用，实现感知与下游工具执行的无缝衔接。此外，该模型还支持交错式图文生成与 UI 重建工作流，包括截图转 HTML 合成及迭代式视觉编辑。
 context_length: 131072
@@ -15,6 +16,13 @@ features:
   - ModalityTextOut
   - ModalityVideoIn
 discovered_at: 2026-07-29T10:45:10.270832359Z
+links:
+  model_card: https://huggingface.co/zai-org/GLM-4.6V
+identifiers:
+  huggingface:
+    - zai-org/GLM-4.6V
+  openrouter:
+    - z-ai/glm-4.6v
 upstream:
   openrouter:
     canonical_slug: z-ai/glm-4.6-20251208

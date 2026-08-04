@@ -2,7 +2,7 @@
   "schema_version": 1,
   "kind": "model_card",
   "model_id": "google/gemma-3-27b-it",
-  "status": "pending",
+  "status": "partially_accepted",
   "created_at": "2026-07-29T11:25:13.003214086Z",
   "source": {
     "url": "https://huggingface.co/google/gemma-3-27b-it/resolve/005ad3404e59d6023443cb575daa05336842228a/README.md",

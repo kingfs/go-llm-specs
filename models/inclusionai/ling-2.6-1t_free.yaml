@@ -2,6 +2,7 @@ schema_version: 2
 id: inclusionai/ling-2.6-1t:free
 name: 'inclusionAI: Ling-2.6-1T (free)'
 provider: Inclusionai
+developer: inclusionai
 description: Ling-2.6-1T is an instant (instruct) model from inclusionAI and the company’s trillion-parameter flagship, designed for real-world agents that require fast execution and high efficiency at scale. It uses a “fast...
 description_cn: Ling-2.6-1T 是一个来自inclusionAI的即时（指令）模型，也是该公司的一千万亿参数旗舰，旨在满足需要快速执行和高效扩展的现实世界代理。它使用“快速...
 context_length: 262144

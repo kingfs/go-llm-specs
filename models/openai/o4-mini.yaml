@@ -2,6 +2,7 @@ schema_version: 2
 id: openai/o4-mini
 name: 'OpenAI: o4 Mini'
 provider: OpenAI
+developer: openai
 description: |-
   OpenAI o4-mini is a compact reasoning model in the o-series, optimized for fast, cost-efficient performance while retaining strong multimodal and agentic capabilities. It supports tool use and demonstrates competitive reasoning and coding performance across benchmarks like AIME (99.5% with Python) and SWE-bench, outperforming its predecessor o3-mini and even approaching o3 in some domains.
 
@@ -21,6 +22,9 @@ features:
   - ModalityTextIn
   - ModalityTextOut
 discovered_at: 2026-07-29T10:41:43.972228865Z
+identifiers:
+  openrouter:
+    - openai/o4-mini
 upstream:
   openrouter:
     canonical_slug: openai/o4-mini-2025-04-16

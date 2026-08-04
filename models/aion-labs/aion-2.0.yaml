@@ -2,6 +2,7 @@ schema_version: 2
 id: aion-labs/aion-2.0
 name: 'AionLabs: Aion-2.0'
 provider: Aion-Labs
+developer: Aion-Labs
 description: Aion-2.0 is a variant of DeepSeek V3.2 optimized for immersive roleplaying and storytelling. It is particularly strong at introducing tension, crises, and conflict into stories, making narratives feel more engaging. It also handles mature and darker themes with more nuance and depth.
 description_cn: Aion-2.0 是 DeepSeek V3.2 的一个变体，专为沉浸式角色扮演和叙事优化。该模型尤其擅长在故事中引入张力、危机与冲突，使叙事更具吸引力，同时能以更细腻、深刻的方式处理成熟及暗黑主题。
 context_length: 131072
@@ -11,6 +12,9 @@ features:
   - ModalityTextIn
   - ModalityTextOut
 discovered_at: 2026-07-29T10:36:12.826476786Z
+identifiers:
+  openrouter:
+    - aion-labs/aion-2.0
 upstream:
   openrouter:
     canonical_slug: aion-labs/aion-2.0-20260223

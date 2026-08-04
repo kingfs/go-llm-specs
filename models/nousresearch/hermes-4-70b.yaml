@@ -2,6 +2,7 @@ schema_version: 2
 id: nousresearch/hermes-4-70b
 name: 'Nous: Hermes 4 70B'
 provider: Nous Research
+developer: nousresearch
 description: |-
   Hermes 4 70B is a hybrid reasoning model from Nous Research, built on Meta-Llama-3.1-70B. It introduces the same hybrid mode as the larger 405B release, allowing the model to either respond directly or generate explicit <think>...</think> reasoning traces before answering. Users can control the reasoning behaviour with the `reasoning` `enabled` boolean. [Learn more in our docs](https://openrouter.ai/docs/use-cases/reasoning-tokens#enable-reasoning-with-default-config)
 
@@ -18,6 +19,16 @@ features:
   - ModalityTextIn
   - ModalityTextOut
 discovered_at: 2026-07-29T10:40:36.835191036Z
+links:
+  model_card: https://huggingface.co/NousResearch/Hermes-4-70B
+identifiers:
+  huggingface:
+    - NousResearch/Hermes-4-70B
+  openrouter:
+    - nousresearch/hermes-4-70b
+provenance:
+  max_output:
+    source: openrouter
 upstream:
   openrouter:
     canonical_slug: nousresearch/hermes-4-70b

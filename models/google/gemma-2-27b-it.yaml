@@ -2,6 +2,7 @@ schema_version: 2
 id: google/gemma-2-27b-it
 name: 'Google: Gemma 2 27B'
 provider: Google
+developer: google
 description: |-
   Gemma 2 27B by Google is an open model built from the same research and technology used to create the [Gemini models](/models?q=gemini).
 
@@ -22,6 +23,17 @@ features:
   - ModalityTextIn
   - ModalityTextOut
 discovered_at: 2026-07-29T10:38:12.570094951Z
+links:
+  model_card: https://huggingface.co/google/gemma-2-27b-it
+identifiers:
+  huggingface:
+    - google/gemma-2-27b-it
+  openrouter:
+    - google/gemma-2-27b-it
+provenance:
+  reasoning.supported:
+    source: official_model_card
+    url: https://huggingface.co/google/gemma-2-27b-it/resolve/aaf20e6b9f4c0fcf043f6fb2a2068419086d77b0/README.md
 upstream:
   openrouter:
     canonical_slug: google/gemma-2-27b-it
@@ -89,3 +101,5 @@ upstream:
       - text-generation-inference
       - transformers
     fetched_at: 2026-07-29T10:38:13.211109542Z
+reasoning:
+  supported: true

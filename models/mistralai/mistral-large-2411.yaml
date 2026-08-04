@@ -2,6 +2,7 @@ schema_version: 2
 id: mistralai/mistral-large-2411
 name: Mistral Large 2411
 provider: Mistral
+developer: mistral
 description: |-
   Mistral Large 2 2411 is an update of [Mistral Large 2](/mistralai/mistral-large) released together with [Pixtral Large 2411](/mistralai/pixtral-large-2411)
 

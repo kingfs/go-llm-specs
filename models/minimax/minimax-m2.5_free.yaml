@@ -2,6 +2,7 @@ schema_version: 2
 id: minimax/minimax-m2.5:free
 name: 'MiniMax: MiniMax M2.5 (free)'
 provider: Minimax
+developer: minimax
 description: MiniMax-M2.5 is a SOTA large language model designed for real-world productivity. Trained in a diverse range of complex real-world digital working environments, M2.5 builds upon the coding expertise of M2.1 to extend into general office work, reaching fluency in generating and operating Word, Excel, and Powerpoint files, context switching between diverse software environments, and working across different agent and human teams. Scoring 80.2% on SWE-Bench Verified, 51.3% on Multi-SWE-Bench, and 76.3% on BrowseComp, M2.5 is also more token efficient than previous generations, having been trained to optimize its actions and output through planning.
 description_cn: MiniMax-M2.5 是一款面向真实世界生产力的前沿大语言模型。它在 M2.1 编码能力的基础上进一步拓展至通用办公场景，经过大量复杂真实数字工作环境训练，能够流畅生成和操作 Word、Excel 与 PowerPoint 文件，灵活切换多样化的软件环境，并协同不同智能体与人类团队高效协作。该模型在 SWE-Bench Verified 上得分 80.2%，Multi-SWE-Bench 上达 51.3%，BrowseComp 上为 76.3%。此外，M2.5 通过规划机制优化动作与输出，相比前代模型具备更高的 token 利用效率。
 context_length: 196608

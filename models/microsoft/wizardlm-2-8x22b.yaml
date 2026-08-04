@@ -2,6 +2,7 @@ schema_version: 2
 id: microsoft/wizardlm-2-8x22b
 name: WizardLM-2 8x22B
 provider: Microsoft
+developer: microsoft
 description: |-
   WizardLM-2 8x22B is Microsoft AI's most advanced Wizard model. It demonstrates highly competitive performance compared to leading proprietary models, and it consistently outperforms all existing state-of-the-art opensource models.
 
@@ -26,6 +27,9 @@ features:
   - ModalityTextIn
   - ModalityTextOut
 discovered_at: 2026-07-29T10:39:06.597473704Z
+identifiers:
+  openrouter:
+    - microsoft/wizardlm-2-8x22b
 upstream:
   openrouter:
     canonical_slug: microsoft/wizardlm-2-8x22b

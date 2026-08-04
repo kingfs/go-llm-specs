@@ -2,6 +2,7 @@ schema_version: 2
 id: openai/gpt-4o-audio-preview
 name: 'OpenAI: GPT-4o Audio'
 provider: OpenAI
+developer: openai
 description: The gpt-4o-audio-preview model adds support for audio inputs as prompts. This enhancement allows the model to detect nuances within audio recordings and add depth to generated user experiences. Audio outputs are currently not supported. Audio tokens are priced at $40 per million input and $80 per million output audio tokens.
 description_cn: gpt-4o-audio-preview 模型新增对音频输入作为提示的支持。此增强功能使模型能够识别音频录音中的细微差别，从而丰富生成的用户体验。目前暂不支持音频输出。音频 token 的定价为每百万输入音频 token 40 美元。
 context_length: 128000

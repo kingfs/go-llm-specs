@@ -2,6 +2,7 @@ schema_version: 2
 id: mistralai/mistral-small-2603
 name: 'Mistral: Mistral Small 4'
 provider: Mistral
+developer: mistral
 description: Mistral Small 4 is the next major release in the Mistral Small family, unifying the capabilities of several flagship Mistral models into a single system. It combines strong reasoning from Magistral, multimodal understanding from Pixtral, and agentic coding capabilities from Devstral, enabling one model to handle complex analysis, software development, and visual tasks within the same workflow.
 description_cn: Mistral Small 4 是 Mistral Small 系列的下一代重要版本，将多个旗舰 Mistral 模型的能力整合于单一系统之中。它融合了 Magistral 的强大推理能力、Pixtral 的多模态理解能力以及 Devstral 的智能体编程能力，使单一模型即可在同一工作流中处理复杂分析、软件开发与视觉任务。
 context_length: 262144
@@ -13,6 +14,16 @@ features:
   - ModalityTextIn
   - ModalityTextOut
 discovered_at: 2026-07-29T10:39:44.226081054Z
+links:
+  model_card: https://huggingface.co/mistralai/Mistral-Small-4-119B-2603
+identifiers:
+  huggingface:
+    - mistralai/Mistral-Small-4-119B-2603
+  openrouter:
+    - mistralai/mistral-small-2603
+provenance:
+  max_output:
+    source: openrouter
 upstream:
   openrouter:
     canonical_slug: mistralai/mistral-small-2603

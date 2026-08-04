@@ -2,6 +2,7 @@ schema_version: 2
 id: meta-llama/llama-guard-3-8b
 name: Llama Guard 3 8B
 provider: Meta
+developer: meta
 description: |
   Llama Guard 3 is a Llama-3.1-8B pretrained model, fine-tuned for content safety classification. Similar to previous versions, it can be used to classify content in both LLM inputs (prompt classification) and in LLM responses (response classification). It acts as an LLM – it generates text in its output that indicates whether a given prompt or response is safe or unsafe, and if unsafe, it also lists the content categories violated.
 
@@ -17,3 +18,40 @@ features:
   - ModalityTextIn
   - ModalityTextOut
 discovered_at: 2026-07-29T10:39:00.672947403Z
+links:
+  model_card: https://huggingface.co/meta-llama/Llama-Guard-3-8B
+identifiers:
+  huggingface:
+    - meta-llama/Llama-Guard-3-8B
+upstream:
+  huggingface:
+    id: meta-llama/Llama-Guard-3-8B
+    revision: 7327bd9f6efbbe6101dc6cc4736302b3cbb6e425
+    pipeline_tag: text-generation
+    model_type: llama
+    architectures:
+      - LlamaForCausalLM
+    license: llama3.1
+    tags:
+      - arxiv:2204.05862
+      - arxiv:2308.01263
+      - arxiv:2312.06674
+      - arxiv:2407.21783
+      - base_model:finetune:meta-llama/Llama-3.1-8B
+      - base_model:meta-llama/Llama-3.1-8B
+      - conversational
+      - deploy:sagemaker
+      - en
+      - endpoints_compatible
+      - facebook
+      - license:llama3.1
+      - llama
+      - llama-3
+      - meta
+      - pytorch
+      - region:us
+      - safetensors
+      - text-generation
+      - text-generation-inference
+      - transformers
+    fetched_at: 2026-08-04T12:42:41.380634339Z

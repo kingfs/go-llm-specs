@@ -1,0 +1,11 @@
+schema_version: 1
+id: arcee-ai
+name: Arcee AI
+kind: company
+official:
+  homepage: https://www.arcee.ai/
+  model_catalog: https://huggingface.co/arcee-ai
+organizations:
+  huggingface: [arcee-ai]
+discovery:
+  huggingface: true

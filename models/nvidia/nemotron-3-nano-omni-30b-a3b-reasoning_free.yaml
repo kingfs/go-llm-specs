@@ -2,6 +2,7 @@ schema_version: 2
 id: nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free
 name: 'NVIDIA: Nemotron 3 Nano Omni (free)'
 provider: Nvidia
+developer: nvidia
 description: NVIDIA Nemotron™ 3 Nano Omni is a 30B-A3B open multimodal model designed to function as a perception and context sub-agent in enterprise agent systems. It accepts text, image, video, and...
 description_cn: NVIDIA Nemotron™ 3 Nano Omni 是一个 30B-A3B 开放多模态模型，旨在作为企业代理系统中的感知和上下文子代理。它接受文本、图像、视频等......
 context_length: 256000
@@ -15,6 +16,13 @@ features:
   - ModalityTextOut
   - ModalityVideoIn
 discovered_at: 2026-07-29T10:40:46.075267662Z
+links:
+  model_card: https://huggingface.co/nvidia/Nemotron-3-Nano-Omni-30B-A3B-Reasoning-BF16
+identifiers:
+  huggingface:
+    - nvidia/Nemotron-3-Nano-Omni-30B-A3B-Reasoning-BF16
+  openrouter:
+    - nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free
 upstream:
   openrouter:
     canonical_slug: nvidia/nemotron-3-nano-omni-30b-a3b-reasoning-20260428

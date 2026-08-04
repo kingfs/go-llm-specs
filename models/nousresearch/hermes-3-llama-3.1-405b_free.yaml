@@ -2,6 +2,7 @@ schema_version: 2
 id: nousresearch/hermes-3-llama-3.1-405b:free
 name: 'Nous: Hermes 3 405B Instruct (free)'
 provider: Nous Research
+developer: nousresearch
 description: |-
   Hermes 3 is a generalist language model with many improvements over Hermes 2, including advanced agentic capabilities, much better roleplaying, reasoning, multi-turn conversation, long context coherence, and improvements across the board.
 

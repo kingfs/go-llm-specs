@@ -2,6 +2,7 @@ schema_version: 2
 id: meta-llama/llama-3.2-3b-instruct
 name: 'Meta: Llama 3.2 3B Instruct'
 provider: Meta
+developer: meta
 description: |-
   Llama 3.2 3B is a 3-billion-parameter multilingual large language model, optimized for advanced natural language processing tasks like dialogue generation, reasoning, and summarization. Designed with the latest transformer architecture, it supports eight languages, including English, Spanish, and Hindi, and is adaptable for additional languages.
 
@@ -26,6 +27,13 @@ features:
   - ModalityTextIn
   - ModalityTextOut
 discovered_at: 2026-07-29T10:38:55.995108048Z
+links:
+  model_card: https://huggingface.co/meta-llama/Llama-3.2-3B-Instruct
+identifiers:
+  huggingface:
+    - meta-llama/Llama-3.2-3B-Instruct
+  openrouter:
+    - meta-llama/llama-3.2-3b-instruct
 upstream:
   openrouter:
     canonical_slug: meta-llama/llama-3.2-3b-instruct

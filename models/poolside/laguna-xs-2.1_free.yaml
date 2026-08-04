@@ -2,6 +2,7 @@ schema_version: 2
 id: poolside/laguna-xs-2.1:free
 name: 'Poolside: Laguna XS 2.1 (free)'
 provider: Poolside
+developer: Poolside
 description: Laguna XS 2.1 is the latest coding agent model in the 33B-A3B category from [Poolside](https://poolside.ai/) and a step forward from their Laguna XS.2 model (released in April 2026). It combines...
 description_cn: Laguna XS 2.1 是来自 [Poolside](https://poolside.ai/) 的最新编码代理模型，属于 33B-A3B 类别，比他们的 Laguna XS.2 模型（在 2026 年 4 月发布）更进了一步。它结合了...
 context_length: 262144
@@ -12,6 +13,13 @@ features:
   - ModalityTextIn
   - ModalityTextOut
 discovered_at: 2026-07-29T10:42:05.967481287Z
+links:
+  model_card: https://huggingface.co/poolside/Laguna-XS-2.1
+identifiers:
+  huggingface:
+    - poolside/Laguna-XS-2.1
+  openrouter:
+    - poolside/laguna-xs-2.1:free
 upstream:
   openrouter:
     canonical_slug: poolside/laguna-xs-2.1-20260625

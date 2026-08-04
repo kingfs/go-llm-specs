@@ -1,0 +1,11 @@
+schema_version: 1
+id: nvidia
+name: NVIDIA
+official:
+  homepage: https://www.nvidia.com/en-us/ai/
+  model_catalog: https://build.nvidia.com/models
+organizations:
+  huggingface: [nvidia]
+  github: [NVIDIA]
+discovery:
+  huggingface: true

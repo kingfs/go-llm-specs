@@ -2,6 +2,7 @@ schema_version: 2
 id: undi95/remm-slerp-l2-13b
 name: ReMM SLERP 13B
 provider: Undi95
+developer: Undi95
 description: 'A recreation trial of the original MythoMax-L2-B13 but with updated models. #merge'
 description_cn: 基于更新模型对原始 MythoMax-L2-B13 的复现尝试。#merge
 context_length: 6144
@@ -12,6 +13,13 @@ features:
   - ModalityTextIn
   - ModalityTextOut
 discovered_at: 2026-07-29T10:44:42.050140817Z
+links:
+  model_card: https://huggingface.co/Undi95/ReMM-SLERP-L2-13B
+identifiers:
+  huggingface:
+    - Undi95/ReMM-SLERP-L2-13B
+  openrouter:
+    - undi95/remm-slerp-l2-13b
 upstream:
   openrouter:
     canonical_slug: undi95/remm-slerp-l2-13b

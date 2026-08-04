@@ -2,6 +2,7 @@ schema_version: 2
 id: mistralai/mistral-7b-instruct
 name: 'Mistral: Mistral 7B Instruct'
 provider: Mistral
+developer: mistral
 description: |-
   A high-performing, industry-standard 7.3B parameter model, with optimizations for speed and context length.
 

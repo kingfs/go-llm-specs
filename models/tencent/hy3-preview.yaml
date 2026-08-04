@@ -2,6 +2,7 @@ schema_version: 2
 id: tencent/hy3-preview
 name: 'Tencent: Hy3 preview'
 provider: Tencent
+developer: tencent
 description: Hy3 preview is a high-efficiency Mixture-of-Experts model from Tencent designed for agentic workflows and production use. It supports configurable reasoning levels across disabled, low, and high modes, allowing it to...
 description_cn: Hy3 预览是来自腾讯的高效专家混合模型，专为代理工作流程和生产使用而设计。它支持在禁用、低和高模式下可配置的推理级别，使其能够...
 context_length: 262144
@@ -12,6 +13,13 @@ features:
   - ModalityTextIn
   - ModalityTextOut
 discovered_at: 2026-07-29T10:44:21.591972752Z
+links:
+  model_card: https://huggingface.co/tencent/Hy3-preview
+identifiers:
+  huggingface:
+    - tencent/Hy3-preview
+  openrouter:
+    - tencent/hy3-preview
 upstream:
   openrouter:
     canonical_slug: tencent/hy3-preview-20260421

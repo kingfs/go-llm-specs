@@ -2,6 +2,7 @@ schema_version: 2
 id: google/gemini-3.1-flash-lite
 name: 'Google: Gemini 3.1 Flash Lite'
 provider: Google
+developer: google
 description: Gemini 3.1 Flash Lite is Google’s GA high-efficiency multimodal model optimized for low-latency, high-volume workloads. It supports text, image, video, audio, and PDF inputs, and is designed for lightweight agentic...
 description_cn: Gemini 3.1 Flash Lite 是谷歌高效的多模态模型，优化用于低延迟、高流量的工作负载。支持文本、图像、视频、音频和 PDF 输入，设计用于轻量化的智能代理...
 context_length: 1048576
@@ -17,6 +18,9 @@ features:
   - ModalityTextOut
   - ModalityVideoIn
 discovered_at: 2026-07-29T10:38:07.089637131Z
+identifiers:
+  openrouter:
+    - google/gemini-3.1-flash-lite
 upstream:
   openrouter:
     canonical_slug: google/gemini-3.1-flash-lite-20260507

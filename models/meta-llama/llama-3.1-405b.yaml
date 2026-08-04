@@ -2,6 +2,7 @@ schema_version: 2
 id: meta-llama/llama-3.1-405b
 name: 'Meta: Llama 3.1 405B (base)'
 provider: Meta
+developer: meta
 description: |-
   Meta's latest class of model (Llama 3.1) launched with a variety of sizes & flavors. This is the base 405B pre-trained version.
 
@@ -21,3 +22,41 @@ features:
   - ModalityTextIn
   - ModalityTextOut
 discovered_at: 2026-07-29T10:38:50.871205993Z
+links:
+  model_card: https://huggingface.co/meta-llama/Llama-3.1-405B
+identifiers:
+  huggingface:
+    - meta-llama/Llama-3.1-405B
+upstream:
+  huggingface:
+    id: meta-llama/Llama-3.1-405B
+    revision: b906e4dc842aa489c962f9db26554dcfdde901fe
+    pipeline_tag: text-generation
+    model_type: llama
+    architectures:
+      - LlamaForCausalLM
+    license: llama3.1
+    tags:
+      - arxiv:2204.05149
+      - de
+      - en
+      - endpoints_compatible
+      - es
+      - eval-results
+      - facebook
+      - fr
+      - hi
+      - it
+      - license:llama3.1
+      - llama
+      - llama-3
+      - meta
+      - pt
+      - pytorch
+      - region:us
+      - safetensors
+      - text-generation
+      - text-generation-inference
+      - th
+      - transformers
+    fetched_at: 2026-08-04T12:42:39.293696993Z

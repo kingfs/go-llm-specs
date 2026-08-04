@@ -2,6 +2,7 @@ schema_version: 2
 id: nousresearch/deephermes-3-mistral-24b-preview
 name: 'Nous: DeepHermes 3 Mistral 24B Preview'
 provider: Nous Research
+developer: nousresearch
 description: "DeepHermes 3 (Mistral 24B Preview) is an instruction-tuned language model by Nous Research based on Mistral-Small-24B, designed for chat, function calling, and advanced multi-turn reasoning. It introduces a dual-mode system that toggles between intuitive chat responses and structured “deep reasoning” mode using special system prompts. Fine-tuned via distillation from R1, it supports structured output (JSON mode) and function call syntax for agent-based applications.\n\nDeepHermes 3 supports a **reasoning toggle via system prompt**, allowing users to switch between fast, intuitive responses and deliberate, multi-step reasoning. When activated with the following specific system instruction, the model enters a *\"deep thinking\"* mode—generating extended chains of thought wrapped in `<think></think>` tags before delivering a final answer. \n\nSystem Prompt: You are a deep thinking AI, you may use extremely long chains of thought to deeply consider the problem and deliberate with yourself via systematic reasoning processes to help come to a correct solution prior to answering. You should enclose your thoughts and internal monologue inside <think> </think> tags, and then provide your solution or response to the problem.\n"
 description_cn: |-
   DeepHermes 3（Mistral 24B 预览版）是由 Nous Research 基于 Mistral-Small-24B 开发的指令微调语言模型，专为聊天、函数调用及高级多轮推理设计。该模型引入双模式系统，可通过特殊系统提示在直观聊天响应与结构化“深度推理”模式间切换。经 R1 蒸馏微调，支持结构化输出（JSON 模式）及面向智能体应用的函数调用语法。
@@ -18,6 +19,11 @@ features:
   - ModalityTextIn
   - ModalityTextOut
 discovered_at: 2026-07-29T10:40:24.948535995Z
+links:
+  model_card: https://huggingface.co/NousResearch/DeepHermes-3-Mistral-24B-Preview
+identifiers:
+  huggingface:
+    - NousResearch/DeepHermes-3-Mistral-24B-Preview
 upstream:
   huggingface:
     id: NousResearch/DeepHermes-3-Mistral-24B-Preview

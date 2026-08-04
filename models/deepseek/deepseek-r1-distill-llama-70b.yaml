@@ -2,6 +2,7 @@ schema_version: 2
 id: deepseek/deepseek-r1-distill-llama-70b
 name: 'DeepSeek: R1 Distill Llama 70B'
 provider: DeepSeek
+developer: deepseek
 description: |-
   DeepSeek R1 Distill Llama 70B is a distilled large language model based on [Llama-3.3-70B-Instruct](/meta-llama/llama-3.3-70b-instruct), using outputs from [DeepSeek R1](/deepseek/deepseek-r1). The model combines advanced distillation techniques to achieve high performance across multiple benchmarks, including:
 
@@ -27,6 +28,13 @@ features:
   - ModalityTextIn
   - ModalityTextOut
 discovered_at: 2026-07-29T10:37:40.696657365Z
+links:
+  model_card: https://huggingface.co/deepseek-ai/DeepSeek-R1-Distill-Llama-70B
+identifiers:
+  huggingface:
+    - deepseek-ai/DeepSeek-R1-Distill-Llama-70B
+  openrouter:
+    - deepseek/deepseek-r1-distill-llama-70b
 upstream:
   openrouter:
     canonical_slug: deepseek/deepseek-r1-distill-llama-70b

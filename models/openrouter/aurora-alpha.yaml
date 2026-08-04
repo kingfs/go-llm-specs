@@ -2,6 +2,7 @@ schema_version: 2
 id: openrouter/aurora-alpha
 name: Aurora Alpha
 provider: Openrouter
+developer: openrouter
 description: "This is a cloaked model provided to the community to gather feedback. A reasoning model designed for speed. It is built for coding assistants, real-time conversational applications, and agentic workflows.\n\nDefault reasoning effort is set to medium for fast responses. For agentic coding use cases, we recommend changing effort to high. \n\nNote: All prompts and completions for this model are logged by the provider and may be used to improve the model."
 description_cn: |-
   此为向社区提供的匿名模型，旨在收集反馈。该模型专为速度优化的推理任务设计，适用于编程助手、实时对话应用及智能体工作流。

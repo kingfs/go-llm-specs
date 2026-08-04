@@ -1,0 +1,12 @@
+schema_version: 1
+id: qwen
+name: Qwen
+aliases: [Alibaba Qwen]
+official:
+  homepage: https://qwen.ai/
+  documentation: https://qwen.readthedocs.io/
+organizations:
+  huggingface: [Qwen]
+  github: [QwenLM]
+discovery:
+  huggingface: true

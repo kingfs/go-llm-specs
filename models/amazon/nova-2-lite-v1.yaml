@@ -2,6 +2,7 @@ schema_version: 2
 id: amazon/nova-2-lite-v1
 name: 'Amazon: Nova 2 Lite'
 provider: Amazon
+developer: amazon
 description: "Nova 2 Lite is a fast, cost-effective reasoning model for everyday workloads that can process text, images, and videos to generate text. \n\nNova 2 Lite demonstrates standout capabilities in processing documents, extracting information from videos, generating code, providing accurate grounded answers, and automating multi-step agentic workflows."
 description_cn: |-
   Nova 2 Lite 是一款快速、高性价比的推理模型，适用于日常工作负载，可处理文本、图像和视频以生成文本。
@@ -18,6 +19,9 @@ features:
   - ModalityTextOut
   - ModalityVideoIn
 discovered_at: 2026-07-29T10:36:36.150005431Z
+identifiers:
+  openrouter:
+    - amazon/nova-2-lite-v1
 upstream:
   openrouter:
     canonical_slug: amazon/nova-2-lite-v1

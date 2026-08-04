@@ -2,6 +2,7 @@ schema_version: 2
 id: tngtech/tng-r1t-chimera:free
 name: 'TNG: R1T Chimera (free)'
 provider: Tngtech
+developer: tngtech
 description: |-
   TNG-R1T-Chimera is an experimental LLM with a faible for creative storytelling and character interaction. It is a derivate of the original TNG/DeepSeek-R1T-Chimera released in April 2025 and is available exclusively via Chutes and OpenRouter.
 

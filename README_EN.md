@@ -139,7 +139,7 @@ Capability constants live in [capability.go](./capability.go), and tag constants
 
 ## Data Source And Updates
 
-The project currently syncs model metadata primarily from OpenRouter. Human-maintained `models/**/*.yaml` files provide corrections, extra fields, aliases, and Chinese descriptions. The final registry is generated into `models_gen.go`, so downstream applications only need to import the Go package; they do not need to run sync jobs at runtime.
+The registry records model specifications claimed by model publishers, not constraints of individual deployments. OpenRouter remains the broad primary discovery feed; publisher pages and subscribed official Hugging Face organizations provide enrichment and additional discovery. Human-maintained `models/**/*.yaml` is the highest-priority append-only fact catalog: automation fills empty fields only and never overwrites an existing value because of provenance or an upstream change.
 
 Maintainer-facing files:
 
@@ -149,11 +149,13 @@ Maintainer-facing files:
 │   ├── generator/      # sync upstream metadata and generate the static registry
 │   ├── translator/     # incrementally fill Chinese descriptions
 │   ├── enricher/       # collect rich metadata from structured sources
+│   ├── catalogsync/    # audit publishers and discover official HF candidates
 │   ├── codexgen/       # generate Codex models.json
-│   └── modelprobe/     # probe vLLM/SGLang and compatible endpoints
+│   └── suggestionctl/ # review evidence-backed AI suggestions
 ├── data/
 │   └── models.json     # cached upstream payload
 ├── models/             # human-maintained YAML model definitions
+├── providers/          # official publisher entry points and subscribed organizations
 ├── models_gen.go       # generated file, do not edit manually
 └── Taskfile.yml        # go-task entry point
 ```
@@ -182,15 +184,19 @@ task codexsuggest -- -model qwen/qwen3.6-27b
 task codexsuggest -- -allowlist codex-models.yaml -report .cache/codex-selection.json
 task codexsuggest -- -since 180d -serving-provider openrouter -report .cache/codex-recent.json
 task enrich
+task catalog-audit
+task catalog-discover
+task catalog-promote
 task codexgen
-task modelprobe -- -base-url http://localhost:8000/v1 -model qwen3.6-27b -server vllm
 task releasecheck
 task sync
 ```
 
+The daily workflow fetches OpenRouter once and fully paginates subscribed official Hugging Face organizations. New HF discoveries begin as candidate YAML excluded from the Go registry; they are promoted only after structured enrichment and safe high-confidence official model-card claims provide the required facts. Identical inputs generate identical code, so commits and releases represent real model-fact changes.
+
 When changing model metadata, edit `models/**/*.yaml` and regenerate instead of hand-editing `models_gen.go`. See [docs/DEVELOPMENT.md](./docs/DEVELOPMENT.md) for maintainer details and [AGENTS.md](./AGENTS.md) for AI collaboration notes.
 
-Newly discovered or explicitly selected models can use schema v2 to store source-attributed OpenRouter, Hugging Face, reasoning, and Codex metadata. Historical records without a schema version remain v1 and are not bulk-migrated. Run `task enrich -- -model <provider/model>` for explicit enrichment and `task codexgen` to export records with `codex.enabled: true` to the standalone `dist/codex/third-party-models.json`. See the [Codex metadata pipeline](./docs/CODEX_METADATA_PIPELINE.md) for the complete trust model and deployment-probe boundaries.
+Newly discovered or explicitly selected models can use schema v2 for source-attributed OpenRouter and Hugging Face metadata, official links, and identity mappings. See [Model catalog architecture](./docs/MODEL_CATALOG.md) for the trust boundary and incremental workflow, and the [Codex metadata pipeline](./docs/CODEX_METADATA_PIPELINE.md) for export details.
 
 ## Codex third-party model catalog
 
@@ -242,7 +248,7 @@ task codexsuggest -- -since 180d -serving-provider openrouter \
 
 “Recent” only selects candidates. Records that are not schema v2 chat/tool models with text input/output and a positive context window are listed as skipped. For vLLM, SGLang, or another provider, do not assume the OpenRouter ID is the serving slug; convert the candidates into an explicit allowlist first. After review and apply, `task codexgen` packages every eligible enabled model into one catalog. Exporting the entire registry is unsafe because it also contains embedding, reranking, audio, and records whose serving names or tool policies are not confirmed.
 
-The Release catalog also uses [`data/codex/default-open-models.yaml`](./data/codex/default-open-models.yaml) to include these open-weight families by default: Qwen 3.5+, DeepSeek V3/R1+, GLM-5+, and Kimi K2.7+. A model must have a Hugging Face source and pass the static capability checks above. API-only models, routing aliases, and non-agent models are not included by name alone. Default slugs are lowercase, vendor-free model names such as `deepseek-v3.1`. After daily sync discovers a new matching model, `task codexgen` adds it automatically; an explicit `codex.enabled: false` remains authoritative.
+The Release catalog also uses [`data/codex/default-open-models.yaml`](./data/codex/default-open-models.yaml) to include these open-weight families by default: Qwen 3.5+, DeepSeek V3/R1+, GLM-5+, and Kimi K2.7+. In addition to static capability checks, a model must have a cataloged publisher, a Hugging Face identity owned by that publisher's configured organization, an exact model-card URL, and a pinned revision. Historical collection alone never makes a model eligible for Codex export.
 
 ## License
 

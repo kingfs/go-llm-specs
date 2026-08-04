@@ -2,6 +2,7 @@ schema_version: 2
 id: kwaipilot/kat-coder-air-v2.5
 name: 'Kwaipilot: KAT-Coder-Air V2.5'
 provider: Kwaipilot
+developer: Kwaipilot
 description: KAT-Coder-Air V2.5 is a flagship-level Agentic Coding model that can directly hand over an entire issue or an entire business workflow to it, allowing it to autonomously locate and make...
 description_cn: KAT-Coder-Air V2.5 是一款旗舰级的代理编码模型，可以直接将整个问题或整个业务工作流程交给它，使其能够自主定位和处理...
 context_length: 256000
@@ -13,6 +14,9 @@ features:
   - ModalityTextIn
   - ModalityTextOut
 discovered_at: 2026-07-29T10:38:43.238900866Z
+identifiers:
+  openrouter:
+    - kwaipilot/kat-coder-air-v2.5
 upstream:
   openrouter:
     canonical_slug: kwaipilot/kat-coder-air-v2.5-20260710

@@ -14,6 +14,11 @@ tasks:
     cmds:
       - go fmt ./...
 
+  fmt-check:
+    desc: Verify Go sources are formatted without modifying the worktree
+    cmds:
+      - test -z "$(gofmt -l .)"
+
   lint:
     desc: Run lightweight static checks
     cmds:
@@ -33,6 +38,16 @@ tasks:
     desc: Fetch upstream metadata, sync models/, and regenerate models_gen.go
     cmds:
       - go run ./cmd/generator {{.CLI_ARGS}}
+
+  generator-check:
+    desc: Verify models_gen.go matches the current YAML registry
+    cmds:
+      - go run ./cmd/generator -cache-only -sync-registry=false -check
+
+  generator-offline:
+    desc: Regenerate models_gen.go from YAML and the immutable local cache
+    cmds:
+      - go run ./cmd/generator -cache-only -sync-registry=false
 
   translator:
     desc: Incrementally translate missing description_cn fields in models/
@@ -64,6 +79,36 @@ tasks:
     cmds:
       - go run ./cmd/enricher {{.CLI_ARGS}}
 
+  catalog-audit:
+    desc: Audit publisher attribution, official links, and source coverage
+    cmds:
+      - go run ./cmd/catalogsync -output data/catalog-audit.json {{.CLI_ARGS}}
+
+  catalog-check:
+    desc: Verify the committed local catalog audit is current
+    cmds:
+      - go run ./cmd/catalogsync -check -output data/catalog-audit.json
+
+  catalog-discover:
+    desc: Audit the catalog and discover new models from subscribed official Hugging Face organizations
+    cmds:
+      - go run ./cmd/catalogsync -discover-huggingface -apply-identity-matches -materialize-candidates -limit 5 -output data/catalog-discovery.json {{.CLI_ARGS}}
+
+  catalog-promote:
+    desc: Activate fully enriched lifecycle candidate model records
+    cmds:
+      - go run ./cmd/catalogsync -promote-ready -output data/catalog-audit.json {{.CLI_ARGS}}
+
+  catalog-backfill:
+    desc: One-time exact identity backfill from subscribed official Hugging Face organizations
+    cmds:
+      - go run ./cmd/catalogsync -discover-huggingface -since 0 -apply-identity-matches -output .cache/catalog-backfill.json {{.CLI_ARGS}}
+
+  site:
+    desc: Generate the static model museum for GitHub Pages
+    cmds:
+      - go run ./cmd/sitegen {{.CLI_ARGS}}
+
   codexgen:
     desc: Generate a validated Codex models.json catalog from enriched YAML
     cmds:
@@ -84,31 +129,28 @@ tasks:
     cmds:
       - sh scripts/install-codex-catalog.sh {{.CLI_ARGS}}
 
-  modelprobe:
-    desc: Probe an already-running OpenAI-compatible model deployment
-    cmds:
-      - go run ./cmd/modelprobe {{.CLI_ARGS}}
-
   releasecheck:
     desc: Compare current models_gen.go with the latest tag and decide whether a release is needed
     cmds:
       - go run ./cmd/releasecheck {{.CLI_ARGS}}
 
   sync:
-    desc: "End-to-end refresh: generator -> translator -> generator"
+    desc: "End-to-end refresh: fetch/sync once -> translate -> offline generate"
     cmds:
       - task: generator
       - task: translator
-      - task: generator
+      - task: generator-offline
 
   ci:
     desc: CI-equivalent local checks
     cmds:
       - task: lint
       - task: test
-      - task: fmt
+      - task: fmt-check
       - task: build
       - task: codexvalidate
+      - task: catalog-check
+      - task: generator-check
 
   run:
     desc: Run an arbitrary shell command, for example task run -- go test ./...

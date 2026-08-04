@@ -2,6 +2,7 @@ schema_version: 2
 id: mistralai/pixtral-large-2411
 name: 'Mistral: Pixtral Large 2411'
 provider: Mistral
+developer: mistral
 description: |+
   Pixtral Large is a 124B parameter, open-weight, multimodal model built on top of [Mistral Large 2](/mistralai/mistral-large-2411). The model is able to understand documents, charts and natural images.
 

@@ -1,0 +1,11 @@
+schema_version: 1
+id: allenai
+name: Allen Institute for AI
+kind: organization
+official:
+  homepage: https://allenai.org/
+  model_catalog: https://huggingface.co/allenai
+organizations:
+  huggingface: [allenai]
+discovery:
+  huggingface: true

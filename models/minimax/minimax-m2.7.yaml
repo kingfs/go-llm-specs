@@ -2,6 +2,7 @@ schema_version: 2
 id: minimax/minimax-m2.7
 name: 'MiniMax: MiniMax M2.7'
 provider: Minimax
+developer: minimax
 description: |-
   MiniMax-M2.7 is a next-generation large language model designed for autonomous, real-world productivity and continuous improvement. Built to actively participate in its own evolution, M2.7 integrates advanced agentic capabilities through multi-agent collaboration, enabling it to plan, execute, and refine complex tasks across dynamic environments.
 
@@ -19,6 +20,13 @@ features:
   - ModalityTextIn
   - ModalityTextOut
 discovered_at: 2026-07-29T10:39:17.055894146Z
+links:
+  model_card: https://huggingface.co/MiniMaxAI/MiniMax-M2.7
+identifiers:
+  huggingface:
+    - MiniMaxAI/MiniMax-M2.7
+  openrouter:
+    - minimax/minimax-m2.7
 upstream:
   openrouter:
     canonical_slug: minimax/minimax-m2.7-20260318

@@ -1,0 +1,11 @@
+schema_version: 1
+id: minimax
+name: MiniMax
+official:
+  homepage: https://www.minimax.io/
+  documentation: https://platform.minimax.io/docs/
+organizations:
+  huggingface: [MiniMaxAI]
+  github: [MiniMax-AI]
+discovery:
+  huggingface: true

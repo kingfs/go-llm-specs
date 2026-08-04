@@ -2,6 +2,7 @@ schema_version: 2
 id: google/gemma-3-27b-it
 name: 'Google: Gemma 3 27B'
 provider: Google
+developer: google
 description: Gemma 3 introduces multimodality, supporting vision-language input and text outputs. It handles context windows up to 128k tokens, understands over 140 languages, and offers improved math, reasoning, and chat capabilities, including structured outputs and function calling. Gemma 3 27B is Google's latest open source model, successor to [Gemma 2](google/gemma-2-27b-it)
 description_cn: Gemma 3 引入多模态能力，支持视觉-语言输入与文本输出，可处理长达 128k token 的上下文，支持超过 140 种语言，并在数学、推理和对话能力方面均有提升，包括结构化输出与函数调用功能。Gemma 3 27B 是 Google 最新推出的开源模型，为 [Gemma 2](google/gemma-2-27b-it) 的继任者。
 context_length: 131072
@@ -14,6 +15,17 @@ features:
   - ModalityTextIn
   - ModalityTextOut
 discovered_at: 2026-07-29T10:38:15.241642885Z
+links:
+  model_card: https://huggingface.co/google/gemma-3-27b-it
+identifiers:
+  huggingface:
+    - google/gemma-3-27b-it
+  openrouter:
+    - google/gemma-3-27b-it
+provenance:
+  reasoning.supported:
+    source: official_model_card
+    url: https://huggingface.co/google/gemma-3-27b-it/resolve/005ad3404e59d6023443cb575daa05336842228a/README.md
 upstream:
   openrouter:
     canonical_slug: google/gemma-3-27b-it
@@ -94,3 +106,5 @@ upstream:
       - text-generation-inference
       - transformers
     fetched_at: 2026-07-29T10:38:15.969973555Z
+reasoning:
+  supported: true

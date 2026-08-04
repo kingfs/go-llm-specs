@@ -2,6 +2,7 @@ schema_version: 2
 id: qwen/qwen-2.5-vl-7b-instruct:free
 name: 'Qwen: Qwen2.5-VL 7B Instruct (free)'
 provider: Qwen
+developer: qwen
 description: |-
   Qwen2.5 VL 7B is a multimodal LLM from the Qwen Team with the following key enhancements:
 

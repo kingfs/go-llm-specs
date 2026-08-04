@@ -2,6 +2,7 @@ schema_version: 2
 id: gryphe/mythomax-l2-13b
 name: MythoMax 13B
 provider: Gryphe
+developer: Gryphe
 description: 'One of the highest performing and most popular fine-tunes of Llama 2 13B, with rich descriptions and roleplay. #merge'
 description_cn: Llama 2 13B 表现最佳且最受欢迎的微调模型之一，擅长生成丰富描述和角色扮演。#merge
 context_length: 4096
@@ -12,6 +13,13 @@ features:
   - ModalityTextIn
   - ModalityTextOut
 discovered_at: 2026-07-29T10:38:27.378388366Z
+links:
+  model_card: https://huggingface.co/Gryphe/MythoMax-L2-13b
+identifiers:
+  huggingface:
+    - Gryphe/MythoMax-L2-13b
+  openrouter:
+    - gryphe/mythomax-l2-13b
 upstream:
   openrouter:
     canonical_slug: gryphe/mythomax-l2-13b

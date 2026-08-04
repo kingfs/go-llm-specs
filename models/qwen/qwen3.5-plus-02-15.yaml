@@ -2,6 +2,7 @@ schema_version: 2
 id: qwen/qwen3.5-plus-02-15
 name: 'Qwen: Qwen3.5 Plus 2026-02-15'
 provider: Qwen
+developer: qwen
 description: The Qwen3.5 native vision-language series Plus models are built on a hybrid architecture that integrates linear attention mechanisms with sparse mixture-of-experts models, achieving higher inference efficiency. In a variety of task evaluations, the 3.5 series consistently demonstrates performance on par with state-of-the-art leading models. Compared to the 3 series, these models show a leap forward in both pure-text and multimodal capabilities.
 description_cn: Qwen3.5 原生视觉语言 Plus 系列模型采用混合架构，融合线性注意力机制与稀疏混合专家（MoE）模型，实现更高推理效率。在多项任务评估中，3.5 系列表现始终与业界顶尖模型相当；相比 3 系列，其在纯文本与多模态能力上均实现显著跃升。
 context_length: 1000000
@@ -15,6 +16,9 @@ features:
   - ModalityTextOut
   - ModalityVideoIn
 discovered_at: 2026-07-29T10:43:43.36886779Z
+identifiers:
+  openrouter:
+    - qwen/qwen3.5-plus-02-15
 upstream:
   openrouter:
     canonical_slug: qwen/qwen3.5-plus-20260216

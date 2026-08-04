@@ -2,6 +2,7 @@ schema_version: 2
 id: x-ai/grok-4.1-fast
 name: 'xAI: Grok 4.1 Fast'
 provider: X-Ai
+developer: xai
 description: |-
   Grok 4.1 Fast is xAI's best agentic tool calling model that shines in real-world use cases like customer support and deep research. 2M context window.
 

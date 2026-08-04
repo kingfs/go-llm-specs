@@ -2,6 +2,7 @@ schema_version: 2
 id: qwen/qwen2.5-coder-7b-instruct
 name: 'Qwen: Qwen2.5 Coder 7B Instruct'
 provider: Qwen
+developer: qwen
 description: |-
   Qwen2.5-Coder-7B-Instruct is a 7B parameter instruction-tuned language model optimized for code-related tasks such as code generation, reasoning, and bug fixing. Based on the Qwen2.5 architecture, it incorporates enhancements like RoPE, SwiGLU, RMSNorm, and GQA attention with support for up to 128K tokens using YaRN-based extrapolation. It is trained on a large corpus of source code, synthetic data, and text-code grounding, providing robust performance across programming languages and agentic coding workflows.
 
@@ -18,6 +19,11 @@ features:
   - ModalityTextIn
   - ModalityTextOut
 discovered_at: 2026-07-29T10:42:24.696712331Z
+links:
+  model_card: https://huggingface.co/Qwen/Qwen2.5-Coder-7B-Instruct
+identifiers:
+  huggingface:
+    - Qwen/Qwen2.5-Coder-7B-Instruct
 upstream:
   huggingface:
     id: Qwen/Qwen2.5-Coder-7B-Instruct

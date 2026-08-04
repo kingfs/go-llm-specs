@@ -4,16 +4,19 @@ import "testing"
 
 func TestModelDataGetters(t *testing.T) {
 	m := &modelData{
-		IDVal:         "test/model",
-		NameVal:       "Test Model",
-		ProviderVal:   "TestProvider",
-		DescVal:       "A test model",
-		DescCNVal:     "测试模型",
-		TagList:       []string{"coding", "tool-use"},
-		ContextLenVal: 100,
-		MaxOutputVal:  50,
-		FeaturesVal:   ModalityTextIn,
-		AliasList:     []string{"tm"},
+		IDVal:           "test/model",
+		NameVal:         "Test Model",
+		ProviderVal:     "TestProvider",
+		DeveloperVal:    "test",
+		OfficialURLVal:  "https://example.com/model",
+		ModelCardURLVal: "https://huggingface.co/test/model",
+		DescVal:         "A test model",
+		DescCNVal:       "测试模型",
+		TagList:         []string{"coding", "tool-use"},
+		ContextLenVal:   100,
+		MaxOutputVal:    50,
+		FeaturesVal:     ModalityTextIn,
+		AliasList:       []string{"tm"},
 	}
 
 	if m.ID() != "test/model" {
@@ -56,7 +59,7 @@ func TestModelDataGetters(t *testing.T) {
 		t.Error("Getter HasTag fail")
 	}
 	card := m.Card()
-	if card.ID != "test/model" || card.Name != "Test Model" || card.Provider != "TestProvider" {
+	if card.ID != "test/model" || card.Name != "Test Model" || card.Provider != "TestProvider" || card.Developer != "test" || card.OfficialURL == "" || card.ModelCardURL == "" {
 		t.Error("Getter Card fail")
 	}
 }

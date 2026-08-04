@@ -2,6 +2,7 @@ schema_version: 2
 id: openai/gpt-4o-mini
 name: 'OpenAI: GPT-4o-mini'
 provider: OpenAI
+developer: openai
 description: |-
   GPT-4o mini is OpenAI's newest model after [GPT-4 Omni](/models/openai/gpt-4o), supporting both text and image inputs with text outputs.
 
@@ -33,6 +34,9 @@ features:
   - ModalityTextIn
   - ModalityTextOut
 discovered_at: 2026-07-29T10:41:10.790505858Z
+identifiers:
+  openrouter:
+    - openai/gpt-4o-mini
 upstream:
   openrouter:
     canonical_slug: openai/gpt-4o-mini

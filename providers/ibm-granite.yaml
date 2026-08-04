@@ -1,0 +1,11 @@
+schema_version: 1
+id: ibm-granite
+name: IBM Granite
+kind: company
+official:
+  homepage: https://www.ibm.com/granite
+  model_catalog: https://huggingface.co/ibm-granite
+organizations:
+  huggingface: [ibm-granite]
+discovery:
+  huggingface: true

@@ -2,6 +2,7 @@ schema_version: 2
 id: qwen/qwen2.5-vl-72b-instruct
 name: 'Qwen: Qwen2.5 VL 72B Instruct'
 provider: Qwen
+developer: qwen
 description: Qwen2.5-VL is proficient in recognizing common objects such as flowers, birds, fish, and insects. It is also highly capable of analyzing texts, charts, icons, graphics, and layouts within images.
 description_cn: Qwen2.5-VL 擅长识别花卉、鸟类、鱼类和昆虫等常见物体，同时能高效分析图像中的文字、图表、图标、图形及版式布局。
 context_length: 32768
@@ -13,6 +14,13 @@ features:
   - ModalityTextIn
   - ModalityTextOut
 discovered_at: 2026-07-29T10:42:28.969882235Z
+links:
+  model_card: https://huggingface.co/Qwen/Qwen2.5-VL-72B-Instruct
+identifiers:
+  huggingface:
+    - Qwen/Qwen2.5-VL-72B-Instruct
+  openrouter:
+    - qwen/qwen2.5-vl-72b-instruct
 upstream:
   openrouter:
     canonical_slug: qwen/qwen2.5-vl-72b-instruct

@@ -2,6 +2,7 @@ schema_version: 2
 id: x-ai/grok-4.5
 name: 'xAI: Grok 4.5'
 provider: X-Ai
+developer: xai
 description: Grok 4.5 is SpaceXAI's smartest model with frontier performance on coding, knowledge work, and STEM.
 description_cn: Grok 4.5 是 SpaceXAI 最智能的模型，在编码、知识工作和STEM领域表现卓越。
 context_length: 500000
@@ -14,6 +15,12 @@ features:
   - ModalityTextIn
   - ModalityTextOut
 discovered_at: 2026-07-29T10:44:50.70712155Z
+identifiers:
+  openrouter:
+    - x-ai/grok-4.5
+provenance:
+  max_output:
+    source: openrouter
 upstream:
   openrouter:
     canonical_slug: x-ai/grok-4.5-20260708

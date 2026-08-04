@@ -2,6 +2,7 @@ schema_version: 2
 id: ~x-ai/grok-latest
 name: 'xAI: Grok Latest'
 provider: ~X-Ai
+developer: ~X-Ai
 description: This model always redirects to the latest Grok model from xAI.
 description_cn: 该模型始终重定向到 xAI 的最新 Grok 模型。
 context_length: 500000
@@ -14,6 +15,12 @@ features:
   - ModalityTextIn
   - ModalityTextOut
 discovered_at: 2026-07-29T10:45:27.164460268Z
+identifiers:
+  openrouter:
+    - ~x-ai/grok-latest
+provenance:
+  max_output:
+    source: openrouter
 upstream:
   openrouter:
     canonical_slug: ~x-ai/grok-latest

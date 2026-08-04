@@ -2,6 +2,7 @@ schema_version: 2
 id: kwaipilot/kat-coder-pro-v2
 name: 'Kwaipilot: KAT-Coder-Pro V2'
 provider: Kwaipilot
+developer: Kwaipilot
 description: KAT-Coder-Pro V2 is the latest high-performance model in KwaiKAT’s KAT-Coder series, designed for complex enterprise-grade software engineering and SaaS integration. It builds on the agentic coding strengths of earlier versions, with a focus on large-scale production environments, multi-system coordination, and seamless integration across modern software stacks, while also supporting web aesthetics generation to produce production-grade landing pages and presentation decks.
 description_cn: KAT-Coder-Pro V2 是快手 KAT-Coder 系列最新推出的高性能模型，专为复杂的企业级软件工程和 SaaS 集成而设计。它在早期版本智能编码能力的基础上进一步强化，专注于大规模生产环境、多系统协同以及现代软件栈的无缝集成，同时支持网页美学生成，可产出可用于生产的落地页和演示文稿。
 context_length: 256000
@@ -13,6 +14,9 @@ features:
   - ModalityTextIn
   - ModalityTextOut
 discovered_at: 2026-07-29T10:38:44.074948154Z
+identifiers:
+  openrouter:
+    - kwaipilot/kat-coder-pro-v2
 upstream:
   openrouter:
     canonical_slug: kwaipilot/kat-coder-pro-v2-20260327

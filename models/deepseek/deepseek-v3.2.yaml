@@ -2,6 +2,7 @@ schema_version: 2
 id: deepseek/deepseek-v3.2
 name: 'DeepSeek: DeepSeek V3.2'
 provider: DeepSeek
+developer: deepseek
 description: |-
   DeepSeek-V3.2 is a large language model designed to harmonize high computational efficiency with strong reasoning and agentic tool-use performance. It introduces DeepSeek Sparse Attention (DSA), a fine-grained sparse attention mechanism that reduces training and inference cost while preserving quality in long-context scenarios. A scalable reinforcement learning post-training framework further improves reasoning, with reported performance in the GPT-5 class, and the model has demonstrated gold-medal results on the 2025 IMO and IOI. V3.2 also uses a large-scale agentic task synthesis pipeline to better integrate reasoning into tool-use settings, boosting compliance and generalization in interactive environments.
 
@@ -19,6 +20,13 @@ features:
   - ModalityTextIn
   - ModalityTextOut
 discovered_at: 2026-07-29T10:37:45.270420285Z
+links:
+  model_card: https://huggingface.co/deepseek-ai/DeepSeek-V3.2
+identifiers:
+  huggingface:
+    - deepseek-ai/DeepSeek-V3.2
+  openrouter:
+    - deepseek/deepseek-v3.2
 upstream:
   openrouter:
     canonical_slug: deepseek/deepseek-v3.2-20251201

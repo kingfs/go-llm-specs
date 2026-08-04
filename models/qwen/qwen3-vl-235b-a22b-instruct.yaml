@@ -2,6 +2,7 @@ schema_version: 2
 id: qwen/qwen3-vl-235b-a22b-instruct
 name: 'Qwen: Qwen3 VL 235B A22B Instruct'
 provider: Qwen
+developer: qwen
 description: |-
   Qwen3-VL-235B-A22B Instruct is an open-weight multimodal model that unifies strong text generation with visual understanding across images and video. The Instruct model targets general vision-language use (VQA, document parsing, chart/table extraction, multilingual OCR). The series emphasizes robust perception (recognition of diverse real-world and synthetic categories), spatial understanding (2D/3D grounding), and long-form visual comprehension, with competitive results on public multimodal benchmarks for both perception and reasoning.
 
@@ -20,6 +21,13 @@ features:
   - ModalityTextIn
   - ModalityTextOut
 discovered_at: 2026-07-29T10:43:12.173102023Z
+links:
+  model_card: https://huggingface.co/Qwen/Qwen3-VL-235B-A22B-Instruct
+identifiers:
+  huggingface:
+    - Qwen/Qwen3-VL-235B-A22B-Instruct
+  openrouter:
+    - qwen/qwen3-vl-235b-a22b-instruct
 upstream:
   openrouter:
     canonical_slug: qwen/qwen3-vl-235b-a22b-instruct

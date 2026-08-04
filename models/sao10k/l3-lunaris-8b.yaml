@@ -2,6 +2,7 @@ schema_version: 2
 id: sao10k/l3-lunaris-8b
 name: 'Sao10K: Llama 3 8B Lunaris'
 provider: Sao10k
+developer: Sao10k
 description: |-
   Lunaris 8B is a versatile generalist and roleplaying model based on Llama 3. It's a strategic merge of multiple models, designed to balance creativity with improved logic and general knowledge.
 
@@ -22,6 +23,13 @@ features:
   - ModalityTextIn
   - ModalityTextOut
 discovered_at: 2026-07-29T10:44:01.462253338Z
+links:
+  model_card: https://huggingface.co/Sao10K/L3-8B-Lunaris-v1
+identifiers:
+  huggingface:
+    - Sao10K/L3-8B-Lunaris-v1
+  openrouter:
+    - sao10k/l3-lunaris-8b
 upstream:
   openrouter:
     canonical_slug: sao10k/l3-lunaris-8b

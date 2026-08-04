@@ -2,6 +2,7 @@ schema_version: 2
 id: minimax/minimax-m2.1
 name: 'MiniMax: MiniMax M2.1'
 provider: Minimax
+developer: minimax
 description: |-
   MiniMax-M2.1 is a lightweight, state-of-the-art large language model optimized for coding, agentic workflows, and modern application development. With only 10 billion activated parameters, it delivers a major jump in real-world capability while maintaining exceptional latency, scalability, and cost efficiency.
 
@@ -23,6 +24,13 @@ features:
   - ModalityTextIn
   - ModalityTextOut
 discovered_at: 2026-07-29T10:39:12.591542215Z
+links:
+  model_card: https://huggingface.co/MiniMaxAI/MiniMax-M2.1
+identifiers:
+  huggingface:
+    - MiniMaxAI/MiniMax-M2.1
+  openrouter:
+    - minimax/minimax-m2.1
 upstream:
   openrouter:
     canonical_slug: minimax/minimax-m2.1

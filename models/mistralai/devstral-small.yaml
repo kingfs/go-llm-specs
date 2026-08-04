@@ -2,6 +2,7 @@ schema_version: 2
 id: mistralai/devstral-small
 name: 'Mistral: Devstral Small 1.1'
 provider: Mistral
+developer: mistral
 description: |
   Devstral Small 1.1 is a 24B parameter open-weight language model for software engineering agents, developed by Mistral AI in collaboration with All Hands AI. Finetuned from Mistral Small 3.1 and released under the Apache 2.0 license, it features a 128k token context window and supports both Mistral-style function calling and XML output formats.
 

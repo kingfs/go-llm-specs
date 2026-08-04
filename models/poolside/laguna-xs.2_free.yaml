@@ -2,6 +2,7 @@ schema_version: 2
 id: poolside/laguna-xs.2:free
 name: 'Poolside: Laguna XS.2 (free)'
 provider: Poolside
+developer: poolside
 description: Laguna XS.2 is the second-generation model in the XS size class from [Poolside](https://poolside.ai), their efficient coding agent series. It combines tool calling and reasoning capabilities with a compact footprint, offering...
 description_cn: Laguna XS.2 是 [Poolside](https://poolside.ai) 的第二代 XS 尺寸类模型，属于其高效编程代理系列。它将工具调用和推理能力与紧凑的占用空间结合在一起，提供...
 context_length: 131072

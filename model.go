@@ -27,6 +27,9 @@ type ModelCard struct {
 	ID            string
 	Name          string
 	Provider      string
+	Developer     string
+	OfficialURL   string
+	ModelCardURL  string
 	Family        string
 	Series        string
 	Summary       string
@@ -39,19 +42,22 @@ type ModelCard struct {
 
 // modelData is the internal implementation of the Model interface.
 type modelData struct {
-	IDVal         string
-	NameVal       string
-	ProviderVal   string
-	DescVal       string
-	DescCNVal     string
-	FamilyVal     string
-	SeriesVal     string
-	SummaryVal    string
-	TagList       []string
-	ContextLenVal int
-	MaxOutputVal  int
-	FeaturesVal   Capability
-	AliasList     []string
+	IDVal           string
+	NameVal         string
+	ProviderVal     string
+	DeveloperVal    string
+	OfficialURLVal  string
+	ModelCardURLVal string
+	DescVal         string
+	DescCNVal       string
+	FamilyVal       string
+	SeriesVal       string
+	SummaryVal      string
+	TagList         []string
+	ContextLenVal   int
+	MaxOutputVal    int
+	FeaturesVal     Capability
+	AliasList       []string
 }
 
 func (m *modelData) ID() string                      { return m.IDVal }
@@ -85,6 +91,9 @@ func (m *modelData) Card() ModelCard {
 		ID:            m.IDVal,
 		Name:          m.NameVal,
 		Provider:      m.ProviderVal,
+		Developer:     m.DeveloperVal,
+		OfficialURL:   m.OfficialURLVal,
+		ModelCardURL:  m.ModelCardURLVal,
 		Family:        m.FamilyVal,
 		Series:        m.SeriesVal,
 		Summary:       m.SummaryVal,

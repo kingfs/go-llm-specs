@@ -1,0 +1,12 @@
+schema_version: 1
+id: zai
+name: Z.ai
+aliases: [Z-Ai, Zhipu AI, THUDM]
+official:
+  homepage: https://z.ai/
+  documentation: https://docs.z.ai/guides/overview/quick-start
+organizations:
+  huggingface: [zai-org, THUDM]
+  github: [zai-org]
+discovery:
+  huggingface: true

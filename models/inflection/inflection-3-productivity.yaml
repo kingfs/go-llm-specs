@@ -2,6 +2,7 @@ schema_version: 2
 id: inflection/inflection-3-productivity
 name: 'Inflection: Inflection 3 Productivity'
 provider: Inflection
+developer: inflection
 description: |-
   Inflection 3 Productivity is optimized for following instructions. It is better for tasks requiring JSON output or precise adherence to provided guidelines. It has access to recent news.
 

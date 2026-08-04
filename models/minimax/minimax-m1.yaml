@@ -2,6 +2,7 @@ schema_version: 2
 id: minimax/minimax-m1
 name: 'MiniMax: MiniMax M1'
 provider: Minimax
+developer: minimax
 description: |-
   MiniMax-M1 is a large-scale, open-weight reasoning model designed for extended context and high-efficiency inference. It leverages a hybrid Mixture-of-Experts (MoE) architecture paired with a custom "lightning attention" mechanism, allowing it to process long sequences—up to 1 million tokens—while maintaining competitive FLOP efficiency. With 456 billion total parameters and 45.9B active per token, this variant is optimized for complex, multi-step reasoning tasks.
 
@@ -18,6 +19,9 @@ features:
   - ModalityTextIn
   - ModalityTextOut
 discovered_at: 2026-07-29T10:39:09.515993585Z
+identifiers:
+  openrouter:
+    - minimax/minimax-m1
 upstream:
   openrouter:
     canonical_slug: minimax/minimax-m1

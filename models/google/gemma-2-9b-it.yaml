@@ -2,6 +2,7 @@ schema_version: 2
 id: google/gemma-2-9b-it
 name: 'Google: Gemma 2 9B'
 provider: Google
+developer: google
 description: |-
   Gemma 2 9B by Google is an advanced, open-source language model that sets a new standard for efficiency and performance in its size class.
 
@@ -20,6 +21,11 @@ features:
   - ModalityTextIn
   - ModalityTextOut
 discovered_at: 2026-07-29T10:38:13.311753586Z
+links:
+  model_card: https://huggingface.co/google/gemma-2-9b-it
+identifiers:
+  huggingface:
+    - google/gemma-2-9b-it
 upstream:
   huggingface:
     id: google/gemma-2-9b-it

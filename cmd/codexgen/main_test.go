@@ -5,6 +5,7 @@ import (
 	"strings"
 	"testing"
 
+	"github.com/kingfs/go-llm-specs/internal/provider"
 	"github.com/kingfs/go-llm-specs/internal/registry"
 )
 
@@ -23,6 +24,21 @@ func codexReadyModel() registry.Model {
 			Slugs:              []string{"qwen3.6-27b"},
 			ApplyPatchToolType: "freeform",
 		},
+	}
+}
+
+func TestOfficialHuggingFaceIdentity(t *testing.T) {
+	model := codexReadyModel()
+	model.Developer = "qwen"
+	model.Links.ModelCard = "https://huggingface.co/Qwen/Qwen3.6-27B"
+	model.Upstream.HuggingFace = &registry.HuggingFaceMetadata{ID: "Qwen/Qwen3.6-27B", Revision: "abc123"}
+	publisher := provider.Provider{Organizations: provider.Organizations{HuggingFace: []string{"Qwen"}}}
+	if !officialHuggingFaceIdentity(model, publisher) {
+		t.Fatal("official pinned model identity was rejected")
+	}
+	model.Upstream.HuggingFace.Revision = ""
+	if officialHuggingFaceIdentity(model, publisher) {
+		t.Fatal("unpinned model identity was accepted")
 	}
 }
 

@@ -2,6 +2,7 @@ schema_version: 2
 id: x-ai/grok-4.20
 name: 'xAI: Grok 4.20'
 provider: X-Ai
+developer: xai
 description: |-
   Grok 4.20 is xAI's newest flagship model with industry-leading speed and agentic tool calling capabilities. It combines the lowest hallucination rate on the market with strict prompt adherance, delivering consistently precise and truthful responses.
 
@@ -19,6 +20,12 @@ features:
   - ModalityTextIn
   - ModalityTextOut
 discovered_at: 2026-07-29T10:44:48.612579915Z
+identifiers:
+  openrouter:
+    - x-ai/grok-4.20
+provenance:
+  max_output:
+    source: openrouter
 upstream:
   openrouter:
     canonical_slug: x-ai/grok-4.20-20260309

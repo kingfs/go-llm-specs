@@ -1,0 +1,11 @@
+schema_version: 1
+id: tencent
+name: Tencent Hunyuan
+kind: company
+official:
+  homepage: https://hunyuan.tencent.com/
+  model_catalog: https://huggingface.co/tencent
+organizations:
+  huggingface: [tencent]
+discovery:
+  huggingface: true

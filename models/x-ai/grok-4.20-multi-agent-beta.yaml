@@ -2,6 +2,7 @@ schema_version: 2
 id: x-ai/grok-4.20-multi-agent-beta
 name: 'xAI: Grok 4.20 Multi-Agent Beta'
 provider: X-Ai
+developer: xai
 description: |-
   Grok 4.20 Multi-Agent Beta is a variant of xAI’s Grok 4.20 designed for collaborative, agent-based workflows. Multiple agents operate in parallel to conduct deep research, coordinate tool use, and synthesize information across complex tasks.
 

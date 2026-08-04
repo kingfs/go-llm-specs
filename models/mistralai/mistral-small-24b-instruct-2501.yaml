@@ -2,6 +2,7 @@ schema_version: 2
 id: mistralai/mistral-small-24b-instruct-2501
 name: 'Mistral: Mistral Small 3'
 provider: Mistral
+developer: mistral
 description: |-
   Mistral Small 3 is a 24B-parameter language model optimized for low-latency performance across common AI tasks. Released under the Apache 2.0 license, it features both pre-trained and instruction-tuned versions designed for efficient local deployment.
 
@@ -19,6 +20,13 @@ features:
   - ModalityTextIn
   - ModalityTextOut
 discovered_at: 2026-07-29T10:39:42.078413751Z
+links:
+  model_card: https://huggingface.co/mistralai/Mistral-Small-24B-Instruct-2501
+identifiers:
+  huggingface:
+    - mistralai/Mistral-Small-24B-Instruct-2501
+  openrouter:
+    - mistralai/mistral-small-24b-instruct-2501
 upstream:
   openrouter:
     canonical_slug: mistralai/mistral-small-24b-instruct-2501

@@ -2,6 +2,7 @@ schema_version: 2
 id: qwen/qwen3-235b-a22b-thinking-2507
 name: 'Qwen: Qwen3 235B A22B Thinking 2507'
 provider: Qwen
+developer: qwen
 description: |-
   Qwen3-235B-A22B-Thinking-2507 is a high-performance, open-weight Mixture-of-Experts (MoE) language model optimized for complex reasoning tasks. It activates 22B of its 235B parameters per forward pass and natively supports up to 262,144 tokens of context. This "thinking-only" variant enhances structured logical reasoning, mathematics, science, and long-form generation, showing strong benchmark performance across AIME, SuperGPQA, LiveCodeBench, and MMLU-Redux. It enforces a special reasoning mode (</think>) and is designed for high-token outputs (up to 81,920 tokens) in challenging domains.
 
@@ -19,6 +20,13 @@ features:
   - ModalityTextIn
   - ModalityTextOut
 discovered_at: 2026-07-29T10:42:37.193821099Z
+links:
+  model_card: https://huggingface.co/Qwen/Qwen3-235B-A22B-Thinking-2507
+identifiers:
+  huggingface:
+    - Qwen/Qwen3-235B-A22B-Thinking-2507
+  openrouter:
+    - qwen/qwen3-235b-a22b-thinking-2507
 upstream:
   openrouter:
     canonical_slug: qwen/qwen3-235b-a22b-thinking-2507

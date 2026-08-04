@@ -2,6 +2,7 @@ schema_version: 2
 id: ~deepseek/deepseek-v4-flash-latest
 name: DeepSeek V4 Flash Latest
 provider: ~Deepseek
+developer: ~Deepseek
 description: This model always redirects to the latest model in the DeepSeek V4 Flash family.
 context_length: 1048576
 max_output: 65536
@@ -12,6 +13,9 @@ features:
   - ModalityTextIn
   - ModalityTextOut
 discovered_at: 2026-08-03T07:48:48.2446509Z
+identifiers:
+  openrouter:
+    - ~deepseek/deepseek-v4-flash-latest
 upstream:
   openrouter:
     canonical_slug: ~deepseek/deepseek-v4-flash-latest

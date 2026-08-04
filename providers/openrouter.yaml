@@ -1,0 +1,8 @@
+schema_version: 1
+id: openrouter
+name: OpenRouter
+kind: aggregator
+official:
+  homepage: https://openrouter.ai/
+  documentation: https://openrouter.ai/docs
+  model_catalog: https://openrouter.ai/models

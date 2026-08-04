@@ -2,6 +2,7 @@ schema_version: 2
 id: anthropic/claude-3-haiku
 name: 'Anthropic: Claude 3 Haiku'
 provider: Anthropic
+developer: anthropic
 description: |-
   Claude 3 Haiku is Anthropic's fastest and most compact model for
   near-instant responsiveness. Quick and accurate targeted performance.
@@ -24,6 +25,9 @@ features:
   - ModalityTextIn
   - ModalityTextOut
 discovered_at: 2026-07-29T10:36:40.291907833Z
+identifiers:
+  openrouter:
+    - anthropic/claude-3-haiku
 upstream:
   openrouter:
     canonical_slug: anthropic/claude-3-haiku

@@ -1,0 +1,12 @@
+schema_version: 1
+id: amazon
+name: Amazon
+kind: company
+official:
+  homepage: https://aws.amazon.com/nova/
+  documentation: https://docs.aws.amazon.com/nova/
+  model_catalog: https://aws.amazon.com/nova/models/
+organizations:
+  huggingface: [amazon]
+discovery:
+  huggingface: true

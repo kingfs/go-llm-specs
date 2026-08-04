@@ -2,6 +2,7 @@ schema_version: 2
 id: qwen/qwq-32b
 name: 'Qwen: QwQ 32B'
 provider: Qwen
+developer: qwen
 description: QwQ is the reasoning model of the Qwen series. Compared with conventional instruction-tuned models, QwQ, which is capable of thinking and reasoning, can achieve significantly enhanced performance in downstream tasks, especially hard problems. QwQ-32B is the medium-sized reasoning model, which is capable of achieving competitive performance against state-of-the-art reasoning models, e.g., DeepSeek-R1, o1-mini.
 description_cn: QwQ 是通义千问（Qwen）系列中的推理专用模型。相较于传统的指令微调模型，具备思考与推理能力的 QwQ 在下游任务（尤其是难题）上性能显著提升。QwQ-32B 是其中的中等规模推理模型，在性能上可与当前领先的推理模型（如 DeepSeek-R1、o1-mini）相媲美。
 context_length: 131072
@@ -13,6 +14,11 @@ features:
   - ModalityTextIn
   - ModalityTextOut
 discovered_at: 2026-07-29T10:43:52.114487508Z
+links:
+  model_card: https://huggingface.co/Qwen/QwQ-32B
+identifiers:
+  huggingface:
+    - Qwen/QwQ-32B
 upstream:
   huggingface:
     id: Qwen/QwQ-32B

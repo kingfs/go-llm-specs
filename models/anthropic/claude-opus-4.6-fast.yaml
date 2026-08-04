@@ -2,6 +2,7 @@ schema_version: 2
 id: anthropic/claude-opus-4.6-fast
 name: 'Anthropic: Claude Opus 4.6 (Fast)'
 provider: Anthropic
+developer: anthropic
 description: |-
   Fast-mode variant of [Opus 4.6](/anthropic/claude-opus-4.6) - identical capabilities with higher output speed at premium 6x pricing.
 

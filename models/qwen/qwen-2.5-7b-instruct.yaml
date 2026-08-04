@@ -2,6 +2,7 @@ schema_version: 2
 id: qwen/qwen-2.5-7b-instruct
 name: 'Qwen: Qwen2.5 7B Instruct'
 provider: Qwen
+developer: qwen
 description: |-
   Qwen2.5 7B is the latest series of Qwen large language models. Qwen2.5 brings the following improvements upon Qwen2:
 
@@ -34,6 +35,13 @@ features:
   - ModalityTextIn
   - ModalityTextOut
 discovered_at: 2026-07-29T10:42:15.123031449Z
+links:
+  model_card: https://huggingface.co/Qwen/Qwen2.5-7B-Instruct
+identifiers:
+  huggingface:
+    - Qwen/Qwen2.5-7B-Instruct
+  openrouter:
+    - qwen/qwen-2.5-7b-instruct
 upstream:
   openrouter:
     canonical_slug: qwen/qwen-2.5-7b-instruct

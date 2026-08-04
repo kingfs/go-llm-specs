@@ -2,6 +2,7 @@ schema_version: 2
 id: x-ai/grok-4.20-multi-agent
 name: 'xAI: Grok 4.20 Multi-Agent'
 provider: X-Ai
+developer: xai
 description: |-
   Grok 4.20 Multi-Agent is a variant of xAI’s Grok 4.20 designed for collaborative, agent-based workflows. Multiple agents operate in parallel to conduct deep research, coordinate tool use, and synthesize information across complex tasks.
 
@@ -23,6 +24,12 @@ features:
   - ModalityTextIn
   - ModalityTextOut
 discovered_at: 2026-07-29T10:44:49.449983131Z
+identifiers:
+  openrouter:
+    - x-ai/grok-4.20-multi-agent
+provenance:
+  max_output:
+    source: openrouter
 upstream:
   openrouter:
     canonical_slug: x-ai/grok-4.20-multi-agent-20260309

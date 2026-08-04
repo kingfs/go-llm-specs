@@ -2,6 +2,7 @@ schema_version: 2
 id: mistralai/mistral-large-2512
 name: 'Mistral: Mistral Large 3 2512'
 provider: Mistral
+developer: mistral
 description: Mistral Large 3 2512 is Mistral’s most capable model to date, featuring a sparse mixture-of-experts architecture with 41B active parameters (675B total), and released under the Apache 2.0 license.
 description_cn: Mistral Large 3 2512 是 Mistral 迄今为止最强大的模型，采用稀疏混合专家架构，激活参数达 410 亿（总计 6750 亿），并以 Apache 2.0 许可证发布。
 context_length: 262144
@@ -13,6 +14,12 @@ features:
   - ModalityTextIn
   - ModalityTextOut
 discovered_at: 2026-07-29T10:39:37.833309841Z
+identifiers:
+  openrouter:
+    - mistralai/mistral-large-2512
+provenance:
+  max_output:
+    source: openrouter
 upstream:
   openrouter:
     canonical_slug: mistralai/mistral-large-2512

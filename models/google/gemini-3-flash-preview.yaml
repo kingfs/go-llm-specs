@@ -2,6 +2,7 @@ schema_version: 2
 id: google/gemini-3-flash-preview
 name: 'Google: Gemini 3 Flash Preview'
 provider: Google
+developer: google
 description: |-
   Gemini 3 Flash Preview is a high speed, high value thinking model designed for agentic workflows, multi turn chat, and coding assistance. It delivers near Pro level reasoning and tool use performance with substantially lower latency than larger Gemini variants, making it well suited for interactive development, long running agent loops, and collaborative coding tasks. Compared to Gemini 2.5 Flash, it provides broad quality improvements across reasoning, multimodal understanding, and reliability.
 
@@ -23,6 +24,9 @@ features:
   - ModalityTextOut
   - ModalityVideoIn
 discovered_at: 2026-07-29T10:38:04.123235383Z
+identifiers:
+  openrouter:
+    - google/gemini-3-flash-preview
 upstream:
   openrouter:
     canonical_slug: google/gemini-3-flash-preview-20251217

@@ -139,7 +139,7 @@ for _, tag := range llmspecs.KnownTags() {
 
 ## 数据来源与更新
 
-项目当前主要从 OpenRouter 同步模型元数据，并通过 `models/**/*.yaml` 维护人工修正、补充字段、别名和中文描述。最终数据会生成到 `models_gen.go`，下游项目只需要正常引入 Go 包即可，不需要在运行时执行同步任务。
+项目以模型厂商公开宣称的模型参数为事实范围，不记录具体部署实例的限制。OpenRouter 继续作为高覆盖率的主要发现入口，厂商官方页面和已订阅的官方 Hugging Face 组织用于补全和发现。`models/**/*.yaml` 是最高优先级、持续累计的人工事实目录：自动任务只填充空字段，任何已有值都不会因 provenance 或上游变化而被覆盖，也不会因上游下架而删除。
 
 维护相关文件：
 
@@ -149,11 +149,13 @@ for _, tag := range llmspecs.KnownTags() {
 │   ├── generator/      # 同步上游数据并生成静态注册表
 │   ├── translator/     # 增量补充中文描述
 │   ├── enricher/       # 从结构化上游补充丰富信息
+│   ├── catalogsync/    # 审计厂商归属并发现官方 HF 新增候选
 │   ├── codexgen/       # 生成 Codex models.json
-│   └── modelprobe/     # 探测 vLLM/SGLang 等兼容端点
+│   └── suggestionctl/ # 审核并应用有证据的 AI 建议
 ├── data/
 │   └── models.json     # 上游原始缓存
 ├── models/             # 人工维护的 YAML 模型定义
+├── providers/          # 厂商官方入口与可订阅组织目录
 ├── models_gen.go       # 生成文件，不要手改
 └── Taskfile.yml        # go-task 统一入口
 ```
@@ -182,15 +184,19 @@ task codexsuggest -- -model qwen/qwen3.6-27b
 task codexsuggest -- -allowlist codex-models.yaml -report .cache/codex-selection.json
 task codexsuggest -- -since 180d -serving-provider openrouter -report .cache/codex-recent.json
 task enrich
+task catalog-audit
+task catalog-discover
+task catalog-promote
 task codexgen
-task modelprobe -- -base-url http://localhost:8000/v1 -model qwen3.6-27b -server vllm
 task releasecheck
 task sync
 ```
 
+每日 Actions 只请求一次 OpenRouter，并完整分页检查订阅的官方 Hugging Face 组织。HF 新发现先作为不参与 Go 注册表生成的候选 YAML；结构化补全和官方模型卡高置信字段齐备后才自动晋升。相同输入生成完全相同的代码，只有实际模型事实变化才提交并按 releasecheck 发布版本。
+
 本地覆盖模型信息时，请修改 `models/**/*.yaml`，不要手改 `models_gen.go`。更完整的维护说明见 [docs/DEVELOPMENT.md](./docs/DEVELOPMENT.md)，AI 协作说明见 [AGENTS.md](./AGENTS.md)。
 
-新发现或显式选择的模型可以使用 schema v2 保存来源可追溯的 OpenRouter、Hugging Face、reasoning 和 Codex metadata；没有声明版本的历史模型仍按 v1 读取，不会被批量迁移。运行 `task enrich -- -model <provider/model>` 可显式 enrichment，运行 `task codexgen` 会将 `codex.enabled: true` 的模型输出到独立第三方目录 `dist/codex/third-party-models.json`。完整设计和本地部署探测边界见 [Codex metadata pipeline](./docs/CODEX_METADATA_PIPELINE.md)。
+新发现或显式选择的模型可以使用 schema v2 保存来源可追溯的 OpenRouter、Hugging Face、官方链接与身份映射。完整事实边界和增量流程见 [模型目录架构](./docs/MODEL_CATALOG.md)；Codex 导出细节见 [Codex metadata pipeline](./docs/CODEX_METADATA_PIPELINE.md)。
 
 ## Codex 第三方模型目录
 
@@ -242,7 +248,7 @@ task codexsuggest -- -since 180d -serving-provider openrouter \
 
 这里的“最近”只负责筛选候选；非 schema v2、非 chat/tool、缺少文本输入输出或上下文信息的记录会写入 skipped 报告。对于 vLLM/SGLang 或其他供应商，不应假定 OpenRouter ID 就是 serving slug，请先把候选整理成上述显式清单。审核并 apply 后，下一次 `task codexgen` 会把所有合格且已启用的模型打包到同一个目录。不能直接把注册表中的全部模型导出，因为其中还包括 embedding、rerank、音频模型以及未确认服务名/工具策略的记录。
 
-Release catalog 还通过 [`data/codex/default-open-models.yaml`](./data/codex/default-open-models.yaml) 默认收录以下开放权重家族：Qwen 3.5 及以后、DeepSeek V3/R1 及以后、GLM-5 及以后、Kimi K2.7 及以后。只有具备 Hugging Face 来源且通过上述静态能力检查的型号才会进入；API 专有型号、路由别名及非 agent 模型不会仅凭名称被收录。默认 slug 统一为小写、无 vendor 前缀的模型短名，例如 `deepseek-v3.1`。每日同步发现符合 policy 的新模型后，`task codexgen` 会自动补充 catalog，显式 `codex.enabled: false` 仍可覆盖默认规则。
+Release catalog 还通过 [`data/codex/default-open-models.yaml`](./data/codex/default-open-models.yaml) 默认收录以下开放权重家族：Qwen 3.5 及以后、DeepSeek V3/R1 及以后、GLM-5 及以后、Kimi K2.7 及以后。除静态能力检查外，型号必须具有已登记厂商、属于该厂商配置组织的 Hugging Face 身份、精确模型卡链接和固定 revision；普通历史收录记录不会进入 Codex catalog。API 专有型号、路由别名及非 agent 模型也不会仅凭名称被收录。
 
 ## 许可证
 

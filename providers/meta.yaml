@@ -1,0 +1,12 @@
+schema_version: 1
+id: meta
+name: Meta
+aliases: [Meta Llama]
+official:
+  homepage: https://ai.meta.com/
+  model_catalog: https://www.llama.com/models/
+organizations:
+  huggingface: [meta-llama]
+  github: [meta-llama]
+discovery:
+  huggingface: true

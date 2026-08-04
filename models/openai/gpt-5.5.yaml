@@ -2,6 +2,7 @@ schema_version: 2
 id: openai/gpt-5.5
 name: 'OpenAI: GPT-5.5'
 provider: OpenAI
+developer: openai
 description: GPT-5.5 is OpenAI’s frontier model designed for complex professional workloads, building on GPT-5.4 with stronger reasoning, higher reliability, and improved token efficiency on hard tasks. It features a 1M+ token...
 description_cn: GPT-5.5是OpenAI为复杂专业工作负载设计的前沿模型，在GPT-5.4的基础上增强了推理能力、提高了可靠性，以及在困难任务上的令牌效率。它具有超过1M的令牌...
 context_length: 1050000
@@ -15,6 +16,9 @@ features:
   - ModalityTextIn
   - ModalityTextOut
 discovered_at: 2026-07-29T10:41:26.099203587Z
+identifiers:
+  openrouter:
+    - openai/gpt-5.5
 upstream:
   openrouter:
     canonical_slug: openai/gpt-5.5-20260423

@@ -2,6 +2,7 @@ schema_version: 2
 id: tencent/hy3
 name: 'Tencent: Hy3'
 provider: Tencent
+developer: tencent
 description: Hy3 is a 295B-parameter Mixture-of-Experts model from Tencent (21B active, 192 experts with top-8 routing) built for reasoning, agentic workflows, and real-world production use. It supports a configurable reasoning effort:...
 description_cn: Hy3 是来自腾讯的295B参数混合专家模型（21B活跃，192个专家，采用前8路由），旨在推理、代理工作流和现实世界的生产使用。它支持可配置的推理力度：...
 context_length: 262144
@@ -13,6 +14,13 @@ features:
   - ModalityTextIn
   - ModalityTextOut
 discovered_at: 2026-07-29T10:44:19.198518924Z
+links:
+  model_card: https://huggingface.co/tencent/Hy3
+identifiers:
+  huggingface:
+    - tencent/Hy3
+  openrouter:
+    - tencent/hy3
 upstream:
   openrouter:
     canonical_slug: tencent/hy3-20260706

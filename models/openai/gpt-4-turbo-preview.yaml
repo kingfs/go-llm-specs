@@ -2,6 +2,7 @@ schema_version: 2
 id: openai/gpt-4-turbo-preview
 name: 'OpenAI: GPT-4 Turbo Preview'
 provider: OpenAI
+developer: openai
 description: |-
   The preview GPT-4 model with improved instruction following, JSON mode, reproducible outputs, parallel function calling, and more. Training data: up to Dec 2023.
 
@@ -19,6 +20,9 @@ features:
   - ModalityTextIn
   - ModalityTextOut
 discovered_at: 2026-07-29T10:41:06.863374332Z
+identifiers:
+  openrouter:
+    - openai/gpt-4-turbo-preview
 upstream:
   openrouter:
     canonical_slug: openai/gpt-4-turbo-preview

@@ -2,6 +2,7 @@ schema_version: 2
 id: xiaomi/mimo-v2-flash:free
 name: 'Xiaomi: MiMo-V2-Flash (free)'
 provider: Xiaomi
+developer: xiaomi
 description: |-
   MiMo-V2-Flash is an open-source foundation language model developed by Xiaomi. It is a Mixture-of-Experts model with 309B total parameters and 15B active parameters, adopting hybrid attention architecture. MiMo-V2-Flash supports a hybrid-thinking toggle and a 256K context window, and excels at reasoning, coding, and agent scenarios. On SWE-bench Verified and SWE-bench Multilingual, MiMo-V2-Flash ranks as the top #1 open-source model globally, delivering performance comparable to Claude Sonnet 4.5 while costing only about 3.5% as much.
 

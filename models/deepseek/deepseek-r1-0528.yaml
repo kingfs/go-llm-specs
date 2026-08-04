@@ -2,6 +2,7 @@ schema_version: 2
 id: deepseek/deepseek-r1-0528
 name: 'DeepSeek: R1 0528'
 provider: DeepSeek
+developer: deepseek
 description: |-
   May 28th update to the [original DeepSeek R1](/deepseek/deepseek-r1) Performance on par with [OpenAI o1](/openai/o1), but open-sourced and with fully open reasoning tokens. It's 671B parameters in size, with 37B active in an inference pass.
 
@@ -19,6 +20,13 @@ features:
   - ModalityTextIn
   - ModalityTextOut
 discovered_at: 2026-07-29T10:37:38.410398658Z
+links:
+  model_card: https://huggingface.co/deepseek-ai/DeepSeek-R1-0528
+identifiers:
+  huggingface:
+    - deepseek-ai/DeepSeek-R1-0528
+  openrouter:
+    - deepseek/deepseek-r1-0528
 upstream:
   openrouter:
     canonical_slug: deepseek/deepseek-r1-0528

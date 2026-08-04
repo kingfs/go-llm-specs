@@ -2,6 +2,7 @@ schema_version: 2
 id: ~moonshotai/kimi-latest
 name: MoonshotAI Kimi Latest
 provider: ~Moonshotai
+developer: ~Moonshotai
 description: This model always redirects to the latest model in the MoonshotAI Kimi family.
 description_cn: 该模型始终重定向到MoonshotAI Kimi系列中的最新模型。
 context_length: 256000
@@ -14,6 +15,9 @@ features:
   - ModalityTextIn
   - ModalityTextOut
 discovered_at: 2026-07-29T10:45:25.894000603Z
+identifiers:
+  openrouter:
+    - ~moonshotai/kimi-latest
 upstream:
   openrouter:
     canonical_slug: ~moonshotai/kimi-latest

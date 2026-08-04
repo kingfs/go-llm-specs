@@ -2,6 +2,7 @@ schema_version: 2
 id: rekaai/reka-edge
 name: Reka Edge
 provider: Rekaai
+developer: Rekaai
 description: Reka Edge is an extremely efficient 7B multimodal vision-language model that accepts image/video+text inputs and generates text outputs. This model is optimized specifically to deliver industry-leading performance in image understanding, video analysis, object detection, and agentic tool-use.
 description_cn: Reka Edge 是一款极为高效的 7B 多模态视觉语言模型，支持图像/视频+文本输入并生成文本输出。该模型专为图像理解、视频分析、目标检测和智能体工具调用等任务优化，提供业界领先的性能。
 context_length: 16384
@@ -15,6 +16,13 @@ features:
   - ModalityTextOut
   - ModalityVideoIn
 discovered_at: 2026-07-29T10:43:55.100088429Z
+links:
+  model_card: https://huggingface.co/RekaAI/reka-edge-2603
+identifiers:
+  huggingface:
+    - RekaAI/reka-edge-2603
+  openrouter:
+    - rekaai/reka-edge
 upstream:
   openrouter:
     canonical_slug: rekaai/reka-edge-2603

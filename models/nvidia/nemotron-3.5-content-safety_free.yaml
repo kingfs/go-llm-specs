@@ -2,6 +2,7 @@ schema_version: 2
 id: nvidia/nemotron-3.5-content-safety:free
 name: 'NVIDIA: Nemotron 3.5 Content Safety (free)'
 provider: Nvidia
+developer: nvidia
 description: NVIDIA Nemotron 3.5 Content Safety is a compact 4B-parameter multimodal guardrail model from NVIDIA, fine-tuned from Google Gemma-3-4B. It moderates both inputs to and responses from LLMs and VLMs, accepting...
 description_cn: NVIDIA Nemotron 3.5内容安全是NVIDIA的一个紧凑型4B参数多模态保护模型，经过Google Gemma-3-4B的微调。它调节LLMs和VLMs的输入和输出，接受...
 context_length: 128000
@@ -12,6 +13,13 @@ features:
   - ModalityTextIn
   - ModalityTextOut
 discovered_at: 2026-07-29T10:40:55.969661873Z
+links:
+  model_card: https://huggingface.co/nvidia/Nemotron-3.5-Content-Safety
+identifiers:
+  huggingface:
+    - nvidia/Nemotron-3.5-Content-Safety
+  openrouter:
+    - nvidia/nemotron-3.5-content-safety:free
 upstream:
   openrouter:
     canonical_slug: nvidia/nemotron-3.5-content-safety-20260604

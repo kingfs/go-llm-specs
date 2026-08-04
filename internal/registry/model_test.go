@@ -10,7 +10,16 @@ func TestRichMetadataAndUnknownFieldsRoundTrip(t *testing.T) {
 id: qwen/example
 name: Example
 provider: Qwen
+developer: qwen
 context_length: 1024
+links:
+  model_card: https://huggingface.co/Qwen/Example
+identifiers:
+  huggingface: [Qwen/Example]
+provenance:
+  context_length:
+    source: official_model_card
+    url: https://huggingface.co/Qwen/Example
 future_top_level: keep-me
 upstream:
   huggingface:
@@ -27,6 +36,9 @@ codex:
 	}
 	if !model.IsV2() || model.Upstream.HuggingFace == nil || model.Codex == nil {
 		t.Fatalf("rich fields were not decoded: %#v", model)
+	}
+	if model.Developer != "qwen" || model.Links.ModelCard == "" || len(model.Identifiers.HuggingFace) != 1 {
+		t.Fatalf("identity fields were not decoded: %#v", model)
 	}
 	encoded, err := Encode(model)
 	if err != nil {

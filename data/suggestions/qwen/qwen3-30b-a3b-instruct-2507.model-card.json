@@ -2,7 +2,7 @@
   "schema_version": 1,
   "kind": "model_card",
   "model_id": "qwen/qwen3-30b-a3b-instruct-2507",
-  "status": "pending",
+  "status": "partially_accepted",
   "created_at": "2026-07-29T11:47:50.818063374Z",
   "source": {
     "url": "https://huggingface.co/Qwen/Qwen3-30B-A3B-Instruct-2507/resolve/0d7cf23991f47feeb3a57ecb4c9cee8ea4a17bfe/README.md",

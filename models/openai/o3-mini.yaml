@@ -2,6 +2,7 @@ schema_version: 2
 id: openai/o3-mini
 name: 'OpenAI: o3 Mini'
 provider: OpenAI
+developer: openai
 description: |-
   OpenAI o3-mini is a cost-efficient language model optimized for STEM reasoning tasks, particularly excelling in science, mathematics, and coding.
 
@@ -28,6 +29,9 @@ features:
   - ModalityTextIn
   - ModalityTextOut
 discovered_at: 2026-07-29T10:41:42.678643877Z
+identifiers:
+  openrouter:
+    - openai/o3-mini
 upstream:
   openrouter:
     canonical_slug: openai/o3-mini-2025-01-31

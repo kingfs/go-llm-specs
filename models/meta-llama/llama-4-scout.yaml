@@ -2,6 +2,7 @@ schema_version: 2
 id: meta-llama/llama-4-scout
 name: 'Meta: Llama 4 Scout'
 provider: Meta
+developer: meta
 description: |-
   Llama 4 Scout 17B Instruct (16E) is a mixture-of-experts (MoE) language model developed by Meta, activating 17 billion parameters out of a total of 109B. It supports native multimodal input (text and image) and multilingual output (text and code) across 12 supported languages. Designed for assistant-style interaction and visual reasoning, Scout uses 16 experts per forward pass and features a context length of 10 million tokens, with a training corpus of ~40 trillion tokens.
 
@@ -20,6 +21,13 @@ features:
   - ModalityTextIn
   - ModalityTextOut
 discovered_at: 2026-07-29T10:38:59.384214685Z
+links:
+  model_card: https://huggingface.co/meta-llama/Llama-4-Scout-17B-16E-Instruct
+identifiers:
+  huggingface:
+    - meta-llama/Llama-4-Scout-17B-16E-Instruct
+  openrouter:
+    - meta-llama/llama-4-scout
 upstream:
   openrouter:
     canonical_slug: meta-llama/llama-4-scout-17b-16e-instruct

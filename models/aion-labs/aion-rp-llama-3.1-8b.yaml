@@ -2,6 +2,7 @@ schema_version: 2
 id: aion-labs/aion-rp-llama-3.1-8b
 name: 'AionLabs: Aion-RP 1.0 (8B)'
 provider: Aion-Labs
+developer: Aion-Labs
 description: Aion-RP-Llama-3.1-8B ranks the highest in the character evaluation portion of the RPBench-Auto benchmark, a roleplaying-specific variant of Arena-Hard-Auto, where LLMs evaluate each other’s responses. It is a fine-tuned base model rather than an instruct model, designed to produce more natural and varied writing.
 description_cn: Aion-RP-Llama-3.1-8B 在 RPBench-Auto 基准的角色扮演评估部分中排名第一。RPBench-Auto 是 Arena-Hard-Auto 的角色扮演专用变体，采用大语言模型相互评估回复质量。该模型是一个经过微调的基础模型（非指令微调模型），旨在生成更自然、更多样化的文本。
 context_length: 32768
@@ -11,6 +12,13 @@ features:
   - ModalityTextIn
   - ModalityTextOut
 discovered_at: 2026-07-29T10:36:14.085082542Z
+links:
+  model_card: https://huggingface.co/aion-labs/Aion-RP-Llama-3.1-8B
+identifiers:
+  huggingface:
+    - aion-labs/Aion-RP-Llama-3.1-8B
+  openrouter:
+    - aion-labs/aion-rp-llama-3.1-8b
 upstream:
   openrouter:
     canonical_slug: aion-labs/aion-rp-llama-3.1-8b

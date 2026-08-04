@@ -1,0 +1,39 @@
+name: Model Museum Pages
+
+on:
+  workflow_call:
+  push:
+    branches: [master]
+    paths: [models/**, providers/**, cmd/sitegen/**, internal/registry/**, internal/provider/**]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: master
+      - uses: actions/setup-go@v6
+        with:
+          go-version: '1.26'
+      - run: go run ./cmd/sitegen
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v4
+        with:
+          path: site
+      - name: Deploy
+        id: deployment
+        uses: actions/deploy-pages@v4

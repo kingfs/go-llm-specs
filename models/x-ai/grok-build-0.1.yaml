@@ -2,6 +2,7 @@ schema_version: 2
 id: x-ai/grok-build-0.1
 name: 'xAI: Grok Build 0.1'
 provider: X-Ai
+developer: xai
 description: Grok Build 0.1 is xAI’s fast coding model trained specifically for agentic software engineering workflows. It supports text and image inputs with text output, and is optimized for interactive coding...
 description_cn: Grok Build 0.1 是 xAI 为智能软件工程工作流程专门训练的快速编码模型。它支持文本和图像输入，并以文本输出，优化用于互动编码...
 context_length: 256000
@@ -13,6 +14,12 @@ features:
   - ModalityTextIn
   - ModalityTextOut
 discovered_at: 2026-07-29T10:44:51.127970505Z
+identifiers:
+  openrouter:
+    - x-ai/grok-build-0.1
+provenance:
+  max_output:
+    source: openrouter
 upstream:
   openrouter:
     canonical_slug: x-ai/grok-build-0.1-20260520

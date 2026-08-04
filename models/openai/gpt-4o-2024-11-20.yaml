@@ -2,6 +2,7 @@ schema_version: 2
 id: openai/gpt-4o-2024-11-20
 name: 'OpenAI: GPT-4o (2024-11-20)'
 provider: OpenAI
+developer: openai
 description: |-
   The 2024-11-20 version of GPT-4o offers a leveled-up creative writing ability with more natural, engaging, and tailored writing to improve relevance & readability. It’s also better at working with uploaded files, providing deeper insights & more thorough responses.
 
@@ -21,6 +22,9 @@ features:
   - ModalityTextIn
   - ModalityTextOut
 discovered_at: 2026-07-29T10:41:09.945327798Z
+identifiers:
+  openrouter:
+    - openai/gpt-4o-2024-11-20
 upstream:
   openrouter:
     canonical_slug: openai/gpt-4o-2024-11-20

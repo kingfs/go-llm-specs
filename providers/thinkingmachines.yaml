@@ -1,0 +1,11 @@
+schema_version: 1
+id: thinkingmachines
+name: Thinking Machines Lab
+kind: company
+official:
+  homepage: https://thinkingmachines.ai/
+  model_catalog: https://huggingface.co/thinkingmachines
+organizations:
+  huggingface: [thinkingmachines]
+discovery:
+  huggingface: true

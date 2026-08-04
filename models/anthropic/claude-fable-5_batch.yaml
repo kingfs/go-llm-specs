@@ -2,6 +2,7 @@ schema_version: 2
 id: anthropic/claude-fable-5:batch
 name: 'Anthropic: Claude Fable 5 (batch)'
 provider: Anthropic
+developer: anthropic
 description: Claude Fable 5 is a Mythos-class model from Anthropic, built for autonomous knowledge work and coding. It supports text, image, and file inputs with text output, with reasoning support and...
 description_cn: Claude Fable 5 是 Anthropic 的神话级模型，旨在进行自主知识工作和编码。支持文本、图像和文件输入，输出文本，具备推理支持和...
 context_length: 1000000

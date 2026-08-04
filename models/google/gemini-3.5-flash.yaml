@@ -2,6 +2,7 @@ schema_version: 2
 id: google/gemini-3.5-flash
 name: 'Google: Gemini 3.5 Flash'
 provider: Google
+developer: google
 description: Gemini 3.5 Flash is Google's high-efficiency multimodal model, bringing near-Pro level coding and reasoning at Flash-tier cost and speed. It is highly optimized for coding proficiency and parallel agentic execution...
 description_cn: Gemini 3.5 Flash 是谷歌高效的多模态模型，以闪电级的成本和速度提供接近专业水平的编码和推理。它经过高度优化，旨在提高编码能力和并行执行能力...
 context_length: 1048576
@@ -17,6 +18,9 @@ features:
   - ModalityTextOut
   - ModalityVideoIn
 discovered_at: 2026-07-29T10:38:10.031774851Z
+identifiers:
+  openrouter:
+    - google/gemini-3.5-flash
 upstream:
   openrouter:
     canonical_slug: google/gemini-3.5-flash-20260519

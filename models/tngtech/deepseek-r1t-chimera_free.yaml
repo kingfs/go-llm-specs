@@ -2,6 +2,7 @@ schema_version: 2
 id: tngtech/deepseek-r1t-chimera:free
 name: 'TNG: DeepSeek R1T Chimera (free)'
 provider: Tngtech
+developer: tngtech
 description: |-
   DeepSeek-R1T-Chimera is created by merging DeepSeek-R1 and DeepSeek-V3 (0324), combining the reasoning capabilities of R1 with the token efficiency improvements of V3. It is based on a DeepSeek-MoE Transformer architecture and is optimized for general text generation tasks.
 

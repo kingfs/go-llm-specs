@@ -2,6 +2,7 @@ schema_version: 2
 id: nousresearch/hermes-4-405b
 name: 'Nous: Hermes 4 405B'
 provider: Nous Research
+developer: nousresearch
 description: |-
   Hermes 4 is a large-scale reasoning model built on Meta-Llama-3.1-405B and released by Nous Research. It introduces a hybrid reasoning mode, where the model can choose to deliberate internally with <think>...</think> traces or respond directly, offering flexibility between speed and depth. Users can control the reasoning behaviour with the `reasoning` `enabled` boolean. [Learn more in our docs](https://openrouter.ai/docs/use-cases/reasoning-tokens#enable-reasoning-with-default-config)
 
@@ -18,6 +19,16 @@ features:
   - ModalityTextIn
   - ModalityTextOut
 discovered_at: 2026-07-29T10:40:34.509455805Z
+links:
+  model_card: https://huggingface.co/NousResearch/Hermes-4-405B
+identifiers:
+  huggingface:
+    - NousResearch/Hermes-4-405B
+  openrouter:
+    - nousresearch/hermes-4-405b
+provenance:
+  max_output:
+    source: openrouter
 upstream:
   openrouter:
     canonical_slug: nousresearch/hermes-4-405b

@@ -9,19 +9,21 @@ import (
 	"sort"
 	"strings"
 
+	"github.com/kingfs/go-llm-specs/internal/provider"
 	"github.com/kingfs/go-llm-specs/internal/registry"
 	"github.com/kingfs/go-llm-specs/internal/suggestion"
 )
 
 func main() {
-	var root, modelsDir, fields string
+	var root, modelsDir, providersDir, fields string
 	flag.StringVar(&root, "suggestions-dir", "data/suggestions", "suggestion directory")
 	flag.StringVar(&modelsDir, "models-dir", "models", "model registry directory")
+	flag.StringVar(&providersDir, "providers-dir", "providers", "publisher catalog directory")
 	flag.StringVar(&fields, "fields", "", "comma-separated fields to apply")
 	flag.Parse()
 	args := flag.Args()
 	if len(args) == 0 {
-		fatal("command required: list, show, apply, reject")
+		fatal("command required: list, show, apply, auto-apply, reject")
 	}
 	var err error
 	switch args[0] {
@@ -33,11 +35,115 @@ func main() {
 		err = requireFile(args, func(path string) error { return setStatus(path, "rejected") })
 	case "apply":
 		err = requireFile(args, func(path string) error { return apply(path, modelsDir, fields) })
+	case "auto-apply":
+		err = autoApply(root, modelsDir, providersDir)
 	default:
 		err = fmt.Errorf("unknown command %q", args[0])
 	}
 	if err != nil {
 		fatal(err.Error())
+	}
+}
+
+func autoApply(root, modelsDir, providersDir string) error {
+	models, err := registry.Scan(modelsDir)
+	if err != nil {
+		return err
+	}
+	providers, err := provider.Scan(providersDir)
+	if err != nil {
+		return err
+	}
+	modelByID := make(map[string]*registry.Model, len(models))
+	for i := range models {
+		modelByID[strings.ToLower(models[i].ID)] = &models[i]
+	}
+	providerByID := make(map[string]provider.Provider, len(providers))
+	for _, p := range providers {
+		providerByID[strings.ToLower(p.ID)] = p
+	}
+
+	return filepath.Walk(root, func(path string, info os.FileInfo, walkErr error) error {
+		if os.IsNotExist(walkErr) {
+			return nil
+		}
+		if walkErr != nil || info.IsDir() || !strings.HasSuffix(path, ".json") {
+			return walkErr
+		}
+		doc, err := suggestion.Load(path)
+		if err != nil {
+			return err
+		}
+		if doc.Status != "pending" || doc.Kind != "model_card" {
+			return nil
+		}
+		model := modelByID[strings.ToLower(doc.ModelID)]
+		if model == nil || !officialModelCardSource(doc, *model, providerByID) {
+			return nil
+		}
+		if model.Provenance == nil {
+			model.Provenance = make(map[string]registry.Provenance)
+		}
+		applied := false
+		for _, claim := range doc.Claims {
+			if claim.Confidence != "high" || !safeAutoClaim(*model, claim.Field) {
+				continue
+			}
+			if err := applyClaim(model, claim); err != nil {
+				return err
+			}
+			model.Provenance[claim.Field] = registry.Provenance{Source: "official_model_card", URL: doc.Source.URL}
+			applied = true
+		}
+		if !applied {
+			return nil
+		}
+		if err := registry.Save(model.FilePath, *model); err != nil {
+			return err
+		}
+		doc.Status = "partially_accepted"
+		return suggestion.Save(path, doc)
+	})
+}
+
+func officialModelCardSource(doc suggestion.Document, model registry.Model, providers map[string]provider.Provider) bool {
+	if model.Upstream.HuggingFace == nil || model.Upstream.HuggingFace.ID == "" || doc.Source.Revision == "" {
+		return false
+	}
+	hfID := model.Upstream.HuggingFace.ID
+	if !strings.Contains(doc.Source.URL, "huggingface.co/"+hfID+"/resolve/"+doc.Source.Revision+"/README.md") {
+		return false
+	}
+	parts := strings.SplitN(hfID, "/", 2)
+	if len(parts) != 2 {
+		return false
+	}
+	p, ok := providers[strings.ToLower(model.Developer)]
+	if !ok {
+		return false
+	}
+	for _, org := range p.Organizations.HuggingFace {
+		if strings.EqualFold(org, parts[0]) {
+			return true
+		}
+	}
+	return false
+}
+
+func safeAutoClaim(model registry.Model, field string) bool {
+	switch field {
+	case "description":
+		return strings.TrimSpace(model.Description) == ""
+	case "context_length":
+		return model.ContextLen <= 0
+	case "max_output":
+		return model.MaxOutput <= 0
+	case "features":
+		return len(model.Features) == 0
+	case "reasoning.supported":
+		return model.Reasoning == nil
+	default:
+		return false
 	}
 }
 

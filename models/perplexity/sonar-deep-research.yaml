@@ -2,6 +2,7 @@ schema_version: 2
 id: perplexity/sonar-deep-research
 name: 'Perplexity: Sonar Deep Research'
 provider: Perplexity
+developer: perplexity
 description: "Sonar Deep Research is a research-focused model designed for multi-step retrieval, synthesis, and reasoning across complex topics. It autonomously searches, reads, and evaluates sources, refining its approach as it gathers information. This enables comprehensive report generation across domains like finance, technology, health, and current events.\n\nNotes on Pricing ([Source](https://docs.perplexity.ai/guides/pricing#detailed-pricing-breakdown-for-sonar-deep-research)) \n- Input tokens comprise of Prompt tokens (user prompt) + Citation tokens (these are processed tokens from running searches)\n- Deep Research runs multiple searches to conduct exhaustive research. Searches are priced at $5/1000 searches. A request that does 30 searches will cost $0.15 in this step.\n- Reasoning is a distinct step in Deep Research since it does extensive automated reasoning through all the material it gathers during its research phase. Reasoning tokens here are a bit different than the CoTs in the answer - these are tokens that we use to reason through the research material prior to generating the outputs via the CoTs. Reasoning tokens are priced at $3/1M tokens"
 description_cn: |-
   Sonar Deep Research 是一款专注于研究的模型，专为跨复杂主题的多步骤检索、信息整合与推理而设计。它能自主搜索、阅读并评估信息源，并在收集信息过程中不断优化策略，从而在金融、科技、健康和时事等领域生成全面的研究报告。
@@ -16,6 +17,12 @@ features:
   - ModalityTextIn
   - ModalityTextOut
 discovered_at: 2026-07-29T10:41:54.644059406Z
+identifiers:
+  openrouter:
+    - perplexity/sonar-deep-research
+provenance:
+  max_output:
+    source: openrouter
 upstream:
   openrouter:
     canonical_slug: perplexity/sonar-deep-research

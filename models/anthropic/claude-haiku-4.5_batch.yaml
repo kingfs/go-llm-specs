@@ -2,6 +2,7 @@ schema_version: 2
 id: anthropic/claude-haiku-4.5:batch
 name: 'Anthropic: Claude Haiku 4.5 (batch)'
 provider: Anthropic
+developer: anthropic
 description: Claude Haiku 4.5 is Anthropic’s fastest and most efficient model, delivering near-frontier intelligence at a fraction of the cost and latency of larger Claude models. Matching Claude Sonnet 4’s performance...
 description_cn: Claude Haiku 4.5 是 Anthropic 性能最快、效率最高的模型，能够以较低的成本和延迟提供接近前沿的智能。与 Claude Sonnet 4 的性能相匹配...
 context_length: 200000

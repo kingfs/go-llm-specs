@@ -2,6 +2,7 @@ schema_version: 2
 id: google/gemini-2.5-flash:batch
 name: 'Google: Gemini 2.5 Flash (batch)'
 provider: Google
+developer: google
 description: Gemini 2.5 Flash is Google's state-of-the-art workhorse model, specifically designed for advanced reasoning, coding, mathematics, and scientific tasks. It includes built-in "thinking" capabilities, enabling it to provide responses with greater...
 description_cn: Gemini 2.5 Flash 是谷歌的先进工作模型，专门设计用于高级推理、编码、数学和科学任务。它具有内置的“思考”能力，使其能提供更好的响应...
 context_length: 1048576

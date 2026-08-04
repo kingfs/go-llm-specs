@@ -2,6 +2,7 @@ schema_version: 2
 id: openrouter/pareto-code
 name: Pareto Code Router
 provider: Openrouter
+developer: openrouter
 description: The Pareto Router is a way to have OpenRouter always pick a strong coding model for your needs without committing to a specific one. You express a single `min_coding_score` preference...
 description_cn: Pareto Router 可让 OpenRouter 始终根据您的需求自动选择一个强大的代码模型，而无需指定具体模型。您只需设置一个 `min_coding_score` 偏好……
 context_length: 200000
@@ -10,6 +11,12 @@ features:
   - ModalityTextIn
   - ModalityTextOut
 discovered_at: 2026-07-29T10:41:52.942078579Z
+identifiers:
+  openrouter:
+    - openrouter/pareto-code
+provenance:
+  max_output:
+    source: openrouter
 upstream:
   openrouter:
     canonical_slug: openrouter/pareto-code

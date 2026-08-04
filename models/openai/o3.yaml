@@ -2,6 +2,7 @@ schema_version: 2
 id: openai/o3
 name: 'OpenAI: o3'
 provider: OpenAI
+developer: openai
 description: 'o3 is a well-rounded and powerful model across domains. It sets a new standard for math, science, coding, and visual reasoning tasks. It also excels at technical writing and instruction-following. Use it to think through multi-step problems that involve analysis across text, code, and images. '
 description_cn: o3 是一款在多个领域表现均衡且强大的模型，在数学、科学、编程和视觉推理任务中树立了新标杆。同时，它在技术写作和指令遵循方面也极为出色。适用于需结合文本、代码和图像进行多步骤分析的问题求解。
 context_length: 200000
@@ -15,6 +16,9 @@ features:
   - ModalityTextIn
   - ModalityTextOut
 discovered_at: 2026-07-29T10:41:41.828511876Z
+identifiers:
+  openrouter:
+    - openai/o3
 upstream:
   openrouter:
     canonical_slug: openai/o3-2025-04-16

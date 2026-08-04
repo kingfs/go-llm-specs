@@ -139,7 +139,7 @@ func claimsSchema() map[string]any {
 		"type": "object", "additionalProperties": false,
 		"required": []string{"field", "value", "evidence", "section", "confidence"},
 		"properties": map[string]any{
-			"field": map[string]any{"type": "string", "enum": []string{"description", "context_length", "max_output", "features", "reasoning.supported", "reasoning.parser", "serving.vllm_args", "serving.sglang_args"}},
+			"field": map[string]any{"type": "string", "enum": []string{"description", "context_length", "max_output", "features", "reasoning.supported", "reasoning.parser"}},
 			"value": map[string]any{}, "evidence": map[string]any{"type": "string"}, "section": map[string]any{"type": "string"},
 			"confidence": map[string]any{"type": "string", "enum": []string{"high", "medium", "low"}},
 		},
@@ -231,7 +231,7 @@ func loadCard(ctx context.Context, cfg config, model registry.Model) ([]byte, st
 func extractionPrompt(model registry.Model, card string) string {
 	return fmt.Sprintf(`Extract only explicitly supported facts from this model card for registry model %q.
 Return one JSON object: {"claims":[...]}, with at most 12 claims. Each claim must have:
-- field: one of description, context_length, max_output, features, reasoning.supported, reasoning.parser, serving.vllm_args, serving.sglang_args
+- field: one of description, context_length, max_output, features, reasoning.supported, reasoning.parser
 - value: correctly typed JSON value
 - evidence: an exact quote copied from the card, at most 200 characters
 - section: nearest Markdown heading

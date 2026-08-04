@@ -2,6 +2,7 @@ schema_version: 2
 id: anthropic/claude-sonnet-4.5:batch
 name: 'Anthropic: Claude Sonnet 4.5 (batch)'
 provider: Anthropic
+developer: anthropic
 description: Claude Sonnet 4.5 is Anthropic’s most advanced Sonnet model to date, optimized for real-world agents and coding workflows. It delivers state-of-the-art performance on coding benchmarks such as SWE-bench Verified, with...
 description_cn: Claude Sonnet 4.5 是迄今为止 Anthropic 最先进的 Sonnet 模型，针对现实世界的代理和编码工作流程进行了优化。在编码基准测试如 SWE-bench Verified 上提供了最先进的性能，具有...
 context_length: 1000000

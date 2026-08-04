@@ -2,6 +2,7 @@ schema_version: 2
 id: mistralai/mistral-medium-3.1
 name: 'Mistral: Mistral Medium 3.1'
 provider: Mistral
+developer: mistral
 description: |-
   Mistral Medium 3.1 is an updated version of Mistral Medium 3, which is a high-performance enterprise-grade language model designed to deliver frontier-level capabilities at significantly reduced operational cost. It balances state-of-the-art reasoning and multimodal performance with 8× lower cost compared to traditional large models, making it suitable for scalable deployments across professional and industrial use cases.
 
@@ -19,6 +20,12 @@ features:
   - ModalityTextIn
   - ModalityTextOut
 discovered_at: 2026-07-29T10:39:39.226647646Z
+identifiers:
+  openrouter:
+    - mistralai/mistral-medium-3.1
+provenance:
+  max_output:
+    source: openrouter
 upstream:
   openrouter:
     canonical_slug: mistralai/mistral-medium-3.1

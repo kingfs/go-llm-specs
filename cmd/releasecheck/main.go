@@ -22,6 +22,9 @@ type snapshotModel struct {
 	ID            string
 	Name          string
 	Provider      string
+	Developer     string
+	OfficialURL   string
+	ModelCardURL  string
 	Description   string
 	DescriptionCN string
 	ContextLen    int
@@ -275,6 +278,24 @@ func parseModelComposite(fset *token.FileSet, lit *ast.CompositeLit) (snapshotMo
 				return model, err
 			}
 			model.Provider = v
+		case "DeveloperVal":
+			v, err := parseStringExpr(kv.Value)
+			if err != nil {
+				return model, err
+			}
+			model.Developer = v
+		case "OfficialURLVal":
+			v, err := parseStringExpr(kv.Value)
+			if err != nil {
+				return model, err
+			}
+			model.OfficialURL = v
+		case "ModelCardURLVal":
+			v, err := parseStringExpr(kv.Value)
+			if err != nil {
+				return model, err
+			}
+			model.ModelCardURL = v
 		case "DescVal":
 			v, err := parseStringExpr(kv.Value)
 			if err != nil {
@@ -439,6 +460,15 @@ func diffModel(cur, old snapshotModel) (significant, ignored []string) {
 	if cur.Provider != old.Provider {
 		significant = append(significant, "provider")
 	}
+	if cur.Developer != old.Developer {
+		significant = append(significant, "developer")
+	}
+	if cur.OfficialURL != old.OfficialURL {
+		significant = append(significant, "official_url")
+	}
+	if cur.ModelCardURL != old.ModelCardURL {
+		significant = append(significant, "model_card_url")
+	}
 	if cur.Description != old.Description {
 		significant = append(significant, "description")
 	}
@@ -452,10 +482,10 @@ func diffModel(cur, old snapshotModel) (significant, ignored []string) {
 		significant = append(significant, "aliases")
 	}
 	if cur.ContextLen != old.ContextLen {
-		ignored = append(ignored, "context_length")
+		significant = append(significant, "context_length")
 	}
 	if cur.MaxOutput != old.MaxOutput {
-		ignored = append(ignored, "max_output")
+		significant = append(significant, "max_output")
 	}
 	return significant, ignored
 }

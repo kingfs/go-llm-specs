@@ -2,6 +2,7 @@ schema_version: 2
 id: meta-llama/llama-3.1-8b-instruct
 name: 'Meta: Llama 3.1 8B Instruct'
 provider: Meta
+developer: meta
 description: |-
   Meta's latest class of model (Llama 3.1) launched with a variety of sizes & flavors. This 8B instruct-tuned version is fast and efficient.
 
@@ -23,6 +24,13 @@ features:
   - ModalityTextIn
   - ModalityTextOut
 discovered_at: 2026-07-29T10:38:53.536782858Z
+links:
+  model_card: https://huggingface.co/meta-llama/Llama-3.1-8B-Instruct
+identifiers:
+  huggingface:
+    - meta-llama/Llama-3.1-8B-Instruct
+  openrouter:
+    - meta-llama/llama-3.1-8b-instruct
 upstream:
   openrouter:
     canonical_slug: meta-llama/llama-3.1-8b-instruct

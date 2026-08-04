@@ -1,0 +1,11 @@
+schema_version: 1
+id: nousresearch
+name: Nous Research
+kind: organization
+official:
+  homepage: https://nousresearch.com/
+  model_catalog: https://huggingface.co/NousResearch
+organizations:
+  huggingface: [NousResearch]
+discovery:
+  huggingface: true

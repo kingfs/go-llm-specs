@@ -2,6 +2,7 @@ schema_version: 2
 id: mistralai/devstral-2512:free
 name: 'Mistral: Devstral 2 2512 (free)'
 provider: Mistral
+developer: mistral
 description: |-
   Devstral 2 is a state-of-the-art open-source model by Mistral AI specializing in agentic coding. It is a 123B-parameter dense transformer model supporting a 256K context window.
 

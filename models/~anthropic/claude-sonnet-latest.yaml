@@ -2,6 +2,7 @@ schema_version: 2
 id: ~anthropic/claude-sonnet-latest
 name: Anthropic Claude Sonnet Latest
 provider: ~Anthropic
+developer: ~Anthropic
 description: This model always redirects to the latest model in the Anthropic Claude Sonnet family.
 description_cn: 该模型始终重定向到Anthropic Claude Sonnet系列中的最新模型。
 context_length: 1000000
@@ -14,6 +15,9 @@ features:
   - ModalityTextIn
   - ModalityTextOut
 discovered_at: 2026-07-29T10:45:24.637391884Z
+identifiers:
+  openrouter:
+    - ~anthropic/claude-sonnet-latest
 upstream:
   openrouter:
     canonical_slug: ~anthropic/claude-sonnet-latest
