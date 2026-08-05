@@ -44,6 +44,17 @@ task translator -- -dry-run -id-prefix qwen/
 - Default behavior: translate only files with `description` present and missing `description_cn`.
 - Selection can be narrowed by `-provider`, `-id-prefix`, and `-limit`.
 - `-dry-run` shows which files would be translated without calling the LLM API.
+- Limited batches select the newest discovered untranslated models first.
+
+The scheduled GitHub Action no longer uses the retired GitHub Models inference endpoint. Configure any OpenAI-compatible provider with an encrypted repository secret and optional repository variables:
+
+```bash
+gh secret set LLM_API_KEY
+gh variable set LLM_BASE_URL --body https://api.openai.com/v1
+gh variable set LLM_MODEL --body gpt-4o-mini
+```
+
+When `LLM_API_KEY` is absent, AI model-card extraction and translation are skipped with an explicit workflow warning. The remaining deterministic sync pipeline continues to run.
 
 ## Generated Files
 

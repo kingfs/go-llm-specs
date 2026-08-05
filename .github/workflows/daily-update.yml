@@ -15,6 +15,10 @@ jobs:
   sync-upstream:
     if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
     runs-on: ubuntu-latest
+    env:
+      LLM_API_KEY: ${{ secrets.LLM_API_KEY }}
+      LLM_BASE_URL: ${{ vars.LLM_BASE_URL || 'https://api.openai.com/v1' }}
+      LLM_MODEL: ${{ vars.LLM_MODEL || 'gpt-4o-mini' }}
     concurrency:
       group: daily-model-sync
       cancel-in-progress: false
@@ -55,11 +59,9 @@ jobs:
         run: task enrich -- -source huggingface -new-only -failure-report data/enrichment-failures.json
 
       - name: Extract a bounded batch of new model-card suggestions
+        if: env.LLM_API_KEY != ''
         continue-on-error: true
         env:
-          LLM_API_KEY: ${{ secrets.GITHUB_TOKEN }}
-          LLM_BASE_URL: https://models.github.ai/inference
-          LLM_MODEL: openai/gpt-4o-mini
           LLM_WIRE_API: chat
           CARD_EXTRACT_LIMIT: '5'
           CARD_EXTRACT_MAX_CHARS: '8000'
@@ -73,12 +75,13 @@ jobs:
         run: task catalog-promote
 
       - name: Translate missing Chinese descriptions
+        if: env.LLM_API_KEY != ''
         continue-on-error: true
-        env:
-          LLM_API_KEY: ${{ secrets.GITHUB_TOKEN }}
-          LLM_BASE_URL: https://models.github.ai/inference
-          LLM_MODEL: openai/gpt-4o-mini
         run: task translator -- -limit 10
+
+      - name: Report disabled AI enrichment
+        if: env.LLM_API_KEY == ''
+        run: echo "::warning::AI enrichment and translation are disabled; configure the LLM_API_KEY secret and optional LLM_BASE_URL / LLM_MODEL variables."
 
       - name: Regenerate compiled registry after translation
         run: task generator-offline
