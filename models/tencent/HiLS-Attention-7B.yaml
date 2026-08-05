@@ -3,7 +3,9 @@ id: tencent/hils-attention-7b
 name: HiLS-Attention-7B
 provider: Tencent Hunyuan
 developer: tencent
-lifecycle: candidate
+lifecycle: active
+description: HiLS-Attention-7B is a continued-pretrained model using chunk-wise sparse attention for efficient long-context modeling, built on the OLMo3-7B backbone.
+description_cn: HiLS-Attention-7B 是一种基于 OLMo3-7B 骨干模型构建的继续预训练模型，使用分块稀疏注意力机制以实现高效的长上下文建模。
 context_length: 131072
 features:
   - ModalityTextIn
@@ -17,6 +19,9 @@ provenance:
   context_length:
     source: official_huggingface_config
     url: https://huggingface.co/tencent/HiLS-Attention-7B
+  description:
+    source: official_model_card
+    url: https://huggingface.co/tencent/HiLS-Attention-7B/resolve/837293e2aa5ae551439ebbd05783bddb92401853/README.md
   features:
     source: official_huggingface_pipeline
     url: https://huggingface.co/tencent/HiLS-Attention-7B

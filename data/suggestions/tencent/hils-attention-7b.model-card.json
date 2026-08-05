@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "tencent/hils-attention-7b",
+  "status": "partially_accepted",
+  "created_at": "2026-08-05T07:35:58.643345222Z",
+  "source": {
+    "url": "https://huggingface.co/tencent/HiLS-Attention-7B/resolve/837293e2aa5ae551439ebbd05783bddb92401853/README.md",
+    "revision": "837293e2aa5ae551439ebbd05783bddb92401853",
+    "sha256": "972b7f2a3ff4154cc686c03a8ea350ccfc4da2e988166eafd992c5df6adb2e68"
+  },
+  "generator": {
+    "model": "qwen/qwen3.6-27b",
+    "wire_api": "chat"
+  },
+  "claims": [
+    {
+      "field": "description",
+      "value": "HiLS-Attention-7B is a continued-pretrained model using chunk-wise sparse attention for efficient long-context modeling, built on the OLMo3-7B backbone.",
+      "evidence": "HiLS-Attention is a chunk-wise sparse attention mechanism... enabling native sparse training for efficient long-context modeling. This repository hosts the 7B checkpoint continued-trained on top of an OLMo3-style backbone.",
+      "section": "Model Description",
+      "confidence": "high"
+    },
+    {
+      "field": "context_length",
+      "value": 262144,
+      "evidence": "PPL | Perplexity across 64 … 256K sequence lengths",
+      "section": "Long-context",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "ModalityTextIn",
+        "ModalityTextOut"
+      ],
+      "evidence": "- Language: #Language: en - Short-context (OpenCompass, 11 benchmarks) ... MMLU, GPQA ... Few-shot PPL ... Math generation (CoT) ... Code generation",
+      "section": "Frontmatter",
+      "confidence": "high"
+    }
+  ]
+}

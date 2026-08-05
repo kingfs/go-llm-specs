@@ -1,0 +1,64 @@
+schema_version: 2
+id: google/gemma-4-26b-a4b-it-qat-q4_0-unquantized
+name: gemma-4-26B-A4B-it-qat-q4_0-unquantized
+provider: Google
+developer: google
+lifecycle: active
+description: Gemma 4 26B A4B is an instruction-tuned, Quantization-Aware Training (QAT) optimized model. It is a Mixture-of-Experts (MoE) architecture with 25.2B total parameters and 3.8B active parameters, supporting text and image inputs.
+description_cn: Gemma 4 26B A4B 是一款经过指令微调并针对量化感知训练 (QAT) 进行优化的模型。它采用混合专家 (MoE) 架构，拥有 252 亿总参数和 38 亿活跃参数，支持文本和图像输入。
+context_length: 262144
+features:
+  - ModalityImageIn
+  - ModalityTextIn
+  - ModalityTextOut
+links:
+  model_card: https://huggingface.co/google/gemma-4-26B-A4B-it-qat-q4_0-unquantized
+identifiers:
+  huggingface:
+    - google/gemma-4-26B-A4B-it-qat-q4_0-unquantized
+provenance:
+  context_length:
+    source: official_model_card
+    url: https://huggingface.co/google/gemma-4-26B-A4B-it-qat-q4_0-unquantized/resolve/f1e06dc520982d9b9edd76859fdb7ab209449949/README.md
+  description:
+    source: official_model_card
+    url: https://huggingface.co/google/gemma-4-26B-A4B-it-qat-q4_0-unquantized/resolve/f1e06dc520982d9b9edd76859fdb7ab209449949/README.md
+  features:
+    source: official_huggingface_pipeline
+    url: https://huggingface.co/google/gemma-4-26B-A4B-it-qat-q4_0-unquantized
+  id:
+    source: official_huggingface
+    url: https://huggingface.co/google/gemma-4-26B-A4B-it-qat-q4_0-unquantized
+  name:
+    source: official_huggingface
+    url: https://huggingface.co/google/gemma-4-26B-A4B-it-qat-q4_0-unquantized
+  reasoning.supported:
+    source: official_model_card
+    url: https://huggingface.co/google/gemma-4-26B-A4B-it-qat-q4_0-unquantized/resolve/f1e06dc520982d9b9edd76859fdb7ab209449949/README.md
+upstream:
+  huggingface:
+    id: google/gemma-4-26B-A4B-it-qat-q4_0-unquantized
+    revision: f1e06dc520982d9b9edd76859fdb7ab209449949
+    pipeline_tag: image-text-to-text
+    model_type: gemma4
+    architectures:
+      - Gemma4ForConditionalGeneration
+    license: apache-2.0
+    tags:
+      - arxiv:2607.02770
+      - base_model:finetune:google/gemma-4-26B-A4B-it
+      - base_model:google/gemma-4-26B-A4B-it
+      - conversational
+      - endpoints_compatible
+      - gemma4
+      - image-text-to-text
+      - license:apache-2.0
+      - region:us
+      - safetensors
+      - transformers
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-08-05T07:35:54.607915319Z
+reasoning:
+  supported: true

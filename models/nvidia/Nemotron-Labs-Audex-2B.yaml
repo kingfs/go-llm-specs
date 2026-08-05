@@ -1,0 +1,56 @@
+schema_version: 2
+id: nvidia/nemotron-labs-audex-2b
+name: Nemotron-Labs-Audex-2B
+provider: NVIDIA
+developer: nvidia
+lifecycle: candidate
+context_length: 0
+features:
+  - ModalityTextIn
+  - ModalityTextOut
+links:
+  model_card: https://huggingface.co/nvidia/Nemotron-Labs-Audex-2B
+identifiers:
+  huggingface:
+    - nvidia/Nemotron-Labs-Audex-2B
+provenance:
+  features:
+    source: official_huggingface_pipeline
+    url: https://huggingface.co/nvidia/Nemotron-Labs-Audex-2B
+  id:
+    source: official_huggingface
+    url: https://huggingface.co/nvidia/Nemotron-Labs-Audex-2B
+  name:
+    source: official_huggingface
+    url: https://huggingface.co/nvidia/Nemotron-Labs-Audex-2B
+upstream:
+  huggingface:
+    id: nvidia/Nemotron-Labs-Audex-2B
+    revision: d43e996bab673833ffb56dcfcc5b658f229f7343
+    pipeline_tag: text-generation
+    model_type: nemotron_labs_audex
+    license: other
+    tags:
+      - SFT
+      - arxiv:2607.05196
+      - audio-language-modeling
+      - audio-understanding
+      - en
+      - endpoints_compatible
+      - general-purpose
+      - license:other
+      - nemotron-labs-audex
+      - nemotron_labs_audex
+      - nvidia
+      - reasoning
+      - region:us
+      - safetensors
+      - speech-recognition
+      - speech-translation
+      - text-generation
+      - text-to-audio
+      - text-to-speech
+      - transformers
+    structured_files:
+      - config.json
+    fetched_at: 2026-08-05T07:35:57.038338583Z

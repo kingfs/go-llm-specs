@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "google/gemma-4-31b-it-qat-q4_0-unquantized-assistant",
+  "status": "partially_accepted",
+  "created_at": "2026-08-05T07:36:57.409079498Z",
+  "source": {
+    "url": "https://huggingface.co/google/gemma-4-31B-it-qat-q4_0-unquantized-assistant/resolve/96d4c8ca3cb38c107a8478587878124895d1e844/README.md",
+    "revision": "96d4c8ca3cb38c107a8478587878124895d1e844",
+    "sha256": "2656ac3e81a650279d9baa0df0f09c5b2b83a643781686def36195734a536bc2"
+  },
+  "generator": {
+    "model": "qwen/qwen3.6-27b",
+    "wire_api": "chat"
+  },
+  "claims": [
+    {
+      "field": "description",
+      "value": "Gemma 4 31B is a dense, multimodal model supporting text and image input with text output. It features a 256K token context window, enhanced coding capabilities, native system prompt support, and is designed for reasoning tasks.",
+      "evidence": "Gemma 4 models are multimodal, handling text and image input... Gemma 4 features a context window of up to 256K tokens... Native System Prompt Support... Reasoning... Enhanced Coding",
+      "section": "Gemma 4 introduces key **capability and architectural advancements**",
+      "confidence": "high"
+    },
+    {
+      "field": "context_length",
+      "value": 262144,
+      "evidence": "**Context Length** | ... | 256K tokens",
+      "section": "### Dense Models",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "ModalityTextIn",
+        "ModalityTextOut",
+        "ModalityImageIn"
+      ],
+      "evidence": "**Supported Modalities** | ... | Text, Image",
+      "section": "### Dense Models",
+      "confidence": "high"
+    }
+  ]
+}

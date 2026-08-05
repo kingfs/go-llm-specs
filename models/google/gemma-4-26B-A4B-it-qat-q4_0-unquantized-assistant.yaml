@@ -1,0 +1,65 @@
+schema_version: 2
+id: google/gemma-4-26b-a4b-it-qat-q4_0-unquantized-assistant
+name: gemma-4-26B-A4B-it-qat-q4_0-unquantized-assistant
+provider: Google
+developer: google
+lifecycle: active
+description: Gemma 4 26B A4B is a Mixture-of-Experts model with 25.2B total parameters and 3.8B active parameters. It supports text and image inputs, features a 256K context window, and is designed for reasoning and coding tasks. This specific checkpoint is an unquantized QAT extract.
+description_cn: Gemma 4 26B A4B 是一款混合专家模型，拥有 252 亿总参数和 38 亿活跃参数。它支持文本和图像输入，具备 256K 上下文窗口，专为推理和编码任务设计。此特定检查点为未经量化的 QAT 提取版本。
+context_length: 262144
+features:
+  - ModalityImageIn
+  - ModalityTextIn
+  - ModalityTextOut
+links:
+  model_card: https://huggingface.co/google/gemma-4-26B-A4B-it-qat-q4_0-unquantized-assistant
+identifiers:
+  huggingface:
+    - google/gemma-4-26B-A4B-it-qat-q4_0-unquantized-assistant
+provenance:
+  context_length:
+    source: official_model_card
+    url: https://huggingface.co/google/gemma-4-26B-A4B-it-qat-q4_0-unquantized-assistant/resolve/9537141506fe8875b3ed45b264af13580cb29166/README.md
+  description:
+    source: official_model_card
+    url: https://huggingface.co/google/gemma-4-26B-A4B-it-qat-q4_0-unquantized-assistant/resolve/9537141506fe8875b3ed45b264af13580cb29166/README.md
+  features:
+    source: official_huggingface_pipeline
+    url: https://huggingface.co/google/gemma-4-26B-A4B-it-qat-q4_0-unquantized-assistant
+  id:
+    source: official_huggingface
+    url: https://huggingface.co/google/gemma-4-26B-A4B-it-qat-q4_0-unquantized-assistant
+  name:
+    source: official_huggingface
+    url: https://huggingface.co/google/gemma-4-26B-A4B-it-qat-q4_0-unquantized-assistant
+  reasoning.supported:
+    source: official_model_card
+    url: https://huggingface.co/google/gemma-4-26B-A4B-it-qat-q4_0-unquantized-assistant/resolve/9537141506fe8875b3ed45b264af13580cb29166/README.md
+upstream:
+  huggingface:
+    id: google/gemma-4-26B-A4B-it-qat-q4_0-unquantized-assistant
+    revision: 9537141506fe8875b3ed45b264af13580cb29166
+    pipeline_tag: image-text-to-text
+    model_type: gemma4_assistant
+    architectures:
+      - Gemma4AssistantForCausalLM
+    license: apache-2.0
+    tags:
+      - arxiv:2607.02770
+      - base_model:finetune:google/gemma-4-26B-A4B-it-assistant
+      - base_model:google/gemma-4-26B-A4B-it-assistant
+      - conversational
+      - endpoints_compatible
+      - gemma4_assistant
+      - image-text-to-text
+      - license:apache-2.0
+      - region:us
+      - safetensors
+      - text-generation
+      - transformers
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-08-05T07:35:55.160394982Z
+reasoning:
+  supported: true

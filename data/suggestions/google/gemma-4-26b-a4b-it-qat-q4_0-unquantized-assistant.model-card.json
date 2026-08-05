@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "google/gemma-4-26b-a4b-it-qat-q4_0-unquantized-assistant",
+  "status": "partially_accepted",
+  "created_at": "2026-08-05T07:38:09.315736934Z",
+  "source": {
+    "url": "https://huggingface.co/google/gemma-4-26B-A4B-it-qat-q4_0-unquantized-assistant/resolve/9537141506fe8875b3ed45b264af13580cb29166/README.md",
+    "revision": "9537141506fe8875b3ed45b264af13580cb29166",
+    "sha256": "c5c2b1732f908bfd5b491fbd8570e90427210def92fa4d180402a69fb1c99f5e"
+  },
+  "generator": {
+    "model": "qwen/qwen3.6-27b",
+    "wire_api": "chat"
+  },
+  "claims": [
+    {
+      "field": "description",
+      "value": "Gemma 4 26B A4B is a Mixture-of-Experts model with 25.2B total parameters and 3.8B active parameters. It supports text and image inputs, features a 256K context window, and is designed for reasoning and coding tasks. This specific checkpoint is an unquantized QAT extract.",
+      "evidence": "\"Total Parameters | 25.2B\" \"Active Parameters | 3.8B\" \"Supported Modalities | Text, Image\" \"Gemma 4 models are multimodal, handling text and image input\"",
+      "section": "Models Overview",
+      "confidence": "high"
+    },
+    {
+      "field": "context_length",
+      "value": 262144,
+      "evidence": "\"Context Length | 256K tokens\" \"The medium models support 256K.\"",
+      "section": "Models Overview",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "ModalityTextIn",
+        "ModalityTextOut",
+        "ModalityImageIn"
+      ],
+      "evidence": "\"Supported Modalities | Text, Image\" \"generating text output\"",
+      "section": "Models Overview",
+      "confidence": "high"
+    },
+    {
+      "field": "reasoning.supported",
+      "value": true,
+      "evidence": "\"Reasoning – All models in the family are designed as highly capable reasoners\"",
+      "section": "Models Overview",
+      "confidence": "high"
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+schema_version: 2
+id: google/gemma-4-31b-it-qat-q4_0-unquantized-assistant
+name: gemma-4-31B-it-qat-q4_0-unquantized-assistant
+provider: Google
+developer: google
+lifecycle: active
+description: Gemma 4 31B is a dense, multimodal model supporting text and image input with text output. It features a 256K token context window, enhanced coding capabilities, native system prompt support, and is designed for reasoning tasks.
+description_cn: Gemma 4 31B 是一款支持文本和图像输入及文本输出的密集多模态模型。它具备 256K token 上下文窗口、增强的编码能力、原生系统提示支持，并专为推理任务设计。
+context_length: 262144
+features:
+  - ModalityImageIn
+  - ModalityTextIn
+  - ModalityTextOut
+links:
+  model_card: https://huggingface.co/google/gemma-4-31B-it-qat-q4_0-unquantized-assistant
+identifiers:
+  huggingface:
+    - google/gemma-4-31B-it-qat-q4_0-unquantized-assistant
+provenance:
+  context_length:
+    source: official_model_card
+    url: https://huggingface.co/google/gemma-4-31B-it-qat-q4_0-unquantized-assistant/resolve/96d4c8ca3cb38c107a8478587878124895d1e844/README.md
+  description:
+    source: official_model_card
+    url: https://huggingface.co/google/gemma-4-31B-it-qat-q4_0-unquantized-assistant/resolve/96d4c8ca3cb38c107a8478587878124895d1e844/README.md
+  features:
+    source: official_huggingface_pipeline
+    url: https://huggingface.co/google/gemma-4-31B-it-qat-q4_0-unquantized-assistant
+  id:
+    source: official_huggingface
+    url: https://huggingface.co/google/gemma-4-31B-it-qat-q4_0-unquantized-assistant
+  name:
+    source: official_huggingface
+    url: https://huggingface.co/google/gemma-4-31B-it-qat-q4_0-unquantized-assistant
+upstream:
+  huggingface:
+    id: google/gemma-4-31B-it-qat-q4_0-unquantized-assistant
+    revision: 96d4c8ca3cb38c107a8478587878124895d1e844
+    pipeline_tag: image-text-to-text
+    model_type: gemma4_assistant
+    architectures:
+      - Gemma4AssistantForCausalLM
+    license: apache-2.0
+    tags:
+      - arxiv:2607.02770
+      - base_model:finetune:google/gemma-4-31B-it-assistant
+      - base_model:google/gemma-4-31B-it-assistant
+      - conversational
+      - endpoints_compatible
+      - gemma4_assistant
+      - image-text-to-text
+      - license:apache-2.0
+      - region:us
+      - safetensors
+      - text-generation
+      - transformers
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-08-05T07:35:56.433029408Z
