@@ -8,6 +8,7 @@
   <meta property="og:description" content="Explore model context windows, modalities and capabilities.">
   <title>LLM Model Museum · go-llm-specs</title>
   <link rel="stylesheet" href="assets/app.css">
+  <link rel="stylesheet" href="assets/catalog.css">
   <script src="assets/app.js" defer></script>
 </head>
 <body>
@@ -22,11 +23,7 @@
   </header>
 
   <main>
-    <section class="hero">
-      <p class="eyebrow">GO-NATIVE MODEL METADATA REGISTRY</p>
-      <h1 data-i18n="heroTitle">在一个目录里了解主流 LLM</h1>
-      <p class="hero-copy" data-i18n="heroCopy">从项目维护的权威 YAML 数据自动生成，快速比较上下文窗口、最大输出、多模态和工具调用等关键能力。</p>
-      <div class="install"><code>go get github.com/kingfs/go-llm-specs</code><button id="copy-install" type="button" data-i18n="copy">复制</button></div>
+    <section class="summary" aria-label="Catalog summary">
       <div id="stats" class="stats" aria-live="polite"></div>
     </section>
 

@@ -64,7 +64,7 @@ func TestGenerateCreatesDeployableSite(t *testing.T) {
 	if err := generate(filepath.Join(repoRoot, "providers"), filepath.Join(repoRoot, "models"), filepath.Join(repoRoot, "docs"), filepath.Join(repoRoot, "data", "models.json"), output); err != nil {
 		t.Fatal(err)
 	}
-	for _, path := range []string{"index.html", "catalog.json", "assets/app.css", "assets/app.js", "docs/about/index.html", "docs/about-en/index.html", "404.html"} {
+	for _, path := range []string{"index.html", "catalog.json", "assets/app.css", "assets/catalog.css", "assets/app.js", "docs/about/index.html", "docs/about-en/index.html", "404.html"} {
 		if _, err := os.Stat(filepath.Join(output, path)); err != nil {
 			t.Errorf("missing generated file %s: %v", path, err)
 		}
@@ -79,5 +79,12 @@ func TestGenerateCreatesDeployableSite(t *testing.T) {
 	}
 	if catalog.Stats.Models == 0 || catalog.Stats.Providers == 0 {
 		t.Fatalf("empty catalog stats: %+v", catalog.Stats)
+	}
+	index, err := os.ReadFile(filepath.Join(output, "index.html"))
+	if err != nil {
+		t.Fatal(err)
+	}
+	if !strings.Contains(string(index), `class="summary"`) || strings.Contains(string(index), `class="hero"`) {
+		t.Fatalf("index does not use the compact catalog summary")
 	}
 }

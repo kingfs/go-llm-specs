@@ -1,0 +1,35 @@
+.summary {
+  max-width: 1264px;
+  margin: 22px auto 42px;
+}
+
+.summary .stats {
+  margin-top: 0;
+  grid-template-columns: repeat(5, minmax(120px, 1fr));
+}
+
+.summary .stat {
+  background: #fff;
+  border: 1px solid var(--line);
+  box-shadow: 0 1px 0 rgba(0, 0, 0, .02);
+}
+
+.model-stream {
+  align-items: stretch;
+}
+
+@media (max-width: 980px) {
+  .summary {
+    margin: 18px 22px 34px;
+  }
+
+  .summary .stats {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .summary .stats {
+    grid-template-columns: 1fr 1fr;
+  }
+}
