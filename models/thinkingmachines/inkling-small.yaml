@@ -4,6 +4,7 @@ name: 'Thinking Machines: Inkling Small'
 provider: Thinkingmachines
 developer: thinkingmachines
 description: Inkling Small is an open-weight multimodal mixture-of-experts model from Thinking Machines Lab, with 12B active parameters out of 276B total. It is positioned as the smaller, more efficient member of...
+description_cn: Inkling Small 是 Thinking Machines Lab 推出的开放权重多模态混合专家模型，总参数量为 2760 亿，每次推理激活 120 亿参数。它定位为 Inkling 系列中规模更小、效率更高的成员。
 context_length: 524288
 features:
   - CapChat

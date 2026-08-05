@@ -64,7 +64,7 @@ func TestGenerateCreatesDeployableSite(t *testing.T) {
 	if err := generate(filepath.Join(repoRoot, "providers"), filepath.Join(repoRoot, "models"), filepath.Join(repoRoot, "docs"), filepath.Join(repoRoot, "data", "models.json"), output); err != nil {
 		t.Fatal(err)
 	}
-	for _, path := range []string{"index.html", "catalog.json", "assets/app.css", "assets/catalog.css", "assets/app.js", "docs/about/index.html", "docs/about-en/index.html", "404.html"} {
+	for _, path := range []string{"index.html", "catalog.json", "assets/app.css", "assets/catalog.css", "assets/app.js", "docs/about/index.html", "docs/about-en/index.html", "docs/codex_models/index.html", "404.html"} {
 		if _, err := os.Stat(filepath.Join(output, path)); err != nil {
 			t.Errorf("missing generated file %s: %v", path, err)
 		}
@@ -86,5 +86,8 @@ func TestGenerateCreatesDeployableSite(t *testing.T) {
 	}
 	if !strings.Contains(string(index), `class="summary"`) || strings.Contains(string(index), `class="hero"`) {
 		t.Fatalf("index does not use the compact catalog summary")
+	}
+	if !strings.Contains(string(index), `href="docs/codex_models/"`) {
+		t.Fatalf("index does not link to the Codex models.json guide")
 	}
 }

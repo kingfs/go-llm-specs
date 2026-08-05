@@ -4,6 +4,7 @@ name: 'DeepSeek: DeepSeek V4 Flash 0731'
 provider: DeepSeek
 developer: deepseek
 description: DeepSeek V4 Flash 0731 is a sparse mixture-of-experts model from DeepSeek, with 13B active parameters out of 284B total. This re-post-trained revision is suited for coding, reasoning, and agent workflows.
+description_cn: DeepSeek V4 Flash 0731 是 DeepSeek 推出的稀疏混合专家模型，总参数量为 2840 亿，每次推理激活 130 亿参数。该版本经过新一轮后训练，适用于编程、推理和智能体工作流。
 context_length: 1048576
 max_output: 65536
 features:

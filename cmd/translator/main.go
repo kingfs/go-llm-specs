@@ -201,6 +201,19 @@ func collectPendingTranslations(registry []*ModelRegistry, cfg translatorConfig)
 		}
 		pending = append(pending, m)
 	}
+	sort.SliceStable(pending, func(i, j int) bool {
+		left, right := pending[i].DiscoveredAt, pending[j].DiscoveredAt
+		if left != nil && right != nil && !left.Equal(*right) {
+			return left.After(*right)
+		}
+		if left != nil && right == nil {
+			return true
+		}
+		if left == nil && right != nil {
+			return false
+		}
+		return pending[i].ID < pending[j].ID
+	})
 
 	if cfg.Limit > 0 && len(pending) > cfg.Limit {
 		pending = pending[:cfg.Limit]

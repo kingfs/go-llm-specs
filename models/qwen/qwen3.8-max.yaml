@@ -4,6 +4,7 @@ name: 'Qwen: Qwen3.8 Max'
 provider: Qwen
 developer: qwen
 description: Qwen3.8 Max is the flagship model in Alibaba's Qwen3.8 series, the general-availability successor to the Qwen3.8 Max Preview. It is a multimodal reasoning model intended for complex reasoning, visual understanding,...
+description_cn: Qwen3.8 Max 是阿里巴巴 Qwen3.8 系列的旗舰模型，也是 Qwen3.8 Max Preview 的正式发布版本。它是一款多模态推理模型，面向复杂推理、视觉理解等任务。
 context_length: 1000000
 max_output: 131072
 features:

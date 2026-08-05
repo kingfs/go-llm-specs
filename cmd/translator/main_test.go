@@ -1,6 +1,9 @@
 package main
 
-import "testing"
+import (
+	"testing"
+	"time"
+)
 
 func TestCollectPendingTranslationsAppliesFilters(t *testing.T) {
 	registry := []*ModelRegistry{
@@ -26,9 +29,11 @@ func TestCollectPendingTranslationsAppliesFilters(t *testing.T) {
 }
 
 func TestCollectPendingTranslationsHonorsLimit(t *testing.T) {
+	old := time.Date(2026, 8, 1, 0, 0, 0, 0, time.UTC)
+	newest := old.Add(48 * time.Hour)
 	registry := []*ModelRegistry{
-		{ID: "a", Description: "A"},
-		{ID: "b", Description: "B"},
+		{ID: "a", Description: "A", DiscoveredAt: &old},
+		{ID: "b", Description: "B", DiscoveredAt: &newest},
 		{ID: "c", Description: "C"},
 	}
 
@@ -40,5 +45,8 @@ func TestCollectPendingTranslationsHonorsLimit(t *testing.T) {
 	pending := collectPendingTranslations(registry, cfg)
 	if len(pending) != 2 {
 		t.Fatalf("expected limit to cap pending set at 2, got %d", len(pending))
+	}
+	if pending[0].ID != "b" || pending[1].ID != "a" {
+		t.Fatalf("expected newest models first, got %s then %s", pending[0].ID, pending[1].ID)
 	}
 }
