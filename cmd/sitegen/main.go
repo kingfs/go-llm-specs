@@ -43,6 +43,7 @@ type siteStats struct {
 type siteProvider struct {
 	ID            string `json:"id"`
 	Name          string `json:"name"`
+	Authority     int    `json:"authority"`
 	Homepage      string `json:"homepage,omitempty"`
 	Documentation string `json:"documentation,omitempty"`
 	ModelCatalog  string `json:"model_catalog,omitempty"`
@@ -60,6 +61,8 @@ type siteModel struct {
 	DescriptionCN string            `json:"description_cn,omitempty"`
 	ContextLength int               `json:"context_length"`
 	MaxOutput     int               `json:"max_output,omitempty"`
+	ReleasedAt    int64             `json:"released_at,omitempty"`
+	Authority     int               `json:"authority"`
 	Tags          []string          `json:"tags"`
 	Aliases       []string          `json:"aliases,omitempty"`
 	Links         map[string]string `json:"links,omitempty"`
@@ -77,14 +80,15 @@ func main() {
 	providersDir := flag.String("providers-dir", "providers", "publisher catalog directory")
 	modelsDir := flag.String("models-dir", "models", "model registry directory")
 	docsDir := flag.String("docs-dir", "docs", "Markdown documentation directory")
+	upstreamCache := flag.String("upstream-cache", "data/models.json", "cached upstream catalog used for release timestamps")
 	outputDir := flag.String("output-dir", "site", "generated static site directory")
 	flag.Parse()
-	if err := generate(*providersDir, *modelsDir, *docsDir, *outputDir); err != nil {
+	if err := generate(*providersDir, *modelsDir, *docsDir, *upstreamCache, *outputDir); err != nil {
 		log.Fatal(err)
 	}
 }
 
-func generate(providersDir, modelsDir, docsDir, outputDir string) error {
+func generate(providersDir, modelsDir, docsDir, upstreamCache, outputDir string) error {
 	providers, err := provider.Scan(providersDir)
 	if err != nil {
 		return err
@@ -93,7 +97,11 @@ func generate(providersDir, modelsDir, docsDir, outputDir string) error {
 	if err != nil {
 		return err
 	}
-	catalog := buildCatalog(providers, models)
+	releaseDates, err := loadReleaseDates(upstreamCache)
+	if err != nil {
+		return err
+	}
+	catalog := buildCatalog(providers, models, releaseDates)
 	if err := os.MkdirAll(outputDir, 0o755); err != nil {
 		return err
 	}
@@ -120,10 +128,10 @@ func generate(providersDir, modelsDir, docsDir, outputDir string) error {
 	return nil
 }
 
-func buildCatalog(providers []provider.Provider, models []registry.Model) siteCatalog {
+func buildCatalog(providers []provider.Provider, models []registry.Model, releaseDates map[string]int64) siteCatalog {
 	providerByKey := make(map[string]siteProvider)
 	for _, p := range providers {
-		sp := siteProvider{ID: p.ID, Name: p.Name, Homepage: p.Official.Homepage, Documentation: p.Official.Documentation, ModelCatalog: p.Official.ModelCatalog}
+		sp := siteProvider{ID: p.ID, Name: cleanProviderName(p.Name), Authority: authorityRank(p.ID), Homepage: p.Official.Homepage, Documentation: p.Official.Documentation, ModelCatalog: p.Official.ModelCatalog}
 		providerByKey[normalizeKey(p.ID)] = sp
 		providerByKey[normalizeKey(p.Name)] = sp
 		for _, alias := range p.Aliases {
@@ -134,9 +142,10 @@ func buildCatalog(providers []provider.Provider, models []registry.Model) siteCa
 	result := siteCatalog{SchemaVersion: catalogSchemaVersion}
 	seenProviders := make(map[string]siteProvider)
 	for _, m := range models {
-		sp, ok := providerByKey[normalizeKey(m.Provider)]
+		cleanName := cleanProviderName(m.Provider)
+		sp, ok := providerByKey[normalizeKey(cleanName)]
 		if !ok {
-			sp = siteProvider{ID: slugify(m.Provider), Name: m.Provider}
+			sp = siteProvider{ID: slugify(cleanName), Name: cleanName, Authority: authorityRank(cleanName)}
 		}
 		seenProviders[sp.ID] = sp
 		tags := modelTags(m)
@@ -144,7 +153,8 @@ func buildCatalog(providers []provider.Provider, models []registry.Model) siteCa
 			ID: m.ID, Name: displayName(m.Name, sp.Name), NameCN: m.NameCN,
 			Provider: sp.Name, ProviderID: sp.ID, Developer: m.Developer, Lifecycle: m.Lifecycle,
 			Description: m.Description, DescriptionCN: m.DescriptionCN, ContextLength: m.ContextLen,
-			MaxOutput: m.MaxOutput, Tags: tags, Aliases: m.Aliases, Links: modelLinks(m.Links),
+			MaxOutput: m.MaxOutput, ReleasedAt: modelReleaseDate(m, releaseDates), Authority: sp.Authority,
+			Tags: tags, Aliases: m.Aliases, Links: modelLinks(m.Links),
 		})
 		result.Stats.Models++
 		if contains(tags, "multimodal") {
@@ -193,7 +203,7 @@ func modelTags(m registry.Model) []string {
 	if m.Reasoning != nil && m.Reasoning.Supported {
 		seen["reasoning"] = true
 	}
-	for _, word := range []string{"preview", "experimental", "free", "fast", "mini", "nano", "turbo", "pro", "thinking"} {
+	for _, word := range []string{"preview", "experimental", "fast", "mini", "nano", "turbo", "pro", "thinking"} {
 		if strings.Contains(strings.ToLower(m.ID+" "+m.Name+" "+m.Lifecycle), word) {
 			seen[word] = true
 		}
@@ -220,6 +230,7 @@ func modelLinks(l registry.ModelLinks) map[string]string {
 }
 
 func displayName(name, provider string) string {
+	name = strings.TrimSpace(strings.TrimLeft(name, "~_-.:/\\|@#$%^&*+="))
 	prefix := strings.ToLower(provider) + ":"
 	if strings.HasPrefix(strings.ToLower(name), prefix) {
 		return strings.TrimSpace(name[len(provider)+1:])
@@ -227,7 +238,58 @@ func displayName(name, provider string) string {
 	return name
 }
 
-func normalizeKey(s string) string { return strings.ToLower(strings.TrimSpace(s)) }
+func normalizeKey(s string) string { return strings.ToLower(cleanProviderName(s)) }
+
+func cleanProviderName(s string) string {
+	s = strings.TrimSpace(s)
+	return strings.TrimSpace(strings.TrimLeft(s, "~_-.:/\\|@#$%^&*+="))
+}
+
+func authorityRank(provider string) int {
+	key := slugify(cleanProviderName(provider))
+	priorities := map[string]int{
+		"openai": 100, "anthropic": 98, "google": 96, "gemini": 96, "deepseek": 94,
+		"qwen": 92, "alibaba": 92, "xai": 90, "meta": 88, "mistral": 86,
+		"moonshotai": 84, "z-ai": 82, "minimax": 80, "microsoft": 78, "amazon": 76,
+		"nvidia": 74, "cohere": 72,
+	}
+	return priorities[key]
+}
+
+type upstreamCatalog struct {
+	Data []struct {
+		ID      string `json:"id"`
+		Created int64  `json:"created"`
+	} `json:"data"`
+}
+
+func loadReleaseDates(path string) (map[string]int64, error) {
+	data, err := os.ReadFile(path)
+	if err != nil {
+		return nil, err
+	}
+	var upstream upstreamCatalog
+	if err := json.Unmarshal(data, &upstream); err != nil {
+		return nil, fmt.Errorf("decode upstream release dates: %w", err)
+	}
+	dates := make(map[string]int64, len(upstream.Data))
+	for _, model := range upstream.Data {
+		if model.ID != "" && model.Created > 0 {
+			dates[strings.ToLower(model.ID)] = model.Created
+		}
+	}
+	return dates, nil
+}
+
+func modelReleaseDate(model registry.Model, dates map[string]int64) int64 {
+	ids := append([]string{model.ID}, model.Identifiers.OpenRouter...)
+	for _, id := range ids {
+		if released := dates[strings.ToLower(strings.TrimPrefix(id, "~"))]; released > 0 {
+			return released
+		}
+	}
+	return 0
+}
 func slugify(s string) string {
 	s = strings.ToLower(strings.TrimSpace(s))
 	var b strings.Builder
