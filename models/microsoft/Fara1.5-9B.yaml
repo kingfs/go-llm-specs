@@ -1,0 +1,64 @@
+schema_version: 2
+id: microsoft/fara1.5-9b
+name: Fara1.5-9B
+provider: Microsoft
+developer: microsoft
+lifecycle: candidate
+context_length: 0
+features:
+  - ModalityImageIn
+  - ModalityTextIn
+  - ModalityTextOut
+links:
+  model_card: https://huggingface.co/microsoft/Fara1.5-9B
+identifiers:
+  huggingface:
+    - microsoft/Fara1.5-9B
+provenance:
+  features:
+    source: official_huggingface_pipeline
+    url: https://huggingface.co/microsoft/Fara1.5-9B
+  id:
+    source: official_huggingface
+    url: https://huggingface.co/microsoft/Fara1.5-9B
+  name:
+    source: official_huggingface
+    url: https://huggingface.co/microsoft/Fara1.5-9B
+upstream:
+  huggingface:
+    id: microsoft/Fara1.5-9B
+    revision: 1a93677cd89d5601bc2ed759791e981f3a520032
+    pipeline_tag: image-text-to-text
+    model_type: qwen3_5
+    architectures:
+      - Qwen3_5ForConditionalGeneration
+    license: mit
+    tags:
+      - agent
+      - arxiv:2606.20785
+      - base_model:Qwen/Qwen3.5-9B
+      - base_model:finetune:Qwen/Qwen3.5-9B
+      - browser-automation
+      - computer-use
+      - conversational
+      - cua
+      - en
+      - endpoints_compatible
+      - fara
+      - image-text-to-text
+      - license:mit
+      - magentic
+      - multimodal
+      - qwen3_5
+      - region:us
+      - safetensors
+      - transformers
+      - vision-language
+      - web-agent
+    tokenizer_model_max_length: 262144
+    processor_class: Qwen3VLProcessor
+    structured_files:
+      - config.json
+      - preprocessor_config.json
+      - tokenizer_config.json
+    fetched_at: 2026-08-05T07:22:37.692144215Z

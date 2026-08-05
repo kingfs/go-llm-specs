@@ -1,0 +1,65 @@
+schema_version: 2
+id: tencent/hunyuanocr
+name: HunyuanOCR
+provider: Tencent Hunyuan
+developer: tencent
+lifecycle: candidate
+context_length: 131072
+features:
+  - ModalityImageIn
+  - ModalityTextIn
+  - ModalityTextOut
+links:
+  model_card: https://huggingface.co/tencent/HunyuanOCR
+identifiers:
+  huggingface:
+    - tencent/HunyuanOCR
+provenance:
+  context_length:
+    source: official_huggingface_config
+    url: https://huggingface.co/tencent/HunyuanOCR
+  features:
+    source: official_huggingface_pipeline
+    url: https://huggingface.co/tencent/HunyuanOCR
+  id:
+    source: official_huggingface
+    url: https://huggingface.co/tencent/HunyuanOCR
+  name:
+    source: official_huggingface
+    url: https://huggingface.co/tencent/HunyuanOCR
+upstream:
+  huggingface:
+    id: tencent/HunyuanOCR
+    revision: 449e7d471a8a1ef5bd5d652e4881183d7252cbc7
+    pipeline_tag: image-text-to-text
+    model_type: hunyuan_vl
+    architectures:
+      - HunYuanVLForConditionalGeneration
+    license: other
+    tags:
+      - arxiv:2607.04884
+      - conversational
+      - document-parsing
+      - en
+      - endpoints_compatible
+      - eval-results
+      - hunyuan_vl
+      - image-text-to-text
+      - information-extraction
+      - license:other
+      - multilingual
+      - ocr
+      - region:us
+      - safetensors
+      - text-image-translation
+      - text-spotting
+      - transformers
+      - vision-language-model
+      - zh
+    config_context_length: 131072
+    processor_class: HunYuanVLProcessor
+    structured_files:
+      - config.json
+      - preprocessor_config.json
+      - tokenizer_config.json
+    fetched_at: 2026-08-05T07:22:38.182554943Z
