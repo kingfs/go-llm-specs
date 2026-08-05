@@ -30,7 +30,7 @@ while IFS= read -r file; do
   if go run ./cmd/cardextractor -models-dir "$models_dir" -model "$model_id" \
     -api-base "${LLM_BASE_URL:?LLM_BASE_URL is required}" \
     -api-key-env "${LLM_API_KEY_ENV:-LLM_API_KEY}" -ai-model "${LLM_MODEL:?LLM_MODEL is required}" \
-    -wire-api "${LLM_WIRE_API:-responses}" -reasoning-effort "${LLM_REASONING_EFFORT:-low}" \
+    -wire-api "${LLM_WIRE_API:-responses}" -reasoning-effort "${LLM_REASONING_EFFORT:-none}" \
     -max-chars "${CARD_EXTRACT_MAX_CHARS:-8000}" -skip-current; then
     printf '%s\n' "$model_id" >> "$checkpoint"
   else

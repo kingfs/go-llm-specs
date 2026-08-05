@@ -1,6 +1,10 @@
 package aiclient
 
 import (
+	"context"
+	"encoding/json"
+	"net/http"
+	"net/http/httptest"
 	"strings"
 	"testing"
 )
@@ -25,5 +29,54 @@ func TestNormalizeEscapedJSON(t *testing.T) {
 	}
 	if got := normalizeJSONText(`"{\"claims\":[]}"`); got != `{"claims":[]}` {
 		t.Fatalf("got %q", got)
+	}
+}
+
+func TestJSONStripsLeadingThinkBlocks(t *testing.T) {
+	server := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		w.Header().Set("Content-Type", "application/json")
+		_, _ = w.Write([]byte(`{"choices":[{"message":{"content":"<think>reasoning with {\\\"draft\\\":true}</think>\\n{\\\"ok\\\":true}"}}]}`))
+	}))
+	defer server.Close()
+
+	client, err := New(Config{BaseURL: server.URL, Model: "test", WireAPI: "chat"})
+	if err != nil {
+		t.Fatal(err)
+	}
+	var result struct {
+		OK bool `json:"ok"`
+	}
+	if err := client.JSON(context.Background(), "return JSON", &result); err != nil {
+		t.Fatal(err)
+	}
+	if !result.OK {
+		t.Fatal("expected parsed JSON after think block")
+	}
+}
+
+func TestChatRequestIncludesReasoningEffortAndJSONMode(t *testing.T) {
+	var request map[string]any
+	server := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		if err := json.NewDecoder(r.Body).Decode(&request); err != nil {
+			t.Fatal(err)
+		}
+		w.Header().Set("Content-Type", "application/json")
+		_, _ = w.Write([]byte(`{"choices":[{"message":{"content":"{}"}}]}`))
+	}))
+	defer server.Close()
+
+	client, err := New(Config{BaseURL: server.URL, Model: "test", WireAPI: "chat", ReasoningEffort: "none"})
+	if err != nil {
+		t.Fatal(err)
+	}
+	if _, err := client.Complete(context.Background(), "return JSON"); err != nil {
+		t.Fatal(err)
+	}
+	if request["reasoning_effort"] != "none" {
+		t.Fatalf("reasoning_effort=%v", request["reasoning_effort"])
+	}
+	format, _ := request["response_format"].(map[string]any)
+	if format["type"] != "json_object" {
+		t.Fatalf("response_format=%v", request["response_format"])
 	}
 }

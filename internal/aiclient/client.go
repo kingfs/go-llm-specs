@@ -48,11 +48,27 @@ func (c *Client) JSON(ctx context.Context, prompt string, target any) error {
 	if err != nil {
 		return err
 	}
-	text = normalizeJSONText(stripFence(text))
+	text = normalizeJSONText(stripFence(stripLeadingThinkBlocks(text)))
 	if err := json.Unmarshal([]byte(text), target); err != nil {
 		return fmt.Errorf("decode AI JSON output: %w", err)
 	}
 	return nil
+}
+
+// stripLeadingThinkBlocks removes reasoning emitted ahead of the requested
+// answer by models that serialize their chain of thought in <think> tags.
+// Only complete, leading blocks are removed so JSON string values containing
+// the same literal text are never modified.
+func stripLeadingThinkBlocks(text string) string {
+	text = strings.TrimSpace(text)
+	for strings.HasPrefix(strings.ToLower(text), "<think>") {
+		end := strings.Index(strings.ToLower(text), "</think>")
+		if end < 0 {
+			return text
+		}
+		text = strings.TrimSpace(text[end+len("</think>"):])
+	}
+	return text
 }
 
 func normalizeJSONText(text string) string {
@@ -97,6 +113,9 @@ func (c *Client) Complete(ctx context.Context, prompt string) (string, error) {
 		body["messages"] = []any{map[string]any{"role": "user", "content": prompt}}
 		body["max_tokens"] = 4096
 		body["response_format"] = map[string]any{"type": "json_object"}
+		if c.config.ReasoningEffort != "" {
+			body["reasoning_effort"] = c.config.ReasoningEffort
+		}
 	}
 	encoded, err := json.Marshal(body)
 	if err != nil {

@@ -52,7 +52,7 @@ func parseFlags() config {
 	flag.StringVar(&cfg.APIKeyEnv, "api-key-env", "LLM_API_KEY", "environment variable containing API key")
 	flag.StringVar(&cfg.AIModel, "ai-model", envOr("LLM_MODEL", ""), "extractor model serving ID")
 	flag.StringVar(&cfg.WireAPI, "wire-api", "responses", "wire API: responses or chat")
-	flag.StringVar(&cfg.ReasoningEffort, "reasoning-effort", "low", "optional Responses reasoning effort")
+	flag.StringVar(&cfg.ReasoningEffort, "reasoning-effort", envOr("LLM_REASONING_EFFORT", "none"), "optional reasoning effort; none is recommended for structured JSON")
 	flag.IntVar(&cfg.MaxChars, "max-chars", 60000, "maximum model-card characters sent to AI")
 	flag.DurationVar(&cfg.Timeout, "timeout", 5*time.Minute, "AI and download timeout")
 	flag.BoolVar(&cfg.SkipCurrent, "skip-current", true, "skip when output matches source revision and SHA")

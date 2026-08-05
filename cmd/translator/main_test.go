@@ -50,3 +50,19 @@ func TestCollectPendingTranslationsHonorsLimit(t *testing.T) {
 		t.Fatalf("expected newest models first, got %s then %s", pending[0].ID, pending[1].ID)
 	}
 }
+
+func TestValidateTranslationsRequiresExactKeysAndValues(t *testing.T) {
+	inputs := map[string]string{"model/a": "A", "model/b": "B"}
+	if err := validateTranslations(inputs, map[string]string{"model/a": "甲", "model/b": "乙"}); err != nil {
+		t.Fatal(err)
+	}
+	for name, result := range map[string]map[string]string{
+		"missing":    {"model/a": "甲"},
+		"unexpected": {"model/a": "甲", "model/c": "丙"},
+		"empty":      {"model/a": "甲", "model/b": " "},
+	} {
+		if err := validateTranslations(inputs, result); err == nil {
+			t.Fatalf("%s result unexpectedly passed validation", name)
+		}
+	}
+}

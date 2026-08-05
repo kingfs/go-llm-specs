@@ -1,13 +1,11 @@
 package main
 
 import (
-	"bytes"
+	"context"
 	"encoding/json"
 	"flag"
 	"fmt"
-	"io"
 	"log"
-	"net/http"
 	"os"
 	"path/filepath"
 	"sort"
@@ -15,39 +13,25 @@ import (
 	"time"
 
 	"github.com/joho/godotenv"
+	"github.com/kingfs/go-llm-specs/internal/aiclient"
 	registrymodel "github.com/kingfs/go-llm-specs/internal/registry"
 )
 
 type ModelRegistry = registrymodel.Model
 
-type ChatMessage struct {
-	Role    string `json:"role"`
-	Content string `json:"content"`
-}
-
-type ChatRequest struct {
-	Model    string        `json:"model"`
-	Messages []ChatMessage `json:"messages"`
-}
-
-type ChatResponse struct {
-	Choices []struct {
-		Message ChatMessage `json:"message"`
-	} `json:"choices"`
-}
-
 type translatorConfig struct {
-	ModelsDir    string
-	BatchSize    int
-	Limit        int
-	Provider     string
-	IDPrefix     string
-	OnlyMissing  bool
-	DryRun       bool
-	RequestDelay time.Duration
-	APIBase      string
-	APIKey       string
-	Model        string
+	ModelsDir       string
+	BatchSize       int
+	Limit           int
+	Provider        string
+	IDPrefix        string
+	OnlyMissing     bool
+	DryRun          bool
+	RequestDelay    time.Duration
+	APIBase         string
+	APIKey          string
+	Model           string
+	ReasoningEffort string
 }
 
 func main() {
@@ -79,12 +63,16 @@ func parseFlags() (translatorConfig, error) {
 	cfg.APIKey = strings.TrimSpace(os.Getenv("LLM_API_KEY"))
 	cfg.APIBase = strings.TrimSpace(os.Getenv("LLM_BASE_URL"))
 	cfg.Model = strings.TrimSpace(os.Getenv("LLM_MODEL"))
+	cfg.ReasoningEffort = strings.TrimSpace(os.Getenv("LLM_REASONING_EFFORT"))
 
 	if cfg.APIBase == "" {
 		cfg.APIBase = "https://api.openai.com/v1"
 	}
 	if cfg.Model == "" {
 		cfg.Model = "gpt-4o-mini"
+	}
+	if cfg.ReasoningEffort == "" {
+		cfg.ReasoningEffort = "none"
 	}
 	if !cfg.DryRun && cfg.APIKey == "" {
 		return cfg, fmt.Errorf("LLM_API_KEY environment variable is required")
@@ -125,7 +113,7 @@ func run(cfg translatorConfig) error {
 		batchIdx := (i / cfg.BatchSize) + 1
 
 		log.Printf("Translating batch %d/%d (%d items)", batchIdx, totalBatches, len(batch))
-		translations, err := translateBatch(batch, cfg.APIKey, cfg.APIBase, cfg.Model)
+		translations, err := translateBatch(context.Background(), batch, cfg)
 		if err != nil {
 			log.Printf("Batch %d failed: %v", batchIdx, err)
 			failedBatches++
@@ -225,7 +213,7 @@ func saveModel(m *ModelRegistry) error {
 	return registrymodel.Save(m.FilePath, *m)
 }
 
-func translateBatch(batch []*ModelRegistry, key, base, model string) (map[string]string, error) {
+func translateBatch(ctx context.Context, batch []*ModelRegistry, cfg translatorConfig) (map[string]string, error) {
 	inputs := make(map[string]string, len(batch))
 	for _, m := range batch {
 		inputs[m.ID] = m.Description
@@ -236,63 +224,45 @@ func translateBatch(batch []*ModelRegistry, key, base, model string) (map[string
 Translate only the JSON values into concise, accurate Simplified Chinese.
 Do not translate keys.
 Return valid JSON only, with the exact same keys.
+Do not include reasoning, Markdown fences, comments, or any text outside the JSON object.
 
 Input JSON:
 %s`, string(inputJSON))
 
-	reqBody := ChatRequest{
-		Model: model,
-		Messages: []ChatMessage{
-			{Role: "user", Content: prompt},
-		},
-	}
-
-	jsonBody, _ := json.Marshal(reqBody)
-
-	req, err := http.NewRequest("POST", strings.TrimRight(base, "/")+"/chat/completions", bytes.NewBuffer(jsonBody))
+	client, err := aiclient.New(aiclient.Config{
+		BaseURL: cfg.APIBase, APIKey: cfg.APIKey, Model: cfg.Model,
+		WireAPI: "chat", Timeout: 60 * time.Second, Retries: 2,
+		ReasoningEffort: cfg.ReasoningEffort,
+	})
 	if err != nil {
 		return nil, err
 	}
-	req.Header.Set("Content-Type", "application/json")
-	req.Header.Set("Authorization", "Bearer "+key)
-
-	client := &http.Client{Timeout: 60 * time.Second}
-	resp, err := client.Do(req)
-	if err != nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	if resp.StatusCode != http.StatusOK {
-		body, _ := io.ReadAll(resp.Body)
-		return nil, fmt.Errorf("API error %d: %s", resp.StatusCode, string(body))
-	}
-
-	var chatResp ChatResponse
-	if err := json.NewDecoder(resp.Body).Decode(&chatResp); err != nil {
-		return nil, err
-	}
-	if len(chatResp.Choices) == 0 {
-		return nil, fmt.Errorf("empty response from LLM")
-	}
-
-	rawContent := strings.TrimSpace(chatResp.Choices[0].Message.Content)
-	if strings.HasPrefix(rawContent, "```json") {
-		rawContent = strings.TrimPrefix(rawContent, "```json")
-		rawContent = strings.TrimSuffix(rawContent, "```")
-	} else if strings.HasPrefix(rawContent, "```") {
-		rawContent = strings.TrimPrefix(rawContent, "```")
-		rawContent = strings.TrimSuffix(rawContent, "```")
-	}
-	rawContent = strings.TrimSpace(rawContent)
 
 	var results map[string]string
-	if err := json.Unmarshal([]byte(rawContent), &results); err != nil {
-		log.Printf("Failed to parse LLM response as JSON: %s", rawContent)
+	if err := client.JSON(ctx, prompt, &results); err != nil {
 		return nil, err
 	}
-
+	if err := validateTranslations(inputs, results); err != nil {
+		return nil, err
+	}
 	return results, nil
+}
+
+func validateTranslations(inputs, results map[string]string) error {
+	if len(results) != len(inputs) {
+		return fmt.Errorf("translation response has %d keys, want %d", len(results), len(inputs))
+	}
+	for key := range inputs {
+		if strings.TrimSpace(results[key]) == "" {
+			return fmt.Errorf("translation response is missing a non-empty value for %q", key)
+		}
+	}
+	for key := range results {
+		if _, ok := inputs[key]; !ok {
+			return fmt.Errorf("translation response contains unexpected key %q", key)
+		}
+	}
+	return nil
 }
 
 func cleanResult(s string) string {

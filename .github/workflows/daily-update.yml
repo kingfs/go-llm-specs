@@ -19,6 +19,7 @@ jobs:
       LLM_API_KEY: ${{ secrets.LLM_API_KEY }}
       LLM_BASE_URL: ${{ vars.LLM_BASE_URL || 'https://api.openai.com/v1' }}
       LLM_MODEL: ${{ vars.LLM_MODEL || 'gpt-4o-mini' }}
+      LLM_REASONING_EFFORT: ${{ vars.LLM_REASONING_EFFORT || 'none' }}
     concurrency:
       group: daily-model-sync
       cancel-in-progress: false
