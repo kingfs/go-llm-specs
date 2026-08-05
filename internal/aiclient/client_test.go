@@ -7,6 +7,7 @@ import (
 	"net/http/httptest"
 	"strings"
 	"testing"
+	"time"
 )
 
 func TestDecodeResponsesIgnoresReasoning(t *testing.T) {
@@ -78,5 +79,20 @@ func TestChatRequestIncludesReasoningEffortAndJSONMode(t *testing.T) {
 	format, _ := request["response_format"].(map[string]any)
 	if format["type"] != "json_object" {
 		t.Fatalf("response_format=%v", request["response_format"])
+	}
+}
+
+func TestParseRetryAfter(t *testing.T) {
+	now := time.Date(2026, time.August, 5, 0, 0, 0, 0, time.UTC)
+	tests := map[string]time.Duration{
+		"2":      2 * time.Second,
+		"2.5":    2500 * time.Millisecond,
+		"1500ms": 1500 * time.Millisecond,
+		now.Add(3 * time.Second).Format(http.TimeFormat): 3 * time.Second,
+	}
+	for value, want := range tests {
+		if got := parseRetryAfter(value, now); got != want {
+			t.Fatalf("parseRetryAfter(%q)=%s, want %s", value, got, want)
+		}
 	}
 }

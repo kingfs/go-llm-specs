@@ -66,7 +66,7 @@ jobs:
           LLM_WIRE_API: chat
           CARD_EXTRACT_LIMIT: '5'
           CARD_EXTRACT_MAX_CHARS: '8000'
-          CARD_EXTRACT_DELAY: '2'
+          CARD_EXTRACT_DELAY: '20'
         run: task cardextract-batch
 
       - name: Apply safe high-confidence official model-card claims

@@ -122,6 +122,7 @@ func (c *Client) Complete(ctx context.Context, prompt string) (string, error) {
 		return "", err
 	}
 	attempts := c.config.Retries + 1
+	var lastErr error
 	for attempt := 0; attempt < attempts; attempt++ {
 		req, err := http.NewRequestWithContext(ctx, http.MethodPost, endpoint, bytes.NewReader(encoded))
 		if err != nil {
@@ -136,26 +137,50 @@ func (c *Client) Complete(ctx context.Context, prompt string) (string, error) {
 			defer resp.Body.Close()
 			return decodeText(resp.Body, c.config.WireAPI)
 		}
+		delay := time.Second * time.Duration(1<<attempt)
 		if resp != nil {
 			detail, _ := io.ReadAll(io.LimitReader(resp.Body, 2048))
 			_ = resp.Body.Close()
+			lastErr = fmt.Errorf("AI API returned %s: %s", resp.Status, strings.TrimSpace(string(detail)))
 			if resp.StatusCode < 500 && resp.StatusCode != http.StatusTooManyRequests {
-				return "", fmt.Errorf("AI API returned %s: %s", resp.Status, strings.TrimSpace(string(detail)))
+				return "", lastErr
 			}
+			if retryAfter := parseRetryAfter(resp.Header.Get("Retry-After"), time.Now()); retryAfter > delay {
+				delay = retryAfter
+			}
+		} else if err != nil {
+			lastErr = err
 		}
 		if attempt+1 == attempts {
-			if err != nil {
-				return "", err
+			if lastErr != nil {
+				return "", fmt.Errorf("AI API retries exhausted: %w", lastErr)
 			}
 			return "", fmt.Errorf("AI API retries exhausted")
 		}
 		select {
 		case <-ctx.Done():
 			return "", ctx.Err()
-		case <-time.After(time.Second * time.Duration(1<<attempt)):
+		case <-time.After(delay):
 		}
 	}
 	return "", fmt.Errorf("AI API retries exhausted")
+}
+
+func parseRetryAfter(value string, now time.Time) time.Duration {
+	value = strings.TrimSpace(value)
+	if value == "" {
+		return 0
+	}
+	if delay, err := time.ParseDuration(value); err == nil && delay > 0 {
+		return delay
+	}
+	if seconds, err := time.ParseDuration(value + "s"); err == nil && seconds > 0 {
+		return seconds
+	}
+	if when, err := http.ParseTime(value); err == nil && when.After(now) {
+		return when.Sub(now)
+	}
+	return 0
 }
 
 func decodeText(reader io.Reader, wireAPI string) (string, error) {
