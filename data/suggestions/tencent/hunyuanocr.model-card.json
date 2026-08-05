@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "tencent/hunyuanocr",
+  "status": "partially_accepted",
+  "created_at": "2026-08-05T07:31:57.730528405Z",
+  "source": {
+    "url": "https://huggingface.co/tencent/HunyuanOCR/resolve/449e7d471a8a1ef5bd5d652e4881183d7252cbc7/README.md",
+    "revision": "449e7d471a8a1ef5bd5d652e4881183d7252cbc7",
+    "sha256": "ea43e11ad8b9d02334ae700b1b14855d380877ee28b4388b00ddf9c60b1b1835"
+  },
+  "generator": {
+    "model": "qwen/qwen3.6-27b",
+    "wire_api": "chat"
+  },
+  "claims": [
+    {
+      "field": "description",
+      "value": "HunyuanOCR-1.5 is a lightweight, end-to-end OCR-specialized vision-language model designed for document parsing, text spotting, information extraction, and text-image translation.",
+      "evidence": "HunyuanOCR-1.5 is a lightweight, end-to-end OCR-specialized vision-language model. It targets a broad range of text-centric visual tasks and unifies document parsing, text spotting, information extraction, text-image translation within a single end-to-end VLM.",
+      "section": "## 📖 Introduction",
+      "confidence": "high"
+    },
+    {
+      "field": "context_length",
+      "value": 131072,
+      "evidence": "serves the model as tencent/HunyuanOCR with -tp 1 and --max-model-len 131072",
+      "section": "### B. vLLM (OpenAI-compatible)",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "ModalityImageIn",
+        "ModalityTextIn",
+        "ModalityTextOut"
+      ],
+      "evidence": "pipeline_tag: image-text-to-text",
+      "section": "---",
+      "confidence": "high"
+    },
+    {
+      "field": "reasoning.supported",
+      "value": false,
+      "evidence": "tags:\n  - ocr\n  - vision-language-model\n  - document-parsing\n  - text-spotting\n  - information-extraction\n  - text-image-translation",
+      "section": "---",
+      "confidence": "high"
+    }
+  ]
+}

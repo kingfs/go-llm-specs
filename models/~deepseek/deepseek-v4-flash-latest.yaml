@@ -4,6 +4,7 @@ name: DeepSeek V4 Flash Latest
 provider: ~Deepseek
 developer: ~Deepseek
 description: This model always redirects to the latest model in the DeepSeek V4 Flash family.
+description_cn: 此模型始终重定向至 DeepSeek V4 Flash 系列中的最新模型。
 context_length: 1048576
 max_output: 65536
 features:

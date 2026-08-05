@@ -1,0 +1,56 @@
+schema_version: 2
+id: nvidia/minimax-m3-dspark
+name: MiniMax-M3-DSpark
+provider: NVIDIA
+developer: nvidia
+lifecycle: candidate
+context_length: 1048576
+features:
+  - ModalityTextIn
+  - ModalityTextOut
+links:
+  model_card: https://huggingface.co/nvidia/MiniMax-M3-DSpark
+identifiers:
+  huggingface:
+    - nvidia/MiniMax-M3-DSpark
+provenance:
+  context_length:
+    source: official_huggingface_config
+    url: https://huggingface.co/nvidia/MiniMax-M3-DSpark
+  features:
+    source: official_huggingface_pipeline
+    url: https://huggingface.co/nvidia/MiniMax-M3-DSpark
+  id:
+    source: official_huggingface
+    url: https://huggingface.co/nvidia/MiniMax-M3-DSpark
+  name:
+    source: official_huggingface
+    url: https://huggingface.co/nvidia/MiniMax-M3-DSpark
+upstream:
+  huggingface:
+    id: nvidia/MiniMax-M3-DSpark
+    revision: e82db0e1895bc4e0c339ce670b2b553899a57f59
+    pipeline_tag: text-generation
+    model_type: qwen3
+    architectures:
+      - Qwen3DSparkModel
+    license: other
+    tags:
+      - DSpark
+      - MiniMax-M3
+      - Model Optimizer
+      - ModelOpt
+      - arxiv:2606.13392
+      - arxiv:2607.05147
+      - base_model:MiniMaxAI/MiniMax-M3
+      - base_model:finetune:MiniMaxAI/MiniMax-M3
+      - license:other
+      - nvidia
+      - qwen3
+      - region:us
+      - safetensors
+      - text-generation
+    config_context_length: 1048576
+    structured_files:
+      - config.json
+    fetched_at: 2026-08-05T07:31:47.842257303Z

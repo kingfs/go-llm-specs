@@ -3,7 +3,9 @@ id: tencent/hunyuanocr
 name: HunyuanOCR
 provider: Tencent Hunyuan
 developer: tencent
-lifecycle: candidate
+lifecycle: active
+description: HunyuanOCR-1.5 is a lightweight, end-to-end OCR-specialized vision-language model designed for document parsing, text spotting, information extraction, and text-image translation.
+description_cn: HunyuanOCR-1.5 是一款轻量级、端到端的 OCR 专用视觉语言模型，专为文档解析、文本检测、信息提取以及图文翻译而设计。
 context_length: 131072
 features:
   - ModalityImageIn
@@ -18,6 +20,9 @@ provenance:
   context_length:
     source: official_huggingface_config
     url: https://huggingface.co/tencent/HunyuanOCR
+  description:
+    source: official_model_card
+    url: https://huggingface.co/tencent/HunyuanOCR/resolve/449e7d471a8a1ef5bd5d652e4881183d7252cbc7/README.md
   features:
     source: official_huggingface_pipeline
     url: https://huggingface.co/tencent/HunyuanOCR
@@ -27,6 +32,9 @@ provenance:
   name:
     source: official_huggingface
     url: https://huggingface.co/tencent/HunyuanOCR
+  reasoning.supported:
+    source: official_model_card
+    url: https://huggingface.co/tencent/HunyuanOCR/resolve/449e7d471a8a1ef5bd5d652e4881183d7252cbc7/README.md
 upstream:
   huggingface:
     id: tencent/HunyuanOCR
@@ -63,3 +71,5 @@ upstream:
       - preprocessor_config.json
       - tokenizer_config.json
     fetched_at: 2026-08-05T07:22:38.182554943Z
+reasoning:
+  supported: false

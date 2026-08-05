@@ -1,0 +1,63 @@
+schema_version: 2
+id: microsoft/magenticbrain
+name: MagenticBrain
+provider: Microsoft
+developer: microsoft
+lifecycle: candidate
+context_length: 40960
+features:
+  - ModalityTextIn
+  - ModalityTextOut
+links:
+  model_card: https://huggingface.co/microsoft/MagenticBrain
+identifiers:
+  huggingface:
+    - microsoft/MagenticBrain
+provenance:
+  context_length:
+    source: official_huggingface_config
+    url: https://huggingface.co/microsoft/MagenticBrain
+  features:
+    source: official_huggingface_pipeline
+    url: https://huggingface.co/microsoft/MagenticBrain
+  id:
+    source: official_huggingface
+    url: https://huggingface.co/microsoft/MagenticBrain
+  name:
+    source: official_huggingface
+    url: https://huggingface.co/microsoft/MagenticBrain
+upstream:
+  huggingface:
+    id: microsoft/MagenticBrain
+    revision: db8eb9340a90eaa4424dd13067373d1f9e8887f7
+    pipeline_tag: text-generation
+    model_type: qwen3
+    architectures:
+      - Qwen3ForCausalLM
+    license: mit
+    tags:
+      - agent
+      - agentic
+      - arxiv:2505.09388
+      - base_model:Qwen/Qwen3-14B
+      - base_model:finetune:Qwen/Qwen3-14B
+      - conversational
+      - en
+      - endpoints_compatible
+      - function-calling
+      - license:mit
+      - magentic
+      - orchestration
+      - qwen3
+      - region:us
+      - safetensors
+      - text-generation
+      - text-generation-inference
+      - tool-use
+      - transformers
+    config_context_length: 40960
+    tokenizer_model_max_length: 131072
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-08-05T07:31:47.203159372Z

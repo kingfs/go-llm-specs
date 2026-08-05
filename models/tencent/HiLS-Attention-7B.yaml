@@ -1,0 +1,61 @@
+schema_version: 2
+id: tencent/hils-attention-7b
+name: HiLS-Attention-7B
+provider: Tencent Hunyuan
+developer: tencent
+lifecycle: candidate
+context_length: 131072
+features:
+  - ModalityTextIn
+  - ModalityTextOut
+links:
+  model_card: https://huggingface.co/tencent/HiLS-Attention-7B
+identifiers:
+  huggingface:
+    - tencent/HiLS-Attention-7B
+provenance:
+  context_length:
+    source: official_huggingface_config
+    url: https://huggingface.co/tencent/HiLS-Attention-7B
+  features:
+    source: official_huggingface_pipeline
+    url: https://huggingface.co/tencent/HiLS-Attention-7B
+  id:
+    source: official_huggingface
+    url: https://huggingface.co/tencent/HiLS-Attention-7B
+  name:
+    source: official_huggingface
+    url: https://huggingface.co/tencent/HiLS-Attention-7B
+upstream:
+  huggingface:
+    id: tencent/HiLS-Attention-7B
+    revision: 837293e2aa5ae551439ebbd05783bddb92401853
+    pipeline_tag: text-generation
+    model_type: olmo_hils
+    architectures:
+      - HiLSForCausalLM
+    license: apache-2.0
+    tags:
+      - arxiv:2607.02980
+      - base_model:allenai/Olmo-3-1025-7B
+      - base_model:finetune:allenai/Olmo-3-1025-7B
+      - efficient-attention
+      - en
+      - endpoints_compatible
+      - hils-attention
+      - license:apache-2.0
+      - long-context
+      - olmo3
+      - olmo_hils
+      - pretraining
+      - region:us
+      - safetensors
+      - sparse-attention
+      - text-generation
+      - transformers
+    config_context_length: 131072
+    tokenizer_model_max_length: 8192
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-08-05T07:31:48.585878782Z

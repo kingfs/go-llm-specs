@@ -1,0 +1,71 @@
+schema_version: 2
+id: zai/glm-4.1v-9b-thinking
+name: GLM-4.1V-9B-Thinking
+provider: Z.ai
+developer: zai
+lifecycle: active
+description: GLM-4.1V-9B-Thinking is a vision-language model designed to enhance reasoning capabilities. It achieves state-of-the-art performance among 10B-parameter VLMs, matching or surpassing 72B models on 18 benchmarks. It supports bilingual Chinese and English usage.
+description_cn: GLM-4.1V-9B-Thinking 是一款旨在增强推理能力的视觉语言模型。在 100 亿参数规模的 VLM 中，其性能达到行业领先水平，在 18 个基准测试中匹敌甚至超越了 720 亿参数的模型。该模型支持中英双语使用。
+context_length: 65536
+features:
+  - ModalityImageIn
+  - ModalityTextIn
+  - ModalityTextOut
+links:
+  model_card: https://huggingface.co/zai-org/GLM-4.1V-9B-Thinking
+identifiers:
+  huggingface:
+    - zai-org/GLM-4.1V-9B-Thinking
+provenance:
+  context_length:
+    source: official_model_card
+    url: https://huggingface.co/zai-org/GLM-4.1V-9B-Thinking/resolve/3c1471e51dc811b589d4d12b1c1c7c1c941267c2/README.md
+  description:
+    source: official_model_card
+    url: https://huggingface.co/zai-org/GLM-4.1V-9B-Thinking/resolve/3c1471e51dc811b589d4d12b1c1c7c1c941267c2/README.md
+  features:
+    source: official_huggingface_pipeline
+    url: https://huggingface.co/zai-org/GLM-4.1V-9B-Thinking
+  id:
+    source: official_huggingface
+    url: https://huggingface.co/zai-org/GLM-4.1V-9B-Thinking
+  name:
+    source: official_huggingface
+    url: https://huggingface.co/zai-org/GLM-4.1V-9B-Thinking
+  reasoning.supported:
+    source: official_model_card
+    url: https://huggingface.co/zai-org/GLM-4.1V-9B-Thinking/resolve/3c1471e51dc811b589d4d12b1c1c7c1c941267c2/README.md
+upstream:
+  huggingface:
+    id: zai-org/GLM-4.1V-9B-Thinking
+    revision: 3c1471e51dc811b589d4d12b1c1c7c1c941267c2
+    pipeline_tag: image-text-to-text
+    model_type: glm4v
+    architectures:
+      - Glm4vForConditionalGeneration
+    license: mit
+    tags:
+      - arxiv:2507.01006
+      - base_model:finetune:zai-org/GLM-4-9B-0414
+      - base_model:zai-org/GLM-4-9B-0414
+      - conversational
+      - deploy:azure
+      - en
+      - endpoints_compatible
+      - glm4v
+      - image-text-to-text
+      - license:mit
+      - reasoning
+      - region:us
+      - safetensors
+      - transformers
+      - zh
+    tokenizer_model_max_length: 65536
+    processor_class: Glm4vProcessor
+    structured_files:
+      - config.json
+      - preprocessor_config.json
+      - tokenizer_config.json
+    fetched_at: 2026-08-05T07:31:49.364458602Z
+reasoning:
+  supported: true

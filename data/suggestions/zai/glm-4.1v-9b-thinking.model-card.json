@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "zai/glm-4.1v-9b-thinking",
+  "status": "partially_accepted",
+  "created_at": "2026-08-05T07:31:51.089814823Z",
+  "source": {
+    "url": "https://huggingface.co/zai-org/GLM-4.1V-9B-Thinking/resolve/3c1471e51dc811b589d4d12b1c1c7c1c941267c2/README.md",
+    "revision": "3c1471e51dc811b589d4d12b1c1c7c1c941267c2",
+    "sha256": "7ac0ed3602f183bcf9e0487adb128658d861957c8021443dcea918f8d4460566"
+  },
+  "generator": {
+    "model": "qwen/qwen3.6-27b",
+    "wire_api": "chat"
+  },
+  "claims": [
+    {
+      "field": "description",
+      "value": "GLM-4.1V-9B-Thinking is a vision-language model designed to enhance reasoning capabilities. It achieves state-of-the-art performance among 10B-parameter VLMs, matching or surpassing 72B models on 18 benchmarks. It supports bilingual Chinese and English usage.",
+      "evidence": "Based on the GLM-4-9B-0414 foundation model... designed to explore the upper limits of reasoning in vision-language models... Provides an open-source version supporting both Chinese and English bilingual usage.",
+      "section": "## Model Introduction",
+      "confidence": "high"
+    },
+    {
+      "field": "context_length",
+      "value": 65536,
+      "evidence": "Supports 64k context length.",
+      "section": "## Model Introduction",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "ModalityImageIn",
+        "ModalityTextIn",
+        "ModalityTextOut"
+      ],
+      "evidence": "pipeline_tag: image-text-to-text ... Vision-Language Models ... Handles arbitrary aspect ratios and up to 4K image resolution.",
+      "section": "---",
+      "confidence": "high"
+    },
+    {
+      "field": "reasoning.supported",
+      "value": true,
+      "evidence": "By introducing a \"thinking paradigm\" ... The first reasoning-focused model in the series ... incorporating the Chain-of-Thought reasoning paradigm",
+      "section": "## Model Introduction",
+      "confidence": "high"
+    }
+  ]
+}
