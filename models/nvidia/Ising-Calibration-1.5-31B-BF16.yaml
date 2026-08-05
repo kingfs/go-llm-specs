@@ -1,0 +1,55 @@
+schema_version: 2
+id: nvidia/ising-calibration-1.5-31b-bf16
+name: Ising-Calibration-1.5-31B-BF16
+provider: NVIDIA
+developer: nvidia
+lifecycle: candidate
+context_length: 0
+features:
+  - ModalityImageIn
+  - ModalityTextIn
+  - ModalityTextOut
+links:
+  model_card: https://huggingface.co/nvidia/Ising-Calibration-1.5-31B-BF16
+identifiers:
+  huggingface:
+    - nvidia/Ising-Calibration-1.5-31B-BF16
+provenance:
+  features:
+    source: official_huggingface_pipeline
+    url: https://huggingface.co/nvidia/Ising-Calibration-1.5-31B-BF16
+  id:
+    source: official_huggingface
+    url: https://huggingface.co/nvidia/Ising-Calibration-1.5-31B-BF16
+  name:
+    source: official_huggingface
+    url: https://huggingface.co/nvidia/Ising-Calibration-1.5-31B-BF16
+upstream:
+  huggingface:
+    id: nvidia/Ising-Calibration-1.5-31B-BF16
+    revision: 370a95279e7bec5011a4cc7041dafcd9970f40fb
+    pipeline_tag: image-text-to-text
+    model_type: gemma4
+    architectures:
+      - Gemma4ForConditionalGeneration
+    license: other
+    tags:
+      - Ising Calibration
+      - arxiv:2604.25884
+      - bf16
+      - calibration
+      - conversational
+      - endpoints_compatible
+      - gemma4
+      - image-text-to-text
+      - license:other
+      - nvidia
+      - quantum
+      - region:us
+      - safetensors
+      - transformers
+      - vision-language
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-08-05T04:52:14.62427961Z

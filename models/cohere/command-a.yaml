@@ -22,6 +22,10 @@ identifiers:
     - CohereLabs/c4ai-command-a-03-2025
   openrouter:
     - cohere/command-a
+provenance:
+  reasoning.supported:
+    source: official_model_card
+    url: https://huggingface.co/CohereLabs/c4ai-command-a-03-2025/resolve/066daaa11d57404b07cc650d1068936d31431979/README.md
 upstream:
   openrouter:
     canonical_slug: cohere/command-a-03-2025
@@ -85,3 +89,5 @@ upstream:
       - vi
       - zh
     fetched_at: 2026-07-29T10:37:19.703427222Z
+reasoning:
+  supported: true

@@ -1,0 +1,56 @@
+schema_version: 2
+id: nvidia/ising-calibration-1.5-31b-nvfp4
+name: Ising-Calibration-1.5-31B-NVFP4
+provider: NVIDIA
+developer: nvidia
+lifecycle: candidate
+context_length: 0
+features:
+  - ModalityImageIn
+  - ModalityTextIn
+  - ModalityTextOut
+links:
+  model_card: https://huggingface.co/nvidia/Ising-Calibration-1.5-31B-NVFP4
+identifiers:
+  huggingface:
+    - nvidia/Ising-Calibration-1.5-31B-NVFP4
+provenance:
+  features:
+    source: official_huggingface_pipeline
+    url: https://huggingface.co/nvidia/Ising-Calibration-1.5-31B-NVFP4
+  id:
+    source: official_huggingface
+    url: https://huggingface.co/nvidia/Ising-Calibration-1.5-31B-NVFP4
+  name:
+    source: official_huggingface
+    url: https://huggingface.co/nvidia/Ising-Calibration-1.5-31B-NVFP4
+upstream:
+  huggingface:
+    id: nvidia/Ising-Calibration-1.5-31B-NVFP4
+    revision: 41199d3c11d3191d527a915a6d096ed439a54ffe
+    pipeline_tag: image-text-to-text
+    model_type: gemma4
+    architectures:
+      - Gemma4ForConditionalGeneration
+    license: other
+    tags:
+      - Ising Calibration
+      - arxiv:2604.25884
+      - calibration
+      - conversational
+      - endpoints_compatible
+      - gemma4
+      - image-text-to-text
+      - license:other
+      - modelopt
+      - nvfp4
+      - nvidia
+      - quantum
+      - region:us
+      - safetensors
+      - transformers
+      - vision-language
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-08-05T04:52:14.932671206Z

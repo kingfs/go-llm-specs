@@ -18,6 +18,10 @@ links:
 identifiers:
   huggingface:
     - allenai/Olmo-3-7B-Instruct
+provenance:
+  reasoning.supported:
+    source: official_model_card
+    url: https://huggingface.co/allenai/Olmo-3-7B-Instruct/resolve/6e5971d9eba42665f5bd5a0fcf047f299ce1dccc/README.md
 upstream:
   huggingface:
     id: allenai/Olmo-3-7B-Instruct
@@ -49,3 +53,5 @@ upstream:
       - config.json
       - tokenizer_config.json
     fetched_at: 2026-07-30T04:44:05.296222024Z
+reasoning:
+  supported: true

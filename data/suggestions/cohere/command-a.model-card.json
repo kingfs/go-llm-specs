@@ -2,7 +2,7 @@
   "schema_version": 1,
   "kind": "model_card",
   "model_id": "cohere/command-a",
-  "status": "pending",
+  "status": "partially_accepted",
   "created_at": "2026-07-29T11:20:01.269416132Z",
   "source": {
     "url": "https://huggingface.co/CohereLabs/c4ai-command-a-03-2025/resolve/066daaa11d57404b07cc650d1068936d31431979/README.md",

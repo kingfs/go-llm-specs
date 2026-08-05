@@ -1,0 +1,53 @@
+schema_version: 2
+id: nvidia/riva-translate-4b-instruct-v2
+name: Riva-Translate-4B-Instruct-v2
+provider: NVIDIA
+developer: nvidia
+lifecycle: candidate
+context_length: 8192
+features:
+  - ModalityTextIn
+  - ModalityTextOut
+links:
+  model_card: https://huggingface.co/nvidia/Riva-Translate-4B-Instruct-v2
+identifiers:
+  huggingface:
+    - nvidia/Riva-Translate-4B-Instruct-v2
+provenance:
+  context_length:
+    source: official_huggingface_config
+    url: https://huggingface.co/nvidia/Riva-Translate-4B-Instruct-v2
+  features:
+    source: official_huggingface_pipeline
+    url: https://huggingface.co/nvidia/Riva-Translate-4B-Instruct-v2
+  id:
+    source: official_huggingface
+    url: https://huggingface.co/nvidia/Riva-Translate-4B-Instruct-v2
+  name:
+    source: official_huggingface
+    url: https://huggingface.co/nvidia/Riva-Translate-4B-Instruct-v2
+upstream:
+  huggingface:
+    id: nvidia/Riva-Translate-4B-Instruct-v2
+    revision: 040d958b128018ff0bed2542a7b51005e9ea563c
+    pipeline_tag: text-generation
+    model_type: mistral
+    architectures:
+      - MistralForCausalLM
+    tags:
+      - base_model:finetune:nvidia/Mistral-NeMo-12B-Base
+      - base_model:nvidia/Mistral-NeMo-12B-Base
+      - conversational
+      - endpoints_compatible
+      - mistral
+      - region:us
+      - safetensors
+      - text-generation
+      - text-generation-inference
+      - transformers
+    config_context_length: 8192
+    chat_template_sha256: cabd43ebe3a11b9f9a0393cc5ea0ea42d0b6c3ee7e13af474d50b040d630c272
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-08-05T04:52:15.295758527Z

@@ -1,0 +1,57 @@
+schema_version: 2
+id: microsoft/mage-vl
+name: Mage-VL
+provider: Microsoft
+developer: microsoft
+lifecycle: candidate
+context_length: 0
+features:
+  - ModalityImageIn
+  - ModalityTextIn
+  - ModalityTextOut
+links:
+  model_card: https://huggingface.co/microsoft/Mage-VL
+identifiers:
+  huggingface:
+    - microsoft/Mage-VL
+provenance:
+  features:
+    source: official_huggingface_pipeline
+    url: https://huggingface.co/microsoft/Mage-VL
+  id:
+    source: official_huggingface
+    url: https://huggingface.co/microsoft/Mage-VL
+  name:
+    source: official_huggingface
+    url: https://huggingface.co/microsoft/Mage-VL
+upstream:
+  huggingface:
+    id: microsoft/Mage-VL
+    revision: 5c78cab61938e73859b63724d9bf5cb88c477eaa
+    pipeline_tag: image-text-to-text
+    model_type: mage_vl
+    architectures:
+      - MageVLForConditionalGeneration
+    license: apache-2.0
+    tags:
+      - arxiv:2607.24904
+      - conversational
+      - custom_code
+      - image-text-to-text
+      - license:apache-2.0
+      - mage-vl
+      - mage_vl
+      - multimodal
+      - region:us
+      - safetensors
+      - streaming
+      - transformers
+      - video-understanding
+      - vision-language-model
+    tokenizer_model_max_length: 131072
+    processor_class: MageVLProcessor
+    structured_files:
+      - config.json
+      - preprocessor_config.json
+      - tokenizer_config.json
+    fetched_at: 2026-08-05T04:52:14.393018982Z

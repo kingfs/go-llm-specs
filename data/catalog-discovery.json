@@ -3390,7 +3390,7 @@
       "repository_id": "MiniMaxAI/MiniMax-H3",
       "status": "new",
       "url": "https://huggingface.co/MiniMaxAI/MiniMax-H3",
-      "last_modified": "2026-08-04T07:41:07Z",
+      "last_modified": "2026-08-04T13:14:16Z",
       "pipeline_tag": "image-text-to-video",
       "tags": [
         "diffusers",
@@ -90479,7 +90479,8 @@
       "provider_id": "microsoft",
       "organization": "microsoft",
       "repository_id": "microsoft/Mage-VL",
-      "status": "new",
+      "registry_id": "microsoft/mage-vl",
+      "status": "materialized",
       "url": "https://huggingface.co/microsoft/Mage-VL",
       "last_modified": "2026-07-29T10:11:30Z",
       "pipeline_tag": "image-text-to-text",
@@ -101511,6 +101512,37 @@
     {
       "provider_id": "mistral",
       "organization": "mistralai",
+      "repository_id": "mistralai/Shieldstral-1.0-3B",
+      "status": "new",
+      "url": "https://huggingface.co/mistralai/Shieldstral-1.0-3B",
+      "last_modified": "2026-08-04T23:26:09Z",
+      "tags": [
+        "vllm",
+        "safetensors",
+        "mistral3",
+        "mistral-common",
+        "en",
+        "fr",
+        "es",
+        "de",
+        "it",
+        "pt",
+        "nl",
+        "zh",
+        "ja",
+        "ko",
+        "ar",
+        "ru",
+        "arxiv:2607.25857",
+        "base_model:mistralai/Ministral-3-3B-Base-2512",
+        "base_model:finetune:mistralai/Ministral-3-3B-Base-2512",
+        "license:apache-2.0",
+        "region:us"
+      ]
+    },
+    {
+      "provider_id": "mistral",
+      "organization": "mistralai",
       "repository_id": "mistralai/Voxtral-4B-TTS-2603",
       "status": "new",
       "url": "https://huggingface.co/mistralai/Voxtral-4B-TTS-2603",
@@ -102346,7 +102378,7 @@
       "repository_id": "nvidia/Alpamayo-1.5-10B",
       "status": "new",
       "url": "https://huggingface.co/nvidia/Alpamayo-1.5-10B",
-      "last_modified": "2026-08-03T22:12:42Z",
+      "last_modified": "2026-08-04T14:52:13Z",
       "pipeline_tag": "robotics",
       "tags": [
         "safetensors",
@@ -102358,7 +102390,7 @@
         "dataset:nvidia/PhysicalAI-Autonomous-Vehicles-NuRec",
         "base_model:nvidia/Cosmos-Reason2-8B",
         "base_model:finetune:nvidia/Cosmos-Reason2-8B",
-        "license:other",
+        "license:openmdw-1.1",
         "region:us"
       ]
     },
@@ -102368,7 +102400,7 @@
       "repository_id": "nvidia/Alpamayo-R1-10B",
       "status": "new",
       "url": "https://huggingface.co/nvidia/Alpamayo-R1-10B",
-      "last_modified": "2026-08-03T22:11:51Z",
+      "last_modified": "2026-08-04T14:18:29Z",
       "pipeline_tag": "robotics",
       "tags": [
         "transformers",
@@ -102380,8 +102412,30 @@
         "dataset:nvidia/PhysicalAI-Autonomous-Vehicles",
         "dataset:nvidia/PhysicalAI-Autonomous-Vehicles-NuRec",
         "arxiv:2511.00088",
-        "license:other",
+        "license:openmdw-1.1",
         "endpoints_compatible",
+        "region:us"
+      ]
+    },
+    {
+      "provider_id": "nvidia",
+      "organization": "nvidia",
+      "repository_id": "nvidia/Alpamayo2-Super",
+      "status": "new",
+      "url": "https://huggingface.co/nvidia/Alpamayo2-Super",
+      "last_modified": "2026-08-04T03:45:14Z",
+      "pipeline_tag": "robotics",
+      "tags": [
+        "safetensors",
+        "alpamayo2_super",
+        "alpamayo",
+        "robotics",
+        "en",
+        "dataset:nvidia/PhysicalAI-Autonomous-Vehicles",
+        "dataset:nvidia/PhysicalAI-Autonomous-Vehicles-NuRec",
+        "base_model:nvidia/Cosmos3-Super",
+        "base_model:finetune:nvidia/Cosmos3-Super",
+        "license:openmdw-1.1",
         "region:us"
       ]
     },
@@ -106347,7 +106401,8 @@
       "provider_id": "nvidia",
       "organization": "nvidia",
       "repository_id": "nvidia/Ising-Calibration-1.5-31B-BF16",
-      "status": "new",
+      "registry_id": "nvidia/ising-calibration-1.5-31b-bf16",
+      "status": "materialized",
       "url": "https://huggingface.co/nvidia/Ising-Calibration-1.5-31B-BF16",
       "last_modified": "2026-07-31T04:28:36Z",
       "pipeline_tag": "image-text-to-text",
@@ -106373,7 +106428,8 @@
       "provider_id": "nvidia",
       "organization": "nvidia",
       "repository_id": "nvidia/Ising-Calibration-1.5-31B-NVFP4",
-      "status": "new",
+      "registry_id": "nvidia/ising-calibration-1.5-31b-nvfp4",
+      "status": "materialized",
       "url": "https://huggingface.co/nvidia/Ising-Calibration-1.5-31B-NVFP4",
       "last_modified": "2026-07-31T04:28:39Z",
       "pipeline_tag": "image-text-to-text",
@@ -110855,7 +110911,8 @@
       "provider_id": "nvidia",
       "organization": "nvidia",
       "repository_id": "nvidia/NVIDIA-Nemotron-Parse-2.0",
-      "status": "new",
+      "registry_id": "nvidia/nvidia-nemotron-parse-2.0",
+      "status": "materialized",
       "url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-Parse-2.0",
       "last_modified": "2026-08-04T01:13:26Z",
       "pipeline_tag": "image-text-to-text",
@@ -113853,7 +113910,7 @@
       "repository_id": "nvidia/Qwen-Image-Flash",
       "status": "new",
       "url": "https://huggingface.co/nvidia/Qwen-Image-Flash",
-      "last_modified": "2026-07-23T04:54:45Z",
+      "last_modified": "2026-08-04T20:34:02Z",
       "pipeline_tag": "text-to-image",
       "tags": [
         "diffusers",
@@ -115069,7 +115126,8 @@
       "provider_id": "nvidia",
       "organization": "nvidia",
       "repository_id": "nvidia/Riva-Translate-4B-Instruct-v2",
-      "status": "new",
+      "registry_id": "nvidia/riva-translate-4b-instruct-v2",
+      "status": "materialized",
       "url": "https://huggingface.co/nvidia/Riva-Translate-4B-Instruct-v2",
       "last_modified": "2026-07-30T06:53:49Z",
       "pipeline_tag": "text-generation",
@@ -116305,6 +116363,21 @@
       "last_modified": "2026-04-22T20:54:39Z",
       "tags": [
         "arxiv:2309.15214",
+        "region:us"
+      ]
+    },
+    {
+      "provider_id": "nvidia",
+      "organization": "nvidia",
+      "repository_id": "nvidia/corrdiff-cosmo-era5",
+      "status": "new",
+      "url": "https://huggingface.co/nvidia/corrdiff-cosmo-era5",
+      "last_modified": "2026-07-31T21:56:36Z",
+      "tags": [
+        "cosmo-rea-downscaling",
+        "arxiv:2309.15214",
+        "arxiv:2206.00364",
+        "license:openmdw-1.1",
         "region:us"
       ]
     },
