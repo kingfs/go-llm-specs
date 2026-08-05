@@ -2,10 +2,20 @@ name: Model Museum Pages
 
 on:
   workflow_call:
+    inputs:
+      ref:
+        description: Git ref containing the released catalog
+        required: false
+        type: string
   push:
     branches: [master]
-    paths: [models/**, providers/**, cmd/sitegen/**, internal/registry/**, internal/provider/**]
+    paths: [cmd/sitegen/**, docs/**, README.md, README_EN.md, .github/workflows/pages.yml]
   workflow_dispatch:
+    inputs:
+      ref:
+        description: Git ref to deploy (defaults to master)
+        required: false
+        default: master
 
 permissions:
   contents: read
@@ -25,11 +35,14 @@ jobs:
     steps:
       - uses: actions/checkout@v5
         with:
-          ref: master
+          ref: ${{ inputs.ref || 'master' }}
       - uses: actions/setup-go@v6
         with:
           go-version: '1.26'
-      - run: go run ./cmd/sitegen
+      - name: Build and validate static site
+        run: |
+          go test ./cmd/sitegen
+          go run ./cmd/sitegen
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v4
         with:

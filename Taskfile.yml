@@ -109,6 +109,11 @@ tasks:
     cmds:
       - go run ./cmd/sitegen {{.CLI_ARGS}}
 
+  site-check:
+    desc: Build and validate the static model museum without changing the worktree
+    cmds:
+      - go test ./cmd/sitegen
+
   codexgen:
     desc: Generate a validated Codex models.json catalog from enriched YAML
     cmds:
@@ -151,6 +156,7 @@ tasks:
       - task: codexvalidate
       - task: catalog-check
       - task: generator-check
+      - task: site-check
 
   run:
     desc: Run an arbitrary shell command, for example task run -- go test ./...

@@ -24,6 +24,8 @@ jobs:
       models: read
     outputs:
       changed: ${{ steps.changes.outputs.changed }}
+      released: ${{ steps.releasecheck.outputs.release_needed }}
+      release_ref: ${{ steps.releasecheck.outputs.next_tag }}
     steps:
       - name: Checkout code
         uses: actions/checkout@v5
@@ -137,8 +139,10 @@ jobs:
 
   deploy-pages-after-sync:
     needs: sync-upstream
-    if: needs.sync-upstream.outputs.changed == 'true'
+    if: needs.sync-upstream.outputs.released == 'true'
     uses: ./.github/workflows/pages.yml
+    with:
+      ref: ${{ needs.sync-upstream.outputs.release_ref }}
     permissions:
       contents: read
       pages: write
@@ -167,6 +171,9 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
+    outputs:
+      released: ${{ steps.releasecheck.outputs.release_needed }}
+      release_ref: ${{ steps.releasecheck.outputs.next_tag }}
     steps:
       - name: Checkout code
         uses: actions/checkout@v5
@@ -213,3 +220,14 @@ jobs:
           fail_on_unmatched_files: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  deploy-pages-after-push-release:
+    needs: release-from-push
+    if: needs.release-from-push.outputs.released == 'true'
+    uses: ./.github/workflows/pages.yml
+    with:
+      ref: ${{ needs.release-from-push.outputs.release_ref }}
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
