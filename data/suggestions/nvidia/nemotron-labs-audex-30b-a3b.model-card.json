@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "nvidia/nemotron-labs-audex-30b-a3b",
+  "status": "partially_accepted",
+  "created_at": "2026-08-06T04:54:09.468046714Z",
+  "source": {
+    "url": "https://huggingface.co/nvidia/Nemotron-Labs-Audex-30B-A3B/resolve/00f0afa02e8ec0a9afc88221e456a02591bfca4c/README.md",
+    "revision": "00f0afa02e8ec0a9afc88221e456a02591bfca4c",
+    "sha256": "7777be87a1b9be74b48a99d5f0f55a73c20977d4ec45fa4d338cf978d3926551"
+  },
+  "generator": {
+    "model": "qwen/qwen3.6-27b",
+    "wire_api": "chat"
+  },
+  "claims": [
+    {
+      "field": "description",
+      "value": "Nemotron-Labs-Audex-30B-A3B is a unified audio-text LLM based on Nemotron-Cascade-2-30B-A3B, extending vocabulary for audio tokens and using an audio encoder. It supports audio understanding, speech recognition, translation, TTS, audio generation, and speech-to-speech, operating in thinking and instruct modes.",
+      "evidence": "Audex-30B-A3B extends the vocabulary for discrete audio tokens... audio encoder for speech and general audio inputs. Audex-30B-A3B delivers strong abilities on audio tasks...",
+      "section": "Introduction",
+      "confidence": "high"
+    },
+    {
+      "field": "context_length",
+      "value": 1000000,
+      "evidence": "Audex-30B-A3B supports up to a 1M-token context length.",
+      "section": "Quick Start",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "CapChat",
+        "ModalityTextIn",
+        "ModalityTextOut",
+        "ModalityAudioIn",
+        "ModalityAudioOut"
+      ],
+      "evidence": "Audex-30B-A3B follows the ChatML template... audio understanding, speech recognition and translation, text-to-speech, audio generation, and speech-to-speech generation",
+      "section": "Quick Start",
+      "confidence": "high"
+    },
+    {
+      "field": "reasoning.supported",
+      "value": true,
+      "evidence": "Audex-30B-A3B operates in both thinking and instruct (non-thinking) modes.",
+      "section": "Quick Start",
+      "confidence": "high"
+    },
+    {
+      "field": "reasoning.parser",
+      "value": "Enclosed within \u003cthink\u003e and \u003c/think\u003e tags",
+      "evidence": "Reasoning content is enclosed within \u003cthink\u003e and \u003c/think\u003e tags. To activate the instruct (non-thinking) mode, we prepend \u003cthink\u003e\u003c/think\u003e to the beginning of the assistant’s response.",
+      "section": "Quick Start",
+      "confidence": "high"
+    }
+  ]
+}

@@ -6,6 +6,7 @@ developer: Upstage
 description: Solar Pro 3 is Upstage's powerful Mixture-of-Experts (MoE) language model. With 102B total parameters and 12B active parameters per forward pass, it delivers exceptional performance while maintaining computational efficiency. Optimized for Korean with English and Japanese support.
 description_cn: Solar Pro 3 是 Upstage 推出的强大混合专家（MoE）语言模型，总参数量达 1020 亿，每次前向传递激活 120 亿参数，在保持计算效率的同时提供卓越性能。针对韩语深度优化，并支持英语和日语。
 context_length: 128000
+max_output: 131072
 features:
   - CapChat
   - CapFunctionCall
@@ -23,18 +24,21 @@ upstream:
   openrouter:
     canonical_slug: upstage/solar-pro-3
     supported_parameters:
+      - frequency_penalty
       - include_reasoning
       - max_tokens
+      - presence_penalty
       - reasoning
       - response_format
       - structured_outputs
       - temperature
       - tool_choice
       - tools
+      - top_p
     input_modalities:
       - text
     output_modalities:
       - text
-    fetched_at: 2026-07-29T10:44:44.334717567Z
+    fetched_at: 2026-08-06T04:52:32.557199317Z
 reasoning:
   supported: true

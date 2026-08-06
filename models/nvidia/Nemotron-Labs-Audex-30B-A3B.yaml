@@ -1,0 +1,70 @@
+schema_version: 2
+id: nvidia/nemotron-labs-audex-30b-a3b
+name: Nemotron-Labs-Audex-30B-A3B
+provider: NVIDIA
+developer: nvidia
+lifecycle: active
+description: Nemotron-Labs-Audex-30B-A3B is a unified audio-text LLM based on Nemotron-Cascade-2-30B-A3B, extending vocabulary for audio tokens and using an audio encoder. It supports audio understanding, speech recognition, translation, TTS, audio generation, and speech-to-speech, operating in thinking and instruct modes.
+description_cn: Nemotron-Labs-Audex-30B-A3B 是一款基于 Nemotron-Cascade-2-30B-A3B 的统一音频-文本大语言模型，扩展了音频 token 的词表并使用音频编码器。它支持音频理解、语音识别、翻译、TTS、音频生成和语音到语音转换，支持思考和指令模式。
+context_length: 1000000
+features:
+  - ModalityTextIn
+  - ModalityTextOut
+links:
+  model_card: https://huggingface.co/nvidia/Nemotron-Labs-Audex-30B-A3B
+identifiers:
+  huggingface:
+    - nvidia/Nemotron-Labs-Audex-30B-A3B
+provenance:
+  context_length:
+    source: official_model_card
+    url: https://huggingface.co/nvidia/Nemotron-Labs-Audex-30B-A3B/resolve/00f0afa02e8ec0a9afc88221e456a02591bfca4c/README.md
+  description:
+    source: official_model_card
+    url: https://huggingface.co/nvidia/Nemotron-Labs-Audex-30B-A3B/resolve/00f0afa02e8ec0a9afc88221e456a02591bfca4c/README.md
+  features:
+    source: official_huggingface_pipeline
+    url: https://huggingface.co/nvidia/Nemotron-Labs-Audex-30B-A3B
+  id:
+    source: official_huggingface
+    url: https://huggingface.co/nvidia/Nemotron-Labs-Audex-30B-A3B
+  name:
+    source: official_huggingface
+    url: https://huggingface.co/nvidia/Nemotron-Labs-Audex-30B-A3B
+  reasoning.supported:
+    source: official_model_card
+    url: https://huggingface.co/nvidia/Nemotron-Labs-Audex-30B-A3B/resolve/00f0afa02e8ec0a9afc88221e456a02591bfca4c/README.md
+upstream:
+  huggingface:
+    id: nvidia/Nemotron-Labs-Audex-30B-A3B
+    revision: 00f0afa02e8ec0a9afc88221e456a02591bfca4c
+    pipeline_tag: text-generation
+    model_type: nemotron_labs_audex
+    license: other
+    tags:
+      - RL
+      - SFT
+      - arxiv:2607.05196
+      - audio-language-modeling
+      - audio-understanding
+      - en
+      - endpoints_compatible
+      - general-purpose
+      - license:other
+      - nemotron-labs-audex
+      - nemotron_labs_audex
+      - nvidia
+      - reasoning
+      - region:us
+      - safetensors
+      - speech-recognition
+      - speech-translation
+      - text-generation
+      - text-to-audio
+      - text-to-speech
+      - transformers
+    structured_files:
+      - config.json
+    fetched_at: 2026-08-06T04:52:33.718138761Z
+reasoning:
+  supported: true

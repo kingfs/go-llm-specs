@@ -42,6 +42,7 @@ upstream:
       - temperature
       - tool_choice
       - tools
+      - top_a
       - top_k
       - top_logprobs
       - top_p
@@ -49,7 +50,7 @@ upstream:
       - text
     output_modalities:
       - text
-    fetched_at: 2026-07-29T10:45:12.626243605Z
+    fetched_at: 2026-08-06T04:52:32.557973811Z
   huggingface:
     id: zai-org/GLM-4.7
     revision: 602d01efcdd332c5238ca4bcede555defbe83eb7

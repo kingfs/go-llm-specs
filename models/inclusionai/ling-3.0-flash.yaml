@@ -1,25 +1,42 @@
 schema_version: 2
-id: inclusionai/ling-3.0-flash:free
-name: Ling-3.0-flash (free)
+id: inclusionai/ling-3.0-flash
+name: Ling-3.0-flash
 provider: Inclusionai
-developer: Inclusionai
+developer: inclusionai
 description: '*Ling-3.0-flash* is a *124B-parameter Mixture-of-Experts (MoE) model*, with approximately *5.1B parameters activated per token*. The model is designed with *token efficiency and production-scale agentic inference* as key priorities, enabling developers...'
-description_cn: '*Ling-3.0-flash* 是一个 *124B参数的专家混合模型 (MoE)*，每个token大约激活 *5.1B参数*。该模型的设计重点是 *token效率和生产规模应用推理*，使开发者能够...'
-context_length: 262144
-max_output: 32768
+description_cn: Ling-3.0-flash 是一款拥有 1240 亿参数的 Mixture-of-Experts (MoE) 模型，每个 token 约激活 51 亿参数。该模型以 token 效率和生产级智能体推理为关键优先事项，使开发者...
+context_length: 131072
+max_output: 16384
 features:
   - CapChat
   - CapFunctionCall
   - ModalityTextIn
   - ModalityTextOut
-discovered_at: 2026-07-29T10:38:39.523394503Z
+discovered_at: 2026-08-06T04:52:30.246709121Z
 links:
   model_card: https://huggingface.co/inclusionAI/Ling-3.0-flash
 identifiers:
   huggingface:
     - inclusionAI/Ling-3.0-flash
   openrouter:
-    - inclusionai/ling-3.0-flash:free
+    - inclusionai/ling-3.0-flash
+provenance:
+  context_length:
+    source: openrouter
+  description:
+    source: openrouter
+  features:
+    source: openrouter
+  id:
+    source: openrouter
+  max_output:
+    source: openrouter
+  name:
+    source: openrouter
+  provider:
+    source: openrouter
+  reasoning:
+    source: openrouter
 upstream:
   openrouter:
     canonical_slug: inclusionai/ling-3.0-flash-20260723
@@ -27,8 +44,9 @@ upstream:
     supported_parameters:
       - frequency_penalty
       - include_reasoning
-      - logprobs
+      - logit_bias
       - max_tokens
+      - min_p
       - presence_penalty
       - reasoning
       - repetition_penalty
@@ -38,13 +56,12 @@ upstream:
       - tool_choice
       - tools
       - top_k
-      - top_logprobs
       - top_p
     input_modalities:
       - text
     output_modalities:
       - text
-    fetched_at: 2026-08-06T04:52:32.548504273Z
+    fetched_at: 2026-08-06T04:52:32.548172441Z
   huggingface:
     id: inclusionAI/Ling-3.0-flash
     revision: c12bd30a9b032e932c8ce5ad0d211071e23a7fe1
@@ -66,7 +83,7 @@ upstream:
     structured_files:
       - config.json
       - tokenizer_config.json
-    fetched_at: 2026-08-06T04:52:33.287280431Z
+    fetched_at: 2026-08-06T04:52:33.200955355Z
 reasoning:
   supported: true
   default_enabled: true

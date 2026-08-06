@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "google/diffusiongemma-26b-a4b-it",
+  "status": "partially_accepted",
+  "created_at": "2026-08-06T04:52:57.223983766Z",
+  "source": {
+    "url": "https://huggingface.co/google/diffusiongemma-26B-A4B-it/resolve/f7f5b7f5fa82ffc52addd066915886d497f5517b/README.md",
+    "revision": "f7f5b7f5fa82ffc52addd066915886d497f5517b",
+    "sha256": "3005db59c980fc29417cf7558a99d04fedebea588056afea7229b112cf29a67f"
+  },
+  "generator": {
+    "model": "qwen/qwen3.6-27b",
+    "wire_api": "chat"
+  },
+  "claims": [
+    {
+      "field": "description",
+      "value": "DiffusionGemma is a multimodal MoE model using discrete diffusion for block-autoregressive text generation, supporting text, image, and video inputs to produce text outputs. It features 25.2B total parameters with 3.8B active.",
+      "evidence": "DiffusionGemma is a generative model... multimodal, handling text, image, and video inputs to generate text output. ... Total Parameters 25.2B ... Active Parameters 3.8B",
+      "section": "## **Model Overview**",
+      "confidence": "high"
+    },
+    {
+      "field": "context_length",
+      "value": 256000,
+      "evidence": "Context Length Up to 256K tokens",
+      "section": "### DiffusionGemma",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "CapFunctionCall",
+        "ModalityTextIn",
+        "ModalityTextOut",
+        "ModalityImageIn"
+      ],
+      "evidence": "Supported Modalities Text, Image ... Function Calling – Native support for structured tool use",
+      "section": "## **Core Capabilities**",
+      "confidence": "high"
+    },
+    {
+      "field": "reasoning.supported",
+      "value": true,
+      "evidence": "Thinking Mode (Reasoning) Designed as a highly capable reasoner, with configurable thinking modes.",
+      "section": "Introduction",
+      "confidence": "high"
+    }
+  ]
+}

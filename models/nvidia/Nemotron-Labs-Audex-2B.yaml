@@ -3,8 +3,10 @@ id: nvidia/nemotron-labs-audex-2b
 name: Nemotron-Labs-Audex-2B
 provider: NVIDIA
 developer: nvidia
-lifecycle: candidate
-context_length: 0
+lifecycle: active
+description: Nemotron-Labs-Audex-2B is a unified audio-text LLM with audio encoder for speech/audio inputs and extended vocabulary for discrete audio tokens for speech/audio outputs, covering understanding, recognition, translation, TTS, and generation.
+description_cn: Nemotron-Labs-Audex-2B 是一款统一音频-文本大语言模型，配备用于语音/音频输入的音频编码器，以及用于语音/音频输出的离散音频 token 扩展词表，涵盖理解、识别、翻译、TTS 和生成能力。
+context_length: 131072
 features:
   - ModalityTextIn
   - ModalityTextOut
@@ -14,6 +16,12 @@ identifiers:
   huggingface:
     - nvidia/Nemotron-Labs-Audex-2B
 provenance:
+  context_length:
+    source: official_model_card
+    url: https://huggingface.co/nvidia/Nemotron-Labs-Audex-2B/resolve/d43e996bab673833ffb56dcfcc5b658f229f7343/README.md
+  description:
+    source: official_model_card
+    url: https://huggingface.co/nvidia/Nemotron-Labs-Audex-2B/resolve/d43e996bab673833ffb56dcfcc5b658f229f7343/README.md
   features:
     source: official_huggingface_pipeline
     url: https://huggingface.co/nvidia/Nemotron-Labs-Audex-2B
@@ -23,6 +31,9 @@ provenance:
   name:
     source: official_huggingface
     url: https://huggingface.co/nvidia/Nemotron-Labs-Audex-2B
+  reasoning.supported:
+    source: official_model_card
+    url: https://huggingface.co/nvidia/Nemotron-Labs-Audex-2B/resolve/d43e996bab673833ffb56dcfcc5b658f229f7343/README.md
 upstream:
   huggingface:
     id: nvidia/Nemotron-Labs-Audex-2B
@@ -54,3 +65,5 @@ upstream:
     structured_files:
       - config.json
     fetched_at: 2026-08-05T07:35:57.038338583Z
+reasoning:
+  supported: true

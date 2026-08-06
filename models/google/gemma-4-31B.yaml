@@ -1,0 +1,61 @@
+schema_version: 2
+id: google/gemma-4-31b
+name: gemma-4-31B
+provider: Google
+developer: google
+lifecycle: active
+description: Gemma 4 31B is a open-weight, multimodal model by Google DeepMind with a 256K context window, supporting text and image input for text output. It features 30.7B total parameters, 60 layers, and native function-calling support.
+description_cn: Gemma 4 31B 是 Google DeepMind 推出的一款开源权重多模态模型，拥有 256K 上下文窗口，支持文本和图像输入以生成文本输出。该模型拥有 307 亿总参数量，60 层架构，并原生支持函数调用。
+context_length: 262144
+features:
+  - ModalityImageIn
+  - ModalityTextIn
+  - ModalityTextOut
+links:
+  model_card: https://huggingface.co/google/gemma-4-31B
+identifiers:
+  huggingface:
+    - google/gemma-4-31B
+provenance:
+  context_length:
+    source: official_model_card
+    url: https://huggingface.co/google/gemma-4-31B/resolve/5bbc2fb1c1b2c611d06e3d9f23c170ba21659d89/README.md
+  description:
+    source: official_model_card
+    url: https://huggingface.co/google/gemma-4-31B/resolve/5bbc2fb1c1b2c611d06e3d9f23c170ba21659d89/README.md
+  features:
+    source: official_huggingface_pipeline
+    url: https://huggingface.co/google/gemma-4-31B
+  id:
+    source: official_huggingface
+    url: https://huggingface.co/google/gemma-4-31B
+  name:
+    source: official_huggingface
+    url: https://huggingface.co/google/gemma-4-31B
+  reasoning.supported:
+    source: official_model_card
+    url: https://huggingface.co/google/gemma-4-31B/resolve/5bbc2fb1c1b2c611d06e3d9f23c170ba21659d89/README.md
+upstream:
+  huggingface:
+    id: google/gemma-4-31B
+    revision: 5bbc2fb1c1b2c611d06e3d9f23c170ba21659d89
+    pipeline_tag: image-text-to-text
+    model_type: gemma4
+    architectures:
+      - Gemma4ForConditionalGeneration
+    license: apache-2.0
+    tags:
+      - arxiv:2607.02770
+      - endpoints_compatible
+      - gemma4
+      - image-text-to-text
+      - license:apache-2.0
+      - region:us
+      - safetensors
+      - transformers
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-08-06T04:52:33.014810356Z
+reasoning:
+  supported: true

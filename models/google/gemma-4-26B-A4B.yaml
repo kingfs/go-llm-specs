@@ -1,0 +1,61 @@
+schema_version: 2
+id: google/gemma-4-26b-a4b
+name: gemma-4-26B-A4B
+provider: Google
+developer: google
+lifecycle: active
+description: Gemma 4 26B A4B is a Mixture-of-Experts (MoE) multimodal model with 25.2B total parameters and 3.8B active parameters, supporting text and image inputs with a 256K token context window.
+description_cn: Gemma 4 26B A4B 是一款 MoE 多模态模型，拥有 252 亿总参数量和 38 亿活跃参数量，支持文本和图像输入，上下文窗口为 256K token。
+context_length: 262144
+features:
+  - ModalityImageIn
+  - ModalityTextIn
+  - ModalityTextOut
+links:
+  model_card: https://huggingface.co/google/gemma-4-26B-A4B
+identifiers:
+  huggingface:
+    - google/gemma-4-26B-A4B
+provenance:
+  context_length:
+    source: official_model_card
+    url: https://huggingface.co/google/gemma-4-26B-A4B/resolve/24548b62aa021d562695c04aaf7758a1ea47990b/README.md
+  description:
+    source: official_model_card
+    url: https://huggingface.co/google/gemma-4-26B-A4B/resolve/24548b62aa021d562695c04aaf7758a1ea47990b/README.md
+  features:
+    source: official_huggingface_pipeline
+    url: https://huggingface.co/google/gemma-4-26B-A4B
+  id:
+    source: official_huggingface
+    url: https://huggingface.co/google/gemma-4-26B-A4B
+  name:
+    source: official_huggingface
+    url: https://huggingface.co/google/gemma-4-26B-A4B
+  reasoning.supported:
+    source: official_model_card
+    url: https://huggingface.co/google/gemma-4-26B-A4B/resolve/24548b62aa021d562695c04aaf7758a1ea47990b/README.md
+upstream:
+  huggingface:
+    id: google/gemma-4-26B-A4B
+    revision: 24548b62aa021d562695c04aaf7758a1ea47990b
+    pipeline_tag: image-text-to-text
+    model_type: gemma4
+    architectures:
+      - Gemma4ForConditionalGeneration
+    license: apache-2.0
+    tags:
+      - arxiv:2607.02770
+      - endpoints_compatible
+      - gemma4
+      - image-text-to-text
+      - license:apache-2.0
+      - region:us
+      - safetensors
+      - transformers
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-08-06T04:52:32.939431504Z
+reasoning:
+  supported: true

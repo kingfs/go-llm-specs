@@ -1,0 +1,61 @@
+schema_version: 2
+id: google/diffusiongemma-26b-a4b-it
+name: diffusiongemma-26B-A4B-it
+provider: Google
+developer: google
+lifecycle: active
+description: DiffusionGemma is a multimodal MoE model using discrete diffusion for block-autoregressive text generation, supporting text, image, and video inputs to produce text outputs. It features 25.2B total parameters with 3.8B active.
+description_cn: DiffusionGemma 是一种多模态 MoE 模型，采用离散扩散技术进行块自回归文本生成，支持文本、图像和视频输入以生成文本输出。总参数量为 252 亿，其中活跃参数量为 38 亿。
+context_length: 256000
+features:
+  - ModalityImageIn
+  - ModalityTextIn
+  - ModalityTextOut
+links:
+  model_card: https://huggingface.co/google/diffusiongemma-26B-A4B-it
+identifiers:
+  huggingface:
+    - google/diffusiongemma-26B-A4B-it
+provenance:
+  context_length:
+    source: official_model_card
+    url: https://huggingface.co/google/diffusiongemma-26B-A4B-it/resolve/f7f5b7f5fa82ffc52addd066915886d497f5517b/README.md
+  description:
+    source: official_model_card
+    url: https://huggingface.co/google/diffusiongemma-26B-A4B-it/resolve/f7f5b7f5fa82ffc52addd066915886d497f5517b/README.md
+  features:
+    source: official_huggingface_pipeline
+    url: https://huggingface.co/google/diffusiongemma-26B-A4B-it
+  id:
+    source: official_huggingface
+    url: https://huggingface.co/google/diffusiongemma-26B-A4B-it
+  name:
+    source: official_huggingface
+    url: https://huggingface.co/google/diffusiongemma-26B-A4B-it
+  reasoning.supported:
+    source: official_model_card
+    url: https://huggingface.co/google/diffusiongemma-26B-A4B-it/resolve/f7f5b7f5fa82ffc52addd066915886d497f5517b/README.md
+upstream:
+  huggingface:
+    id: google/diffusiongemma-26B-A4B-it
+    revision: f7f5b7f5fa82ffc52addd066915886d497f5517b
+    pipeline_tag: image-text-to-text
+    model_type: diffusion_gemma
+    architectures:
+      - DiffusionGemmaForBlockDiffusion
+    license: apache-2.0
+    tags:
+      - conversational
+      - diffusion_gemma
+      - endpoints_compatible
+      - image-text-to-text
+      - license:apache-2.0
+      - region:us
+      - safetensors
+      - transformers
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-08-06T04:52:32.860780196Z
+reasoning:
+  supported: true

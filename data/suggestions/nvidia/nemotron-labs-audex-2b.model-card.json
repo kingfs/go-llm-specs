@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "nvidia/nemotron-labs-audex-2b",
+  "status": "partially_accepted",
+  "created_at": "2026-08-06T04:54:33.058579258Z",
+  "source": {
+    "url": "https://huggingface.co/nvidia/Nemotron-Labs-Audex-2B/resolve/d43e996bab673833ffb56dcfcc5b658f229f7343/README.md",
+    "revision": "d43e996bab673833ffb56dcfcc5b658f229f7343",
+    "sha256": "67702b6c4bc565c8d90111629ce9eb843a638f11dea29a4034feebf9b58ede8a"
+  },
+  "generator": {
+    "model": "qwen/qwen3.6-27b",
+    "wire_api": "chat"
+  },
+  "claims": [
+    {
+      "field": "description",
+      "value": "Nemotron-Labs-Audex-2B is a unified audio-text LLM with audio encoder for speech/audio inputs and extended vocabulary for discrete audio tokens for speech/audio outputs, covering understanding, recognition, translation, TTS, and generation.",
+      "evidence": "Audex-2B extends the vocabulary for discrete audio tokens used for speech and general audio outputs, as well as an audio encoder for speech and general audio inputs. Audex-2B delivers strong abilities on audio tasks",
+      "section": "Introduction",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "CapChat",
+        "ModalityTextIn",
+        "ModalityTextOut",
+        "ModalityAudioIn",
+        "ModalityAudioOut"
+      ],
+      "evidence": "Audex-2B is a unified audio-text LLM... Audex-2B follows the ChatML template and supports both thinking and instruct (non-thinking) modes.",
+      "section": "Introduction",
+      "confidence": "high"
+    },
+    {
+      "field": "context_length",
+      "value": 131072,
+      "evidence": "Audex-2B supports up to a 128K-token context length.",
+      "section": "Quick Start",
+      "confidence": "high"
+    },
+    {
+      "field": "reasoning.supported",
+      "value": true,
+      "evidence": "Audex-2B operates in both thinking and instruct (non-thinking) modes. Reasoning content is enclosed within\u003cthink\u003e and \u003c/think\u003e tags.",
+      "section": "Quick Start",
+      "confidence": "high"
+    },
+    {
+      "field": "reasoning.parser",
+      "value": "Reasoning content is enclosed within\u003cthink\u003e and \u003c/think\u003e tags.",
+      "evidence": "Audex-2B operates in both thinking and instruct (non-thinking) modes. Reasoning content is enclosed within\u003cthink\u003e and \u003c/think\u003e tags.",
+      "section": "Quick Start",
+      "confidence": "high"
+    }
+  ]
+}

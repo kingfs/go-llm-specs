@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "google/gemma-4-26b-a4b",
+  "status": "partially_accepted",
+  "created_at": "2026-08-06T04:52:35.924202669Z",
+  "source": {
+    "url": "https://huggingface.co/google/gemma-4-26B-A4B/resolve/24548b62aa021d562695c04aaf7758a1ea47990b/README.md",
+    "revision": "24548b62aa021d562695c04aaf7758a1ea47990b",
+    "sha256": "cd92cdd2f31eea92b1a72dadee23c3e997dca486705472d29fd27627b76bdf80"
+  },
+  "generator": {
+    "model": "qwen/qwen3.6-27b",
+    "wire_api": "chat"
+  },
+  "claims": [
+    {
+      "field": "description",
+      "value": "Gemma 4 26B A4B is a Mixture-of-Experts (MoE) multimodal model with 25.2B total parameters and 3.8B active parameters, supporting text and image inputs with a 256K token context window.",
+      "evidence": "The models employ a hybrid attention mechanism... Total Parameters 25.2B Active Parameters 3.8B... Context Length 256K tokens Supported Modalities Text, Image",
+      "section": "Mixture-of-Experts (MoE) Model",
+      "confidence": "high"
+    },
+    {
+      "field": "context_length",
+      "value": 262144,
+      "evidence": "Context Length 256K tokens",
+      "section": "Mixture-of-Experts (MoE) Model",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "CapFunctionCall",
+        "ModalityTextIn",
+        "ModalityTextOut",
+        "ModalityImageIn"
+      ],
+      "evidence": "Enhanced Coding \u0026 Agentic Capabilities – Achieves notable improvements... alongside native function-calling support... Supported Modalities Text, Image",
+      "section": "Core Capabilities",
+      "confidence": "high"
+    },
+    {
+      "field": "reasoning.supported",
+      "value": true,
+      "evidence": "Reasoning – All models in the family are designed as highly capable reasoners, with configurable thinking modes.",
+      "section": "Gemma 4 introduces key capability and architectural advancements",
+      "confidence": "high"
+    },
+    {
+      "field": "description",
+      "value": "The model uses a hybrid attention mechanism interleaving local sliding window attention with full global attention, with the final layer always being global optimization for memory via unified Keys and Values.",
+      "evidence": "The models employ a hybrid attention mechanism that interleaves local sliding window attention with full global attention... global layers feature unified Keys and Values",
+      "section": "Models Overview",
+      "confidence": "high"
+    }
+  ]
+}

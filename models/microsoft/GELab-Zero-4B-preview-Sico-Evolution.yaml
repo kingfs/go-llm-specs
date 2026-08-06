@@ -1,0 +1,52 @@
+schema_version: 2
+id: microsoft/gelab-zero-4b-preview-sico-evolution
+name: GELab-Zero-4B-preview-Sico-Evolution
+provider: Microsoft
+developer: microsoft
+lifecycle: candidate
+context_length: 0
+features:
+  - ModalityImageIn
+  - ModalityTextIn
+  - ModalityTextOut
+links:
+  model_card: https://huggingface.co/microsoft/GELab-Zero-4B-preview-Sico-Evolution
+identifiers:
+  huggingface:
+    - microsoft/GELab-Zero-4B-preview-Sico-Evolution
+provenance:
+  features:
+    source: official_huggingface_pipeline
+    url: https://huggingface.co/microsoft/GELab-Zero-4B-preview-Sico-Evolution
+  id:
+    source: official_huggingface
+    url: https://huggingface.co/microsoft/GELab-Zero-4B-preview-Sico-Evolution
+  name:
+    source: official_huggingface
+    url: https://huggingface.co/microsoft/GELab-Zero-4B-preview-Sico-Evolution
+upstream:
+  huggingface:
+    id: microsoft/GELab-Zero-4B-preview-Sico-Evolution
+    revision: c92fa0701ee08104d528068ee45cc0a516be972e
+    pipeline_tag: image-text-to-text
+    model_type: qwen3_vl
+    architectures:
+      - Qwen3VLForConditionalGeneration
+    license: apache-2.0
+    tags:
+      - conversational
+      - en
+      - endpoints_compatible
+      - gui-agent
+      - image-text-to-text
+      - license:apache-2.0
+      - lora
+      - mobile-agent
+      - qwen3-vl
+      - qwen3_vl
+      - region:us
+      - safetensors
+      - transformers
+      - vision-language
+      - zh
+    fetched_at: 2026-08-06T04:52:33.323420448Z
