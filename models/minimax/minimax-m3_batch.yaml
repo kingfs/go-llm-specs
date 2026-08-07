@@ -20,6 +20,11 @@ links:
 identifiers:
   huggingface:
     - MiniMaxAI/MiniMax-M3
+  openrouter:
+    - minimax/minimax-m3:batch
+provenance:
+  max_output:
+    source: openrouter
 upstream:
   openrouter:
     canonical_slug: minimax/minimax-m3-20260531

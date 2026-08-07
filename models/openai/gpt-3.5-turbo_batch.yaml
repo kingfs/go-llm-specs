@@ -1,0 +1,64 @@
+schema_version: 2
+id: openai/gpt-3.5-turbo:batch
+name: 'OpenAI: GPT-3.5 Turbo (batch)'
+provider: OpenAI
+developer: openai
+description: |-
+  GPT-3.5 Turbo is OpenAI's fastest model. It can understand and generate natural language or code, and is optimized for chat and traditional completion tasks.
+
+  Training data up to Sep 2021.
+description_cn: |-
+  GPT-3.5 Turbo 是 OpenAI 最快的模型。它能理解并生成自然语言或代码，针对聊天和传统补全任务进行了优化。
+
+  训练数据更新至 2021 年 9 月。
+context_length: 16385
+max_output: 4096
+features:
+  - CapChat
+  - CapFunctionCall
+  - CapJsonMode
+  - ModalityTextIn
+  - ModalityTextOut
+discovered_at: 2026-08-07T04:16:50.333827734Z
+identifiers:
+  openrouter:
+    - openai/gpt-3.5-turbo:batch
+provenance:
+  context_length:
+    source: openrouter
+  description:
+    source: openrouter
+  features:
+    source: openrouter
+  id:
+    source: openrouter
+  max_output:
+    source: openrouter
+  name:
+    source: openrouter
+  provider:
+    source: openrouter
+upstream:
+  openrouter:
+    canonical_slug: openai/gpt-3.5-turbo
+    supported_parameters:
+      - frequency_penalty
+      - logit_bias
+      - logprobs
+      - max_tokens
+      - presence_penalty
+      - response_format
+      - seed
+      - stop
+      - structured_outputs
+      - temperature
+      - tool_choice
+      - tools
+      - top_logprobs
+      - top_p
+    input_modalities:
+      - text
+    output_modalities:
+      - text
+    knowledge_cutoff: "2021-09-30"
+    fetched_at: 2026-08-07T04:16:53.527464193Z

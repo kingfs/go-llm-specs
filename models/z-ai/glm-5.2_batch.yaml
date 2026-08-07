@@ -1,0 +1,100 @@
+schema_version: 2
+id: z-ai/glm-5.2:batch
+name: 'Z.ai: GLM 5.2 (batch)'
+provider: Z-Ai
+developer: zai
+description: GLM 5.2 is a large-scale reasoning model from Z.ai. It supports text input and output with a 1M-token context window, and is suited for long-horizon agent workflows, project-level software engineering,...
+context_length: 512000
+features:
+  - CapChat
+  - CapFunctionCall
+  - CapJsonMode
+  - ModalityTextIn
+  - ModalityTextOut
+discovered_at: 2026-08-07T04:16:50.271946844Z
+links:
+  model_card: https://huggingface.co/zai-org/GLM-5.2
+identifiers:
+  huggingface:
+    - zai-org/GLM-5.2
+  openrouter:
+    - z-ai/glm-5.2:batch
+provenance:
+  context_length:
+    source: openrouter
+  description:
+    source: openrouter
+  features:
+    source: openrouter
+  id:
+    source: openrouter
+  max_output:
+    source: openrouter
+  name:
+    source: openrouter
+  provider:
+    source: openrouter
+  reasoning:
+    source: openrouter
+upstream:
+  openrouter:
+    canonical_slug: z-ai/glm-5.2-20260616
+    huggingface_id: zai-org/GLM-5.2
+    supported_parameters:
+      - frequency_penalty
+      - include_reasoning
+      - logit_bias
+      - max_tokens
+      - min_p
+      - presence_penalty
+      - reasoning
+      - reasoning_effort
+      - repetition_penalty
+      - response_format
+      - stop
+      - structured_outputs
+      - temperature
+      - tool_choice
+      - tools
+      - top_k
+      - top_p
+    input_modalities:
+      - text
+    output_modalities:
+      - text
+    fetched_at: 2026-08-07T04:16:53.539888156Z
+  huggingface:
+    id: zai-org/GLM-5.2
+    revision: b4734de4facf877f85769a911abafc5283eab3d9
+    pipeline_tag: text-generation
+    model_type: glm_moe_dsa
+    architectures:
+      - GlmMoeDsaForCausalLM
+    license: mit
+    tags:
+      - arxiv:2602.15763
+      - arxiv:2603.12201
+      - conversational
+      - en
+      - endpoints_compatible
+      - eval-results
+      - glm_moe_dsa
+      - license:mit
+      - region:us
+      - safetensors
+      - text-generation
+      - transformers
+      - zh
+    config_context_length: 1048576
+    tokenizer_model_max_length: 1048576
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-08-07T04:16:57.691443902Z
+reasoning:
+  supported: true
+  default_enabled: true
+  default_effort: high
+  supported_efforts:
+    - high
+    - xhigh

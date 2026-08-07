@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "ibm-granite/granite-swash-3b-a600m",
+  "status": "partially_accepted",
+  "created_at": "2026-08-07T04:17:00.04997152Z",
+  "source": {
+    "url": "https://huggingface.co/ibm-granite/granite-swash-3b-a600m/resolve/568a94fcfeff42a8cab9ee2ffea89fde12071282/README.md",
+    "revision": "568a94fcfeff42a8cab9ee2ffea89fde12071282",
+    "sha256": "1eeb6881468cefcc8a7fdc0d5fa1de68ba6eb39dab9935272105827da6c1b460"
+  },
+  "generator": {
+    "model": "qwen/qwen3.6-27b",
+    "wire_api": "chat"
+  },
+  "claims": [
+    {
+      "field": "description",
+      "value": "3B parameter decoder-only sparse language model with per-layer Sliding Window Attention and learnable attention sinks, trained on open source and proprietary data for general-purpose English tasks.",
+      "evidence": "Granite-SWASH-3B-a600M is a 3B parameter decoder-only sparse language model with **per-layer Sliding Window Attention (SWA)** and **learnable attention sinks**",
+      "section": "Model Summary",
+      "confidence": "high"
+    },
+    {
+      "field": "context_length",
+      "value": 8192,
+      "evidence": "| Max position embeddings | 8192 |",
+      "section": "Architecture",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "ModalityTextIn",
+        "ModalityTextOut"
+      ],
+      "evidence": "broad, general-purpose, English-language base model",
+      "section": "Model Summary",
+      "confidence": "high"
+    },
+    {
+      "field": "description",
+      "value": "Based on a decoder-only mixture-of-experts transformer architecture with 48 experts and top K of 4, using GQA, RoPE, SwiGLU MLP, and RMSNorm.",
+      "evidence": "based on a decoder-only mixture-of-experts transformer architecture... MoE with shared experts... GQA, RoPE, MLP with SwiGLU, RMSNorm",
+      "section": "Architecture",
+      "confidence": "high"
+    },
+    {
+      "field": "description",
+      "value": "Uses a sliding window size of 128 tokens. Attention pattern includes 8 full-attention layers and 20 sliding-window layers with learnable per-head attention sinks.",
+      "evidence": "Sliding window size | 128 ... 8 full-attention layers ... and 20 sliding-window layers",
+      "section": "Architecture",
+      "confidence": "high"
+    },
+    {
+      "field": "description",
+      "value": "Requires Hugging Face Transformers library version greater than 5.8.0 for usage.",
+      "evidence": "Requires transformers version \u003e 5.8.0",
+      "section": "Usage",
+      "confidence": "high"
+    },
+    {
+      "field": "description",
+      "value": "Flashed Attention 3 and 4 are recommended for speed as they natively incorporate LSE scaling. Eager attention is a fallback. SDPA is not a supported backend.",
+      "evidence": "Flash Attention 3 and 4 with native LSE (recommended for speed)... SDPA does not express sink tokens or `sink_scale`, and so is not a supported backend",
+      "section": "Supported Features",
+      "confidence": "high"
+    }
+  ]
+}

@@ -18,6 +18,9 @@ features:
   - ModalityTextOut
   - ModalityVideoIn
 discovered_at: 2026-07-29T10:38:01.951714995Z
+identifiers:
+  openrouter:
+    - google/gemini-2.5-flash:batch
 upstream:
   openrouter:
     canonical_slug: google/gemini-2.5-flash

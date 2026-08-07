@@ -1,0 +1,55 @@
+schema_version: 2
+id: openai/gpt-4.1:batch
+name: 'OpenAI: GPT-4.1 (batch)'
+provider: OpenAI
+developer: openai
+description: GPT-4.1 is a flagship large language model optimized for advanced instruction following, real-world software engineering, and long-context reasoning. It supports a 1 million token context window and outperforms GPT-4o and...
+context_length: 1047576
+max_output: 32768
+features:
+  - CapChat
+  - CapFunctionCall
+  - CapJsonMode
+  - ModalityFileIn
+  - ModalityImageIn
+  - ModalityTextIn
+  - ModalityTextOut
+discovered_at: 2026-08-07T04:16:50.318113745Z
+identifiers:
+  openrouter:
+    - openai/gpt-4.1:batch
+provenance:
+  context_length:
+    source: openrouter
+  description:
+    source: openrouter
+  features:
+    source: openrouter
+  id:
+    source: openrouter
+  max_output:
+    source: openrouter
+  name:
+    source: openrouter
+  provider:
+    source: openrouter
+upstream:
+  openrouter:
+    canonical_slug: openai/gpt-4.1-2025-04-14
+    supported_parameters:
+      - max_tokens
+      - response_format
+      - seed
+      - structured_outputs
+      - temperature
+      - tool_choice
+      - tools
+      - top_p
+    input_modalities:
+      - file
+      - image
+      - text
+    output_modalities:
+      - text
+    knowledge_cutoff: "2024-06-30"
+    fetched_at: 2026-08-07T04:16:53.528478277Z

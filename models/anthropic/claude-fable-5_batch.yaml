@@ -16,6 +16,9 @@ features:
   - ModalityTextIn
   - ModalityTextOut
 discovered_at: 2026-07-29T10:36:42.860978882Z
+identifiers:
+  openrouter:
+    - anthropic/claude-fable-5:batch
 upstream:
   openrouter:
     canonical_slug: anthropic/claude-5-fable-20260609

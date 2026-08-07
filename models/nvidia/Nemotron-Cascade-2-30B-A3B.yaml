@@ -1,0 +1,67 @@
+schema_version: 2
+id: nvidia/nemotron-cascade-2-30b-a3b
+name: Nemotron-Cascade-2-30B-A3B
+provider: NVIDIA
+developer: nvidia
+lifecycle: active
+description: Nemotron-Cascade-2-30B-A3B is an open 30B MoE model with 3B activated parameters delivering strong reasoning and agentic capabilities. It operates in both thinking and instruct modes.
+context_length: 262144
+features:
+  - ModalityTextIn
+  - ModalityTextOut
+links:
+  model_card: https://huggingface.co/nvidia/Nemotron-Cascade-2-30B-A3B
+identifiers:
+  huggingface:
+    - nvidia/Nemotron-Cascade-2-30B-A3B
+provenance:
+  context_length:
+    source: official_huggingface_config
+    url: https://huggingface.co/nvidia/Nemotron-Cascade-2-30B-A3B
+  description:
+    source: official_model_card
+    url: https://huggingface.co/nvidia/Nemotron-Cascade-2-30B-A3B/resolve/6327cdbcf907e1c7cec9cb29fb6e6cebdf8feaf7/README.md
+  features:
+    source: official_huggingface_pipeline
+    url: https://huggingface.co/nvidia/Nemotron-Cascade-2-30B-A3B
+  id:
+    source: official_huggingface
+    url: https://huggingface.co/nvidia/Nemotron-Cascade-2-30B-A3B
+  name:
+    source: official_huggingface
+    url: https://huggingface.co/nvidia/Nemotron-Cascade-2-30B-A3B
+upstream:
+  huggingface:
+    id: nvidia/Nemotron-Cascade-2-30B-A3B
+    revision: 6327cdbcf907e1c7cec9cb29fb6e6cebdf8feaf7
+    pipeline_tag: text-generation
+    model_type: nemotron_h
+    architectures:
+      - NemotronHForCausalLM
+    license: other
+    tags:
+      - RL
+      - SFT
+      - arxiv:2603.19220
+      - conversational
+      - custom_code
+      - deploy:azure
+      - en
+      - endpoints_compatible
+      - eval-results
+      - general-purpose
+      - license:other
+      - nemotron-cascade-2
+      - nemotron_h
+      - nvidia
+      - reasoning
+      - region:us
+      - safetensors
+      - text-generation
+      - transformers
+    config_context_length: 262144
+    tokenizer_model_max_length: 262144
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-08-07T04:16:56.356742456Z

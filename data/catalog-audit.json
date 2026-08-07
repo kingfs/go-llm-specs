@@ -1,7 +1,7 @@
 {
   "providers": 24,
-  "models": 587,
-  "models_with_official_links": 232,
+  "models": 625,
+  "models_with_official_links": 241,
   "uncataloged_publishers": {
     "Ai21": 1,
     "Aion-Labs": 4,
@@ -40,7 +40,7 @@
     "eleutherai": 1,
     "essentialai": 1,
     "inception": 2,
-    "inclusionai": 4,
+    "inclusionai": 5,
     "inflection": 2,
     "kwaipilot": 1,
     "liquid": 5,

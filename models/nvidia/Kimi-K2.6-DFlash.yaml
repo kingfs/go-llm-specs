@@ -1,0 +1,54 @@
+schema_version: 2
+id: nvidia/kimi-k2.6-dflash
+name: Kimi-K2.6-DFlash
+provider: NVIDIA
+developer: nvidia
+lifecycle: candidate
+context_length: 262144
+features:
+  - ModalityTextIn
+  - ModalityTextOut
+links:
+  model_card: https://huggingface.co/nvidia/Kimi-K2.6-DFlash
+identifiers:
+  huggingface:
+    - nvidia/Kimi-K2.6-DFlash
+provenance:
+  context_length:
+    source: official_huggingface_config
+    url: https://huggingface.co/nvidia/Kimi-K2.6-DFlash
+  features:
+    source: official_huggingface_pipeline
+    url: https://huggingface.co/nvidia/Kimi-K2.6-DFlash
+  id:
+    source: official_huggingface
+    url: https://huggingface.co/nvidia/Kimi-K2.6-DFlash
+  name:
+    source: official_huggingface
+    url: https://huggingface.co/nvidia/Kimi-K2.6-DFlash
+upstream:
+  huggingface:
+    id: nvidia/Kimi-K2.6-DFlash
+    revision: fae607a80e0e6a06fcfdbaa1f5f55d24b5e272e8
+    pipeline_tag: text-generation
+    model_type: qwen3
+    architectures:
+      - DFlashDraftModel
+    license: other
+    tags:
+      - DFlash
+      - Kimi-K2.6
+      - Model Optimizer
+      - ModelOpt
+      - base_model:finetune:moonshotai/Kimi-K2.6
+      - base_model:moonshotai/Kimi-K2.6
+      - license:other
+      - nvidia
+      - qwen3
+      - region:us
+      - safetensors
+      - text-generation
+    config_context_length: 262144
+    structured_files:
+      - config.json
+    fetched_at: 2026-08-07T04:16:55.572585658Z

@@ -1,0 +1,64 @@
+schema_version: 2
+id: openai/gpt-4o-mini:batch
+name: 'OpenAI: GPT-4o-mini (batch)'
+provider: OpenAI
+developer: openai
+description: GPT-4o mini is OpenAI's newest model after [GPT-4 Omni](/models/openai/gpt-4o), supporting both text and image inputs with text outputs. As their most advanced small model, it is many multiples more affordable...
+description_cn: GPT-4o mini 是 [GPT-4 Omni](/models/openai/gpt-4o) 之后的 OpenAI 最新模型，支持文本和图像输入及文本输出。作为其最先进的小型模型，它的成本更为低廉...
+context_length: 128000
+max_output: 16384
+features:
+  - CapChat
+  - CapFunctionCall
+  - CapJsonMode
+  - ModalityFileIn
+  - ModalityImageIn
+  - ModalityTextIn
+  - ModalityTextOut
+discovered_at: 2026-08-07T04:16:50.33072521Z
+identifiers:
+  openrouter:
+    - openai/gpt-4o-mini:batch
+provenance:
+  context_length:
+    source: openrouter
+  description:
+    source: openrouter
+  features:
+    source: openrouter
+  id:
+    source: openrouter
+  max_output:
+    source: openrouter
+  name:
+    source: openrouter
+  provider:
+    source: openrouter
+upstream:
+  openrouter:
+    canonical_slug: openai/gpt-4o-mini
+    supported_parameters:
+      - frequency_penalty
+      - logit_bias
+      - logprobs
+      - max_tokens
+      - prediction
+      - presence_penalty
+      - response_format
+      - seed
+      - stop
+      - structured_outputs
+      - temperature
+      - tool_choice
+      - tools
+      - top_logprobs
+      - top_p
+      - web_search_options
+    input_modalities:
+      - file
+      - image
+      - text
+    output_modalities:
+      - text
+    knowledge_cutoff: "2023-10-31"
+    fetched_at: 2026-08-07T04:16:53.528965196Z

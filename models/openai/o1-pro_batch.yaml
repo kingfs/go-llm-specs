@@ -1,0 +1,57 @@
+schema_version: 2
+id: openai/o1-pro:batch
+name: 'OpenAI: o1-pro (batch)'
+provider: OpenAI
+developer: openai
+description: The o1 series of models are trained with reinforcement learning to think before they answer and perform complex reasoning. The o1-pro model uses more compute to think harder and provide...
+description_cn: o1 系列模型通过强化学习训练，能够在回答前进行思考并执行复杂推理。o1-pro 模型使用更多的计算资源进行更深入思考，并提供...
+context_length: 200000
+max_output: 100000
+features:
+  - CapChat
+  - CapJsonMode
+  - ModalityFileIn
+  - ModalityImageIn
+  - ModalityTextIn
+  - ModalityTextOut
+discovered_at: 2026-08-07T04:16:50.320020751Z
+identifiers:
+  openrouter:
+    - openai/o1-pro:batch
+provenance:
+  context_length:
+    source: openrouter
+  description:
+    source: openrouter
+  features:
+    source: openrouter
+  id:
+    source: openrouter
+  max_output:
+    source: openrouter
+  name:
+    source: openrouter
+  provider:
+    source: openrouter
+  reasoning:
+    source: openrouter
+upstream:
+  openrouter:
+    canonical_slug: openai/o1-pro
+    supported_parameters:
+      - include_reasoning
+      - max_tokens
+      - reasoning
+      - response_format
+      - seed
+      - structured_outputs
+    input_modalities:
+      - file
+      - image
+      - text
+    output_modalities:
+      - text
+    knowledge_cutoff: "2023-10-31"
+    fetched_at: 2026-08-07T04:16:53.534070266Z
+reasoning:
+  supported: true

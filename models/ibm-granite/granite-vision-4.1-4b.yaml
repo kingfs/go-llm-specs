@@ -1,0 +1,62 @@
+schema_version: 2
+id: ibm-granite/granite-vision-4.1-4b
+name: granite-vision-4.1-4b
+provider: IBM Granite
+developer: ibm-granite
+lifecycle: candidate
+description: Granite Vision 4.1 4B is a vision-language model optimized for structured document extraction tasks, including chart, table, and key-value pair extraction, in a compact 4B parameter footprint.
+context_length: 0
+features:
+  - ModalityImageIn
+  - ModalityTextIn
+  - ModalityTextOut
+links:
+  model_card: https://huggingface.co/ibm-granite/granite-vision-4.1-4b
+identifiers:
+  huggingface:
+    - ibm-granite/granite-vision-4.1-4b
+provenance:
+  description:
+    source: official_model_card
+    url: https://huggingface.co/ibm-granite/granite-vision-4.1-4b/resolve/37d591f06319e8f1638b5adcf58bdf50e0f84f7a/README.md
+  features:
+    source: official_huggingface_pipeline
+    url: https://huggingface.co/ibm-granite/granite-vision-4.1-4b
+  id:
+    source: official_huggingface
+    url: https://huggingface.co/ibm-granite/granite-vision-4.1-4b
+  name:
+    source: official_huggingface
+    url: https://huggingface.co/ibm-granite/granite-vision-4.1-4b
+upstream:
+  huggingface:
+    id: ibm-granite/granite-vision-4.1-4b
+    revision: 37d591f06319e8f1638b5adcf58bdf50e0f84f7a
+    pipeline_tag: image-text-to-text
+    model_type: granite4_vision
+    architectures:
+      - Granite4VisionForConditionalGeneration
+    license: apache-2.0
+    tags:
+      - arxiv:2208.00385
+      - arxiv:2406.04334
+      - arxiv:2502.09927
+      - arxiv:2603.27064
+      - conversational
+      - custom_code
+      - deploy:azure
+      - en
+      - endpoints_compatible
+      - eval-results
+      - granite4_vision
+      - image-text-to-text
+      - license:apache-2.0
+      - region:us
+      - safetensors
+      - transformers
+    processor_class: Granite4VisionProcessor
+    structured_files:
+      - config.json
+      - preprocessor_config.json
+      - tokenizer_config.json
+    fetched_at: 2026-08-07T04:16:54.681239945Z

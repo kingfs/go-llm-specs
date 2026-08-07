@@ -16,6 +16,9 @@ features:
   - ModalityTextIn
   - ModalityTextOut
 discovered_at: 2026-07-29T10:41:16.400114906Z
+identifiers:
+  openrouter:
+    - openai/gpt-5-nano:batch
 upstream:
   openrouter:
     canonical_slug: openai/gpt-5-nano-2025-08-07

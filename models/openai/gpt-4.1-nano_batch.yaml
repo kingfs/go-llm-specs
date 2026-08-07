@@ -1,0 +1,56 @@
+schema_version: 2
+id: openai/gpt-4.1-nano:batch
+name: 'OpenAI: GPT-4.1 Nano (batch)'
+provider: OpenAI
+developer: openai
+description: For tasks that demand low latency, GPT‑4.1 nano is the fastest and cheapest model in the GPT-4.1 series. It delivers exceptional performance at a small size with its 1 million...
+description_cn: 对于需要低延迟的任务，GPT-4.1 nano 是 GPT-4.1 系列中速度最快、成本最低的模型。它以较小的体积和 100 万...的上下文窗口提供卓越的性能。
+context_length: 1047576
+max_output: 32768
+features:
+  - CapChat
+  - CapFunctionCall
+  - CapJsonMode
+  - ModalityFileIn
+  - ModalityImageIn
+  - ModalityTextIn
+  - ModalityTextOut
+discovered_at: 2026-08-07T04:16:50.318578012Z
+identifiers:
+  openrouter:
+    - openai/gpt-4.1-nano:batch
+provenance:
+  context_length:
+    source: openrouter
+  description:
+    source: openrouter
+  features:
+    source: openrouter
+  id:
+    source: openrouter
+  max_output:
+    source: openrouter
+  name:
+    source: openrouter
+  provider:
+    source: openrouter
+upstream:
+  openrouter:
+    canonical_slug: openai/gpt-4.1-nano-2025-04-14
+    supported_parameters:
+      - max_tokens
+      - response_format
+      - seed
+      - structured_outputs
+      - temperature
+      - tool_choice
+      - tools
+      - top_p
+    input_modalities:
+      - file
+      - image
+      - text
+    output_modalities:
+      - text
+    knowledge_cutoff: "2024-06-30"
+    fetched_at: 2026-08-07T04:16:53.528270899Z

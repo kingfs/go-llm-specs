@@ -16,6 +16,9 @@ features:
   - ModalityTextIn
   - ModalityTextOut
 discovered_at: 2026-07-29T10:36:51.799647258Z
+identifiers:
+  openrouter:
+    - anthropic/claude-sonnet-4.5:batch
 upstream:
   openrouter:
     canonical_slug: anthropic/claude-4.5-sonnet-20250929

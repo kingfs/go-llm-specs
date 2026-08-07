@@ -4,6 +4,7 @@ name: Ising-Calibration-1.5-31B-BF16
 provider: NVIDIA
 developer: nvidia
 lifecycle: candidate
+description: NVIDIA-Ising-Calibration-1.5-31B-BF16 is a dense multimodal vision-language model built on Gemma 4 31B. It analyzes quantum computing calibration experiment plots and generates structured technical text.
 context_length: 0
 features:
   - ModalityImageIn
@@ -15,6 +16,9 @@ identifiers:
   huggingface:
     - nvidia/Ising-Calibration-1.5-31B-BF16
 provenance:
+  description:
+    source: official_model_card
+    url: https://huggingface.co/nvidia/Ising-Calibration-1.5-31B-BF16/resolve/370a95279e7bec5011a4cc7041dafcd9970f40fb/README.md
   features:
     source: official_huggingface_pipeline
     url: https://huggingface.co/nvidia/Ising-Calibration-1.5-31B-BF16

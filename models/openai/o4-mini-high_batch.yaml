@@ -1,0 +1,64 @@
+schema_version: 2
+id: openai/o4-mini-high:batch
+name: 'OpenAI: o4 Mini High (batch)'
+provider: OpenAI
+developer: openai
+description: OpenAI o4-mini-high is the same model as [o4-mini](/openai/o4-mini) with reasoning_effort set to high. OpenAI o4-mini is a compact reasoning model in the o-series, optimized for fast, cost-efficient performance while retaining...
+context_length: 200000
+max_output: 100000
+features:
+  - CapChat
+  - CapFunctionCall
+  - CapJsonMode
+  - ModalityFileIn
+  - ModalityImageIn
+  - ModalityTextIn
+  - ModalityTextOut
+discovered_at: 2026-08-07T04:16:50.31732431Z
+identifiers:
+  openrouter:
+    - openai/o4-mini-high:batch
+provenance:
+  context_length:
+    source: openrouter
+  description:
+    source: openrouter
+  features:
+    source: openrouter
+  id:
+    source: openrouter
+  max_output:
+    source: openrouter
+  name:
+    source: openrouter
+  provider:
+    source: openrouter
+  reasoning:
+    source: openrouter
+upstream:
+  openrouter:
+    canonical_slug: openai/o4-mini-high-2025-04-16
+    supported_parameters:
+      - include_reasoning
+      - max_tokens
+      - reasoning
+      - reasoning_effort
+      - response_format
+      - seed
+      - structured_outputs
+      - tool_choice
+      - tools
+    input_modalities:
+      - file
+      - image
+      - text
+    output_modalities:
+      - text
+    knowledge_cutoff: "2024-06-30"
+    fetched_at: 2026-08-07T04:16:53.535548817Z
+reasoning:
+  supported: true
+  mandatory: true
+  default_effort: high
+  supported_efforts:
+    - high

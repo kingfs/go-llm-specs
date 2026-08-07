@@ -1,0 +1,74 @@
+schema_version: 2
+id: tencent/hy-embodied-vlm-1.0
+name: Hy-Embodied-VLM-1.0
+provider: Tencent Hunyuan
+developer: tencent
+lifecycle: active
+description: Hy-Embodied-VLM-1.0 is an efficient Mixture-of-Experts vision-language foundation model for embodied agents, activating only ~3B parameters per token across a ~30B total parameter model, built on Hy3-A3B and Hy-ViT2.
+context_length: 32768
+features:
+  - ModalityImageIn
+  - ModalityTextIn
+  - ModalityTextOut
+links:
+  model_card: https://huggingface.co/tencent/Hy-Embodied-VLM-1.0
+identifiers:
+  huggingface:
+    - tencent/Hy-Embodied-VLM-1.0
+provenance:
+  context_length:
+    source: official_huggingface_config
+    url: https://huggingface.co/tencent/Hy-Embodied-VLM-1.0
+  description:
+    source: official_model_card
+    url: https://huggingface.co/tencent/Hy-Embodied-VLM-1.0/resolve/d26cbcc2a7f3e2e4e9fd93398645638465ba5581/README.md
+  features:
+    source: official_huggingface_pipeline
+    url: https://huggingface.co/tencent/Hy-Embodied-VLM-1.0
+  id:
+    source: official_huggingface
+    url: https://huggingface.co/tencent/Hy-Embodied-VLM-1.0
+  name:
+    source: official_huggingface
+    url: https://huggingface.co/tencent/Hy-Embodied-VLM-1.0
+  reasoning.supported:
+    source: official_model_card
+    url: https://huggingface.co/tencent/Hy-Embodied-VLM-1.0/resolve/d26cbcc2a7f3e2e4e9fd93398645638465ba5581/README.md
+upstream:
+  huggingface:
+    id: tencent/Hy-Embodied-VLM-1.0
+    revision: d26cbcc2a7f3e2e4e9fd93398645638465ba5581
+    pipeline_tag: image-text-to-text
+    model_type: hy_v3_vl
+    architectures:
+      - HYV3VLForConditionalGeneration
+    license: apache-2.0
+    tags:
+      - arxiv:2604.07430
+      - arxiv:2607.12894
+      - conversational
+      - custom_code
+      - embodied-ai
+      - en
+      - hy_v3_vl
+      - image-text-to-text
+      - license:apache-2.0
+      - moe
+      - multimodal
+      - region:us
+      - robotics
+      - safetensors
+      - spatial-reasoning
+      - transformers
+      - vision-language-model
+      - vllm
+      - zh
+    config_context_length: 32768
+    processor_class: HYV3VLProcessor
+    structured_files:
+      - config.json
+      - preprocessor_config.json
+      - tokenizer_config.json
+    fetched_at: 2026-08-07T04:16:56.898881685Z
+reasoning:
+  supported: true

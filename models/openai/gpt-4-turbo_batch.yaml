@@ -1,0 +1,66 @@
+schema_version: 2
+id: openai/gpt-4-turbo:batch
+name: 'OpenAI: GPT-4 Turbo (batch)'
+provider: OpenAI
+developer: openai
+description: |-
+  The latest GPT-4 Turbo model with vision capabilities. Vision requests can now use JSON mode and function calling.
+
+  Training data: up to December 2023.
+description_cn: |-
+  具备视觉功能的最新 GPT-4 Turbo 模型。视觉请求现已支持 JSON 模式和函数调用。
+
+  训练数据：更新至 2023 年 12 月。
+context_length: 128000
+max_output: 4096
+features:
+  - CapChat
+  - CapFunctionCall
+  - CapJsonMode
+  - ModalityImageIn
+  - ModalityTextIn
+  - ModalityTextOut
+discovered_at: 2026-08-07T04:16:50.33194032Z
+identifiers:
+  openrouter:
+    - openai/gpt-4-turbo:batch
+provenance:
+  context_length:
+    source: openrouter
+  description:
+    source: openrouter
+  features:
+    source: openrouter
+  id:
+    source: openrouter
+  max_output:
+    source: openrouter
+  name:
+    source: openrouter
+  provider:
+    source: openrouter
+upstream:
+  openrouter:
+    canonical_slug: openai/gpt-4-turbo
+    supported_parameters:
+      - frequency_penalty
+      - logit_bias
+      - logprobs
+      - max_tokens
+      - presence_penalty
+      - response_format
+      - seed
+      - stop
+      - structured_outputs
+      - temperature
+      - tool_choice
+      - tools
+      - top_logprobs
+      - top_p
+    input_modalities:
+      - image
+      - text
+    output_modalities:
+      - text
+    knowledge_cutoff: "2023-12-31"
+    fetched_at: 2026-08-07T04:16:53.527783509Z

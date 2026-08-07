@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "nvidia/nemotron-cascade-2-30b-a3b",
+  "status": "partially_accepted",
+  "created_at": "2026-08-07T04:18:48.276359022Z",
+  "source": {
+    "url": "https://huggingface.co/nvidia/Nemotron-Cascade-2-30B-A3B/resolve/6327cdbcf907e1c7cec9cb29fb6e6cebdf8feaf7/README.md",
+    "revision": "6327cdbcf907e1c7cec9cb29fb6e6cebdf8feaf7",
+    "sha256": "25334fe4065121c22bbd6415d7e25087466349a3c2d82fb346d464f098cc7396"
+  },
+  "generator": {
+    "model": "qwen/qwen3.6-27b",
+    "wire_api": "chat"
+  },
+  "claims": [
+    {
+      "field": "description",
+      "value": "Nemotron-Cascade-2-30B-A3B is an open 30B MoE model with 3B activated parameters delivering strong reasoning and agentic capabilities. It operates in both thinking and instruct modes.",
+      "evidence": "open 30B MoE model with 3B activated parameters that delivers strong reasoning and agentic capabilities. ... operates in both thinking and instruct (non-thinking) modes",
+      "section": "Introduction",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "ModalityTextIn",
+        "ModalityTextOut"
+      ],
+      "evidence": "pipeline_tag: text-generation",
+      "section": "---",
+      "confidence": "high"
+    }
+  ]
+}

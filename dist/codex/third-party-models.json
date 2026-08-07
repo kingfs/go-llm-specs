@@ -619,8 +619,101 @@
       "auto_review_model_override": null
     },
     {
+      "slug": "glm-5.2:batch",
+      "display_name": "Z.ai: GLM 5.2 (batch)",
+      "description": "GLM 5.2 is a large-scale reasoning model from Z.ai. It supports text input and output with a 1M-token context window, and is suited for long-horizon agent workflows, project-level software engineering,...",
+      "default_reasoning_level": "high",
+      "supported_reasoning_levels": [
+        {
+          "effort": "high",
+          "description": "high reasoning effort"
+        },
+        {
+          "effort": "xhigh",
+          "description": "xhigh reasoning effort"
+        }
+      ],
+      "shell_type": "unified_exec",
+      "visibility": "list",
+      "supported_in_api": true,
+      "priority": 100,
+      "additional_speed_tiers": [],
+      "service_tiers": [],
+      "availability_nux": null,
+      "upgrade": null,
+      "base_instructions": "",
+      "model_messages": null,
+      "include_skills_usage_instructions": false,
+      "supports_reasoning_summary_parameter": false,
+      "default_reasoning_summary": "none",
+      "support_verbosity": false,
+      "default_verbosity": null,
+      "apply_patch_tool_type": "freeform",
+      "web_search_tool_type": "text",
+      "truncation_policy": {
+        "mode": "tokens",
+        "limit": 10000
+      },
+      "supports_parallel_tool_calls": false,
+      "supports_image_detail_original": false,
+      "context_window": 512000,
+      "max_context_window": 512000,
+      "auto_compact_token_limit": null,
+      "comp_hash": null,
+      "effective_context_window_percent": 90,
+      "experimental_supported_tools": [],
+      "input_modalities": [
+        "text"
+      ],
+      "supports_search_tool": false,
+      "use_responses_lite": false,
+      "auto_review_model_override": null
+    },
+    {
       "slug": "kimi-k2.7-code",
       "display_name": "MoonshotAI: Kimi K2.7 Code",
+      "description": "MoonshotAI: Kimi K2.7 Code is a coding-focused model in Moonshot AI's Kimi K2 family, built to complete end-to-end programming tasks reliably over long contexts. It uses a native multimodal mixture-of-experts...",
+      "supported_reasoning_levels": [],
+      "shell_type": "unified_exec",
+      "visibility": "list",
+      "supported_in_api": true,
+      "priority": 100,
+      "additional_speed_tiers": [],
+      "service_tiers": [],
+      "availability_nux": null,
+      "upgrade": null,
+      "base_instructions": "",
+      "model_messages": null,
+      "include_skills_usage_instructions": false,
+      "supports_reasoning_summary_parameter": false,
+      "default_reasoning_summary": "none",
+      "support_verbosity": false,
+      "default_verbosity": null,
+      "apply_patch_tool_type": "freeform",
+      "web_search_tool_type": "text",
+      "truncation_policy": {
+        "mode": "tokens",
+        "limit": 10000
+      },
+      "supports_parallel_tool_calls": false,
+      "supports_image_detail_original": false,
+      "context_window": 262144,
+      "max_context_window": 262144,
+      "auto_compact_token_limit": null,
+      "comp_hash": null,
+      "effective_context_window_percent": 90,
+      "experimental_supported_tools": [],
+      "input_modalities": [
+        "text",
+        "image"
+      ],
+      "supports_search_tool": false,
+      "use_responses_lite": false,
+      "auto_review_model_override": null
+    },
+    {
+      "slug": "kimi-k2.7-code:batch",
+      "display_name": "MoonshotAI: Kimi K2.7 Code (batch)",
       "description": "MoonshotAI: Kimi K2.7 Code is a coding-focused model in Moonshot AI's Kimi K2 family, built to complete end-to-end programming tasks reliably over long contexts. It uses a native multimodal mixture-of-experts...",
       "supported_reasoning_levels": [],
       "shell_type": "unified_exec",

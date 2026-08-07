@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "tencent/hy-embodied-vlm-1.0",
+  "status": "partially_accepted",
+  "created_at": "2026-08-07T04:18:27.092545811Z",
+  "source": {
+    "url": "https://huggingface.co/tencent/Hy-Embodied-VLM-1.0/resolve/d26cbcc2a7f3e2e4e9fd93398645638465ba5581/README.md",
+    "revision": "d26cbcc2a7f3e2e4e9fd93398645638465ba5581",
+    "sha256": "d882790d50c596d193301c80cbeb145bf80e58ced154b80f4418f38d7d4e4d7d"
+  },
+  "generator": {
+    "model": "qwen/qwen3.6-27b",
+    "wire_api": "chat"
+  },
+  "claims": [
+    {
+      "field": "description",
+      "value": "Hy-Embodied-VLM-1.0 is an efficient Mixture-of-Experts vision-language foundation model for embodied agents, activating only ~3B parameters per token across a ~30B total parameter model, built on Hy3-A3B and Hy-ViT2.",
+      "evidence": "An efficient Mixture-of-Experts vision–language foundation model for embodied agents in the physical world, activating only ~3B parameters per token (~30B total)",
+      "section": "🔥 Updates",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "ModalityTextIn",
+        "ModalityTextOut",
+        "ModalityImageIn"
+      ],
+      "evidence": "pipeline_tag: image-text-to-text",
+      "section": "MODEL CARD",
+      "confidence": "high"
+    },
+    {
+      "field": "context_length",
+      "value": 32768,
+      "evidence": "Context length | 32,768 tokens",
+      "section": "🧱 Model Card",
+      "confidence": "high"
+    },
+    {
+      "field": "reasoning.supported",
+      "value": true,
+      "evidence": "Chat template | Unified `chat_template.jinja` bundled with weights (supports `enable_thinking` kwarg)",
+      "section": "🧱 Model Card",
+      "confidence": "high"
+    }
+  ]
+}

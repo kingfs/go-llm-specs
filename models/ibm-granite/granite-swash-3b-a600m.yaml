@@ -1,0 +1,56 @@
+schema_version: 2
+id: ibm-granite/granite-swash-3b-a600m
+name: granite-swash-3b-a600m
+provider: IBM Granite
+developer: ibm-granite
+lifecycle: active
+description: 3B parameter decoder-only sparse language model with per-layer Sliding Window Attention and learnable attention sinks, trained on open source and proprietary data for general-purpose English tasks.
+context_length: 8192
+features:
+  - ModalityTextIn
+  - ModalityTextOut
+links:
+  model_card: https://huggingface.co/ibm-granite/granite-swash-3b-a600m
+identifiers:
+  huggingface:
+    - ibm-granite/granite-swash-3b-a600m
+provenance:
+  context_length:
+    source: official_huggingface_config
+    url: https://huggingface.co/ibm-granite/granite-swash-3b-a600m
+  description:
+    source: official_model_card
+    url: https://huggingface.co/ibm-granite/granite-swash-3b-a600m/resolve/568a94fcfeff42a8cab9ee2ffea89fde12071282/README.md
+  features:
+    source: official_huggingface_pipeline
+    url: https://huggingface.co/ibm-granite/granite-swash-3b-a600m
+  id:
+    source: official_huggingface
+    url: https://huggingface.co/ibm-granite/granite-swash-3b-a600m
+  name:
+    source: official_huggingface
+    url: https://huggingface.co/ibm-granite/granite-swash-3b-a600m
+upstream:
+  huggingface:
+    id: ibm-granite/granite-swash-3b-a600m
+    revision: 568a94fcfeff42a8cab9ee2ffea89fde12071282
+    pipeline_tag: text-generation
+    model_type: granitemoe_swa
+    architectures:
+      - GraniteMoeSWAForCausalLM
+    license: apache-2.0
+    tags:
+      - endpoints_compatible
+      - granite-next
+      - granitemoe_swa
+      - language
+      - license:apache-2.0
+      - region:us
+      - safetensors
+      - text-generation
+      - transformers
+    config_context_length: 8192
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-08-07T04:16:54.195313988Z

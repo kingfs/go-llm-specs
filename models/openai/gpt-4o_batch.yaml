@@ -1,0 +1,64 @@
+schema_version: 2
+id: openai/gpt-4o:batch
+name: 'OpenAI: GPT-4o (batch)'
+provider: OpenAI
+developer: openai
+description: GPT-4o ("o" for "omni") is OpenAI's latest AI model, supporting both text and image inputs with text outputs. It maintains the intelligence level of [GPT-4 Turbo](/models/openai/gpt-4-turbo) while being twice as...
+description_cn: GPT-4o（"o" 代表 "omni"）是 OpenAI 的最新 AI 模型，支持文本和图像输入及文本输出。它在保持 [GPT-4 Turbo](/models/openai/gpt-4-turbo) 智能水平的同时，速度提升了一倍...
+context_length: 128000
+max_output: 16384
+features:
+  - CapChat
+  - CapFunctionCall
+  - CapJsonMode
+  - ModalityFileIn
+  - ModalityImageIn
+  - ModalityTextIn
+  - ModalityTextOut
+discovered_at: 2026-08-07T04:16:50.331350077Z
+identifiers:
+  openrouter:
+    - openai/gpt-4o:batch
+provenance:
+  context_length:
+    source: openrouter
+  description:
+    source: openrouter
+  features:
+    source: openrouter
+  id:
+    source: openrouter
+  max_output:
+    source: openrouter
+  name:
+    source: openrouter
+  provider:
+    source: openrouter
+upstream:
+  openrouter:
+    canonical_slug: openai/gpt-4o
+    supported_parameters:
+      - frequency_penalty
+      - logit_bias
+      - logprobs
+      - max_tokens
+      - prediction
+      - presence_penalty
+      - response_format
+      - seed
+      - stop
+      - structured_outputs
+      - temperature
+      - tool_choice
+      - tools
+      - top_logprobs
+      - top_p
+      - web_search_options
+    input_modalities:
+      - file
+      - image
+      - text
+    output_modalities:
+      - text
+    knowledge_cutoff: "2023-10-31"
+    fetched_at: 2026-08-07T04:16:53.529124724Z
