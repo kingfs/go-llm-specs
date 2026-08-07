@@ -16,6 +16,8 @@ features:
   - CapJsonMode
   - ModalityTextIn
   - ModalityTextOut
+aliases:
+  - deepseek/deepseek-v3.1-terminus:exacto
 discovered_at: 2026-07-29T10:37:42.981405473Z
 links:
   model_card: https://huggingface.co/deepseek-ai/DeepSeek-V3.1-Terminus
@@ -24,6 +26,7 @@ identifiers:
     - deepseek-ai/DeepSeek-V3.1-Terminus
   openrouter:
     - deepseek/deepseek-v3.1-terminus
+    - deepseek/deepseek-v3.1-terminus:exacto
 upstream:
   openrouter:
     canonical_slug: deepseek/deepseek-v3.1-terminus

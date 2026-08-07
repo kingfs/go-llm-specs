@@ -18,12 +18,16 @@ features:
   - CapJsonMode
   - ModalityTextIn
   - ModalityTextOut
+aliases:
+  - tngtech/deepseek-r1t-chimera:free
 discovered_at: 2026-07-29T10:44:37.105662112Z
 links:
   model_card: https://huggingface.co/tngtech/DeepSeek-R1T-Chimera
 identifiers:
   huggingface:
     - tngtech/DeepSeek-R1T-Chimera
+  openrouter:
+    - tngtech/deepseek-r1t-chimera:free
 upstream:
   huggingface:
     id: tngtech/DeepSeek-R1T-Chimera

@@ -13,6 +13,8 @@ features:
   - CapJsonMode
   - ModalityTextIn
   - ModalityTextOut
+aliases:
+  - tencent/hy3:free
 discovered_at: 2026-07-29T10:44:19.198518924Z
 links:
   model_card: https://huggingface.co/tencent/Hy3
@@ -21,6 +23,7 @@ identifiers:
     - tencent/Hy3
   openrouter:
     - tencent/hy3
+    - tencent/hy3:free
 upstream:
   openrouter:
     canonical_slug: tencent/hy3-20260706

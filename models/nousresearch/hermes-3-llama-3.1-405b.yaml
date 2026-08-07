@@ -27,6 +27,8 @@ features:
   - CapJsonMode
   - ModalityTextIn
   - ModalityTextOut
+aliases:
+  - nousresearch/hermes-3-llama-3.1-405b:free
 discovered_at: 2026-07-29T10:40:29.745094327Z
 links:
   model_card: https://huggingface.co/NousResearch/Hermes-3-Llama-3.1-405B
@@ -35,6 +37,7 @@ identifiers:
     - NousResearch/Hermes-3-Llama-3.1-405B
   openrouter:
     - nousresearch/hermes-3-llama-3.1-405b
+    - nousresearch/hermes-3-llama-3.1-405b:free
 upstream:
   openrouter:
     canonical_slug: nousresearch/hermes-3-llama-3.1-405b

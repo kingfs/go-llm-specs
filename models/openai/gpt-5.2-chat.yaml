@@ -16,6 +16,8 @@ features:
   - ModalityTextIn
   - ModalityTextOut
 discovered_at: 2026-07-29T10:41:20.197361845Z
+links:
+  documentation: https://platform.openai.com/docs/models
 identifiers:
   openrouter:
     - openai/gpt-5.2-chat

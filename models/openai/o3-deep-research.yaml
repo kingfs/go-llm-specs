@@ -22,6 +22,8 @@ features:
   - ModalityTextIn
   - ModalityTextOut
 discovered_at: 2026-07-29T10:41:42.258139093Z
+links:
+  documentation: https://platform.openai.com/docs/models
 upstream:
   openrouter:
     canonical_slug: openai/o3-deep-research-2025-06-26

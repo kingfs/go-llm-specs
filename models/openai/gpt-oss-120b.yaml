@@ -13,14 +13,20 @@ features:
   - CapJsonMode
   - ModalityTextIn
   - ModalityTextOut
+aliases:
+  - openai/gpt-oss-120b:exacto
+  - openai/gpt-oss-120b:free
 discovered_at: 2026-07-29T10:41:31.604734161Z
 links:
+  documentation: https://platform.openai.com/docs/models
   model_card: https://huggingface.co/openai/gpt-oss-120b
 identifiers:
   huggingface:
     - openai/gpt-oss-120b
   openrouter:
     - openai/gpt-oss-120b
+    - openai/gpt-oss-120b:exacto
+    - openai/gpt-oss-120b:free
 upstream:
   openrouter:
     canonical_slug: openai/gpt-oss-120b

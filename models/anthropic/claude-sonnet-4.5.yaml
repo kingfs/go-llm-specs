@@ -21,10 +21,15 @@ features:
   - ModalityImageIn
   - ModalityTextIn
   - ModalityTextOut
+aliases:
+  - anthropic/claude-sonnet-4.5:batch
 discovered_at: 2026-07-29T10:36:51.369575586Z
+links:
+  documentation: https://docs.anthropic.com/en/docs/about-claude/models
 identifiers:
   openrouter:
     - anthropic/claude-sonnet-4.5
+    - anthropic/claude-sonnet-4.5:batch
 upstream:
   openrouter:
     canonical_slug: anthropic/claude-4.5-sonnet-20250929

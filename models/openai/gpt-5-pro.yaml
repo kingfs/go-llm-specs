@@ -15,10 +15,15 @@ features:
   - ModalityImageIn
   - ModalityTextIn
   - ModalityTextOut
+aliases:
+  - openai/gpt-5-pro:batch
 discovered_at: 2026-07-29T10:41:16.816265559Z
+links:
+  documentation: https://platform.openai.com/docs/models
 identifiers:
   openrouter:
     - openai/gpt-5-pro
+    - openai/gpt-5-pro:batch
 upstream:
   openrouter:
     canonical_slug: openai/gpt-5-pro-2025-10-06

@@ -19,6 +19,8 @@ features:
   - CapJsonMode
   - ModalityTextIn
   - ModalityTextOut
+aliases:
+  - qwen/qwen3-next-80b-a3b-instruct:free
 discovered_at: 2026-07-29T10:43:04.111771784Z
 links:
   model_card: https://huggingface.co/Qwen/Qwen3-Next-80B-A3B-Instruct
@@ -27,6 +29,7 @@ identifiers:
     - Qwen/Qwen3-Next-80B-A3B-Instruct
   openrouter:
     - qwen/qwen3-next-80b-a3b-instruct
+    - qwen/qwen3-next-80b-a3b-instruct:free
 upstream:
   openrouter:
     canonical_slug: qwen/qwen3-next-80b-a3b-instruct-2509

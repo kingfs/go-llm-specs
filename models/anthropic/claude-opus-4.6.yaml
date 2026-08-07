@@ -24,10 +24,17 @@ features:
   - ModalityImageIn
   - ModalityTextIn
   - ModalityTextOut
+aliases:
+  - anthropic/claude-opus-4.6-fast
+  - anthropic/claude-opus-4.6:batch
 discovered_at: 2026-07-29T10:36:46.25243153Z
+links:
+  documentation: https://docs.anthropic.com/en/docs/about-claude/models
 identifiers:
   openrouter:
     - anthropic/claude-opus-4.6
+    - anthropic/claude-opus-4.6-fast
+    - anthropic/claude-opus-4.6:batch
 upstream:
   openrouter:
     canonical_slug: anthropic/claude-4.6-opus-20260205

@@ -12,12 +12,16 @@ features:
   - CapJsonMode
   - ModalityTextIn
   - ModalityTextOut
+aliases:
+  - arcee-ai/trinity-large-preview:free
 discovered_at: 2026-07-29T10:36:54.754309457Z
 links:
   model_card: https://huggingface.co/arcee-ai/Trinity-Large-Preview
 identifiers:
   huggingface:
     - arcee-ai/Trinity-Large-Preview
+  openrouter:
+    - arcee-ai/trinity-large-preview:free
 upstream:
   huggingface:
     id: arcee-ai/Trinity-Large-Preview

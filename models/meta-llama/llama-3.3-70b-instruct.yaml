@@ -23,6 +23,8 @@ features:
   - CapJsonMode
   - ModalityTextIn
   - ModalityTextOut
+aliases:
+  - meta-llama/llama-3.3-70b-instruct:free
 discovered_at: 2026-07-29T10:38:57.257716382Z
 links:
   model_card: https://huggingface.co/meta-llama/Llama-3.3-70B-Instruct
@@ -31,6 +33,7 @@ identifiers:
     - meta-llama/Llama-3.3-70B-Instruct
   openrouter:
     - meta-llama/llama-3.3-70b-instruct
+    - meta-llama/llama-3.3-70b-instruct:free
 upstream:
   openrouter:
     canonical_slug: meta-llama/llama-3.3-70b-instruct

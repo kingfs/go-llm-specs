@@ -14,3 +14,5 @@ features:
   - ModalityTextIn
   - ModalityTextOut
 discovered_at: 2026-07-29T10:41:05.589270199Z
+links:
+  documentation: https://platform.openai.com/docs/models

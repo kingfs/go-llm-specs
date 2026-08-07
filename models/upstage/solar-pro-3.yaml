@@ -13,10 +13,13 @@ features:
   - CapJsonMode
   - ModalityTextIn
   - ModalityTextOut
+aliases:
+  - upstage/solar-pro-3:free
 discovered_at: 2026-07-29T10:44:44.334716967Z
 identifiers:
   openrouter:
     - upstage/solar-pro-3
+    - upstage/solar-pro-3:free
 provenance:
   max_output:
     source: openrouter

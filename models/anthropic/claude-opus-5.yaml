@@ -15,10 +15,17 @@ features:
   - ModalityImageIn
   - ModalityTextIn
   - ModalityTextOut
+aliases:
+  - anthropic/claude-opus-5-fast
+  - anthropic/claude-opus-5:batch
 discovered_at: 2026-07-29T10:36:50.068114262Z
+links:
+  documentation: https://docs.anthropic.com/en/docs/about-claude/models
 identifiers:
   openrouter:
     - anthropic/claude-opus-5
+    - anthropic/claude-opus-5-fast
+    - anthropic/claude-opus-5:batch
 upstream:
   openrouter:
     canonical_slug: anthropic/claude-opus-5-20260723

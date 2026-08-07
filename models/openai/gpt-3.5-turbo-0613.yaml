@@ -20,6 +20,8 @@ features:
   - ModalityTextIn
   - ModalityTextOut
 discovered_at: 2026-07-29T10:41:03.874792784Z
+links:
+  documentation: https://platform.openai.com/docs/models
 identifiers:
   openrouter:
     - openai/gpt-3.5-turbo-0613

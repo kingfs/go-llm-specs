@@ -17,6 +17,8 @@ features:
   - CapChat
   - ModalityTextIn
   - ModalityTextOut
+aliases:
+  - google/gemma-3n-e4b-it:free
 discovered_at: 2026-07-29T10:38:18.092790426Z
 links:
   model_card: https://huggingface.co/google/gemma-3n-E4B-it
@@ -25,6 +27,7 @@ identifiers:
     - google/gemma-3n-E4B-it
   openrouter:
     - google/gemma-3n-e4b-it
+    - google/gemma-3n-e4b-it:free
 provenance:
   max_output:
     source: official_model_card

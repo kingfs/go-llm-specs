@@ -15,6 +15,8 @@ features:
   - ModalityTextIn
   - ModalityTextOut
   - ModalityVideoIn
+aliases:
+  - google/gemma-4-26b-a4b-it:free
 discovered_at: 2026-07-29T10:38:19.338025664Z
 links:
   model_card: https://huggingface.co/google/gemma-4-26B-A4B-it
@@ -23,6 +25,7 @@ identifiers:
     - google/gemma-4-26B-A4B-it
   openrouter:
     - google/gemma-4-26b-a4b-it
+    - google/gemma-4-26b-a4b-it:free
 upstream:
   openrouter:
     canonical_slug: google/gemma-4-26b-a4b-it-20260403

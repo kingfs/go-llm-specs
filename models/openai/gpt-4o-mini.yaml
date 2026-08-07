@@ -33,10 +33,15 @@ features:
   - ModalityImageIn
   - ModalityTextIn
   - ModalityTextOut
+aliases:
+  - openai/gpt-4o-mini:batch
 discovered_at: 2026-07-29T10:41:10.790505858Z
+links:
+  documentation: https://platform.openai.com/docs/models
 identifiers:
   openrouter:
     - openai/gpt-4o-mini
+    - openai/gpt-4o-mini:batch
 upstream:
   openrouter:
     canonical_slug: openai/gpt-4o-mini

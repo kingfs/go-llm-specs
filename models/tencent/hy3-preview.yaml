@@ -12,6 +12,8 @@ features:
   - CapFunctionCall
   - ModalityTextIn
   - ModalityTextOut
+aliases:
+  - tencent/hy3-preview:free
 discovered_at: 2026-07-29T10:44:21.591972752Z
 links:
   model_card: https://huggingface.co/tencent/Hy3-preview
@@ -20,6 +22,7 @@ identifiers:
     - tencent/Hy3-preview
   openrouter:
     - tencent/hy3-preview
+    - tencent/hy3-preview:free
 upstream:
   openrouter:
     canonical_slug: tencent/hy3-preview-20260421

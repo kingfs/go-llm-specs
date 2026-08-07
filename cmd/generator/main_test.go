@@ -167,3 +167,20 @@ func TestNormalizeDeveloperID(t *testing.T) {
 		}
 	}
 }
+
+func TestCanonicalModelID(t *testing.T) {
+	tests := []struct {
+		id, description, want string
+	}{
+		{"openai/gpt-5.6-terra:batch", "", "openai/gpt-5.6-terra"},
+		{"poolside/laguna:free", "", "poolside/laguna"},
+		{"openai/gpt-5.6-terra-pro:batch", "same underlying model as Terra", "openai/gpt-5.6-terra"},
+		{"anthropic/claude-opus-5-fast", "Identical capabilities with higher output speed", "anthropic/claude-opus-5"},
+		{"openai/o3-pro", "uses more compute", "openai/o3-pro"},
+	}
+	for _, tt := range tests {
+		if got := canonicalModelID(tt.id, tt.description); got != tt.want {
+			t.Errorf("canonicalModelID(%q) = %q, want %q", tt.id, got, tt.want)
+		}
+	}
+}

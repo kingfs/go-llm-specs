@@ -15,10 +15,13 @@ features:
   - ModalityTextIn
   - ModalityTextOut
   - ModalityVideoIn
+aliases:
+  - qwen/qwen3.6-plus:free
 discovered_at: 2026-07-29T10:43:49.560294324Z
 identifiers:
   openrouter:
     - qwen/qwen3.6-plus
+    - qwen/qwen3.6-plus:free
 upstream:
   openrouter:
     canonical_slug: qwen/qwen3.6-plus-04-02

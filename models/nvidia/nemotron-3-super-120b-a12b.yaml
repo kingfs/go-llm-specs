@@ -18,6 +18,8 @@ features:
   - CapJsonMode
   - ModalityTextIn
   - ModalityTextOut
+aliases:
+  - nvidia/nemotron-3-super-120b-a12b:free
 discovered_at: 2026-07-29T10:40:48.451488055Z
 links:
   model_card: https://huggingface.co/nvidia/NVIDIA-Nemotron-3-Super-120B-A12B-FP8
@@ -26,6 +28,7 @@ identifiers:
     - nvidia/NVIDIA-Nemotron-3-Super-120B-A12B-FP8
   openrouter:
     - nvidia/nemotron-3-super-120b-a12b
+    - nvidia/nemotron-3-super-120b-a12b:free
 upstream:
   openrouter:
     canonical_slug: nvidia/nemotron-3-super-120b-a12b-20230311

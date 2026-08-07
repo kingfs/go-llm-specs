@@ -12,6 +12,8 @@ features:
   - CapFunctionCall
   - ModalityTextIn
   - ModalityTextOut
+aliases:
+  - stepfun/step-3.5-flash:free
 discovered_at: 2026-07-29T10:44:11.200795383Z
 links:
   model_card: https://huggingface.co/stepfun-ai/Step-3.5-Flash
@@ -20,6 +22,7 @@ identifiers:
     - stepfun-ai/Step-3.5-Flash
   openrouter:
     - stepfun/step-3.5-flash
+    - stepfun/step-3.5-flash:free
 upstream:
   openrouter:
     canonical_slug: stepfun/step-3.5-flash

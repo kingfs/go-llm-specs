@@ -15,10 +15,15 @@ features:
   - ModalityImageIn
   - ModalityTextIn
   - ModalityTextOut
+aliases:
+  - openai/o3:batch
 discovered_at: 2026-07-29T10:41:41.828511876Z
+links:
+  documentation: https://platform.openai.com/docs/models
 identifiers:
   openrouter:
     - openai/o3
+    - openai/o3:batch
 upstream:
   openrouter:
     canonical_slug: openai/o3-2025-04-16

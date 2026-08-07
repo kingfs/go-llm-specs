@@ -15,10 +15,15 @@ features:
   - ModalityImageIn
   - ModalityTextIn
   - ModalityTextOut
+aliases:
+  - anthropic/claude-fable-5:batch
 discovered_at: 2026-07-29T10:36:42.434406864Z
+links:
+  documentation: https://docs.anthropic.com/en/docs/about-claude/models
 identifiers:
   openrouter:
     - anthropic/claude-fable-5
+    - anthropic/claude-fable-5:batch
 upstream:
   openrouter:
     canonical_slug: anthropic/claude-5-fable-20260609

@@ -19,6 +19,9 @@ features:
   - CapJsonMode
   - ModalityTextIn
   - ModalityTextOut
+aliases:
+  - qwen/qwen3-coder:exacto
+  - qwen/qwen3-coder:free
 discovered_at: 2026-07-29T10:42:51.183006584Z
 links:
   model_card: https://huggingface.co/Qwen/Qwen3-Coder-480B-A35B-Instruct
@@ -27,6 +30,8 @@ identifiers:
     - Qwen/Qwen3-Coder-480B-A35B-Instruct
   openrouter:
     - qwen/qwen3-coder
+    - qwen/qwen3-coder:exacto
+    - qwen/qwen3-coder:free
 upstream:
   openrouter:
     canonical_slug: qwen/qwen3-coder-480b-a35b-07-25

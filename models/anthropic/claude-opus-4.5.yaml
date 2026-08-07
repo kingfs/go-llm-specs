@@ -20,12 +20,16 @@ features:
   - ModalityTextIn
   - ModalityTextOut
 aliases:
+  - anthropic/claude-opus-4.5:batch
   - claude-opus-4.5
   - opus-4.5
 discovered_at: 2026-07-29T10:36:45.40738599Z
+links:
+  documentation: https://docs.anthropic.com/en/docs/about-claude/models
 identifiers:
   openrouter:
     - anthropic/claude-opus-4.5
+    - anthropic/claude-opus-4.5:batch
 upstream:
   openrouter:
     canonical_slug: anthropic/claude-4.5-opus-20251124

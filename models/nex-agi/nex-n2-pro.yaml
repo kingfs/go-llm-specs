@@ -12,6 +12,8 @@ features:
   - ModalityImageIn
   - ModalityTextIn
   - ModalityTextOut
+aliases:
+  - nex-agi/nex-n2-pro:free
 discovered_at: 2026-07-29T10:40:22.186023994Z
 links:
   model_card: https://huggingface.co/nex-agi/Nex-N2-Pro
@@ -20,6 +22,7 @@ identifiers:
     - nex-agi/Nex-N2-Pro
   openrouter:
     - nex-agi/nex-n2-pro
+    - nex-agi/nex-n2-pro:free
 upstream:
   openrouter:
     canonical_slug: nex-agi/nex-n2-pro

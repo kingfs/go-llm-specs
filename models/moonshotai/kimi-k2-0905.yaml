@@ -19,6 +19,8 @@ features:
   - CapJsonMode
   - ModalityTextIn
   - ModalityTextOut
+aliases:
+  - moonshotai/kimi-k2-0905:exacto
 discovered_at: 2026-07-29T10:40:01.210259125Z
 links:
   model_card: https://huggingface.co/moonshotai/Kimi-K2-Instruct-0905
@@ -27,6 +29,7 @@ identifiers:
     - moonshotai/Kimi-K2-Instruct-0905
   openrouter:
     - moonshotai/kimi-k2-0905
+    - moonshotai/kimi-k2-0905:exacto
 upstream:
   openrouter:
     canonical_slug: moonshotai/kimi-k2-0905

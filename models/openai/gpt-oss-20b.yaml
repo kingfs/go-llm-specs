@@ -13,14 +13,18 @@ features:
   - CapJsonMode
   - ModalityTextIn
   - ModalityTextOut
+aliases:
+  - openai/gpt-oss-20b:free
 discovered_at: 2026-07-29T10:41:34.310227655Z
 links:
+  documentation: https://platform.openai.com/docs/models
   model_card: https://huggingface.co/openai/gpt-oss-20b
 identifiers:
   huggingface:
     - openai/gpt-oss-20b
   openrouter:
     - openai/gpt-oss-20b
+    - openai/gpt-oss-20b:free
 upstream:
   openrouter:
     canonical_slug: openai/gpt-oss-20b

@@ -12,4 +12,9 @@ features:
   - ModalityImageIn
   - ModalityTextIn
   - ModalityTextOut
+aliases:
+  - baidu/qianfan-ocr-fast:free
 discovered_at: 2026-07-29T10:37:10.626189935Z
+identifiers:
+  openrouter:
+    - baidu/qianfan-ocr-fast:free

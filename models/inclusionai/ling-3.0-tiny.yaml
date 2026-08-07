@@ -1,0 +1,64 @@
+schema_version: 2
+id: inclusionai/ling-3.0-tiny
+name: 'inclusionAI: Ling 3.0 Tiny (free)'
+provider: Inclusionai
+developer: inclusionai
+description: Ling 3.0 Tiny is a mixture-of-experts model from InclusionAI, with 1.3B active parameters out of 7.9B total. It is designed for responsive agents, instruction following, and multi-turn conversations, with switchable...
+context_length: 262144
+max_output: 32768
+features:
+  - CapChat
+  - CapFunctionCall
+  - ModalityTextIn
+  - ModalityTextOut
+aliases:
+  - inclusionai/ling-3.0-tiny:free
+discovered_at: 2026-08-07T04:16:50.262901094Z
+identifiers:
+  openrouter:
+    - inclusionai/ling-3.0-tiny
+    - inclusionai/ling-3.0-tiny:free
+provenance:
+  context_length:
+    source: openrouter
+  description:
+    source: openrouter
+  features:
+    source: openrouter
+  id:
+    source: openrouter
+  max_output:
+    source: openrouter
+  name:
+    source: openrouter
+  provider:
+    source: openrouter
+  reasoning:
+    source: openrouter
+upstream:
+  openrouter:
+    canonical_slug: inclusionai/ling-3.0-tiny-20260806
+    supported_parameters:
+      - frequency_penalty
+      - include_reasoning
+      - logprobs
+      - max_tokens
+      - presence_penalty
+      - reasoning
+      - repetition_penalty
+      - seed
+      - stop
+      - temperature
+      - tool_choice
+      - tools
+      - top_k
+      - top_logprobs
+      - top_p
+    input_modalities:
+      - text
+    output_modalities:
+      - text
+    fetched_at: 2026-08-07T04:16:53.524118575Z
+reasoning:
+  supported: true
+  default_enabled: true

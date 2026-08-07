@@ -19,6 +19,13 @@ OpenRouter remains the broad default discovery feed. It is not the canonical
 owner of model names or publisher specifications. Existing model YAML is never
 removed merely because an upstream feed stops listing it.
 
+OpenRouter serving variants are not model identities. Suffixes such as
+`:batch`, `:free`, and `:thinking` are folded into the underlying model and
+retained as runtime aliases plus `identifiers.openrouter` values. Named modes
+such as `-pro` or `-fast` are folded only when the upstream description
+explicitly says they use the same underlying model or have identical
+capabilities; independently published models such as `o3-pro` remain separate.
+
 ## Publisher catalog
 
 `providers/*.yaml` defines canonical publisher names, official entry points and

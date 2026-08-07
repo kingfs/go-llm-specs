@@ -19,4 +19,9 @@ features:
   - CapJsonMode
   - ModalityTextIn
   - ModalityTextOut
+aliases:
+  - xiaomi/mimo-v2-flash:free
 discovered_at: 2026-07-29T10:44:52.014732648Z
+identifiers:
+  openrouter:
+    - xiaomi/mimo-v2-flash:free

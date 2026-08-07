@@ -13,12 +13,16 @@ features:
   - CapJsonMode
   - ModalityTextIn
   - ModalityTextOut
+aliases:
+  - qwen/qwen3-4b:free
 discovered_at: 2026-07-29T10:42:47.00672503Z
 links:
   model_card: https://huggingface.co/Qwen/Qwen3-4B
 identifiers:
   huggingface:
     - Qwen/Qwen3-4B
+  openrouter:
+    - qwen/qwen3-4b:free
 provenance:
   reasoning.supported:
     source: official_model_card

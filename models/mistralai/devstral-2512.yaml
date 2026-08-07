@@ -18,12 +18,16 @@ features:
   - CapJsonMode
   - ModalityTextIn
   - ModalityTextOut
+aliases:
+  - mistralai/devstral-2512:free
 discovered_at: 2026-07-29T10:39:24.226519191Z
 links:
   model_card: https://huggingface.co/mistralai/Devstral-2-123B-Instruct-2512
 identifiers:
   huggingface:
     - mistralai/Devstral-2-123B-Instruct-2512
+  openrouter:
+    - mistralai/devstral-2512:free
 upstream:
   openrouter:
     canonical_slug: mistralai/devstral-2512

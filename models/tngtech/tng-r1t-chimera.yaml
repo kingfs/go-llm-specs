@@ -35,4 +35,9 @@ features:
   - CapJsonMode
   - ModalityTextIn
   - ModalityTextOut
+aliases:
+  - tngtech/tng-r1t-chimera:free
 discovered_at: 2026-07-29T10:44:41.084638354Z
+identifiers:
+  openrouter:
+    - tngtech/tng-r1t-chimera:free

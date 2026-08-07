@@ -174,6 +174,14 @@ func modelHasAllTags(m *modelData, tags []string) bool {
 }
 
 func scoreModelSearch(m *modelData, query string, queryTokens []string) int {
+	if strings.EqualFold(m.IDVal, query) {
+		return 1_000_000
+	}
+	for _, alias := range m.AliasList {
+		if strings.EqualFold(alias, query) {
+			return 900_000
+		}
+	}
 	score := 0
 
 	score += scoreTextField(strings.ToLower(m.IDVal), query, 120, 60, 25)

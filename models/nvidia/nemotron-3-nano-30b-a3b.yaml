@@ -23,6 +23,8 @@ features:
   - CapJsonMode
   - ModalityTextIn
   - ModalityTextOut
+aliases:
+  - nvidia/nemotron-3-nano-30b-a3b:free
 discovered_at: 2026-07-29T10:40:42.246289803Z
 links:
   model_card: https://huggingface.co/nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B-BF16
@@ -31,6 +33,7 @@ identifiers:
     - nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B-BF16
   openrouter:
     - nvidia/nemotron-3-nano-30b-a3b
+    - nvidia/nemotron-3-nano-30b-a3b:free
 upstream:
   openrouter:
     canonical_slug: nvidia/nemotron-3-nano-30b-a3b

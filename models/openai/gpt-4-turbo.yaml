@@ -21,10 +21,14 @@ features:
 aliases:
   - gpt-4-turbo
   - gpt4t
+  - openai/gpt-4-turbo:batch
 discovered_at: 2026-07-29T10:41:06.438094453Z
+links:
+  documentation: https://platform.openai.com/docs/models
 identifiers:
   openrouter:
     - openai/gpt-4-turbo
+    - openai/gpt-4-turbo:batch
 upstream:
   openrouter:
     canonical_slug: openai/gpt-4-turbo

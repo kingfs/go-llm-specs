@@ -1,0 +1,76 @@
+schema_version: 2
+id: nvidia/nemotron-3.5-content-safety
+name: 'NVIDIA: Nemotron 3.5 Content Safety (free)'
+provider: Nvidia
+developer: nvidia
+description: NVIDIA Nemotron 3.5 Content Safety is a compact 4B-parameter multimodal guardrail model from NVIDIA, fine-tuned from Google Gemma-3-4B. It moderates both inputs to and responses from LLMs and VLMs, accepting...
+description_cn: NVIDIA Nemotron 3.5内容安全是NVIDIA的一个紧凑型4B参数多模态保护模型，经过Google Gemma-3-4B的微调。它调节LLMs和VLMs的输入和输出，接受...
+context_length: 128000
+max_output: 8192
+features:
+  - CapChat
+  - ModalityImageIn
+  - ModalityTextIn
+  - ModalityTextOut
+aliases:
+  - nvidia/nemotron-3.5-content-safety:free
+discovered_at: 2026-07-29T10:40:55.969661873Z
+links:
+  model_card: https://huggingface.co/nvidia/Nemotron-3.5-Content-Safety
+identifiers:
+  huggingface:
+    - nvidia/Nemotron-3.5-Content-Safety
+  openrouter:
+    - nvidia/nemotron-3.5-content-safety
+    - nvidia/nemotron-3.5-content-safety:free
+upstream:
+  openrouter:
+    canonical_slug: nvidia/nemotron-3.5-content-safety-20260604
+    huggingface_id: nvidia/Nemotron-3.5-Content-Safety
+    supported_parameters:
+      - include_reasoning
+      - max_tokens
+      - reasoning
+      - seed
+      - temperature
+      - top_p
+    input_modalities:
+      - image
+      - text
+    output_modalities:
+      - text
+    fetched_at: 2026-07-29T10:40:55.969662453Z
+  huggingface:
+    id: nvidia/Nemotron-3.5-Content-Safety
+    revision: 35645ed3543b7e7ffaed2e788699e57a5051497c
+    model_type: gemma3
+    architectures:
+      - Gemma3ForConditionalGeneration
+    license: other
+    tags:
+      - ar
+      - dataset:nvidia/Nemotron-3.5-Content-Safety-Dataset
+      - de
+      - en
+      - es
+      - fr
+      - gemma3
+      - hi
+      - it
+      - ja
+      - ko
+      - license:other
+      - nl
+      - region:us
+      - safetensors
+      - th
+      - zh
+    processor_class: Gemma3Processor
+    structured_files:
+      - config.json
+      - preprocessor_config.json
+      - tokenizer_config.json
+    fetched_at: 2026-07-29T10:40:58.516046666Z
+reasoning:
+  supported: true
+  default_enabled: true

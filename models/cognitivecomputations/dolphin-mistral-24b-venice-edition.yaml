@@ -12,6 +12,8 @@ features:
   - CapJsonMode
   - ModalityTextIn
   - ModalityTextOut
+aliases:
+  - cognitivecomputations/dolphin-mistral-24b-venice-edition:free
 discovered_at: 2026-07-29T10:37:15.537438625Z
 links:
   model_card: https://huggingface.co/dphn/Dolphin-Mistral-24B-Venice-Edition
@@ -20,6 +22,7 @@ identifiers:
     - dphn/Dolphin-Mistral-24B-Venice-Edition
   openrouter:
     - cognitivecomputations/dolphin-mistral-24b-venice-edition
+    - cognitivecomputations/dolphin-mistral-24b-venice-edition:free
 upstream:
   openrouter:
     canonical_slug: venice/uncensored

@@ -19,6 +19,8 @@ features:
   - CapJsonMode
   - ModalityTextIn
   - ModalityTextOut
+aliases:
+  - deepseek/deepseek-r1-0528:free
 discovered_at: 2026-07-29T10:37:38.410398658Z
 links:
   model_card: https://huggingface.co/deepseek-ai/DeepSeek-R1-0528
@@ -27,6 +29,7 @@ identifiers:
     - deepseek-ai/DeepSeek-R1-0528
   openrouter:
     - deepseek/deepseek-r1-0528
+    - deepseek/deepseek-r1-0528:free
 upstream:
   openrouter:
     canonical_slug: deepseek/deepseek-r1-0528

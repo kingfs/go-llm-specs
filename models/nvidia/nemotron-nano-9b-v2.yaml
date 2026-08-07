@@ -16,4 +16,12 @@ features:
   - CapJsonMode
   - ModalityTextIn
   - ModalityTextOut
+aliases:
+  - nvidia/nemotron-nano-9b-v2:free
 discovered_at: 2026-07-29T10:41:00.191097446Z
+links:
+  model_card: https://huggingface.co/nvidia/NVIDIA-Nemotron-Nano-9B-v2
+identifiers:
+  openrouter:
+    - nvidia/nemotron-nano-9b-v2
+    - nvidia/nemotron-nano-9b-v2:free

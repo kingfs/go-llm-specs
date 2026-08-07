@@ -13,10 +13,13 @@ features:
   - CapJsonMode
   - ModalityTextIn
   - ModalityTextOut
+aliases:
+  - qwen/qwen-plus-2025-07-28:thinking
 discovered_at: 2026-07-29T10:42:22.557074939Z
 identifiers:
   openrouter:
     - qwen/qwen-plus-2025-07-28
+    - qwen/qwen-plus-2025-07-28:thinking
 upstream:
   openrouter:
     canonical_slug: qwen/qwen-plus-2025-07-28

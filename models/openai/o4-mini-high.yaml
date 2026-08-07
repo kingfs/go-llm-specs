@@ -20,10 +20,15 @@ features:
   - ModalityImageIn
   - ModalityTextIn
   - ModalityTextOut
+aliases:
+  - openai/o4-mini-high:batch
 discovered_at: 2026-07-29T10:41:44.822507486Z
+links:
+  documentation: https://platform.openai.com/docs/models
 identifiers:
   openrouter:
     - openai/o4-mini-high
+    - openai/o4-mini-high:batch
 upstream:
   openrouter:
     canonical_slug: openai/o4-mini-high-2025-04-16

@@ -12,6 +12,8 @@ features:
   - CapFunctionCall
   - ModalityTextIn
   - ModalityTextOut
+aliases:
+  - arcee-ai/trinity-large-thinking:free
 discovered_at: 2026-07-29T10:36:57.332623299Z
 links:
   model_card: https://huggingface.co/arcee-ai/Trinity-Large-Thinking
@@ -20,6 +22,7 @@ identifiers:
     - arcee-ai/Trinity-Large-Thinking
   openrouter:
     - arcee-ai/trinity-large-thinking
+    - arcee-ai/trinity-large-thinking:free
 upstream:
   openrouter:
     canonical_slug: arcee-ai/trinity-large-thinking

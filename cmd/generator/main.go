@@ -306,19 +306,111 @@ func buildAliasMap(processedModels []*ProcessedModel) map[string]string {
 }
 
 func syncToDisk(apiModels []OpenRouterModel, localModels map[string]ModelRegistry, modelsDir string) error {
+	if err := consolidateLocalVariants(localModels, modelsDir); err != nil {
+		return err
+	}
 	for _, upstream := range apiModels {
-		local := localModels[upstream.ID]
+		upstreamID := upstream.ID
+		canonicalID := canonicalModelID(upstream.ID, upstream.Description)
+		upstream.ID = canonicalID
+		local := localModels[canonicalID]
 		if local.ID == "" {
 			now := time.Now().UTC()
 			local.SchemaVersion = registrymodel.CurrentSchemaVersion
 			local.DiscoveredAt = &now
 		}
 		merged := mergeModelRegistry(upstream, local)
-		if err := saveModelToDisk(merged, modelsDir); err != nil {
-			return fmt.Errorf("save model %s: %w", upstream.ID, err)
+		if !strings.EqualFold(upstreamID, canonicalID) {
+			merged.Aliases = normalizeStringList(append(merged.Aliases, upstreamID))
+			merged.Identifiers.OpenRouter = normalizeStringList(append(merged.Identifiers.OpenRouter, upstreamID))
 		}
+		addPublisherDocumentation(&merged)
+		if err := saveModelToDisk(merged, modelsDir); err != nil {
+			return fmt.Errorf("save model %s: %w", canonicalID, err)
+		}
+		localModels[canonicalID] = merged
 	}
 	return nil
+}
+
+func canonicalModelID(id, description string) string {
+	id, _, _ = strings.Cut(id, ":")
+	lowerDescription := strings.ToLower(description)
+	if strings.HasSuffix(id, "-pro") && strings.Contains(lowerDescription, "same underlying model") {
+		return strings.TrimSuffix(id, "-pro")
+	}
+	if strings.HasSuffix(id, "-fast") && strings.Contains(lowerDescription, "identical capabilities") {
+		return strings.TrimSuffix(id, "-fast")
+	}
+	return id
+}
+
+func consolidateLocalVariants(models map[string]ModelRegistry, modelsDir string) error {
+	ids := make([]string, 0, len(models))
+	for id := range models {
+		ids = append(ids, id)
+	}
+	sort.Strings(ids)
+	for _, id := range ids {
+		variant, ok := models[id]
+		if !ok {
+			continue
+		}
+		canonicalID := canonicalModelID(id, variant.Description)
+		if canonicalID == id {
+			continue
+		}
+		canonical := models[canonicalID]
+		if canonical.ID == "" {
+			canonical = variant
+			canonical.ID = canonicalID
+		}
+		canonical.Aliases = normalizeStringList(append(canonical.Aliases, id))
+		canonical.Identifiers.OpenRouter = normalizeStringList(append(canonical.Identifiers.OpenRouter, variant.Identifiers.OpenRouter...))
+		canonical.Identifiers.OpenRouter = normalizeStringList(append(canonical.Identifiers.OpenRouter, id))
+		if canonical.Links.IsZero() && !variant.Links.IsZero() {
+			canonical.Links = variant.Links
+		}
+		addPublisherDocumentation(&canonical)
+		if err := saveModelToDisk(canonical, modelsDir); err != nil {
+			return fmt.Errorf("save consolidated model %s: %w", canonicalID, err)
+		}
+		variantPath, err := modelFilePath(id, modelsDir)
+		if err != nil {
+			return err
+		}
+		if err := os.Remove(variantPath); err != nil && !errors.Is(err, os.ErrNotExist) {
+			return fmt.Errorf("remove deployment variant %s: %w", id, err)
+		}
+		models[canonicalID] = canonical
+		delete(models, id)
+	}
+	for id, model := range models {
+		if model.Links.Documentation != "" {
+			continue
+		}
+		addPublisherDocumentation(&model)
+		if model.Links.Documentation == "" {
+			continue
+		}
+		if err := saveModelToDisk(model, modelsDir); err != nil {
+			return fmt.Errorf("save publisher documentation for %s: %w", id, err)
+		}
+		models[id] = model
+	}
+	return nil
+}
+
+func addPublisherDocumentation(model *ModelRegistry) {
+	if model.Links.Documentation != "" {
+		return
+	}
+	switch strings.ToLower(model.Developer) {
+	case "openai":
+		model.Links.Documentation = "https://platform.openai.com/docs/models"
+	case "anthropic":
+		model.Links.Documentation = "https://docs.anthropic.com/en/docs/about-claude/models"
+	}
 }
 
 func mergeModelRegistry(upstream OpenRouterModel, local ModelRegistry) ModelRegistry {
@@ -412,23 +504,27 @@ func stringsToFeatures(featureExpr string) []string {
 }
 
 func saveModelToDisk(m ModelRegistry, modelsDir string) error {
-	parts := strings.SplitN(m.ID, "/", 2)
+	filePath, err := modelFilePath(m.ID, modelsDir)
+	if err != nil {
+		return err
+	}
+	if err := os.MkdirAll(filepath.Dir(filePath), 0o755); err != nil {
+		return err
+	}
+	return registrymodel.Save(filePath, m)
+}
+
+func modelFilePath(id, modelsDir string) (string, error) {
+	parts := strings.SplitN(id, "/", 2)
 	if len(parts) != 2 {
-		return fmt.Errorf("invalid model ID: %s", m.ID)
+		return "", fmt.Errorf("invalid model ID: %s", id)
 	}
 
 	provider := parts[0]
 	modelName := parts[1]
 	safeModelName := strings.NewReplacer(":", "_", "/", "_").Replace(modelName)
 
-	dir := filepath.Join(modelsDir, provider)
-	if err := os.MkdirAll(dir, 0o755); err != nil {
-		return err
-	}
-
-	filePath := filepath.Join(dir, safeModelName+".yaml")
-
-	return registrymodel.Save(filePath, m)
+	return filepath.Join(modelsDir, provider, safeModelName+".yaml"), nil
 }
 
 func calculateFeatures(m OpenRouterModel) string {

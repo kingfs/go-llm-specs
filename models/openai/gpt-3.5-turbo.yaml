@@ -19,10 +19,15 @@ features:
   - CapJsonMode
   - ModalityTextIn
   - ModalityTextOut
+aliases:
+  - openai/gpt-3.5-turbo:batch
 discovered_at: 2026-07-29T10:41:03.454118323Z
+links:
+  documentation: https://platform.openai.com/docs/models
 identifiers:
   openrouter:
     - openai/gpt-3.5-turbo
+    - openai/gpt-3.5-turbo:batch
 upstream:
   openrouter:
     canonical_slug: openai/gpt-3.5-turbo

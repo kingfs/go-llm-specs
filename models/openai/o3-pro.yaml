@@ -21,10 +21,15 @@ features:
   - ModalityImageIn
   - ModalityTextIn
   - ModalityTextOut
+aliases:
+  - openai/o3-pro:batch
 discovered_at: 2026-07-29T10:41:43.548719909Z
+links:
+  documentation: https://platform.openai.com/docs/models
 identifiers:
   openrouter:
     - openai/o3-pro
+    - openai/o3-pro:batch
 upstream:
   openrouter:
     canonical_slug: openai/o3-pro-2025-06-10

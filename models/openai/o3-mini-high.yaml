@@ -19,10 +19,15 @@ features:
   - ModalityFileIn
   - ModalityTextIn
   - ModalityTextOut
+aliases:
+  - openai/o3-mini-high:batch
 discovered_at: 2026-07-29T10:41:43.110905952Z
+links:
+  documentation: https://platform.openai.com/docs/models
 identifiers:
   openrouter:
     - openai/o3-mini-high
+    - openai/o3-mini-high:batch
 upstream:
   openrouter:
     canonical_slug: openai/o3-mini-high-2025-01-31

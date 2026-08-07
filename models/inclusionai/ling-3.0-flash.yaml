@@ -12,6 +12,8 @@ features:
   - CapFunctionCall
   - ModalityTextIn
   - ModalityTextOut
+aliases:
+  - inclusionai/ling-3.0-flash:free
 discovered_at: 2026-08-06T04:52:30.246709121Z
 links:
   model_card: https://huggingface.co/inclusionAI/Ling-3.0-flash
@@ -20,6 +22,7 @@ identifiers:
     - inclusionAI/Ling-3.0-flash
   openrouter:
     - inclusionai/ling-3.0-flash
+    - inclusionai/ling-3.0-flash:free
 provenance:
   context_length:
     source: openrouter

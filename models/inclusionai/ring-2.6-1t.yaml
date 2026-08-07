@@ -13,6 +13,8 @@ features:
   - CapJsonMode
   - ModalityTextIn
   - ModalityTextOut
+aliases:
+  - inclusionai/ring-2.6-1t:free
 discovered_at: 2026-07-29T10:38:39.94158778Z
 links:
   model_card: https://huggingface.co/inclusionAI/Ring-2.6-1T
@@ -21,6 +23,7 @@ identifiers:
     - inclusionAI/Ring-2.6-1T
   openrouter:
     - inclusionai/ring-2.6-1t
+    - inclusionai/ring-2.6-1t:free
 upstream:
   openrouter:
     canonical_slug: inclusionai/ring-2.6-1t-20260508

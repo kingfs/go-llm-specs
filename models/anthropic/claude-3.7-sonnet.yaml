@@ -19,4 +19,11 @@ features:
   - ModalityImageIn
   - ModalityTextIn
   - ModalityTextOut
+aliases:
+  - anthropic/claude-3.7-sonnet:thinking
 discovered_at: 2026-07-29T10:36:41.588572057Z
+links:
+  documentation: https://docs.anthropic.com/en/docs/about-claude/models
+identifiers:
+  openrouter:
+    - anthropic/claude-3.7-sonnet:thinking

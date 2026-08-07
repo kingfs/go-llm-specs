@@ -28,10 +28,15 @@ features:
   - ModalityFileIn
   - ModalityTextIn
   - ModalityTextOut
+aliases:
+  - openai/o3-mini:batch
 discovered_at: 2026-07-29T10:41:42.678643877Z
+links:
+  documentation: https://platform.openai.com/docs/models
 identifiers:
   openrouter:
     - openai/o3-mini
+    - openai/o3-mini:batch
 upstream:
   openrouter:
     canonical_slug: openai/o3-mini-2025-01-31

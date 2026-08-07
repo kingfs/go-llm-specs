@@ -15,10 +15,15 @@ features:
   - ModalityImageIn
   - ModalityTextIn
   - ModalityTextOut
+aliases:
+  - openai/gpt-4.1:batch
 discovered_at: 2026-07-29T10:41:07.27940799Z
+links:
+  documentation: https://platform.openai.com/docs/models
 identifiers:
   openrouter:
     - openai/gpt-4.1
+    - openai/gpt-4.1:batch
 upstream:
   openrouter:
     canonical_slug: openai/gpt-4.1-2025-04-14

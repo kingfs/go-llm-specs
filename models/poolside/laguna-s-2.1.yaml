@@ -12,6 +12,8 @@ features:
   - CapFunctionCall
   - ModalityTextIn
   - ModalityTextOut
+aliases:
+  - poolside/laguna-s-2.1:free
 discovered_at: 2026-07-29T10:41:59.699341347Z
 links:
   model_card: https://huggingface.co/poolside/Laguna-S-2.1
@@ -20,6 +22,7 @@ identifiers:
     - poolside/Laguna-S-2.1
   openrouter:
     - poolside/laguna-s-2.1
+    - poolside/laguna-s-2.1:free
 upstream:
   openrouter:
     canonical_slug: poolside/laguna-s-2.1-20260720

@@ -13,4 +13,9 @@ features:
   - CapJsonMode
   - ModalityTextIn
   - ModalityTextOut
+aliases:
+  - tngtech/deepseek-r1t2-chimera:free
 discovered_at: 2026-07-29T10:44:40.118324754Z
+identifiers:
+  openrouter:
+    - tngtech/deepseek-r1t2-chimera:free

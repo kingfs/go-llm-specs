@@ -27,6 +27,8 @@ features:
   - CapJsonMode
   - ModalityTextIn
   - ModalityTextOut
+aliases:
+  - z-ai/glm-4.6:exacto
 discovered_at: 2026-07-29T10:45:06.528811856Z
 links:
   model_card: https://huggingface.co/zai-org/GLM-4.6
@@ -35,6 +37,7 @@ identifiers:
     - zai-org/GLM-4.6
   openrouter:
     - z-ai/glm-4.6
+    - z-ai/glm-4.6:exacto
 upstream:
   openrouter:
     canonical_slug: z-ai/glm-4.6

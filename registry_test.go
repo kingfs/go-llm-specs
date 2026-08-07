@@ -183,6 +183,24 @@ func TestSearch(t *testing.T) {
 	}
 }
 
+func TestServingVariantAliasesResolveToCanonicalModel(t *testing.T) {
+	canonical := "openai/gpt-5.6-terra"
+	for _, variant := range []string{
+		"openai/gpt-5.6-terra:batch",
+		"openai/gpt-5.6-terra-pro",
+		"openai/gpt-5.6-terra-pro:batch",
+	} {
+		model, ok := Get(variant)
+		if !ok || model.ID() != canonical {
+			t.Errorf("Get(%q) = (%q, %v), want canonical %q", variant, model.ID(), ok, canonical)
+		}
+	}
+	results := Search(canonical, 1)
+	if len(results) != 1 || results[0].ID() != canonical {
+		t.Fatalf("exact canonical search returned %#v", results)
+	}
+}
+
 func BenchmarkSearch(b *testing.B) {
 	b.ResetTimer()
 	for i := 0; i < b.N; i++ {

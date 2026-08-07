@@ -21,6 +21,7 @@ features:
   - ModalityTextOut
 discovered_at: 2026-07-29T10:41:37.936457105Z
 links:
+  documentation: https://platform.openai.com/docs/models
   model_card: https://huggingface.co/openai/gpt-oss-safeguard-20b
 identifiers:
   huggingface:

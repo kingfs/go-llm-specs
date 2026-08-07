@@ -19,6 +19,8 @@ features:
   - ModalityImageIn
   - ModalityTextIn
   - ModalityTextOut
+aliases:
+  - meta-llama/llama-guard-4-12b:free
 discovered_at: 2026-07-29T10:39:01.099332159Z
 links:
   model_card: https://huggingface.co/meta-llama/Llama-Guard-4-12B
@@ -27,6 +29,7 @@ identifiers:
     - meta-llama/Llama-Guard-4-12B
   openrouter:
     - meta-llama/llama-guard-4-12b
+    - meta-llama/llama-guard-4-12b:free
 upstream:
   openrouter:
     canonical_slug: meta-llama/llama-guard-4-12b

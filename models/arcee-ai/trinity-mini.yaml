@@ -13,12 +13,16 @@ features:
   - CapJsonMode
   - ModalityTextIn
   - ModalityTextOut
+aliases:
+  - arcee-ai/trinity-mini:free
 discovered_at: 2026-07-29T10:36:59.781398379Z
 links:
   model_card: https://huggingface.co/arcee-ai/Trinity-Mini
 identifiers:
   huggingface:
     - arcee-ai/Trinity-Mini
+  openrouter:
+    - arcee-ai/trinity-mini:free
 upstream:
   huggingface:
     id: arcee-ai/Trinity-Mini

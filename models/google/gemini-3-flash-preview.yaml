@@ -23,10 +23,13 @@ features:
   - ModalityTextIn
   - ModalityTextOut
   - ModalityVideoIn
+aliases:
+  - google/gemini-3-flash-preview:batch
 discovered_at: 2026-07-29T10:38:04.123235383Z
 identifiers:
   openrouter:
     - google/gemini-3-flash-preview
+    - google/gemini-3-flash-preview:batch
 upstream:
   openrouter:
     canonical_slug: google/gemini-3-flash-preview-20251217

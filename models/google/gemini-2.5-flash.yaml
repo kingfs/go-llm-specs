@@ -20,10 +20,13 @@ features:
   - ModalityTextIn
   - ModalityTextOut
   - ModalityVideoIn
+aliases:
+  - google/gemini-2.5-flash:batch
 discovered_at: 2026-07-29T10:37:59.41940732Z
 identifiers:
   openrouter:
     - google/gemini-2.5-flash
+    - google/gemini-2.5-flash:batch
 upstream:
   openrouter:
     canonical_slug: google/gemini-2.5-flash

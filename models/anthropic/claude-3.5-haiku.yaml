@@ -24,3 +24,5 @@ features:
   - ModalityTextIn
   - ModalityTextOut
 discovered_at: 2026-07-29T10:36:40.73452485Z
+links:
+  documentation: https://docs.anthropic.com/en/docs/about-claude/models

@@ -13,6 +13,8 @@ features:
   - CapJsonMode
   - ModalityTextIn
   - ModalityTextOut
+aliases:
+  - inclusionai/ling-2.6-flash:free
 discovered_at: 2026-07-29T10:38:37.042764449Z
 links:
   model_card: https://huggingface.co/inclusionAI/Ling-2.6-flash
@@ -21,6 +23,7 @@ identifiers:
     - inclusionAI/Ling-2.6-flash
   openrouter:
     - inclusionai/ling-2.6-flash
+    - inclusionai/ling-2.6-flash:free
 upstream:
   openrouter:
     canonical_slug: inclusionai/ling-2.6-flash-20260421

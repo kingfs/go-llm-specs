@@ -13,6 +13,8 @@ features:
   - CapJsonMode
   - ModalityTextIn
   - ModalityTextOut
+aliases:
+  - moonshotai/kimi-k2:free
 discovered_at: 2026-07-29T10:39:59.146259187Z
 links:
   model_card: https://huggingface.co/moonshotai/Kimi-K2-Instruct
@@ -21,6 +23,7 @@ identifiers:
     - moonshotai/Kimi-K2-Instruct
   openrouter:
     - moonshotai/kimi-k2
+    - moonshotai/kimi-k2:free
 upstream:
   openrouter:
     canonical_slug: moonshotai/kimi-k2

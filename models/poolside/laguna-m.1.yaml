@@ -13,12 +13,16 @@ features:
   - CapJsonMode
   - ModalityTextIn
   - ModalityTextOut
+aliases:
+  - poolside/laguna-m.1:free
 discovered_at: 2026-07-29T10:41:56.331890705Z
 links:
   model_card: https://huggingface.co/poolside/Laguna-M.1
 identifiers:
   huggingface:
     - poolside/Laguna-M.1
+  openrouter:
+    - poolside/laguna-m.1:free
 upstream:
   huggingface:
     id: poolside/Laguna-M.1
