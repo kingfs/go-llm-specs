@@ -176,6 +176,11 @@ func run(ctx context.Context, cfg config) error {
 			}
 		}
 	}
+	if cfg.DiscoverHF {
+		if err := reconcilePreviousIdentityMatches(previousCandidates, modelMatches, models, knownHF, cfg.ApplyMatches); err != nil {
+			return err
+		}
+	}
 
 	if cfg.DiscoverHF {
 		client := &http.Client{Timeout: cfg.Timeout}
@@ -288,6 +293,34 @@ func run(ctx context.Context, cfg config) error {
 		return err
 	}
 	log.Printf("catalog report: providers=%d models=%d uncataloged=%d hf_candidates=%d", r.Providers, r.Models, len(r.UncatalogedPublishers), len(r.HuggingFaceCandidates))
+	return nil
+}
+
+func reconcilePreviousIdentityMatches(previous map[string]hfCandidate, modelMatches map[string][]int, models []registry.Model, knownHF map[string]bool, apply bool) error {
+	for key, candidate := range previous {
+		if candidate.Status != "new" && candidate.Status != "identity_match" {
+			continue
+		}
+		matches := modelMatches[candidate.ProviderID+":"+normalize(modelSuffix(candidate.RepositoryID))]
+		if len(matches) != 1 {
+			continue
+		}
+		candidate.RegistryID = models[matches[0]].ID
+		candidate.Status = "identity_match"
+		if apply {
+			model := &models[matches[0]]
+			model.Identifiers.HuggingFace = appendUnique(model.Identifiers.HuggingFace, candidate.RepositoryID)
+			if model.Links.ModelCard == "" {
+				model.Links.ModelCard = "https://huggingface.co/" + candidate.RepositoryID
+			}
+			if err := registry.Save(model.FilePath, *model); err != nil {
+				return err
+			}
+			knownHF[strings.ToLower(candidate.RepositoryID)] = true
+			candidate.Status = "identity_applied"
+		}
+		previous[key] = candidate
+	}
 	return nil
 }
 

@@ -184,3 +184,16 @@ func TestCanonicalModelID(t *testing.T) {
 		}
 	}
 }
+
+func TestCanonicalModelNameOnlyForServingAliases(t *testing.T) {
+	model := ModelRegistry{ID: "google/gemma-3n-e2b-it", Name: "Google: Gemma 3n 2B (free)", Aliases: []string{"google/gemma-3n-e2b-it:free"}}
+	if !hasServingVariantAlias(model) {
+		t.Fatal("expected serving variant alias")
+	}
+	if got := canonicalModelName(model.Name); got != "Google: Gemma 3n 2B" {
+		t.Fatalf("canonicalModelName = %q", got)
+	}
+	if hasServingVariantAlias(ModelRegistry{ID: model.ID, Aliases: []string{"gemma-free"}}) {
+		t.Fatal("ordinary aliases must not trigger serving-name cleanup")
+	}
+}

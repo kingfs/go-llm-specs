@@ -1,20 +1,76 @@
 schema_version: 2
 id: google/gemma-3n-e2b-it
-name: 'Google: Gemma 3n 2B (free)'
+name: 'Google: Gemma 3n 2B'
 provider: Google
 developer: google
 description: Gemma 3n E2B IT is a multimodal, instruction-tuned model developed by Google DeepMind, designed to operate efficiently at an effective parameter size of 2B while leveraging a 6B architecture. Based on the MatFormer architecture, it supports nested submodels and modular composition via the Mix-and-Match framework. Gemma 3n models are optimized for low-resource deployment, offering 32K context length and strong multilingual and reasoning performance across common benchmarks. This variant is trained on a diverse corpus including code, math, web, and multimodal data.
 description_cn: Gemma 3n E2B IT 是 Google DeepMind 开发的多模态指令微调模型，基于 60 亿参数架构，有效参数规模约为 20 亿。该模型采用 MatFormer 架构，支持嵌套子模型及通过 Mix-and-Match 框架进行模块化组合。Gemma 3n 系列针对低资源部署优化，提供 32K 上下文长度，在主流基准测试中展现出卓越的多语言能力与推理性能。此变体在包含代码、数学、网页及多模态数据的多样化语料上进行训练。
-context_length: 8192
+context_length: 32768
 max_output: 2048
 features:
   - CapChat
   - CapJsonMode
+  - ModalityAudioIn
+  - ModalityImageIn
   - ModalityTextIn
   - ModalityTextOut
+  - ModalityVideoIn
 aliases:
   - google/gemma-3n-e2b-it:free
 discovered_at: 2026-07-29T10:38:17.673612298Z
+links:
+  model_card: https://huggingface.co/google/gemma-3n-E2B-it
 identifiers:
+  huggingface:
+    - google/gemma-3n-E2B-it
   openrouter:
     - google/gemma-3n-e2b-it:free
+provenance:
+  context_length:
+    source: official_model_card
+    url: https://huggingface.co/google/gemma-3n-E2B-it
+  features:
+    source: official_huggingface_pipeline
+    url: https://huggingface.co/google/gemma-3n-E2B-it
+upstream:
+  huggingface:
+    id: google/gemma-3n-E2B-it
+    revision: 5e092ebca197cdcd8d8b195040accf22693501bc
+    pipeline_tag: image-text-to-text
+    model_type: gemma3n
+    architectures:
+      - Gemma3nForConditionalGeneration
+    license: gemma
+    tags:
+      - arxiv:1705.03551
+      - arxiv:1903.00161
+      - arxiv:1904.09728
+      - arxiv:1905.07830
+      - arxiv:1905.10044
+      - arxiv:1907.10641
+      - arxiv:1911.01547
+      - arxiv:1911.11641
+      - arxiv:2009.03300
+      - arxiv:2107.03374
+      - arxiv:2108.07732
+      - arxiv:2210.03057
+      - arxiv:2311.12022
+      - arxiv:2403.07974
+      - arxiv:2411.19799
+      - arxiv:2502.12404
+      - arxiv:2502.21228
+      - audio-text-to-text
+      - automatic-speech-recognition
+      - automatic-speech-translation
+      - base_model:finetune:google/gemma-3n-E4B-it
+      - base_model:google/gemma-3n-E4B-it
+      - conversational
+      - endpoints_compatible
+      - gemma3n
+      - image-text-to-text
+      - license:gemma
+      - region:us
+      - safetensors
+      - transformers
+      - video-text-to-text
+    fetched_at: 2026-08-07T07:12:21.799117031Z

@@ -39,6 +39,37 @@ func TestDiscoverHFPaginates(t *testing.T) {
 	}
 }
 
+func TestReconcilePreviousIdentityMatchesAfterCanonicalization(t *testing.T) {
+	path := filepath.Join(t.TempDir(), "gemma.yaml")
+	models := []registry.Model{{
+		ID: "google/gemma-3n-e2b-it", Developer: "google", FilePath: path,
+	}}
+	if err := registry.Save(path, models[0]); err != nil {
+		t.Fatal(err)
+	}
+	candidate := hfCandidate{
+		ProviderID: "google", Organization: "google", RepositoryID: "google/gemma-3n-E2B-it",
+		Status: "new", URL: "https://huggingface.co/google/gemma-3n-E2B-it",
+	}
+	previous := map[string]hfCandidate{candidateKey(candidate.Organization, candidate.RepositoryID): candidate}
+	matches := map[string][]int{"google:" + normalize("gemma-3n-e2b-it"): {0}}
+	known := map[string]bool{}
+	if err := reconcilePreviousIdentityMatches(previous, matches, models, known, true); err != nil {
+		t.Fatal(err)
+	}
+	got := previous[candidateKey(candidate.Organization, candidate.RepositoryID)]
+	if got.Status != "identity_applied" || got.RegistryID != models[0].ID {
+		t.Fatalf("candidate was not reconciled: %#v", got)
+	}
+	saved, err := registry.Load(path)
+	if err != nil {
+		t.Fatal(err)
+	}
+	if saved.Links.ModelCard != candidate.URL || len(saved.Identifiers.HuggingFace) != 1 || saved.Identifiers.HuggingFace[0] != candidate.RepositoryID {
+		t.Fatalf("model identity was not persisted: %#v", saved)
+	}
+}
+
 func TestMaterializeCandidateIsExcludedUntilReady(t *testing.T) {
 	root := t.TempDir()
 	r := report{HuggingFaceCandidates: []hfCandidate{{

@@ -1,6 +1,6 @@
 schema_version: 2
 id: liquid/lfm-2.5-1.2b-thinking
-name: 'LiquidAI: LFM2.5-1.2B-Thinking (free)'
+name: 'LiquidAI: LFM2.5-1.2B-Thinking'
 provider: Liquid
 developer: liquid
 description: LFM2.5-1.2B-Thinking is a lightweight reasoning-focused model optimized for agentic tasks, data extraction, and RAG—while still running comfortably on edge devices. It supports long context (up to 32K tokens) and is designed to provide higher-quality “thinking” responses in a small 1.2B model.

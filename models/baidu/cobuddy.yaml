@@ -1,6 +1,6 @@
 schema_version: 2
 id: baidu/cobuddy
-name: 'Baidu Qianfan: CoBuddy (free)'
+name: 'Baidu Qianfan: CoBuddy'
 provider: Baidu
 developer: baidu
 description: CoBuddy is a code generation model from Baidu, optimized for coding tasks and AI Agent workflows. It features high inference throughput and low end-to-end latency, with native support for tool...

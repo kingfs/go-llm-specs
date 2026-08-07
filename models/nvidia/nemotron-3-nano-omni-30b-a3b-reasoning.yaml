@@ -1,6 +1,6 @@
 schema_version: 2
 id: nvidia/nemotron-3-nano-omni-30b-a3b-reasoning
-name: 'NVIDIA: Nemotron 3 Nano Omni (free)'
+name: 'NVIDIA: Nemotron 3 Nano Omni'
 provider: Nvidia
 developer: nvidia
 description: NVIDIA Nemotron™ 3 Nano Omni is a 30B-A3B open multimodal model designed to function as a perception and context sub-agent in enterprise agent systems. It accepts text, image, video, and...

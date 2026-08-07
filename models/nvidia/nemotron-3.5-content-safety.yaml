@@ -1,6 +1,6 @@
 schema_version: 2
 id: nvidia/nemotron-3.5-content-safety
-name: 'NVIDIA: Nemotron 3.5 Content Safety (free)'
+name: 'NVIDIA: Nemotron 3.5 Content Safety'
 provider: Nvidia
 developer: nvidia
 description: NVIDIA Nemotron 3.5 Content Safety is a compact 4B-parameter multimodal guardrail model from NVIDIA, fine-tuned from Google Gemma-3-4B. It moderates both inputs to and responses from LLMs and VLMs, accepting...

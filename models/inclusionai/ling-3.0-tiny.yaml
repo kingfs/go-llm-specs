@@ -1,6 +1,6 @@
 schema_version: 2
 id: inclusionai/ling-3.0-tiny
-name: 'inclusionAI: Ling 3.0 Tiny (free)'
+name: 'inclusionAI: Ling 3.0 Tiny'
 provider: Inclusionai
 developer: inclusionai
 description: Ling 3.0 Tiny is a mixture-of-experts model from InclusionAI, with 1.3B active parameters out of 7.9B total. It is designed for responsive agents, instruction following, and multi-turn conversations, with switchable...

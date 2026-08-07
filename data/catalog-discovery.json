@@ -1,7 +1,7 @@
 {
   "providers": 24,
-  "models": 620,
-  "models_with_official_links": 232,
+  "models": 496,
+  "models_with_official_links": 309,
   "uncataloged_publishers": {
     "Ai21": 1,
     "Aion-Labs": 4,
@@ -12,14 +12,14 @@
     "Deepcogito": 1,
     "Gryphe": 1,
     "Inception": 1,
-    "Inclusionai": 4,
+    "Inclusionai": 3,
     "Kwaipilot": 3,
     "Mancer": 1,
     "Meituan": 1,
     "Morph": 2,
     "Nex-Agi": 2,
     "Perceptron": 1,
-    "Poolside": 4,
+    "Poolside": 2,
     "Rekaai": 2,
     "Relace": 2,
     "Sakana": 1,
@@ -34,31 +34,28 @@
     "aion-labs": 2,
     "alfredpros": 1,
     "alpindale": 1,
-    "baidu": 7,
-    "cognitivecomputations": 1,
+    "baidu": 6,
     "deepcogito": 3,
     "eleutherai": 1,
     "essentialai": 1,
     "inception": 2,
-    "inclusionai": 5,
+    "inclusionai": 2,
     "inflection": 2,
     "kwaipilot": 1,
     "liquid": 5,
     "meituan": 1,
     "neversleep": 2,
-    "nex-agi": 2,
+    "nex-agi": 1,
     "opengvlab": 1,
-    "poolside": 4,
+    "poolside": 2,
     "prime-intellect": 1,
     "raifle": 1,
     "reka": 1,
     "sao10k": 2,
-    "stepfun": 1,
     "stepfun-ai": 1,
     "switchpoint": 1,
-    "tngtech": 6,
-    "upstage": 1,
-    "xiaomi": 4,
+    "tngtech": 3,
+    "xiaomi": 3,
     "~Anthropic": 4,
     "~Deepseek": 1,
     "~Google": 2,
@@ -7434,7 +7431,8 @@
         "license:apache-2.0",
         "endpoints_compatible",
         "region:us",
-        "deploy:azure"
+        "deploy:azure",
+        "deploy:sagemaker"
       ]
     },
     {
@@ -46496,8 +46494,8 @@
         "arxiv:2510.18234",
         "license:mit",
         "eval-results",
-        "region:us",
-        "deploy:sagemaker"
+        "deploy:sagemaker",
+        "region:us"
       ]
     },
     {
@@ -53547,7 +53545,8 @@
       "provider_id": "google",
       "organization": "google",
       "repository_id": "google/gemma-3n-E2B-it",
-      "status": "new",
+      "registry_id": "google/gemma-3n-e2b-it",
+      "status": "identity_applied",
       "url": "https://huggingface.co/google/gemma-3n-E2B-it",
       "last_modified": "2025-07-14T13:55:52Z",
       "pipeline_tag": "image-text-to-text",
@@ -102392,7 +102391,7 @@
       "repository_id": "nvidia/Alpamayo-1.5-10B",
       "status": "new",
       "url": "https://huggingface.co/nvidia/Alpamayo-1.5-10B",
-      "last_modified": "2026-08-04T14:52:13Z",
+      "last_modified": "2026-08-07T05:10:21Z",
       "pipeline_tag": "robotics",
       "tags": [
         "safetensors",
@@ -102437,7 +102436,7 @@
       "repository_id": "nvidia/Alpamayo2-Super",
       "status": "new",
       "url": "https://huggingface.co/nvidia/Alpamayo2-Super",
-      "last_modified": "2026-08-05T06:52:23Z",
+      "last_modified": "2026-08-07T05:10:43Z",
       "pipeline_tag": "robotics",
       "tags": [
         "safetensors",
@@ -110722,6 +110721,28 @@
     {
       "provider_id": "nvidia",
       "organization": "nvidia",
+      "repository_id": "nvidia/NVIDIA-Nemotron-Nano-12B-v2-VL-BF16",
+      "status": "new",
+      "url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-Nano-12B-v2-VL-BF16",
+      "last_modified": "2025-12-02T18:50:47Z",
+      "pipeline_tag": "image-text-to-text",
+      "tags": [
+        "transformers",
+        "safetensors",
+        "nvidia",
+        "VLM",
+        "image-text-to-text",
+        "conversational",
+        "arxiv:2501.14818",
+        "arxiv:2511.03929",
+        "license:other",
+        "endpoints_compatible",
+        "region:us"
+      ]
+    },
+    {
+      "provider_id": "nvidia",
+      "organization": "nvidia",
       "repository_id": "nvidia/NVIDIA-Nemotron-Nano-12B-v2-VL-FP8",
       "status": "new",
       "url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-Nano-12B-v2-VL-FP8",
@@ -110767,6 +110788,46 @@
         "8-bit",
         "modelopt",
         "region:us"
+      ]
+    },
+    {
+      "provider_id": "nvidia",
+      "organization": "nvidia",
+      "repository_id": "nvidia/NVIDIA-Nemotron-Nano-9B-v2",
+      "status": "new",
+      "url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-Nano-9B-v2",
+      "last_modified": "2026-03-05T14:59:25Z",
+      "pipeline_tag": "text-generation",
+      "tags": [
+        "transformers",
+        "safetensors",
+        "nemotron_h",
+        "text-generation",
+        "nvidia",
+        "pytorch",
+        "conversational",
+        "custom_code",
+        "en",
+        "es",
+        "fr",
+        "de",
+        "it",
+        "ja",
+        "dataset:nvidia/Nemotron-Post-Training-Dataset-v1",
+        "dataset:nvidia/Nemotron-Post-Training-Dataset-v2",
+        "dataset:nvidia/Nemotron-Pretraining-Dataset-sample",
+        "dataset:nvidia/Nemotron-CC-v2",
+        "dataset:nvidia/Nemotron-CC-Math-v1",
+        "dataset:nvidia/Nemotron-Pretraining-SFT-v1",
+        "arxiv:2504.03624",
+        "arxiv:2508.14444",
+        "arxiv:2412.02595",
+        "base_model:nvidia/NVIDIA-Nemotron-Nano-12B-v2",
+        "base_model:finetune:nvidia/NVIDIA-Nemotron-Nano-12B-v2",
+        "license:other",
+        "endpoints_compatible",
+        "region:us",
+        "deploy:azure"
       ]
     },
     {
@@ -114917,8 +114978,8 @@
         "license:apache-2.0",
         "8-bit",
         "modelopt",
-        "region:us",
-        "deploy:azure"
+        "deploy:azure",
+        "region:us"
       ]
     },
     {
@@ -127080,9 +127141,9 @@
         "license:mit",
         "eval-results",
         "endpoints_compatible",
-        "region:us",
         "deploy:azure",
-        "deploy:sagemaker"
+        "deploy:sagemaker",
+        "region:us"
       ]
     },
     {

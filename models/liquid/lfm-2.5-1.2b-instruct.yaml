@@ -1,6 +1,6 @@
 schema_version: 2
 id: liquid/lfm-2.5-1.2b-instruct
-name: 'LiquidAI: LFM2.5-1.2B-Instruct (free)'
+name: 'LiquidAI: LFM2.5-1.2B-Instruct'
 provider: Liquid
 developer: liquid
 description: LFM2.5-1.2B-Instruct is a compact, high-performance instruction-tuned model built for fast on-device AI. It delivers strong chat quality in a 1.2B parameter footprint, with efficient edge inference and broad runtime support.

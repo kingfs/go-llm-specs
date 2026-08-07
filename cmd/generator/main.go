@@ -386,19 +386,46 @@ func consolidateLocalVariants(models map[string]ModelRegistry, modelsDir string)
 		delete(models, id)
 	}
 	for id, model := range models {
-		if model.Links.Documentation != "" {
-			continue
+		changed := false
+		if hasServingVariantAlias(model) {
+			name := canonicalModelName(model.Name)
+			if name != model.Name {
+				model.Name = name
+				changed = true
+			}
 		}
-		addPublisherDocumentation(&model)
 		if model.Links.Documentation == "" {
+			addPublisherDocumentation(&model)
+			changed = changed || model.Links.Documentation != ""
+		}
+		if !changed {
 			continue
 		}
 		if err := saveModelToDisk(model, modelsDir); err != nil {
-			return fmt.Errorf("save publisher documentation for %s: %w", id, err)
+			return fmt.Errorf("save canonical model metadata for %s: %w", id, err)
 		}
 		models[id] = model
 	}
 	return nil
+}
+
+func hasServingVariantAlias(model ModelRegistry) bool {
+	for _, alias := range model.Aliases {
+		base, _, found := strings.Cut(alias, ":")
+		if found && strings.EqualFold(base, model.ID) {
+			return true
+		}
+	}
+	return false
+}
+
+func canonicalModelName(name string) string {
+	for _, suffix := range []string{" (free)", " (batch)", " (thinking)", " (exacto)", " (extended)"} {
+		if len(name) >= len(suffix) && strings.EqualFold(name[len(name)-len(suffix):], suffix) {
+			return strings.TrimSpace(name[:len(name)-len(suffix)])
+		}
+	}
+	return name
 }
 
 func addPublisherDocumentation(model *ModelRegistry) {
