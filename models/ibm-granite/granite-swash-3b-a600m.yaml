@@ -5,6 +5,7 @@ provider: IBM Granite
 developer: ibm-granite
 lifecycle: active
 description: 3B parameter decoder-only sparse language model with per-layer Sliding Window Attention and learnable attention sinks, trained on open source and proprietary data for general-purpose English tasks.
+description_cn: 3B 参数的仅解码器稀疏语言模型，采用逐层滑动窗口注意力（Sliding Window Attention）和可学习注意力汇聚机制，使用开源和专有数据针对通用英语任务进行训练。
 context_length: 8192
 features:
   - ModalityTextIn

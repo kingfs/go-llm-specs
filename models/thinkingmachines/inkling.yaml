@@ -6,6 +6,7 @@ developer: thinkingmachines
 description: Inkling is an open-weight multimodal mixture-of-experts model from Thinking Machines Lab, with 41B active parameters out of 975B total. It is designed for general-purpose reasoning, coding, agentic and tool-use systems,...
 description_cn: Inkling是Thinking Machines Lab的一个开放权重多模态专家混合模型，具有410亿活跃参数，总计975亿。它旨在用于通用推理、编码、代理和工具使用系统，...
 context_length: 1048576
+max_output: 262144
 features:
   - CapChat
   - CapFunctionCall

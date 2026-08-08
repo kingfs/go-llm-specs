@@ -25,7 +25,6 @@ upstream:
   openrouter:
     canonical_slug: openai/gpt-5.3-chat-20260303
     supported_parameters:
-      - max_completion_tokens
       - max_tokens
       - response_format
       - seed
@@ -38,4 +37,4 @@ upstream:
       - text
     output_modalities:
       - text
-    fetched_at: 2026-07-29T10:41:21.877472783Z
+    fetched_at: 2026-08-08T03:14:57.67561691Z

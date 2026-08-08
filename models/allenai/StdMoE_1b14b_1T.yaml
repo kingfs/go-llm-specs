@@ -1,0 +1,63 @@
+schema_version: 2
+id: allenai/stdmoe_1b14b_1t
+name: StdMoE_1b14b_1T
+provider: Allen Institute for AI
+developer: allenai
+lifecycle: active
+description: 'StdMoE_1b14b_1T is a 1B-active / 14B-total parameter Mixture-of-Experts model (128 experts: 127 routed + 1 shared, k=8 active per token) pretrained on 1T tokens of the OLMoE pretraining mix.'
+description_cn: StdMoE_1b14b_1T 是一款 1B 活跃/14B 总参数的混合专家（MoE）模型（128 个专家：127 个路由专家 + 1 个共享专家，每个词元激活 k=8 个），在 OLMoE 预训练混合数据的 1T 词元上预训练。
+context_length: 4096
+features:
+  - ModalityTextIn
+  - ModalityTextOut
+links:
+  model_card: https://huggingface.co/allenai/StdMoE_1b14b_1T
+identifiers:
+  huggingface:
+    - allenai/StdMoE_1b14b_1T
+provenance:
+  context_length:
+    source: official_huggingface_config
+    url: https://huggingface.co/allenai/StdMoE_1b14b_1T
+  description:
+    source: official_model_card
+    url: https://huggingface.co/allenai/StdMoE_1b14b_1T/resolve/b82073bb43aaaddc0f71d5ce139ad291a3948b32/README.md
+  features:
+    source: official_huggingface_pipeline
+    url: https://huggingface.co/allenai/StdMoE_1b14b_1T
+  id:
+    source: official_huggingface
+    url: https://huggingface.co/allenai/StdMoE_1b14b_1T
+  name:
+    source: official_huggingface
+    url: https://huggingface.co/allenai/StdMoE_1b14b_1T
+upstream:
+  huggingface:
+    id: allenai/StdMoE_1b14b_1T
+    revision: b82073bb43aaaddc0f71d5ce139ad291a3948b32
+    pipeline_tag: text-generation
+    model_type: emo
+    architectures:
+      - EmoForCausalLM
+    license: apache-2.0
+    tags:
+      - arxiv:2605.06663
+      - baseline
+      - conversational
+      - custom_code
+      - dataset:allenai/OLMoE-mix-0924
+      - emo
+      - en
+      - license:apache-2.0
+      - mixture-of-experts
+      - moe
+      - region:us
+      - safetensors
+      - text-generation
+      - transformers
+    config_context_length: 4096
+    tokenizer_model_max_length: 4096
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-08-08T03:14:59.297199152Z

@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "allenai/stdmoe_1b14b_1t",
+  "status": "partially_accepted",
+  "created_at": "2026-08-08T03:16:04.345497381Z",
+  "source": {
+    "url": "https://huggingface.co/allenai/StdMoE_1b14b_1T/resolve/b82073bb43aaaddc0f71d5ce139ad291a3948b32/README.md",
+    "revision": "b82073bb43aaaddc0f71d5ce139ad291a3948b32",
+    "sha256": "219bb5367aa9126660ecbda7265f07cdb2fc77c5e908100ff30834b603ef3f29"
+  },
+  "generator": {
+    "model": "qwen/qwen3.6-27b",
+    "wire_api": "chat"
+  },
+  "claims": [
+    {
+      "field": "description",
+      "value": "StdMoE_1b14b_1T is a 1B-active / 14B-total parameter Mixture-of-Experts model (128 experts: 127 routed + 1 shared, k=8 active per token) pretrained on 1T tokens of the OLMoE pretraining mix.",
+      "evidence": "The architecture-matched standard MoE baseline released alongside EMO: Pretraining Mixture of Experts for Emergent Modularity",
+      "section": "# StdMoE_1b14b_1T",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "ModalityTextIn",
+        "ModalityTextOut"
+      ],
+      "evidence": "library_name: transformers\npipeline_tag: text-generation",
+      "section": "---",
+      "confidence": "high"
+    },
+    {
+      "field": "description",
+      "value": "The model was annealed for an additional 50B tokens with the standard MoE objective, differing from Emo_1b14b_1T only in the training objective.",
+      "evidence": "pretrained on 1T tokens of the OLMoE pretraining mix and annealed for an additional 50B tokens with the standard MoE objective",
+      "section": "# StdMoE_1b14b_1T",
+      "confidence": "high"
+    }
+  ]
+}

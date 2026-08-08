@@ -4,6 +4,7 @@ name: 'inclusionAI: Ling 3.0 Tiny'
 provider: Inclusionai
 developer: inclusionai
 description: Ling 3.0 Tiny is a mixture-of-experts model from InclusionAI, with 1.3B active parameters out of 7.9B total. It is designed for responsive agents, instruction following, and multi-turn conversations, with switchable...
+description_cn: Ling 3.0 Tiny 是 InclusionAI 推出的一款混合专家模型，在 7.9B 总参数中包含 1.3B 活跃参数。它专为响应式代理、指令遵循和多轮对话设计，支持可切换的...
 context_length: 262144
 max_output: 32768
 features:

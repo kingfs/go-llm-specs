@@ -5,6 +5,7 @@ provider: Tencent Hunyuan
 developer: tencent
 lifecycle: active
 description: Hy-Embodied-VLM-1.0 is an efficient Mixture-of-Experts vision-language foundation model for embodied agents, activating only ~3B parameters per token across a ~30B total parameter model, built on Hy3-A3B and Hy-ViT2.
+description_cn: Hy-Embodied-VLM-1.0 是一款专为具身代理设计的高效混合专家视觉语言基础模型，在约 30B 总参数的模型中，每个词元仅激活约 3B 参数，建立在 Hy3-A3B 和 Hy-ViT2 之上。
 context_length: 32768
 features:
   - ModalityImageIn

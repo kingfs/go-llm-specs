@@ -5,6 +5,7 @@ provider: NVIDIA
 developer: nvidia
 lifecycle: active
 description: Nemotron-Cascade-2-30B-A3B is an open 30B MoE model with 3B activated parameters delivering strong reasoning and agentic capabilities. It operates in both thinking and instruct modes.
+description_cn: Nemotron-Cascade-2-30B-A3B 是一款开放的 30B MoE 模型，激活参数为 3B，提供强大的推理和代理能力。它支持思考模式和指令模式两种运行方式。
 context_length: 262144
 features:
   - ModalityTextIn

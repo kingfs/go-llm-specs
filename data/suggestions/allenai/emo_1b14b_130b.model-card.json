@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "allenai/emo_1b14b_130b",
+  "status": "partially_accepted",
+  "created_at": "2026-08-08T03:15:22.027516481Z",
+  "source": {
+    "url": "https://huggingface.co/allenai/Emo_1b14b_130B/resolve/ca26e6680d4e4c3721efa19d83ea38cf05bebfa4/README.md",
+    "revision": "ca26e6680d4e4c3721efa19d83ea38cf05bebfa4",
+    "sha256": "ae95507ca2597f60be40d9a4f14b871fb0da30b8eb53e8e8d6cbf8e6a68407ae"
+  },
+  "generator": {
+    "model": "qwen/qwen3.6-27b",
+    "wire_api": "chat"
+  },
+  "claims": [
+    {
+      "field": "description",
+      "value": "A smaller-scale ablation checkpoint of EMO, a 1B-active / 14B-total parameter Mixture-of-Experts model. It features 128 experts (127 routed + 1 shared) with k=8 active per token, pretrained on 130B tokens using the EMO document-level expert pool constraint.",
+      "evidence": "1B-active / 14B-total parameter Mixture-of-Experts model (128 experts: 127 routed + 1 shared, k=8 active per token) pretrained on 130B tokens",
+      "section": "Emo_1b14b_130B",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "ModalityTextIn",
+        "ModalityTextOut"
+      ],
+      "evidence": "from transformers import AutoModelForCausalLM, AutoTokenizer ... inputs = tokenizer([\"Language modeling is \"], return_tensors=\"pt\"",
+      "section": "Usage",
+      "confidence": "high"
+    }
+  ]
+}

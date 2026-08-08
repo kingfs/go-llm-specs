@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "allenai/emo_1b14b_1t",
+  "status": "partially_accepted",
+  "created_at": "2026-08-08T03:15:43.066263222Z",
+  "source": {
+    "url": "https://huggingface.co/allenai/Emo_1b14b_1T/resolve/007852b1e3d22222f8ee03c6a53fa30e47898dcb/README.md",
+    "revision": "007852b1e3d22222f8ee03c6a53fa30e47898dcb",
+    "sha256": "f0cf546e2f75f960d7ffef98ebd31c70b403d3e2f9f749ddba3adb13b2e822b5"
+  },
+  "generator": {
+    "model": "qwen/qwen3.6-27b",
+    "wire_api": "chat"
+  },
+  "claims": [
+    {
+      "field": "description",
+      "value": "1B-active / 14B-total parameter Mixture-of-Experts model (128 experts: 127 routed + 1 shared, k=8 active per token) pretrained on 1T tokens of the OLMoE pretraining mix and annealed under the EMO objective for an additional 50B tokens.",
+      "evidence": "1B-active / 14B-total parameter Mixture-of-Experts model (128 experts: 127 routed + 1 shared, k=8 active per token) pretrained on 1T tokens of the OLMoE pretraining mix",
+      "section": "Emo_1b14b_1T",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "ModalityTextIn",
+        "ModalityTextOut"
+      ],
+      "evidence": "pipeline_tag: text-generation",
+      "section": "### Metadata",
+      "confidence": "high"
+    }
+  ]
+}

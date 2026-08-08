@@ -5,6 +5,7 @@ provider: IBM Granite
 developer: ibm-granite
 lifecycle: candidate
 description: Granite Vision 4.1 4B is a vision-language model optimized for structured document extraction tasks, including chart, table, and key-value pair extraction, in a compact 4B parameter footprint.
+description_cn: Granite Vision 4.1 4B 是一款经过优化的视觉语言模型，专为结构化文档提取任务设计，包括图表、表格和键值对提取，仅占用紧凑的 4B 参数规模。
 context_length: 0
 features:
   - ModalityImageIn
