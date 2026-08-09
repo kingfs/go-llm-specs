@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "allenai/dense_1b_130b",
+  "status": "partially_accepted",
+  "created_at": "2026-08-09T03:23:45.712898327Z",
+  "source": {
+    "url": "https://huggingface.co/allenai/Dense_1b_130B/resolve/0887f48cb7e9b671182d9b9394858d6275e1485c/README.md",
+    "revision": "0887f48cb7e9b671182d9b9394858d6275e1485c",
+    "sha256": "2d25278e1e59ee11118f04816e8d77128d84872ac65472d64fc91c2e47e4a9e4"
+  },
+  "generator": {
+    "model": "qwen/qwen3.6-27b",
+    "wire_api": "chat"
+  },
+  "claims": [
+    {
+      "field": "description",
+      "value": "1B parameter dense decoder-only Transformer (no MoE) pretrained from scratch on 130B tokens of the OLMoE pretraining mix.",
+      "evidence": "1B parameter dense decoder-only Transformer (no MoE) pretrained from scratch on 130B tokens of the OLMoE pretraining mix.",
+      "section": "# Dense_1b_130B",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "ModalityTextIn",
+        "ModalityTextOut"
+      ],
+      "evidence": "pipeline_tag: text-generation",
+      "section": "---",
+      "confidence": "high"
+    }
+  ]
+}

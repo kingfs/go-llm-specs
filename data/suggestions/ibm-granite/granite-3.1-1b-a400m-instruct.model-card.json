@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "ibm-granite/granite-3.1-1b-a400m-instruct",
+  "status": "partially_accepted",
+  "created_at": "2026-08-09T03:22:53.013063422Z",
+  "source": {
+    "url": "https://huggingface.co/ibm-granite/granite-3.1-1b-a400m-instruct/resolve/0da7a48b0276d500ce5922fd2b33944091fc6c09/README.md",
+    "revision": "0da7a48b0276d500ce5922fd2b33944091fc6c09",
+    "sha256": "4e5a3f0f7a444202f4a68c2f526f1db6816d6c276dee2f82886f7f141bea615f"
+  },
+  "generator": {
+    "model": "qwen/qwen3.6-27b",
+    "wire_api": "chat"
+  },
+  "claims": [
+    {
+      "field": "description",
+      "value": "A 1B parameter long-context instruct model finetuned from Granite-3.1-1B-A400M-Base using open source and synthetic datasets, supporting 12 languages.",
+      "evidence": "Granite-3.1-1B-A400M-Instruct is a 1B parameter long-context instruct model finetuned from Granite-3.1-1B-A400M-Base",
+      "section": "Granite-3.1-1B-A400M-Instruct",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "CapFunctionCall",
+        "ModalityTextIn",
+        "ModalityTextOut"
+      ],
+      "evidence": "Capabilities... Function-calling tasks",
+      "section": "Granite-3.1-1B-A400M-Instruct",
+      "confidence": "high"
+    },
+    {
+      "field": "reasoning.supported",
+      "value": false,
+      "evidence": "There is no explicit support for reasoning chains or chain-of-thought in the card.",
+      "section": "Granite-3.1-1B-A400M-Instruct",
+      "confidence": "high"
+    }
+  ]
+}

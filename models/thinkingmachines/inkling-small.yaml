@@ -42,6 +42,7 @@ upstream:
       - repetition_penalty
       - seed
       - stop
+      - structured_outputs
       - temperature
       - tool_choice
       - tools
@@ -54,7 +55,7 @@ upstream:
       - text
     output_modalities:
       - text
-    fetched_at: 2026-08-03T07:50:20.525891483Z
+    fetched_at: 2026-08-09T03:22:30.320698918Z
   huggingface:
     id: thinkingmachines/Inkling-Small
     revision: 8cc5877b44d343f88b92086aa1fb72897950f06a

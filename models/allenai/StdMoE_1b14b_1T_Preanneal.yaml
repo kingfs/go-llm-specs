@@ -1,0 +1,64 @@
+schema_version: 2
+id: allenai/stdmoe_1b14b_1t_preanneal
+name: StdMoE_1b14b_1T_Preanneal
+provider: Allen Institute for AI
+developer: allenai
+lifecycle: active
+description: StdMoE_1b14b_1T_Preanneal is a 1B-active/14B-total parameter Mixture-of-Experts model, serving as the pre-annealing baseline for the EMO experiment. It uses 128 experts (127 routed, 1 shared) with k=8 active per token, pretrained on 1T tokens of the OLMoE mix without annealing.
+description_cn: StdMoE_1b14b_1T_Preanneal 是一个 12 亿激活/140 亿总参数的混合专家（MoE）模型，作为 EMO 实验的预退火基线。它使用 128 个专家（127 个路由，1 个共享），每 token 激活 k=8 个，在 1 万亿 OLMoE 混合 token 上预训练，未进行退火。
+context_length: 4096
+features:
+  - ModalityTextIn
+  - ModalityTextOut
+links:
+  model_card: https://huggingface.co/allenai/StdMoE_1b14b_1T_Preanneal
+identifiers:
+  huggingface:
+    - allenai/StdMoE_1b14b_1T_Preanneal
+provenance:
+  context_length:
+    source: official_huggingface_config
+    url: https://huggingface.co/allenai/StdMoE_1b14b_1T_Preanneal
+  description:
+    source: official_model_card
+    url: https://huggingface.co/allenai/StdMoE_1b14b_1T_Preanneal/resolve/d2a4949c9d4ad6cf47fbac131f7e020077332b21/README.md
+  features:
+    source: official_huggingface_pipeline
+    url: https://huggingface.co/allenai/StdMoE_1b14b_1T_Preanneal
+  id:
+    source: official_huggingface
+    url: https://huggingface.co/allenai/StdMoE_1b14b_1T_Preanneal
+  name:
+    source: official_huggingface
+    url: https://huggingface.co/allenai/StdMoE_1b14b_1T_Preanneal
+upstream:
+  huggingface:
+    id: allenai/StdMoE_1b14b_1T_Preanneal
+    revision: d2a4949c9d4ad6cf47fbac131f7e020077332b21
+    pipeline_tag: text-generation
+    model_type: emo
+    architectures:
+      - EmoForCausalLM
+    license: apache-2.0
+    tags:
+      - arxiv:2605.06663
+      - baseline
+      - conversational
+      - custom_code
+      - dataset:allenai/OLMoE-mix-0924
+      - emo
+      - en
+      - license:apache-2.0
+      - mixture-of-experts
+      - moe
+      - pre-annealing
+      - region:us
+      - safetensors
+      - text-generation
+      - transformers
+    config_context_length: 4096
+    tokenizer_model_max_length: 4096
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-08-09T03:22:31.074424477Z

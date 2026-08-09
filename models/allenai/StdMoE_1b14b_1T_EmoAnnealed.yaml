@@ -1,0 +1,65 @@
+schema_version: 2
+id: allenai/stdmoe_1b14b_1t_emoannealed
+name: StdMoE_1b14b_1T_EmoAnnealed
+provider: Allen Institute for AI
+developer: allenai
+lifecycle: active
+description: A 1B-active / 14B-total parameter Mixture-of-Experts model with 128 experts (127 routed + 1 shared, k=8 active per token). Pretrained on 1T tokens of the OLMoE mix, then annealed for 50B tokens under EMO constraints.
+description_cn: 12 亿激活/140 亿总参数的混合专家（MoE）模型，拥有 128 个专家（127 个路由专家 + 1 个共享专家，每 token 激活 k=8 个）。在 1 万亿 OLMoE 混合 token 上预训练，随后在 EMO 约束下进行 500 亿 token 的退火训练。
+context_length: 4096
+features:
+  - ModalityTextIn
+  - ModalityTextOut
+links:
+  model_card: https://huggingface.co/allenai/StdMoE_1b14b_1T_EmoAnnealed
+identifiers:
+  huggingface:
+    - allenai/StdMoE_1b14b_1T_EmoAnnealed
+provenance:
+  context_length:
+    source: official_huggingface_config
+    url: https://huggingface.co/allenai/StdMoE_1b14b_1T_EmoAnnealed
+  description:
+    source: official_model_card
+    url: https://huggingface.co/allenai/StdMoE_1b14b_1T_EmoAnnealed/resolve/d18c640b39e67f89669f38c5db8b5ed22a6927ca/README.md
+  features:
+    source: official_huggingface_pipeline
+    url: https://huggingface.co/allenai/StdMoE_1b14b_1T_EmoAnnealed
+  id:
+    source: official_huggingface
+    url: https://huggingface.co/allenai/StdMoE_1b14b_1T_EmoAnnealed
+  name:
+    source: official_huggingface
+    url: https://huggingface.co/allenai/StdMoE_1b14b_1T_EmoAnnealed
+upstream:
+  huggingface:
+    id: allenai/StdMoE_1b14b_1T_EmoAnnealed
+    revision: d18c640b39e67f89669f38c5db8b5ed22a6927ca
+    pipeline_tag: text-generation
+    model_type: emo
+    architectures:
+      - EmoForCausalLM
+    license: apache-2.0
+    tags:
+      - ablation
+      - arxiv:2605.06663
+      - conversational
+      - custom_code
+      - dataset:allenai/OLMoE-mix-0924
+      - emo
+      - en
+      - license:apache-2.0
+      - midtraining
+      - mixture-of-experts
+      - modularity
+      - moe
+      - region:us
+      - safetensors
+      - text-generation
+      - transformers
+    config_context_length: 4096
+    tokenizer_model_max_length: 4096
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-08-09T03:22:30.919095487Z

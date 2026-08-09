@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "allenai/stdmoe_1b14b_1t_preanneal",
+  "status": "partially_accepted",
+  "created_at": "2026-08-09T03:23:24.970242471Z",
+  "source": {
+    "url": "https://huggingface.co/allenai/StdMoE_1b14b_1T_Preanneal/resolve/d2a4949c9d4ad6cf47fbac131f7e020077332b21/README.md",
+    "revision": "d2a4949c9d4ad6cf47fbac131f7e020077332b21",
+    "sha256": "d6fe2e1ff05a4da338b21a314e8a4db9d950c6ca0ba6a256b3653c022391748a"
+  },
+  "generator": {
+    "model": "qwen/qwen3.6-27b",
+    "wire_api": "chat"
+  },
+  "claims": [
+    {
+      "field": "description",
+      "value": "StdMoE_1b14b_1T_Preanneal is a 1B-active/14B-total parameter Mixture-of-Experts model, serving as the pre-annealing baseline for the EMO experiment. It uses 128 experts (127 routed, 1 shared) with k=8 active per token, pretrained on 1T tokens of the OLMoE mix without annealing.",
+      "evidence": "1B-active / 14B-total parameter Mixture-of-Experts model (128 experts: 127 routed + 1 shared, k=8 active per token) pretrained on 1T tokens of the OLMoE pretraining mix with the standard MoE objective. No annealing applied.",
+      "section": "StdMoE_1b14b_1T_Preanneal",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "ModalityTextIn",
+        "ModalityTextOut"
+      ],
+      "evidence": "pipeline_tag: text-generation",
+      "section": "Metadata",
+      "confidence": "high"
+    }
+  ]
+}

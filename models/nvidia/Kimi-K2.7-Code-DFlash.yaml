@@ -1,0 +1,54 @@
+schema_version: 2
+id: nvidia/kimi-k2.7-code-dflash
+name: Kimi-K2.7-Code-DFlash
+provider: NVIDIA
+developer: nvidia
+lifecycle: candidate
+context_length: 262144
+features:
+  - ModalityTextIn
+  - ModalityTextOut
+links:
+  model_card: https://huggingface.co/nvidia/Kimi-K2.7-Code-DFlash
+identifiers:
+  huggingface:
+    - nvidia/Kimi-K2.7-Code-DFlash
+provenance:
+  context_length:
+    source: official_huggingface_config
+    url: https://huggingface.co/nvidia/Kimi-K2.7-Code-DFlash
+  features:
+    source: official_huggingface_pipeline
+    url: https://huggingface.co/nvidia/Kimi-K2.7-Code-DFlash
+  id:
+    source: official_huggingface
+    url: https://huggingface.co/nvidia/Kimi-K2.7-Code-DFlash
+  name:
+    source: official_huggingface
+    url: https://huggingface.co/nvidia/Kimi-K2.7-Code-DFlash
+upstream:
+  huggingface:
+    id: nvidia/Kimi-K2.7-Code-DFlash
+    revision: 2fd81453174fe03654693762828957a237395807
+    pipeline_tag: text-generation
+    model_type: qwen3
+    architectures:
+      - DFlashDraftModel
+    license: other
+    tags:
+      - DFlash
+      - Kimi-K2.7-Code
+      - Model Optimizer
+      - ModelOpt
+      - base_model:finetune:moonshotai/Kimi-K2.7-Code
+      - base_model:moonshotai/Kimi-K2.7-Code
+      - license:other
+      - nvidia
+      - qwen3
+      - region:us
+      - safetensors
+      - text-generation
+    config_context_length: 262144
+    structured_files:
+      - config.json
+    fetched_at: 2026-08-09T03:22:31.293535886Z

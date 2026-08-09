@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "allenai/stdmoe_1b14b_1t_emoannealed",
+  "status": "partially_accepted",
+  "created_at": "2026-08-09T03:24:06.681637427Z",
+  "source": {
+    "url": "https://huggingface.co/allenai/StdMoE_1b14b_1T_EmoAnnealed/resolve/d18c640b39e67f89669f38c5db8b5ed22a6927ca/README.md",
+    "revision": "d18c640b39e67f89669f38c5db8b5ed22a6927ca",
+    "sha256": "b4fcc48ed9500c8272b21e914976e40184a6c0ec39ef8c26a94ed225f29ab447"
+  },
+  "generator": {
+    "model": "qwen/qwen3.6-27b",
+    "wire_api": "chat"
+  },
+  "claims": [
+    {
+      "field": "description",
+      "value": "A 1B-active / 14B-total parameter Mixture-of-Experts model with 128 experts (127 routed + 1 shared, k=8 active per token). Pretrained on 1T tokens of the OLMoE mix, then annealed for 50B tokens under EMO constraints.",
+      "evidence": "1B-active / 14B-total parameter Mixture-of-Experts model (128 experts: 127 routed + 1 shared, k=8 active per token) pretrained on 1T tokens... then annealed for an additional 50B tokens",
+      "section": "# StdMoE_1b14b_1T_EmoAnnealed",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "ModalityTextIn",
+        "ModalityTextOut"
+      ],
+      "evidence": "pipeline_tag: text-generation",
+      "section": "---",
+      "confidence": "high"
+    }
+  ]
+}

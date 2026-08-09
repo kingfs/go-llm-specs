@@ -1,0 +1,64 @@
+schema_version: 2
+id: allenai/dense_1b_130b
+name: Dense_1b_130B
+provider: Allen Institute for AI
+developer: allenai
+lifecycle: active
+description: 1B parameter dense decoder-only Transformer (no MoE) pretrained from scratch on 130B tokens of the OLMoE pretraining mix.
+description_cn: 10 亿参数稠密 Decoder-only Transformer（非 MoE），在 1300 亿 token 的 OLMoE 预训练混合数据上从头预训练。
+context_length: 4096
+features:
+  - ModalityTextIn
+  - ModalityTextOut
+links:
+  model_card: https://huggingface.co/allenai/Dense_1b_130B
+identifiers:
+  huggingface:
+    - allenai/Dense_1b_130B
+provenance:
+  context_length:
+    source: official_huggingface_config
+    url: https://huggingface.co/allenai/Dense_1b_130B
+  description:
+    source: official_model_card
+    url: https://huggingface.co/allenai/Dense_1b_130B/resolve/0887f48cb7e9b671182d9b9394858d6275e1485c/README.md
+  features:
+    source: official_huggingface_pipeline
+    url: https://huggingface.co/allenai/Dense_1b_130B
+  id:
+    source: official_huggingface
+    url: https://huggingface.co/allenai/Dense_1b_130B
+  name:
+    source: official_huggingface
+    url: https://huggingface.co/allenai/Dense_1b_130B
+upstream:
+  huggingface:
+    id: allenai/Dense_1b_130B
+    revision: 0887f48cb7e9b671182d9b9394858d6275e1485c
+    pipeline_tag: text-generation
+    model_type: olmo2_noqknorm_prenorm
+    architectures:
+      - Olmo2NoQKNormPrenormForCausalLM
+    license: apache-2.0
+    tags:
+      - ablation
+      - arxiv:2605.06663
+      - baseline
+      - conversational
+      - custom_code
+      - dataset:allenai/OLMoE-mix-0924
+      - dense
+      - en
+      - license:apache-2.0
+      - memory-matched
+      - olmo2_noqknorm_prenorm
+      - region:us
+      - safetensors
+      - text-generation
+      - transformers
+    config_context_length: 4096
+    tokenizer_model_max_length: 4096
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-08-09T03:22:30.726368753Z

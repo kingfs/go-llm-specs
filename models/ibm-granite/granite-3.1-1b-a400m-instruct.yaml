@@ -1,0 +1,68 @@
+schema_version: 2
+id: ibm-granite/granite-3.1-1b-a400m-instruct
+name: granite-3.1-1b-a400m-instruct
+provider: IBM Granite
+developer: ibm-granite
+lifecycle: active
+description: A 1B parameter long-context instruct model finetuned from Granite-3.1-1B-A400M-Base using open source and synthetic datasets, supporting 12 languages.
+description_cn: 10 亿参数的长上下文指令模型，基于 Granite-3.1-1B-A400M-Base 使用开源和合成数据集微调，支持 12 种语言。
+context_length: 131072
+features:
+  - ModalityTextIn
+  - ModalityTextOut
+links:
+  model_card: https://huggingface.co/ibm-granite/granite-3.1-1b-a400m-instruct
+identifiers:
+  huggingface:
+    - ibm-granite/granite-3.1-1b-a400m-instruct
+provenance:
+  context_length:
+    source: official_huggingface_config
+    url: https://huggingface.co/ibm-granite/granite-3.1-1b-a400m-instruct
+  description:
+    source: official_model_card
+    url: https://huggingface.co/ibm-granite/granite-3.1-1b-a400m-instruct/resolve/0da7a48b0276d500ce5922fd2b33944091fc6c09/README.md
+  features:
+    source: official_huggingface_pipeline
+    url: https://huggingface.co/ibm-granite/granite-3.1-1b-a400m-instruct
+  id:
+    source: official_huggingface
+    url: https://huggingface.co/ibm-granite/granite-3.1-1b-a400m-instruct
+  name:
+    source: official_huggingface
+    url: https://huggingface.co/ibm-granite/granite-3.1-1b-a400m-instruct
+  reasoning.supported:
+    source: official_model_card
+    url: https://huggingface.co/ibm-granite/granite-3.1-1b-a400m-instruct/resolve/0da7a48b0276d500ce5922fd2b33944091fc6c09/README.md
+upstream:
+  huggingface:
+    id: ibm-granite/granite-3.1-1b-a400m-instruct
+    revision: 0da7a48b0276d500ce5922fd2b33944091fc6c09
+    pipeline_tag: text-generation
+    model_type: granitemoe
+    architectures:
+      - GraniteMoeForCausalLM
+    license: apache-2.0
+    tags:
+      - arxiv:0000.00000
+      - base_model:finetune:ibm-granite/granite-3.1-1b-a400m-base
+      - base_model:ibm-granite/granite-3.1-1b-a400m-base
+      - conversational
+      - eval-results
+      - granite-3.1
+      - granitemoe
+      - language
+      - license:apache-2.0
+      - region:us
+      - safetensors
+      - text-generation
+      - transformers
+    config_context_length: 131072
+    tokenizer_model_max_length: -9223372036854775808
+    chat_template_sha256: a15e28a22d0d871c5038cf3bd58242b4803b8656d876226fd26ad1f9fa567adf
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-08-09T03:22:31.184003545Z
+reasoning:
+  supported: false
