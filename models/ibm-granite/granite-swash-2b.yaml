@@ -1,0 +1,57 @@
+schema_version: 2
+id: ibm-granite/granite-swash-2b
+name: granite-swash-2b
+provider: IBM Granite
+developer: ibm-granite
+lifecycle: active
+description: Granite-SWASH-2B is a 2B parameter decoder-only dense language model with per-layer Sliding Window Attention and learnable attention sinks, serving as a general-purpose English-language base model.
+description_cn: Granite-SWASH-2B 是一款 2B 参数的仅解码器密集语言模型，采用每层滑动窗口注意力机制和可学习的注意力汇聚，作为通用英文基础模型。
+context_length: 8192
+features:
+  - ModalityTextIn
+  - ModalityTextOut
+links:
+  model_card: https://huggingface.co/ibm-granite/granite-swash-2b
+identifiers:
+  huggingface:
+    - ibm-granite/granite-swash-2b
+provenance:
+  context_length:
+    source: official_huggingface_config
+    url: https://huggingface.co/ibm-granite/granite-swash-2b
+  description:
+    source: official_model_card
+    url: https://huggingface.co/ibm-granite/granite-swash-2b/resolve/af1e3227100b61088eead48389ab5409b5d0e39c/README.md
+  features:
+    source: official_huggingface_pipeline
+    url: https://huggingface.co/ibm-granite/granite-swash-2b
+  id:
+    source: official_huggingface
+    url: https://huggingface.co/ibm-granite/granite-swash-2b
+  name:
+    source: official_huggingface
+    url: https://huggingface.co/ibm-granite/granite-swash-2b
+upstream:
+  huggingface:
+    id: ibm-granite/granite-swash-2b
+    revision: af1e3227100b61088eead48389ab5409b5d0e39c
+    pipeline_tag: text-generation
+    model_type: granite_swa
+    architectures:
+      - GraniteSWAForCausalLM
+    license: apache-2.0
+    tags:
+      - endpoints_compatible
+      - granite-next
+      - granite_swa
+      - language
+      - license:apache-2.0
+      - region:us
+      - safetensors
+      - text-generation
+      - transformers
+    config_context_length: 8192
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-08-10T03:41:34.492985111Z

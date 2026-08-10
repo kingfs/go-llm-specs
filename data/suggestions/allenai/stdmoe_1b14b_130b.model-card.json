@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "allenai/stdmoe_1b14b_130b",
+  "status": "partially_accepted",
+  "created_at": "2026-08-10T03:43:18.8562075Z",
+  "source": {
+    "url": "https://huggingface.co/allenai/StdMoE_1b14b_130B/resolve/abf5a31d79f4e9f5e03626963f07b230e54b9a8b/README.md",
+    "revision": "abf5a31d79f4e9f5e03626963f07b230e54b9a8b",
+    "sha256": "4e50916e38b306742c8d4ddc067be625ac8c29370dbcbf6ffa4698dd3b292c4a"
+  },
+  "generator": {
+    "model": "qwen/qwen3.6-27b",
+    "wire_api": "chat"
+  },
+  "claims": [
+    {
+      "field": "description",
+      "value": "StdMoE_1b14b_130B is an architecture-matched standard MoE baseline with 1B active and 14B total parameters (128 experts), pretrained on 130B tokens of the OLMoE mix as part of the EMO research project.",
+      "evidence": "The architecture-matched standard MoE baseline at the 130B-token ablation scale... 1B-active / 14B-total parameter Mixture-of-Experts model... pretrained on 130B tokens",
+      "section": "StdMoE_1b14b_130B",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "ModalityTextIn",
+        "ModalityTextOut"
+      ],
+      "evidence": "pipeline_tag: text-generation",
+      "section": "StdMoE_1b14b_130B",
+      "confidence": "high"
+    }
+  ]
+}

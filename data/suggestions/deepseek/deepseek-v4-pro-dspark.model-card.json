@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "deepseek/deepseek-v4-pro-dspark",
+  "status": "partially_accepted",
+  "created_at": "2026-08-10T03:42:40.767240661Z",
+  "source": {
+    "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro-DSpark/resolve/7c09739fd136abfb70a49ec334157f65f45b52cd/README.md",
+    "revision": "7c09739fd136abfb70a49ec334157f65f45b52cd",
+    "sha256": "c4f0d99e857a12bc6030141c48ad84df3f7fd94169c522b97671ece294c11640"
+  },
+  "generator": {
+    "model": "qwen/qwen3.6-27b",
+    "wire_api": "chat"
+  },
+  "claims": [
+    {
+      "field": "description",
+      "value": "DeepSeek-V4-Pro-DSpark is the DeepSeek-V4-Pro checkpoint with an additional speculative decoding module attached.",
+      "evidence": "DeepSeek-V4-Pro-DSpark is not a new model. It is the same checkpoint with an additional speculative decoding module attached.",
+      "section": "Introduction",
+      "confidence": "high"
+    },
+    {
+      "field": "context_length",
+      "value": 1000000,
+      "evidence": "two strong Mixture-of-Experts (MoE) language models... both supporting a context length of one million tokens.",
+      "section": "Introduction",
+      "confidence": "high"
+    },
+    {
+      "field": "reasoning.supported",
+      "value": true,
+      "evidence": "DeepSeek-V4-Pro and DeepSeek-V4-Flash both support three reasoning effort modes: Non-think, Think High, Think Max",
+      "section": "Instruct Model",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "ModalityTextIn",
+        "ModalityTextOut"
+      ],
+      "evidence": "two strong Mixture-of-Experts (MoE) language models",
+      "section": "Introduction",
+      "confidence": "high"
+    }
+  ]
+}

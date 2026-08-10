@@ -1,0 +1,64 @@
+schema_version: 2
+id: deepseek/deepseek-v4-flash-dspark
+name: DeepSeek-V4-Flash-DSpark
+provider: DeepSeek
+developer: deepseek
+lifecycle: active
+description: DeepSeek-V4-Flash-DSpark is the same checkpoint as DeepSeek-V4 with an additional speculative decoding module attached.
+description_cn: DeepSeek-V4-Flash-DSpark 与 DeepSeek-V4 使用相同的检查点，但额外附加了投机解码模块。
+context_length: 1048576
+features:
+  - ModalityTextIn
+  - ModalityTextOut
+links:
+  model_card: https://huggingface.co/deepseek-ai/DeepSeek-V4-Flash-DSpark
+identifiers:
+  huggingface:
+    - deepseek-ai/DeepSeek-V4-Flash-DSpark
+provenance:
+  context_length:
+    source: official_huggingface_config
+    url: https://huggingface.co/deepseek-ai/DeepSeek-V4-Flash-DSpark
+  description:
+    source: official_model_card
+    url: https://huggingface.co/deepseek-ai/DeepSeek-V4-Flash-DSpark/resolve/62af8fffb2f7030cac4de2f0169f5b8d1101b646/README.md
+  features:
+    source: official_huggingface_pipeline
+    url: https://huggingface.co/deepseek-ai/DeepSeek-V4-Flash-DSpark
+  id:
+    source: official_huggingface
+    url: https://huggingface.co/deepseek-ai/DeepSeek-V4-Flash-DSpark
+  name:
+    source: official_huggingface
+    url: https://huggingface.co/deepseek-ai/DeepSeek-V4-Flash-DSpark
+  reasoning.supported:
+    source: official_model_card
+    url: https://huggingface.co/deepseek-ai/DeepSeek-V4-Flash-DSpark/resolve/62af8fffb2f7030cac4de2f0169f5b8d1101b646/README.md
+upstream:
+  huggingface:
+    id: deepseek-ai/DeepSeek-V4-Flash-DSpark
+    revision: 62af8fffb2f7030cac4de2f0169f5b8d1101b646
+    pipeline_tag: text-generation
+    model_type: deepseek_v4
+    architectures:
+      - DeepseekV4ForCausalLM
+    license: mit
+    tags:
+      - 8-bit
+      - arxiv:2606.19348
+      - deepseek_v4
+      - endpoints_compatible
+      - fp8
+      - license:mit
+      - region:us
+      - safetensors
+      - text-generation
+      - transformers
+    config_context_length: 1048576
+    tokenizer_model_max_length: 1048576
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-08-10T03:41:33.649677174Z
+reasoning:
+  supported: true

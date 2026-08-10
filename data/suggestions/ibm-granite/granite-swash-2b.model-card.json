@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "ibm-granite/granite-swash-2b",
+  "status": "partially_accepted",
+  "created_at": "2026-08-10T03:41:36.582552398Z",
+  "source": {
+    "url": "https://huggingface.co/ibm-granite/granite-swash-2b/resolve/af1e3227100b61088eead48389ab5409b5d0e39c/README.md",
+    "revision": "af1e3227100b61088eead48389ab5409b5d0e39c",
+    "sha256": "18691591180732df1f260c85a106e7bb11a38a20eb900a8a09a46c32575be0f2"
+  },
+  "generator": {
+    "model": "qwen/qwen3.6-27b",
+    "wire_api": "chat"
+  },
+  "claims": [
+    {
+      "field": "description",
+      "value": "Granite-SWASH-2B is a 2B parameter decoder-only dense language model with per-layer Sliding Window Attention and learnable attention sinks, serving as a general-purpose English-language base model.",
+      "evidence": "Granite-SWASH-2B is a 2B parameter decoder-only dense language model with **per-layer Sliding Window Attention (SWA)** and **learnable attention sinks**... broad, general-purpose, English-language base model",
+      "section": "Model Summary",
+      "confidence": "high"
+    },
+    {
+      "field": "context_length",
+      "value": 8192,
+      "evidence": "Max position embeddings | 8192",
+      "section": "Architecture",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "ModalityTextIn",
+        "ModalityTextOut"
+      ],
+      "evidence": "Granite-SWASH-2B is a 2B parameter decoder-only dense language model... English-language base model",
+      "section": "Model Summary",
+      "confidence": "high"
+    }
+  ]
+}

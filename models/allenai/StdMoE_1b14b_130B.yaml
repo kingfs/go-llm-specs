@@ -3,7 +3,9 @@ id: allenai/stdmoe_1b14b_130b
 name: StdMoE_1b14b_130B
 provider: Allen Institute for AI
 developer: allenai
-lifecycle: candidate
+lifecycle: active
+description: StdMoE_1b14b_130B is an architecture-matched standard MoE baseline with 1B active and 14B total parameters (128 experts), pretrained on 130B tokens of the OLMoE mix as part of the EMO research project.
+description_cn: StdMoE_1b14b_130B 是一款架构对齐的标准 MoE 基线模型，包含 1B 活跃参数和 14B 总参数（128 个专家），在 EMO 研究项目中基于 OLMoE 混合语料的 1300 亿 token 进行预训练。
 context_length: 4096
 features:
   - ModalityTextIn
@@ -17,6 +19,9 @@ provenance:
   context_length:
     source: official_huggingface_config
     url: https://huggingface.co/allenai/StdMoE_1b14b_130B
+  description:
+    source: official_model_card
+    url: https://huggingface.co/allenai/StdMoE_1b14b_130B/resolve/abf5a31d79f4e9f5e03626963f07b230e54b9a8b/README.md
   features:
     source: official_huggingface_pipeline
     url: https://huggingface.co/allenai/StdMoE_1b14b_130B

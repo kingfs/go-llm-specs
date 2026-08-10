@@ -1,0 +1,72 @@
+schema_version: 2
+id: nvidia/nvidia-nemotron-labs-3-puzzle-75b-a9b-bf16
+name: NVIDIA-Nemotron-Labs-3-Puzzle-75B-A9B-BF16
+provider: NVIDIA
+developer: nvidia
+lifecycle: candidate
+context_length: 262144
+features:
+  - ModalityTextIn
+  - ModalityTextOut
+links:
+  model_card: https://huggingface.co/nvidia/NVIDIA-Nemotron-Labs-3-Puzzle-75B-A9B-BF16
+identifiers:
+  huggingface:
+    - nvidia/NVIDIA-Nemotron-Labs-3-Puzzle-75B-A9B-BF16
+provenance:
+  context_length:
+    source: official_huggingface_config
+    url: https://huggingface.co/nvidia/NVIDIA-Nemotron-Labs-3-Puzzle-75B-A9B-BF16
+  features:
+    source: official_huggingface_pipeline
+    url: https://huggingface.co/nvidia/NVIDIA-Nemotron-Labs-3-Puzzle-75B-A9B-BF16
+  id:
+    source: official_huggingface
+    url: https://huggingface.co/nvidia/NVIDIA-Nemotron-Labs-3-Puzzle-75B-A9B-BF16
+  name:
+    source: official_huggingface
+    url: https://huggingface.co/nvidia/NVIDIA-Nemotron-Labs-3-Puzzle-75B-A9B-BF16
+upstream:
+  huggingface:
+    id: nvidia/NVIDIA-Nemotron-Labs-3-Puzzle-75B-A9B-BF16
+    revision: 8fe5546888e9bd03fdbf52d808adebdfca901b52
+    pipeline_tag: text-generation
+    model_type: nemotron_h_puzzle
+    architectures:
+      - NemotronHPuzzleForCausalLM
+    license: other
+    tags:
+      - arxiv:2411.19146
+      - arxiv:2512.20848
+      - arxiv:2604.12374
+      - arxiv:2607.04371
+      - base_model:finetune:nvidia/NVIDIA-Nemotron-3-Super-120B-A12B-BF16
+      - base_model:nvidia/NVIDIA-Nemotron-3-Super-120B-A12B-BF16
+      - conversational
+      - custom_code
+      - dataset:nvidia/nemotron-post-training-v3
+      - dataset:nvidia/nemotron-pre-training-datasets
+      - de
+      - en
+      - es
+      - fr
+      - it
+      - ja
+      - latent-moe
+      - license:other
+      - mtp
+      - nemotron-3
+      - nemotron_h_puzzle
+      - nvidia
+      - pytorch
+      - region:us
+      - safetensors
+      - text-generation
+      - transformers
+      - zh
+    config_context_length: 262144
+    tokenizer_model_max_length: 262144
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-08-10T03:41:35.022042074Z

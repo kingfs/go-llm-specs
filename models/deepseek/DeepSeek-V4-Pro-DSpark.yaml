@@ -1,0 +1,64 @@
+schema_version: 2
+id: deepseek/deepseek-v4-pro-dspark
+name: DeepSeek-V4-Pro-DSpark
+provider: DeepSeek
+developer: deepseek
+lifecycle: active
+description: DeepSeek-V4-Pro-DSpark is the DeepSeek-V4-Pro checkpoint with an additional speculative decoding module attached.
+description_cn: DeepSeek-V4-Pro-DSpark 是 DeepSeek-V4-Pro 检查点，额外附加了投机解码模块。
+context_length: 1048576
+features:
+  - ModalityTextIn
+  - ModalityTextOut
+links:
+  model_card: https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro-DSpark
+identifiers:
+  huggingface:
+    - deepseek-ai/DeepSeek-V4-Pro-DSpark
+provenance:
+  context_length:
+    source: official_huggingface_config
+    url: https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro-DSpark
+  description:
+    source: official_model_card
+    url: https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro-DSpark/resolve/7c09739fd136abfb70a49ec334157f65f45b52cd/README.md
+  features:
+    source: official_huggingface_pipeline
+    url: https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro-DSpark
+  id:
+    source: official_huggingface
+    url: https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro-DSpark
+  name:
+    source: official_huggingface
+    url: https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro-DSpark
+  reasoning.supported:
+    source: official_model_card
+    url: https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro-DSpark/resolve/7c09739fd136abfb70a49ec334157f65f45b52cd/README.md
+upstream:
+  huggingface:
+    id: deepseek-ai/DeepSeek-V4-Pro-DSpark
+    revision: 7c09739fd136abfb70a49ec334157f65f45b52cd
+    pipeline_tag: text-generation
+    model_type: deepseek_v4
+    architectures:
+      - DeepseekV4ForCausalLM
+    license: mit
+    tags:
+      - 8-bit
+      - arxiv:2606.19348
+      - deepseek_v4
+      - endpoints_compatible
+      - fp8
+      - license:mit
+      - region:us
+      - safetensors
+      - text-generation
+      - transformers
+    config_context_length: 1048576
+    tokenizer_model_max_length: 1048576
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-08-10T03:41:34.031751256Z
+reasoning:
+  supported: true
