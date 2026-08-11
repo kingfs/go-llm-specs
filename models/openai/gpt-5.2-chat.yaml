@@ -26,7 +26,6 @@ upstream:
     canonical_slug: openai/gpt-5.2-chat-20251211
     supported_parameters:
       - max_completion_tokens
-      - max_tokens
       - response_format
       - seed
       - structured_outputs
@@ -38,4 +37,4 @@ upstream:
       - text
     output_modalities:
       - text
-    fetched_at: 2026-07-29T10:41:20.197361975Z
+    fetched_at: 2026-08-11T03:24:36.598318013Z

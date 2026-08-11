@@ -1,0 +1,91 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "nvidia/nvidia-nemotron-labs-3-puzzle-75b-a9b-bf16",
+  "status": "partially_accepted",
+  "created_at": "2026-08-11T03:26:05.809977925Z",
+  "source": {
+    "url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-Labs-3-Puzzle-75B-A9B-BF16/resolve/8fe5546888e9bd03fdbf52d808adebdfca901b52/README.md",
+    "revision": "8fe5546888e9bd03fdbf52d808adebdfca901b52",
+    "sha256": "7afb39a7a5898e36afa3fe516f5f3e5aaa9903b8f63c70508963296f2aa92fee"
+  },
+  "generator": {
+    "model": "qwen/qwen3.6-27b",
+    "wire_api": "chat"
+  },
+  "claims": [
+    {
+      "field": "description",
+      "value": "NVIDIA-Nemotron-Labs-3-Puzzle-75B-A9B-BF16 is a deployment-optimized large language model derived from Nemotron-3-Super-120B, produced using Iterative Puzzle compression framework to improve inference efficiency for interactive, reasoning-heavy, and long-context workloads while preserving accuracy.",
+      "evidence": "Nemotron-Labs-3-Puzzle-75B-A9B is a deployment-optimized large language model developed by NVIDIA, derived from Nemotron-3-Super-120B-A12B. The model is produced using Iterative Puzzle, a post-training compression framework",
+      "section": "### Description:",
+      "confidence": "high"
+    },
+    {
+      "field": "description",
+      "value": "The model employs a hybrid MoE architecture with interleaved Mamba, MoE, and Attention layers. It has 75.3B total parameters and 9.3B active parameters. It supports Multi-Token Prediction (MTP) for faster text generation.",
+      "evidence": "The model employs a hybrid MoE architecture with interleaved Mamba, MoE, and Attention layers. Like Nemotron-3-Super, it supports Multi-Token Prediction (MTP) for faster text generation.",
+      "section": "### Description:",
+      "confidence": "high"
+    },
+    {
+      "field": "description",
+      "value": "Puzzle-75B-A9B reduces the parameter count from 120.7B total / 12.8B active in the parent model to 75.3B total / 9.3B active parameters.",
+      "evidence": "Compared to its parent, Puzzle-75B-A9B reduces the model from 120.7B total / 12.8B active parameters to 75.3B total / 9.3B active parameters.",
+      "section": "### Description:",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "ModalityTextIn",
+        "ModalityTextOut"
+      ],
+      "evidence": "pipeline_tag: text-generation",
+      "section": "---",
+      "confidence": "high"
+    },
+    {
+      "field": "description",
+      "value": "The supported languages for this model include English, French, German, Italian, Japanese, Spanish, and Chinese.",
+      "evidence": "The supported languages include: English, French, German, Italian, Japanese, Spanish, and Chinese.",
+      "section": "### Description:",
+      "confidence": "high"
+    },
+    {
+      "field": "description",
+      "value": "This model is intended for general purpose reasoning and chat, optimized for collaborative agents, high-volume workloads, AI Agent systems, chatbots, RAG systems, complex instruction-following, and long-context reasoning.",
+      "evidence": "NVIDIA-Nemotron-Labs-3-Puzzle-75B-A9B-BF16 is a general purpose reasoning and chat model intended to be used in English, Code, and supported multilingual contexts. This model is optimized for collaborative agents",
+      "section": "### Use Case:",
+      "confidence": "high"
+    },
+    {
+      "field": "description",
+      "value": "The model usage is governed by the OpenMDW License Agreement, version 1.1.",
+      "evidence": "Use of this model is governed by the [OpenMDW License Agreement, version 1.1] (OpenMDW-1.1).",
+      "section": "### License/Terms of Use",
+      "confidence": "high"
+    },
+    {
+      "field": "description",
+      "value": "For long-context benchmarks, the model achieved 95.1% on RULER @ 256k, 94.2% on RULER @ 512k, and 92.2% on RULER @ 1M.",
+      "evidence": "RULER @ 256k | 95.1 ... RULER @ 512k | 94.2 ... RULER @ 1M | 92.2",
+      "section": "### Benchmarks",
+      "confidence": "high"
+    },
+    {
+      "field": "description",
+      "value": "For reasoning benchmarks, the model scored 82.4 on MMLU-Pro, 89.7 on AIME25 (no tools), and 93.4 on HMMT Feb25 (no tools).",
+      "evidence": "MMLU-Pro | 82.4 ... AIME25 (no tools) | 89.7 ... HMMT Feb25 (no tools) | 93.4",
+      "section": "### Benchmarks",
+      "confidence": "high"
+    },
+    {
+      "field": "description",
+      "value": "Model architecture is Mamba2-Transformer Hybrid Latent Mixture of Experts (LatentMoE) with Multi-Token Prediction (MTP). It has 75B Total / 9.3B Active parameters.",
+      "evidence": "**Architecture Type:** Mamba2-Transformer Hybrid Latent Mixture of Experts (LatentMoE) with Multi-Token Prediction (MTP) ... **Number of model parameters:** 75B Total / 9.3B Active",
+      "section": "## Model Architecture:",
+      "confidence": "high"
+    }
+  ]
+}

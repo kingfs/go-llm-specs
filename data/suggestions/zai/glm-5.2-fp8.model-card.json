@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "zai/glm-5.2-fp8",
+  "status": "partially_accepted",
+  "created_at": "2026-08-11T03:24:40.512346686Z",
+  "source": {
+    "url": "https://huggingface.co/zai-org/GLM-5.2-FP8/resolve/ba978f7d347eaf65d22f1a86833408afdb953541/README.md",
+    "revision": "ba978f7d347eaf65d22f1a86833408afdb953541",
+    "sha256": "cbc9d76421a592aefad4c7398ebdc19b391469516ebacaba0202cc0e31283feb"
+  },
+  "generator": {
+    "model": "qwen/qwen3.6-27b",
+    "wire_api": "chat"
+  },
+  "claims": [
+    {
+      "field": "context_length",
+      "value": 1048576,
+      "evidence": "It marks a substantial leap in long-horizon task capability over its predecessor GLM-5.1 and, for the first time, delivers that capability on a solid 1M-token context.",
+      "section": "Introduction",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "ModalityTextIn",
+        "ModalityTextOut"
+      ],
+      "evidence": "pipeline_tag: text-generation",
+      "section": "Metadata",
+      "confidence": "high"
+    },
+    {
+      "field": "reasoning.supported",
+      "value": true,
+      "evidence": "Stronger coding capabilities with multiple thinking effort levels to balance performance and latency",
+      "section": "Introduction",
+      "confidence": "high"
+    }
+  ]
+}

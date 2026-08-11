@@ -1,0 +1,64 @@
+schema_version: 2
+id: zai/glm-5.2-fp8
+name: GLM-5.2-FP8
+provider: Z.ai
+developer: zai
+lifecycle: candidate
+context_length: 1048576
+features:
+  - ModalityTextIn
+  - ModalityTextOut
+links:
+  model_card: https://huggingface.co/zai-org/GLM-5.2-FP8
+identifiers:
+  huggingface:
+    - zai-org/GLM-5.2-FP8
+provenance:
+  context_length:
+    source: official_huggingface_config
+    url: https://huggingface.co/zai-org/GLM-5.2-FP8
+  features:
+    source: official_huggingface_pipeline
+    url: https://huggingface.co/zai-org/GLM-5.2-FP8
+  id:
+    source: official_huggingface
+    url: https://huggingface.co/zai-org/GLM-5.2-FP8
+  name:
+    source: official_huggingface
+    url: https://huggingface.co/zai-org/GLM-5.2-FP8
+  reasoning.supported:
+    source: official_model_card
+    url: https://huggingface.co/zai-org/GLM-5.2-FP8/resolve/ba978f7d347eaf65d22f1a86833408afdb953541/README.md
+upstream:
+  huggingface:
+    id: zai-org/GLM-5.2-FP8
+    revision: ba978f7d347eaf65d22f1a86833408afdb953541
+    pipeline_tag: text-generation
+    model_type: glm_moe_dsa
+    architectures:
+      - GlmMoeDsaForCausalLM
+    license: mit
+    tags:
+      - arxiv:2602.15763
+      - arxiv:2603.12201
+      - conversational
+      - deploy:azure
+      - deploy:sagemaker
+      - en
+      - endpoints_compatible
+      - fp8
+      - glm_moe_dsa
+      - license:mit
+      - region:us
+      - safetensors
+      - text-generation
+      - transformers
+      - zh
+    config_context_length: 1048576
+    tokenizer_model_max_length: 1048576
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-08-11T03:24:38.974859546Z
+reasoning:
+  supported: true

@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "nvidia/kimi-k2.7-code-dflash",
+  "status": "partially_accepted",
+  "created_at": "2026-08-11T03:25:22.051725466Z",
+  "source": {
+    "url": "https://huggingface.co/nvidia/Kimi-K2.7-Code-DFlash/resolve/2fd81453174fe03654693762828957a237395807/README.md",
+    "revision": "2fd81453174fe03654693762828957a237395807",
+    "sha256": "e5d3319dc1cd24dfba6452fc5232c11f95a3357ebf42041557111e1bb6236c79"
+  },
+  "generator": {
+    "model": "qwen/qwen3.6-27b",
+    "wire_api": "chat"
+  },
+  "claims": [
+    {
+      "field": "description",
+      "value": "DFlash draft head of Moonshot AI's Kimi-K2.7-Code, optimized for speculative decoding with vLL on NVIDIA systems.",
+      "evidence": "The NVIDIA Kimi-K2.7-Code DFlash model is the DFlash draft head of Moonshot AI's Kimi-K2.7-Code model... incorporates DFlash speculative decoding",
+      "section": "## Description:",
+      "confidence": "high"
+    },
+    {
+      "field": "context_length",
+      "value": 262144,
+      "evidence": "Other Properties Related to Input: Context length: 256K",
+      "section": "## Input:",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "ModalityTextIn",
+        "ModalityImageIn",
+        "ModalityVideoIn",
+        "ModalityTextOut"
+      ],
+      "evidence": "Input Type(s): Text, Image, Video... Output Type(s): Text",
+      "section": "## Input:",
+      "confidence": "high"
+    }
+  ]
+}

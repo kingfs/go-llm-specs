@@ -1,0 +1,102 @@
+schema_version: 2
+id: meta/muse-glimmer-30b
+name: 'Meta: Muse Glimmer 30B'
+provider: Meta
+developer: meta
+description: Muse Glimmer 30B is a dense, open-weight multimodal model from Meta Superintelligence Labs, distilled from Muse Spark and optimized for autonomous agents on consumer hardware. It is suited for long-horizon...
+description_cn: Muse Glimmer 30B 是 Meta 超级智能实验室推出的密集、开源权重多模态模型，由 Muse Spark 蒸馏而来，专为消费者硬件上的自主代理进行了优化。适用于长程任务……
+context_length: 131072
+features:
+  - CapChat
+  - CapFunctionCall
+  - CapJsonMode
+  - ModalityImageIn
+  - ModalityTextIn
+  - ModalityTextOut
+discovered_at: 2026-08-11T03:24:33.360581133Z
+links:
+  model_card: https://huggingface.co/meta-models/Muse-Glimmer-30B
+identifiers:
+  huggingface:
+    - meta-models/Muse-Glimmer-30B
+  openrouter:
+    - meta/muse-glimmer-30b
+provenance:
+  context_length:
+    source: openrouter
+  description:
+    source: openrouter
+  features:
+    source: openrouter
+  id:
+    source: openrouter
+  max_output:
+    source: openrouter
+  name:
+    source: openrouter
+  provider:
+    source: openrouter
+  reasoning:
+    source: openrouter
+upstream:
+  openrouter:
+    canonical_slug: meta/muse-glimmer-30b-20260810
+    huggingface_id: meta-models/Muse-Glimmer-30B
+    supported_parameters:
+      - frequency_penalty
+      - include_reasoning
+      - logit_bias
+      - max_tokens
+      - min_p
+      - presence_penalty
+      - reasoning
+      - reasoning_effort
+      - repetition_penalty
+      - response_format
+      - stop
+      - structured_outputs
+      - temperature
+      - tool_choice
+      - tools
+      - top_k
+      - top_p
+    input_modalities:
+      - image
+      - text
+    output_modalities:
+      - text
+    fetched_at: 2026-08-11T03:24:36.595406391Z
+  huggingface:
+    id: meta-models/Muse-Glimmer-30B
+    revision: 97c77dff50b2797bcc558fa2d909761dbc575c59
+    pipeline_tag: image-text-to-text
+    model_type: muse_glimmer
+    architectures:
+      - MuseGlimmerForConditionalGeneration
+    license: apache-2.0
+    tags:
+      - arxiv:2504.13181
+      - arxiv:2602.06036
+      - conversational
+      - endpoints_compatible
+      - eval-results
+      - image-text-to-text
+      - license:apache-2.0
+      - muse_glimmer
+      - region:us
+      - safetensors
+      - transformers
+    tokenizer_model_max_length: 131072
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-08-11T03:24:37.211663395Z
+reasoning:
+  supported: true
+  mandatory: true
+  default_effort: medium
+  supported_efforts:
+    - high
+    - low
+    - medium
+    - xhigh

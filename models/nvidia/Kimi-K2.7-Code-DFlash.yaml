@@ -3,7 +3,9 @@ id: nvidia/kimi-k2.7-code-dflash
 name: Kimi-K2.7-Code-DFlash
 provider: NVIDIA
 developer: nvidia
-lifecycle: candidate
+lifecycle: active
+description: DFlash draft head of Moonshot AI's Kimi-K2.7-Code, optimized for speculative decoding with vLL on NVIDIA systems.
+description_cn: Moonshot AI 的 Kimi-K2.7-Code 的 DFlash 草稿头，针对 NVIDIA 系统上的 vLL 推测解码进行了优化。
 context_length: 262144
 features:
   - ModalityTextIn
@@ -17,6 +19,9 @@ provenance:
   context_length:
     source: official_huggingface_config
     url: https://huggingface.co/nvidia/Kimi-K2.7-Code-DFlash
+  description:
+    source: official_model_card
+    url: https://huggingface.co/nvidia/Kimi-K2.7-Code-DFlash/resolve/2fd81453174fe03654693762828957a237395807/README.md
   features:
     source: official_huggingface_pipeline
     url: https://huggingface.co/nvidia/Kimi-K2.7-Code-DFlash

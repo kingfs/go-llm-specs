@@ -1,0 +1,55 @@
+schema_version: 2
+id: nvidia/minimax-m2.7-dflash
+name: MiniMax-M2.7-DFlash
+provider: NVIDIA
+developer: nvidia
+lifecycle: candidate
+context_length: 196608
+features:
+  - ModalityTextIn
+  - ModalityTextOut
+links:
+  model_card: https://huggingface.co/nvidia/MiniMax-M2.7-DFlash
+identifiers:
+  huggingface:
+    - nvidia/MiniMax-M2.7-DFlash
+provenance:
+  context_length:
+    source: official_huggingface_config
+    url: https://huggingface.co/nvidia/MiniMax-M2.7-DFlash
+  features:
+    source: official_huggingface_pipeline
+    url: https://huggingface.co/nvidia/MiniMax-M2.7-DFlash
+  id:
+    source: official_huggingface
+    url: https://huggingface.co/nvidia/MiniMax-M2.7-DFlash
+  name:
+    source: official_huggingface
+    url: https://huggingface.co/nvidia/MiniMax-M2.7-DFlash
+upstream:
+  huggingface:
+    id: nvidia/MiniMax-M2.7-DFlash
+    revision: 506ca1e2662a58808f673a8c96c3cc1c65bd1e73
+    pipeline_tag: text-generation
+    model_type: qwen3
+    architectures:
+      - DFlashDraftModel
+    license: other
+    tags:
+      - DFlash
+      - MiniMax-M2.7
+      - Model Optimizer
+      - ModelOpt
+      - arxiv:2602.06036
+      - base_model:MiniMaxAI/MiniMax-M2.7
+      - base_model:finetune:MiniMaxAI/MiniMax-M2.7
+      - license:other
+      - nvidia
+      - qwen3
+      - region:us
+      - safetensors
+      - text-generation
+    config_context_length: 196608
+    structured_files:
+      - config.json
+    fetched_at: 2026-08-11T03:24:37.637481723Z

@@ -3,7 +3,9 @@ id: nvidia/nvidia-nemotron-labs-3-puzzle-75b-a9b-bf16
 name: NVIDIA-Nemotron-Labs-3-Puzzle-75B-A9B-BF16
 provider: NVIDIA
 developer: nvidia
-lifecycle: candidate
+lifecycle: active
+description: NVIDIA-Nemotron-Labs-3-Puzzle-75B-A9B-BF16 is a deployment-optimized large language model derived from Nemotron-3-Super-120B, produced using Iterative Puzzle compression framework to improve inference efficiency for interactive, reasoning-heavy, and long-context workloads while preserving accuracy.
+description_cn: NVIDIA-Nemotron-Labs-3-Puzzle-75B-A9B-BF16 是一个基于 Nemotron-3-Super-120B 衍生的部署优化大型语言模型，采用 Iterative Puzzle 压缩框架生成，旨在保持准确性的同时提高交互式、重型推理及长上下文工作负载的推理效率。
 context_length: 262144
 features:
   - ModalityTextIn
@@ -17,6 +19,9 @@ provenance:
   context_length:
     source: official_huggingface_config
     url: https://huggingface.co/nvidia/NVIDIA-Nemotron-Labs-3-Puzzle-75B-A9B-BF16
+  description:
+    source: official_model_card
+    url: https://huggingface.co/nvidia/NVIDIA-Nemotron-Labs-3-Puzzle-75B-A9B-BF16/resolve/8fe5546888e9bd03fdbf52d808adebdfca901b52/README.md
   features:
     source: official_huggingface_pipeline
     url: https://huggingface.co/nvidia/NVIDIA-Nemotron-Labs-3-Puzzle-75B-A9B-BF16

@@ -1,0 +1,58 @@
+schema_version: 2
+id: upstage/solar-pro4
+name: 'Upstage: Solar Pro 4'
+provider: Upstage
+developer: upstage
+description: Solar Pro 4 is a large language model from Upstage. It is suited for agentic workflows, office productivity, document-intensive work, and coding.
+description_cn: Solar Pro 4 是 Upstage 推出的大型语言模型。适用于代理工作流、办公生产力、文档密集型工作及编程。
+context_length: 524288
+max_output: 131072
+features:
+  - CapChat
+  - CapFunctionCall
+  - CapJsonMode
+  - ModalityTextIn
+  - ModalityTextOut
+discovered_at: 2026-08-11T03:24:33.360480292Z
+identifiers:
+  openrouter:
+    - upstage/solar-pro4
+provenance:
+  context_length:
+    source: openrouter
+  description:
+    source: openrouter
+  features:
+    source: openrouter
+  id:
+    source: openrouter
+  max_output:
+    source: openrouter
+  name:
+    source: openrouter
+  provider:
+    source: openrouter
+  reasoning:
+    source: openrouter
+upstream:
+  openrouter:
+    canonical_slug: upstage/solar-pro4-20260810
+    supported_parameters:
+      - frequency_penalty
+      - include_reasoning
+      - max_tokens
+      - presence_penalty
+      - reasoning
+      - response_format
+      - structured_outputs
+      - temperature
+      - tool_choice
+      - tools
+      - top_p
+    input_modalities:
+      - text
+    output_modalities:
+      - text
+    fetched_at: 2026-08-11T03:24:36.602172928Z
+reasoning:
+  supported: true

@@ -1,0 +1,63 @@
+schema_version: 2
+id: nvidia/privasis-cleaner-4b
+name: Privasis-Cleaner-4B
+provider: NVIDIA
+developer: nvidia
+lifecycle: candidate
+context_length: 40960
+features:
+  - ModalityTextIn
+  - ModalityTextOut
+links:
+  model_card: https://huggingface.co/nvidia/Privasis-Cleaner-4B
+identifiers:
+  huggingface:
+    - nvidia/Privasis-Cleaner-4B
+provenance:
+  context_length:
+    source: official_huggingface_config
+    url: https://huggingface.co/nvidia/Privasis-Cleaner-4B
+  features:
+    source: official_huggingface_pipeline
+    url: https://huggingface.co/nvidia/Privasis-Cleaner-4B
+  id:
+    source: official_huggingface
+    url: https://huggingface.co/nvidia/Privasis-Cleaner-4B
+  name:
+    source: official_huggingface
+    url: https://huggingface.co/nvidia/Privasis-Cleaner-4B
+upstream:
+  huggingface:
+    id: nvidia/Privasis-Cleaner-4B
+    revision: 187da88fea4faaaf64566a713dc6b776ec79b820
+    pipeline_tag: text-generation
+    model_type: qwen3
+    architectures:
+      - Qwen3ForCausalLM
+    license: other
+    tags:
+      - arxiv:2602.03183
+      - base_model:Qwen/Qwen3-4B-Instruct-2507
+      - base_model:finetune:Qwen/Qwen3-4B-Instruct-2507
+      - conversational
+      - en
+      - endpoints_compatible
+      - license:other
+      - pii
+      - pii-removal
+      - privacy
+      - qwen3
+      - redaction
+      - region:us
+      - safetensors
+      - sanitization
+      - text-generation
+      - text-generation-inference
+      - transformers
+    config_context_length: 40960
+    tokenizer_model_max_length: 131072
+    chat_template_sha256: d7d7b7a694907104724f66d29e96b811c834ab8d1a40ef59f00469049fee7794
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-08-11T03:24:38.610363874Z

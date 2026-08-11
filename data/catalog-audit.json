@@ -1,7 +1,7 @@
 {
   "providers": 24,
-  "models": 511,
-  "models_with_official_links": 325,
+  "models": 519,
+  "models_with_official_links": 331,
   "uncataloged_publishers": {
     "Ai21": 1,
     "Aion-Labs": 4,
@@ -51,10 +51,12 @@
     "prime-intellect": 1,
     "raifle": 1,
     "reka": 1,
+    "sakana": 1,
     "sao10k": 2,
     "stepfun-ai": 1,
     "switchpoint": 1,
     "tngtech": 3,
+    "upstage": 1,
     "xiaomi": 3,
     "~Anthropic": 4,
     "~Deepseek": 1,
