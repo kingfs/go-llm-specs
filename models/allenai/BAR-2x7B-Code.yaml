@@ -1,0 +1,60 @@
+schema_version: 2
+id: allenai/bar-2x7b-code
+name: BAR-2x7B-Code
+provider: Allen Institute for AI
+developer: allenai
+lifecycle: active
+description: BAR-2x7B-Code is a code expert model built on Olmo 2 7B, trained via mid-training, SFT, and RLVR within the BAR MoE framework.
+description_cn: BAR-2x7B-Code 是一个基于 Olmo 2 7B 构建的代码专家模型，在 BAR MoE 框架内通过中期训练、SFT 和 RLVR 进行训练。
+context_length: 65536
+features:
+  - ModalityTextIn
+  - ModalityTextOut
+links:
+  model_card: https://huggingface.co/allenai/BAR-2x7B-Code
+identifiers:
+  huggingface:
+    - allenai/BAR-2x7B-Code
+provenance:
+  context_length:
+    source: official_huggingface_config
+    url: https://huggingface.co/allenai/BAR-2x7B-Code
+  description:
+    source: official_model_card
+    url: https://huggingface.co/allenai/BAR-2x7B-Code/resolve/dc5c4003957a7d24013d178a64affded5391b597/README.md
+  features:
+    source: official_huggingface_pipeline
+    url: https://huggingface.co/allenai/BAR-2x7B-Code
+  id:
+    source: official_huggingface
+    url: https://huggingface.co/allenai/BAR-2x7B-Code
+  name:
+    source: official_huggingface
+    url: https://huggingface.co/allenai/BAR-2x7B-Code
+upstream:
+  huggingface:
+    id: allenai/BAR-2x7B-Code
+    revision: dc5c4003957a7d24013d178a64affded5391b597
+    pipeline_tag: text-generation
+    model_type: flex_olmo
+    architectures:
+      - FlexOlmoForCausalLM
+    license: apache-2.0
+    tags:
+      - bar
+      - conversational
+      - endpoints_compatible
+      - flex_olmo
+      - license:apache-2.0
+      - mixture-of-experts
+      - olmo
+      - region:us
+      - safetensors
+      - text-generation
+      - transformers
+    config_context_length: 65536
+    tokenizer_model_max_length: 65536
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-08-12T03:53:06.717132897Z

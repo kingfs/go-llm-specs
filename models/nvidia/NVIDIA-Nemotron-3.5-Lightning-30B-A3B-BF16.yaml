@@ -1,0 +1,74 @@
+schema_version: 2
+id: nvidia/nvidia-nemotron-3.5-lightning-30b-a3b-bf16
+name: NVIDIA-Nemotron-3.5-Lightning-30B-A3B-BF16
+provider: NVIDIA
+developer: nvidia
+lifecycle: active
+description: NVIDIA-Nemotron-3.5-Lightning-30B-A3B-BF16 is a large language model with a hybrid Mixture-of-Experts architecture utilizing interleaved Mamba-2 and MoE layers, along with select Attention layers.
+description_cn: NVIDIA-Nemotron-3.5-Lightning-30B-A3B-BF16 是一款大型语言模型，采用混合混合专家（MoE）架构，结合了交错排列的 Mamba-2 层、MoE 层以及部分注意力层。
+context_length: 262144
+features:
+  - ModalityTextIn
+  - ModalityTextOut
+links:
+  model_card: https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-BF16
+identifiers:
+  huggingface:
+    - nvidia/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-BF16
+provenance:
+  context_length:
+    source: official_huggingface_config
+    url: https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-BF16
+  description:
+    source: official_model_card
+    url: https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-BF16/resolve/63a200063804e06fdb41d6717e43bc92f67859d2/README.md
+  features:
+    source: official_huggingface_pipeline
+    url: https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-BF16
+  id:
+    source: official_huggingface
+    url: https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-BF16
+  name:
+    source: official_huggingface
+    url: https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-BF16
+  reasoning.supported:
+    source: official_model_card
+    url: https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-BF16/resolve/63a200063804e06fdb41d6717e43bc92f67859d2/README.md
+upstream:
+  huggingface:
+    id: nvidia/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-BF16
+    revision: 63a200063804e06fdb41d6717e43bc92f67859d2
+    pipeline_tag: text-generation
+    model_type: nemotron_h
+    architectures:
+      - NemotronHForCausalLM
+    license: other
+    tags:
+      - conversational
+      - dataset:nvidia/nemotron-post-training-v3
+      - dataset:nvidia/nemotron-pre-training-datasets
+      - de
+      - deploy:azure
+      - en
+      - endpoints_compatible
+      - es
+      - fr
+      - it
+      - ja
+      - license:other
+      - nemotron-3.5
+      - nemotron_h
+      - nvidia
+      - pytorch
+      - region:us
+      - safetensors
+      - text-generation
+      - transformers
+    config_context_length: 262144
+    tokenizer_model_max_length: 262144
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-08-12T03:53:08.792912045Z
+reasoning:
+  supported: true

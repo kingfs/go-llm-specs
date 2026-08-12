@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "nvidia/nvidia-nemotron-3.5-lightning-30b-a3b-bf16",
+  "status": "partially_accepted",
+  "created_at": "2026-08-12T03:54:45.182232157Z",
+  "source": {
+    "url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-BF16/resolve/63a200063804e06fdb41d6717e43bc92f67859d2/README.md",
+    "revision": "63a200063804e06fdb41d6717e43bc92f67859d2",
+    "sha256": "6bd75fb13b0b3e5a831b7ca8cc2e017c5c4f2c0845d7eec0fdf7d31273136770"
+  },
+  "generator": {
+    "model": "qwen/qwen3.6-27b",
+    "wire_api": "chat"
+  },
+  "claims": [
+    {
+      "field": "description",
+      "value": "NVIDIA-Nemotron-3.5-Lightning-30B-A3B-BF16 is a large language model with a hybrid Mixture-of-Experts architecture utilizing interleaved Mamba-2 and MoE layers, along with select Attention layers.",
+      "evidence": "The model employs a hybrid Mixture-of-Experts architecture, utilizing interleaved Mamba-2 and MoE layers, along with select Attention layers.",
+      "section": "Description",
+      "confidence": "high"
+    },
+    {
+      "field": "description",
+      "value": "This model has 3B active parameters and 30B parameters in total.",
+      "evidence": "The model has 3B active parameters and 30B parameters in total.",
+      "section": "Description",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "ModalityTextIn",
+        "ModalityTextOut"
+      ],
+      "evidence": "pipeline_tag: text-generation ... language: - en - es - fr - de - it - ja",
+      "section": "---",
+      "confidence": "high"
+    },
+    {
+      "field": "reasoning.supported",
+      "value": true,
+      "evidence": "Reasoning Mode | Configurable on/off via chat template (`enable_thinking=True/False`)",
+      "section": "Model Summary",
+      "confidence": "high"
+    },
+    {
+      "field": "reasoning.parser",
+      "value": "The model card indicates reasoning is configurable but does not specify a parser format.",
+      "evidence": "Reasoning Mode | Configurable on/off via chat template (`enable_thinking=True/False`)",
+      "section": "Model Summary",
+      "confidence": "low"
+    }
+  ]
+}

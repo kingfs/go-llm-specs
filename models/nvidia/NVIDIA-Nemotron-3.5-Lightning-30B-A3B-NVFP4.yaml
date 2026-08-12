@@ -1,0 +1,64 @@
+schema_version: 2
+id: nvidia/nvidia-nemotron-3.5-lightning-30b-a3b-nvfp4
+name: NVIDIA-Nemotron-3.5-Lightning-30B-A3B-NVFP4
+provider: NVIDIA
+developer: nvidia
+lifecycle: candidate
+context_length: 1048576
+features:
+  - ModalityTextIn
+  - ModalityTextOut
+links:
+  model_card: https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-NVFP4
+identifiers:
+  huggingface:
+    - nvidia/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-NVFP4
+provenance:
+  context_length:
+    source: official_huggingface_config
+    url: https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-NVFP4
+  features:
+    source: official_huggingface_pipeline
+    url: https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-NVFP4
+  id:
+    source: official_huggingface
+    url: https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-NVFP4
+  name:
+    source: official_huggingface
+    url: https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-NVFP4
+upstream:
+  huggingface:
+    id: nvidia/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-NVFP4
+    revision: b14872a58afd94e2fbbc1e5a1fe4ebb7dfdc5fdd
+    pipeline_tag: text-generation
+    model_type: nemotron_h
+    architectures:
+      - NemotronHForCausalLM
+    license: other
+    tags:
+      - 8-bit
+      - conversational
+      - de
+      - deploy:azure
+      - en
+      - endpoints_compatible
+      - es
+      - fr
+      - it
+      - ja
+      - license:other
+      - modelopt
+      - nemotron-3.5
+      - nemotron_h
+      - nvidia
+      - pytorch
+      - region:us
+      - safetensors
+      - text-generation
+      - transformers
+    config_context_length: 1048576
+    tokenizer_model_max_length: 262144
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-08-12T03:53:09.295117099Z

@@ -1,0 +1,37 @@
+schema_version: 2
+id: liquid/lfm-2.5-2.6b
+name: 'LiquidAI: LFM2.5-2.6B (free)'
+provider: Liquid
+developer: liquid
+description: LFM2.5-2.6B is a compact reasoning model from Liquid AI. It is suited for agent workflows, data extraction, RAG, and long-context processing. Liquid advises against using it for agentic coding or...
+description_cn: LFM2.5-2.6B 是 Liquid AI 推出的一款紧凑型推理模型。它适用于智能体工作流、数据提取、RAG 和长上下文处理。Liquid 建议不要将其用于智能体编程或...
+context_length: 128000
+max_output: 32768
+features:
+  - CapChat
+  - CapFunctionCall
+  - CapJsonMode
+  - ModalityTextIn
+  - ModalityTextOut
+aliases:
+  - liquid/lfm-2.5-2.6b:free
+discovered_at: 2026-08-12T03:53:02.77840221Z
+identifiers:
+  openrouter:
+    - liquid/lfm-2.5-2.6b
+    - liquid/lfm-2.5-2.6b:free
+provenance:
+  context_length:
+    source: openrouter
+  description:
+    source: openrouter
+  features:
+    source: openrouter
+  id:
+    source: openrouter
+  max_output:
+    source: openrouter
+  name:
+    source: openrouter
+  provider:
+    source: openrouter

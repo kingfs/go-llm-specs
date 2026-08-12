@@ -1,0 +1,64 @@
+schema_version: 2
+id: allenai/bar-2x7b-math
+name: BAR-2x7B-Math
+provider: Allen Institute for AI
+developer: allenai
+lifecycle: active
+description: BAR (Branch-Adapt-Route) is a modular post-training approach extending a fully post-trained language model with new domain capabilities via independently trained Mixture-of-Experts.
+description_cn: BAR（分支-适应-路由）是一种模块化后期训练方法，通过独立训练的混合专家（MoE）为完全后期训练的语言模型扩展新的领域能力。
+context_length: 65536
+features:
+  - ModalityTextIn
+  - ModalityTextOut
+links:
+  model_card: https://huggingface.co/allenai/BAR-2x7B-Math
+identifiers:
+  huggingface:
+    - allenai/BAR-2x7B-Math
+provenance:
+  context_length:
+    source: official_huggingface_config
+    url: https://huggingface.co/allenai/BAR-2x7B-Math
+  description:
+    source: official_model_card
+    url: https://huggingface.co/allenai/BAR-2x7B-Math/resolve/772eb58b9dbbd48abfcdcc7bf37f7035d9d327c6/README.md
+  features:
+    source: official_huggingface_pipeline
+    url: https://huggingface.co/allenai/BAR-2x7B-Math
+  id:
+    source: official_huggingface
+    url: https://huggingface.co/allenai/BAR-2x7B-Math
+  name:
+    source: official_huggingface
+    url: https://huggingface.co/allenai/BAR-2x7B-Math
+  reasoning.supported:
+    source: official_model_card
+    url: https://huggingface.co/allenai/BAR-2x7B-Math/resolve/772eb58b9dbbd48abfcdcc7bf37f7035d9d327c6/README.md
+upstream:
+  huggingface:
+    id: allenai/BAR-2x7B-Math
+    revision: 772eb58b9dbbd48abfcdcc7bf37f7035d9d327c6
+    pipeline_tag: text-generation
+    model_type: flex_olmo
+    architectures:
+      - FlexOlmoForCausalLM
+    license: apache-2.0
+    tags:
+      - bar
+      - conversational
+      - endpoints_compatible
+      - flex_olmo
+      - license:apache-2.0
+      - mixture-of-experts
+      - olmo
+      - region:us
+      - safetensors
+      - text-generation
+      - transformers
+    config_context_length: 65536
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-08-12T03:53:07.319600397Z
+reasoning:
+  supported: true

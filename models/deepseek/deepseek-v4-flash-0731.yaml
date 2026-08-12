@@ -32,6 +32,7 @@ upstream:
       - logprobs
       - max_tokens
       - min_p
+      - parallel_tool_calls
       - presence_penalty
       - reasoning
       - reasoning_effort
@@ -51,7 +52,7 @@ upstream:
       - text
     output_modalities:
       - text
-    fetched_at: 2026-08-04T04:52:33.00412453Z
+    fetched_at: 2026-08-12T03:53:06.044816411Z
   huggingface:
     id: deepseek-ai/DeepSeek-V4-Flash-0731
     revision: 7872f01b1d1fe23eabc4c98b48bffcef5a386062

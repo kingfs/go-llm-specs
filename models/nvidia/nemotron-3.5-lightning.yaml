@@ -1,0 +1,106 @@
+schema_version: 2
+id: nvidia/nemotron-3.5-lightning
+name: 'NVIDIA: Nemotron 3.5 Lightning'
+provider: Nvidia
+developer: nvidia
+description: NVIDIA Nemotron 3.5 Lightning is an open mixture-of-experts model from NVIDIA, with 3B active parameters out of 30B total. It is suited for high-throughput agentic workloads and specialized tasks that...
+description_cn: NVIDIA Nemotron 3.5 Lightning 是 NVIDIA 推出的一款开放混合专家模型，在 300 亿总参数中有 30 亿活跃参数。它适用于高吞吐量的智能体工作负载及特定的专业任务...
+context_length: 262144
+max_output: 262144
+features:
+  - CapChat
+  - CapJsonMode
+  - ModalityTextIn
+  - ModalityTextOut
+aliases:
+  - nvidia/nemotron-3.5-lightning:free
+discovered_at: 2026-08-12T03:53:02.778559601Z
+links:
+  model_card: https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-BF16
+identifiers:
+  huggingface:
+    - nvidia/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-BF16
+  openrouter:
+    - nvidia/nemotron-3.5-lightning
+    - nvidia/nemotron-3.5-lightning:free
+provenance:
+  context_length:
+    source: openrouter
+  description:
+    source: openrouter
+  features:
+    source: openrouter
+  id:
+    source: openrouter
+  max_output:
+    source: openrouter
+  name:
+    source: openrouter
+  provider:
+    source: openrouter
+  reasoning:
+    source: openrouter
+upstream:
+  openrouter:
+    canonical_slug: nvidia/nemotron-3.5-lightning-20260807
+    huggingface_id: nvidia/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-BF16
+    supported_parameters:
+      - frequency_penalty
+      - include_reasoning
+      - logit_bias
+      - logprobs
+      - max_tokens
+      - min_p
+      - presence_penalty
+      - reasoning
+      - repetition_penalty
+      - response_format
+      - seed
+      - stop
+      - structured_outputs
+      - temperature
+      - top_k
+      - top_logprobs
+      - top_p
+    input_modalities:
+      - text
+    output_modalities:
+      - text
+    fetched_at: 2026-08-12T03:53:06.048021848Z
+  huggingface:
+    id: nvidia/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-BF16
+    revision: 63a200063804e06fdb41d6717e43bc92f67859d2
+    pipeline_tag: text-generation
+    model_type: nemotron_h
+    architectures:
+      - NemotronHForCausalLM
+    license: other
+    tags:
+      - conversational
+      - dataset:nvidia/nemotron-post-training-v3
+      - dataset:nvidia/nemotron-pre-training-datasets
+      - de
+      - deploy:azure
+      - en
+      - endpoints_compatible
+      - es
+      - fr
+      - it
+      - ja
+      - license:other
+      - nemotron-3.5
+      - nemotron_h
+      - nvidia
+      - pytorch
+      - region:us
+      - safetensors
+      - text-generation
+      - transformers
+    config_context_length: 262144
+    tokenizer_model_max_length: 262144
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-08-12T03:53:07.898217528Z
+reasoning:
+  supported: true

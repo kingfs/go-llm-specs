@@ -45,9 +45,10 @@ upstream:
     input_modalities:
       - image
       - text
+      - video
     output_modalities:
       - text
-    fetched_at: 2026-07-29T10:45:25.894000943Z
+    fetched_at: 2026-08-12T03:53:06.052046493Z
 reasoning:
   supported: true
   default_enabled: true

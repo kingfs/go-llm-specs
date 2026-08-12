@@ -1,0 +1,98 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "allenai/bar-2x7b-math",
+  "status": "partially_accepted",
+  "created_at": "2026-08-12T03:53:52.985061503Z",
+  "source": {
+    "url": "https://huggingface.co/allenai/BAR-2x7B-Math/resolve/772eb58b9dbbd48abfcdcc7bf37f7035d9d327c6/README.md",
+    "revision": "772eb58b9dbbd48abfcdcc7bf37f7035d9d327c6",
+    "sha256": "4f81343f9be924e0a3506f53cebbc8b35094f4f857d0f89c681a4a7e3377c4d7"
+  },
+  "generator": {
+    "model": "qwen/qwen3.6-27b",
+    "wire_api": "chat"
+  },
+  "claims": [
+    {
+      "field": "description",
+      "value": "BAR (Branch-Adapt-Route) is a modular post-training approach extending a fully post-trained language model with new domain capabilities via independently trained Mixture-of-Experts.",
+      "evidence": "BAR (Branch-Adapt-Route) is a modular post-training approach that extends a fully post-trained language model with new domain capabilities via independently trained Mixture-of-Experts.",
+      "section": "# BAR",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "ModalityTextIn",
+        "ModalityTextOut"
+      ],
+      "evidence": "BAR (Branch-Adapt-Route) is a modular post-training approach that extends a fully post-trained language model",
+      "section": "# BAR",
+      "confidence": "high"
+    },
+    {
+      "field": "description",
+      "value": "BAR models are built on top of Olmo 2 7B.",
+      "evidence": "All BAR models are built on top of Olmo 2 7B.",
+      "section": "# BAR",
+      "confidence": "high"
+    },
+    {
+      "field": "description",
+      "value": "The model composes independent domain experts into a unified model via an MoE architecture with lightweight router training.",
+      "evidence": "composes them into a unified model via an MoE architecture with lightweight router training.",
+      "section": "# BAR",
+      "confidence": "high"
+    },
+    {
+      "field": "description",
+      "value": "This specific model is the math expert after mid-training + SFT + RLVR.",
+      "evidence": "\"BAR-2x7B-Math — math expert after mid-training + SFT + RLVR\"",
+      "section": "## Models in the BAR suite",
+      "confidence": "high"
+    },
+    {
+      "field": "reasoning.supported",
+      "value": true,
+      "evidence": "\"Reinforcement Learning for Verification and Reward\" (implied by RLVR in \"mid-training + SFT + RLVR\")",
+      "section": "## Models in the BAR suite",
+      "confidence": "high"
+    },
+    {
+      "field": "description",
+      "value": "The model has a Math benchmark score of 55.8.",
+      "evidence": "\"BAR-2x7B-Math | 39.3 | 29.0 | 30.8 | 42.5 | 55.8 | 22.1 | 19.8 | 75.4\"",
+      "section": "## Results",
+      "confidence": "high"
+    },
+    {
+      "field": "description",
+      "value": "The model has an Overall benchmark score of 39.3.",
+      "evidence": "\"BAR-2x7B-Math | 39.3 | 29.0 | 30.8 | 42.5 | 55.8 | 22.1 | 19.8 | 75.4\"",
+      "section": "## Results",
+      "confidence": "high"
+    },
+    {
+      "field": "description",
+      "value": "The model has a Reasoning benchmark score of 30.8.",
+      "evidence": "\"BAR-2x7B-Math | 39.3 | 29.0 | 30.8 | 42.5 | 55.8 | 22.1 | 19.8 | 75.4\"",
+      "section": "## Results",
+      "confidence": "high"
+    },
+    {
+      "field": "description",
+      "value": "The model is licensed under Apache 2.0.",
+      "evidence": "This model is licensed under Apache 2.0.",
+      "section": "## License",
+      "confidence": "high"
+    },
+    {
+      "field": "description",
+      "value": "It is intended for research and educational use in accordance with Ai2's Responsible Use Guidelines.",
+      "evidence": "It is intended for research and educational use in accordance with Ai2's [Responsible Use Guidelines]",
+      "section": "## License",
+      "confidence": "high"
+    }
+  ]
+}

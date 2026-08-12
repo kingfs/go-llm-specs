@@ -1,0 +1,68 @@
+schema_version: 2
+id: bytedance-seed/seed-2.0-code
+name: 'ByteDance Seed: Seed-2.0-Code'
+provider: Bytedance-Seed
+developer: bytedance-seed
+description: Seed 2.0 Code is a model from ByteDance Seed optimized for agentic coding. It is suited for frontend development, multilingual programming tasks, and coding-agent workflows in tools such as Claude...
+description_cn: Seed 2.0 Code 是字节跳动 Seed 推出的专为智能体编程优化的模型。它适用于前端开发、多语言编程任务以及 Claude 等工具中的智能体编程工作流。
+context_length: 262144
+max_output: 131072
+features:
+  - CapChat
+  - CapFunctionCall
+  - CapJsonMode
+  - ModalityImageIn
+  - ModalityTextIn
+  - ModalityTextOut
+  - ModalityVideoIn
+discovered_at: 2026-08-12T03:53:02.779900046Z
+identifiers:
+  openrouter:
+    - bytedance-seed/seed-2.0-code
+provenance:
+  context_length:
+    source: openrouter
+  description:
+    source: openrouter
+  features:
+    source: openrouter
+  id:
+    source: openrouter
+  max_output:
+    source: openrouter
+  name:
+    source: openrouter
+  provider:
+    source: openrouter
+  reasoning:
+    source: openrouter
+upstream:
+  openrouter:
+    canonical_slug: bytedance-seed/seed-2.0-code-20260730
+    supported_parameters:
+      - frequency_penalty
+      - include_reasoning
+      - max_tokens
+      - reasoning
+      - reasoning_effort
+      - response_format
+      - stop
+      - structured_outputs
+      - temperature
+      - tool_choice
+      - tools
+      - top_p
+    input_modalities:
+      - image
+      - text
+      - video
+    output_modalities:
+      - text
+    fetched_at: 2026-08-12T03:53:06.04381146Z
+reasoning:
+  supported: true
+  default_effort: medium
+  supported_efforts:
+    - high
+    - low
+    - medium

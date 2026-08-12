@@ -1,7 +1,7 @@
 {
   "providers": 24,
-  "models": 519,
-  "models_with_official_links": 331,
+  "models": 527,
+  "models_with_official_links": 337,
   "uncataloged_publishers": {
     "Ai21": 1,
     "Aion-Labs": 4,
@@ -42,7 +42,7 @@
     "inclusionai": 2,
     "inflection": 2,
     "kwaipilot": 1,
-    "liquid": 5,
+    "liquid": 6,
     "meituan": 1,
     "neversleep": 2,
     "nex-agi": 1,

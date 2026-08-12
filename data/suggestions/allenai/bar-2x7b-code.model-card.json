@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "allenai/bar-2x7b-code",
+  "status": "partially_accepted",
+  "created_at": "2026-08-12T03:54:19.243741673Z",
+  "source": {
+    "url": "https://huggingface.co/allenai/BAR-2x7B-Code/resolve/dc5c4003957a7d24013d178a64affded5391b597/README.md",
+    "revision": "dc5c4003957a7d24013d178a64affded5391b597",
+    "sha256": "4f81343f9be924e0a3506f53cebbc8b35094f4f857d0f89c681a4a7e3377c4d7"
+  },
+  "generator": {
+    "model": "qwen/qwen3.6-27b",
+    "wire_api": "chat"
+  },
+  "claims": [
+    {
+      "field": "description",
+      "value": "BAR-2x7B-Code is a code expert model built on Olmo 2 7B, trained via mid-training, SFT, and RLVR within the BAR MoE framework.",
+      "evidence": "- **BAR-2x7B-Code** — code expert after mid-training + SFT + RLVR",
+      "section": "Models in the BAR suite",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "ModalityTextIn",
+        "ModalityTextOut"
+      ],
+      "evidence": "BAR (Branch-Adapt-Route) is a modular post-training approach that extends a fully post-trained language model",
+      "section": "BAR",
+      "confidence": "high"
+    },
+    {
+      "field": "reasoning.supported",
+      "value": true,
+      "evidence": "- **BAR-2x7B-Code** — code expert after mid-training + SFT + RLVR",
+      "section": "Models in the BAR suite",
+      "confidence": "low"
+    }
+  ]
+}

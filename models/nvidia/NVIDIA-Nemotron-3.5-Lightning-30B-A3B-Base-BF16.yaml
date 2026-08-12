@@ -1,0 +1,62 @@
+schema_version: 2
+id: nvidia/nvidia-nemotron-3.5-lightning-30b-a3b-base-bf16
+name: NVIDIA-Nemotron-3.5-Lightning-30B-A3B-Base-BF16
+provider: NVIDIA
+developer: nvidia
+lifecycle: candidate
+context_length: 262144
+features:
+  - ModalityTextIn
+  - ModalityTextOut
+links:
+  model_card: https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-Base-BF16
+identifiers:
+  huggingface:
+    - nvidia/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-Base-BF16
+provenance:
+  context_length:
+    source: official_huggingface_config
+    url: https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-Base-BF16
+  features:
+    source: official_huggingface_pipeline
+    url: https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-Base-BF16
+  id:
+    source: official_huggingface
+    url: https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-Base-BF16
+  name:
+    source: official_huggingface
+    url: https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-Base-BF16
+upstream:
+  huggingface:
+    id: nvidia/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-Base-BF16
+    revision: 434456c9a6753f29d24e23c95d622aaf17111b3b
+    pipeline_tag: text-generation
+    model_type: nemotron_h
+    architectures:
+      - NemotronHForCausalLM
+    license: other
+    tags:
+      - dataset:nvidia/nemotron-pre-training-datasets
+      - de
+      - en
+      - endpoints_compatible
+      - es
+      - fr
+      - it
+      - ja
+      - license:other
+      - mtp
+      - nemotron-3.5
+      - nemotron_h
+      - nvidia
+      - pytorch
+      - region:us
+      - safetensors
+      - text-generation
+      - transformers
+    config_context_length: 262144
+    tokenizer_model_max_length: 262144
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-08-12T03:53:08.487503244Z

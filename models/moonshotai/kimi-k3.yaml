@@ -52,9 +52,10 @@ upstream:
     input_modalities:
       - image
       - text
+      - video
     output_modalities:
       - text
-    fetched_at: 2026-07-29T10:40:13.653748305Z
+    fetched_at: 2026-08-12T03:53:06.047322673Z
   huggingface:
     id: moonshotai/Kimi-K3
     revision: 9f62e4e9fffbd0a83ddd60e1c209d828994b3569

@@ -25,7 +25,9 @@ upstream:
       - frequency_penalty
       - include_reasoning
       - logprobs
+      - max_completion_tokens
       - max_tokens
+      - min_p
       - presence_penalty
       - reasoning
       - reasoning_effort
@@ -45,4 +47,4 @@ upstream:
       - text
     output_modalities:
       - text
-    fetched_at: 2026-07-29T10:41:50.816481387Z
+    fetched_at: 2026-08-12T03:53:06.049273432Z
