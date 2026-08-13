@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "nvidia/nemotron-3-super-120b-a12b-bf16-mtpv2",
+  "status": "partially_accepted",
+  "created_at": "2026-08-13T03:58:37.184147979Z",
+  "source": {
+    "url": "https://huggingface.co/nvidia/Nemotron-3-Super-120B-A12B-BF16-MTPv2/resolve/c929f8a55d0527fea9f58b4cedc9e0c855cfc421/README.md",
+    "revision": "c929f8a55d0527fea9f58b4cedc9e0c855cfc421",
+    "sha256": "74c637beb11b8e474ec0acf13da25cfeca486f207434a9e58ef77195356235a8"
+  },
+  "generator": {
+    "model": "qwen/qwen3.6-27b",
+    "wire_api": "chat"
+  },
+  "claims": [
+    {
+      "field": "description",
+      "value": "Multi-Token Prediction (MTP) head for speculative decoding with NVIDIA Nemotron 3 Super. It is not a standalone language model and does not contain the target model's backbone weights.",
+      "evidence": "**NVIDIA-Nemotron-3-Super-120B-A12B-BF16-MTPv2** is an updated, separately distributed Multi-Token Prediction (MTP) head for speculative decoding with NVIDIA Nemotron 3 Super. It is not a standalone language model and does not contain the target model's backbone weights.",
+      "section": "## Description",
+      "confidence": "high"
+    },
+    {
+      "field": "context_length",
+      "value": 262144,
+      "evidence": "**Other Properties Related to Input:** Maximum context length up to 262144 tokens.",
+      "section": "## Input",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "ModalityTextIn",
+        "ModalityTextOut"
+      ],
+      "evidence": "**Input Type(s):** Text \u003cbr\u003e **Output Type(s):** Text",
+      "section": "## Input",
+      "confidence": "high"
+    }
+  ]
+}

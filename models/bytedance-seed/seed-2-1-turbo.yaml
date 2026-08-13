@@ -1,0 +1,62 @@
+schema_version: 2
+id: bytedance-seed/seed-2-1-turbo
+name: 'ByteDance Seed: Seed 2.1 Turbo'
+provider: Bytedance-Seed
+developer: bytedance-seed
+description: Seed 2.1 Turbo is a multimodal model from ByteDance Seed for coding and long-horizon agent workflows. It is suited for end-to-end software delivery, multi-step task execution, and understanding visual and...
+description_cn: Seed 2.1 Turbo 是字节跳动 Seed 推出的一款多模态模型，适用于编程和长周期智能体工作流。它适合端到端的软件交付、多步骤任务执行以及理解视觉...。
+context_length: 262144
+max_output: 262144
+features:
+  - CapChat
+  - CapFunctionCall
+  - CapJsonMode
+  - ModalityImageIn
+  - ModalityTextIn
+  - ModalityTextOut
+  - ModalityVideoIn
+discovered_at: 2026-08-13T03:56:35.72768449Z
+identifiers:
+  openrouter:
+    - bytedance-seed/seed-2-1-turbo
+provenance:
+  context_length:
+    source: openrouter
+  description:
+    source: openrouter
+  features:
+    source: openrouter
+  id:
+    source: openrouter
+  max_output:
+    source: openrouter
+  name:
+    source: openrouter
+  provider:
+    source: openrouter
+  reasoning:
+    source: openrouter
+upstream:
+  openrouter:
+    canonical_slug: bytedance-seed/seed-2-1-turbo-20260810
+    supported_parameters:
+      - frequency_penalty
+      - include_reasoning
+      - max_tokens
+      - reasoning
+      - response_format
+      - stop
+      - structured_outputs
+      - temperature
+      - tool_choice
+      - tools
+      - top_p
+    input_modalities:
+      - image
+      - text
+      - video
+    output_modalities:
+      - text
+    fetched_at: 2026-08-13T03:56:38.012844463Z
+reasoning:
+  supported: true

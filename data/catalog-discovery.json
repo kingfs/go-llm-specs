@@ -1,7 +1,7 @@
 {
   "providers": 24,
-  "models": 522,
-  "models_with_official_links": 331,
+  "models": 531,
+  "models_with_official_links": 337,
   "uncataloged_publishers": {
     "Ai21": 1,
     "Aion-Labs": 4,
@@ -1417,6 +1417,41 @@
       "last_modified": "2026-03-25T03:54:57Z",
       "tags": [
         "license:apache-2.0",
+        "region:us"
+      ]
+    },
+    {
+      "provider_id": "cohere",
+      "organization": "CohereLabs",
+      "repository_id": "CohereLabs/North-Micro-Vision-Instruct",
+      "registry_id": "cohere/north-micro-vision-instruct",
+      "status": "materialized",
+      "url": "https://huggingface.co/CohereLabs/North-Micro-Vision-Instruct",
+      "last_modified": "2026-08-12T17:46:20Z",
+      "pipeline_tag": "image-text-to-text",
+      "tags": [
+        "transformers",
+        "safetensors",
+        "cohere_compass",
+        "image-text-to-text",
+        "vision",
+        "multimodal",
+        "conversational",
+        "multilingual",
+        "native-resolution",
+        "en",
+        "de",
+        "fr",
+        "es",
+        "it",
+        "pt",
+        "hi",
+        "ja",
+        "ko",
+        "zh",
+        "ar",
+        "license:apache-2.0",
+        "endpoints_compatible",
         "region:us"
       ]
     },
@@ -3390,9 +3425,10 @@
       "repository_id": "MiniMaxAI/MiniMax-H3",
       "status": "new",
       "url": "https://huggingface.co/MiniMaxAI/MiniMax-H3",
-      "last_modified": "2026-08-11T09:06:41Z",
+      "last_modified": "2026-08-13T01:46:29Z",
       "pipeline_tag": "image-text-to-video",
       "tags": [
+        "minimax-h3",
         "diffusers",
         "safetensors",
         "text-to-video",
@@ -3409,7 +3445,6 @@
         "synchronized-audio-video",
         "reference-to-audio-video",
         "license:other",
-        "diffusers:MiniMaxH3ModularPipeline",
         "region:us"
       ]
     },
@@ -16478,6 +16513,49 @@
         "fp8",
         "region:us",
         "deploy:azure"
+      ]
+    },
+    {
+      "provider_id": "qwen",
+      "organization": "Qwen",
+      "repository_id": "Qwen/Qwen3.8-2.4T-A95B",
+      "registry_id": "qwen/qwen3.8-2.4t-a95b",
+      "status": "identity_applied",
+      "url": "https://huggingface.co/Qwen/Qwen3.8-2.4T-A95B",
+      "last_modified": "2026-08-12T10:24:04Z",
+      "pipeline_tag": "text-generation",
+      "tags": [
+        "transformers",
+        "safetensors",
+        "qwen3_5_moe_text",
+        "text-generation",
+        "conversational",
+        "license:other",
+        "eval-results",
+        "endpoints_compatible",
+        "region:us"
+      ]
+    },
+    {
+      "provider_id": "qwen",
+      "organization": "Qwen",
+      "repository_id": "Qwen/Qwen3.8-2.4T-A95B-FP8",
+      "status": "new",
+      "url": "https://huggingface.co/Qwen/Qwen3.8-2.4T-A95B-FP8",
+      "last_modified": "2026-08-12T10:23:42Z",
+      "pipeline_tag": "text-generation",
+      "tags": [
+        "transformers",
+        "safetensors",
+        "qwen3_5_moe_text",
+        "text-generation",
+        "conversational",
+        "base_model:Qwen/Qwen3.8-2.4T-A95B",
+        "base_model:quantized:Qwen/Qwen3.8-2.4T-A95B",
+        "license:other",
+        "endpoints_compatible",
+        "fp8",
+        "region:us"
       ]
     },
     {
@@ -32445,7 +32523,8 @@
       "provider_id": "allenai",
       "organization": "allenai",
       "repository_id": "allenai/Olmo-3-32B-Think-DPO",
-      "status": "new",
+      "registry_id": "allenai/olmo-3-32b-think-dpo",
+      "status": "materialized",
       "url": "https://huggingface.co/allenai/Olmo-3-32B-Think-DPO",
       "last_modified": "2026-06-25T21:43:19Z",
       "pipeline_tag": "text-generation",
@@ -32780,7 +32859,8 @@
       "provider_id": "allenai",
       "organization": "allenai",
       "repository_id": "allenai/Olmo-3.1-7B-RL-Zero-Math",
-      "status": "new",
+      "registry_id": "allenai/olmo-3.1-7b-rl-zero-math",
+      "status": "materialized",
       "url": "https://huggingface.co/allenai/Olmo-3.1-7B-RL-Zero-Math",
       "last_modified": "2026-06-25T21:43:12Z",
       "pipeline_tag": "text-generation",
@@ -33422,9 +33502,10 @@
       "repository_id": "allenai/SamudrACE-E3SMv3",
       "status": "new",
       "url": "https://huggingface.co/allenai/SamudrACE-E3SMv3",
-      "last_modified": "2026-08-10T22:22:04Z",
+      "last_modified": "2026-08-12T18:41:02Z",
       "tags": [
         "fme",
+        "arxiv:2608.10277",
         "license:apache-2.0",
         "region:us"
       ]
@@ -89586,9 +89667,10 @@
       "provider_id": "microsoft",
       "organization": "microsoft",
       "repository_id": "microsoft/Fara-7B",
-      "status": "new",
+      "registry_id": "microsoft/fara-7b",
+      "status": "materialized",
       "url": "https://huggingface.co/microsoft/Fara-7B",
-      "last_modified": "2026-05-19T15:37:05Z",
+      "last_modified": "2026-08-12T14:22:05Z",
       "pipeline_tag": "image-text-to-text",
       "tags": [
         "transformers",
@@ -90938,6 +91020,29 @@
         "endpoints_compatible",
         "region:us",
         "deploy:azure"
+      ]
+    },
+    {
+      "provider_id": "microsoft",
+      "organization": "microsoft",
+      "repository_id": "microsoft/MuseVLA",
+      "status": "new",
+      "url": "https://huggingface.co/microsoft/MuseVLA",
+      "last_modified": "2026-08-12T12:42:56Z",
+      "pipeline_tag": "robotics",
+      "tags": [
+        "pytorch",
+        "Robotics",
+        "Vision-Language-Action",
+        "Manipulation",
+        "Multimodal",
+        "Sensor-Fusion",
+        "Diffusion",
+        "robotics",
+        "en",
+        "arxiv:2606.17598",
+        "license:mit",
+        "region:us"
       ]
     },
     {
@@ -109524,7 +109629,7 @@
       "repository_id": "nvidia/NV-Generate-MR-Brain",
       "status": "new",
       "url": "https://huggingface.co/nvidia/NV-Generate-MR-Brain",
-      "last_modified": "2026-05-27T17:58:43Z",
+      "last_modified": "2026-08-12T14:18:24Z",
       "pipeline_tag": "unconditional-image-generation",
       "tags": [
         "latent_diffusion",
@@ -111664,6 +111769,35 @@
         "modelopt",
         "region:us",
         "deploy:azure"
+      ]
+    },
+    {
+      "provider_id": "nvidia",
+      "organization": "nvidia",
+      "repository_id": "nvidia/Nemotron-3-Super-120B-A12B-BF16-MTPv2",
+      "registry_id": "nvidia/nemotron-3-super-120b-a12b-bf16-mtpv2",
+      "status": "materialized",
+      "url": "https://huggingface.co/nvidia/Nemotron-3-Super-120B-A12B-BF16-MTPv2",
+      "last_modified": "2026-08-11T18:54:44Z",
+      "pipeline_tag": "text-generation",
+      "tags": [
+        "transformers",
+        "safetensors",
+        "nemotron_h",
+        "text-generation",
+        "nvidia",
+        "pytorch",
+        "megatron-lm",
+        "nemotron-3",
+        "mtp",
+        "speculative-decoding",
+        "custom_code",
+        "dataset:nvidia/Nemotron-Post-Training-Dataset-v2",
+        "base_model:nvidia/NVIDIA-Nemotron-3-Super-120B-A12B-BF16",
+        "base_model:finetune:nvidia/NVIDIA-Nemotron-3-Super-120B-A12B-BF16",
+        "license:other",
+        "endpoints_compatible",
+        "region:us"
       ]
     },
     {
@@ -116696,10 +116830,11 @@
       "repository_id": "nvidia/diar_streaming_sortformer_4spk-v2",
       "status": "new",
       "url": "https://huggingface.co/nvidia/diar_streaming_sortformer_4spk-v2",
-      "last_modified": "2025-12-31T23:04:03Z",
+      "last_modified": "2026-08-12T17:02:37Z",
       "pipeline_tag": "automatic-speech-recognition",
       "tags": [
         "nemo",
+        "gguf",
         "speaker-diarization",
         "speaker-recognition",
         "speech",

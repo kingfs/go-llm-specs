@@ -1,0 +1,65 @@
+schema_version: 2
+id: cohere/north-micro-vision-instruct
+name: North-Micro-Vision-Instruct
+provider: Cohere
+developer: cohere
+lifecycle: candidate
+context_length: 0
+features:
+  - ModalityImageIn
+  - ModalityTextIn
+  - ModalityTextOut
+links:
+  model_card: https://huggingface.co/CohereLabs/North-Micro-Vision-Instruct
+identifiers:
+  huggingface:
+    - CohereLabs/North-Micro-Vision-Instruct
+provenance:
+  features:
+    source: official_huggingface_pipeline
+    url: https://huggingface.co/CohereLabs/North-Micro-Vision-Instruct
+  id:
+    source: official_huggingface
+    url: https://huggingface.co/CohereLabs/North-Micro-Vision-Instruct
+  name:
+    source: official_huggingface
+    url: https://huggingface.co/CohereLabs/North-Micro-Vision-Instruct
+upstream:
+  huggingface:
+    id: CohereLabs/North-Micro-Vision-Instruct
+    revision: 373bda96ac70bf89f99f7048f420cf00dc07c149
+    pipeline_tag: image-text-to-text
+    model_type: cohere_compass
+    architectures:
+      - CohereCompassForConditionalGeneration
+    license: apache-2.0
+    tags:
+      - ar
+      - cohere_compass
+      - conversational
+      - de
+      - en
+      - endpoints_compatible
+      - es
+      - fr
+      - hi
+      - image-text-to-text
+      - it
+      - ja
+      - ko
+      - license:apache-2.0
+      - multilingual
+      - multimodal
+      - native-resolution
+      - pt
+      - region:us
+      - safetensors
+      - transformers
+      - vision
+      - zh
+    processor_class: CohereCompassProcessor
+    structured_files:
+      - config.json
+      - preprocessor_config.json
+      - tokenizer_config.json
+    fetched_at: 2026-08-13T03:56:38.656894542Z

@@ -1,0 +1,68 @@
+schema_version: 2
+id: allenai/olmo-3-32b-think-dpo
+name: Olmo-3-32B-Think-DPO
+provider: Allen Institute for AI
+developer: allenai
+lifecycle: active
+description: Allen Institute for AI introduces Olmo 3, a family of Transformer-style autoregressive language models designed for research and educational use.
+description_cn: 艾伦人工智能研究所推出 Olmo 3，这是一个专为研究和教育用途设计的 Transformer 式自回归语言模型系列。
+context_length: 65536
+features:
+  - ModalityTextIn
+  - ModalityTextOut
+links:
+  model_card: https://huggingface.co/allenai/Olmo-3-32B-Think-DPO
+identifiers:
+  huggingface:
+    - allenai/Olmo-3-32B-Think-DPO
+provenance:
+  context_length:
+    source: official_huggingface_config
+    url: https://huggingface.co/allenai/Olmo-3-32B-Think-DPO
+  description:
+    source: official_model_card
+    url: https://huggingface.co/allenai/Olmo-3-32B-Think-DPO/resolve/97604023f2602a7dfe6d31b1fc229985e0002022/README.md
+  features:
+    source: official_huggingface_pipeline
+    url: https://huggingface.co/allenai/Olmo-3-32B-Think-DPO
+  id:
+    source: official_huggingface
+    url: https://huggingface.co/allenai/Olmo-3-32B-Think-DPO
+  name:
+    source: official_huggingface
+    url: https://huggingface.co/allenai/Olmo-3-32B-Think-DPO
+  reasoning.supported:
+    source: official_model_card
+    url: https://huggingface.co/allenai/Olmo-3-32B-Think-DPO/resolve/97604023f2602a7dfe6d31b1fc229985e0002022/README.md
+upstream:
+  huggingface:
+    id: allenai/Olmo-3-32B-Think-DPO
+    revision: 97604023f2602a7dfe6d31b1fc229985e0002022
+    pipeline_tag: text-generation
+    model_type: olmo3
+    architectures:
+      - Olmo3ForCausalLM
+    license: apache-2.0
+    tags:
+      - arxiv:2512.13961
+      - base_model:allenai/Olmo-3-32B-Think-SFT
+      - base_model:finetune:allenai/Olmo-3-32B-Think-SFT
+      - conversational
+      - dataset:allenai/Dolci-Think-DPO
+      - en
+      - endpoints_compatible
+      - license:apache-2.0
+      - olmo3
+      - pytorch
+      - region:us
+      - safetensors
+      - text-generation
+      - transformers
+    config_context_length: 65536
+    tokenizer_model_max_length: 65536
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-08-13T03:56:38.426471786Z
+reasoning:
+  supported: true

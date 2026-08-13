@@ -1,0 +1,66 @@
+schema_version: 2
+id: deepseek/deepseek-v4-pro-0813
+name: 'DeepSeek: DeepSeek V4 Pro 0813'
+provider: DeepSeek
+developer: deepseek
+description: DeepSeek V4 Pro 0813 is a large-scale mixture-of-experts model from DeepSeek. This is the GA release of DeepSeek V4 Pro.
+description_cn: DeepSeek V4 Pro 0813 是 DeepSeek 推出的一款大规模混合专家（MoE）模型。这是 DeepSeek V4 Pro 的稳定版（GA）发布。
+context_length: 1048576
+max_output: 384000
+features:
+  - CapChat
+  - CapFunctionCall
+  - CapJsonMode
+  - ModalityTextIn
+  - ModalityTextOut
+discovered_at: 2026-08-13T03:56:35.728648199Z
+identifiers:
+  openrouter:
+    - deepseek/deepseek-v4-pro-0813
+provenance:
+  context_length:
+    source: openrouter
+  description:
+    source: openrouter
+  features:
+    source: openrouter
+  id:
+    source: openrouter
+  max_output:
+    source: openrouter
+  name:
+    source: openrouter
+  provider:
+    source: openrouter
+  reasoning:
+    source: openrouter
+upstream:
+  openrouter:
+    canonical_slug: deepseek/deepseek-v4-pro-20260813
+    supported_parameters:
+      - frequency_penalty
+      - include_reasoning
+      - logprobs
+      - max_tokens
+      - presence_penalty
+      - reasoning
+      - reasoning_effort
+      - response_format
+      - stop
+      - temperature
+      - tool_choice
+      - tools
+      - top_logprobs
+      - top_p
+    input_modalities:
+      - text
+    output_modalities:
+      - text
+    fetched_at: 2026-08-13T03:56:38.013825593Z
+reasoning:
+  supported: true
+  default_effort: high
+  supported_efforts:
+    - high
+    - low
+    - max

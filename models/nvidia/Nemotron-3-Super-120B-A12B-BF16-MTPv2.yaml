@@ -1,0 +1,64 @@
+schema_version: 2
+id: nvidia/nemotron-3-super-120b-a12b-bf16-mtpv2
+name: Nemotron-3-Super-120B-A12B-BF16-MTPv2
+provider: NVIDIA
+developer: nvidia
+lifecycle: active
+description: Multi-Token Prediction (MTP) head for speculative decoding with NVIDIA Nemotron 3 Super. It is not a standalone language model and does not contain the target model's backbone weights.
+description_cn: 用于 NVIDIA Nemotron 3 Super 投机解码的多令牌预测（MTP）头。它不是独立的语言模型，不包含目标模型的骨干权重。
+context_length: 262144
+features:
+  - ModalityTextIn
+  - ModalityTextOut
+links:
+  model_card: https://huggingface.co/nvidia/Nemotron-3-Super-120B-A12B-BF16-MTPv2
+identifiers:
+  huggingface:
+    - nvidia/Nemotron-3-Super-120B-A12B-BF16-MTPv2
+provenance:
+  context_length:
+    source: official_huggingface_config
+    url: https://huggingface.co/nvidia/Nemotron-3-Super-120B-A12B-BF16-MTPv2
+  description:
+    source: official_model_card
+    url: https://huggingface.co/nvidia/Nemotron-3-Super-120B-A12B-BF16-MTPv2/resolve/c929f8a55d0527fea9f58b4cedc9e0c855cfc421/README.md
+  features:
+    source: official_huggingface_pipeline
+    url: https://huggingface.co/nvidia/Nemotron-3-Super-120B-A12B-BF16-MTPv2
+  id:
+    source: official_huggingface
+    url: https://huggingface.co/nvidia/Nemotron-3-Super-120B-A12B-BF16-MTPv2
+  name:
+    source: official_huggingface
+    url: https://huggingface.co/nvidia/Nemotron-3-Super-120B-A12B-BF16-MTPv2
+upstream:
+  huggingface:
+    id: nvidia/Nemotron-3-Super-120B-A12B-BF16-MTPv2
+    revision: c929f8a55d0527fea9f58b4cedc9e0c855cfc421
+    pipeline_tag: text-generation
+    model_type: nemotron_h
+    architectures:
+      - NemotronHForCausalLM
+    license: other
+    tags:
+      - base_model:finetune:nvidia/NVIDIA-Nemotron-3-Super-120B-A12B-BF16
+      - base_model:nvidia/NVIDIA-Nemotron-3-Super-120B-A12B-BF16
+      - custom_code
+      - dataset:nvidia/Nemotron-Post-Training-Dataset-v2
+      - endpoints_compatible
+      - license:other
+      - megatron-lm
+      - mtp
+      - nemotron-3
+      - nemotron_h
+      - nvidia
+      - pytorch
+      - region:us
+      - safetensors
+      - speculative-decoding
+      - text-generation
+      - transformers
+    config_context_length: 262144
+    structured_files:
+      - config.json
+    fetched_at: 2026-08-13T03:56:38.956718291Z

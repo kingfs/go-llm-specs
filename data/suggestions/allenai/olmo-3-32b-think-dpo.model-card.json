@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "allenai/olmo-3-32b-think-dpo",
+  "status": "partially_accepted",
+  "created_at": "2026-08-13T03:57:21.044642041Z",
+  "source": {
+    "url": "https://huggingface.co/allenai/Olmo-3-32B-Think-DPO/resolve/97604023f2602a7dfe6d31b1fc229985e0002022/README.md",
+    "revision": "97604023f2602a7dfe6d31b1fc229985e0002022",
+    "sha256": "2226bdc0a99a0ec46f44a3c504183c01009e29d707e07bb40eea5cdaba23f5b4"
+  },
+  "generator": {
+    "model": "qwen/qwen3.6-27b",
+    "wire_api": "chat"
+  },
+  "claims": [
+    {
+      "field": "description",
+      "value": "Allen Institute for AI introduces Olmo 3, a family of Transformer-style autoregressive language models designed for research and educational use.",
+      "evidence": "We introduce Olmo 3, a new family of 7B and 32B models both Instruct and Think variants. Olmo is a series of **O**pen **l**anguage **mo**dels",
+      "section": "### Model Description",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "ModalityTextIn",
+        "ModalityTextOut"
+      ],
+      "evidence": "**Model type:** a Transformer style autoregressive language model. **Language(s) (NLP):** English",
+      "section": "### Model Description",
+      "confidence": "high"
+    },
+    {
+      "field": "reasoning.supported",
+      "value": true,
+      "evidence": "Long chain-of-thought thinking improves reasoning tasks like math and coding.",
+      "section": "# Model Card for Olmo 3 32B Think DPO",
+      "confidence": "high"
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+schema_version: 2
+id: allenai/olmo-3.1-7b-rl-zero-math
+name: Olmo-3.1-7B-RL-Zero-Math
+provider: Allen Institute for AI
+developer: allenai
+lifecycle: active
+description: Olmo 3.1 7B RL-Zero Math is an experimental 7B parameter Transformer-based autoregressive language model developed by Allen Institute for AI, post-trained using reinforcement learning from verifiable rewards (RLVR) on the Dolci-RL-Zero-Math-7B dataset to improve reasoning tasks like math.
+description_cn: Olmo 3.1 7B RL-Zero Math 是由艾伦人工智能研究所开发的一个实验性 7B 参数 Transformer 自回归语言模型。该模型基于 Dolci-RL-Zero-Math-7B 数据集，通过可验证奖励的强化学习（RLVR）进行后训练，以提升数学等推理任务的能力。
+context_length: 65536
+features:
+  - ModalityTextIn
+  - ModalityTextOut
+links:
+  model_card: https://huggingface.co/allenai/Olmo-3.1-7B-RL-Zero-Math
+identifiers:
+  huggingface:
+    - allenai/Olmo-3.1-7B-RL-Zero-Math
+provenance:
+  context_length:
+    source: official_huggingface_config
+    url: https://huggingface.co/allenai/Olmo-3.1-7B-RL-Zero-Math
+  description:
+    source: official_model_card
+    url: https://huggingface.co/allenai/Olmo-3.1-7B-RL-Zero-Math/resolve/364820b002fc8e81d11a81c7fc9dd6b49c83cd05/README.md
+  features:
+    source: official_huggingface_pipeline
+    url: https://huggingface.co/allenai/Olmo-3.1-7B-RL-Zero-Math
+  id:
+    source: official_huggingface
+    url: https://huggingface.co/allenai/Olmo-3.1-7B-RL-Zero-Math
+  name:
+    source: official_huggingface
+    url: https://huggingface.co/allenai/Olmo-3.1-7B-RL-Zero-Math
+  reasoning.supported:
+    source: official_model_card
+    url: https://huggingface.co/allenai/Olmo-3.1-7B-RL-Zero-Math/resolve/364820b002fc8e81d11a81c7fc9dd6b49c83cd05/README.md
+upstream:
+  huggingface:
+    id: allenai/Olmo-3.1-7B-RL-Zero-Math
+    revision: 364820b002fc8e81d11a81c7fc9dd6b49c83cd05
+    pipeline_tag: text-generation
+    model_type: olmo3
+    architectures:
+      - Olmo3ForCausalLM
+    license: apache-2.0
+    tags:
+      - arxiv:2512.13961
+      - base_model:allenai/Olmo-3-1025-7B
+      - base_model:finetune:allenai/Olmo-3-1025-7B
+      - conversational
+      - dataset:allenai/Dolci-RL-Zero-Math-7B
+      - en
+      - endpoints_compatible
+      - license:apache-2.0
+      - olmo3
+      - region:us
+      - safetensors
+      - text-generation
+      - transformers
+    config_context_length: 65536
+    tokenizer_model_max_length: 65536
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-08-13T03:56:38.541277793Z
+reasoning:
+  supported: true

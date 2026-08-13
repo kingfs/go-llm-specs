@@ -1,0 +1,104 @@
+schema_version: 2
+id: qwen/qwen3.8-2.4t-a95b
+name: 'Qwen: Qwen3.8 2.4T A95B'
+provider: Qwen
+developer: qwen
+description: Qwen3.8 2.4T A95B is an open-weight sparse mixture-of-experts model from Qwen and the open-weight variant of [Qwen3.8 Max](/qwen/qwen3.8-max), with 95 billion active parameters out of 2.4 trillion total. It is...
+description_cn: Qwen3.8 2.4T A95B 是通义千问推出的一款开源权重稀疏混合专家模型，也是 [Qwen3.8 Max](/qwen/qwen3.8-max) 的开源权重版本，在 2.4 万亿总参数中有 950 亿个活跃参数。它...。
+context_length: 1000000
+max_output: 52429
+features:
+  - CapChat
+  - CapFunctionCall
+  - CapJsonMode
+  - ModalityTextIn
+  - ModalityTextOut
+discovered_at: 2026-08-13T03:56:35.727965718Z
+links:
+  model_card: https://huggingface.co/Qwen/Qwen3.8-2.4T-A95B
+identifiers:
+  huggingface:
+    - Qwen/Qwen3.8-2.4T-A95B
+  openrouter:
+    - qwen/qwen3.8-2.4t-a95b
+provenance:
+  context_length:
+    source: openrouter
+  description:
+    source: openrouter
+  features:
+    source: openrouter
+  id:
+    source: openrouter
+  max_output:
+    source: openrouter
+  name:
+    source: openrouter
+  provider:
+    source: openrouter
+  reasoning:
+    source: openrouter
+upstream:
+  openrouter:
+    canonical_slug: qwen/qwen3.8-2.4t-a95b-20260812
+    huggingface_id: Qwen/Qwen3.8-2.4T-A95B
+    supported_parameters:
+      - frequency_penalty
+      - include_reasoning
+      - logit_bias
+      - logprobs
+      - max_tokens
+      - min_p
+      - presence_penalty
+      - reasoning
+      - reasoning_effort
+      - repetition_penalty
+      - response_format
+      - seed
+      - stop
+      - structured_outputs
+      - temperature
+      - tool_choice
+      - tools
+      - top_k
+      - top_logprobs
+      - top_p
+    input_modalities:
+      - text
+    output_modalities:
+      - text
+    fetched_at: 2026-08-13T03:56:38.021279621Z
+  huggingface:
+    id: Qwen/Qwen3.8-2.4T-A95B
+    revision: 207bd685a7e3696cfaff12ded7c6a7ea0f88c996
+    pipeline_tag: text-generation
+    model_type: qwen3_5_moe_text
+    architectures:
+      - Qwen3_5MoeForCausalLM
+    license: other
+    tags:
+      - conversational
+      - endpoints_compatible
+      - eval-results
+      - license:other
+      - qwen3_5_moe_text
+      - region:us
+      - safetensors
+      - text-generation
+      - transformers
+    config_context_length: 262144
+    tokenizer_model_max_length: 262144
+    chat_template_sha256: f1dbbb651f1fe25b8fe80012515cea3ed8c90c53c8af7e0aa88c1e122948ca74
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-08-13T03:56:39.043060852Z
+reasoning:
+  supported: true
+  mandatory: true
+  default_enabled: true
+  default_effort: xhigh
+  supported_efforts:
+    - low
+    - medium
+    - xhigh

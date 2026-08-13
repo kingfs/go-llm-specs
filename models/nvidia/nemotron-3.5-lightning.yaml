@@ -59,6 +59,8 @@ upstream:
       - stop
       - structured_outputs
       - temperature
+      - tool_choice
+      - tools
       - top_k
       - top_logprobs
       - top_p
@@ -66,7 +68,7 @@ upstream:
       - text
     output_modalities:
       - text
-    fetched_at: 2026-08-12T03:53:06.048021848Z
+    fetched_at: 2026-08-13T03:56:38.017515486Z
   huggingface:
     id: nvidia/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-BF16
     revision: 63a200063804e06fdb41d6717e43bc92f67859d2

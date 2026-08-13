@@ -967,6 +967,61 @@
       "supports_search_tool": false,
       "use_responses_lite": false,
       "auto_review_model_override": null
+    },
+    {
+      "slug": "qwen3.8-2.4t-a95b",
+      "display_name": "Qwen: Qwen3.8 2.4T A95B",
+      "description": "Qwen3.8 2.4T A95B is an open-weight sparse mixture-of-experts model from Qwen and the open-weight variant of [Qwen3.8 Max](/qwen/qwen3.8-max), with 95 billion active parameters out of 2.4 trillion total. It is...",
+      "default_reasoning_level": "xhigh",
+      "supported_reasoning_levels": [
+        {
+          "effort": "low",
+          "description": "low reasoning effort"
+        },
+        {
+          "effort": "medium",
+          "description": "medium reasoning effort"
+        },
+        {
+          "effort": "xhigh",
+          "description": "xhigh reasoning effort"
+        }
+      ],
+      "shell_type": "unified_exec",
+      "visibility": "list",
+      "supported_in_api": true,
+      "priority": 100,
+      "additional_speed_tiers": [],
+      "service_tiers": [],
+      "availability_nux": null,
+      "upgrade": null,
+      "base_instructions": "",
+      "model_messages": null,
+      "include_skills_usage_instructions": false,
+      "supports_reasoning_summary_parameter": false,
+      "default_reasoning_summary": "none",
+      "support_verbosity": false,
+      "default_verbosity": null,
+      "apply_patch_tool_type": "freeform",
+      "web_search_tool_type": "text",
+      "truncation_policy": {
+        "mode": "tokens",
+        "limit": 10000
+      },
+      "supports_parallel_tool_calls": false,
+      "supports_image_detail_original": false,
+      "context_window": 1000000,
+      "max_context_window": 1000000,
+      "auto_compact_token_limit": null,
+      "comp_hash": null,
+      "effective_context_window_percent": 90,
+      "experimental_supported_tools": [],
+      "input_modalities": [
+        "text"
+      ],
+      "supports_search_tool": false,
+      "use_responses_lite": false,
+      "auto_review_model_override": null
     }
   ]
 }

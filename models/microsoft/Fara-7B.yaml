@@ -1,0 +1,60 @@
+schema_version: 2
+id: microsoft/fara-7b
+name: Fara-7B
+provider: Microsoft
+developer: microsoft
+lifecycle: candidate
+context_length: 128000
+features:
+  - ModalityImageIn
+  - ModalityTextIn
+  - ModalityTextOut
+links:
+  model_card: https://huggingface.co/microsoft/Fara-7B
+identifiers:
+  huggingface:
+    - microsoft/Fara-7B
+provenance:
+  context_length:
+    source: official_huggingface_config
+    url: https://huggingface.co/microsoft/Fara-7B
+  features:
+    source: official_huggingface_pipeline
+    url: https://huggingface.co/microsoft/Fara-7B
+  id:
+    source: official_huggingface
+    url: https://huggingface.co/microsoft/Fara-7B
+  name:
+    source: official_huggingface
+    url: https://huggingface.co/microsoft/Fara-7B
+upstream:
+  huggingface:
+    id: microsoft/Fara-7B
+    revision: 4fca9cdeeff278777751ec558257753b89cf078b
+    pipeline_tag: image-text-to-text
+    model_type: qwen2_5_vl
+    architectures:
+      - Qwen2_5_VLForConditionalGeneration
+    license: mit
+    tags:
+      - arxiv:2511.19663
+      - conversational
+      - deploy:azure
+      - en
+      - endpoints_compatible
+      - image-text-to-text
+      - license:mit
+      - multimodal
+      - qwen2_5_vl
+      - region:us
+      - safetensors
+      - text-generation-inference
+      - transformers
+    config_context_length: 128000
+    tokenizer_model_max_length: 131072
+    processor_class: Qwen2_5_VLProcessor
+    structured_files:
+      - config.json
+      - preprocessor_config.json
+      - tokenizer_config.json
+    fetched_at: 2026-08-13T03:56:38.862918029Z
