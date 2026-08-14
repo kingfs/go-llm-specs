@@ -1,7 +1,7 @@
 {
   "providers": 24,
-  "models": 531,
-  "models_with_official_links": 337,
+  "models": 538,
+  "models_with_official_links": 343,
   "uncataloged_publishers": {
     "Ai21": 1,
     "Aion-Labs": 4,
@@ -36,6 +36,7 @@
     "alpindale": 1,
     "baidu": 6,
     "deepcogito": 3,
+    "dotsstudio": 1,
     "eleutherai": 1,
     "essentialai": 1,
     "inception": 2,
@@ -3559,6 +3560,26 @@
         "license:other",
         "endpoints_compatible",
         "mxfp8",
+        "region:us"
+      ]
+    },
+    {
+      "provider_id": "minimax",
+      "organization": "MiniMaxAI",
+      "repository_id": "MiniMaxAI/MiniMax-Music3",
+      "status": "new",
+      "url": "https://huggingface.co/MiniMaxAI/MiniMax-Music3",
+      "last_modified": "2026-08-13T16:52:09Z",
+      "pipeline_tag": "text-to-audio",
+      "tags": [
+        "sglang-omni",
+        "diffusers",
+        "safetensors",
+        "minimax_music3",
+        "music-generation",
+        "text-to-music",
+        "pytorch",
+        "text-to-audio",
         "region:us"
       ]
     },
@@ -32671,7 +32692,8 @@
       "provider_id": "allenai",
       "organization": "allenai",
       "repository_id": "allenai/Olmo-3-7B-RL-Zero-IF",
-      "status": "new",
+      "registry_id": "allenai/olmo-3-7b-rl-zero-if",
+      "status": "materialized",
       "url": "https://huggingface.co/allenai/Olmo-3-7B-RL-Zero-IF",
       "last_modified": "2026-06-25T21:42:01Z",
       "pipeline_tag": "text-generation",
@@ -32695,7 +32717,8 @@
       "provider_id": "allenai",
       "organization": "allenai",
       "repository_id": "allenai/Olmo-3-7B-RL-Zero-Math",
-      "status": "new",
+      "registry_id": "allenai/olmo-3-7b-rl-zero-math",
+      "status": "materialized",
       "url": "https://huggingface.co/allenai/Olmo-3-7B-RL-Zero-Math",
       "last_modified": "2026-06-25T21:42:10Z",
       "pipeline_tag": "text-generation",
@@ -32719,7 +32742,8 @@
       "provider_id": "allenai",
       "organization": "allenai",
       "repository_id": "allenai/Olmo-3-7B-RL-Zero-Mix",
-      "status": "new",
+      "registry_id": "allenai/olmo-3-7b-rl-zero-mix",
+      "status": "materialized",
       "url": "https://huggingface.co/allenai/Olmo-3-7B-RL-Zero-Mix",
       "last_modified": "2026-06-25T21:42:23Z",
       "pipeline_tag": "text-generation",
@@ -32742,7 +32766,8 @@
       "provider_id": "allenai",
       "organization": "allenai",
       "repository_id": "allenai/Olmo-3-7B-Think-DPO",
-      "status": "new",
+      "registry_id": "allenai/olmo-3-7b-think-dpo",
+      "status": "materialized",
       "url": "https://huggingface.co/allenai/Olmo-3-7B-Think-DPO",
       "last_modified": "2026-06-25T21:42:31Z",
       "pipeline_tag": "text-generation",
@@ -32834,7 +32859,8 @@
       "provider_id": "allenai",
       "organization": "allenai",
       "repository_id": "allenai/Olmo-3.1-7B-RL-Zero-Code",
-      "status": "new",
+      "registry_id": "allenai/olmo-3.1-7b-rl-zero-code",
+      "status": "materialized",
       "url": "https://huggingface.co/allenai/Olmo-3.1-7B-RL-Zero-Code",
       "last_modified": "2026-06-25T21:43:05Z",
       "pipeline_tag": "text-generation",
@@ -47107,6 +47133,29 @@
         "safetensors",
         "deepseek_v4",
         "text-generation",
+        "arxiv:2606.19348",
+        "license:mit",
+        "endpoints_compatible",
+        "8-bit",
+        "fp8",
+        "region:us"
+      ]
+    },
+    {
+      "provider_id": "deepseek",
+      "organization": "deepseek-ai",
+      "repository_id": "deepseek-ai/DeepSeek-V4-Pro-0813",
+      "registry_id": "deepseek/deepseek-v4-pro-0813",
+      "status": "identity_applied",
+      "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro-0813",
+      "last_modified": "2026-08-13T16:28:28Z",
+      "pipeline_tag": "text-generation",
+      "tags": [
+        "transformers",
+        "safetensors",
+        "deepseek_v4",
+        "text-generation",
+        "conversational",
         "arxiv:2606.19348",
         "license:mit",
         "endpoints_compatible",
@@ -115601,6 +115650,18 @@
         "arxiv:2306.05685",
         "arxiv:2307.09288",
         "license:llama2",
+        "region:us"
+      ]
+    },
+    {
+      "provider_id": "nvidia",
+      "organization": "nvidia",
+      "repository_id": "nvidia/StormScope-NSRDB",
+      "status": "new",
+      "url": "https://huggingface.co/nvidia/StormScope-NSRDB",
+      "last_modified": "2026-08-04T18:32:38Z",
+      "tags": [
+        "license:openmdw-1.1",
         "region:us"
       ]
     },

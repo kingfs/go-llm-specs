@@ -1,0 +1,62 @@
+schema_version: 2
+id: allenai/olmo-3-7b-rl-zero-if
+name: Olmo-3-7B-RL-Zero-IF
+provider: Allen Institute for AI
+developer: allenai
+lifecycle: active
+description: Olmo 3 7B RL-Zero IF is a 7B-parameter Transformer autoregressive language model trained on the Dolci-RL-Zero-IF-7B dataset for instruction following using reinforcement learning from verifiable rewards.
+description_cn: Olmo 3 7B RL-Zero IF 是一个包含 70 亿参数的 Transformer 自回归语言模型，基于 Dolci-RL-Zero-IF-7B 数据集训练，通过基于可验证奖励的强化学习（RLVR）进行指令跟随优化。
+context_length: 65536
+features:
+  - ModalityTextIn
+  - ModalityTextOut
+links:
+  model_card: https://huggingface.co/allenai/Olmo-3-7B-RL-Zero-IF
+identifiers:
+  huggingface:
+    - allenai/Olmo-3-7B-RL-Zero-IF
+provenance:
+  context_length:
+    source: official_huggingface_config
+    url: https://huggingface.co/allenai/Olmo-3-7B-RL-Zero-IF
+  description:
+    source: official_model_card
+    url: https://huggingface.co/allenai/Olmo-3-7B-RL-Zero-IF/resolve/3cae007c5324a9a06ee6780f03b848bc7b8fd440/README.md
+  features:
+    source: official_huggingface_pipeline
+    url: https://huggingface.co/allenai/Olmo-3-7B-RL-Zero-IF
+  id:
+    source: official_huggingface
+    url: https://huggingface.co/allenai/Olmo-3-7B-RL-Zero-IF
+  name:
+    source: official_huggingface
+    url: https://huggingface.co/allenai/Olmo-3-7B-RL-Zero-IF
+upstream:
+  huggingface:
+    id: allenai/Olmo-3-7B-RL-Zero-IF
+    revision: 3cae007c5324a9a06ee6780f03b848bc7b8fd440
+    pipeline_tag: text-generation
+    model_type: olmo3
+    architectures:
+      - Olmo3ForCausalLM
+    license: apache-2.0
+    tags:
+      - arxiv:2512.13961
+      - base_model:allenai/Olmo-3-1025-7B
+      - base_model:finetune:allenai/Olmo-3-1025-7B
+      - conversational
+      - dataset:allenai/Dolci-RLZero-IF-7B
+      - en
+      - endpoints_compatible
+      - license:apache-2.0
+      - olmo3
+      - region:us
+      - safetensors
+      - text-generation
+      - transformers
+    config_context_length: 65536
+    tokenizer_model_max_length: 8192
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-08-14T03:53:27.513532462Z

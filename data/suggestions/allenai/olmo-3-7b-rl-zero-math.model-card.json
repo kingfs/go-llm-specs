@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "allenai/olmo-3-7b-rl-zero-math",
+  "status": "partially_accepted",
+  "created_at": "2026-08-14T03:54:57.237994307Z",
+  "source": {
+    "url": "https://huggingface.co/allenai/Olmo-3-7B-RL-Zero-Math/resolve/dee26a4074b88215cd1326472e1ab14d0259d892/README.md",
+    "revision": "dee26a4074b88215cd1326472e1ab14d0259d892",
+    "sha256": "d22c8ec35e98c375de52d90056b4feeed3ab2f6e2674120c185ad52e90d0f3c4"
+  },
+  "generator": {
+    "model": "qwen/qwen3.6-27b",
+    "wire_api": "chat"
+  },
+  "claims": [
+    {
+      "field": "description",
+      "value": "Olmo 3 7B RL-Zero Math is an experimental model for scientific exploration of RLVR training, post-trained on the Dolci-RLZero-Math-7B dataset using reinforcement learning from verifiable rewards on math queries. It builds upon the Olmo-3-1025-7B base model.",
+      "evidence": "The RL-Zero family of models is an experimental set of model for the scientific exploration of RLVR training.",
+      "section": "## Model Details",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "ModalityTextIn",
+        "ModalityTextOut"
+      ],
+      "evidence": "Olmo is a series of O ppen l anguage mo dels designed to enable the science of language models.",
+      "section": "# Model Card for Olmo 3 7B RL-Zero Math",
+      "confidence": "high"
+    },
+    {
+      "field": "reasoning.supported",
+      "value": true,
+      "evidence": "Long chain-of-thought thinking improves reasoning tasks like math and coding.",
+      "section": "# Model Card for Olmo 3 7B RL-Zero Math",
+      "confidence": "high"
+    }
+  ]
+}

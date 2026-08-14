@@ -1,0 +1,77 @@
+schema_version: 2
+id: google/gemini-3.7-flash
+name: 'Google: Gemini 3.7 Flash'
+provider: Google
+developer: google
+description: Gemini 3.7 Flash is a multimodal model from Google for fast agentic workflows, coding, and complex multi-step reasoning. It is designed for tasks that require responsive performance and reliable multi-step...
+description_cn: Gemini 3.7 Flash 是谷歌推出的一款多模态模型，适用于快速智能体工作流、编码以及复杂的多步推理。它专为需要响应速度可靠的多步...任务而设计。
+context_length: 1048576
+max_output: 65536
+features:
+  - CapChat
+  - CapFunctionCall
+  - CapJsonMode
+  - ModalityAudioIn
+  - ModalityFileIn
+  - ModalityImageIn
+  - ModalityTextIn
+  - ModalityTextOut
+  - ModalityVideoIn
+aliases:
+  - google/gemini-3.7-flash:batch
+discovered_at: 2026-08-14T03:53:24.525932398Z
+identifiers:
+  openrouter:
+    - google/gemini-3.7-flash
+    - google/gemini-3.7-flash:batch
+provenance:
+  context_length:
+    source: openrouter
+  description:
+    source: openrouter
+  features:
+    source: openrouter
+  id:
+    source: openrouter
+  max_output:
+    source: openrouter
+  name:
+    source: openrouter
+  provider:
+    source: openrouter
+  reasoning:
+    source: openrouter
+upstream:
+  openrouter:
+    canonical_slug: google/gemini-3.7-flash-20260813
+    supported_parameters:
+      - include_reasoning
+      - max_tokens
+      - reasoning
+      - reasoning_effort
+      - response_format
+      - seed
+      - stop
+      - structured_outputs
+      - temperature
+      - tool_choice
+      - tools
+      - top_p
+    input_modalities:
+      - audio
+      - file
+      - image
+      - text
+      - video
+    output_modalities:
+      - text
+    fetched_at: 2026-08-14T03:53:27.102502Z
+reasoning:
+  supported: true
+  mandatory: true
+  default_enabled: true
+  default_effort: medium
+  supported_efforts:
+    - high
+    - low
+    - medium

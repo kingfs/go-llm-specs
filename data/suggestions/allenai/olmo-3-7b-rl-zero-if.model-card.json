@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "allenai/olmo-3-7b-rl-zero-if",
+  "status": "partially_accepted",
+  "created_at": "2026-08-14T03:54:11.00008276Z",
+  "source": {
+    "url": "https://huggingface.co/allenai/Olmo-3-7B-RL-Zero-IF/resolve/3cae007c5324a9a06ee6780f03b848bc7b8fd440/README.md",
+    "revision": "3cae007c5324a9a06ee6780f03b848bc7b8fd440",
+    "sha256": "1dcd579518e8628c4ad13f86acabe9f545815bb050abc777144cefbdf4bc468c"
+  },
+  "generator": {
+    "model": "qwen/qwen3.6-27b",
+    "wire_api": "chat"
+  },
+  "claims": [
+    {
+      "field": "description",
+      "value": "Olmo 3 7B RL-Zero IF is a 7B-parameter Transformer autoregressive language model trained on the Dolci-RL-Zero-IF-7B dataset for instruction following using reinforcement learning from verifiable rewards.",
+      "evidence": "The RL-Zero family of models is an experimental set of model for the scientific exploration of RLVR training. ... reinforcement learning from verifiable rewards on the Dolci-RL-Zero-IF-7B dataset which consists of instruction-following queries.",
+      "section": "Model Details",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "ModalityTextIn",
+        "ModalityTextOut"
+      ],
+      "evidence": "**Model type:** a Transformer style autoregressive language model. **Language(s) (NLP):** English",
+      "section": "Model Description",
+      "confidence": "high"
+    },
+    {
+      "field": "reasoning.supported",
+      "value": true,
+      "evidence": "Long chain-of-thought thinking improves reasoning tasks like math and coding.",
+      "section": "Model Card for Olmo 3 7B RL-Zero IF",
+      "confidence": "medium"
+    },
+    {
+      "field": "features",
+      "value": [],
+      "evidence": "**License:** This model is licensed under Apache 2.0.",
+      "section": "Model Description",
+      "confidence": "high"
+    }
+  ]
+}

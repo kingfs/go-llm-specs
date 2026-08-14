@@ -1,0 +1,84 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "allenai/olmo-3-7b-rl-zero-mix",
+  "status": "partially_accepted",
+  "created_at": "2026-08-14T03:55:20.465268936Z",
+  "source": {
+    "url": "https://huggingface.co/allenai/Olmo-3-7B-RL-Zero-Mix/resolve/73b2b1a50d94aec859e22c9b4a524416b5a3a739/README.md",
+    "revision": "73b2b1a50d94aec859e22c9b4a524416b5a3a739",
+    "sha256": "1c84fcb4240ed9b6444f8fc4823bbbeab75c9681ca7713be4999ea8df1f44361"
+  },
+  "generator": {
+    "model": "qwen/qwen3.6-27b",
+    "wire_api": "chat"
+  },
+  "claims": [
+    {
+      "field": "description",
+      "value": "Olmo-3-7B-RL-Zero-Mix is an experimental 7B parameter autoregressive Transformer model fine-tuned with reinforcement learning from verifiable rewards (RLVR) on a mixture of math, code, and instruction-following data.",
+      "evidence": "We introduce Olmo 3, a new family of 7B and 32B models... The RL-Zero family of models is an experimental set of model for the scientific exploration of RLVR training.",
+      "section": "Model Card for Olmo 3 7B RL-Zero Mix",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "ModalityTextIn",
+        "ModalityTextOut"
+      ],
+      "evidence": "Model type: a Transformer style autoregressive language model. ... Language(s) (NLP): English",
+      "section": "Model Description",
+      "confidence": "high"
+    },
+    {
+      "field": "description",
+      "value": "The model is based on the Olmo-3-1025-7B base model and was post-trained using reinforcement learning from verifiable rewards on the Dolci-RLZero-Mix-7B dataset.",
+      "evidence": "base_model: allenai/Olmo-3-1025-7B ... reinforcement learning from verifiable rewards on the Dolci-RL-Zero-Mix-7B dataset",
+      "section": "RLVR",
+      "confidence": "high"
+    },
+    {
+      "field": "description",
+      "value": "The training dataset consists of a mix of math, code, and instruction-following (IF) data.",
+      "evidence": "Dolci-RL-Zero-Mix-7B dataset which consists of a mix of math, code, and IF data.",
+      "section": "RLVR",
+      "confidence": "high"
+    },
+    {
+      "field": "description",
+      "value": "The model is licensed under Apache 2.0 and is intended for research and educational use.",
+      "evidence": "License: This model is licensed under Apache 2.0. It is intended for research and educational use",
+      "section": "Model Description",
+      "confidence": "high"
+    },
+    {
+      "field": "description",
+      "value": "The model's knowledge cutoff date is December 2023.",
+      "evidence": "Date cutoff: Dec. 2023.",
+      "section": "Model Description",
+      "confidence": "high"
+    },
+    {
+      "field": "description",
+      "value": "The model is supported in the transformers library version 4.57.0 or higher.",
+      "evidence": "Olmo 3 is supported in transformers 4.57.0 or higher",
+      "section": "Installation",
+      "confidence": "high"
+    },
+    {
+      "field": "description",
+      "value": "Long chain-of-thought thinking improves reasoning tasks like math and coding for this model family.",
+      "evidence": "Long chain-of-thought thinking improves reasoning tasks like math and coding.",
+      "section": "Model Card for Olmo 3 7B RL-Zero Mix",
+      "confidence": "high"
+    },
+    {
+      "field": "description",
+      "value": "The model can generate harmful content if prompted and may produce inaccurate statements.",
+      "evidence": "these models can easily be prompted by users to generate harmful and sensitive content... many statements from OLMo or any LLM are often inaccurate",
+      "section": "Bias, Risks, and Limitations",
+      "confidence": "high"
+    }
+  ]
+}

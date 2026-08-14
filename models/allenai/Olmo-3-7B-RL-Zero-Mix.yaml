@@ -1,0 +1,61 @@
+schema_version: 2
+id: allenai/olmo-3-7b-rl-zero-mix
+name: Olmo-3-7B-RL-Zero-Mix
+provider: Allen Institute for AI
+developer: allenai
+lifecycle: active
+description: Olmo-3-7B-RL-Zero-Mix is an experimental 7B parameter autoregressive Transformer model fine-tuned with reinforcement learning from verifiable rewards (RLVR) on a mixture of math, code, and instruction-following data.
+description_cn: Olmo-3-7B-RL-Zero-Mix 是一款实验性 70 亿参数自回归 Transformer 模型，基于可验证奖励的强化学习（RLVR），在混合了数学、代码和指令跟随的数据集上进行了微调。
+context_length: 65536
+features:
+  - ModalityTextIn
+  - ModalityTextOut
+links:
+  model_card: https://huggingface.co/allenai/Olmo-3-7B-RL-Zero-Mix
+identifiers:
+  huggingface:
+    - allenai/Olmo-3-7B-RL-Zero-Mix
+provenance:
+  context_length:
+    source: official_huggingface_config
+    url: https://huggingface.co/allenai/Olmo-3-7B-RL-Zero-Mix
+  description:
+    source: official_model_card
+    url: https://huggingface.co/allenai/Olmo-3-7B-RL-Zero-Mix/resolve/73b2b1a50d94aec859e22c9b4a524416b5a3a739/README.md
+  features:
+    source: official_huggingface_pipeline
+    url: https://huggingface.co/allenai/Olmo-3-7B-RL-Zero-Mix
+  id:
+    source: official_huggingface
+    url: https://huggingface.co/allenai/Olmo-3-7B-RL-Zero-Mix
+  name:
+    source: official_huggingface
+    url: https://huggingface.co/allenai/Olmo-3-7B-RL-Zero-Mix
+upstream:
+  huggingface:
+    id: allenai/Olmo-3-7B-RL-Zero-Mix
+    revision: 73b2b1a50d94aec859e22c9b4a524416b5a3a739
+    pipeline_tag: text-generation
+    model_type: olmo2-retrofit
+    architectures:
+      - Olmo2RetrofitForCausalLM
+    license: apache-2.0
+    tags:
+      - base_model:allenai/Olmo-3-1025-7B
+      - base_model:finetune:allenai/Olmo-3-1025-7B
+      - conversational
+      - dataset:allenai/Dolci-RLZero-Mix-7B
+      - en
+      - endpoints_compatible
+      - license:apache-2.0
+      - olmo2-retrofit
+      - region:us
+      - safetensors
+      - text-generation
+      - transformers
+    config_context_length: 65536
+    tokenizer_model_max_length: 8192
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-08-14T03:53:28.232457111Z

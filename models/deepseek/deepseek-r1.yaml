@@ -37,7 +37,6 @@ upstream:
     supported_parameters:
       - frequency_penalty
       - include_reasoning
-      - max_completion_tokens
       - max_tokens
       - presence_penalty
       - reasoning
@@ -56,7 +55,7 @@ upstream:
     output_modalities:
       - text
     knowledge_cutoff: "2024-07-31"
-    fetched_at: 2026-07-29T10:37:36.407242108Z
+    fetched_at: 2026-08-14T03:53:27.101220713Z
   huggingface:
     id: deepseek-ai/DeepSeek-R1
     revision: 56d4cbbb4d29f4355bab4b9a39ccb717a14ad5ad

@@ -1,0 +1,58 @@
+schema_version: 2
+id: allenai/olmo-3-7b-think-dpo
+name: Olmo-3-7B-Think-DPO
+provider: Allen Institute for AI
+developer: allenai
+lifecycle: candidate
+context_length: 65536
+features:
+  - ModalityTextIn
+  - ModalityTextOut
+links:
+  model_card: https://huggingface.co/allenai/Olmo-3-7B-Think-DPO
+identifiers:
+  huggingface:
+    - allenai/Olmo-3-7B-Think-DPO
+provenance:
+  context_length:
+    source: official_huggingface_config
+    url: https://huggingface.co/allenai/Olmo-3-7B-Think-DPO
+  features:
+    source: official_huggingface_pipeline
+    url: https://huggingface.co/allenai/Olmo-3-7B-Think-DPO
+  id:
+    source: official_huggingface
+    url: https://huggingface.co/allenai/Olmo-3-7B-Think-DPO
+  name:
+    source: official_huggingface
+    url: https://huggingface.co/allenai/Olmo-3-7B-Think-DPO
+upstream:
+  huggingface:
+    id: allenai/Olmo-3-7B-Think-DPO
+    revision: 7b18bf927b430ff06376fdfa5610eb3b1b6a5c38
+    pipeline_tag: text-generation
+    model_type: olmo3
+    architectures:
+      - Olmo3ForCausalLM
+    license: apache-2.0
+    tags:
+      - arxiv:2512.13961
+      - base_model:allenai/Olmo-3-7B-Think-SFT
+      - base_model:finetune:allenai/Olmo-3-7B-Think-SFT
+      - conversational
+      - dataset:allenai/Dolci-Think-DPO-7B
+      - en
+      - endpoints_compatible
+      - license:apache-2.0
+      - olmo3
+      - pytorch
+      - region:us
+      - safetensors
+      - text-generation
+      - transformers
+    config_context_length: 65536
+    tokenizer_model_max_length: 65536
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-08-14T03:53:28.474953935Z

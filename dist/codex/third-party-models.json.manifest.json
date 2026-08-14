@@ -1,7 +1,7 @@
 {
   "schema_revision": "openai/codex@fe01054a28fa4bd04716d9ceadb410f2443a50ce",
   "catalog_kind": "standalone-third-party",
-  "model_count": 23,
+  "model_count": 24,
   "slugs": [
     "deepseek-chat-v3-0324",
     "deepseek-chat-v3.1",
@@ -14,6 +14,7 @@
     "deepseek-v4-flash",
     "deepseek-v4-flash-0731",
     "deepseek-v4-pro",
+    "deepseek-v4-pro-0813",
     "glm-5",
     "glm-5.1",
     "glm-5.2",

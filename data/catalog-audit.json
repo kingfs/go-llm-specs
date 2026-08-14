@@ -1,7 +1,7 @@
 {
   "providers": 24,
-  "models": 536,
-  "models_with_official_links": 343,
+  "models": 543,
+  "models_with_official_links": 349,
   "uncataloged_publishers": {
     "Ai21": 1,
     "Aion-Labs": 4,
@@ -36,6 +36,7 @@
     "alpindale": 1,
     "baidu": 6,
     "deepcogito": 3,
+    "dotsstudio": 1,
     "eleutherai": 1,
     "essentialai": 1,
     "inception": 2,

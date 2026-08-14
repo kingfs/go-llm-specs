@@ -1,0 +1,38 @@
+schema_version: 2
+id: dots-studio/dots-3-note-preview
+name: 'Dots Studio: Dots3-Note Preview (free)'
+provider: Dots-Studio
+developer: dotsstudio
+description: Dots3-Note Preview is an open-weight mixture-of-experts model from Dots Studio, with 16B active parameters out of 280B total. It is the lightest model in the Dots 3 family and is...
+description_cn: Dots3-Note Preview 是来自 Dots Studio 的开源权重混合专家（MoE）模型，拥有 2800 亿总参数中的 160 亿活跃参数。它是 Dots 3 系列中最轻量的模型...
+context_length: 512000
+max_output: 512000
+features:
+  - CapChat
+  - CapFunctionCall
+  - CapJsonMode
+  - ModalityImageIn
+  - ModalityTextIn
+  - ModalityTextOut
+aliases:
+  - dots-studio/dots-3-note-preview:free
+discovered_at: 2026-08-14T03:53:24.525598262Z
+identifiers:
+  openrouter:
+    - dots-studio/dots-3-note-preview
+    - dots-studio/dots-3-note-preview:free
+provenance:
+  context_length:
+    source: openrouter
+  description:
+    source: openrouter
+  features:
+    source: openrouter
+  id:
+    source: openrouter
+  max_output:
+    source: openrouter
+  name:
+    source: openrouter
+  provider:
+    source: openrouter

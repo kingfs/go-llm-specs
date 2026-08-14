@@ -21,7 +21,6 @@ upstream:
   openrouter:
     canonical_slug: kwaipilot/kat-coder-air-v2.5-20260710
     supported_parameters:
-      - frequency_penalty
       - logprobs
       - max_tokens
       - presence_penalty
@@ -37,4 +36,4 @@ upstream:
       - text
     output_modalities:
       - text
-    fetched_at: 2026-07-29T10:38:43.238901076Z
+    fetched_at: 2026-08-14T03:53:27.103371992Z

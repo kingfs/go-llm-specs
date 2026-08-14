@@ -14,7 +14,11 @@ features:
   - ModalityTextIn
   - ModalityTextOut
 discovered_at: 2026-08-13T03:56:35.728648199Z
+links:
+  model_card: https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro-0813
 identifiers:
+  huggingface:
+    - deepseek-ai/DeepSeek-V4-Pro-0813
   openrouter:
     - deepseek/deepseek-v4-pro-0813
 provenance:
@@ -37,26 +41,59 @@ provenance:
 upstream:
   openrouter:
     canonical_slug: deepseek/deepseek-v4-pro-20260813
+    huggingface_id: deepseek-ai/DeepSeek-V4-Pro-0813
     supported_parameters:
       - frequency_penalty
       - include_reasoning
+      - logit_bias
       - logprobs
       - max_tokens
+      - min_p
       - presence_penalty
       - reasoning
       - reasoning_effort
+      - repetition_penalty
       - response_format
+      - seed
       - stop
+      - structured_outputs
       - temperature
       - tool_choice
       - tools
+      - top_k
       - top_logprobs
       - top_p
     input_modalities:
       - text
     output_modalities:
       - text
-    fetched_at: 2026-08-13T03:56:38.013825593Z
+    fetched_at: 2026-08-14T03:53:27.101814732Z
+  huggingface:
+    id: deepseek-ai/DeepSeek-V4-Pro-0813
+    revision: 72e1d3230f6c080a530b0a1d46f8eb4602340597
+    pipeline_tag: text-generation
+    model_type: deepseek_v4
+    architectures:
+      - DeepseekV4ForCausalLM
+    license: mit
+    tags:
+      - 8-bit
+      - arxiv:2606.19348
+      - conversational
+      - deepseek_v4
+      - endpoints_compatible
+      - fp8
+      - license:mit
+      - region:us
+      - safetensors
+      - text-generation
+      - transformers
+    config_context_length: 1048576
+    tokenizer_model_max_length: 1048576
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-08-14T03:53:28.946463664Z
 reasoning:
   supported: true
   default_effort: high

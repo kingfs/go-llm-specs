@@ -1,0 +1,58 @@
+schema_version: 2
+id: allenai/olmo-3.1-7b-rl-zero-code
+name: Olmo-3.1-7B-RL-Zero-Code
+provider: Allen Institute for AI
+developer: allenai
+lifecycle: candidate
+context_length: 65536
+features:
+  - ModalityTextIn
+  - ModalityTextOut
+links:
+  model_card: https://huggingface.co/allenai/Olmo-3.1-7B-RL-Zero-Code
+identifiers:
+  huggingface:
+    - allenai/Olmo-3.1-7B-RL-Zero-Code
+provenance:
+  context_length:
+    source: official_huggingface_config
+    url: https://huggingface.co/allenai/Olmo-3.1-7B-RL-Zero-Code
+  features:
+    source: official_huggingface_pipeline
+    url: https://huggingface.co/allenai/Olmo-3.1-7B-RL-Zero-Code
+  id:
+    source: official_huggingface
+    url: https://huggingface.co/allenai/Olmo-3.1-7B-RL-Zero-Code
+  name:
+    source: official_huggingface
+    url: https://huggingface.co/allenai/Olmo-3.1-7B-RL-Zero-Code
+upstream:
+  huggingface:
+    id: allenai/Olmo-3.1-7B-RL-Zero-Code
+    revision: 1ca3bb30f0e51b7ef05f7d0fefcf0e6b14eefc90
+    pipeline_tag: text-generation
+    model_type: olmo3
+    architectures:
+      - Olmo3ForCausalLM
+    license: apache-2.0
+    tags:
+      - arxiv:2512.13961
+      - base_model:allenai/Olmo-3-1025-7B
+      - base_model:finetune:allenai/Olmo-3-1025-7B
+      - conversational
+      - dataset:allenai/Dolci-RL-Zero-Code-7B
+      - deploy:azure
+      - en
+      - endpoints_compatible
+      - license:apache-2.0
+      - olmo3
+      - region:us
+      - safetensors
+      - text-generation
+      - transformers
+    config_context_length: 65536
+    tokenizer_model_max_length: 8192
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-08-14T03:53:28.747711128Z
