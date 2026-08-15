@@ -1,0 +1,103 @@
+schema_version: 2
+id: qwen/qwen3.8-27b
+name: 'Qwen: Qwen3.8 27B'
+provider: Qwen
+developer: qwen
+description: Qwen3.8 27B is an open-weight dense vision-language model from Qwen. It is suited for coding, professional workflows, research, multimodal interaction, and long-running agent tasks, with flexible thinking that can be...
+description_cn: Qwen3.8 27B 是 Qwen 开源的稠密视觉语言模型。适用于编程、专业工作流、研究、多模态交互及长运行智能体任务，具备灵活的思维...
+context_length: 262144
+max_output: 131072
+features:
+  - CapChat
+  - CapJsonMode
+  - ModalityImageIn
+  - ModalityTextIn
+  - ModalityTextOut
+  - ModalityVideoIn
+discovered_at: 2026-08-15T02:42:18.018684289Z
+links:
+  model_card: https://huggingface.co/Qwen/Qwen3.8-27B
+identifiers:
+  huggingface:
+    - Qwen/Qwen3.8-27B
+  openrouter:
+    - qwen/qwen3.8-27b
+provenance:
+  context_length:
+    source: openrouter
+  description:
+    source: openrouter
+  features:
+    source: openrouter
+  id:
+    source: openrouter
+  max_output:
+    source: openrouter
+  name:
+    source: openrouter
+  provider:
+    source: openrouter
+  reasoning:
+    source: openrouter
+upstream:
+  openrouter:
+    canonical_slug: qwen/qwen3.8-27b-20260814
+    huggingface_id: Qwen/Qwen3.8-27B
+    supported_parameters:
+      - frequency_penalty
+      - include_reasoning
+      - logprobs
+      - max_tokens
+      - presence_penalty
+      - reasoning
+      - reasoning_effort
+      - repetition_penalty
+      - response_format
+      - seed
+      - stop
+      - structured_outputs
+      - temperature
+      - top_k
+      - top_logprobs
+      - top_p
+    input_modalities:
+      - image
+      - text
+      - video
+    output_modalities:
+      - text
+    fetched_at: 2026-08-15T02:42:20.274789512Z
+  huggingface:
+    id: Qwen/Qwen3.8-27B
+    revision: 1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0
+    pipeline_tag: image-text-to-text
+    model_type: qwen3_5
+    architectures:
+      - Qwen3_5ForConditionalGeneration
+    license: apache-2.0
+    tags:
+      - conversational
+      - endpoints_compatible
+      - eval-results
+      - image-text-to-text
+      - license:apache-2.0
+      - qwen3_5
+      - region:us
+      - safetensors
+      - transformers
+    tokenizer_model_max_length: 262144
+    processor_class: Qwen3VLProcessor
+    chat_template_sha256: 4696c191344ef86278c477fba1b6f77df60bd3865021c4f011004def62610715
+    structured_files:
+      - config.json
+      - preprocessor_config.json
+      - tokenizer_config.json
+    fetched_at: 2026-08-15T02:42:21.250183703Z
+reasoning:
+  supported: true
+  default_enabled: true
+  default_effort: xhigh
+  supported_efforts:
+    - low
+    - medium
+    - xhigh

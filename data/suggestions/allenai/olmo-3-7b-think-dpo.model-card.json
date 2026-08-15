@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "allenai/olmo-3-7b-think-dpo",
+  "status": "partially_accepted",
+  "created_at": "2026-08-15T02:42:43.559480162Z",
+  "source": {
+    "url": "https://huggingface.co/allenai/Olmo-3-7B-Think-DPO/resolve/7b18bf927b430ff06376fdfa5610eb3b1b6a5c38/README.md",
+    "revision": "7b18bf927b430ff06376fdfa5610eb3b1b6a5c38",
+    "sha256": "ce8812bf5471c62eac4ee8ead14a8f3c6ffdaa5fdd639bd4000aefbb83d82fcf"
+  },
+  "generator": {
+    "model": "qwen/qwen3.6-27b",
+    "wire_api": "chat"
+  },
+  "claims": [
+    {
+      "field": "description",
+      "value": "Autoregressive transformer language model post-trained with DPO, supporting long chain-of-thought reasoning. Licensed under Apache 2.0.",
+      "evidence": "a Transformer style autoregressive language model... intended for research and educational use... Apache 2.0",
+      "section": "Model Description",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "CapChat",
+        "ModalityTextIn",
+        "ModalityTextOut"
+      ],
+      "evidence": "The chat template for this model is formatted as: ... Who would win in a fight ... Moo Moo the cow would certinaly win.",
+      "section": "Chat Format",
+      "confidence": "high"
+    },
+    {
+      "field": "reasoning.supported",
+      "value": true,
+      "evidence": "Long chain-of-thought thinking improves reasoning tasks like math and coding.",
+      "section": "Model Card for Olmo 3 Think DPO",
+      "confidence": "high"
+    }
+  ]
+}

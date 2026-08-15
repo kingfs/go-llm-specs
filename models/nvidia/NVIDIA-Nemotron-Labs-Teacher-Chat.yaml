@@ -1,0 +1,72 @@
+schema_version: 2
+id: nvidia/nvidia-nemotron-labs-teacher-chat
+name: NVIDIA-Nemotron-Labs-Teacher-Chat
+provider: NVIDIA
+developer: nvidia
+lifecycle: candidate
+context_length: 262144
+features:
+  - ModalityTextIn
+  - ModalityTextOut
+links:
+  model_card: https://huggingface.co/nvidia/NVIDIA-Nemotron-Labs-Teacher-Chat
+identifiers:
+  huggingface:
+    - nvidia/NVIDIA-Nemotron-Labs-Teacher-Chat
+provenance:
+  context_length:
+    source: official_huggingface_config
+    url: https://huggingface.co/nvidia/NVIDIA-Nemotron-Labs-Teacher-Chat
+  features:
+    source: official_huggingface_pipeline
+    url: https://huggingface.co/nvidia/NVIDIA-Nemotron-Labs-Teacher-Chat
+  id:
+    source: official_huggingface
+    url: https://huggingface.co/nvidia/NVIDIA-Nemotron-Labs-Teacher-Chat
+  name:
+    source: official_huggingface
+    url: https://huggingface.co/nvidia/NVIDIA-Nemotron-Labs-Teacher-Chat
+upstream:
+  huggingface:
+    id: nvidia/NVIDIA-Nemotron-Labs-Teacher-Chat
+    revision: 7fbf767583dfd7f18f11734626ce1fb311d6acb1
+    pipeline_tag: text-generation
+    model_type: nemotron_h
+    architectures:
+      - NemotronHForCausalLM
+    license: other
+    tags:
+      - ar
+      - conversational
+      - custom_code
+      - dataset:nvidia/nemotron-post-training-v3
+      - dataset:nvidia/nemotron-pre-training-datasets
+      - de
+      - en
+      - endpoints_compatible
+      - es
+      - fr
+      - he
+      - hi
+      - it
+      - ja
+      - ko
+      - latent-moe
+      - license:other
+      - mtp
+      - nemotron-3
+      - nemotron_h
+      - nvidia
+      - pt
+      - pytorch
+      - region:us
+      - safetensors
+      - text-generation
+      - transformers
+      - zh
+    config_context_length: 262144
+    tokenizer_model_max_length: 262144
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-08-15T02:42:20.670712458Z

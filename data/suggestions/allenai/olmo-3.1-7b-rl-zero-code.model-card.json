@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "allenai/olmo-3.1-7b-rl-zero-code",
+  "status": "partially_accepted",
+  "created_at": "2026-08-15T02:43:37.703990151Z",
+  "source": {
+    "url": "https://huggingface.co/allenai/Olmo-3.1-7B-RL-Zero-Code/resolve/1ca3bb30f0e51b7ef05f7d0fefcf0e6b14eefc90/README.md",
+    "revision": "1ca3bb30f0e51b7ef05f7d0fefcf0e6b14eefc90",
+    "sha256": "b019d1e37d334d55dcd01b8af2c054fd8234d6faf978d959d2e8c931b52e3679"
+  },
+  "generator": {
+    "model": "qwen/qwen3.6-27b",
+    "wire_api": "chat"
+  },
+  "claims": [
+    {
+      "field": "description",
+      "value": "Olmo 3.1 7B RL-Zero-Code is an experimental model for RLVR training, post-trained on the Dolci-RL-Zero-Code-7B dataset consisting of coding queries.",
+      "evidence": "The RL-Zero family of models is an experimental set of model for the scientific exploration of RLVR training. ... post-trained on the Dolci datasets.",
+      "section": "## Model Details",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "ModalityTextIn",
+        "ModalityTextOut"
+      ],
+      "evidence": "Model type: a Transformer style autoregressive language model. ... Language(s) (NLP): English",
+      "section": "### Model Description",
+      "confidence": "high"
+    },
+    {
+      "field": "description",
+      "value": "This model is an autoregressive language model developed by Allen Institute for AI, licensed under Apache 2.0 for research and educational use.",
+      "evidence": "Developed by: Allen Institute for AI (Ai2) ... Model type: a Transformer style autoregressive language model. ... License: This model is licensed under Apache 2.0.",
+      "section": "### Model Description",
+      "confidence": "high"
+    },
+    {
+      "field": "description",
+      "value": "The model supports inference via the HuggingFace transformers library (version 4.57.0 or higher) and allows for quantization using bitsandbytes.",
+      "evidence": "Olmo 3 is supported in transformers 4.57.0 or higher ... For faster performance, you can quantize the model using the following method: ... load_in_8bit=True ... Requires bitsandbytes",
+      "section": "## Installation",
+      "confidence": "high"
+    },
+    {
+      "field": "description",
+      "value": "The model was post-trained using reinforcement learning from verifiable rewards (RLVR) on the Dolci-RL-Zero-Code-7B dataset, which consists of coding queries.",
+      "evidence": "reinforcement learning from verifiable rewards on the Dolci-RL-Zero-Code-7B dataset which consists of coding queries.",
+      "section": "## Model Details",
+      "confidence": "high"
+    }
+  ]
+}

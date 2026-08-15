@@ -3,7 +3,9 @@ id: allenai/olmo-3.1-7b-rl-zero-code
 name: Olmo-3.1-7B-RL-Zero-Code
 provider: Allen Institute for AI
 developer: allenai
-lifecycle: candidate
+lifecycle: active
+description: Olmo 3.1 7B RL-Zero-Code is an experimental model for RLVR training, post-trained on the Dolci-RL-Zero-Code-7B dataset consisting of coding queries.
+description_cn: Olmo 3.1 7B RL-Zero-Code 是一款用于 RLVR 训练的实验性模型，在由代码查询组成的 Dolci-RL-Zero-Code-7B 数据集上进行了后训练。
 context_length: 65536
 features:
   - ModalityTextIn
@@ -17,6 +19,9 @@ provenance:
   context_length:
     source: official_huggingface_config
     url: https://huggingface.co/allenai/Olmo-3.1-7B-RL-Zero-Code
+  description:
+    source: official_model_card
+    url: https://huggingface.co/allenai/Olmo-3.1-7B-RL-Zero-Code/resolve/1ca3bb30f0e51b7ef05f7d0fefcf0e6b14eefc90/README.md
   features:
     source: official_huggingface_pipeline
     url: https://huggingface.co/allenai/Olmo-3.1-7B-RL-Zero-Code

@@ -3,8 +3,10 @@ id: cohere/tiny-aya-global
 name: tiny-aya-global
 provider: Cohere
 developer: cohere
-lifecycle: candidate
-context_length: 0
+lifecycle: active
+description: Tiny Aya is a pretrained 3.35 billion parameter model optimized for efficient, strong, and balanced multilingual representation across 70+ languages.
+description_cn: Tiny Aya 是一个 33.5 亿参数的预训练模型，针对 70 多种语言的高效、强大且均衡的多语言表征进行了优化。
+context_length: 8
 features:
   - ModalityTextIn
   - ModalityTextOut
@@ -14,6 +16,12 @@ identifiers:
   huggingface:
     - CohereLabs/tiny-aya-global
 provenance:
+  context_length:
+    source: official_model_card
+    url: https://huggingface.co/CohereLabs/tiny-aya-global/resolve/00590ff258ccd84a805f13efcd1c34c2a542654f/README.md
+  description:
+    source: official_model_card
+    url: https://huggingface.co/CohereLabs/tiny-aya-global/resolve/00590ff258ccd84a805f13efcd1c34c2a542654f/README.md
   features:
     source: official_huggingface_pipeline
     url: https://huggingface.co/CohereLabs/tiny-aya-global

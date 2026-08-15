@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "cohere/tiny-aya-global",
+  "status": "partially_accepted",
+  "created_at": "2026-08-15T02:44:27.119084532Z",
+  "source": {
+    "url": "https://huggingface.co/CohereLabs/tiny-aya-global/resolve/00590ff258ccd84a805f13efcd1c34c2a542654f/README.md",
+    "revision": "00590ff258ccd84a805f13efcd1c34c2a542654f",
+    "sha256": "4d82a14ad21dbde614f9f9eb9e561768e865bc9457f40918ead4783882d34a4b"
+  },
+  "generator": {
+    "model": "qwen/qwen3.6-27b",
+    "wire_api": "chat"
+  },
+  "claims": [
+    {
+      "field": "description",
+      "value": "Tiny Aya is a pretrained 3.35 billion parameter model optimized for efficient, strong, and balanced multilingual representation across 70+ languages.",
+      "evidence": "Cohere Labs Tiny Aya is an open weights research release of a pretrained 3.35 billion parameter model optimized for efficient, strong, and balanced multilingual representation across 70+ languages",
+      "section": "Model Summary",
+      "confidence": "high"
+    },
+    {
+      "field": "context_length",
+      "value": 8,
+      "evidence": "Context length: 8K input",
+      "section": "Model Summary",
+      "confidence": "high"
+    },
+    {
+      "field": "context_length",
+      "value": 8,
+      "evidence": "Tiny Aya supports a context length of 8K \u0026 8K output length.",
+      "section": "Model Details",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "CapChat",
+        "ModalityTextIn",
+        "ModalityTextOut"
+      ],
+      "evidence": "Input: Text only. Output: Model generates text. ... apply_chat_template",
+      "section": "Model Details",
+      "confidence": "high"
+    }
+  ]
+}

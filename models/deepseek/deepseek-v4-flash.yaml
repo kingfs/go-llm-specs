@@ -33,6 +33,7 @@ upstream:
       - include_reasoning
       - logit_bias
       - logprobs
+      - max_completion_tokens
       - max_tokens
       - min_p
       - presence_penalty
@@ -54,7 +55,7 @@ upstream:
       - text
     output_modalities:
       - text
-    fetched_at: 2026-07-29T10:37:49.752398949Z
+    fetched_at: 2026-08-15T02:42:20.265148495Z
   huggingface:
     id: deepseek-ai/DeepSeek-V4-Flash
     revision: 60d8d70770c6776ff598c94bb586a859a38244f1

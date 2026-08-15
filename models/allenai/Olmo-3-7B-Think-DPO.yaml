@@ -3,7 +3,9 @@ id: allenai/olmo-3-7b-think-dpo
 name: Olmo-3-7B-Think-DPO
 provider: Allen Institute for AI
 developer: allenai
-lifecycle: candidate
+lifecycle: active
+description: Autoregressive transformer language model post-trained with DPO, supporting long chain-of-thought reasoning. Licensed under Apache 2.0.
+description_cn: 使用 DPO 进行后训练的自回归 Transformer 语言模型，支持长思维链推理。采用 Apache 2.0 许可证。
 context_length: 65536
 features:
   - ModalityTextIn
@@ -17,6 +19,9 @@ provenance:
   context_length:
     source: official_huggingface_config
     url: https://huggingface.co/allenai/Olmo-3-7B-Think-DPO
+  description:
+    source: official_model_card
+    url: https://huggingface.co/allenai/Olmo-3-7B-Think-DPO/resolve/7b18bf927b430ff06376fdfa5610eb3b1b6a5c38/README.md
   features:
     source: official_huggingface_pipeline
     url: https://huggingface.co/allenai/Olmo-3-7B-Think-DPO
@@ -26,6 +31,9 @@ provenance:
   name:
     source: official_huggingface
     url: https://huggingface.co/allenai/Olmo-3-7B-Think-DPO
+  reasoning.supported:
+    source: official_model_card
+    url: https://huggingface.co/allenai/Olmo-3-7B-Think-DPO/resolve/7b18bf927b430ff06376fdfa5610eb3b1b6a5c38/README.md
 upstream:
   huggingface:
     id: allenai/Olmo-3-7B-Think-DPO
@@ -56,3 +64,5 @@ upstream:
       - config.json
       - tokenizer_config.json
     fetched_at: 2026-08-14T03:53:28.474953935Z
+reasoning:
+  supported: true
