@@ -1,0 +1,75 @@
+schema_version: 2
+id: qwen/qwen-agentworld-35b-a3b
+name: Qwen-AgentWorld-35B-A3B
+provider: Qwen
+developer: qwen
+lifecycle: active
+description: Native language world model trained for agentic environment simulation, covering seven domains including MCP, Search, Terminal, SWE, Android, Web, and OS within a single model.
+description_cn: 专为智能体环境仿真设计的原生语言世界模型，单个模型涵盖 MCP、搜索、终端、SWE、Android、Web 和操作系统等七大领域。
+context_length: 262144
+features:
+  - ModalityTextIn
+  - ModalityTextOut
+links:
+  model_card: https://huggingface.co/Qwen/Qwen-AgentWorld-35B-A3B
+identifiers:
+  huggingface:
+    - Qwen/Qwen-AgentWorld-35B-A3B
+provenance:
+  context_length:
+    source: official_model_card
+    url: https://huggingface.co/Qwen/Qwen-AgentWorld-35B-A3B/resolve/60d2b0434a53d2e62a7c00a489586815d94ebffb/README.md
+  description:
+    source: official_model_card
+    url: https://huggingface.co/Qwen/Qwen-AgentWorld-35B-A3B/resolve/60d2b0434a53d2e62a7c00a489586815d94ebffb/README.md
+  features:
+    source: official_huggingface_pipeline
+    url: https://huggingface.co/Qwen/Qwen-AgentWorld-35B-A3B
+  id:
+    source: official_huggingface
+    url: https://huggingface.co/Qwen/Qwen-AgentWorld-35B-A3B
+  name:
+    source: official_huggingface
+    url: https://huggingface.co/Qwen/Qwen-AgentWorld-35B-A3B
+  reasoning.supported:
+    source: official_model_card
+    url: https://huggingface.co/Qwen/Qwen-AgentWorld-35B-A3B/resolve/60d2b0434a53d2e62a7c00a489586815d94ebffb/README.md
+upstream:
+  huggingface:
+    id: Qwen/Qwen-AgentWorld-35B-A3B
+    revision: 60d2b0434a53d2e62a7c00a489586815d94ebffb
+    pipeline_tag: text-generation
+    model_type: qwen3_5_moe
+    architectures:
+      - Qwen3_5MoeForConditionalGeneration
+    license: apache-2.0
+    tags:
+      - agent
+      - arxiv:2606.24597
+      - base_model:Qwen/Qwen3.5-35B-A3B-Base
+      - base_model:finetune:Qwen/Qwen3.5-35B-A3B-Base
+      - conversational
+      - dataset:Qwen/AgentWorldBench
+      - deploy:azure
+      - deploy:sagemaker
+      - endpoints_compatible
+      - environment-simulation
+      - image-text-to-text
+      - license:apache-2.0
+      - qwen
+      - qwen3_5_moe
+      - region:us
+      - safetensors
+      - text-generation
+      - transformers
+      - world-model
+    tokenizer_model_max_length: 131072
+    processor_class: Qwen3VLProcessor
+    chat_template_sha256: 77ddbcc5a6e6adb02cdc908abf2d8c466da49e0408203b970e02cd857c900a82
+    structured_files:
+      - config.json
+      - preprocessor_config.json
+      - tokenizer_config.json
+    fetched_at: 2026-08-16T02:50:23.276728563Z
+reasoning:
+  supported: true

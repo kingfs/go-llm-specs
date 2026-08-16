@@ -1,0 +1,62 @@
+schema_version: 2
+id: allenai/olmo-3-7b-rl-zero-general
+name: Olmo-3-7B-RL-Zero-General
+provider: Allen Institute for AI
+developer: allenai
+lifecycle: active
+description: Olmo 3 7B RL-Zero General is an experimental open language model designed for the scientific exploration of RLVR training on general chat queries, developed by Allen Institute for AI and licensed under Apache 2.0.
+description_cn: Olmo 3 7B RL-Zero General 是一款实验性开放语言模型，由艾伦人工智能研究所开发并授予 Apache 2.0 许可证，旨在探索针对通用聊天查询的 RLVR 训练。
+context_length: 65536
+features:
+  - ModalityTextIn
+  - ModalityTextOut
+links:
+  model_card: https://huggingface.co/allenai/Olmo-3-7B-RL-Zero-General
+identifiers:
+  huggingface:
+    - allenai/Olmo-3-7B-RL-Zero-General
+provenance:
+  context_length:
+    source: official_huggingface_config
+    url: https://huggingface.co/allenai/Olmo-3-7B-RL-Zero-General
+  description:
+    source: official_model_card
+    url: https://huggingface.co/allenai/Olmo-3-7B-RL-Zero-General/resolve/24e5814cb36944d3eb36a49679d02c2b3bb46195/README.md
+  features:
+    source: official_huggingface_pipeline
+    url: https://huggingface.co/allenai/Olmo-3-7B-RL-Zero-General
+  id:
+    source: official_huggingface
+    url: https://huggingface.co/allenai/Olmo-3-7B-RL-Zero-General
+  name:
+    source: official_huggingface
+    url: https://huggingface.co/allenai/Olmo-3-7B-RL-Zero-General
+upstream:
+  huggingface:
+    id: allenai/Olmo-3-7B-RL-Zero-General
+    revision: 24e5814cb36944d3eb36a49679d02c2b3bb46195
+    pipeline_tag: text-generation
+    model_type: olmo3
+    architectures:
+      - Olmo3ForCausalLM
+    license: apache-2.0
+    tags:
+      - arxiv:2512.13961
+      - base_model:allenai/Olmo-3-1025-7B
+      - base_model:finetune:allenai/Olmo-3-1025-7B
+      - conversational
+      - dataset:allenai/Dolci-RLZero-General-7B
+      - en
+      - endpoints_compatible
+      - license:apache-2.0
+      - olmo3
+      - region:us
+      - safetensors
+      - text-generation
+      - transformers
+    config_context_length: 65536
+    tokenizer_model_max_length: 8192
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-08-16T02:50:22.223578865Z

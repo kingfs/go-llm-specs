@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "qwen/qwen-agentworld-35b-a3b",
+  "status": "partially_accepted",
+  "created_at": "2026-08-16T02:52:52.235557439Z",
+  "source": {
+    "url": "https://huggingface.co/Qwen/Qwen-AgentWorld-35B-A3B/resolve/60d2b0434a53d2e62a7c00a489586815d94ebffb/README.md",
+    "revision": "60d2b0434a53d2e62a7c00a489586815d94ebffb",
+    "sha256": "c848eb29d25e6a90bfe876f2638bd8317b1b4b8022f20f6e63873e6d19290871"
+  },
+  "generator": {
+    "model": "qwen/qwen3.6-27b",
+    "wire_api": "chat"
+  },
+  "claims": [
+    {
+      "field": "description",
+      "value": "Native language world model trained for agentic environment simulation, covering seven domains including MCP, Search, Terminal, SWE, Android, Web, and OS within a single model.",
+      "evidence": "Qwen-AgentWorld-35B-A3B, a native language world model trained for agentic environment simulation. ... Sevent Unified Domains. A single model covers MCP (tool calling), Search...",
+      "section": "Qwen-AgentWorld-35B-A3B",
+      "confidence": "high"
+    },
+    {
+      "field": "context_length",
+      "value": 262144,
+      "evidence": "Context Length: 262,144 tokens",
+      "section": "Model Overview",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "ModalityTextIn",
+        "ModalityTextOut"
+      ],
+      "evidence": "Type: Causal Language Model (Language World Model)",
+      "section": "Model Overview",
+      "confidence": "high"
+    },
+    {
+      "field": "reasoning.supported",
+      "value": true,
+      "evidence": "It simulates agentic environments via long chain-of-thought reasoning",
+      "section": "Qwen-AgentWorld-35B-A3B",
+      "confidence": "high"
+    },
+    {
+      "field": "reasoning.parser",
+      "value": "qwen3",
+      "evidence": "--reasoning-parser qwen3",
+      "section": "SGLang",
+      "confidence": "high"
+    }
+  ]
+}

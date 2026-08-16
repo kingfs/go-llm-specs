@@ -1,0 +1,63 @@
+schema_version: 2
+id: allenai/olmo-3-7b-instruct-dpo
+name: Olmo-3-7B-Instruct-DPO
+provider: Allen Institute for AI
+developer: allenai
+lifecycle: active
+description: Open language model post-trained using Direct Preference Optimization (DPO). It is an autoregressive language model designed for English text, intended for research and educational use under an Apache 2.0 license.
+description_cn: 采用直接偏好优化（DPO）后训练的开放语言模型。它是一个专为英文文本设计的自回归语言模型，基于 Apache 2.0 许可证用于研究和教育用途。
+context_length: 65536
+features:
+  - ModalityTextIn
+  - ModalityTextOut
+links:
+  model_card: https://huggingface.co/allenai/Olmo-3-7B-Instruct-DPO
+identifiers:
+  huggingface:
+    - allenai/Olmo-3-7B-Instruct-DPO
+provenance:
+  context_length:
+    source: official_huggingface_config
+    url: https://huggingface.co/allenai/Olmo-3-7B-Instruct-DPO
+  description:
+    source: official_model_card
+    url: https://huggingface.co/allenai/Olmo-3-7B-Instruct-DPO/resolve/b33130b7de49f0c2553b5c2b3bc8409ff3e627d1/README.md
+  features:
+    source: official_huggingface_pipeline
+    url: https://huggingface.co/allenai/Olmo-3-7B-Instruct-DPO
+  id:
+    source: official_huggingface
+    url: https://huggingface.co/allenai/Olmo-3-7B-Instruct-DPO
+  name:
+    source: official_huggingface
+    url: https://huggingface.co/allenai/Olmo-3-7B-Instruct-DPO
+upstream:
+  huggingface:
+    id: allenai/Olmo-3-7B-Instruct-DPO
+    revision: b33130b7de49f0c2553b5c2b3bc8409ff3e627d1
+    pipeline_tag: text-generation
+    model_type: olmo3
+    architectures:
+      - Olmo3ForCausalLM
+    license: apache-2.0
+    tags:
+      - arxiv:2512.13961
+      - base_model:allenai/Olmo-3-7B-Instruct-SFT
+      - base_model:finetune:allenai/Olmo-3-7B-Instruct-SFT
+      - conversational
+      - dataset:allenai/Dolci-Think-DPO-7B
+      - en
+      - endpoints_compatible
+      - license:apache-2.0
+      - olmo3
+      - pytorch
+      - region:us
+      - safetensors
+      - text-generation
+      - transformers
+    config_context_length: 65536
+    tokenizer_model_max_length: 65536
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-08-16T02:50:21.450913883Z

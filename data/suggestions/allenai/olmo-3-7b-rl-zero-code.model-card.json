@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "allenai/olmo-3-7b-rl-zero-code",
+  "status": "partially_accepted",
+  "created_at": "2026-08-16T02:51:36.358917263Z",
+  "source": {
+    "url": "https://huggingface.co/allenai/Olmo-3-7B-RL-Zero-Code/resolve/a961af69d75f9c52b3ae4db7b1664d890229b7ca/README.md",
+    "revision": "a961af69d75f9c52b3ae4db7b1664d890229b7ca",
+    "sha256": "130802c45faac540bda5ec4ce057fa68cc8ccb58efebd39b5316b715edd1b518"
+  },
+  "generator": {
+    "model": "qwen/qwen3.6-27b",
+    "wire_api": "chat"
+  },
+  "claims": [
+    {
+      "field": "description",
+      "value": "Olmo 3 7B RL-Zero Code is an experimental Transformer-based autoregressive language model for scientific exploration of RLVR training on coding tasks, developed by Allen Institute for AI.",
+      "evidence": "The RL-Zero family of models is an experimental set of model for the scientific exploration of RLVR training.",
+      "section": "Model Card for Olmo 3 7B RL-Zero Code",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "ModalityTextIn",
+        "ModalityTextOut"
+      ],
+      "evidence": "Model type: a Transformer style autoregressive language model.",
+      "section": "Model Description",
+      "confidence": "high"
+    },
+    {
+      "field": "description",
+      "value": "The model is post-trained on the Dolci-RLZero-Code-7B dataset using reinforcement learning from verifiable rewards (RLVR).",
+      "evidence": "reinforcement learning from verifiable rewards on the Dolci-RL-Zero-Code-7B dataset which consists of coding queries.",
+      "section": "Model Details",
+      "confidence": "high"
+    },
+    {
+      "field": "description",
+      "value": "The model is based on the allenai/Olmo-3-1025-7B base model.",
+      "evidence": "base_model: - allenai/Olmo-3-1025-7B",
+      "section": "license",
+      "confidence": "high"
+    },
+    {
+      "field": "description",
+      "value": "The model is licensed under Apache 2.0 and intended for research and educational use.",
+      "evidence": "License: This model is licensed under Apache 2.0. It is intended for research and educational use",
+      "section": "Model Description",
+      "confidence": "high"
+    },
+    {
+      "field": "description",
+      "value": "The knowledge cutoff date for the model is December 2023.",
+      "evidence": "Date cutoff: Dec. 2023.",
+      "section": "Model Description",
+      "confidence": "high"
+    }
+  ]
+}

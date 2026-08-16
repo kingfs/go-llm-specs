@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "allenai/olmo-3-7b-rl-zero-general",
+  "status": "partially_accepted",
+  "created_at": "2026-08-16T02:52:30.655294864Z",
+  "source": {
+    "url": "https://huggingface.co/allenai/Olmo-3-7B-RL-Zero-General/resolve/24e5814cb36944d3eb36a49679d02c2b3bb46195/README.md",
+    "revision": "24e5814cb36944d3eb36a49679d02c2b3bb46195",
+    "sha256": "21221cabdc5d092834b1be591cbd2d6bc2054e7d0f03e3324aae57335aaec391"
+  },
+  "generator": {
+    "model": "qwen/qwen3.6-27b",
+    "wire_api": "chat"
+  },
+  "claims": [
+    {
+      "field": "description",
+      "value": "Olmo 3 7B RL-Zero General is an experimental open language model designed for the scientific exploration of RLVR training on general chat queries, developed by Allen Institute for AI and licensed under Apache 2.0.",
+      "evidence": "The RL-Zero family of models is an experimental set of model for the scientific exploration of RLVR training.",
+      "section": "Model Card for Olmo 3 7B RL-Zero General",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "ModalityTextIn",
+        "ModalityTextOut"
+      ],
+      "evidence": "a Transformer style autoregressive language model.",
+      "section": "Installation",
+      "confidence": "high"
+    },
+    {
+      "field": "reasoning.supported",
+      "value": true,
+      "evidence": "Long chain-of-thought thinking improves reasoning tasks like math and coding.",
+      "section": "Model Card for Olmo 3 7B RL-Zero General",
+      "confidence": "medium"
+    }
+  ]
+}
