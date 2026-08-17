@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "ibm-granite/granite-speech-4.1-2b-nar",
+  "status": "partially_accepted",
+  "created_at": "2026-08-17T02:50:38.660051407Z",
+  "source": {
+    "url": "https://huggingface.co/ibm-granite/granite-speech-4.1-2b-nar/resolve/a1e3416e25ce29ab3852778e54fa8b3bd59c4bf2/README.md",
+    "revision": "a1e3416e25ce29ab3852778e54fa8b3bd59c4bf2",
+    "sha256": "258865d04375df17591ceb1f9f595de8a88e6542815183fe4f887e42eab68d4b"
+  },
+  "generator": {
+    "model": "qwen/qwen3.6-27b",
+    "wire_api": "chat"
+  },
+  "claims": [
+    {
+      "field": "description",
+      "value": "Granite-Speech-4.1-2B-NAR is a non-autoregressive speech recognition model that formulates ASR as conditional transcript editing, editing a CTC hypothesis in a single forward pass using a bidirectional LLM.",
+      "evidence": "Granite-Speech-4.1-2B-NAR is a non-autoregressive (NAR) speech recognition model that formulates ASR as conditional transcript editing. Instead of decoding tokens one at a time, it edits a CTC hypothesis in a single forward pass using a bidirectional LLM",
+      "section": "Model Summary",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "ModalityAudioIn",
+        "ModalityTextOut"
+      ],
+      "evidence": "The model is intended for automatic speech recognition tasks... It processes 16kHz audio... produces the final transcript",
+      "section": "Intended Use",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [],
+      "evidence": "The model is designed specifically for automatic speech recognition and does not generate free-form text",
+      "section": "Ethical Considerations and Limitations",
+      "confidence": "high"
+    },
+    {
+      "field": "description",
+      "value": "The model processes 16kHz audio with stacked log-mel features (80 mel bins, 2-frame stacking) and uses block attention with 4-second audio blocks.",
+      "evidence": "It processes 16kHz audio with stacked log-mel features (80 mel bins, 2-frame stacking) and uses block attention with 4-second audio blocks and self-conditioning at layer 8.",
+      "section": "Model Architecture",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "ModalityAudioIn",
+        "ModalityTextOut"
+      ],
+      "evidence": "language: - en - fr - de - es - pt ... Supported Languages: English, French, German, Spanish, Portuguese",
+      "section": "Supported Languages",
+      "confidence": "high"
+    }
+  ]
+}

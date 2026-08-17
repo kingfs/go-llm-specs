@@ -1,0 +1,65 @@
+schema_version: 2
+id: allenai/molmomotion-4b-h1-f32
+name: MolmoMotion-4B-H1-F32
+provider: Allen Institute for AI
+developer: allenai
+lifecycle: candidate
+description: MolmoMotion-4B-H1-F32 is a 4B parameter autoregressive vision-language model that forecasts 3D point trajectories given a single RGB observation keyframe, 2D query points, and natural language action instructions.
+description_cn: MolmoMotion-4B-H1-F32 是一个拥有 40 亿参数的自回归视觉-语言模型，它根据单个 RGB 观察关键帧、2D 查询点和自然语言动作指令，预测 3D 点的轨迹。
+context_length: 0
+max_output: 32
+features:
+  - ModalityImageIn
+  - ModalityTextIn
+  - ModalityTextOut
+links:
+  model_card: https://huggingface.co/allenai/MolmoMotion-4B-H1-F32
+identifiers:
+  huggingface:
+    - allenai/MolmoMotion-4B-H1-F32
+provenance:
+  description:
+    source: official_model_card
+    url: https://huggingface.co/allenai/MolmoMotion-4B-H1-F32/resolve/14e69b0d5dd55b2f09c885030b8756cd053ea6a4/README.md
+  features:
+    source: official_huggingface_pipeline
+    url: https://huggingface.co/allenai/MolmoMotion-4B-H1-F32
+  id:
+    source: official_huggingface
+    url: https://huggingface.co/allenai/MolmoMotion-4B-H1-F32
+  max_output:
+    source: official_model_card
+    url: https://huggingface.co/allenai/MolmoMotion-4B-H1-F32/resolve/14e69b0d5dd55b2f09c885030b8756cd053ea6a4/README.md
+  name:
+    source: official_huggingface
+    url: https://huggingface.co/allenai/MolmoMotion-4B-H1-F32
+upstream:
+  huggingface:
+    id: allenai/MolmoMotion-4B-H1-F32
+    revision: 14e69b0d5dd55b2f09c885030b8756cd053ea6a4
+    pipeline_tag: image-text-to-text
+    model_type: molmo2
+    architectures:
+      - Molmo2ForConditionalGeneration
+    license: apache-2.0
+    tags:
+      - 3d
+      - arxiv:2606.18558
+      - conversational
+      - custom_code
+      - image-text-to-text
+      - license:apache-2.0
+      - molmo-motion
+      - molmo2
+      - region:us
+      - safetensors
+      - trajectory-forecasting
+      - transformers
+      - vision-language
+    tokenizer_model_max_length: 1010000
+    processor_class: Molmo2Processor
+    structured_files:
+      - config.json
+      - preprocessor_config.json
+      - tokenizer_config.json
+    fetched_at: 2026-08-17T02:50:35.047845154Z

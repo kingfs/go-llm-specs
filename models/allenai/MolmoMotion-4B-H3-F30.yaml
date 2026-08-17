@@ -1,0 +1,68 @@
+schema_version: 2
+id: allenai/molmomotion-4b-h3-f30
+name: MolmoMotion-4B-H3-F30
+provider: Allen Institute for AI
+developer: allenai
+lifecycle: active
+description: MolmoMotion is a 4B vision-language model that forecasts 3D point trajectories under natural-language action instructions. Given a short RGB observation history, a set of user-specified 2D query points with their 3D history, and an action description, it predicts where those points move in 3D (camera frame, in meters) over a future horizon.
+description_cn: MolmoMotion 是一个 4B 视觉-语言模型，能够在自然语言动作指令下预测 3D 点轨迹。给定一段短的 RGB 观察历史、一组用户指定的带有 3D 历史的 2D 查询点以及动作描述，它会在未来的时间跨度内预测（相对于相机的米制单位）这些点的运动位置。
+context_length: 3
+max_output: 30
+features:
+  - ModalityImageIn
+  - ModalityTextIn
+  - ModalityTextOut
+links:
+  model_card: https://huggingface.co/allenai/MolmoMotion-4B-H3-F30
+identifiers:
+  huggingface:
+    - allenai/MolmoMotion-4B-H3-F30
+provenance:
+  context_length:
+    source: official_model_card
+    url: https://huggingface.co/allenai/MolmoMotion-4B-H3-F30/resolve/3f5e790a511ff2cdf21c8d2a14cb4d8409c94629/README.md
+  description:
+    source: official_model_card
+    url: https://huggingface.co/allenai/MolmoMotion-4B-H3-F30/resolve/3f5e790a511ff2cdf21c8d2a14cb4d8409c94629/README.md
+  features:
+    source: official_huggingface_pipeline
+    url: https://huggingface.co/allenai/MolmoMotion-4B-H3-F30
+  id:
+    source: official_huggingface
+    url: https://huggingface.co/allenai/MolmoMotion-4B-H3-F30
+  max_output:
+    source: official_model_card
+    url: https://huggingface.co/allenai/MolmoMotion-4B-H3-F30/resolve/3f5e790a511ff2cdf21c8d2a14cb4d8409c94629/README.md
+  name:
+    source: official_huggingface
+    url: https://huggingface.co/allenai/MolmoMotion-4B-H3-F30
+upstream:
+  huggingface:
+    id: allenai/MolmoMotion-4B-H3-F30
+    revision: 3f5e790a511ff2cdf21c8d2a14cb4d8409c94629
+    pipeline_tag: image-text-to-text
+    model_type: molmo2
+    architectures:
+      - Molmo2ForConditionalGeneration
+    license: apache-2.0
+    tags:
+      - 3d
+      - arxiv:2606.18558
+      - conversational
+      - custom_code
+      - image-text-to-text
+      - license:apache-2.0
+      - molmo-motion
+      - molmo2
+      - region:us
+      - safetensors
+      - trajectory-forecasting
+      - transformers
+      - vision-language
+    tokenizer_model_max_length: 1010000
+    processor_class: Molmo2Processor
+    structured_files:
+      - config.json
+      - preprocessor_config.json
+      - tokenizer_config.json
+    fetched_at: 2026-08-17T02:50:35.482167829Z

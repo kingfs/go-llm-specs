@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "allenai/molmomotion-4b-h1-f32",
+  "status": "partially_accepted",
+  "created_at": "2026-08-17T02:51:20.153573198Z",
+  "source": {
+    "url": "https://huggingface.co/allenai/MolmoMotion-4B-H1-F32/resolve/14e69b0d5dd55b2f09c885030b8756cd053ea6a4/README.md",
+    "revision": "14e69b0d5dd55b2f09c885030b8756cd053ea6a4",
+    "sha256": "fa495d55fda9e8992f15d19184c4a120841ea858546d5506b49eb8eb457cb897"
+  },
+  "generator": {
+    "model": "qwen/qwen3.6-27b",
+    "wire_api": "chat"
+  },
+  "claims": [
+    {
+      "field": "description",
+      "value": "MolmoMotion-4B-H1-F32 is a 4B parameter autoregressive vision-language model that forecasts 3D point trajectories given a single RGB observation keyframe, 2D query points, and natural language action instructions.",
+      "evidence": "MolmoMotion is a 4B vision-language model that forecasts 3D point trajectories under natural-language action instructions. This checkpoint is the autoregressive (AR) variant with history H=1.",
+      "section": "# **MolmoMotion-4B-H1-F32**",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "ModalityImageIn",
+        "ModalityTextIn",
+        "ModalityTextOut"
+      ],
+      "evidence": "Given a short RGB observation history... and an action description, it predicts where those points move in 3D... pipeline_tag: image-text-to-text",
+      "section": "# **MolmoMotion-4B-H1-F32**",
+      "confidence": "high"
+    },
+    {
+      "field": "max_output",
+      "value": 32,
+      "evidence": "This checkpoint is the autoregressive (AR) variant with history H=1 and future horizon F=32.",
+      "section": "# **MolmoMotion-4B-H1-F32**",
+      "confidence": "high"
+    }
+  ]
+}

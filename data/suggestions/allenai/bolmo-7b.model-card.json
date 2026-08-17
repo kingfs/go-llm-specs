@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "allenai/bolmo-7b",
+  "status": "partially_accepted",
+  "created_at": "2026-08-17T02:52:02.751691683Z",
+  "source": {
+    "url": "https://huggingface.co/allenai/Bolmo-7B/resolve/73fa654960981913e6b2df381b66d4d173a1ff52/README.md",
+    "revision": "73fa654960981913e6b2df381b66d4d173a1ff52",
+    "sha256": "1f78ecc9acb7ffd16ea5bd1f41f81dfcdbd66c34feca62b60e4a9df6486dba9d"
+  },
+  "generator": {
+    "model": "qwen/qwen3.6-27b",
+    "wire_api": "chat"
+  },
+  "claims": [
+    {
+      "field": "description",
+      "value": "Bolmo-7B is a fully open, byte-level autoregressive language model developed by the Allen Institute for AI (Ai2), based on Olmo-3-1025-7B and licensed under Apache 2.0.",
+      "evidence": "We introduce **Bolmo**, the first family of competitive fully open byte-level language models (LMs)... **Model type:** a byte-level autoregressive language model... **License:** This model is licensed under Apache 2.0.",
+      "section": "## Inference",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "ModalityTextIn",
+        "ModalityTextOut"
+      ],
+      "evidence": "**Model type:** a byte-level autoregressive language model.",
+      "section": "## Inference",
+      "confidence": "high"
+    }
+  ]
+}

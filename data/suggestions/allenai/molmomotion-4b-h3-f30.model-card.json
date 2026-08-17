@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "allenai/molmomotion-4b-h3-f30",
+  "status": "partially_accepted",
+  "created_at": "2026-08-17T02:51:41.788938767Z",
+  "source": {
+    "url": "https://huggingface.co/allenai/MolmoMotion-4B-H3-F30/resolve/3f5e790a511ff2cdf21c8d2a14cb4d8409c94629/README.md",
+    "revision": "3f5e790a511ff2cdf21c8d2a14cb4d8409c94629",
+    "sha256": "d9895b5240a7efadaedc73ca7d3abd09961f0ffdbf332a8db278b8ada503ba89"
+  },
+  "generator": {
+    "model": "qwen/qwen3.6-27b",
+    "wire_api": "chat"
+  },
+  "claims": [
+    {
+      "field": "description",
+      "value": "MolmoMotion is a 4B vision-language model that forecasts 3D point trajectories under natural-language action instructions. Given a short RGB observation history, a set of user-specified 2D query points with their 3D history, and an action description, it predicts where those points move in 3D (camera frame, in meters) over a future horizon.",
+      "evidence": "MolmoMotion is a 4B vision-language model that **forecasts 3D point trajectories** under natural-language action instructions.",
+      "section": "# **MolmoMotion-4B-H3-F30**",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "ModalityTextIn",
+        "ModalityTextOut",
+        "ModalityImageIn"
+      ],
+      "evidence": "MolmoMotion is a 4B vision-language model that **forecasts 3D point trajectories** under natural-language action instructions. Given a short RGB observation history... and an action description...",
+      "section": "# **MolmoMotion-4B-H3-F30**",
+      "confidence": "high"
+    },
+    {
+      "field": "context_length",
+      "value": 3,
+      "evidence": "This checkpoint is the **autoregressive (AR)** variant with **history H=3**",
+      "section": "# **MolmoMotion-4B-H3-F30**",
+      "confidence": "high"
+    },
+    {
+      "field": "max_output",
+      "value": 30,
+      "evidence": "This checkpoint is the **autoregressive (AR)** variant with... **future horizon F=30**.",
+      "section": "# **MolmoMotion-4B-H3-F30**",
+      "confidence": "high"
+    },
+    {
+      "field": "description",
+      "value": "This is the autoregressive variant designed for typical video use cases, expecting 3 history frames to predict approximately two seconds of motion at 15 fps.",
+      "evidence": "Pick this variant for typical video use — three history frames, predicting roughly two seconds of motion at 15 fps.",
+      "section": "# **MolmoMotion-4B-H3-F30**",
+      "confidence": "high"
+    }
+  ]
+}

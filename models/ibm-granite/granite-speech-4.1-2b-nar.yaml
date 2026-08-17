@@ -1,0 +1,72 @@
+schema_version: 2
+id: ibm-granite/granite-speech-4.1-2b-nar
+name: granite-speech-4.1-2b-nar
+provider: IBM Granite
+developer: ibm-granite
+lifecycle: candidate
+description: Granite-Speech-4.1-2B-NAR is a non-autoregressive speech recognition model that formulates ASR as conditional transcript editing, editing a CTC hypothesis in a single forward pass using a bidirectional LLM.
+description_cn: Granite-Speech-4.1-2B-NAR 是一个非自回归语音识别模型，它将自动语音识别（ASR）表述为条件转录编辑，使用双向大型语言模型以一次前向传递来编辑 CTC 假设。
+context_length: 0
+features:
+  - CapEmbedding
+  - ModalityTextIn
+links:
+  model_card: https://huggingface.co/ibm-granite/granite-speech-4.1-2b-nar
+identifiers:
+  huggingface:
+    - ibm-granite/granite-speech-4.1-2b-nar
+provenance:
+  description:
+    source: official_model_card
+    url: https://huggingface.co/ibm-granite/granite-speech-4.1-2b-nar/resolve/a1e3416e25ce29ab3852778e54fa8b3bd59c4bf2/README.md
+  features:
+    source: official_huggingface_pipeline
+    url: https://huggingface.co/ibm-granite/granite-speech-4.1-2b-nar
+  id:
+    source: official_huggingface
+    url: https://huggingface.co/ibm-granite/granite-speech-4.1-2b-nar
+  name:
+    source: official_huggingface
+    url: https://huggingface.co/ibm-granite/granite-speech-4.1-2b-nar
+upstream:
+  huggingface:
+    id: ibm-granite/granite-speech-4.1-2b-nar
+    revision: a1e3416e25ce29ab3852778e54fa8b3bd59c4bf2
+    pipeline_tag: feature-extraction
+    model_type: granite_speech_nar
+    architectures:
+      - GraniteSpeechNarForASR
+    license: apache-2.0
+    tags:
+      - arxiv:2505.08699
+      - arxiv:2603.08397
+      - arxiv:2603.11243
+      - arxiv:2604.11269
+      - arxiv:2604.12398
+      - arxiv:2604.22817
+      - asr
+      - automatic_speech_recognition
+      - base_model:finetune:ibm-granite/granite-4.0-1b-base
+      - base_model:ibm-granite/granite-4.0-1b-base
+      - ctc
+      - custom_code
+      - de
+      - en
+      - es
+      - feature-extraction
+      - fr
+      - granite_speech_nar
+      - license:apache-2.0
+      - non-autoregressive
+      - pt
+      - region:us
+      - safetensors
+      - speech
+      - speech_recognition
+      - transformers
+    processor_class: GraniteSpeechNarFeatureExtractor
+    structured_files:
+      - config.json
+      - preprocessor_config.json
+      - tokenizer_config.json
+    fetched_at: 2026-08-17T02:50:36.14292141Z

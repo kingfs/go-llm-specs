@@ -1,0 +1,60 @@
+schema_version: 2
+id: allenai/bolmo-7b
+name: Bolmo-7B
+provider: Allen Institute for AI
+developer: allenai
+lifecycle: active
+description: Bolmo-7B is a fully open, byte-level autoregressive language model developed by the Allen Institute for AI (Ai2), based on Olmo-3-1025-7B and licensed under Apache 2.0.
+description_cn: Bolmo-7B 是由allenai 研究院开发的完全开源的字节级自回归语言模型，基于 Olmo-3-1025-7B 构建，采用 Apache 2.0 许可证。
+context_length: 65536
+features:
+  - ModalityTextIn
+  - ModalityTextOut
+links:
+  model_card: https://huggingface.co/allenai/Bolmo-7B
+identifiers:
+  huggingface:
+    - allenai/Bolmo-7B
+provenance:
+  context_length:
+    source: official_huggingface_config
+    url: https://huggingface.co/allenai/Bolmo-7B
+  description:
+    source: official_model_card
+    url: https://huggingface.co/allenai/Bolmo-7B/resolve/73fa654960981913e6b2df381b66d4d173a1ff52/README.md
+  features:
+    source: official_huggingface_pipeline
+    url: https://huggingface.co/allenai/Bolmo-7B
+  id:
+    source: official_huggingface
+    url: https://huggingface.co/allenai/Bolmo-7B
+  name:
+    source: official_huggingface
+    url: https://huggingface.co/allenai/Bolmo-7B
+upstream:
+  huggingface:
+    id: allenai/Bolmo-7B
+    revision: 73fa654960981913e6b2df381b66d4d173a1ff52
+    pipeline_tag: text-generation
+    model_type: bolmo
+    architectures:
+      - BolmoForCausalLM
+    license: apache-2.0
+    tags:
+      - arxiv:2512.15586
+      - base_model:allenai/Olmo-3-1025-7B
+      - base_model:finetune:allenai/Olmo-3-1025-7B
+      - bolmo
+      - custom_code
+      - dataset:allenai/bolmo_mix
+      - en
+      - license:apache-2.0
+      - region:us
+      - safetensors
+      - text-generation
+      - transformers
+    config_context_length: 65536
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-08-17T02:50:34.643762452Z

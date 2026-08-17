@@ -1,0 +1,48 @@
+schema_version: 2
+id: bytedance-seed/cola-dlm
+name: Cola-DLM
+provider: ByteDance Seed
+developer: bytedance-seed
+lifecycle: candidate
+context_length: 0
+features:
+  - ModalityTextIn
+  - ModalityTextOut
+links:
+  model_card: https://huggingface.co/ByteDance-Seed/Cola-DLM
+identifiers:
+  huggingface:
+    - ByteDance-Seed/Cola-DLM
+provenance:
+  features:
+    source: official_huggingface_pipeline
+    url: https://huggingface.co/ByteDance-Seed/Cola-DLM
+  id:
+    source: official_huggingface
+    url: https://huggingface.co/ByteDance-Seed/Cola-DLM
+  name:
+    source: official_huggingface
+    url: https://huggingface.co/ByteDance-Seed/Cola-DLM
+upstream:
+  huggingface:
+    id: ByteDance-Seed/Cola-DLM
+    revision: c1eafdd9cfd8064aeb917d569ef70a075b353eed
+    pipeline_tag: text-generation
+    license: apache-2.0
+    tags:
+      - arxiv:2605.06548
+      - diffusion
+      - en
+      - endpoints_compatible
+      - flow-matching
+      - language-model
+      - latent-diffusion
+      - license:apache-2.0
+      - pytorch
+      - region:us
+      - research
+      - safetensors
+      - text-generation
+      - text-vae
+      - transformers
+    fetched_at: 2026-08-17T02:50:35.687250559Z
