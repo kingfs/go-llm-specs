@@ -1,0 +1,57 @@
+schema_version: 2
+id: ibm-granite/granite-4.0-1b-base
+name: granite-4.0-1b-base
+provider: IBM Granite
+developer: ibm-granite
+lifecycle: active
+description: Granite-4.0-1B-Base is a lightweight decoder-only language model designed for efficiency and speed, supporting Fill-in-the-Middle code completion.
+description_cn: Granite-4.0-1B-Base 是一款轻量级仅解码器语言模型，专为高效快速而设计，支持中间填充（Fill-in-the-Middle）代码补全功能。
+context_length: 131072
+features:
+  - ModalityTextIn
+  - ModalityTextOut
+links:
+  model_card: https://huggingface.co/ibm-granite/granite-4.0-1b-base
+identifiers:
+  huggingface:
+    - ibm-granite/granite-4.0-1b-base
+provenance:
+  context_length:
+    source: official_huggingface_config
+    url: https://huggingface.co/ibm-granite/granite-4.0-1b-base
+  description:
+    source: official_model_card
+    url: https://huggingface.co/ibm-granite/granite-4.0-1b-base/resolve/15148e99f8ca689325e2067ba282b23dec6670c7/README.md
+  features:
+    source: official_huggingface_pipeline
+    url: https://huggingface.co/ibm-granite/granite-4.0-1b-base
+  id:
+    source: official_huggingface
+    url: https://huggingface.co/ibm-granite/granite-4.0-1b-base
+  name:
+    source: official_huggingface
+    url: https://huggingface.co/ibm-granite/granite-4.0-1b-base
+upstream:
+  huggingface:
+    id: ibm-granite/granite-4.0-1b-base
+    revision: 15148e99f8ca689325e2067ba282b23dec6670c7
+    pipeline_tag: text-generation
+    model_type: granitemoehybrid
+    architectures:
+      - GraniteMoeHybridForCausalLM
+    license: apache-2.0
+    tags:
+      - endpoints_compatible
+      - granite-4.0
+      - granitemoehybrid
+      - language
+      - license:apache-2.0
+      - region:us
+      - safetensors
+      - text-generation
+      - transformers
+    config_context_length: 131072
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-08-18T02:45:23.489184786Z

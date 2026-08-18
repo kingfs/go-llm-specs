@@ -1,0 +1,99 @@
+schema_version: 2
+id: cohere/command-a-plus-05-2026-bf16
+name: command-a-plus-05-2026-bf16
+provider: Cohere
+developer: cohere
+lifecycle: candidate
+context_length: 0
+features:
+  - ModalityImageIn
+  - ModalityTextIn
+  - ModalityTextOut
+links:
+  model_card: https://huggingface.co/CohereLabs/command-a-plus-05-2026-bf16
+identifiers:
+  huggingface:
+    - CohereLabs/command-a-plus-05-2026-bf16
+provenance:
+  features:
+    source: official_huggingface_pipeline
+    url: https://huggingface.co/CohereLabs/command-a-plus-05-2026-bf16
+  id:
+    source: official_huggingface
+    url: https://huggingface.co/CohereLabs/command-a-plus-05-2026-bf16
+  name:
+    source: official_huggingface
+    url: https://huggingface.co/CohereLabs/command-a-plus-05-2026-bf16
+upstream:
+  huggingface:
+    id: CohereLabs/command-a-plus-05-2026-bf16
+    revision: 5fb6fde5fd12ff89356aae552e11883bc49f069b
+    pipeline_tag: image-text-to-text
+    model_type: cohere2_vision
+    architectures:
+      - Cohere2VisionForConditionalGeneration
+    license: apache-2.0
+    tags:
+      - ar
+      - bg
+      - bn
+      - ca
+      - chat
+      - cohere2_vision
+      - conversational
+      - cs
+      - da
+      - de
+      - deploy:azure
+      - el
+      - en
+      - es
+      - et
+      - fa
+      - fi
+      - fil
+      - fr
+      - ga
+      - he
+      - hi
+      - hr
+      - hu
+      - id
+      - image-text-to-text
+      - is
+      - it
+      - ja
+      - ko
+      - license:apache-2.0
+      - lt
+      - lv
+      - ms
+      - mt
+      - nl
+      - "no"
+      - pa
+      - pl
+      - pt
+      - region:us
+      - ro
+      - ru
+      - safetensors
+      - sk
+      - sl
+      - sr
+      - sv
+      - ta
+      - te
+      - th
+      - tr
+      - transformers
+      - uk
+      - ur
+      - vi
+      - zh
+    processor_class: Cohere2VisionProcessor
+    structured_files:
+      - config.json
+      - preprocessor_config.json
+      - tokenizer_config.json
+    fetched_at: 2026-08-18T02:45:23.343063734Z

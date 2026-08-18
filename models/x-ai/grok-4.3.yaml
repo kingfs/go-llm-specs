@@ -24,16 +24,13 @@ upstream:
   openrouter:
     canonical_slug: x-ai/grok-4.3-20260430
     supported_parameters:
-      - frequency_penalty
       - include_reasoning
       - logprobs
       - max_tokens
-      - presence_penalty
       - reasoning
       - reasoning_effort
       - response_format
       - seed
-      - stop
       - structured_outputs
       - temperature
       - tool_choice
@@ -46,7 +43,7 @@ upstream:
       - text
     output_modalities:
       - text
-    fetched_at: 2026-07-29T10:44:50.291621401Z
+    fetched_at: 2026-08-18T02:45:22.752293006Z
 reasoning:
   supported: true
   default_enabled: true

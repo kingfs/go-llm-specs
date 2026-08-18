@@ -1,0 +1,60 @@
+schema_version: 2
+id: allenai/bolmo-1b
+name: Bolmo-1B
+provider: Allen Institute for AI
+developer: allenai
+lifecycle: active
+description: Bolmo-1B is a fully open byte-level autoregressive language model (1B parameters) developed by Allen Institute for AI, starting from OLMo-2-1B. It is intended for research and educational use under the Apache 2.0 license.
+description_cn: Bolmo-1B 是由艾伦人工智能研究所基于 OLMo-2-1B 开发的完全开源字节级自回归语言模型（10 亿参数）。它在 Apache 2.0 许可下发布，旨在用于研究和教育用途。
+context_length: 65536
+features:
+  - ModalityTextIn
+  - ModalityTextOut
+links:
+  model_card: https://huggingface.co/allenai/Bolmo-1B
+identifiers:
+  huggingface:
+    - allenai/Bolmo-1B
+provenance:
+  context_length:
+    source: official_huggingface_config
+    url: https://huggingface.co/allenai/Bolmo-1B
+  description:
+    source: official_model_card
+    url: https://huggingface.co/allenai/Bolmo-1B/resolve/7a80d2e3db317282229afc34c5f24333a8ebe846/README.md
+  features:
+    source: official_huggingface_pipeline
+    url: https://huggingface.co/allenai/Bolmo-1B
+  id:
+    source: official_huggingface
+    url: https://huggingface.co/allenai/Bolmo-1B
+  name:
+    source: official_huggingface
+    url: https://huggingface.co/allenai/Bolmo-1B
+upstream:
+  huggingface:
+    id: allenai/Bolmo-1B
+    revision: 7a80d2e3db317282229afc34c5f24333a8ebe846
+    pipeline_tag: text-generation
+    model_type: bolmo
+    architectures:
+      - BolmoForCausalLM
+    license: apache-2.0
+    tags:
+      - arxiv:2512.15586
+      - base_model:allenai/OLMo-2-0425-1B
+      - base_model:finetune:allenai/OLMo-2-0425-1B
+      - bolmo
+      - custom_code
+      - dataset:allenai/bolmo_mix
+      - en
+      - license:apache-2.0
+      - region:us
+      - safetensors
+      - text-generation
+      - transformers
+    config_context_length: 65536
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-08-18T02:45:23.118261987Z

@@ -1,0 +1,61 @@
+schema_version: 2
+id: tencent/ui-mate-27b
+name: UI-Mate-27B
+provider: Tencent Hunyuan
+developer: tencent
+lifecycle: candidate
+context_length: 0
+features:
+  - ModalityImageIn
+  - ModalityTextIn
+  - ModalityTextOut
+links:
+  model_card: https://huggingface.co/tencent/UI-Mate-27B
+identifiers:
+  huggingface:
+    - tencent/UI-Mate-27B
+provenance:
+  features:
+    source: official_huggingface_pipeline
+    url: https://huggingface.co/tencent/UI-Mate-27B
+  id:
+    source: official_huggingface
+    url: https://huggingface.co/tencent/UI-Mate-27B
+  name:
+    source: official_huggingface
+    url: https://huggingface.co/tencent/UI-Mate-27B
+upstream:
+  huggingface:
+    id: tencent/UI-Mate-27B
+    revision: a109b691c81cd2f19bd6e6a935cf6764b35d152c
+    pipeline_tag: image-text-to-text
+    model_type: qwen3_5
+    architectures:
+      - Qwen3_5ForConditionalGeneration
+    license: apache-2.0
+    tags:
+      - base_model:Qwen/Qwen3.6-27B
+      - base_model:finetune:Qwen/Qwen3.6-27B
+      - computer-use-agent
+      - conversational
+      - desktop-agent
+      - endpoints_compatible
+      - gui-agent
+      - image-text-to-text
+      - license:apache-2.0
+      - multimodal
+      - osworld
+      - pyautogui
+      - qwen3_5
+      - region:us
+      - safetensors
+      - transformers
+      - vision-language
+      - windowsagentarena
+    tokenizer_model_max_length: 262144
+    processor_class: Qwen3VLProcessor
+    structured_files:
+      - config.json
+      - preprocessor_config.json
+      - tokenizer_config.json
+    fetched_at: 2026-08-18T02:45:23.666128489Z

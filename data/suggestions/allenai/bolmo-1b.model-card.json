@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "allenai/bolmo-1b",
+  "status": "partially_accepted",
+  "created_at": "2026-08-18T02:46:29.196849428Z",
+  "source": {
+    "url": "https://huggingface.co/allenai/Bolmo-1B/resolve/7a80d2e3db317282229afc34c5f24333a8ebe846/README.md",
+    "revision": "7a80d2e3db317282229afc34c5f24333a8ebe846",
+    "sha256": "729ce67fc9350a8200851bce346348bab3728c92126005c08e756b4ea95d7138"
+  },
+  "generator": {
+    "model": "qwen/qwen3.6-27b",
+    "wire_api": "chat"
+  },
+  "claims": [
+    {
+      "field": "description",
+      "value": "Bolmo-1B is a fully open byte-level autoregressive language model (1B parameters) developed by Allen Institute for AI, starting from OLMo-2-1B. It is intended for research and educational use under the Apache 2.0 license.",
+      "evidence": "We introduce Bolmo, the first family of competitive fully open byte-level language models (LMs) at the 1B... Model type: a byte-level autoregressive language model.",
+      "section": "Model Description",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "ModalityTextIn",
+        "ModalityTextOut"
+      ],
+      "evidence": "These models are *byteified*... Model type: a byte-level autoregressive language model. Language(s) (NLP): English",
+      "section": "Model Description",
+      "confidence": "high"
+    }
+  ]
+}

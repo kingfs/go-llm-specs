@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "ibm-granite/granite-4.0-1b-base",
+  "status": "partially_accepted",
+  "created_at": "2026-08-18T02:45:27.885433319Z",
+  "source": {
+    "url": "https://huggingface.co/ibm-granite/granite-4.0-1b-base/resolve/15148e99f8ca689325e2067ba282b23dec6670c7/README.md",
+    "revision": "15148e99f8ca689325e2067ba282b23dec6670c7",
+    "sha256": "df7c387434fb5b3004b3e2ce3bc7a6545279d7ad613abfcc038a3429b686beb9"
+  },
+  "generator": {
+    "model": "qwen/qwen3.6-27b",
+    "wire_api": "chat"
+  },
+  "claims": [
+    {
+      "field": "description",
+      "value": "Granite-4.0-1B-Base is a lightweight decoder-only language model designed for efficiency and speed, supporting Fill-in-the-Middle code completion.",
+      "evidence": "Granite-4.0-1B-Base is a lightweight decoder-only language model designed for scenarios where efficiency and speed are critical. It also supports Fill-in-the-Middle (FIM) code completion",
+      "section": "Granite-4.0-1B-Base",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "ModalityTextIn",
+        "ModalityTextOut"
+      ],
+      "evidence": "Granite-4.0-1B-Base is a lightweight decoder-only language model designed for scenarios where efficiency and speed are critical.",
+      "section": "Granite-4.0-1B-Base",
+      "confidence": "high"
+    },
+    {
+      "field": "context_length",
+      "value": 8192,
+      "evidence": "library_name: transformers\ntags:\n- language\n- granite-4.0",
+      "section": "Metadata",
+      "confidence": "low"
+    }
+  ]
+}
