@@ -1,0 +1,64 @@
+schema_version: 2
+id: z-ai/glm-5.3
+name: 'Z.ai: GLM 5.3'
+provider: Z-Ai
+developer: zai
+description: GLM-5.3 is a large-scale reasoning model from Z.ai, built for complex software engineering and long-horizon agent tasks. It supports text input and output with a 1M-token context window, and improves...
+description_cn: GLM-5.3 是 Z.ai 推出的大型推理模型，专为复杂的软件工程和长周期智能体任务而构建。它支持文本输入与输出，拥有 100 万 token 的上下文窗口，并提升了...
+context_length: 1048576
+max_output: 131072
+features:
+  - CapChat
+  - CapFunctionCall
+  - CapJsonMode
+  - ModalityTextIn
+  - ModalityTextOut
+discovered_at: 2026-08-19T02:47:49.376206738Z
+identifiers:
+  openrouter:
+    - z-ai/glm-5.3
+provenance:
+  context_length:
+    source: openrouter
+  description:
+    source: openrouter
+  features:
+    source: openrouter
+  id:
+    source: openrouter
+  max_output:
+    source: openrouter
+  name:
+    source: openrouter
+  provider:
+    source: openrouter
+  reasoning:
+    source: openrouter
+upstream:
+  openrouter:
+    canonical_slug: z-ai/glm-5.3-20260816
+    supported_parameters:
+      - include_reasoning
+      - max_tokens
+      - reasoning
+      - reasoning_effort
+      - response_format
+      - temperature
+      - tool_choice
+      - tools
+      - top_k
+      - top_p
+    input_modalities:
+      - text
+    output_modalities:
+      - text
+    fetched_at: 2026-08-19T02:47:51.991079563Z
+reasoning:
+  supported: true
+  mandatory: true
+  default_enabled: true
+  default_effort: max
+  supported_efforts:
+    - high
+    - low
+    - max

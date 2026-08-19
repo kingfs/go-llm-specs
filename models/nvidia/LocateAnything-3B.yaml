@@ -1,0 +1,70 @@
+schema_version: 2
+id: nvidia/locateanything-3b
+name: LocateAnything-3B
+provider: NVIDIA
+developer: nvidia
+lifecycle: candidate
+context_length: 0
+features:
+  - ModalityImageIn
+  - ModalityTextIn
+  - ModalityTextOut
+links:
+  model_card: https://huggingface.co/nvidia/LocateAnything-3B
+identifiers:
+  huggingface:
+    - nvidia/LocateAnything-3B
+provenance:
+  features:
+    source: official_huggingface_pipeline
+    url: https://huggingface.co/nvidia/LocateAnything-3B
+  id:
+    source: official_huggingface
+    url: https://huggingface.co/nvidia/LocateAnything-3B
+  name:
+    source: official_huggingface
+    url: https://huggingface.co/nvidia/LocateAnything-3B
+upstream:
+  huggingface:
+    id: nvidia/LocateAnything-3B
+    revision: c32291ca5e996f5a7a485845b4f57a233936bba0
+    pipeline_tag: image-text-to-text
+    model_type: locateanything
+    architectures:
+      - LocateAnythingForConditionalGeneration
+    license: other
+    tags:
+      - arxiv:1405.0312
+      - arxiv:1908.03195
+      - arxiv:2109.10852
+      - arxiv:2303.05499
+      - arxiv:2504.07491
+      - arxiv:2504.07981
+      - arxiv:2510.12798
+      - arxiv:2605.27365
+      - base_model:Qwen/Qwen2.5-3B-Instruct
+      - base_model:finetune:Qwen/Qwen2.5-3B-Instruct
+      - conversational
+      - custom_code
+      - deploy:sagemaker
+      - eagle
+      - en
+      - feature-extraction
+      - grounding
+      - image-text-to-text
+      - license:other
+      - locateanything
+      - nvidia
+      - object-detection
+      - region:us
+      - safetensors
+      - transformers
+      - vision
+    tokenizer_model_max_length: 16384
+    processor_class: LocateAnythingProcessor
+    chat_template_sha256: 1b9e595207f87408eed044771cbe4ec90e70cfa58990e7a64e53e1f4197fc210
+    structured_files:
+      - config.json
+      - preprocessor_config.json
+      - tokenizer_config.json
+    fetched_at: 2026-08-19T02:47:53.045126193Z

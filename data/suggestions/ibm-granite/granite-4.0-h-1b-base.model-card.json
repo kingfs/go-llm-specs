@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "ibm-granite/granite-4.0-h-1b-base",
+  "status": "partially_accepted",
+  "created_at": "2026-08-19T02:48:15.518886038Z",
+  "source": {
+    "url": "https://huggingface.co/ibm-granite/granite-4.0-h-1b-base/resolve/8d34631309affca6f6f8350684ddcb8994b0dc31/README.md",
+    "revision": "8d34631309affca6f6f8350684ddcb8994b0dc31",
+    "sha256": "71e97d65c07e1e808ff04de8a0bf5aaab521b8c78bca781844c42691294d1fde"
+  },
+  "generator": {
+    "model": "qwen/qwen3.6-27b",
+    "wire_api": "chat"
+  },
+  "claims": [
+    {
+      "field": "description",
+      "value": "Granite-4.0-H-1B-Base is a lightweight decoder-only language model designed for efficiency and speed on resource-constrained devices like smartphones and IoT hardware.",
+      "evidence": "Granite-4.0-H-1B-Base is a lightweight decoder-only language model designed for scenarios where efficiency and speed are critical. They can run on resource-constrained devices...",
+      "section": "Granite-4.0-H-1B-Base",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "ModalityTextIn",
+        "ModalityTextOut"
+      ],
+      "evidence": "Granite-4.0-H-1B-Base is a lightweight decoder-only language model designed for scenarios where efficiency and speed are critical.",
+      "section": "Granite-4.0-H-1B-Base",
+      "confidence": "high"
+    }
+  ]
+}

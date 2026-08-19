@@ -1,0 +1,65 @@
+schema_version: 2
+id: nvidia/nemotron-3-content-safety
+name: Nemotron-3-Content-Safety
+provider: NVIDIA
+developer: nvidia
+lifecycle: candidate
+context_length: 0
+features:
+  - ModalityImageIn
+  - ModalityTextIn
+  - ModalityTextOut
+links:
+  model_card: https://huggingface.co/nvidia/Nemotron-3-Content-Safety
+identifiers:
+  huggingface:
+    - nvidia/Nemotron-3-Content-Safety
+provenance:
+  features:
+    source: official_huggingface_pipeline
+    url: https://huggingface.co/nvidia/Nemotron-3-Content-Safety
+  id:
+    source: official_huggingface
+    url: https://huggingface.co/nvidia/Nemotron-3-Content-Safety
+  name:
+    source: official_huggingface
+    url: https://huggingface.co/nvidia/Nemotron-3-Content-Safety
+upstream:
+  huggingface:
+    id: nvidia/Nemotron-3-Content-Safety
+    revision: b47f6f6c18dc7d11a786abbbca2510cba58ede20
+    pipeline_tag: image-text-to-text
+    model_type: gemma3
+    architectures:
+      - Gemma3ForConditionalGeneration
+    license: other
+    tags:
+      - ar
+      - base_model:finetune:google/gemma-3-4b-it
+      - base_model:google/gemma-3-4b-it
+      - conversational
+      - de
+      - en
+      - endpoints_compatible
+      - es
+      - fr
+      - gemma3
+      - hi
+      - image-text-to-text
+      - it
+      - ja
+      - ko
+      - license:other
+      - nl
+      - region:us
+      - safetensors
+      - text-generation-inference
+      - th
+      - transformers
+      - zh
+    processor_class: Gemma3Processor
+    structured_files:
+      - config.json
+      - preprocessor_config.json
+      - tokenizer_config.json
+    fetched_at: 2026-08-19T02:47:53.425874005Z

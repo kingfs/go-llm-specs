@@ -1,0 +1,57 @@
+schema_version: 2
+id: ibm-granite/granite-4.0-h-1b-base
+name: granite-4.0-h-1b-base
+provider: IBM Granite
+developer: ibm-granite
+lifecycle: active
+description: Granite-4.0-H-1B-Base is a lightweight decoder-only language model designed for efficiency and speed on resource-constrained devices like smartphones and IoT hardware.
+description_cn: Granite-4.0-H-1B-Base 是一款轻量级仅解码器语言模型，专为资源受限设备（如智能手机和 IoT 硬件）的高效性和快速响应而设计。
+context_length: 131072
+features:
+  - ModalityTextIn
+  - ModalityTextOut
+links:
+  model_card: https://huggingface.co/ibm-granite/granite-4.0-h-1b-base
+identifiers:
+  huggingface:
+    - ibm-granite/granite-4.0-h-1b-base
+provenance:
+  context_length:
+    source: official_huggingface_config
+    url: https://huggingface.co/ibm-granite/granite-4.0-h-1b-base
+  description:
+    source: official_model_card
+    url: https://huggingface.co/ibm-granite/granite-4.0-h-1b-base/resolve/8d34631309affca6f6f8350684ddcb8994b0dc31/README.md
+  features:
+    source: official_huggingface_pipeline
+    url: https://huggingface.co/ibm-granite/granite-4.0-h-1b-base
+  id:
+    source: official_huggingface
+    url: https://huggingface.co/ibm-granite/granite-4.0-h-1b-base
+  name:
+    source: official_huggingface
+    url: https://huggingface.co/ibm-granite/granite-4.0-h-1b-base
+upstream:
+  huggingface:
+    id: ibm-granite/granite-4.0-h-1b-base
+    revision: 8d34631309affca6f6f8350684ddcb8994b0dc31
+    pipeline_tag: text-generation
+    model_type: granitemoehybrid
+    architectures:
+      - GraniteMoeHybridForCausalLM
+    license: apache-2.0
+    tags:
+      - endpoints_compatible
+      - granite-4.0
+      - granitemoehybrid
+      - language
+      - license:apache-2.0
+      - region:us
+      - safetensors
+      - text-generation
+      - transformers
+    config_context_length: 131072
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-08-19T02:47:52.577858618Z
