@@ -3,8 +3,10 @@ id: cohere/north-micro-vision-instruct
 name: North-Micro-Vision-Instruct
 provider: Cohere
 developer: cohere
-lifecycle: candidate
-context_length: 0
+lifecycle: active
+description: North Micro Vision Instruct is a 2.4B-parameter open-weight vision-language model with native-resolution image support, released under the Apache 2.0 license.
+description_cn: North Micro Vision Instruct 是一个 24 亿参数的开放权重视觉语言模型，支持原生分辨率图像，采用 Apache 2.0 许可证发布。
+context_length: 8192
 features:
   - ModalityImageIn
   - ModalityTextIn
@@ -15,6 +17,12 @@ identifiers:
   huggingface:
     - CohereLabs/North-Micro-Vision-Instruct
 provenance:
+  context_length:
+    source: official_model_card
+    url: https://huggingface.co/CohereLabs/North-Micro-Vision-Instruct/resolve/373bda96ac70bf89f99f7048f420cf00dc07c149/README.md
+  description:
+    source: official_model_card
+    url: https://huggingface.co/CohereLabs/North-Micro-Vision-Instruct/resolve/373bda96ac70bf89f99f7048f420cf00dc07c149/README.md
   features:
     source: official_huggingface_pipeline
     url: https://huggingface.co/CohereLabs/North-Micro-Vision-Instruct
@@ -24,6 +32,9 @@ provenance:
   name:
     source: official_huggingface
     url: https://huggingface.co/CohereLabs/North-Micro-Vision-Instruct
+  reasoning.supported:
+    source: official_model_card
+    url: https://huggingface.co/CohereLabs/North-Micro-Vision-Instruct/resolve/373bda96ac70bf89f99f7048f420cf00dc07c149/README.md
 upstream:
   huggingface:
     id: CohereLabs/North-Micro-Vision-Instruct
@@ -63,3 +74,5 @@ upstream:
       - preprocessor_config.json
       - tokenizer_config.json
     fetched_at: 2026-08-13T03:56:38.656894542Z
+reasoning:
+  supported: false

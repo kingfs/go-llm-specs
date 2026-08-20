@@ -1,0 +1,63 @@
+schema_version: 2
+id: nvidia/cuda-autocomplete
+name: CUDA-Autocomplete
+provider: NVIDIA
+developer: nvidia
+lifecycle: candidate
+context_length: 32768
+features:
+  - ModalityTextIn
+  - ModalityTextOut
+links:
+  model_card: https://huggingface.co/nvidia/CUDA-Autocomplete
+identifiers:
+  huggingface:
+    - nvidia/CUDA-Autocomplete
+provenance:
+  context_length:
+    source: official_huggingface_config
+    url: https://huggingface.co/nvidia/CUDA-Autocomplete
+  features:
+    source: official_huggingface_pipeline
+    url: https://huggingface.co/nvidia/CUDA-Autocomplete
+  id:
+    source: official_huggingface
+    url: https://huggingface.co/nvidia/CUDA-Autocomplete
+  name:
+    source: official_huggingface
+    url: https://huggingface.co/nvidia/CUDA-Autocomplete
+upstream:
+  huggingface:
+    id: nvidia/CUDA-Autocomplete
+    revision: 1878aa0ab85e0dcb129675dab3d642b00a928b7f
+    pipeline_tag: text-generation
+    model_type: qwen2
+    architectures:
+      - Qwen2ForCausalLM
+    license: other
+    tags:
+      - arxiv:2409.12186
+      - base_model:Qwen/Qwen2.5-Coder-7B
+      - base_model:finetune:Qwen/Qwen2.5-Coder-7B
+      - code
+      - conversational
+      - cuda
+      - dataset:bigcode/the-stack-v2
+      - deploy:azure
+      - endpoints_compatible
+      - fill-in-the-middle
+      - license:other
+      - nvidia
+      - pytorch
+      - qwen2
+      - region:us
+      - safetensors
+      - text-generation
+      - text-generation-inference
+      - transformers
+    config_context_length: 32768
+    tokenizer_model_max_length: 32768
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-08-20T02:46:49.930210039Z

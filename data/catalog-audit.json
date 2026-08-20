@@ -1,7 +1,7 @@
 {
   "providers": 24,
-  "models": 570,
-  "models_with_official_links": 375,
+  "models": 576,
+  "models_with_official_links": 380,
   "uncataloged_publishers": {
     "Ai21": 1,
     "Aion-Labs": 4,
@@ -64,6 +64,7 @@
     "~Google": 2,
     "~Moonshotai": 1,
     "~Openai": 2,
-    "~X-Ai": 1
+    "~X-Ai": 1,
+    "~zai": 1
   }
 }

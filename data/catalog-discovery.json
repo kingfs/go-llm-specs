@@ -1,7 +1,7 @@
 {
   "providers": 24,
-  "models": 565,
-  "models_with_official_links": 370,
+  "models": 571,
+  "models_with_official_links": 375,
   "uncataloged_publishers": {
     "Ai21": 1,
     "Aion-Labs": 4,
@@ -64,7 +64,8 @@
     "~Google": 2,
     "~Moonshotai": 1,
     "~Openai": 2,
-    "~X-Ai": 1
+    "~X-Ai": 1,
+    "~zai": 1
   },
   "huggingface_candidates": [
     {
@@ -92784,7 +92785,8 @@
       "provider_id": "microsoft",
       "organization": "microsoft",
       "repository_id": "microsoft/UserLM-8b",
-      "status": "new",
+      "registry_id": "microsoft/userlm-8b",
+      "status": "materialized",
       "url": "https://huggingface.co/microsoft/UserLM-8b",
       "last_modified": "2026-06-09T15:56:50Z",
       "pipeline_tag": "text-generation",
@@ -103213,7 +103215,8 @@
       "provider_id": "nvidia",
       "organization": "nvidia",
       "repository_id": "nvidia/CUDA-Autocomplete",
-      "status": "new",
+      "registry_id": "nvidia/cuda-autocomplete",
+      "status": "materialized",
       "url": "https://huggingface.co/nvidia/CUDA-Autocomplete",
       "last_modified": "2026-06-07T12:43:27Z",
       "pipeline_tag": "text-generation",
@@ -106145,7 +106148,7 @@
       "repository_id": "nvidia/GR00T-H",
       "status": "new",
       "url": "https://huggingface.co/nvidia/GR00T-H",
-      "last_modified": "2026-05-20T21:32:28Z",
+      "last_modified": "2026-08-19T13:46:46Z",
       "tags": [
         "nv-medtech",
         "safetensors",
@@ -107050,7 +107053,8 @@
       "provider_id": "nvidia",
       "organization": "nvidia",
       "repository_id": "nvidia/Kimi-K2.5-Thinking-Eagle3",
-      "status": "new",
+      "registry_id": "nvidia/kimi-k2.5-thinking-eagle3",
+      "status": "materialized",
       "url": "https://huggingface.co/nvidia/Kimi-K2.5-Thinking-Eagle3",
       "last_modified": "2026-06-11T06:12:17Z",
       "pipeline_tag": "text-generation",
@@ -107205,7 +107209,7 @@
       "repository_id": "nvidia/Kimi-K3-NVFP4",
       "status": "new",
       "url": "https://huggingface.co/nvidia/Kimi-K3-NVFP4",
-      "last_modified": "2026-08-18T08:31:53Z",
+      "last_modified": "2026-08-19T23:52:18Z",
       "pipeline_tag": "text-generation",
       "tags": [
         "Model Optimizer",
@@ -110651,7 +110655,8 @@
       "provider_id": "nvidia",
       "organization": "nvidia",
       "repository_id": "nvidia/NVIDIA-Nemotron-3-Ultra-550B-A55B-Base-BF16",
-      "status": "new",
+      "registry_id": "nvidia/nvidia-nemotron-3-ultra-550b-a55b-base-bf16",
+      "status": "materialized",
       "url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3-Ultra-550B-A55B-Base-BF16",
       "last_modified": "2026-06-05T17:57:11Z",
       "pipeline_tag": "text-generation",
@@ -110686,7 +110691,8 @@
       "provider_id": "nvidia",
       "organization": "nvidia",
       "repository_id": "nvidia/NVIDIA-Nemotron-3-Ultra-550B-A55B-GenRM",
-      "status": "new",
+      "registry_id": "nvidia/nvidia-nemotron-3-ultra-550b-a55b-genrm",
+      "status": "materialized",
       "url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3-Ultra-550B-A55B-GenRM",
       "last_modified": "2026-06-05T18:15:51Z",
       "pipeline_tag": "text-generation",
@@ -111770,7 +111776,7 @@
       "repository_id": "nvidia/NVIDIA-NemotronLabs-VoiceChat-11B",
       "status": "new",
       "url": "https://huggingface.co/nvidia/NVIDIA-NemotronLabs-VoiceChat-11B",
-      "last_modified": "2026-08-11T09:46:06Z",
+      "last_modified": "2026-08-19T09:50:13Z",
       "tags": [
         "safetensors",
         "en",

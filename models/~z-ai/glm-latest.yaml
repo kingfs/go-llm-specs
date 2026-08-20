@@ -1,0 +1,64 @@
+schema_version: 2
+id: ~z-ai/glm-latest
+name: 'Z.ai: GLM Latest'
+provider: ~Z-Ai
+developer: ~zai
+description: This model always redirects to the latest GLM model from Z.ai.
+description_cn: 该模型始终重定向到 Z.ai 的最新 GLM 模型。
+context_length: 1048576
+max_output: 131072
+features:
+  - CapChat
+  - CapFunctionCall
+  - CapJsonMode
+  - ModalityTextIn
+  - ModalityTextOut
+discovered_at: 2026-08-20T02:46:46.322056154Z
+identifiers:
+  openrouter:
+    - ~z-ai/glm-latest
+provenance:
+  context_length:
+    source: openrouter
+  description:
+    source: openrouter
+  features:
+    source: openrouter
+  id:
+    source: openrouter
+  max_output:
+    source: openrouter
+  name:
+    source: openrouter
+  provider:
+    source: openrouter
+  reasoning:
+    source: openrouter
+upstream:
+  openrouter:
+    canonical_slug: ~z-ai/glm-latest
+    supported_parameters:
+      - include_reasoning
+      - max_tokens
+      - reasoning
+      - reasoning_effort
+      - response_format
+      - temperature
+      - tool_choice
+      - tools
+      - top_k
+      - top_p
+    input_modalities:
+      - text
+    output_modalities:
+      - text
+    fetched_at: 2026-08-20T02:46:49.030407745Z
+reasoning:
+  supported: true
+  mandatory: true
+  default_enabled: true
+  default_effort: max
+  supported_efforts:
+    - high
+    - low
+    - max

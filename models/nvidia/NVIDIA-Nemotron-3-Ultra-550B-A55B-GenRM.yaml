@@ -1,0 +1,60 @@
+schema_version: 2
+id: nvidia/nvidia-nemotron-3-ultra-550b-a55b-genrm
+name: NVIDIA-Nemotron-3-Ultra-550B-A55B-GenRM
+provider: NVIDIA
+developer: nvidia
+lifecycle: candidate
+context_length: 262144
+features:
+  - ModalityTextIn
+  - ModalityTextOut
+links:
+  model_card: https://huggingface.co/nvidia/NVIDIA-Nemotron-3-Ultra-550B-A55B-GenRM
+identifiers:
+  huggingface:
+    - nvidia/NVIDIA-Nemotron-3-Ultra-550B-A55B-GenRM
+provenance:
+  context_length:
+    source: official_huggingface_config
+    url: https://huggingface.co/nvidia/NVIDIA-Nemotron-3-Ultra-550B-A55B-GenRM
+  features:
+    source: official_huggingface_pipeline
+    url: https://huggingface.co/nvidia/NVIDIA-Nemotron-3-Ultra-550B-A55B-GenRM
+  id:
+    source: official_huggingface
+    url: https://huggingface.co/nvidia/NVIDIA-Nemotron-3-Ultra-550B-A55B-GenRM
+  name:
+    source: official_huggingface
+    url: https://huggingface.co/nvidia/NVIDIA-Nemotron-3-Ultra-550B-A55B-GenRM
+upstream:
+  huggingface:
+    id: nvidia/NVIDIA-Nemotron-3-Ultra-550B-A55B-GenRM
+    revision: 116af7cb1a23ce9017b2c412945b0623252655d2
+    pipeline_tag: text-generation
+    model_type: nemotron_h
+    architectures:
+      - NemotronHForCausalLM
+    license: other
+    tags:
+      - conversational
+      - en
+      - endpoints_compatible
+      - genrm
+      - latent-moe
+      - license:other
+      - mtp
+      - nemotron-3
+      - nemotron_h
+      - nvidia
+      - pytorch
+      - region:us
+      - reward-model
+      - safetensors
+      - text-generation
+      - transformers
+    config_context_length: 262144
+    tokenizer_model_max_length: 262144
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-08-20T02:46:51.615053745Z

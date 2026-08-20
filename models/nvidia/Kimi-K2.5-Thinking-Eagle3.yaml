@@ -1,0 +1,55 @@
+schema_version: 2
+id: nvidia/kimi-k2.5-thinking-eagle3
+name: Kimi-K2.5-Thinking-Eagle3
+provider: NVIDIA
+developer: nvidia
+lifecycle: candidate
+context_length: 262144
+features:
+  - ModalityTextIn
+  - ModalityTextOut
+links:
+  model_card: https://huggingface.co/nvidia/Kimi-K2.5-Thinking-Eagle3
+identifiers:
+  huggingface:
+    - nvidia/Kimi-K2.5-Thinking-Eagle3
+provenance:
+  context_length:
+    source: official_huggingface_config
+    url: https://huggingface.co/nvidia/Kimi-K2.5-Thinking-Eagle3
+  features:
+    source: official_huggingface_pipeline
+    url: https://huggingface.co/nvidia/Kimi-K2.5-Thinking-Eagle3
+  id:
+    source: official_huggingface
+    url: https://huggingface.co/nvidia/Kimi-K2.5-Thinking-Eagle3
+  name:
+    source: official_huggingface
+    url: https://huggingface.co/nvidia/Kimi-K2.5-Thinking-Eagle3
+upstream:
+  huggingface:
+    id: nvidia/Kimi-K2.5-Thinking-Eagle3
+    revision: b71566cc726ec39db7b93dce0f6939b16febb362
+    pipeline_tag: text-generation
+    model_type: kimi_k2
+    architectures:
+      - Eagle3DeepseekV2ForCausalLM
+    license: other
+    tags:
+      - Eagle3
+      - Kimi-K2.5
+      - Model Optimizer
+      - ModelOpt
+      - arxiv:2503.01840
+      - base_model:finetune:moonshotai/Kimi-K2.5
+      - base_model:moonshotai/Kimi-K2.5
+      - kimi_k2
+      - license:other
+      - nvidia
+      - region:us
+      - safetensors
+      - text-generation
+    config_context_length: 262144
+    structured_files:
+      - config.json
+    fetched_at: 2026-08-20T02:46:50.283030102Z

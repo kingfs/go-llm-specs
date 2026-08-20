@@ -1,0 +1,56 @@
+schema_version: 2
+id: microsoft/userlm-8b
+name: UserLM-8b
+provider: Microsoft
+developer: microsoft
+lifecycle: candidate
+context_length: 8192
+features:
+  - ModalityTextIn
+  - ModalityTextOut
+links:
+  model_card: https://huggingface.co/microsoft/UserLM-8b
+identifiers:
+  huggingface:
+    - microsoft/UserLM-8b
+provenance:
+  context_length:
+    source: official_huggingface_config
+    url: https://huggingface.co/microsoft/UserLM-8b
+  features:
+    source: official_huggingface_pipeline
+    url: https://huggingface.co/microsoft/UserLM-8b
+  id:
+    source: official_huggingface
+    url: https://huggingface.co/microsoft/UserLM-8b
+  name:
+    source: official_huggingface
+    url: https://huggingface.co/microsoft/UserLM-8b
+upstream:
+  huggingface:
+    id: microsoft/UserLM-8b
+    revision: ce576a239996496f13d100df0d987ae6a30f5629
+    pipeline_tag: text-generation
+    model_type: llama
+    architectures:
+      - LlamaForCausalLM
+    license: mit
+    tags:
+      - arxiv:2510.06552
+      - base_model:finetune:meta-llama/Llama-3.1-8B
+      - base_model:meta-llama/Llama-3.1-8B
+      - conversational
+      - dataset:allenai/WildChat-1M
+      - en
+      - license:mit
+      - llama
+      - region:us
+      - safetensors
+      - simulation
+      - text-generation
+      - userlm
+    config_context_length: 8192
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-08-20T02:46:49.539002104Z

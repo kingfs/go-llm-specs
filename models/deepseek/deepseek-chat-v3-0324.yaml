@@ -34,6 +34,7 @@ upstream:
     supported_parameters:
       - frequency_penalty
       - logit_bias
+      - logprobs
       - max_tokens
       - min_p
       - presence_penalty
@@ -46,13 +47,14 @@ upstream:
       - tool_choice
       - tools
       - top_k
+      - top_logprobs
       - top_p
     input_modalities:
       - text
     output_modalities:
       - text
     knowledge_cutoff: "2024-07-31"
-    fetched_at: 2026-07-29T10:37:32.261815237Z
+    fetched_at: 2026-08-20T02:46:49.022003343Z
   huggingface:
     id: deepseek-ai/DeepSeek-V3-0324
     revision: e9b33add76883f293d6bf61f6bd89b497e80e335

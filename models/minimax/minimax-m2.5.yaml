@@ -35,7 +35,6 @@ upstream:
       - logprobs
       - max_tokens
       - min_p
-      - parallel_tool_calls
       - presence_penalty
       - reasoning
       - repetition_penalty
@@ -53,7 +52,7 @@ upstream:
       - text
     output_modalities:
       - text
-    fetched_at: 2026-07-29T10:39:14.593753533Z
+    fetched_at: 2026-08-20T02:46:49.024009594Z
   huggingface:
     id: MiniMaxAI/MiniMax-M2.5
     revision: f710177d938eff80b684d42c5aa84b382612f21f

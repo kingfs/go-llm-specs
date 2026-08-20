@@ -1,0 +1,68 @@
+schema_version: 2
+id: nvidia/nvidia-nemotron-3-ultra-550b-a55b-base-bf16
+name: NVIDIA-Nemotron-3-Ultra-550B-A55B-Base-BF16
+provider: NVIDIA
+developer: nvidia
+lifecycle: candidate
+context_length: 262144
+features:
+  - ModalityTextIn
+  - ModalityTextOut
+links:
+  model_card: https://huggingface.co/nvidia/NVIDIA-Nemotron-3-Ultra-550B-A55B-Base-BF16
+identifiers:
+  huggingface:
+    - nvidia/NVIDIA-Nemotron-3-Ultra-550B-A55B-Base-BF16
+provenance:
+  context_length:
+    source: official_huggingface_config
+    url: https://huggingface.co/nvidia/NVIDIA-Nemotron-3-Ultra-550B-A55B-Base-BF16
+  features:
+    source: official_huggingface_pipeline
+    url: https://huggingface.co/nvidia/NVIDIA-Nemotron-3-Ultra-550B-A55B-Base-BF16
+  id:
+    source: official_huggingface
+    url: https://huggingface.co/nvidia/NVIDIA-Nemotron-3-Ultra-550B-A55B-Base-BF16
+  name:
+    source: official_huggingface
+    url: https://huggingface.co/nvidia/NVIDIA-Nemotron-3-Ultra-550B-A55B-Base-BF16
+upstream:
+  huggingface:
+    id: nvidia/NVIDIA-Nemotron-3-Ultra-550B-A55B-Base-BF16
+    revision: 1493b9c9ca301d6b6e5b0bee90fef1990ba49ed4
+    pipeline_tag: text-generation
+    model_type: nemotron_h
+    architectures:
+      - NemotronHForCausalLM
+    license: other
+    tags:
+      - ar
+      - de
+      - en
+      - endpoints_compatible
+      - es
+      - fr
+      - he
+      - hi
+      - it
+      - ja
+      - ko
+      - latent-moe
+      - license:other
+      - mtp
+      - nemotron-3
+      - nemotron_h
+      - nvidia
+      - pt
+      - pytorch
+      - region:us
+      - safetensors
+      - text-generation
+      - transformers
+      - zh
+    config_context_length: 262144
+    tokenizer_model_max_length: 262144
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-08-20T02:46:51.172916107Z

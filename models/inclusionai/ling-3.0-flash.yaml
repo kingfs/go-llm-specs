@@ -57,7 +57,6 @@ upstream:
       - response_format
       - seed
       - stop
-      - structured_outputs
       - temperature
       - tool_choice
       - tools
@@ -68,7 +67,7 @@ upstream:
       - text
     output_modalities:
       - text
-    fetched_at: 2026-08-18T02:45:22.745170625Z
+    fetched_at: 2026-08-20T02:46:49.023305367Z
   huggingface:
     id: inclusionAI/Ling-3.0-flash
     revision: c12bd30a9b032e932c8ce5ad0d211071e23a7fe1
