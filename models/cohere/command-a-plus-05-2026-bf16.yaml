@@ -3,8 +3,10 @@ id: cohere/command-a-plus-05-2026-bf16
 name: command-a-plus-05-2026-bf16
 provider: Cohere
 developer: cohere
-lifecycle: candidate
-context_length: 0
+lifecycle: active
+description: Command A+ is an open source Sparse Mixture-of-Experts model with 25B active and 218B total parameters, optimized for agentic, multilingual, and reasoning-heavy tasks, supporting text and image inputs with 48 languages.
+context_length: 131072
+max_output: 65536
 features:
   - ModalityImageIn
   - ModalityTextIn
@@ -15,15 +17,27 @@ identifiers:
   huggingface:
     - CohereLabs/command-a-plus-05-2026-bf16
 provenance:
+  context_length:
+    source: official_model_card
+    url: https://huggingface.co/CohereLabs/command-a-plus-05-2026-bf16/resolve/5fb6fde5fd12ff89356aae552e11883bc49f069b/README.md
+  description:
+    source: official_model_card
+    url: https://huggingface.co/CohereLabs/command-a-plus-05-2026-bf16/resolve/5fb6fde5fd12ff89356aae552e11883bc49f069b/README.md
   features:
     source: official_huggingface_pipeline
     url: https://huggingface.co/CohereLabs/command-a-plus-05-2026-bf16
   id:
     source: official_huggingface
     url: https://huggingface.co/CohereLabs/command-a-plus-05-2026-bf16
+  max_output:
+    source: official_model_card
+    url: https://huggingface.co/CohereLabs/command-a-plus-05-2026-bf16/resolve/5fb6fde5fd12ff89356aae552e11883bc49f069b/README.md
   name:
     source: official_huggingface
     url: https://huggingface.co/CohereLabs/command-a-plus-05-2026-bf16
+  reasoning.supported:
+    source: official_model_card
+    url: https://huggingface.co/CohereLabs/command-a-plus-05-2026-bf16/resolve/5fb6fde5fd12ff89356aae552e11883bc49f069b/README.md
 upstream:
   huggingface:
     id: CohereLabs/command-a-plus-05-2026-bf16
@@ -97,3 +111,5 @@ upstream:
       - preprocessor_config.json
       - tokenizer_config.json
     fetched_at: 2026-08-18T02:45:23.343063734Z
+reasoning:
+  supported: true

@@ -1,0 +1,59 @@
+schema_version: 2
+id: nvidia/nemotron-labs-diffusion-vlm-8b
+name: Nemotron-Labs-Diffusion-VLM-8B
+provider: NVIDIA
+developer: nvidia
+lifecycle: candidate
+context_length: 262144
+features:
+  - ModalityImageIn
+  - ModalityTextIn
+  - ModalityTextOut
+links:
+  model_card: https://huggingface.co/nvidia/Nemotron-Labs-Diffusion-VLM-8B
+identifiers:
+  huggingface:
+    - nvidia/Nemotron-Labs-Diffusion-VLM-8B
+provenance:
+  context_length:
+    source: official_huggingface_config
+    url: https://huggingface.co/nvidia/Nemotron-Labs-Diffusion-VLM-8B
+  features:
+    source: official_huggingface_pipeline
+    url: https://huggingface.co/nvidia/Nemotron-Labs-Diffusion-VLM-8B
+  id:
+    source: official_huggingface
+    url: https://huggingface.co/nvidia/Nemotron-Labs-Diffusion-VLM-8B
+  name:
+    source: official_huggingface
+    url: https://huggingface.co/nvidia/Nemotron-Labs-Diffusion-VLM-8B
+upstream:
+  huggingface:
+    id: nvidia/Nemotron-Labs-Diffusion-VLM-8B
+    revision: adca93d16471c1e07d594ae444d23e1876f6b365
+    pipeline_tag: image-text-to-text
+    model_type: nemotron_labs_diffusion_vlm
+    architectures:
+      - NemotronLabsDiffusionVLMModel
+    license: other
+    tags:
+      - conversational
+      - custom_code
+      - diffusion-language-model
+      - feature-extraction
+      - image-text-to-text
+      - license:other
+      - multimodal
+      - nemotron_labs_diffusion_vlm
+      - nvidia
+      - pytorch
+      - region:us
+      - safetensors
+      - transformers
+      - vlm
+    config_context_length: 262144
+    tokenizer_model_max_length: 262144
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-08-21T02:52:35.580125863Z

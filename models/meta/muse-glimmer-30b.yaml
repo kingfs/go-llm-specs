@@ -6,6 +6,7 @@ developer: meta
 description: Muse Glimmer 30B is a dense, open-weight multimodal model from Meta Superintelligence Labs, distilled from Muse Spark and optimized for autonomous agents on consumer hardware. It is suited for long-horizon...
 description_cn: Muse Glimmer 30B 是 Meta 超级智能实验室推出的密集、开源权重多模态模型，由 Muse Spark 蒸馏而来，专为消费者硬件上的自主代理进行了优化。适用于长程任务……
 context_length: 131072
+max_output: 131072
 features:
   - CapChat
   - CapFunctionCall

@@ -1,0 +1,108 @@
+schema_version: 2
+id: tencent/hy-mt2-1.8b
+name: 'Tencent: Hy-MT2-1.8B'
+provider: Tencent
+developer: tencent
+description: Hy-MT2-1.8B is a compact 1.8B-parameter translation model from Tencent. It supports 33 language pairs and five Chinese dialect and minority-language pairs, with workflows for structured, delimiter-based, contextual, glossary-based, and style-guided...
+context_length: 8192
+max_output: 4096
+features:
+  - CapChat
+  - ModalityTextIn
+  - ModalityTextOut
+discovered_at: 2026-08-21T02:52:29.467814779Z
+links:
+  model_card: https://huggingface.co/tencent/Hy-MT2-1.8B
+identifiers:
+  huggingface:
+    - tencent/Hy-MT2-1.8B
+  openrouter:
+    - tencent/hy-mt2-1.8b
+provenance:
+  context_length:
+    source: openrouter
+  description:
+    source: openrouter
+  features:
+    source: openrouter
+  id:
+    source: openrouter
+  max_output:
+    source: openrouter
+  name:
+    source: openrouter
+  provider:
+    source: openrouter
+upstream:
+  openrouter:
+    canonical_slug: tencent/hy-mt2-1.8b-20260521
+    huggingface_id: tencent/Hy-MT2-1.8B
+    supported_parameters:
+      - max_completion_tokens
+      - max_tokens
+      - stop
+      - temperature
+    input_modalities:
+      - text
+    output_modalities:
+      - text
+    fetched_at: 2026-08-21T02:52:32.546936592Z
+  huggingface:
+    id: tencent/Hy-MT2-1.8B
+    revision: 9a341cd1b679d3efd23b46e847b01745a71ed792
+    pipeline_tag: translation
+    model_type: hunyuan_v1_dense
+    architectures:
+      - HunYuanDenseV1ForCausalLM
+    license: apache-2.0
+    tags:
+      - ar
+      - arxiv:2605.22064
+      - bn
+      - bo
+      - cs
+      - de
+      - en
+      - endpoints_compatible
+      - es
+      - fa
+      - fr
+      - gu
+      - he
+      - hi
+      - hunyuan_v1_dense
+      - id
+      - it
+      - ja
+      - kk
+      - km
+      - ko
+      - license:apache-2.0
+      - mn
+      - mr
+      - ms
+      - my
+      - nl
+      - pl
+      - pt
+      - region:us
+      - ru
+      - safetensors
+      - ta
+      - te
+      - text-generation
+      - th
+      - tl
+      - tr
+      - transformers
+      - translation
+      - ug
+      - uk
+      - ur
+      - vi
+      - zh
+    config_context_length: 262144
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-08-21T02:52:36.086043208Z

@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "cohere/command-a-plus-05-2026-bf16",
+  "status": "partially_accepted",
+  "created_at": "2026-08-21T02:54:00.49510008Z",
+  "source": {
+    "url": "https://huggingface.co/CohereLabs/command-a-plus-05-2026-bf16/resolve/5fb6fde5fd12ff89356aae552e11883bc49f069b/README.md",
+    "revision": "5fb6fde5fd12ff89356aae552e11883bc49f069b",
+    "sha256": "0bd9e2f5f259f8923debbeb6f9657bca8a18adf289555aa53b47cc0fc88f5987"
+  },
+  "generator": {
+    "model": "qwen/qwen3.6-27b",
+    "wire_api": "chat"
+  },
+  "claims": [
+    {
+      "field": "description",
+      "value": "Command A+ is an open source Sparse Mixture-of-Experts model with 25B active and 218B total parameters, optimized for agentic, multilingual, and reasoning-heavy tasks, supporting text and image inputs with 48 languages.",
+      "evidence": "Command A+ is an open source model with 25 billion active parameters and 218B total parameters model optimized for agentic, multilingual, and reasoning-heavy tasks with a focus on enterprise performance, while also providing support for vision inputs",
+      "section": "Model Summary",
+      "confidence": "high"
+    },
+    {
+      "field": "context_length",
+      "value": 131072,
+      "evidence": "Context length: 128K input",
+      "section": "Model Summary",
+      "confidence": "high"
+    },
+    {
+      "field": "max_output",
+      "value": 65536,
+      "evidence": "Command A+ supports a context length of 128K \u0026 64K output length.",
+      "section": "Context Length",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "CapChat",
+        "CapFunctionCall",
+        "ModalityTextIn",
+        "ModalityTextOut",
+        "ModalityImageIn"
+      ],
+      "evidence": "Command A+ has been specifically trained with conversational tool use capabilities. ... Tool use with Command A+ is supported through chat templates ... Input: Text and images. Output: Model generates text.",
+      "section": "Tool Use Capabilities",
+      "confidence": "high"
+    },
+    {
+      "field": "reasoning.supported",
+      "value": true,
+      "evidence": "reasoning-heavy tasks ... thinking is generated between the \u003cSTART_THINKING\u003e and \u003cEND_THINKING\u003e",
+      "section": "Model Summary",
+      "confidence": "high"
+    },
+    {
+      "field": "reasoning.parser",
+      "value": "cohere_command4",
+      "evidence": "--reasoning-parser cohere_command4",
+      "section": "vLLM",
+      "confidence": "high"
+    }
+  ]
+}

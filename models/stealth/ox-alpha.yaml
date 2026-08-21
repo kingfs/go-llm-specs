@@ -1,0 +1,67 @@
+schema_version: 2
+id: stealth/ox-alpha
+name: Ox Alpha
+provider: Stealth
+developer: stealth
+description: Ox Alpha is a reasoning model designed for coding, sustained agentic work, and production workloads. It is suited for long-horizon software engineering, complex reasoning, and workflows that combine text with...
+context_length: 1048576
+max_output: 131072
+features:
+  - CapChat
+  - CapFunctionCall
+  - CapJsonMode
+  - ModalityImageIn
+  - ModalityTextIn
+  - ModalityTextOut
+  - ModalityVideoIn
+discovered_at: 2026-08-21T02:52:29.467549413Z
+identifiers:
+  openrouter:
+    - stealth/ox-alpha
+provenance:
+  context_length:
+    source: openrouter
+  description:
+    source: openrouter
+  features:
+    source: openrouter
+  id:
+    source: openrouter
+  max_output:
+    source: openrouter
+  name:
+    source: openrouter
+  provider:
+    source: openrouter
+  reasoning:
+    source: openrouter
+upstream:
+  openrouter:
+    canonical_slug: stealth/ox-alpha
+    supported_parameters:
+      - include_reasoning
+      - max_tokens
+      - reasoning
+      - reasoning_effort
+      - response_format
+      - temperature
+      - tool_choice
+      - tools
+      - top_k
+      - top_p
+    input_modalities:
+      - image
+      - text
+      - video
+    output_modalities:
+      - text
+    fetched_at: 2026-08-21T02:52:32.508548461Z
+reasoning:
+  supported: true
+  mandatory: true
+  default_enabled: true
+  default_effort: max
+  supported_efforts:
+    - high
+    - low
+    - max

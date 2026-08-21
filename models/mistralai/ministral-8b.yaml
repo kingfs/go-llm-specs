@@ -13,3 +13,28 @@ features:
   - ModalityTextIn
   - ModalityTextOut
 discovered_at: 2026-07-29T10:39:32.166441157Z
+identifiers:
+  openrouter:
+    - mistralai/ministral-8b
+provenance:
+  max_output:
+    source: openrouter
+upstream:
+  openrouter:
+    canonical_slug: mistralai/ministral-8b
+    supported_parameters:
+      - frequency_penalty
+      - max_tokens
+      - presence_penalty
+      - response_format
+      - seed
+      - stop
+      - structured_outputs
+      - temperature
+      - top_p
+    input_modalities:
+      - text
+    output_modalities:
+      - text
+    knowledge_cutoff: "2024-09-30"
+    fetched_at: 2026-08-21T02:52:32.501277396Z

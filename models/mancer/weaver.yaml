@@ -30,7 +30,6 @@ upstream:
       - response_format
       - seed
       - stop
-      - structured_outputs
       - temperature
       - top_a
       - top_k
@@ -41,4 +40,4 @@ upstream:
     output_modalities:
       - text
     knowledge_cutoff: "2023-06-30"
-    fetched_at: 2026-07-29T10:38:47.037558052Z
+    fetched_at: 2026-08-21T02:52:32.454861287Z
