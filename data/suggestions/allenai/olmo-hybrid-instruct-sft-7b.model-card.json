@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "allenai/olmo-hybrid-instruct-sft-7b",
+  "status": "partially_accepted",
+  "created_at": "2026-08-22T02:45:03.311670437Z",
+  "source": {
+    "url": "https://huggingface.co/allenai/Olmo-Hybrid-Instruct-SFT-7B/resolve/15ec262d91de5a2729e445a1c190c17573239a8a/README.md",
+    "revision": "15ec262d91de5a2729e445a1c190c17573239a8a",
+    "sha256": "458d6315236288cc01d8df637ca4d350743d53e837bc2885d4a7d4be2464983e"
+  },
+  "generator": {
+    "model": "qwen/qwen3.6-27b",
+    "wire_api": "chat"
+  },
+  "claims": [
+    {
+      "field": "description",
+      "value": "Olmo Hybrid Instruct SFT 7B is a 7B hybrid RNN/Transformer-style autoregressive language model post-trained on the Dolci datasets.",
+      "evidence": "Olmo Hybrid, a new 7B hybrid RNN model... Model type: a Transformer style autoregressive language model. These models are... post-trained on the Dolci datasets.",
+      "section": "Model Details",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "ModalityTextIn",
+        "ModalityTextOut"
+      ],
+      "evidence": "Language(s) (NLP): English... response = olmo.generate(**inputs... print(tokenizer.batch_decode(response...))",
+      "section": "Model Description",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "CapFunctionCall"
+      ],
+      "evidence": "You are a helpful function-calling AI assistant.",
+      "section": "Chat template",
+      "confidence": "high"
+    },
+    {
+      "field": "reasoning.supported",
+      "value": true,
+      "evidence": "\u003e\u003e '\u003cthink\u003eOkay, so the question is who would win in a fight...'",
+      "section": "Inference",
+      "confidence": "medium"
+    }
+  ]
+}

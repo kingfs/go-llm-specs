@@ -4,6 +4,7 @@ name: 'Tencent: Hy-MT2-30B-A3B'
 provider: Tencent
 developer: tencent
 description: Hy-MT2-30B-A3B is Tencent's flagship translation model in the Hy-MT2 family. It supports 33 language pairs and five Chinese dialect and minority-language pairs, with workflows for structured, delimiter-based, contextual, glossary-based, and...
+description_cn: Hy-MT2-30B-A3B 是腾讯 Hy-MT2 系列中的旗舰翻译模型。它支持 33 个语言对和五个中文方言/少数民族语言对，并提供结构化、分隔符、上下文、术语表及...等工作流支持。
 context_length: 8192
 max_output: 4096
 features:

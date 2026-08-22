@@ -16,6 +16,7 @@ features:
   - ModalityTextOut
 aliases:
   - thinkingmachines/inkling:batch
+  - thinkingmachines/inkling:free
 discovered_at: 2026-07-29T10:44:34.852834954Z
 links:
   model_card: https://huggingface.co/thinkingmachines/Inkling
@@ -25,6 +26,7 @@ identifiers:
   openrouter:
     - thinkingmachines/inkling
     - thinkingmachines/inkling:batch
+    - thinkingmachines/inkling:free
 provenance:
   max_output:
     source: openrouter

@@ -1,0 +1,69 @@
+schema_version: 2
+id: deepseek/deepseek-v4-flash-vision-exp
+name: 'DeepSeek: DeepSeek V4 Flash Vision Exp'
+provider: DeepSeek
+developer: deepseek
+description: DeepSeek V4 Flash Vision Exp is an experimental vision-enabled version of [DeepSeek V4 Flash 0731](https://openrouter.ai/deepseek/deepseek-v4-flash-0731) from DeepSeek, adding image understanding while matching the base model on text capabilities including agents,...
+description_cn: DeepSeek V4 Flash Vision Exp 是 DeepSeek 推出的 [DeepSeek V4 Flash 0731](https://openrouter.ai/deepseek/deepseek-v4-flash-0731) 的实验性视觉增强版本，在保留基模型文本能力（包括智能体功能）的同时增加了图像理解能力。
+context_length: 1048576
+max_output: 384000
+features:
+  - CapChat
+  - CapFunctionCall
+  - CapJsonMode
+  - ModalityImageIn
+  - ModalityTextIn
+  - ModalityTextOut
+discovered_at: 2026-08-22T02:43:58.192627451Z
+identifiers:
+  openrouter:
+    - deepseek/deepseek-v4-flash-vision-exp
+provenance:
+  context_length:
+    source: openrouter
+  description:
+    source: openrouter
+  features:
+    source: openrouter
+  id:
+    source: openrouter
+  max_output:
+    source: openrouter
+  name:
+    source: openrouter
+  provider:
+    source: openrouter
+  reasoning:
+    source: openrouter
+upstream:
+  openrouter:
+    canonical_slug: deepseek/deepseek-v4-flash-vision-exp-20260821
+    supported_parameters:
+      - frequency_penalty
+      - include_reasoning
+      - logprobs
+      - max_tokens
+      - presence_penalty
+      - reasoning
+      - reasoning_effort
+      - response_format
+      - stop
+      - temperature
+      - tool_choice
+      - tools
+      - top_logprobs
+      - top_p
+    input_modalities:
+      - image
+      - text
+    output_modalities:
+      - text
+    fetched_at: 2026-08-22T02:43:59.921398054Z
+reasoning:
+  supported: true
+  default_enabled: true
+  default_effort: high
+  supported_efforts:
+    - high
+    - low
+    - max

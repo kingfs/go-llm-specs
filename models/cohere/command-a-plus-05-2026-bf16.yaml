@@ -5,6 +5,7 @@ provider: Cohere
 developer: cohere
 lifecycle: active
 description: Command A+ is an open source Sparse Mixture-of-Experts model with 25B active and 218B total parameters, optimized for agentic, multilingual, and reasoning-heavy tasks, supporting text and image inputs with 48 languages.
+description_cn: Command A+ 是一款开源稀疏混合专家（MoE）模型，拥有 25B 激活参数和 218B 总参数，专为智能体、多语言及重度推理任务优化，支持文本和图片输入，覆盖 48 种语言。
 context_length: 131072
 max_output: 65536
 features:

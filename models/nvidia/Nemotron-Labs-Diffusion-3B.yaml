@@ -1,0 +1,55 @@
+schema_version: 2
+id: nvidia/nemotron-labs-diffusion-3b
+name: Nemotron-Labs-Diffusion-3B
+provider: NVIDIA
+developer: nvidia
+lifecycle: candidate
+context_length: 262144
+features:
+  - ModalityTextIn
+  - ModalityTextOut
+links:
+  model_card: https://huggingface.co/nvidia/Nemotron-Labs-Diffusion-3B
+identifiers:
+  huggingface:
+    - nvidia/Nemotron-Labs-Diffusion-3B
+provenance:
+  context_length:
+    source: official_huggingface_config
+    url: https://huggingface.co/nvidia/Nemotron-Labs-Diffusion-3B
+  features:
+    source: official_huggingface_pipeline
+    url: https://huggingface.co/nvidia/Nemotron-Labs-Diffusion-3B
+  id:
+    source: official_huggingface
+    url: https://huggingface.co/nvidia/Nemotron-Labs-Diffusion-3B
+  name:
+    source: official_huggingface
+    url: https://huggingface.co/nvidia/Nemotron-Labs-Diffusion-3B
+upstream:
+  huggingface:
+    id: nvidia/Nemotron-Labs-Diffusion-3B
+    revision: 0d51902da1f8869f83413ce642fab402fa5641e0
+    pipeline_tag: text-generation
+    model_type: nemotron_labs_diffusion
+    architectures:
+      - NemotronLabsDiffusionModel
+    license: other
+    tags:
+      - conversational
+      - custom_code
+      - feature-extraction
+      - license:other
+      - nemotron_labs_diffusion
+      - nvidia
+      - pytorch
+      - region:us
+      - safetensors
+      - text-generation
+      - transformers
+    config_context_length: 262144
+    tokenizer_model_max_length: 262144
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-08-22T02:44:01.029158169Z

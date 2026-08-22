@@ -4,6 +4,7 @@ name: 'Tencent: Hy-MT2-1.8B'
 provider: Tencent
 developer: tencent
 description: Hy-MT2-1.8B is a compact 1.8B-parameter translation model from Tencent. It supports 33 language pairs and five Chinese dialect and minority-language pairs, with workflows for structured, delimiter-based, contextual, glossary-based, and style-guided...
+description_cn: Hy-MT2-1.8B 是腾讯推出的紧凑级 1.8B 参数翻译模型。它支持 33 个语言对和五个中文方言/少数民族语言对，并提供结构化、分隔符、上下文、术语表及风格引导等工作流支持。
 context_length: 8192
 max_output: 4096
 features:

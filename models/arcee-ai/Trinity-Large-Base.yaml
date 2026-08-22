@@ -1,0 +1,66 @@
+schema_version: 2
+id: arcee-ai/trinity-large-base
+name: Trinity-Large-Base
+provider: Arcee AI
+developer: arcee-ai
+lifecycle: candidate
+context_length: 262144
+features:
+  - ModalityTextIn
+  - ModalityTextOut
+links:
+  model_card: https://huggingface.co/arcee-ai/Trinity-Large-Base
+identifiers:
+  huggingface:
+    - arcee-ai/Trinity-Large-Base
+provenance:
+  context_length:
+    source: official_huggingface_config
+    url: https://huggingface.co/arcee-ai/Trinity-Large-Base
+  features:
+    source: official_huggingface_pipeline
+    url: https://huggingface.co/arcee-ai/Trinity-Large-Base
+  id:
+    source: official_huggingface
+    url: https://huggingface.co/arcee-ai/Trinity-Large-Base
+  name:
+    source: official_huggingface
+    url: https://huggingface.co/arcee-ai/Trinity-Large-Base
+upstream:
+  huggingface:
+    id: arcee-ai/Trinity-Large-Base
+    revision: b2a665b40e5d67b05fb164205cf63155f7958e2a
+    pipeline_tag: text-generation
+    model_type: afmoe
+    architectures:
+      - AfmoeForCausalLM
+    license: other
+    tags:
+      - afmoe
+      - ar
+      - base_model:arcee-ai/Trinity-Large-TrueBase
+      - base_model:finetune:arcee-ai/Trinity-Large-TrueBase
+      - conversational
+      - custom_code
+      - de
+      - en
+      - endpoints_compatible
+      - es
+      - fr
+      - hi
+      - it
+      - ko
+      - license:other
+      - pt
+      - region:us
+      - ru
+      - safetensors
+      - text-generation
+      - transformers
+      - zh
+    config_context_length: 262144
+    tokenizer_model_max_length: 65536
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-08-22T02:44:00.539672177Z

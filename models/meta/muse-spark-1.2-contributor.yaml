@@ -1,24 +1,25 @@
 schema_version: 2
-id: stealth/ox-alpha
-name: Ox Alpha
-provider: Stealth
-developer: stealth
-description: Ox Alpha is a reasoning model designed for coding, sustained agentic work, and production workloads. It is suited for long-horizon software engineering, complex reasoning, and workflows that combine text with...
-description_cn: Ox Alpha 是一款专为编程、持续性智能体工作及生产负载设计的推理模型。它适用于长期软件工程、复杂推理以及结合文本与...的工作流。
+id: meta/muse-spark-1.2-contributor
+name: 'Meta: Muse Spark 1.2 Contributor'
+provider: Meta
+developer: meta
+description: Muse Spark 1.2 contributor tier is a reasoning model from Meta designed for developers who want to start building at an even lower cost. It’s meaningfully cheaper than Muse Spark...
+description_cn: Muse Spark 1.2 Contributor 层级是 Meta 推出的一款推理模型，专为希望以更低成本开始开发的开发者设计。其成本显著低于 Muse Spark...
 context_length: 1048576
-max_output: 131072
 features:
   - CapChat
   - CapFunctionCall
   - CapJsonMode
+  - ModalityAudioIn
+  - ModalityFileIn
   - ModalityImageIn
   - ModalityTextIn
   - ModalityTextOut
   - ModalityVideoIn
-discovered_at: 2026-08-21T02:52:29.467549413Z
+discovered_at: 2026-08-22T02:43:58.19244477Z
 identifiers:
   openrouter:
-    - stealth/ox-alpha
+    - meta/muse-spark-1.2-contributor
 provenance:
   context_length:
     source: openrouter
@@ -38,31 +39,36 @@ provenance:
     source: openrouter
 upstream:
   openrouter:
-    canonical_slug: stealth/ox-alpha
+    canonical_slug: meta/muse-spark-1.2-contributor-20260805
     supported_parameters:
       - include_reasoning
       - max_tokens
       - reasoning
       - reasoning_effort
+      - repetition_penalty
       - response_format
+      - structured_outputs
       - temperature
       - tool_choice
       - tools
       - top_k
       - top_p
     input_modalities:
+      - audio
+      - file
       - image
       - text
       - video
     output_modalities:
       - text
-    fetched_at: 2026-08-21T02:52:32.508548461Z
+    fetched_at: 2026-08-22T02:43:59.923623004Z
 reasoning:
   supported: true
   mandatory: true
-  default_enabled: true
-  default_effort: max
+  default_effort: medium
   supported_efforts:
     - high
     - low
-    - max
+    - medium
+    - minimal
+    - xhigh

@@ -1,0 +1,62 @@
+schema_version: 2
+id: allenai/olmo-hybrid-instruct-sft-7b
+name: Olmo-Hybrid-Instruct-SFT-7B
+provider: Allen Institute for AI
+developer: allenai
+lifecycle: active
+description: Olmo Hybrid Instruct SFT 7B is a 7B hybrid RNN/Transformer-style autoregressive language model post-trained on the Dolci datasets.
+description_cn: Olmo Hybrid Instruct SFT 7B 是一个 7B 参数的混合 RNN/Transformer 架构自回归语言模型，在 Dolci 数据集上进行了后训练。
+context_length: 32768
+features:
+  - ModalityTextIn
+  - ModalityTextOut
+links:
+  model_card: https://huggingface.co/allenai/Olmo-Hybrid-Instruct-SFT-7B
+identifiers:
+  huggingface:
+    - allenai/Olmo-Hybrid-Instruct-SFT-7B
+provenance:
+  context_length:
+    source: official_huggingface_config
+    url: https://huggingface.co/allenai/Olmo-Hybrid-Instruct-SFT-7B
+  description:
+    source: official_model_card
+    url: https://huggingface.co/allenai/Olmo-Hybrid-Instruct-SFT-7B/resolve/15ec262d91de5a2729e445a1c190c17573239a8a/README.md
+  features:
+    source: official_huggingface_pipeline
+    url: https://huggingface.co/allenai/Olmo-Hybrid-Instruct-SFT-7B
+  id:
+    source: official_huggingface
+    url: https://huggingface.co/allenai/Olmo-Hybrid-Instruct-SFT-7B
+  name:
+    source: official_huggingface
+    url: https://huggingface.co/allenai/Olmo-Hybrid-Instruct-SFT-7B
+upstream:
+  huggingface:
+    id: allenai/Olmo-Hybrid-Instruct-SFT-7B
+    revision: 15ec262d91de5a2729e445a1c190c17573239a8a
+    pipeline_tag: text-generation
+    model_type: olmo_hybrid
+    architectures:
+      - OlmoHybridForCausalLM
+    license: apache-2.0
+    tags:
+      - base_model:allenai/Olmo-Hybrid-7B
+      - base_model:finetune:allenai/Olmo-Hybrid-7B
+      - conversational
+      - dataset:allenai/Dolci-Instruct-SFT
+      - dataset:allenai/Dolci-Instruct-SFT-Tool-Use-SA
+      - en
+      - endpoints_compatible
+      - license:apache-2.0
+      - olmo_hybrid
+      - region:us
+      - safetensors
+      - text-generation
+      - transformers
+    config_context_length: 32768
+    tokenizer_model_max_length: 32768
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-08-22T02:44:00.420953111Z
