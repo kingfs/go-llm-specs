@@ -4,6 +4,8 @@ name: Cola-DLM
 provider: ByteDance Seed
 developer: bytedance-seed
 lifecycle: candidate
+description: Cola DLM is a hierarchical continuous latent-space diffusion language model combining a Text VAE with a block-causal Diffusion Transformer prior.
+description_cn: Cola DLM 是一种分层连续潜空间扩散语言模型，结合了文本 VAE 与分块因果扩散 Transformer 先验模型。
 context_length: 0
 features:
   - ModalityTextIn
@@ -14,6 +16,9 @@ identifiers:
   huggingface:
     - ByteDance-Seed/Cola-DLM
 provenance:
+  description:
+    source: official_model_card
+    url: https://huggingface.co/ByteDance-Seed/Cola-DLM/resolve/c1eafdd9cfd8064aeb917d569ef70a075b353eed/README.md
   features:
     source: official_huggingface_pipeline
     url: https://huggingface.co/ByteDance-Seed/Cola-DLM

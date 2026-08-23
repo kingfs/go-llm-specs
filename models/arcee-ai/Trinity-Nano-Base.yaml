@@ -1,0 +1,67 @@
+schema_version: 2
+id: arcee-ai/trinity-nano-base
+name: Trinity-Nano-Base
+provider: Arcee AI
+developer: arcee-ai
+lifecycle: candidate
+context_length: 131072
+features:
+  - ModalityTextIn
+  - ModalityTextOut
+links:
+  model_card: https://huggingface.co/arcee-ai/Trinity-Nano-Base
+identifiers:
+  huggingface:
+    - arcee-ai/Trinity-Nano-Base
+provenance:
+  context_length:
+    source: official_huggingface_config
+    url: https://huggingface.co/arcee-ai/Trinity-Nano-Base
+  features:
+    source: official_huggingface_pipeline
+    url: https://huggingface.co/arcee-ai/Trinity-Nano-Base
+  id:
+    source: official_huggingface
+    url: https://huggingface.co/arcee-ai/Trinity-Nano-Base
+  name:
+    source: official_huggingface
+    url: https://huggingface.co/arcee-ai/Trinity-Nano-Base
+upstream:
+  huggingface:
+    id: arcee-ai/Trinity-Nano-Base
+    revision: 923a95dbba013c78c4fd6dbc6bce31eea553da7c
+    pipeline_tag: text-generation
+    model_type: afmoe
+    architectures:
+      - AfmoeForCausalLM
+    license: other
+    tags:
+      - afmoe
+      - ar
+      - base_model:arcee-ai/Trinity-Nano-Base-Pre-Anneal
+      - base_model:finetune:arcee-ai/Trinity-Nano-Base-Pre-Anneal
+      - conversational
+      - custom_code
+      - de
+      - en
+      - endpoints_compatible
+      - es
+      - fr
+      - hi
+      - it
+      - ko
+      - license:other
+      - pt
+      - region:us
+      - ru
+      - safetensors
+      - text-generation
+      - transformers
+      - zh
+    config_context_length: 131072
+    tokenizer_model_max_length: 65536
+    chat_template_sha256: ef80c4afb53307eba88790921b29aae0977fe7e9520295fa3cdb1f21ce07d567
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-08-23T02:52:40.382786449Z

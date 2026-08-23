@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "bytedance-seed/cola-dlm",
+  "status": "partially_accepted",
+  "created_at": "2026-08-23T02:54:03.850301646Z",
+  "source": {
+    "url": "https://huggingface.co/ByteDance-Seed/Cola-DLM/resolve/c1eafdd9cfd8064aeb917d569ef70a075b353eed/README.md",
+    "revision": "c1eafdd9cfd8064aeb917d569ef70a075b353eed",
+    "sha256": "c7323a0a15a1640b9827e3f6c8a66338251d27a89804cb01d0c2735f1fd45723"
+  },
+  "generator": {
+    "model": "qwen/qwen3.6-27b",
+    "wire_api": "chat"
+  },
+  "claims": [
+    {
+      "field": "description",
+      "value": "Cola DLM is a hierarchical continuous latent-space diffusion language model combining a Text VAE with a block-causal Diffusion Transformer prior.",
+      "evidence": "Cola DLM is a hierarchical continuous latent-space diffusion language model. It combines a Text VAE with a block-causal Diffusion Transformer (DiT) prior",
+      "section": "Cola DLM",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "ModalityTextIn",
+        "ModalityTextOut"
+      ],
+      "evidence": "It combines a Text VAE with a block-causal Diffusion Transformer... maps text into continuous latent sequences and decodes latents back to tokens",
+      "section": "Cola DLM",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [],
+      "evidence": "The released model... has not been instruction-tuned, RLHF-aligned, or systematically safety-aligned.",
+      "section": "Safety Statement and Use Restrictions",
+      "confidence": "high"
+    },
+    {
+      "field": "description",
+      "value": "The model is not instruction-tuned and has not undergone RLHF, intended primarily for research on latent-variable language models.",
+      "evidence": "This checkpoint is not instruction-tuned and has not gone through RLHF. It should not be treated as a production chatbot",
+      "section": "Intended Use",
+      "confidence": "high"
+    }
+  ]
+}

@@ -1,0 +1,63 @@
+schema_version: 2
+id: arcee-ai/trinity-mini-base-pre-anneal
+name: Trinity-Mini-Base-Pre-Anneal
+provider: Arcee AI
+developer: arcee-ai
+lifecycle: candidate
+context_length: 4096
+features:
+  - ModalityTextIn
+  - ModalityTextOut
+links:
+  model_card: https://huggingface.co/arcee-ai/Trinity-Mini-Base-Pre-Anneal
+identifiers:
+  huggingface:
+    - arcee-ai/Trinity-Mini-Base-Pre-Anneal
+provenance:
+  context_length:
+    source: official_huggingface_config
+    url: https://huggingface.co/arcee-ai/Trinity-Mini-Base-Pre-Anneal
+  features:
+    source: official_huggingface_pipeline
+    url: https://huggingface.co/arcee-ai/Trinity-Mini-Base-Pre-Anneal
+  id:
+    source: official_huggingface
+    url: https://huggingface.co/arcee-ai/Trinity-Mini-Base-Pre-Anneal
+  name:
+    source: official_huggingface
+    url: https://huggingface.co/arcee-ai/Trinity-Mini-Base-Pre-Anneal
+upstream:
+  huggingface:
+    id: arcee-ai/Trinity-Mini-Base-Pre-Anneal
+    revision: a55edb6c35670d8e9ca7d24fe6ef7ea70c2b47cc
+    pipeline_tag: text-generation
+    model_type: afmoe
+    architectures:
+      - AfmoeForCausalLM
+    license: other
+    tags:
+      - afmoe
+      - ar
+      - custom_code
+      - de
+      - en
+      - endpoints_compatible
+      - es
+      - fr
+      - hi
+      - it
+      - ko
+      - license:other
+      - pt
+      - region:us
+      - ru
+      - safetensors
+      - text-generation
+      - transformers
+      - zh
+    config_context_length: 4096
+    tokenizer_model_max_length: 65536
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-08-23T02:52:40.136980972Z
