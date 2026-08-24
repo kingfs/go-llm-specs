@@ -1,0 +1,59 @@
+schema_version: 2
+id: ibm-granite/granite-switch-4.1-3b-preview
+name: granite-switch-4.1-3b-preview
+provider: IBM Granite
+developer: ibm-granite
+lifecycle: active
+description: Modular LLM built on IBM Granite 4.1 3B with embedded adapters for RAG, safety, explainability, activated via control tokens.
+description_cn: 基于 IBM Granite 4.1 3B 构建的模块化大语言模型，集成了用于 RAG、安全性和可解释性的适配器，通过控制 token 激活。
+context_length: 131072
+features:
+  - ModalityTextIn
+  - ModalityTextOut
+links:
+  model_card: https://huggingface.co/ibm-granite/granite-switch-4.1-3b-preview
+identifiers:
+  huggingface:
+    - ibm-granite/granite-switch-4.1-3b-preview
+provenance:
+  context_length:
+    source: official_huggingface_config
+    url: https://huggingface.co/ibm-granite/granite-switch-4.1-3b-preview
+  description:
+    source: official_model_card
+    url: https://huggingface.co/ibm-granite/granite-switch-4.1-3b-preview/resolve/7a3ac02e07868411424ac89440397b475da66fa7/README.md
+  features:
+    source: official_huggingface_pipeline
+    url: https://huggingface.co/ibm-granite/granite-switch-4.1-3b-preview
+  id:
+    source: official_huggingface
+    url: https://huggingface.co/ibm-granite/granite-switch-4.1-3b-preview
+  name:
+    source: official_huggingface
+    url: https://huggingface.co/ibm-granite/granite-switch-4.1-3b-preview
+upstream:
+  huggingface:
+    id: ibm-granite/granite-switch-4.1-3b-preview
+    revision: 7a3ac02e07868411424ac89440397b475da66fa7
+    pipeline_tag: text-generation
+    model_type: granite_switch
+    architectures:
+      - GraniteSwitchForCausalLM
+    license: apache-2.0
+    tags:
+      - conversational
+      - endpoints_compatible
+      - granite-4.1
+      - granite-switch
+      - granite_switch
+      - language
+      - license:apache-2.0
+      - region:us
+      - safetensors
+      - text-generation
+      - transformers
+    config_context_length: 131072
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-08-24T02:53:28.116063336Z

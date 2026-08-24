@@ -1,0 +1,59 @@
+schema_version: 2
+id: ibm-granite/granite-switch-4.1-30b-preview
+name: granite-switch-4.1-30b-preview
+provider: IBM Granite
+developer: ibm-granite
+lifecycle: active
+description: Granite Switch 4.1 30B Preview is a modular LLM built on IBM Granite 4.1 30B with embedded adapters from Granite Libraries. A single checkpoint supports multiple specialized capabilities such as RAG, safety, and explainability, activated on demand via control tokens.
+description_cn: Granite Switch 4.1 30B Preview 是一款基于 IBM Granite 4.1 30B 构建的模块化大语言模型，集成了来自 Granite Libraries 的适配器。单个检查点支持 RAG、安全性和可解释性等多种 specialized 能力，可通过控制 token 按需激活。
+context_length: 131072
+features:
+  - ModalityTextIn
+  - ModalityTextOut
+links:
+  model_card: https://huggingface.co/ibm-granite/granite-switch-4.1-30b-preview
+identifiers:
+  huggingface:
+    - ibm-granite/granite-switch-4.1-30b-preview
+provenance:
+  context_length:
+    source: official_huggingface_config
+    url: https://huggingface.co/ibm-granite/granite-switch-4.1-30b-preview
+  description:
+    source: official_model_card
+    url: https://huggingface.co/ibm-granite/granite-switch-4.1-30b-preview/resolve/b2d1c82bbd5913f8a07e35c911b402783d1423e1/README.md
+  features:
+    source: official_huggingface_pipeline
+    url: https://huggingface.co/ibm-granite/granite-switch-4.1-30b-preview
+  id:
+    source: official_huggingface
+    url: https://huggingface.co/ibm-granite/granite-switch-4.1-30b-preview
+  name:
+    source: official_huggingface
+    url: https://huggingface.co/ibm-granite/granite-switch-4.1-30b-preview
+upstream:
+  huggingface:
+    id: ibm-granite/granite-switch-4.1-30b-preview
+    revision: b2d1c82bbd5913f8a07e35c911b402783d1423e1
+    pipeline_tag: text-generation
+    model_type: granite_switch
+    architectures:
+      - GraniteSwitchForCausalLM
+    license: apache-2.0
+    tags:
+      - conversational
+      - endpoints_compatible
+      - granite-4.1
+      - granite-switch
+      - granite_switch
+      - language
+      - license:apache-2.0
+      - region:us
+      - safetensors
+      - text-generation
+      - transformers
+    config_context_length: 131072
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-08-24T02:53:27.746365226Z

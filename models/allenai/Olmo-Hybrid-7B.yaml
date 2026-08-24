@@ -1,0 +1,52 @@
+schema_version: 2
+id: allenai/olmo-hybrid-7b
+name: Olmo-Hybrid-7B
+provider: Allen Institute for AI
+developer: allenai
+lifecycle: candidate
+context_length: 65536
+features:
+  - ModalityTextIn
+  - ModalityTextOut
+links:
+  model_card: https://huggingface.co/allenai/Olmo-Hybrid-7B
+identifiers:
+  huggingface:
+    - allenai/Olmo-Hybrid-7B
+provenance:
+  context_length:
+    source: official_huggingface_config
+    url: https://huggingface.co/allenai/Olmo-Hybrid-7B
+  features:
+    source: official_huggingface_pipeline
+    url: https://huggingface.co/allenai/Olmo-Hybrid-7B
+  id:
+    source: official_huggingface
+    url: https://huggingface.co/allenai/Olmo-Hybrid-7B
+  name:
+    source: official_huggingface
+    url: https://huggingface.co/allenai/Olmo-Hybrid-7B
+upstream:
+  huggingface:
+    id: allenai/Olmo-Hybrid-7B
+    revision: 4f1cc566f9fdf3ce68da2ab6a788a83d89896dcf
+    pipeline_tag: text-generation
+    model_type: olmo_hybrid
+    architectures:
+      - OlmoHybridForCausalLM
+    license: apache-2.0
+    tags:
+      - en
+      - endpoints_compatible
+      - license:apache-2.0
+      - olmo_hybrid
+      - region:us
+      - safetensors
+      - text-generation
+      - transformers
+    config_context_length: 65536
+    tokenizer_model_max_length: 65536
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-08-24T02:53:27.419702736Z

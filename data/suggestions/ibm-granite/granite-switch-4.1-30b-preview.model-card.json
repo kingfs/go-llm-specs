@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "ibm-granite/granite-switch-4.1-30b-preview",
+  "status": "partially_accepted",
+  "created_at": "2026-08-24T02:53:30.350041395Z",
+  "source": {
+    "url": "https://huggingface.co/ibm-granite/granite-switch-4.1-30b-preview/resolve/b2d1c82bbd5913f8a07e35c911b402783d1423e1/README.md",
+    "revision": "b2d1c82bbd5913f8a07e35c911b402783d1423e1",
+    "sha256": "584019d2b5add60784c1199dcf6d97619dbe71ccc8b30dacddb22f2b2a7538b2"
+  },
+  "generator": {
+    "model": "qwen/qwen3.6-27b",
+    "wire_api": "chat"
+  },
+  "claims": [
+    {
+      "field": "description",
+      "value": "Granite Switch 4.1 30B Preview is a modular LLM built on IBM Granite 4.1 30B with embedded adapters from Granite Libraries. A single checkpoint supports multiple specialized capabilities such as RAG, safety, and explainability, activated on demand via control tokens.",
+      "evidence": "Granite Switch 4.1 30B Preview is a modular LLM built on [IBM Granite 4.1 30B](https://huggingface.co/ibm-granite/granite-4.1-30b) with embedded adapters...",
+      "section": "Granite Switch 4.1 30B Preview",
+      "confidence": "high"
+    },
+    {
+      "field": "context_length",
+      "value": 131072,
+      "evidence": "- **Base Model:** `ibm-granite/granite-4.1-30b` (30B params, 128K context)",
+      "section": "Granite Switch 4.1 30B Preview",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "ModalityTextIn",
+        "ModalityTextOut"
+      ],
+      "evidence": "Model Summary: Granite Switch 4.1 30B Preview is a modular LLM... activated on demand via control tokens in the chat template.",
+      "section": "Granite Switch 4.1 30B Preview",
+      "confidence": "high"
+    }
+  ]
+}

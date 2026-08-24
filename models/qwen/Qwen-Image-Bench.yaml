@@ -1,0 +1,62 @@
+schema_version: 2
+id: qwen/qwen-image-bench
+name: Qwen-Image-Bench
+provider: Qwen
+developer: qwen
+lifecycle: candidate
+context_length: 0
+features:
+  - ModalityImageIn
+  - ModalityTextIn
+  - ModalityTextOut
+links:
+  model_card: https://huggingface.co/Qwen/Qwen-Image-Bench
+identifiers:
+  huggingface:
+    - Qwen/Qwen-Image-Bench
+provenance:
+  features:
+    source: official_huggingface_pipeline
+    url: https://huggingface.co/Qwen/Qwen-Image-Bench
+  id:
+    source: official_huggingface
+    url: https://huggingface.co/Qwen/Qwen-Image-Bench
+  name:
+    source: official_huggingface
+    url: https://huggingface.co/Qwen/Qwen-Image-Bench
+upstream:
+  huggingface:
+    id: Qwen/Qwen-Image-Bench
+    revision: 1b77ff83564ac4e4e8140769eacff7ff73f35f3c
+    pipeline_tag: image-text-to-text
+    model_type: qwen3_5
+    architectures:
+      - Qwen3_5ForConditionalGeneration
+    license: apache-2.0
+    tags:
+      - arxiv:2605.28091
+      - base_model:Qwen/Qwen3.6-27B
+      - base_model:finetune:Qwen/Qwen3.6-27B
+      - benchmark
+      - conversational
+      - deploy:azure
+      - en
+      - endpoints_compatible
+      - evaluation
+      - image-text-to-text
+      - judge-model
+      - license:apache-2.0
+      - qwen
+      - qwen3_5
+      - region:us
+      - safetensors
+      - text-to-image
+      - transformers
+      - zh
+    tokenizer_model_max_length: 262144
+    processor_class: Qwen3VLProcessor
+    structured_files:
+      - config.json
+      - preprocessor_config.json
+      - tokenizer_config.json
+    fetched_at: 2026-08-24T02:53:28.894354376Z
