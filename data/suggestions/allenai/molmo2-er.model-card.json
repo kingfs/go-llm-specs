@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "allenai/molmo2-er",
+  "status": "partially_accepted",
+  "created_at": "2026-08-25T02:49:51.359270424Z",
+  "source": {
+    "url": "https://huggingface.co/allenai/Molmo2-ER/resolve/dab22564403d2607855bb1fffb0721285b445081/README.md",
+    "revision": "dab22564403d2607855bb1fffb0721285b445081",
+    "sha256": "a994157d556bd3450d24248d7aea618e537003b5fbc7c6fe392e2530549eccba"
+  },
+  "generator": {
+    "model": "qwen/qwen3.6-27b",
+    "wire_api": "chat"
+  },
+  "claims": [
+    {
+      "field": "description",
+      "value": "Molmo2-ER is a 4B vision-language model specialized for embodied perception skills, including scene understanding, pixel-accurate pointing, and video temporal reasoning.",
+      "evidence": "Molmo2-ER (Embodied Reasoning) is a 4B vision–language model specialized for the embodied perception skills that downstream action models depend on: scene understanding, pixel-accurate pointing, multi-image and egocentric–exocentric correspondence, and video temporal reasoning.",
+      "section": "Molmo2-ER",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "ModalityImageIn",
+        "ModalityTextOut",
+        "ModalityVideoIn"
+      ],
+      "evidence": "image-text-to-text",
+      "section": "Model Card",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "ModalityImageIn",
+        "ModalityTextOut"
+      ],
+      "evidence": "vision–language model specialized for the embodied perception skills",
+      "section": "Molmo2-ER",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "ModalityImageIn",
+        "ModalityVideoIn"
+      ],
+      "evidence": "multi-image and egocentric–exocentric correspondence, and video temporal reasoning",
+      "section": "Molmo2-ER",
+      "confidence": "high"
+    }
+  ]
+}

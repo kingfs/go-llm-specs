@@ -49,6 +49,7 @@ upstream:
       - logit_bias
       - logprobs
       - max_tokens
+      - min_p
       - presence_penalty
       - reasoning
       - reasoning_effort
@@ -69,7 +70,7 @@ upstream:
       - video
     output_modalities:
       - text
-    fetched_at: 2026-08-20T02:46:49.028101919Z
+    fetched_at: 2026-08-25T02:48:42.891349563Z
   huggingface:
     id: Qwen/Qwen3.8-27B
     revision: 1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0

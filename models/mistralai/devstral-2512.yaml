@@ -27,7 +27,11 @@ identifiers:
   huggingface:
     - mistralai/Devstral-2-123B-Instruct-2512
   openrouter:
+    - mistralai/devstral-2512
     - mistralai/devstral-2512:free
+provenance:
+  max_output:
+    source: openrouter
 upstream:
   openrouter:
     canonical_slug: mistralai/devstral-2512

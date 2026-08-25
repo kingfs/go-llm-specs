@@ -1,0 +1,65 @@
+schema_version: 2
+id: allenai/molmo2-er
+name: Molmo2-ER
+provider: Allen Institute for AI
+developer: allenai
+lifecycle: candidate
+description: Molmo2-ER is a 4B vision-language model specialized for embodied perception skills, including scene understanding, pixel-accurate pointing, and video temporal reasoning.
+description_cn: Molmo2-ER 是一款 40 亿参数的视觉语言模型，专注于具身感知技能，包括场景理解、像素级指向和视频时序推理。
+context_length: 0
+features:
+  - ModalityImageIn
+  - ModalityTextIn
+  - ModalityTextOut
+links:
+  model_card: https://huggingface.co/allenai/Molmo2-ER
+identifiers:
+  huggingface:
+    - allenai/Molmo2-ER
+provenance:
+  description:
+    source: official_model_card
+    url: https://huggingface.co/allenai/Molmo2-ER/resolve/dab22564403d2607855bb1fffb0721285b445081/README.md
+  features:
+    source: official_huggingface_pipeline
+    url: https://huggingface.co/allenai/Molmo2-ER
+  id:
+    source: official_huggingface
+    url: https://huggingface.co/allenai/Molmo2-ER
+  name:
+    source: official_huggingface
+    url: https://huggingface.co/allenai/Molmo2-ER
+upstream:
+  huggingface:
+    id: allenai/Molmo2-ER
+    revision: dab22564403d2607855bb1fffb0721285b445081
+    pipeline_tag: image-text-to-text
+    model_type: molmo2
+    architectures:
+      - Molmo2ForConditionalGeneration
+    license: apache-2.0
+    tags:
+      - arxiv:2605.02881
+      - base_model:allenai/Molmo2-4B
+      - base_model:finetune:allenai/Molmo2-4B
+      - conversational
+      - custom_code
+      - embodied-reasoning
+      - en
+      - image-text-to-text
+      - license:apache-2.0
+      - molmo
+      - molmo2
+      - multimodal
+      - region:us
+      - safetensors
+      - spatial-reasoning
+      - transformers
+      - vision-language-model
+    tokenizer_model_max_length: 1010000
+    processor_class: Molmo2Processor
+    structured_files:
+      - config.json
+      - preprocessor_config.json
+      - tokenizer_config.json
+    fetched_at: 2026-08-25T02:48:43.882343318Z

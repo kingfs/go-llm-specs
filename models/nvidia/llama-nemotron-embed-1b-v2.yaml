@@ -1,0 +1,61 @@
+schema_version: 2
+id: nvidia/llama-nemotron-embed-1b-v2
+name: llama-nemotron-embed-1b-v2
+provider: NVIDIA
+developer: nvidia
+lifecycle: candidate
+context_length: 131072
+features:
+  - CapEmbedding
+  - ModalityTextIn
+links:
+  model_card: https://huggingface.co/nvidia/llama-nemotron-embed-1b-v2
+identifiers:
+  huggingface:
+    - nvidia/llama-nemotron-embed-1b-v2
+provenance:
+  context_length:
+    source: official_huggingface_config
+    url: https://huggingface.co/nvidia/llama-nemotron-embed-1b-v2
+  features:
+    source: official_huggingface_pipeline
+    url: https://huggingface.co/nvidia/llama-nemotron-embed-1b-v2
+  id:
+    source: official_huggingface
+    url: https://huggingface.co/nvidia/llama-nemotron-embed-1b-v2
+  name:
+    source: official_huggingface
+    url: https://huggingface.co/nvidia/llama-nemotron-embed-1b-v2
+upstream:
+  huggingface:
+    id: nvidia/llama-nemotron-embed-1b-v2
+    revision: 113abe4acafa848e77ead9c0623205e511932348
+    pipeline_tag: feature-extraction
+    model_type: llama_bidirec
+    architectures:
+      - LlamaBidirectionalModel
+    license: other
+    tags:
+      - arxiv:2407.15831
+      - custom_code
+      - endpoints_compatible
+      - feature-extraction
+      - license:other
+      - llama_bidirec
+      - multilingual
+      - pytorch
+      - region:us
+      - retrieval
+      - safetensors
+      - semantic-search
+      - sentence-transformers
+      - text
+      - text-embeddings
+      - text-embeddings-inference
+      - transformers
+    config_context_length: 131072
+    tokenizer_model_max_length: 131072
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-08-25T02:48:44.45552668Z

@@ -1,0 +1,61 @@
+schema_version: 2
+id: nvidia/llama-nv-embed-reasoning-3b
+name: llama-nv-embed-reasoning-3b
+provider: NVIDIA
+developer: nvidia
+lifecycle: candidate
+context_length: 131072
+features:
+  - CapEmbedding
+  - ModalityTextIn
+links:
+  model_card: https://huggingface.co/nvidia/llama-nv-embed-reasoning-3b
+identifiers:
+  huggingface:
+    - nvidia/llama-nv-embed-reasoning-3b
+provenance:
+  context_length:
+    source: official_huggingface_config
+    url: https://huggingface.co/nvidia/llama-nv-embed-reasoning-3b
+  features:
+    source: official_huggingface_pipeline
+    url: https://huggingface.co/nvidia/llama-nv-embed-reasoning-3b
+  id:
+    source: official_huggingface
+    url: https://huggingface.co/nvidia/llama-nv-embed-reasoning-3b
+  name:
+    source: official_huggingface
+    url: https://huggingface.co/nvidia/llama-nv-embed-reasoning-3b
+upstream:
+  huggingface:
+    id: nvidia/llama-nv-embed-reasoning-3b
+    revision: 4234447befe1cac7cf4e995da8fcf64307c60168
+    pipeline_tag: feature-extraction
+    model_type: llama_bidirec
+    architectures:
+      - LlamaBidirectionalModel
+    license: cc-by-4.0
+    tags:
+      - base_model:finetune:meta-llama/Llama-3.2-3B
+      - base_model:meta-llama/Llama-3.2-3B
+      - custom_code
+      - dataset:xlangai/BRIGHT
+      - endpoints_compatible
+      - feature-extraction
+      - license:cc-by-4.0
+      - llama_bidirec
+      - region:us
+      - retrieval
+      - safetensors
+      - semantic-search
+      - text
+      - text-embedding
+      - text-embeddings-inference
+      - transformer
+      - transformers
+    config_context_length: 131072
+    tokenizer_model_max_length: 131072
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-08-25T02:48:44.930536011Z

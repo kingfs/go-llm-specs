@@ -48,7 +48,6 @@ upstream:
     huggingface_id: Qwen/Qwen2.5-7B-Instruct
     supported_parameters:
       - frequency_penalty
-      - logit_bias
       - max_tokens
       - min_p
       - presence_penalty
@@ -67,7 +66,7 @@ upstream:
     output_modalities:
       - text
     knowledge_cutoff: "2024-06-30"
-    fetched_at: 2026-07-29T10:42:15.123031939Z
+    fetched_at: 2026-08-25T02:48:42.889341742Z
   huggingface:
     id: Qwen/Qwen2.5-7B-Instruct
     revision: a09a35458c702b33eeacc393d103063234e8bc28

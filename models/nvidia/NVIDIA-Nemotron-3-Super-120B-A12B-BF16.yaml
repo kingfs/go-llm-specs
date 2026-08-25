@@ -1,0 +1,72 @@
+schema_version: 2
+id: nvidia/nvidia-nemotron-3-super-120b-a12b-bf16
+name: NVIDIA-Nemotron-3-Super-120B-A12B-BF16
+provider: NVIDIA
+developer: nvidia
+lifecycle: candidate
+context_length: 262144
+features:
+  - ModalityTextIn
+  - ModalityTextOut
+links:
+  model_card: https://huggingface.co/nvidia/NVIDIA-Nemotron-3-Super-120B-A12B-BF16
+identifiers:
+  huggingface:
+    - nvidia/NVIDIA-Nemotron-3-Super-120B-A12B-BF16
+provenance:
+  context_length:
+    source: official_huggingface_config
+    url: https://huggingface.co/nvidia/NVIDIA-Nemotron-3-Super-120B-A12B-BF16
+  features:
+    source: official_huggingface_pipeline
+    url: https://huggingface.co/nvidia/NVIDIA-Nemotron-3-Super-120B-A12B-BF16
+  id:
+    source: official_huggingface
+    url: https://huggingface.co/nvidia/NVIDIA-Nemotron-3-Super-120B-A12B-BF16
+  name:
+    source: official_huggingface
+    url: https://huggingface.co/nvidia/NVIDIA-Nemotron-3-Super-120B-A12B-BF16
+upstream:
+  huggingface:
+    id: nvidia/NVIDIA-Nemotron-3-Super-120B-A12B-BF16
+    revision: 636ca2d6c38af103316ca8b9313e8749a2fd1b7d
+    pipeline_tag: text-generation
+    model_type: nemotron_h
+    architectures:
+      - NemotronHForCausalLM
+    license: other
+    tags:
+      - arxiv:2512.20848
+      - arxiv:2512.20856
+      - conversational
+      - custom_code
+      - dataset:nvidia/nemotron-post-training-v3
+      - dataset:nvidia/nemotron-pre-training-datasets
+      - de
+      - deploy:azure
+      - deploy:sagemaker
+      - en
+      - endpoints_compatible
+      - es
+      - eval-results
+      - fr
+      - it
+      - ja
+      - latent-moe
+      - license:other
+      - mtp
+      - nemotron-3
+      - nemotron_h
+      - nvidia
+      - pytorch
+      - region:us
+      - safetensors
+      - text-generation
+      - transformers
+      - zh
+    config_context_length: 262144
+    tokenizer_model_max_length: 262144
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-08-25T02:48:45.424522396Z

@@ -34,10 +34,8 @@ upstream:
     supported_parameters:
       - frequency_penalty
       - include_reasoning
-      - logit_bias
       - logprobs
       - max_tokens
-      - min_p
       - presence_penalty
       - reasoning
       - repetition_penalty
@@ -55,7 +53,7 @@ upstream:
     output_modalities:
       - text
     knowledge_cutoff: "2025-06-30"
-    fetched_at: 2026-07-29T10:42:37.193821329Z
+    fetched_at: 2026-08-25T02:48:42.889799492Z
   huggingface:
     id: Qwen/Qwen3-235B-A22B-Thinking-2507
     revision: 6cbffae6d8e28b986a6b17bd36f42f9fa0f1f0a5

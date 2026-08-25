@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "allenai/olmo-hybrid-7b",
+  "status": "partially_accepted",
+  "created_at": "2026-08-25T02:49:29.877697861Z",
+  "source": {
+    "url": "https://huggingface.co/allenai/Olmo-Hybrid-7B/resolve/4f1cc566f9fdf3ce68da2ab6a788a83d89896dcf/README.md",
+    "revision": "4f1cc566f9fdf3ce68da2ab6a788a83d89896dcf",
+    "sha256": "62746f9c68cd8af0b690565ecc08cb6b7749f8225579a0a556f9ed3075e8d81a"
+  },
+  "generator": {
+    "model": "qwen/qwen3.6-27b",
+    "wire_api": "chat"
+  },
+  "claims": [
+    {
+      "field": "description",
+      "value": "Olmo Hybrid is a 7B hybrid RNN language model featuring 75% gated DeltaNet heads, trained on 5.5 trillion tokens, with improved data efficiency and inference performance for long contexts compared to Olmo 3.",
+      "evidence": "We expand on our Olmo model series by introducing Olmo Hybrid, a new 7B hybrid RNN model in the Olmo family. Olmo Hybrid dramatically outperforms Olmo 3 in final performance",
+      "section": "## Model Details",
+      "confidence": "high"
+    },
+    {
+      "field": "context_length",
+      "value": 65536,
+      "evidence": "| [Olmo Hybrid 7B](https://huggingface.co/allenai/Olmo-Hybrid-7B) | 5.50 Trillion | 32 | 3840 | 30 | 30 | 30 | 65,536 |",
+      "section": "## Model Details",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "ModalityTextIn",
+        "ModalityTextOut"
+      ],
+      "evidence": "Language(s) (NLP): English ... auto-regressive language model ... predicting the next word in a sequence",
+      "section": "### Model Description",
+      "confidence": "high"
+    },
+    {
+      "field": "description",
+      "value": "The model architecture consists of 32 layers with a hidden size of 3840. 75% of layers use gated DeltaNet heads with 30 heads, alternating with multihead attention layers.",
+      "evidence": "except that 75% of layers use gated DeltaNet heads instead of attention heads. The layers alternate so that 3 contain DeltaNet sublayers followed by 1 with a multihead attention sublayer",
+      "section": "## Model Details",
+      "confidence": "high"
+    },
+    {
+      "field": "description",
+      "value": "Olmo Hybrid was trained on the Dolma 3 dataset, using the data mix of Olmo 3 32B, with a standard cosine learning rate schedule.",
+      "evidence": "These models are pre-trained on the Dolma 3 dataset ... we use the improved data mix of Olmo 3 32B ... change the learning rate schedule to be a standard cosine schedule",
+      "section": "## Model Details",
+      "confidence": "high"
+    },
+    {
+      "field": "description",
+      "value": "The model is developed by Allen Institute for AI (Ai2) and licensed under Apache 2.0, intended for research and educational use.",
+      "evidence": "**Developed by:** Allen Institute for AI (Ai2) ... **License:** This model is licensed under Apache 2.0. It is intended for research and educational use",
+      "section": "### Model Description",
+      "confidence": "high"
+    },
+    {
+      "field": "description",
+      "value": "Olmo Hybrid demonstrates roughly 2x data efficiency on core evals and improved inference efficiency (throughput and memory) on long-context lengths by a factor of 75% over Olmo 3.",
+      "evidence": "consistently showing roughly 2x data efficiency on core evals ... improved inference efficiency (throughput and memory) on long-context lengths by a factor of 75%",
+      "section": "## Model Details",
+      "confidence": "high"
+    }
+  ]
+}

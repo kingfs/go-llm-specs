@@ -1,0 +1,71 @@
+schema_version: 2
+id: nvidia/nvidia-nemotron-3-super-120b-a12b-nvfp4
+name: NVIDIA-Nemotron-3-Super-120B-A12B-NVFP4
+provider: NVIDIA
+developer: nvidia
+lifecycle: candidate
+context_length: 262144
+features:
+  - ModalityTextIn
+  - ModalityTextOut
+links:
+  model_card: https://huggingface.co/nvidia/NVIDIA-Nemotron-3-Super-120B-A12B-NVFP4
+identifiers:
+  huggingface:
+    - nvidia/NVIDIA-Nemotron-3-Super-120B-A12B-NVFP4
+provenance:
+  context_length:
+    source: official_huggingface_config
+    url: https://huggingface.co/nvidia/NVIDIA-Nemotron-3-Super-120B-A12B-NVFP4
+  features:
+    source: official_huggingface_pipeline
+    url: https://huggingface.co/nvidia/NVIDIA-Nemotron-3-Super-120B-A12B-NVFP4
+  id:
+    source: official_huggingface
+    url: https://huggingface.co/nvidia/NVIDIA-Nemotron-3-Super-120B-A12B-NVFP4
+  name:
+    source: official_huggingface
+    url: https://huggingface.co/nvidia/NVIDIA-Nemotron-3-Super-120B-A12B-NVFP4
+upstream:
+  huggingface:
+    id: nvidia/NVIDIA-Nemotron-3-Super-120B-A12B-NVFP4
+    revision: ff433f5493e25d631c9f12b5d55c674229923d02
+    pipeline_tag: text-generation
+    model_type: nemotron_h
+    architectures:
+      - NemotronHForCausalLM
+    license: other
+    tags:
+      - 8-bit
+      - arxiv:2512.20848
+      - arxiv:2512.20856
+      - conversational
+      - custom_code
+      - dataset:nvidia/nemotron-post-training-v3
+      - dataset:nvidia/nemotron-pre-training-datasets
+      - de
+      - en
+      - endpoints_compatible
+      - es
+      - fr
+      - it
+      - ja
+      - latent-moe
+      - license:other
+      - modelopt
+      - mtp
+      - nemotron-3
+      - nemotron_h
+      - nvidia
+      - pytorch
+      - region:us
+      - safetensors
+      - text-generation
+      - transformers
+      - zh
+    config_context_length: 262144
+    tokenizer_model_max_length: 262144
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-08-25T02:48:46.219127544Z

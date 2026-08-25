@@ -1,7 +1,7 @@
 {
   "providers": 24,
-  "models": 597,
-  "models_with_official_links": 398,
+  "models": 602,
+  "models_with_official_links": 403,
   "uncataloged_publishers": {
     "Ai21": 1,
     "Aion-Labs": 4,
@@ -30020,7 +30020,8 @@
       "provider_id": "allenai",
       "organization": "allenai",
       "repository_id": "allenai/Molmo2-ER",
-      "status": "new",
+      "registry_id": "allenai/molmo2-er",
+      "status": "materialized",
       "url": "https://huggingface.co/allenai/Molmo2-ER",
       "last_modified": "2026-05-21T01:13:56Z",
       "pipeline_tag": "image-text-to-text",
@@ -104899,7 +104900,7 @@
       "repository_id": "nvidia/Cosmos3-Edge",
       "status": "new",
       "url": "https://huggingface.co/nvidia/Cosmos3-Edge",
-      "last_modified": "2026-08-20T20:30:21Z",
+      "last_modified": "2026-08-24T20:39:56Z",
       "tags": [
         "cosmos",
         "diffusers",
@@ -104919,7 +104920,7 @@
       "repository_id": "nvidia/Cosmos3-Edge-Policy-DROID",
       "status": "new",
       "url": "https://huggingface.co/nvidia/Cosmos3-Edge-Policy-DROID",
-      "last_modified": "2026-08-14T05:19:47Z",
+      "last_modified": "2026-08-24T21:39:59Z",
       "tags": [
         "cosmos",
         "diffusers",
@@ -110471,7 +110472,7 @@
       "repository_id": "nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B-FP8",
       "status": "new",
       "url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B-FP8",
-      "last_modified": "2026-03-15T04:25:00Z",
+      "last_modified": "2026-08-24T23:50:18Z",
       "pipeline_tag": "text-generation",
       "tags": [
         "transformers",
@@ -110511,8 +110512,8 @@
         "license:other",
         "eval-results",
         "endpoints_compatible",
-        "region:us",
-        "deploy:azure"
+        "deploy:azure",
+        "region:us"
       ]
     },
     {
@@ -110521,7 +110522,7 @@
       "repository_id": "nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B-NVFP4",
       "status": "new",
       "url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B-NVFP4",
-      "last_modified": "2026-03-15T04:27:10Z",
+      "last_modified": "2026-08-24T23:50:33Z",
       "pipeline_tag": "text-generation",
       "tags": [
         "transformers",
@@ -110690,9 +110691,10 @@
       "provider_id": "nvidia",
       "organization": "nvidia",
       "repository_id": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B-BF16",
-      "status": "new",
+      "registry_id": "nvidia/nvidia-nemotron-3-super-120b-a12b-bf16",
+      "status": "materialized",
       "url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3-Super-120B-A12B-BF16",
-      "last_modified": "2026-04-29T16:15:40Z",
+      "last_modified": "2026-08-24T23:48:09Z",
       "pipeline_tag": "text-generation",
       "tags": [
         "transformers",
@@ -110720,9 +110722,9 @@
         "license:other",
         "eval-results",
         "endpoints_compatible",
-        "region:us",
         "deploy:sagemaker",
-        "deploy:azure"
+        "deploy:azure",
+        "region:us"
       ]
     },
     {
@@ -110775,9 +110777,10 @@
       "provider_id": "nvidia",
       "organization": "nvidia",
       "repository_id": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B-NVFP4",
-      "status": "new",
+      "registry_id": "nvidia/nvidia-nemotron-3-super-120b-a12b-nvfp4",
+      "status": "materialized",
       "url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3-Super-120B-A12B-NVFP4",
-      "last_modified": "2026-05-01T16:54:19Z",
+      "last_modified": "2026-08-24T23:47:52Z",
       "pipeline_tag": "text-generation",
       "tags": [
         "transformers",
@@ -112311,7 +112314,7 @@
       "repository_id": "nvidia/Nemotron-3-Nano-Omni-30B-A3B-Reasoning-NVFP4",
       "status": "new",
       "url": "https://huggingface.co/nvidia/Nemotron-3-Nano-Omni-30B-A3B-Reasoning-NVFP4",
-      "last_modified": "2026-05-05T14:35:03Z",
+      "last_modified": "2026-08-24T23:49:42Z",
       "pipeline_tag": "any-to-any",
       "tags": [
         "transformers",
@@ -112330,8 +112333,8 @@
         "license:other",
         "8-bit",
         "modelopt",
-        "region:us",
-        "deploy:azure"
+        "deploy:azure",
+        "region:us"
       ]
     },
     {
@@ -116477,7 +116480,7 @@
       "repository_id": "nvidia/atlas-era5",
       "status": "new",
       "url": "https://huggingface.co/nvidia/atlas-era5",
-      "last_modified": "2026-03-04T17:45:55Z",
+      "last_modified": "2026-08-24T21:11:22Z",
       "tags": [
         "license:other",
         "region:us"
@@ -117326,9 +117329,10 @@
       "repository_id": "nvidia/cmd",
       "status": "new",
       "url": "https://huggingface.co/nvidia/cmd",
-      "last_modified": "2026-08-18T14:14:56Z",
+      "last_modified": "2026-08-24T13:53:57Z",
       "pipeline_tag": "image-to-video",
       "tags": [
+        "cmd",
         "video-generation",
         "image-to-video",
         "world-model",
@@ -118548,7 +118552,8 @@
       "provider_id": "nvidia",
       "organization": "nvidia",
       "repository_id": "nvidia/llama-nemotron-embed-1b-v2",
-      "status": "new",
+      "registry_id": "nvidia/llama-nemotron-embed-1b-v2",
+      "status": "materialized",
       "url": "https://huggingface.co/nvidia/llama-nemotron-embed-1b-v2",
       "last_modified": "2026-05-20T18:24:18Z",
       "pipeline_tag": "feature-extraction",
@@ -118729,7 +118734,8 @@
       "provider_id": "nvidia",
       "organization": "nvidia",
       "repository_id": "nvidia/llama-nv-embed-reasoning-3b",
-      "status": "new",
+      "registry_id": "nvidia/llama-nv-embed-reasoning-3b",
+      "status": "materialized",
       "url": "https://huggingface.co/nvidia/llama-nv-embed-reasoning-3b",
       "last_modified": "2026-05-20T18:23:24Z",
       "pipeline_tag": "feature-extraction",
