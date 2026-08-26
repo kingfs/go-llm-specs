@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "ibm-granite/granite-4.2-3b",
+  "status": "partially_accepted",
+  "created_at": "2026-08-26T02:55:08.812221925Z",
+  "source": {
+    "url": "https://huggingface.co/ibm-granite/granite-4.2-3b/resolve/b7e947307dd2efb3ad3b853b0e8a7e75f8ad4ac2/README.md",
+    "revision": "b7e947307dd2efb3ad3b853b0e8a7e75f8ad4ac2",
+    "sha256": "6a0a64a1ac19dd555c980586d2456f7c47cb3d51194bf4b7c4f025bc223409a4"
+  },
+  "generator": {
+    "model": "qwen/qwen3.6-27b",
+    "wire_api": "chat"
+  },
+  "claims": [
+    {
+      "field": "description",
+      "value": "Granite-4.2-3B is a compact 3B decoder-only reasoning model from IBM. It features built-in chain-of-thought reasoning with flexible modes (full, non-thinking, low-effort) and supports multilingual text generation.",
+      "evidence": "Granite-4.2-3B is the compact reasoning model in the Granite 4.2 family... leverages built-in \u003cthink\u003e...\u003c/think\u003e chain-of-thought. It supports flexible thinking modes",
+      "section": "Model Overview",
+      "confidence": "high"
+    },
+    {
+      "field": "context_length",
+      "value": 512000,
+      "evidence": "Context Length | Natively Supports 128K (Long-context extension to 512K)",
+      "section": "Model Summary",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "ModalityTextIn",
+        "ModalityTextOut"
+      ],
+      "evidence": "pipeline_tag: text-generation",
+      "section": "metadata",
+      "confidence": "high"
+    },
+    {
+      "field": "reasoning.supported",
+      "value": true,
+      "evidence": "Reasoning Mode | Built-in \u003cthink\u003e...\u003c/think\u003e chain-of-thought",
+      "section": "Model Summary",
+      "confidence": "high"
+    },
+    {
+      "field": "reasoning.parser",
+      "value": "think",
+      "evidence": "leveraging built-in \u003cthink\u003e...\u003c/think\u003e chain-of-thought",
+      "section": "Model Overview",
+      "confidence": "medium"
+    }
+  ]
+}

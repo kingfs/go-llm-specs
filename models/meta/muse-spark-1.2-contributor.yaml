@@ -6,6 +6,7 @@ developer: meta
 description: Muse Spark 1.2 contributor tier is a reasoning model from Meta designed for developers who want to start building at an even lower cost. It’s meaningfully cheaper than Muse Spark...
 description_cn: Muse Spark 1.2 Contributor 层级是 Meta 推出的一款推理模型，专为希望以更低成本开始开发的开发者设计。其成本显著低于 Muse Spark...
 context_length: 1048576
+max_output: 943718
 features:
   - CapChat
   - CapFunctionCall

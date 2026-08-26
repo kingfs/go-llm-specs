@@ -19,6 +19,8 @@ features:
   - CapJsonMode
   - ModalityTextIn
   - ModalityTextOut
+aliases:
+  - minimax/minimax-m2.7:free
 discovered_at: 2026-07-29T10:39:17.055894146Z
 links:
   model_card: https://huggingface.co/MiniMaxAI/MiniMax-M2.7
@@ -27,6 +29,7 @@ identifiers:
     - MiniMaxAI/MiniMax-M2.7
   openrouter:
     - minimax/minimax-m2.7
+    - minimax/minimax-m2.7:free
 upstream:
   openrouter:
     canonical_slug: minimax/minimax-m2.7-20260318

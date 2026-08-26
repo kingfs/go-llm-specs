@@ -6,6 +6,7 @@ developer: xai
 description: Grok 4.6 is SpaceXAI's smartest model with frontier performance on coding, knowledge work, and STEM.
 description_cn: Grok 4.6 是 X AI 最先进的模型，在编程、知识工作和 STEM 领域具备前沿性能。
 context_length: 500000
+max_output: 450000
 features:
   - CapChat
   - CapFunctionCall
@@ -46,10 +47,12 @@ upstream:
       - reasoning_effort
       - response_format
       - seed
+      - stop
       - structured_outputs
       - temperature
       - tool_choice
       - tools
+      - top_k
       - top_logprobs
       - top_p
     input_modalities:
@@ -58,7 +61,7 @@ upstream:
       - text
     output_modalities:
       - text
-    fetched_at: 2026-08-18T02:45:22.752781214Z
+    fetched_at: 2026-08-26T02:55:05.770105713Z
 reasoning:
   supported: true
   mandatory: true

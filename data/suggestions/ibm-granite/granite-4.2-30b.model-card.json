@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "ibm-granite/granite-4.2-30b",
+  "status": "partially_accepted",
+  "created_at": "2026-08-26T02:56:18.7266689Z",
+  "source": {
+    "url": "https://huggingface.co/ibm-granite/granite-4.2-30b/resolve/70fc514076785017d93087f3d8b0676426b6b355/README.md",
+    "revision": "70fc514076785017d93087f3d8b0676426b6b355",
+    "sha256": "b247b4f60e23b06446960227c80e4249d286a59dfc7e6d636cd293f2e880c0af"
+  },
+  "generator": {
+    "model": "qwen/qwen3.6-27b",
+    "wire_api": "chat"
+  },
+  "claims": [
+    {
+      "field": "description",
+      "value": "IBM Granite-4.2-30B is a 30B parameter decoder-only dense transformer reasoning model with built-in chain-of-thought, supporting 512K context and multilingual capabilities.",
+      "evidence": "Granite-4.2-30B is the flagship reasoning model... leverages built-in chain-of-thought... 512K Context Window... Apache 2.0 Licensed",
+      "section": "Model Summary",
+      "confidence": "high"
+    },
+    {
+      "field": "context_length",
+      "value": 524288,
+      "evidence": "Context Length | Natively Supports 128K (Long-context extension to 512K)",
+      "section": "Model Summary",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "CapFunctionCall",
+        "ModalityTextIn",
+        "ModalityTextOut"
+      ],
+      "evidence": "Best For | Reasoning, Code Generation, Tool Calling, Agentic Workflows, Multilingual Dialog",
+      "section": "Model Summary",
+      "confidence": "high"
+    },
+    {
+      "field": "reasoning.supported",
+      "value": true,
+      "evidence": "Reasoning Mode | Built-in \u003cthink\u003e...\u003c/think\u003e chain-of-thought",
+      "section": "Model Summary",
+      "confidence": "high"
+    },
+    {
+      "field": "reasoning.parser",
+      "value": "start_tag: \u003cthink\u003e, end_tag: \u003c/think\u003e",
+      "evidence": "Reasoning Mode | Built-in \u003cthink\u003e...\u003c/think\u003e chain-of-thought",
+      "section": "Model Summary",
+      "confidence": "high"
+    }
+  ]
+}

@@ -20,6 +20,7 @@ description_cn: |-
   基准测试结果详见发布公告：[此处](https://mistral.ai/news/mixtral-8x22b/)。
   #moe
 context_length: 65536
+max_output: 52428
 features:
   - CapChat
   - CapFunctionCall

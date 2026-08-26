@@ -6,6 +6,7 @@ developer: ~X-Ai
 description: This model always redirects to the latest Grok model from xAI.
 description_cn: 该模型始终重定向到 xAI 的最新 Grok 模型。
 context_length: 500000
+max_output: 450000
 features:
   - CapChat
   - CapFunctionCall
@@ -32,10 +33,12 @@ upstream:
       - reasoning_effort
       - response_format
       - seed
+      - stop
       - structured_outputs
       - temperature
       - tool_choice
       - tools
+      - top_k
       - top_logprobs
       - top_p
     input_modalities:
@@ -44,7 +47,7 @@ upstream:
       - text
     output_modalities:
       - text
-    fetched_at: 2026-08-18T02:45:22.754064983Z
+    fetched_at: 2026-08-26T02:55:05.771692572Z
 reasoning:
   supported: true
   mandatory: true

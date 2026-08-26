@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "ibm-granite/granite-4.2-8b",
+  "status": "partially_accepted",
+  "created_at": "2026-08-26T02:55:55.289722805Z",
+  "source": {
+    "url": "https://huggingface.co/ibm-granite/granite-4.2-8b/resolve/41a8a2d41c54ef4a71741b3e62604f4caaec9295/README.md",
+    "revision": "41a8a2d41c54ef4a71741b3e62604f4caaec9295",
+    "sha256": "c3543b53df0579632c1b0a86012d79174b127f1c233e7fee3b8312daf5a23602"
+  },
+  "generator": {
+    "model": "qwen/qwen3.6-27b",
+    "wire_api": "chat"
+  },
+  "claims": [
+    {
+      "field": "description",
+      "value": "Granite-4.2-8B is a mid-size decoder-only dense transformer reasoning model by IBM. It features native chain-of-thought capabilities for improved performance on math, coding, and logic tasks. The model supports flexible thinking modes and is designed for agentic workflows and tool calling.",
+      "evidence": "Granite-4.2-8B is the mid-size reasoning model in the Granite 4.2 family... Built-in Reasoning: Native chain-of-thought... Reasoning-Augmented Tool Calling...",
+      "section": "Model Overview",
+      "confidence": "high"
+    },
+    {
+      "field": "context_length",
+      "value": 131072,
+      "evidence": "Natively Supports 128K (Long-context extension to 512K)... Sequence length 131072",
+      "section": "Model Summary",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "CapChat",
+        "CapFunctionCall",
+        "ModalityTextIn",
+        "ModalityTextOut"
+      ],
+      "evidence": "Best For: ... Tool Calling, Agentic Workflows, Multilingual Dialog... pipeline_tag: text-generation... language: [en, de, ...]",
+      "section": "Model Summary",
+      "confidence": "high"
+    },
+    {
+      "field": "reasoning.supported",
+      "value": true,
+      "evidence": "Model Type: Decoder-only Dense Transformer (Reasoning)... Built-in \u003cthink\u003e...\u003c/think\u003e chain-of-thought",
+      "section": "Model Summary",
+      "confidence": "high"
+    },
+    {
+      "field": "reasoning.parser",
+      "value": "think",
+      "evidence": "Built-in \u003cthink\u003e...\u003c/think\u003e chain-of-thought",
+      "section": "Model Summary",
+      "confidence": "high"
+    }
+  ]
+}

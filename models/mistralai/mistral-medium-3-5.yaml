@@ -6,6 +6,7 @@ developer: mistral
 description: Mistral Medium 3.5 is a dense 128B instruction-following model from Mistral AI. It supports text and image inputs with text output, and is designed for agentic workflows, coding, and complex...
 description_cn: Mistral Medium 3.5 是 Mistral AI 提供的一个密集型 128B 指令跟随模型。它支持文本和图像输入以及文本输出，旨在用于智能工作流、编程和复杂...
 context_length: 262144
+max_output: 209715
 features:
   - CapChat
   - CapFunctionCall

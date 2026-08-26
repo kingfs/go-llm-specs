@@ -12,6 +12,7 @@ description_cn: |-
 
   [博客文章](https://mistral.ai/news/codestral-25-08)
 context_length: 256000
+max_output: 204800
 features:
   - CapChat
   - CapFunctionCall

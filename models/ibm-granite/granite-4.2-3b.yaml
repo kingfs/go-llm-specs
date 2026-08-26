@@ -1,0 +1,80 @@
+schema_version: 2
+id: ibm-granite/granite-4.2-3b
+name: granite-4.2-3b
+provider: IBM Granite
+developer: ibm-granite
+lifecycle: active
+description: Granite-4.2-3B is a compact 3B decoder-only reasoning model from IBM. It features built-in chain-of-thought reasoning with flexible modes (full, non-thinking, low-effort) and supports multilingual text generation.
+description_cn: Granite-4.2-3B 是 IBM 开发的一款紧凑型 30 亿参数仅解码器推理模型。它具备内置的思维链推理功能，支持灵活的模式选择（完整、非思考、低能耗），并支持多语言文本生成。
+context_length: 131072
+features:
+  - ModalityTextIn
+  - ModalityTextOut
+links:
+  model_card: https://huggingface.co/ibm-granite/granite-4.2-3b
+identifiers:
+  huggingface:
+    - ibm-granite/granite-4.2-3b
+provenance:
+  context_length:
+    source: official_huggingface_config
+    url: https://huggingface.co/ibm-granite/granite-4.2-3b
+  description:
+    source: official_model_card
+    url: https://huggingface.co/ibm-granite/granite-4.2-3b/resolve/b7e947307dd2efb3ad3b853b0e8a7e75f8ad4ac2/README.md
+  features:
+    source: official_huggingface_pipeline
+    url: https://huggingface.co/ibm-granite/granite-4.2-3b
+  id:
+    source: official_huggingface
+    url: https://huggingface.co/ibm-granite/granite-4.2-3b
+  name:
+    source: official_huggingface
+    url: https://huggingface.co/ibm-granite/granite-4.2-3b
+  reasoning.supported:
+    source: official_model_card
+    url: https://huggingface.co/ibm-granite/granite-4.2-3b/resolve/b7e947307dd2efb3ad3b853b0e8a7e75f8ad4ac2/README.md
+upstream:
+  huggingface:
+    id: ibm-granite/granite-4.2-3b
+    revision: b7e947307dd2efb3ad3b853b0e8a7e75f8ad4ac2
+    pipeline_tag: text-generation
+    model_type: granite
+    architectures:
+      - GraniteForCausalLM
+    license: apache-2.0
+    tags:
+      - ar
+      - base_model:finetune:ibm-granite/granite-4.1-3b-base
+      - base_model:ibm-granite/granite-4.1-3b-base
+      - conversational
+      - cs
+      - de
+      - en
+      - endpoints_compatible
+      - es
+      - fr
+      - granite
+      - granite-4.2
+      - ibm
+      - it
+      - ja
+      - ko
+      - license:apache-2.0
+      - nl
+      - pt
+      - reasoning
+      - region:us
+      - safetensors
+      - text-generation
+      - thinking
+      - tool-calling
+      - transformers
+      - zh
+    config_context_length: 131072
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-08-26T02:55:06.307215106Z
+reasoning:
+  supported: true

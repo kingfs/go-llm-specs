@@ -6,6 +6,7 @@ developer: meta
 description: Muse Spark 1.2 is a reasoning model from Meta, designed for complex agentic tasks. It accepts text, images, video, audio, and PDF documents, returns text, and offers a 1M-token context...
 description_cn: Muse Spark 1.2 是 Meta 推出的一款推理模型，专为复杂的智能体任务设计。它接受文本、图像、视频、音频和 PDF 文档输入，返回文本输出，并提供 100 万 token 的上下文...
 context_length: 1048576
+max_output: 943718
 features:
   - CapChat
   - CapFunctionCall

@@ -1,0 +1,80 @@
+schema_version: 2
+id: ibm-granite/granite-4.2-30b
+name: granite-4.2-30b
+provider: IBM Granite
+developer: ibm-granite
+lifecycle: active
+description: IBM Granite-4.2-30B is a 30B parameter decoder-only dense transformer reasoning model with built-in chain-of-thought, supporting 512K context and multilingual capabilities.
+description_cn: IBM Granite-4.2-30B 是一款拥有 300 亿参数的仅解码器密集型 Transformer 推理模型，具备内置的思维链功能，支持 512K 上下文长度及多语言处理能力。
+context_length: 131072
+features:
+  - ModalityTextIn
+  - ModalityTextOut
+links:
+  model_card: https://huggingface.co/ibm-granite/granite-4.2-30b
+identifiers:
+  huggingface:
+    - ibm-granite/granite-4.2-30b
+provenance:
+  context_length:
+    source: official_huggingface_config
+    url: https://huggingface.co/ibm-granite/granite-4.2-30b
+  description:
+    source: official_model_card
+    url: https://huggingface.co/ibm-granite/granite-4.2-30b/resolve/70fc514076785017d93087f3d8b0676426b6b355/README.md
+  features:
+    source: official_huggingface_pipeline
+    url: https://huggingface.co/ibm-granite/granite-4.2-30b
+  id:
+    source: official_huggingface
+    url: https://huggingface.co/ibm-granite/granite-4.2-30b
+  name:
+    source: official_huggingface
+    url: https://huggingface.co/ibm-granite/granite-4.2-30b
+  reasoning.supported:
+    source: official_model_card
+    url: https://huggingface.co/ibm-granite/granite-4.2-30b/resolve/70fc514076785017d93087f3d8b0676426b6b355/README.md
+upstream:
+  huggingface:
+    id: ibm-granite/granite-4.2-30b
+    revision: 70fc514076785017d93087f3d8b0676426b6b355
+    pipeline_tag: text-generation
+    model_type: granite
+    architectures:
+      - GraniteForCausalLM
+    license: apache-2.0
+    tags:
+      - ar
+      - base_model:finetune:ibm-granite/granite-4.1-30b-base
+      - base_model:ibm-granite/granite-4.1-30b-base
+      - conversational
+      - cs
+      - de
+      - en
+      - endpoints_compatible
+      - es
+      - fr
+      - granite
+      - granite-4.2
+      - ibm
+      - it
+      - ja
+      - ko
+      - license:apache-2.0
+      - nl
+      - pt
+      - reasoning
+      - region:us
+      - safetensors
+      - text-generation
+      - thinking
+      - tool-calling
+      - transformers
+      - zh
+    config_context_length: 131072
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-08-26T02:55:06.173643045Z
+reasoning:
+  supported: true

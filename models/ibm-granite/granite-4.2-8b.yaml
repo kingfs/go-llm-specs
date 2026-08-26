@@ -1,0 +1,80 @@
+schema_version: 2
+id: ibm-granite/granite-4.2-8b
+name: granite-4.2-8b
+provider: IBM Granite
+developer: ibm-granite
+lifecycle: active
+description: Granite-4.2-8B is a mid-size decoder-only dense transformer reasoning model by IBM. It features native chain-of-thought capabilities for improved performance on math, coding, and logic tasks. The model supports flexible thinking modes and is designed for agentic workflows and tool calling.
+description_cn: Granite-4.2-8B 是 IBM 推出的一款中型仅解码器密集型 Transformer 推理模型。它拥有原生的思维链能力，在数学、编码和逻辑任务中表现更佳。该模型支持灵活的思考模式，专为智能体工作流程和工具调用而设计。
+context_length: 131072
+features:
+  - ModalityTextIn
+  - ModalityTextOut
+links:
+  model_card: https://huggingface.co/ibm-granite/granite-4.2-8b
+identifiers:
+  huggingface:
+    - ibm-granite/granite-4.2-8b
+provenance:
+  context_length:
+    source: official_huggingface_config
+    url: https://huggingface.co/ibm-granite/granite-4.2-8b
+  description:
+    source: official_model_card
+    url: https://huggingface.co/ibm-granite/granite-4.2-8b/resolve/41a8a2d41c54ef4a71741b3e62604f4caaec9295/README.md
+  features:
+    source: official_huggingface_pipeline
+    url: https://huggingface.co/ibm-granite/granite-4.2-8b
+  id:
+    source: official_huggingface
+    url: https://huggingface.co/ibm-granite/granite-4.2-8b
+  name:
+    source: official_huggingface
+    url: https://huggingface.co/ibm-granite/granite-4.2-8b
+  reasoning.supported:
+    source: official_model_card
+    url: https://huggingface.co/ibm-granite/granite-4.2-8b/resolve/41a8a2d41c54ef4a71741b3e62604f4caaec9295/README.md
+upstream:
+  huggingface:
+    id: ibm-granite/granite-4.2-8b
+    revision: 41a8a2d41c54ef4a71741b3e62604f4caaec9295
+    pipeline_tag: text-generation
+    model_type: granite
+    architectures:
+      - GraniteForCausalLM
+    license: apache-2.0
+    tags:
+      - ar
+      - base_model:finetune:ibm-granite/granite-4.1-8b-base
+      - base_model:ibm-granite/granite-4.1-8b-base
+      - conversational
+      - cs
+      - de
+      - en
+      - endpoints_compatible
+      - es
+      - fr
+      - granite
+      - granite-4.2
+      - ibm
+      - it
+      - ja
+      - ko
+      - license:apache-2.0
+      - nl
+      - pt
+      - reasoning
+      - region:us
+      - safetensors
+      - text-generation
+      - thinking
+      - tool-calling
+      - transformers
+      - zh
+    config_context_length: 131072
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-08-26T02:55:06.434019632Z
+reasoning:
+  supported: true

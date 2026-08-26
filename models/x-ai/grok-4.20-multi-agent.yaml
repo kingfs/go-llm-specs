@@ -16,6 +16,7 @@ description_cn: |-
   - low / medium：4 个智能体
   - high / xhigh：16 个智能体
 context_length: 2000000
+max_output: 1800000
 features:
   - CapChat
   - CapJsonMode

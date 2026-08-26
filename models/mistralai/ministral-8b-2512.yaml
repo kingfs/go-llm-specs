@@ -6,6 +6,7 @@ developer: mistral
 description: A balanced model in the Ministral 3 family, Ministral 3 8B is a powerful, efficient tiny language model with vision capabilities.
 description_cn: Ministral 3 系列中的均衡之选 Ministral 3 8B 是一款高效、强大的微型多模态语言模型。
 context_length: 262144
+max_output: 209715
 features:
   - CapChat
   - CapFunctionCall

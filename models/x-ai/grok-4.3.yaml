@@ -6,6 +6,7 @@ developer: xai
 description: Grok 4.3 is a reasoning model from xAI. It accepts text and image inputs with text output, and is suited for agentic workflows, instruction-following tasks, and applications requiring high factual...
 description_cn: Grok 4.3 是 xAI 的推理模型。它接受文本和图像输入，输出文本，适用于代理工作流程、任务执行和需要高事实准确性的应用...
 context_length: 1000000
+max_output: 900000
 features:
   - CapChat
   - CapFunctionCall
