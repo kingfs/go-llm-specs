@@ -1,0 +1,52 @@
+schema_version: 2
+id: zai/glm-5.3-flash-bf16
+name: GLM-5.3-Flash-BF16
+provider: Z.ai
+developer: zai
+lifecycle: candidate
+context_length: 0
+features:
+  - ModalityTextIn
+  - ModalityTextOut
+links:
+  model_card: https://huggingface.co/zai-org/GLM-5.3-Flash-BF16
+identifiers:
+  huggingface:
+    - zai-org/GLM-5.3-Flash-BF16
+provenance:
+  features:
+    source: official_huggingface_pipeline
+    url: https://huggingface.co/zai-org/GLM-5.3-Flash-BF16
+  id:
+    source: official_huggingface
+    url: https://huggingface.co/zai-org/GLM-5.3-Flash-BF16
+  name:
+    source: official_huggingface
+    url: https://huggingface.co/zai-org/GLM-5.3-Flash-BF16
+upstream:
+  huggingface:
+    id: zai-org/GLM-5.3-Flash-BF16
+    revision: f12e0fe1f6b2ea274c11a569582edfd99d993c5e
+    pipeline_tag: text-generation
+    model_type: glm5_next
+    architectures:
+      - Glm5NextForConditionalGeneration
+    license: mit
+    tags:
+      - arxiv:2602.15763
+      - conversational
+      - en
+      - endpoints_compatible
+      - glm5_next
+      - image-text-to-text
+      - license:mit
+      - region:us
+      - safetensors
+      - text-generation
+      - transformers
+      - zh
+    tokenizer_model_max_length: 1048576
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-08-27T12:05:25.018808066Z

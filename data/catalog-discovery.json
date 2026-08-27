@@ -1,7 +1,7 @@
 {
   "providers": 24,
-  "models": 607,
-  "models_with_official_links": 408,
+  "models": 614,
+  "models_with_official_links": 413,
   "uncataloged_publishers": {
     "Ai21": 1,
     "Aion-Labs": 4,
@@ -16623,6 +16623,49 @@
         "base_model:Qwen/Qwen3.8-27B",
         "base_model:quantized:Qwen/Qwen3.8-27B",
         "license:apache-2.0",
+        "endpoints_compatible",
+        "fp8",
+        "region:us"
+      ]
+    },
+    {
+      "provider_id": "qwen",
+      "organization": "Qwen",
+      "repository_id": "Qwen/Qwen3.8-Flash-Next",
+      "registry_id": "qwen/qwen3.8-flash-next",
+      "status": "materialized",
+      "url": "https://huggingface.co/Qwen/Qwen3.8-Flash-Next",
+      "last_modified": "2026-08-27T05:03:36Z",
+      "pipeline_tag": "image-text-to-text",
+      "tags": [
+        "transformers",
+        "safetensors",
+        "qwen4_exp",
+        "image-text-to-text",
+        "conversational",
+        "license:other",
+        "eval-results",
+        "endpoints_compatible",
+        "region:us"
+      ]
+    },
+    {
+      "provider_id": "qwen",
+      "organization": "Qwen",
+      "repository_id": "Qwen/Qwen3.8-Flash-Next-FP8",
+      "status": "new",
+      "url": "https://huggingface.co/Qwen/Qwen3.8-Flash-Next-FP8",
+      "last_modified": "2026-08-27T05:04:18Z",
+      "pipeline_tag": "image-text-to-text",
+      "tags": [
+        "transformers",
+        "safetensors",
+        "qwen4_exp",
+        "image-text-to-text",
+        "conversational",
+        "base_model:Qwen/Qwen3.8-Flash-Next",
+        "base_model:quantized:Qwen/Qwen3.8-Flash-Next",
+        "license:other",
         "endpoints_compatible",
         "fp8",
         "region:us"
@@ -85553,9 +85596,10 @@
       "provider_id": "ibm-granite",
       "organization": "ibm-granite",
       "repository_id": "ibm-granite/granite-guardian-4.1-8b",
-      "status": "new",
+      "registry_id": "ibm-granite/granite-guardian-4.1-8b",
+      "status": "materialized",
       "url": "https://huggingface.co/ibm-granite/granite-guardian-4.1-8b",
-      "last_modified": "2026-04-29T14:48:23Z",
+      "last_modified": "2026-08-26T18:07:35Z",
       "pipeline_tag": "text-generation",
       "tags": [
         "transformers",
@@ -85572,8 +85616,8 @@
         "base_model:finetune:ibm-granite/granite-4.1-8b",
         "license:apache-2.0",
         "endpoints_compatible",
-        "region:us",
-        "deploy:azure"
+        "deploy:azure",
+        "region:us"
       ]
     },
     {
@@ -85915,7 +85959,7 @@
       "repository_id": "ibm-granite/granite-speech-5.0-470m-turboctc",
       "status": "new",
       "url": "https://huggingface.co/ibm-granite/granite-speech-5.0-470m-turboctc",
-      "last_modified": "2026-08-25T14:25:18Z",
+      "last_modified": "2026-08-26T18:37:46Z",
       "pipeline_tag": "automatic-speech-recognition",
       "tags": [
         "transformers",
@@ -85934,7 +85978,7 @@
       "repository_id": "ibm-granite/granite-speech-5.0-470m-turboctc-nc",
       "status": "new",
       "url": "https://huggingface.co/ibm-granite/granite-speech-5.0-470m-turboctc-nc",
-      "last_modified": "2026-08-25T16:06:06Z",
+      "last_modified": "2026-08-26T18:39:59Z",
       "pipeline_tag": "automatic-speech-recognition",
       "tags": [
         "transformers",
@@ -93108,6 +93152,24 @@
       "last_modified": "2026-01-30T03:26:45Z",
       "tags": [
         "en",
+        "license:mit",
+        "region:us"
+      ]
+    },
+    {
+      "provider_id": "microsoft",
+      "organization": "microsoft",
+      "repository_id": "microsoft/SQuadGen",
+      "status": "new",
+      "url": "https://huggingface.co/microsoft/SQuadGen",
+      "last_modified": "2026-08-27T06:36:23Z",
+      "tags": [
+        "pytorch",
+        "3d",
+        "quad-mesh",
+        "diffusion",
+        "mesh-generation",
+        "arxiv:2604.27329",
         "license:mit",
         "region:us"
       ]
@@ -105337,7 +105399,7 @@
       "repository_id": "nvidia/Cosmos3-Edge",
       "status": "new",
       "url": "https://huggingface.co/nvidia/Cosmos3-Edge",
-      "last_modified": "2026-08-25T17:53:54Z",
+      "last_modified": "2026-08-26T21:26:27Z",
       "tags": [
         "cosmos",
         "diffusers",
@@ -105348,7 +105410,8 @@
         "arxiv:2405.14867",
         "license:other",
         "deploy:azure",
-        "region:us"
+        "region:us",
+        "deploy:sagemaker"
       ]
     },
     {
@@ -105357,7 +105420,7 @@
       "repository_id": "nvidia/Cosmos3-Edge-Policy-DROID",
       "status": "new",
       "url": "https://huggingface.co/nvidia/Cosmos3-Edge-Policy-DROID",
-      "last_modified": "2026-08-24T21:39:59Z",
+      "last_modified": "2026-08-26T21:26:27Z",
       "tags": [
         "cosmos",
         "diffusers",
@@ -105378,7 +105441,7 @@
       "repository_id": "nvidia/Cosmos3-Nano",
       "status": "new",
       "url": "https://huggingface.co/nvidia/Cosmos3-Nano",
-      "last_modified": "2026-07-09T16:28:47Z",
+      "last_modified": "2026-08-26T21:26:26Z",
       "tags": [
         "cosmos",
         "diffusers",
@@ -105393,8 +105456,9 @@
         "text, image, video, audio, and action generation",
         "omnimodel",
         "license:other",
+        "deploy:azure",
         "region:us",
-        "deploy:azure"
+        "deploy:sagemaker"
       ]
     },
     {
@@ -105403,7 +105467,7 @@
       "repository_id": "nvidia/Cosmos3-Nano-Policy-DROID",
       "status": "new",
       "url": "https://huggingface.co/nvidia/Cosmos3-Nano-Policy-DROID",
-      "last_modified": "2026-07-09T16:29:05Z",
+      "last_modified": "2026-08-26T21:26:27Z",
       "tags": [
         "cosmos",
         "diffusers",
@@ -105423,7 +105487,7 @@
       "repository_id": "nvidia/Cosmos3-Super",
       "status": "new",
       "url": "https://huggingface.co/nvidia/Cosmos3-Super",
-      "last_modified": "2026-07-09T16:27:53Z",
+      "last_modified": "2026-08-26T21:26:26Z",
       "tags": [
         "cosmos",
         "diffusers",
@@ -105438,8 +105502,9 @@
         "text, image, video, audio, and action generation",
         "omnimodel",
         "license:other",
+        "deploy:azure",
         "region:us",
-        "deploy:azure"
+        "deploy:sagemaker"
       ]
     },
     {
@@ -105448,7 +105513,7 @@
       "repository_id": "nvidia/Cosmos3-Super-Image2Video",
       "status": "new",
       "url": "https://huggingface.co/nvidia/Cosmos3-Super-Image2Video",
-      "last_modified": "2026-07-09T16:29:13Z",
+      "last_modified": "2026-08-26T21:26:27Z",
       "pipeline_tag": "image-to-video",
       "tags": [
         "cosmos",
@@ -105472,7 +105537,7 @@
       "repository_id": "nvidia/Cosmos3-Super-Image2Video-4Step",
       "status": "new",
       "url": "https://huggingface.co/nvidia/Cosmos3-Super-Image2Video-4Step",
-      "last_modified": "2026-07-30T02:59:19Z",
+      "last_modified": "2026-08-26T21:26:27Z",
       "pipeline_tag": "image-to-video",
       "tags": [
         "cosmos",
@@ -105495,7 +105560,7 @@
       "repository_id": "nvidia/Cosmos3-Super-Text2Image",
       "status": "new",
       "url": "https://huggingface.co/nvidia/Cosmos3-Super-Text2Image",
-      "last_modified": "2026-07-31T15:17:04Z",
+      "last_modified": "2026-08-26T21:26:27Z",
       "pipeline_tag": "text-to-image",
       "tags": [
         "cosmos",
@@ -105519,7 +105584,7 @@
       "repository_id": "nvidia/Cosmos3-Super-Text2Image-4Step",
       "status": "new",
       "url": "https://huggingface.co/nvidia/Cosmos3-Super-Text2Image-4Step",
-      "last_modified": "2026-07-30T03:00:09Z",
+      "last_modified": "2026-08-26T21:26:27Z",
       "pipeline_tag": "text-to-image",
       "tags": [
         "cosmos",
@@ -106412,7 +106477,7 @@
       "repository_id": "nvidia/GEAR-SONIC",
       "status": "new",
       "url": "https://huggingface.co/nvidia/GEAR-SONIC",
-      "last_modified": "2026-08-25T03:24:05Z",
+      "last_modified": "2026-08-26T21:28:49Z",
       "pipeline_tag": "reinforcement-learning",
       "tags": [
         "onnx",
@@ -111171,7 +111236,8 @@
       "provider_id": "nvidia",
       "organization": "nvidia",
       "repository_id": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B-Base-BF16",
-      "status": "new",
+      "registry_id": "nvidia/nvidia-nemotron-3-super-120b-a12b-base-bf16",
+      "status": "materialized",
       "url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3-Super-120B-A12B-Base-BF16",
       "last_modified": "2026-08-25T15:48:20Z",
       "pipeline_tag": "text-generation",
@@ -116564,8 +116630,16 @@
       "repository_id": "nvidia/SOMA-X",
       "status": "new",
       "url": "https://huggingface.co/nvidia/SOMA-X",
-      "last_modified": "2026-03-16T20:07:53Z",
+      "last_modified": "2026-08-27T03:13:21Z",
+      "pipeline_tag": "robotics",
       "tags": [
+        "soma-x",
+        "parametric-human-body-model",
+        "computer-graphics",
+        "human-pose-estimation",
+        "animation",
+        "robotics",
+        "pytorch",
         "license:apache-2.0",
         "region:us"
       ]
@@ -119089,7 +119163,7 @@
       "repository_id": "nvidia/llama-nemotron-rerank-1b-v2",
       "status": "new",
       "url": "https://huggingface.co/nvidia/llama-nemotron-rerank-1b-v2",
-      "last_modified": "2026-05-20T18:24:14Z",
+      "last_modified": "2026-08-26T18:10:29Z",
       "pipeline_tag": "text-ranking",
       "tags": [
         "transformers",
@@ -127632,9 +127706,10 @@
       "provider_id": "tencent",
       "organization": "tencent",
       "repository_id": "tencent/WeMM-Embedding-2B",
-      "status": "new",
+      "registry_id": "tencent/wemm-embedding-2b",
+      "status": "materialized",
       "url": "https://huggingface.co/tencent/WeMM-Embedding-2B",
-      "last_modified": "2026-08-25T16:42:34Z",
+      "last_modified": "2026-08-26T03:06:06Z",
       "pipeline_tag": "feature-extraction",
       "tags": [
         "transformers",
@@ -127651,6 +127726,7 @@
         "custom_code",
         "zh",
         "en",
+        "arxiv:2608.24053",
         "base_model:Qwen/Qwen3.5-2B",
         "base_model:finetune:Qwen/Qwen3.5-2B",
         "license:other",
@@ -128666,6 +128742,56 @@
         "region:us",
         "deploy:azure",
         "deploy:sagemaker"
+      ]
+    },
+    {
+      "provider_id": "zai",
+      "organization": "zai-org",
+      "repository_id": "zai-org/GLM-5.3-Flash",
+      "registry_id": "z-ai/glm-5.3-flash",
+      "status": "identity_applied",
+      "url": "https://huggingface.co/zai-org/GLM-5.3-Flash",
+      "last_modified": "2026-08-27T10:33:43Z",
+      "pipeline_tag": "text-generation",
+      "tags": [
+        "transformers",
+        "safetensors",
+        "glm5_next",
+        "image-text-to-text",
+        "text-generation",
+        "conversational",
+        "en",
+        "zh",
+        "arxiv:2602.15763",
+        "license:mit",
+        "eval-results",
+        "endpoints_compatible",
+        "fp8",
+        "region:us"
+      ]
+    },
+    {
+      "provider_id": "zai",
+      "organization": "zai-org",
+      "repository_id": "zai-org/GLM-5.3-Flash-BF16",
+      "registry_id": "zai/glm-5.3-flash-bf16",
+      "status": "materialized",
+      "url": "https://huggingface.co/zai-org/GLM-5.3-Flash-BF16",
+      "last_modified": "2026-08-27T10:34:18Z",
+      "pipeline_tag": "text-generation",
+      "tags": [
+        "transformers",
+        "safetensors",
+        "glm5_next",
+        "image-text-to-text",
+        "text-generation",
+        "conversational",
+        "en",
+        "zh",
+        "arxiv:2602.15763",
+        "license:mit",
+        "endpoints_compatible",
+        "region:us"
       ]
     },
     {

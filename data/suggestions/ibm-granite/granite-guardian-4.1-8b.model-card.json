@@ -1,0 +1,107 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "ibm-granite/granite-guardian-4.1-8b",
+  "status": "partially_accepted",
+  "created_at": "2026-08-27T12:05:28.295004449Z",
+  "source": {
+    "url": "https://huggingface.co/ibm-granite/granite-guardian-4.1-8b/resolve/e6c388c65baf353ff598410356322b61f6b98d1d/README.md",
+    "revision": "e6c388c65baf353ff598410356322b61f6b98d1d",
+    "sha256": "e8544114bef728fe6039bde91eb2b98678285b74b16bf26d4c0e0192d323b930"
+  },
+  "generator": {
+    "model": "qwen/qwen3.6-27b",
+    "wire_api": "chat"
+  },
+  "claims": [
+    {
+      "field": "description",
+      "value": "Granite Guardian 4.1 8B is a specialized safety model fine-tuned from ibm-granite/granite-4.1-8b to judge if input prompts and output responses of an LLM-based system meet specified criteria.",
+      "evidence": "Granite Guardian 4.1 8B is a specialized safety model fine-tuned from ibm-granite/granite-4.1-8b, designed to judge if the input prompts and the output responses of an LLM-based system meet specified criteria.",
+      "section": "Model Summary",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "ModalityTextIn",
+        "ModalityTextOut"
+      ],
+      "evidence": "pipeline_tag: text-generation",
+      "section": "Metadata",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "CapJsonMode"
+      ],
+      "evidence": "Output empty \u003cthink\u003e\n\u003c/think\u003e tags followed by your score in \u003cscore\u003e\u003c/score\u003e tags.",
+      "section": "1. Think / No-Think Instruction",
+      "confidence": "high"
+    },
+    {
+      "field": "reasoning.supported",
+      "value": true,
+      "evidence": "Hybrid thinking: Supports both thinking mode (with detailed reasoning traces) and non-thinking mode (low-latency yes/no judgements).",
+      "section": "What's New",
+      "confidence": "high"
+    },
+    {
+      "field": "reasoning.parser",
+      "value": "xml",
+      "evidence": "In thinking mode, the model produces detailed reasoning traces through \u003cthink\u003e ... \u003c/think\u003e and \u003cscore\u003e ... \u003c/score\u003e tags.",
+      "section": "Model Summary",
+      "confidence": "high"
+    },
+    {
+      "field": "description",
+      "value": "The model supports Bring Your Own Criteria (BYOC) enabling users to define arbitrary judging criteria beyond pre-baked safety and hallucination detectors.",
+      "evidence": "BYOC capability: Large gains on instruction-following benchmarks. For example, IFEval multi-constraint BAcc improves from 0.458 to 0.844 (no-think)",
+      "section": "What's New",
+      "confidence": "high"
+    },
+    {
+      "field": "description",
+      "value": "The model is trained on unique data comprising human annotations and synthetic data informed by internal red-teaming.",
+      "evidence": "It is trained on unique data comprising human annotations and synthetic data informed by internal red-teaming.",
+      "section": "Model Summary",
+      "confidence": "high"
+    },
+    {
+      "field": "description",
+      "value": "In non-thinking mode, the model only produces the judgement score through \u003cscore\u003e tags without explanation.",
+      "evidence": "In non-thinking mode, the model only produces the judgement score through the \u003cscore\u003e ... \u003c/score\u003e tags.",
+      "section": "Model Summary",
+      "confidence": "high"
+    },
+    {
+      "field": "description",
+      "value": "The model judges text against pre-baked criteria including Harm (Social Bias, Jailbreaking, Violence, Profanity, Unethical Behavior).",
+      "evidence": "The model is trained to judge if a text meets any of the criteria below: - Harm: Texts deemed universally harmful...",
+      "section": "List of Pre-baked Criteria {criteria_text}",
+      "confidence": "high"
+    },
+    {
+      "field": "description",
+      "value": "The model produces a deterministic binary output (yes or no) inside \u003cscore\u003e tags.",
+      "evidence": "This ensures the model produces a deterministic binary output (yes or no) inside \u003cscore\u003e...\u003c/score\u003e tags, regardless of mode.",
+      "section": "3. Scoring Schema",
+      "confidence": "high"
+    },
+    {
+      "field": "description",
+      "value": "The model is licensed under Apache 2.0.",
+      "evidence": "license: apache-2.0",
+      "section": "Metadata",
+      "confidence": "high"
+    },
+    {
+      "field": "description",
+      "value": "Developed by IBM Research and released in April 2026.",
+      "evidence": "Developers: IBM Research ... Release Date: April, 2026",
+      "section": "Model Summary",
+      "confidence": "high"
+    }
+  ]
+}

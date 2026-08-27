@@ -1,0 +1,111 @@
+schema_version: 2
+id: z-ai/glm-5.3-flash
+name: 'Z.ai: GLM 5.3 Flash'
+provider: Z-Ai
+developer: zai
+description: GLM-5.3-Flash is a native multimodal model from Z.ai. It is suited for efficient coding and long-horizon agent tasks. Its hybrid sparse and linear attention architecture maintains accurate long-context behavior while...
+description_cn: GLM-5.3-Flash 是 Z.ai 推出的原生多模态模型。适用于高效代码生成和长程智能体任务。其混合稀疏与线性注意力架构在维护准确的长上下文行为的同时...
+context_length: 1310720
+max_output: 131072
+features:
+  - CapChat
+  - CapFunctionCall
+  - CapJsonMode
+  - ModalityImageIn
+  - ModalityTextIn
+  - ModalityTextOut
+  - ModalityVideoIn
+discovered_at: 2026-08-27T12:05:21.844325256Z
+links:
+  model_card: https://huggingface.co/zai-org/GLM-5.3-Flash
+identifiers:
+  huggingface:
+    - zai-org/GLM-5.3-Flash
+  openrouter:
+    - z-ai/glm-5.3-flash
+provenance:
+  context_length:
+    source: openrouter
+  description:
+    source: openrouter
+  features:
+    source: openrouter
+  id:
+    source: openrouter
+  max_output:
+    source: openrouter
+  name:
+    source: openrouter
+  provider:
+    source: openrouter
+  reasoning:
+    source: openrouter
+upstream:
+  openrouter:
+    canonical_slug: z-ai/glm-5.3-flash-20260826
+    huggingface_id: zai-org/GLM-5.3-Flash
+    supported_parameters:
+      - frequency_penalty
+      - include_reasoning
+      - logit_bias
+      - logprobs
+      - max_tokens
+      - min_p
+      - presence_penalty
+      - reasoning
+      - reasoning_effort
+      - repetition_penalty
+      - response_format
+      - seed
+      - stop
+      - structured_outputs
+      - temperature
+      - tool_choice
+      - tools
+      - top_k
+      - top_logprobs
+      - top_p
+    input_modalities:
+      - image
+      - text
+      - video
+    output_modalities:
+      - text
+    fetched_at: 2026-08-27T12:05:23.721065509Z
+  huggingface:
+    id: zai-org/GLM-5.3-Flash
+    revision: 04c4e9e95c5da8862dced7e5056455116f83a7e0
+    pipeline_tag: text-generation
+    model_type: glm5_next
+    architectures:
+      - Glm5NextForConditionalGeneration
+    license: mit
+    tags:
+      - arxiv:2602.15763
+      - conversational
+      - en
+      - endpoints_compatible
+      - eval-results
+      - fp8
+      - glm5_next
+      - image-text-to-text
+      - license:mit
+      - region:us
+      - safetensors
+      - text-generation
+      - transformers
+      - zh
+    tokenizer_model_max_length: 1048576
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-08-27T12:05:24.733912232Z
+reasoning:
+  supported: true
+  mandatory: true
+  default_enabled: true
+  default_effort: max
+  supported_efforts:
+    - high
+    - low
+    - max

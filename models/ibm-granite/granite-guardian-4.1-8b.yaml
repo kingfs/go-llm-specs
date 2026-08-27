@@ -1,0 +1,69 @@
+schema_version: 2
+id: ibm-granite/granite-guardian-4.1-8b
+name: granite-guardian-4.1-8b
+provider: IBM Granite
+developer: ibm-granite
+lifecycle: active
+description: Granite Guardian 4.1 8B is a specialized safety model fine-tuned from ibm-granite/granite-4.1-8b to judge if input prompts and output responses of an LLM-based system meet specified criteria.
+description_cn: Granite Guardian 4.1 8B 是一个基于 ibm-granite/granite-4.1-8b 微调的专业安全模型，用于判断基于 LLM 系统的输入提示和输出响应是否符合指定标准。
+context_length: 131072
+features:
+  - ModalityTextIn
+  - ModalityTextOut
+links:
+  model_card: https://huggingface.co/ibm-granite/granite-guardian-4.1-8b
+identifiers:
+  huggingface:
+    - ibm-granite/granite-guardian-4.1-8b
+provenance:
+  context_length:
+    source: official_huggingface_config
+    url: https://huggingface.co/ibm-granite/granite-guardian-4.1-8b
+  description:
+    source: official_model_card
+    url: https://huggingface.co/ibm-granite/granite-guardian-4.1-8b/resolve/e6c388c65baf353ff598410356322b61f6b98d1d/README.md
+  features:
+    source: official_huggingface_pipeline
+    url: https://huggingface.co/ibm-granite/granite-guardian-4.1-8b
+  id:
+    source: official_huggingface
+    url: https://huggingface.co/ibm-granite/granite-guardian-4.1-8b
+  name:
+    source: official_huggingface
+    url: https://huggingface.co/ibm-granite/granite-guardian-4.1-8b
+  reasoning.supported:
+    source: official_model_card
+    url: https://huggingface.co/ibm-granite/granite-guardian-4.1-8b/resolve/e6c388c65baf353ff598410356322b61f6b98d1d/README.md
+upstream:
+  huggingface:
+    id: ibm-granite/granite-guardian-4.1-8b
+    revision: e6c388c65baf353ff598410356322b61f6b98d1d
+    pipeline_tag: text-generation
+    model_type: granite
+    architectures:
+      - GraniteForCausalLM
+    license: apache-2.0
+    tags:
+      - arxiv:2412.07724
+      - base_model:finetune:ibm-granite/granite-4.1-8b
+      - base_model:ibm-granite/granite-4.1-8b
+      - conversational
+      - deploy:azure
+      - en
+      - endpoints_compatible
+      - granite
+      - guardian
+      - hallucination
+      - license:apache-2.0
+      - region:us
+      - safetensors
+      - safety
+      - text-generation
+      - transformers
+    config_context_length: 131072
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-08-27T12:05:24.150778139Z
+reasoning:
+  supported: true

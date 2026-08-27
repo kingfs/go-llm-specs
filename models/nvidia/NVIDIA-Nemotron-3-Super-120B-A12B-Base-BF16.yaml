@@ -1,0 +1,79 @@
+schema_version: 2
+id: nvidia/nvidia-nemotron-3-super-120b-a12b-base-bf16
+name: NVIDIA-Nemotron-3-Super-120B-A12B-Base-BF16
+provider: NVIDIA
+developer: nvidia
+lifecycle: candidate
+context_length: 1048576
+features:
+  - ModalityTextIn
+  - ModalityTextOut
+links:
+  model_card: https://huggingface.co/nvidia/NVIDIA-Nemotron-3-Super-120B-A12B-Base-BF16
+identifiers:
+  huggingface:
+    - nvidia/NVIDIA-Nemotron-3-Super-120B-A12B-Base-BF16
+provenance:
+  context_length:
+    source: official_huggingface_config
+    url: https://huggingface.co/nvidia/NVIDIA-Nemotron-3-Super-120B-A12B-Base-BF16
+  features:
+    source: official_huggingface_pipeline
+    url: https://huggingface.co/nvidia/NVIDIA-Nemotron-3-Super-120B-A12B-Base-BF16
+  id:
+    source: official_huggingface
+    url: https://huggingface.co/nvidia/NVIDIA-Nemotron-3-Super-120B-A12B-Base-BF16
+  name:
+    source: official_huggingface
+    url: https://huggingface.co/nvidia/NVIDIA-Nemotron-3-Super-120B-A12B-Base-BF16
+upstream:
+  huggingface:
+    id: nvidia/NVIDIA-Nemotron-3-Super-120B-A12B-Base-BF16
+    revision: b4cc202094ea3644bc4461c9fe58ec8b6a3695eb
+    pipeline_tag: text-generation
+    model_type: nemotron_h
+    architectures:
+      - NemotronHForCausalLM
+    license: other
+    tags:
+      - ar
+      - arxiv:2512.20848
+      - arxiv:2512.20856
+      - cs
+      - custom_code
+      - da
+      - de
+      - en
+      - endpoints_compatible
+      - es
+      - fi
+      - fr
+      - he
+      - hi
+      - it
+      - ja
+      - ko
+      - latent-moe
+      - license:other
+      - mtp
+      - nemotron-3
+      - nemotron_h
+      - nl
+      - nvidia
+      - pl
+      - pt
+      - pytorch
+      - region:us
+      - ru
+      - safetensors
+      - sv
+      - text-generation
+      - th
+      - transformers
+      - zh
+    config_context_length: 1048576
+    tokenizer_model_max_length: 262144
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-08-27T12:05:24.324718228Z

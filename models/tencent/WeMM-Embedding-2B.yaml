@@ -1,0 +1,60 @@
+schema_version: 2
+id: tencent/wemm-embedding-2b
+name: WeMM-Embedding-2B
+provider: Tencent Hunyuan
+developer: tencent
+lifecycle: candidate
+context_length: 0
+features:
+  - CapEmbedding
+  - ModalityTextIn
+links:
+  model_card: https://huggingface.co/tencent/WeMM-Embedding-2B
+identifiers:
+  huggingface:
+    - tencent/WeMM-Embedding-2B
+provenance:
+  features:
+    source: official_huggingface_pipeline
+    url: https://huggingface.co/tencent/WeMM-Embedding-2B
+  id:
+    source: official_huggingface
+    url: https://huggingface.co/tencent/WeMM-Embedding-2B
+  name:
+    source: official_huggingface
+    url: https://huggingface.co/tencent/WeMM-Embedding-2B
+upstream:
+  huggingface:
+    id: tencent/WeMM-Embedding-2B
+    revision: df8094e5caf29083d9cac28e96fad6cfbe3ee57f
+    pipeline_tag: feature-extraction
+    model_type: qwen3_5
+    architectures:
+      - Qwen3_5ForConditionalGeneration
+    license: other
+    tags:
+      - arxiv:2608.24053
+      - base_model:Qwen/Qwen3.5-2B
+      - base_model:finetune:Qwen/Qwen3.5-2B
+      - custom_code
+      - en
+      - endpoints_compatible
+      - feature-extraction
+      - image-embedding
+      - image-text-to-text
+      - license:other
+      - mrl
+      - multimodal-embedding
+      - qwen3_5
+      - region:us
+      - safetensors
+      - sentence-transformers
+      - text-embedding
+      - transformers
+      - video-embedding
+      - zh
+    tokenizer_model_max_length: 262144
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-08-27T12:05:24.598157124Z

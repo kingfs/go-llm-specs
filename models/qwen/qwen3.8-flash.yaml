@@ -1,0 +1,68 @@
+schema_version: 2
+id: qwen/qwen3.8-flash
+name: 'Qwen: Qwen3.8 Flash'
+provider: Qwen
+developer: qwen
+description: Qwen3.8 Flash is a multimodal reasoning model from Alibaba. It is suited for coding assistance, agentic workflows, visual understanding, document and codebase analysis, desktop interaction, chart analysis, and long-video analysis.
+description_cn: Qwen3.8 Flash 是阿里巴巴推出的多模态推理模型。适用于代码辅助、智能体工作流、视觉理解、文档和代码库分析、桌面交互、图表分析以及长视频分析。
+context_length: 1000000
+max_output: 131072
+features:
+  - CapChat
+  - CapFunctionCall
+  - CapJsonMode
+  - ModalityImageIn
+  - ModalityTextIn
+  - ModalityTextOut
+  - ModalityVideoIn
+discovered_at: 2026-08-27T12:05:21.844117007Z
+identifiers:
+  openrouter:
+    - qwen/qwen3.8-flash
+provenance:
+  context_length:
+    source: openrouter
+  description:
+    source: openrouter
+  features:
+    source: openrouter
+  id:
+    source: openrouter
+  max_output:
+    source: openrouter
+  name:
+    source: openrouter
+  provider:
+    source: openrouter
+  reasoning:
+    source: openrouter
+upstream:
+  openrouter:
+    canonical_slug: qwen/qwen3.8-flash-20260826
+    supported_parameters:
+      - frequency_penalty
+      - include_reasoning
+      - logprobs
+      - max_tokens
+      - presence_penalty
+      - reasoning
+      - response_format
+      - seed
+      - stop
+      - structured_outputs
+      - temperature
+      - tool_choice
+      - tools
+      - top_k
+      - top_logprobs
+      - top_p
+    input_modalities:
+      - image
+      - text
+      - video
+    output_modalities:
+      - text
+    fetched_at: 2026-08-27T12:05:23.718845917Z
+reasoning:
+  supported: true
+  default_enabled: true
