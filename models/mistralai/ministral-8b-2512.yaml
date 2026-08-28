@@ -14,6 +14,8 @@ features:
   - ModalityImageIn
   - ModalityTextIn
   - ModalityTextOut
+aliases:
+  - mistralai/ministral-8b-2512:batch
 discovered_at: 2026-07-29T10:39:32.591057043Z
 links:
   model_card: https://huggingface.co/mistralai/Ministral-3-8B-Instruct-2512
@@ -22,6 +24,7 @@ identifiers:
     - mistralai/Ministral-3-8B-Instruct-2512
   openrouter:
     - mistralai/ministral-8b-2512
+    - mistralai/ministral-8b-2512:batch
 provenance:
   max_output:
     source: openrouter

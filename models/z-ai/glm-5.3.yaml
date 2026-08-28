@@ -37,6 +37,7 @@ provenance:
 upstream:
   openrouter:
     canonical_slug: z-ai/glm-5.3-20260816
+    huggingface_id: zai-org/GLM-5.3
     supported_parameters:
       - include_reasoning
       - max_tokens
@@ -52,7 +53,7 @@ upstream:
       - text
     output_modalities:
       - text
-    fetched_at: 2026-08-19T02:47:51.991079563Z
+    fetched_at: 2026-08-28T13:27:43.380263845Z
 reasoning:
   supported: true
   mandatory: true

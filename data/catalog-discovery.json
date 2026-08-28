@@ -1,7 +1,7 @@
 {
   "providers": 24,
-  "models": 614,
-  "models_with_official_links": 413,
+  "models": 621,
+  "models_with_official_links": 419,
   "uncataloged_publishers": {
     "Ai21": 1,
     "Aion-Labs": 4,
@@ -40,7 +40,7 @@
     "eleutherai": 1,
     "essentialai": 1,
     "inception": 2,
-    "inclusionai": 2,
+    "inclusionai": 3,
     "inflection": 2,
     "kwaipilot": 1,
     "liquid": 6,
@@ -79692,6 +79692,28 @@
     {
       "provider_id": "google",
       "organization": "google",
+      "repository_id": "google/timesfm-3.0-pytorch",
+      "status": "new",
+      "url": "https://huggingface.co/google/timesfm-3.0-pytorch",
+      "last_modified": "2026-08-28T00:43:32Z",
+      "pipeline_tag": "time-series-forecasting",
+      "tags": [
+        "timesfm",
+        "safetensors",
+        "time-series",
+        "forecasting",
+        "pretrained",
+        "pytorch",
+        "google",
+        "time-series-forecasting",
+        "arxiv:2310.10688",
+        "license:other",
+        "region:us"
+      ]
+    },
+    {
+      "provider_id": "google",
+      "organization": "google",
       "repository_id": "google/tipsv1-b14",
       "status": "new",
       "url": "https://huggingface.co/google/tipsv1-b14",
@@ -84099,7 +84121,7 @@
       "repository_id": "ibm-granite/granite-4.2-30b-fp8",
       "status": "new",
       "url": "https://huggingface.co/ibm-granite/granite-4.2-30b-fp8",
-      "last_modified": "2026-08-14T15:32:10Z",
+      "last_modified": "2026-08-27T21:31:32Z",
       "pipeline_tag": "text-generation",
       "tags": [
         "transformers",
@@ -84111,9 +84133,10 @@
         "fp8",
         "conversational",
         "base_model:ibm-granite/granite-4.2-30b",
-        "base_model:finetune:ibm-granite/granite-4.2-30b",
+        "base_model:quantized:ibm-granite/granite-4.2-30b",
         "license:apache-2.0",
         "endpoints_compatible",
+        "compressed-tensors",
         "region:us"
       ]
     },
@@ -84123,7 +84146,7 @@
       "repository_id": "ibm-granite/granite-4.2-30b-mxfp4",
       "status": "new",
       "url": "https://huggingface.co/ibm-granite/granite-4.2-30b-mxfp4",
-      "last_modified": "2026-08-14T15:32:34Z",
+      "last_modified": "2026-08-27T21:31:34Z",
       "pipeline_tag": "text-generation",
       "tags": [
         "transformers",
@@ -84135,10 +84158,11 @@
         "mxfp4",
         "conversational",
         "base_model:ibm-granite/granite-4.2-30b",
-        "base_model:finetune:ibm-granite/granite-4.2-30b",
+        "base_model:quantized:ibm-granite/granite-4.2-30b",
         "license:apache-2.0",
         "endpoints_compatible",
         "8-bit",
+        "compressed-tensors",
         "region:us"
       ]
     },
@@ -84148,7 +84172,7 @@
       "repository_id": "ibm-granite/granite-4.2-30b-nvfp4",
       "status": "new",
       "url": "https://huggingface.co/ibm-granite/granite-4.2-30b-nvfp4",
-      "last_modified": "2026-08-14T15:32:56Z",
+      "last_modified": "2026-08-27T21:31:35Z",
       "pipeline_tag": "text-generation",
       "tags": [
         "transformers",
@@ -84160,10 +84184,11 @@
         "nvfp4",
         "conversational",
         "base_model:ibm-granite/granite-4.2-30b",
-        "base_model:finetune:ibm-granite/granite-4.2-30b",
+        "base_model:quantized:ibm-granite/granite-4.2-30b",
         "license:apache-2.0",
         "endpoints_compatible",
         "8-bit",
+        "compressed-tensors",
         "region:us"
       ]
     },
@@ -84232,7 +84257,7 @@
       "repository_id": "ibm-granite/granite-4.2-3b-fp8",
       "status": "new",
       "url": "https://huggingface.co/ibm-granite/granite-4.2-3b-fp8",
-      "last_modified": "2026-08-14T15:29:06Z",
+      "last_modified": "2026-08-27T21:31:37Z",
       "pipeline_tag": "text-generation",
       "tags": [
         "transformers",
@@ -84244,9 +84269,10 @@
         "fp8",
         "conversational",
         "base_model:ibm-granite/granite-4.2-3b",
-        "base_model:finetune:ibm-granite/granite-4.2-3b",
+        "base_model:quantized:ibm-granite/granite-4.2-3b",
         "license:apache-2.0",
         "endpoints_compatible",
+        "compressed-tensors",
         "region:us"
       ]
     },
@@ -84256,7 +84282,7 @@
       "repository_id": "ibm-granite/granite-4.2-3b-mxfp4",
       "status": "new",
       "url": "https://huggingface.co/ibm-granite/granite-4.2-3b-mxfp4",
-      "last_modified": "2026-08-14T15:29:21Z",
+      "last_modified": "2026-08-27T21:31:38Z",
       "pipeline_tag": "text-generation",
       "tags": [
         "transformers",
@@ -84268,10 +84294,11 @@
         "mxfp4",
         "conversational",
         "base_model:ibm-granite/granite-4.2-3b",
-        "base_model:finetune:ibm-granite/granite-4.2-3b",
+        "base_model:quantized:ibm-granite/granite-4.2-3b",
         "license:apache-2.0",
         "endpoints_compatible",
         "8-bit",
+        "compressed-tensors",
         "region:us"
       ]
     },
@@ -84281,7 +84308,7 @@
       "repository_id": "ibm-granite/granite-4.2-3b-nvfp4",
       "status": "new",
       "url": "https://huggingface.co/ibm-granite/granite-4.2-3b-nvfp4",
-      "last_modified": "2026-08-14T15:29:37Z",
+      "last_modified": "2026-08-27T21:31:40Z",
       "pipeline_tag": "text-generation",
       "tags": [
         "transformers",
@@ -84293,10 +84320,11 @@
         "nvfp4",
         "conversational",
         "base_model:ibm-granite/granite-4.2-3b",
-        "base_model:finetune:ibm-granite/granite-4.2-3b",
+        "base_model:quantized:ibm-granite/granite-4.2-3b",
         "license:apache-2.0",
         "endpoints_compatible",
         "8-bit",
+        "compressed-tensors",
         "region:us"
       ]
     },
@@ -84365,7 +84393,7 @@
       "repository_id": "ibm-granite/granite-4.2-8b-fp8",
       "status": "new",
       "url": "https://huggingface.co/ibm-granite/granite-4.2-8b-fp8",
-      "last_modified": "2026-08-14T15:30:29Z",
+      "last_modified": "2026-08-27T21:31:41Z",
       "pipeline_tag": "text-generation",
       "tags": [
         "transformers",
@@ -84377,9 +84405,10 @@
         "fp8",
         "conversational",
         "base_model:ibm-granite/granite-4.2-8b",
-        "base_model:finetune:ibm-granite/granite-4.2-8b",
+        "base_model:quantized:ibm-granite/granite-4.2-8b",
         "license:apache-2.0",
         "endpoints_compatible",
+        "compressed-tensors",
         "region:us"
       ]
     },
@@ -84389,7 +84418,7 @@
       "repository_id": "ibm-granite/granite-4.2-8b-mxfp4",
       "status": "new",
       "url": "https://huggingface.co/ibm-granite/granite-4.2-8b-mxfp4",
-      "last_modified": "2026-08-14T15:31:17Z",
+      "last_modified": "2026-08-27T21:31:43Z",
       "pipeline_tag": "text-generation",
       "tags": [
         "transformers",
@@ -84401,10 +84430,11 @@
         "mxfp4",
         "conversational",
         "base_model:ibm-granite/granite-4.2-8b",
-        "base_model:finetune:ibm-granite/granite-4.2-8b",
+        "base_model:quantized:ibm-granite/granite-4.2-8b",
         "license:apache-2.0",
         "endpoints_compatible",
         "8-bit",
+        "compressed-tensors",
         "region:us"
       ]
     },
@@ -84414,7 +84444,7 @@
       "repository_id": "ibm-granite/granite-4.2-8b-nvfp4",
       "status": "new",
       "url": "https://huggingface.co/ibm-granite/granite-4.2-8b-nvfp4",
-      "last_modified": "2026-08-14T15:31:42Z",
+      "last_modified": "2026-08-27T21:31:44Z",
       "pipeline_tag": "text-generation",
       "tags": [
         "transformers",
@@ -84426,10 +84456,11 @@
         "nvfp4",
         "conversational",
         "base_model:ibm-granite/granite-4.2-8b",
-        "base_model:finetune:ibm-granite/granite-4.2-8b",
+        "base_model:quantized:ibm-granite/granite-4.2-8b",
         "license:apache-2.0",
         "endpoints_compatible",
         "8-bit",
+        "compressed-tensors",
         "region:us"
       ]
     },
@@ -84945,7 +84976,8 @@
       "provider_id": "ibm-granite",
       "organization": "ibm-granite",
       "repository_id": "ibm-granite/granite-embedding-311m-multilingual-r2",
-      "status": "new",
+      "registry_id": "ibm-granite/granite-embedding-311m-multilingual-r2",
+      "status": "materialized",
       "url": "https://huggingface.co/ibm-granite/granite-embedding-311m-multilingual-r2",
       "last_modified": "2026-05-18T20:15:41Z",
       "pipeline_tag": "feature-extraction",
@@ -85027,7 +85059,8 @@
       "provider_id": "ibm-granite",
       "organization": "ibm-granite",
       "repository_id": "ibm-granite/granite-embedding-97m-multilingual-r2",
-      "status": "new",
+      "registry_id": "ibm-granite/granite-embedding-97m-multilingual-r2",
+      "status": "materialized",
       "url": "https://huggingface.co/ibm-granite/granite-embedding-97m-multilingual-r2",
       "last_modified": "2026-05-18T20:17:17Z",
       "pipeline_tag": "feature-extraction",
@@ -96848,7 +96881,7 @@
       "repository_id": "microsoft/mattergen",
       "status": "new",
       "url": "https://huggingface.co/microsoft/mattergen",
-      "last_modified": "2025-12-05T08:19:51Z",
+      "last_modified": "2026-08-27T15:36:40Z",
       "tags": [
         "materials-science",
         "generative-ai",
@@ -105457,8 +105490,8 @@
         "omnimodel",
         "license:other",
         "deploy:azure",
-        "region:us",
-        "deploy:sagemaker"
+        "deploy:sagemaker",
+        "region:us"
       ]
     },
     {
@@ -105503,8 +105536,8 @@
         "omnimodel",
         "license:other",
         "deploy:azure",
-        "region:us",
-        "deploy:sagemaker"
+        "deploy:sagemaker",
+        "region:us"
       ]
     },
     {
@@ -110928,7 +110961,8 @@
       "provider_id": "nvidia",
       "organization": "nvidia",
       "repository_id": "nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B-Base-BF16",
-      "status": "new",
+      "registry_id": "nvidia/nvidia-nemotron-3-nano-30b-a3b-base-bf16",
+      "status": "materialized",
       "url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B-Base-BF16",
       "last_modified": "2026-08-25T15:48:01Z",
       "pipeline_tag": "text-generation",
@@ -112079,7 +112113,8 @@
       "provider_id": "nvidia",
       "organization": "nvidia",
       "repository_id": "nvidia/NVIDIA-Nemotron-Nano-12B-v2-VL-BF16",
-      "status": "new",
+      "registry_id": "nvidia/nvidia-nemotron-nano-12b-v2-vl-bf16",
+      "status": "materialized",
       "url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-Nano-12B-v2-VL-BF16",
       "last_modified": "2026-08-25T06:01:08Z",
       "pipeline_tag": "image-text-to-text",
@@ -112597,10 +112632,29 @@
     {
       "provider_id": "nvidia",
       "organization": "nvidia",
+      "repository_id": "nvidia/Nemotron-3-Diarization-preview",
+      "status": "new",
+      "url": "https://huggingface.co/nvidia/Nemotron-3-Diarization-preview",
+      "last_modified": "2026-08-28T08:19:16Z",
+      "pipeline_tag": "voice-activity-detection",
+      "tags": [
+        "nemo",
+        "speaker-diarization",
+        "streaming-sortformer",
+        "speaker-tagging",
+        "audio",
+        "voice-activity-detection",
+        "license:other",
+        "region:us"
+      ]
+    },
+    {
+      "provider_id": "nvidia",
+      "organization": "nvidia",
       "repository_id": "nvidia/Nemotron-3-Embed-1B-BF16",
       "status": "new",
       "url": "https://huggingface.co/nvidia/Nemotron-3-Embed-1B-BF16",
-      "last_modified": "2026-08-06T08:48:26Z",
+      "last_modified": "2026-08-27T23:53:03Z",
       "pipeline_tag": "sentence-similarity",
       "tags": [
         "sentence-transformers",
@@ -116376,6 +116430,35 @@
         "8-bit",
         "modelopt",
         "deploy:azure",
+        "region:us"
+      ]
+    },
+    {
+      "provider_id": "nvidia",
+      "organization": "nvidia",
+      "repository_id": "nvidia/Qwen3.8-2.4T-A95B-NVFP4",
+      "status": "new",
+      "url": "https://huggingface.co/nvidia/Qwen3.8-2.4T-A95B-NVFP4",
+      "last_modified": "2026-08-27T18:19:01Z",
+      "pipeline_tag": "text-generation",
+      "tags": [
+        "Model Optimizer",
+        "safetensors",
+        "qwen3_5_moe_text",
+        "NVIDIA",
+        "ModelOpt",
+        "Qwen3.8",
+        "quantized",
+        "4-bit precision",
+        "FP4",
+        "fp4",
+        "text-generation",
+        "conversational",
+        "base_model:Qwen/Qwen3.8-2.4T-A95B",
+        "base_model:quantized:Qwen/Qwen3.8-2.4T-A95B",
+        "license:other",
+        "8-bit",
+        "modelopt",
         "region:us"
       ]
     },
@@ -122233,6 +122316,19 @@
     {
       "provider_id": "nvidia",
       "organization": "nvidia",
+      "repository_id": "nvidia/stormscope-meteosat",
+      "status": "new",
+      "url": "https://huggingface.co/nvidia/stormscope-meteosat",
+      "last_modified": "2026-08-12T17:00:58Z",
+      "tags": [
+        "arxiv:2601.17268",
+        "license:openmdw-1.1",
+        "region:us"
+      ]
+    },
+    {
+      "provider_id": "nvidia",
+      "organization": "nvidia",
       "repository_id": "nvidia/stt_ar_fastconformer_hybrid_large_pc_v1.0",
       "status": "new",
       "url": "https://huggingface.co/nvidia/stt_ar_fastconformer_hybrid_large_pc_v1.0",
@@ -126965,6 +127061,59 @@
     {
       "provider_id": "tencent",
       "organization": "tencent",
+      "repository_id": "tencent/Hy4-preview",
+      "registry_id": "tencent/hy4-preview",
+      "status": "identity_applied",
+      "url": "https://huggingface.co/tencent/Hy4-preview",
+      "last_modified": "2026-08-28T09:34:20Z",
+      "pipeline_tag": "text-generation",
+      "tags": [
+        "transformers",
+        "safetensors",
+        "hy_v4",
+        "text-generation",
+        "hunyuan",
+        "hy4",
+        "moe",
+        "conversational",
+        "arxiv:2512.02556",
+        "arxiv:2603.12201",
+        "license:apache-2.0",
+        "eval-results",
+        "endpoints_compatible",
+        "region:us"
+      ]
+    },
+    {
+      "provider_id": "tencent",
+      "organization": "tencent",
+      "repository_id": "tencent/Hy4-preview-FP8",
+      "status": "new",
+      "url": "https://huggingface.co/tencent/Hy4-preview-FP8",
+      "last_modified": "2026-08-28T09:34:27Z",
+      "pipeline_tag": "text-generation",
+      "tags": [
+        "transformers",
+        "safetensors",
+        "hy_v4",
+        "text-generation",
+        "hunyuan",
+        "hy4",
+        "moe",
+        "fp8",
+        "quantized",
+        "conversational",
+        "arxiv:2512.02556",
+        "arxiv:2603.12201",
+        "license:apache-2.0",
+        "endpoints_compatible",
+        "modelopt",
+        "region:us"
+      ]
+    },
+    {
+      "provider_id": "tencent",
+      "organization": "tencent",
       "repository_id": "tencent/InstantCharacter",
       "status": "new",
       "url": "https://huggingface.co/tencent/InstantCharacter",
@@ -128841,7 +128990,8 @@
       "provider_id": "zai",
       "organization": "zai-org",
       "repository_id": "zai-org/GLM-OCR",
-      "status": "new",
+      "registry_id": "zai/glm-ocr",
+      "status": "materialized",
       "url": "https://huggingface.co/zai-org/GLM-OCR",
       "last_modified": "2026-05-19T12:28:43Z",
       "pipeline_tag": "image-text-to-text",

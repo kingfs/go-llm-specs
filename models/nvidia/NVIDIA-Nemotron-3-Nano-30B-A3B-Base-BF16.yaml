@@ -1,0 +1,69 @@
+schema_version: 2
+id: nvidia/nvidia-nemotron-3-nano-30b-a3b-base-bf16
+name: NVIDIA-Nemotron-3-Nano-30B-A3B-Base-BF16
+provider: NVIDIA
+developer: nvidia
+lifecycle: candidate
+context_length: 0
+features:
+  - ModalityTextIn
+  - ModalityTextOut
+links:
+  model_card: https://huggingface.co/nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B-Base-BF16
+identifiers:
+  huggingface:
+    - nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B-Base-BF16
+provenance:
+  features:
+    source: official_huggingface_pipeline
+    url: https://huggingface.co/nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B-Base-BF16
+  id:
+    source: official_huggingface
+    url: https://huggingface.co/nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B-Base-BF16
+  name:
+    source: official_huggingface
+    url: https://huggingface.co/nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B-Base-BF16
+upstream:
+  huggingface:
+    id: nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B-Base-BF16
+    revision: e0ac9ee3dfd02be21b5479edfc2f671ed269d0a2
+    pipeline_tag: text-generation
+    license: other
+    tags:
+      - ar
+      - arxiv:2512.20848
+      - arxiv:2512.20856
+      - da
+      - dataset:nvidia/Nemotron-CC-Code-v1
+      - dataset:nvidia/Nemotron-CC-Math-v1
+      - dataset:nvidia/Nemotron-CC-v2
+      - dataset:nvidia/Nemotron-CC-v2.1
+      - dataset:nvidia/Nemotron-Pretraining-Code-v1
+      - dataset:nvidia/Nemotron-Pretraining-Code-v2
+      - dataset:nvidia/Nemotron-Pretraining-Dataset-sample
+      - dataset:nvidia/Nemotron-Pretraining-SFT-v1
+      - dataset:nvidia/Nemotron-Pretraining-Specialized-v1
+      - de
+      - en
+      - endpoints_compatible
+      - es
+      - eval-results
+      - fr
+      - it
+      - ja
+      - ko
+      - license:other
+      - nl
+      - nvidia
+      - pl
+      - pt
+      - pytorch
+      - region:us
+      - ru
+      - safetensors
+      - sv
+      - text-generation
+      - th
+      - transformers
+      - zh
+    fetched_at: 2026-08-28T13:27:45.191618159Z

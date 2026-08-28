@@ -1,0 +1,63 @@
+schema_version: 2
+id: zai/glm-ocr
+name: GLM-OCR
+provider: Z.ai
+developer: zai
+lifecycle: candidate
+context_length: 0
+features:
+  - ModalityImageIn
+  - ModalityTextIn
+  - ModalityTextOut
+links:
+  model_card: https://huggingface.co/zai-org/GLM-OCR
+identifiers:
+  huggingface:
+    - zai-org/GLM-OCR
+provenance:
+  features:
+    source: official_huggingface_pipeline
+    url: https://huggingface.co/zai-org/GLM-OCR
+  id:
+    source: official_huggingface
+    url: https://huggingface.co/zai-org/GLM-OCR
+  name:
+    source: official_huggingface
+    url: https://huggingface.co/zai-org/GLM-OCR
+upstream:
+  huggingface:
+    id: zai-org/GLM-OCR
+    revision: ca5d8b3e287e52589e37c28385d9655ee4372f9d
+    pipeline_tag: image-text-to-text
+    model_type: glm_ocr
+    architectures:
+      - GlmOcrForConditionalGeneration
+    license: mit
+    tags:
+      - arxiv:2603.10910
+      - conversational
+      - de
+      - deploy:azure
+      - deploy:sagemaker
+      - en
+      - endpoints_compatible
+      - es
+      - eval-results
+      - fr
+      - glm_ocr
+      - image-text-to-text
+      - ja
+      - ko
+      - license:mit
+      - region:us
+      - ru
+      - safetensors
+      - transformers
+      - zh
+    tokenizer_model_max_length: 655380
+    processor_class: Glm46VProcessor
+    structured_files:
+      - config.json
+      - preprocessor_config.json
+      - tokenizer_config.json
+    fetched_at: 2026-08-28T13:27:46.554317033Z

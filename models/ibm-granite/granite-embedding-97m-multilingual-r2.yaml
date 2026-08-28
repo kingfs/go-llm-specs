@@ -1,0 +1,118 @@
+schema_version: 2
+id: ibm-granite/granite-embedding-97m-multilingual-r2
+name: granite-embedding-97m-multilingual-r2
+provider: IBM Granite
+developer: ibm-granite
+lifecycle: active
+description: 97M parameter dense embedding model for multilingual text, producing 384-dimensional vectors with up to 32,768 token context.
+description_cn: 一款拥有 9700 万参数的多语言文本稠密嵌入模型，生成 384 维向量，上下文窗口最高可达 32,768 个 token。
+context_length: 32768
+features:
+  - CapEmbedding
+  - ModalityTextIn
+links:
+  model_card: https://huggingface.co/ibm-granite/granite-embedding-97m-multilingual-r2
+identifiers:
+  huggingface:
+    - ibm-granite/granite-embedding-97m-multilingual-r2
+provenance:
+  context_length:
+    source: official_huggingface_config
+    url: https://huggingface.co/ibm-granite/granite-embedding-97m-multilingual-r2
+  description:
+    source: official_model_card
+    url: https://huggingface.co/ibm-granite/granite-embedding-97m-multilingual-r2/resolve/835ad14087e140460703cf0fae09f97d469d65c2/README.md
+  features:
+    source: official_huggingface_pipeline
+    url: https://huggingface.co/ibm-granite/granite-embedding-97m-multilingual-r2
+  id:
+    source: official_huggingface
+    url: https://huggingface.co/ibm-granite/granite-embedding-97m-multilingual-r2
+  name:
+    source: official_huggingface
+    url: https://huggingface.co/ibm-granite/granite-embedding-97m-multilingual-r2
+upstream:
+  huggingface:
+    id: ibm-granite/granite-embedding-97m-multilingual-r2
+    revision: 835ad14087e140460703cf0fae09f97d469d65c2
+    pipeline_tag: feature-extraction
+    model_type: modernbert
+    architectures:
+      - ModernBertModel
+    license: apache-2.0
+    tags:
+      - ar
+      - arxiv:2605.13521
+      - az
+      - bg
+      - bn
+      - ca
+      - cs
+      - da
+      - de
+      - el
+      - embeddings
+      - en
+      - endpoints_compatible
+      - es
+      - et
+      - fa
+      - feature-extraction
+      - fi
+      - fr
+      - granite
+      - he
+      - hi
+      - hr
+      - hu
+      - id
+      - is
+      - it
+      - ja
+      - ka
+      - kk
+      - km
+      - ko
+      - license:apache-2.0
+      - lt
+      - lv
+      - modernbert
+      - mr
+      - ms
+      - mteb
+      - multilingual
+      - nl
+      - "no"
+      - onnx
+      - openvino
+      - pl
+      - pt
+      - region:us
+      - ro
+      - ru
+      - safetensors
+      - sentence-similarity
+      - sentence-transformers
+      - sk
+      - sl
+      - sq
+      - sr
+      - sv
+      - sw
+      - te
+      - text-embeddings-inference
+      - th
+      - tl
+      - tr
+      - transformers
+      - uk
+      - ur
+      - uz
+      - vi
+      - zh
+    config_context_length: 32768
+    tokenizer_model_max_length: 32768
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-08-28T13:27:44.772630611Z

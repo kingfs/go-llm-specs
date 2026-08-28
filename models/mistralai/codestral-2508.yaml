@@ -19,10 +19,13 @@ features:
   - CapJsonMode
   - ModalityTextIn
   - ModalityTextOut
+aliases:
+  - mistralai/codestral-2508:batch
 discovered_at: 2026-07-29T10:39:23.805118881Z
 identifiers:
   openrouter:
     - mistralai/codestral-2508
+    - mistralai/codestral-2508:batch
 provenance:
   max_output:
     source: openrouter

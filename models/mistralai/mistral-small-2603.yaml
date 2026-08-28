@@ -14,6 +14,8 @@ features:
   - ModalityImageIn
   - ModalityTextIn
   - ModalityTextOut
+aliases:
+  - mistralai/mistral-small-2603:batch
 discovered_at: 2026-07-29T10:39:44.226081054Z
 links:
   model_card: https://huggingface.co/mistralai/Mistral-Small-4-119B-2603
@@ -22,6 +24,7 @@ identifiers:
     - mistralai/Mistral-Small-4-119B-2603
   openrouter:
     - mistralai/mistral-small-2603
+    - mistralai/mistral-small-2603:batch
 provenance:
   max_output:
     source: openrouter

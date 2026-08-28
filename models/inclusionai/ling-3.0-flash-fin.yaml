@@ -1,0 +1,36 @@
+schema_version: 2
+id: inclusionai/ling-3.0-flash-fin
+name: Ling 3.0 Flash Fin (free)
+provider: Inclusionai
+developer: inclusionai
+description: Ling 3.0 Flash Fin is a finance-focused mixture-of-experts model from InclusionAI, built on Ling 3.0 Flash with 5.1B active parameters out of 124B total. It is designed for real-world investment...
+description_cn: Ling 3.0 Flash Fin 是 InclusionAI 推出的专注于金融领域的混合专家模型，基于 Ling 3.0 Flash 构建，总参数量为 1240 亿，其中活跃参数为 51 亿。专为实际投资场景设计...
+context_length: 262144
+max_output: 32768
+features:
+  - CapChat
+  - CapFunctionCall
+  - ModalityTextIn
+  - ModalityTextOut
+aliases:
+  - inclusionai/ling-3.0-flash-fin:free
+discovered_at: 2026-08-28T13:27:38.529950623Z
+identifiers:
+  openrouter:
+    - inclusionai/ling-3.0-flash-fin
+    - inclusionai/ling-3.0-flash-fin:free
+provenance:
+  context_length:
+    source: openrouter
+  description:
+    source: openrouter
+  features:
+    source: openrouter
+  id:
+    source: openrouter
+  max_output:
+    source: openrouter
+  name:
+    source: openrouter
+  provider:
+    source: openrouter

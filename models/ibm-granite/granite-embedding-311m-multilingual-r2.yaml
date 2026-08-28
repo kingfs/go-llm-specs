@@ -1,0 +1,120 @@
+schema_version: 2
+id: ibm-granite/granite-embedding-311m-multilingual-r2
+name: granite-embedding-311m-multilingual-r2
+provider: IBM Granite
+developer: ibm-granite
+lifecycle: active
+description: Granite-Embedding-311M-Multilingual-R2 is a 311M parameter dense embedding model for high-quality multilingual text embeddings, producing 768-dimensional vectors. It supports 200+ languages with enhanced support for 52 languages and code.
+description_cn: Granite-Embedding-311M-Multilingual-R2 是一个拥有 3.11 亿参数的稠密嵌入模型，旨在生成高质量的多语言文本嵌入，输出 768 维向量。它支持 200 多种语言，并对 52 种语言和代码进行增强支持。
+context_length: 32768
+features:
+  - CapEmbedding
+  - ModalityTextIn
+links:
+  model_card: https://huggingface.co/ibm-granite/granite-embedding-311m-multilingual-r2
+identifiers:
+  huggingface:
+    - ibm-granite/granite-embedding-311m-multilingual-r2
+provenance:
+  context_length:
+    source: official_huggingface_config
+    url: https://huggingface.co/ibm-granite/granite-embedding-311m-multilingual-r2
+  description:
+    source: official_model_card
+    url: https://huggingface.co/ibm-granite/granite-embedding-311m-multilingual-r2/resolve/44399559930365213510b1ee2eb15ded83374f0e/README.md
+  features:
+    source: official_huggingface_pipeline
+    url: https://huggingface.co/ibm-granite/granite-embedding-311m-multilingual-r2
+  id:
+    source: official_huggingface
+    url: https://huggingface.co/ibm-granite/granite-embedding-311m-multilingual-r2
+  name:
+    source: official_huggingface
+    url: https://huggingface.co/ibm-granite/granite-embedding-311m-multilingual-r2
+upstream:
+  huggingface:
+    id: ibm-granite/granite-embedding-311m-multilingual-r2
+    revision: 44399559930365213510b1ee2eb15ded83374f0e
+    pipeline_tag: feature-extraction
+    model_type: modernbert
+    architectures:
+      - ModernBertModel
+    license: apache-2.0
+    tags:
+      - ar
+      - arxiv:2205.13147
+      - arxiv:2605.13521
+      - az
+      - bg
+      - bn
+      - ca
+      - cs
+      - da
+      - de
+      - el
+      - embeddings
+      - en
+      - endpoints_compatible
+      - es
+      - et
+      - fa
+      - feature-extraction
+      - fi
+      - fr
+      - granite
+      - he
+      - hi
+      - hr
+      - hu
+      - id
+      - is
+      - it
+      - ja
+      - ka
+      - kk
+      - km
+      - ko
+      - license:apache-2.0
+      - lt
+      - lv
+      - matryoshka
+      - modernbert
+      - mr
+      - ms
+      - mteb
+      - multilingual
+      - nl
+      - "no"
+      - onnx
+      - openvino
+      - pl
+      - pt
+      - region:us
+      - ro
+      - ru
+      - safetensors
+      - sentence-similarity
+      - sentence-transformers
+      - sk
+      - sl
+      - sq
+      - sr
+      - sv
+      - sw
+      - te
+      - text-embeddings-inference
+      - th
+      - tl
+      - tr
+      - transformers
+      - uk
+      - ur
+      - uz
+      - vi
+      - zh
+    config_context_length: 32768
+    tokenizer_model_max_length: 32768
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-08-28T13:27:44.199603857Z

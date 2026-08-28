@@ -21,19 +21,25 @@ upstream:
   openrouter:
     canonical_slug: kwaipilot/kat-coder-pro-v2.5-20260710
     supported_parameters:
+      - frequency_penalty
+      - logit_bias
       - logprobs
       - max_tokens
+      - min_p
       - presence_penalty
+      - repetition_penalty
       - response_format
+      - seed
       - stop
       - structured_outputs
       - temperature
       - tool_choice
       - tools
+      - top_k
       - top_logprobs
       - top_p
     input_modalities:
       - text
     output_modalities:
       - text
-    fetched_at: 2026-08-14T03:53:27.103788575Z
+    fetched_at: 2026-08-28T13:27:43.37418816Z

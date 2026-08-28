@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "ibm-granite/granite-embedding-97m-multilingual-r2",
+  "status": "partially_accepted",
+  "created_at": "2026-08-28T13:27:48.029055308Z",
+  "source": {
+    "url": "https://huggingface.co/ibm-granite/granite-embedding-97m-multilingual-r2/resolve/835ad14087e140460703cf0fae09f97d469d65c2/README.md",
+    "revision": "835ad14087e140460703cf0fae09f97d469d65c2",
+    "sha256": "50572360bc8738ce94c8b8282313255e6041a2a300bad0dc49383e4ddbec01ce"
+  },
+  "generator": {
+    "model": "qwen/qwen3.6-27b",
+    "wire_api": "chat"
+  },
+  "claims": [
+    {
+      "field": "description",
+      "value": "97M parameter dense embedding model for multilingual text, producing 384-dimensional vectors with up to 32,768 token context.",
+      "evidence": "Granite-Embedding-97M-Multilingual-R2 is a 97M parameter dense embedding model... It produces 384-dimensional vectors with a context length of up to 32,768 tokens.",
+      "section": "Model Summary",
+      "confidence": "high"
+    },
+    {
+      "field": "context_length",
+      "value": 32768,
+      "evidence": "It produces 384-dimensional vectors with a context length of up to 32,768 tokens.",
+      "section": "Model Summary",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "ModalityTextIn",
+        "ModalityTextOut"
+      ],
+      "evidence": "The model is designed to produce fixed-length vector representations for a given text, which can be used for text similarity, retrieval, and search",
+      "section": "Usage",
+      "confidence": "high"
+    }
+  ]
+}

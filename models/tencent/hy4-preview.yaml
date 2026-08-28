@@ -1,0 +1,96 @@
+schema_version: 2
+id: tencent/hy4-preview
+name: 'Tencent: Hy4 preview'
+provider: Tencent
+developer: tencent
+description: 'Tencent: Hy4 preview is a mixture-of-experts model from Tencent, with 49B active parameters out of 770B total. It is designed for coding agents, complex tool-use workflows, and productivity tasks that...'
+description_cn: 腾讯：Hy4 预览版是腾讯推出的混合专家模型，总参数量为 7700 亿，其中活跃参数为 490 亿。专为编程智能体、复杂工具使用工作流及生产力任务设计...
+context_length: 1048576
+max_output: 64000
+features:
+  - CapChat
+  - CapFunctionCall
+  - CapJsonMode
+  - ModalityTextIn
+  - ModalityTextOut
+discovered_at: 2026-08-28T13:27:38.529796062Z
+links:
+  model_card: https://huggingface.co/tencent/Hy4-preview
+identifiers:
+  huggingface:
+    - tencent/Hy4-preview
+  openrouter:
+    - tencent/hy4-preview
+provenance:
+  context_length:
+    source: openrouter
+  description:
+    source: openrouter
+  features:
+    source: openrouter
+  id:
+    source: openrouter
+  max_output:
+    source: openrouter
+  name:
+    source: openrouter
+  provider:
+    source: openrouter
+  reasoning:
+    source: openrouter
+upstream:
+  openrouter:
+    canonical_slug: tencent/hy4-preview-20260827
+    supported_parameters:
+      - include_reasoning
+      - max_completion_tokens
+      - max_tokens
+      - reasoning
+      - reasoning_effort
+      - response_format
+      - stop
+      - structured_outputs
+      - temperature
+      - tool_choice
+      - tools
+    input_modalities:
+      - text
+    output_modalities:
+      - text
+    fetched_at: 2026-08-28T13:27:43.379481511Z
+  huggingface:
+    id: tencent/Hy4-preview
+    revision: ce1ba0b6738bbab76b6bfd82b1801c0915dca729
+    pipeline_tag: text-generation
+    model_type: hy_v4
+    architectures:
+      - HYV4ForCausalLM
+    license: apache-2.0
+    tags:
+      - arxiv:2512.02556
+      - arxiv:2603.12201
+      - conversational
+      - endpoints_compatible
+      - eval-results
+      - hunyuan
+      - hy4
+      - hy_v4
+      - license:apache-2.0
+      - moe
+      - region:us
+      - safetensors
+      - text-generation
+      - transformers
+    config_context_length: 1048576
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-08-28T13:27:46.076945622Z
+reasoning:
+  supported: true
+  default_enabled: true
+  default_effort: high
+  supported_efforts:
+    - high
+    - low
+    - none

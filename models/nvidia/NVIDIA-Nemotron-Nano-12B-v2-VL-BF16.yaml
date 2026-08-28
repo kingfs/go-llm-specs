@@ -1,0 +1,45 @@
+schema_version: 2
+id: nvidia/nvidia-nemotron-nano-12b-v2-vl-bf16
+name: NVIDIA-Nemotron-Nano-12B-v2-VL-BF16
+provider: NVIDIA
+developer: nvidia
+lifecycle: candidate
+context_length: 0
+features:
+  - ModalityImageIn
+  - ModalityTextIn
+  - ModalityTextOut
+links:
+  model_card: https://huggingface.co/nvidia/NVIDIA-Nemotron-Nano-12B-v2-VL-BF16
+identifiers:
+  huggingface:
+    - nvidia/NVIDIA-Nemotron-Nano-12B-v2-VL-BF16
+provenance:
+  features:
+    source: official_huggingface_pipeline
+    url: https://huggingface.co/nvidia/NVIDIA-Nemotron-Nano-12B-v2-VL-BF16
+  id:
+    source: official_huggingface
+    url: https://huggingface.co/nvidia/NVIDIA-Nemotron-Nano-12B-v2-VL-BF16
+  name:
+    source: official_huggingface
+    url: https://huggingface.co/nvidia/NVIDIA-Nemotron-Nano-12B-v2-VL-BF16
+upstream:
+  huggingface:
+    id: nvidia/NVIDIA-Nemotron-Nano-12B-v2-VL-BF16
+    revision: ca9543b126e8bf3176916d3d305ccc415f89fd4d
+    pipeline_tag: image-text-to-text
+    license: other
+    tags:
+      - VLM
+      - arxiv:2501.14818
+      - arxiv:2511.03929
+      - conversational
+      - endpoints_compatible
+      - image-text-to-text
+      - license:other
+      - nvidia
+      - region:us
+      - safetensors
+      - transformers
+    fetched_at: 2026-08-28T13:27:45.487032252Z

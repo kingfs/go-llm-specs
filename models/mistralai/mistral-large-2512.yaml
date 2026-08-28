@@ -14,10 +14,13 @@ features:
   - ModalityImageIn
   - ModalityTextIn
   - ModalityTextOut
+aliases:
+  - mistralai/mistral-large-2512:batch
 discovered_at: 2026-07-29T10:39:37.833309841Z
 identifiers:
   openrouter:
     - mistralai/mistral-large-2512
+    - mistralai/mistral-large-2512:batch
 provenance:
   max_output:
     source: openrouter
