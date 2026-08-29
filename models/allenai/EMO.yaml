@@ -1,0 +1,64 @@
+schema_version: 2
+id: allenai/emo
+name: EMO
+provider: Allen Institute for AI
+developer: allenai
+lifecycle: active
+description: EMO is a Mixture of Experts model pretrained for emergent modularity, with the main checkpoint being Emo_1b14b_1T (1B active parameters).
+description_cn: EMO 是一个为涌现模块化进行预训练的混合专家模型，其主要检查点为 Emo_1b14b_1T（包含 1B 个激活参数）。
+context_length: 4096
+features:
+  - ModalityTextIn
+  - ModalityTextOut
+links:
+  model_card: https://huggingface.co/allenai/EMO
+identifiers:
+  huggingface:
+    - allenai/EMO
+provenance:
+  context_length:
+    source: official_huggingface_config
+    url: https://huggingface.co/allenai/EMO
+  description:
+    source: official_model_card
+    url: https://huggingface.co/allenai/EMO/resolve/bdcde02e5c71b2992819c223467a41351da990fa/README.md
+  features:
+    source: official_huggingface_pipeline
+    url: https://huggingface.co/allenai/EMO
+  id:
+    source: official_huggingface
+    url: https://huggingface.co/allenai/EMO
+  name:
+    source: official_huggingface
+    url: https://huggingface.co/allenai/EMO
+upstream:
+  huggingface:
+    id: allenai/EMO
+    revision: bdcde02e5c71b2992819c223467a41351da990fa
+    pipeline_tag: text-generation
+    model_type: emo
+    architectures:
+      - EmoForCausalLM
+    license: other
+    tags:
+      - arxiv:2605.06663
+      - conversational
+      - custom_code
+      - dataset:allenai/OLMoE-mix-0924
+      - emo
+      - en
+      - index
+      - license:other
+      - mixture-of-experts
+      - modularity
+      - moe
+      - region:us
+      - safetensors
+      - text-generation
+      - transformers
+    config_context_length: 4096
+    tokenizer_model_max_length: 4096
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-08-29T08:21:54.100430179Z

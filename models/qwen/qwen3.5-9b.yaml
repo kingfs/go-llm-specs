@@ -15,6 +15,8 @@ features:
   - ModalityTextIn
   - ModalityTextOut
   - ModalityVideoIn
+aliases:
+  - qwen/qwen3.5-9b:batch
 discovered_at: 2026-07-29T10:43:41.001851548Z
 links:
   model_card: https://huggingface.co/Qwen/Qwen3.5-9B
@@ -23,6 +25,7 @@ identifiers:
     - Qwen/Qwen3.5-9B
   openrouter:
     - qwen/qwen3.5-9b
+    - qwen/qwen3.5-9b:batch
 upstream:
   openrouter:
     canonical_slug: qwen/qwen3.5-9b-20260310

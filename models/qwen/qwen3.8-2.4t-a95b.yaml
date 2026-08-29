@@ -13,6 +13,8 @@ features:
   - CapJsonMode
   - ModalityTextIn
   - ModalityTextOut
+aliases:
+  - qwen/qwen3.8-2.4t-a95b:batch
 discovered_at: 2026-08-13T03:56:35.727965718Z
 links:
   model_card: https://huggingface.co/Qwen/Qwen3.8-2.4T-A95B
@@ -21,6 +23,7 @@ identifiers:
     - Qwen/Qwen3.8-2.4T-A95B
   openrouter:
     - qwen/qwen3.8-2.4t-a95b
+    - qwen/qwen3.8-2.4t-a95b:batch
 provenance:
   context_length:
     source: openrouter

@@ -14,7 +14,11 @@ features:
   - ModalityTextIn
   - ModalityTextOut
 discovered_at: 2026-08-19T02:47:49.376206738Z
+links:
+  model_card: https://huggingface.co/zai-org/GLM-5.3
 identifiers:
+  huggingface:
+    - zai-org/GLM-5.3
   openrouter:
     - z-ai/glm-5.3
 provenance:
@@ -39,21 +43,59 @@ upstream:
     canonical_slug: z-ai/glm-5.3-20260816
     huggingface_id: zai-org/GLM-5.3
     supported_parameters:
+      - frequency_penalty
       - include_reasoning
+      - logit_bias
+      - logprobs
       - max_tokens
+      - min_p
+      - presence_penalty
       - reasoning
       - reasoning_effort
+      - repetition_penalty
       - response_format
+      - seed
+      - stop
+      - structured_outputs
       - temperature
       - tool_choice
       - tools
       - top_k
+      - top_logprobs
       - top_p
     input_modalities:
       - text
     output_modalities:
       - text
-    fetched_at: 2026-08-28T13:27:43.380263845Z
+    fetched_at: 2026-08-29T08:21:53.234491521Z
+  huggingface:
+    id: zai-org/GLM-5.3
+    revision: 935644c05e76fc198714f4cca449fd8b970ff6d7
+    pipeline_tag: text-generation
+    model_type: glm_moe_dsa
+    architectures:
+      - GlmMoeDsaForCausalLM
+    license: other
+    tags:
+      - arxiv:2602.15763
+      - conversational
+      - en
+      - endpoints_compatible
+      - eval-results
+      - fp8
+      - glm_moe_dsa
+      - license:other
+      - region:us
+      - safetensors
+      - text-generation
+      - transformers
+      - zh
+    config_context_length: 1048576
+    tokenizer_model_max_length: 1048576
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-08-29T08:21:56.070679496Z
 reasoning:
   supported: true
   mandatory: true

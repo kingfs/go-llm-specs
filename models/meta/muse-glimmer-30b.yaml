@@ -14,6 +14,8 @@ features:
   - ModalityImageIn
   - ModalityTextIn
   - ModalityTextOut
+aliases:
+  - meta/muse-glimmer-30b:batch
 discovered_at: 2026-08-11T03:24:33.360581133Z
 links:
   model_card: https://huggingface.co/meta-models/Muse-Glimmer-30B
@@ -22,6 +24,7 @@ identifiers:
     - meta-models/Muse-Glimmer-30B
   openrouter:
     - meta/muse-glimmer-30b
+    - meta/muse-glimmer-30b:batch
 provenance:
   context_length:
     source: openrouter

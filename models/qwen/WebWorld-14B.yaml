@@ -1,0 +1,74 @@
+schema_version: 2
+id: qwen/webworld-14b
+name: WebWorld-14B
+provider: Qwen
+developer: qwen
+lifecycle: candidate
+context_length: 40960
+features:
+  - ModalityTextIn
+  - ModalityTextOut
+links:
+  model_card: https://huggingface.co/Qwen/WebWorld-14B
+identifiers:
+  huggingface:
+    - Qwen/WebWorld-14B
+provenance:
+  context_length:
+    source: official_huggingface_config
+    url: https://huggingface.co/Qwen/WebWorld-14B
+  features:
+    source: official_huggingface_pipeline
+    url: https://huggingface.co/Qwen/WebWorld-14B
+  id:
+    source: official_huggingface
+    url: https://huggingface.co/Qwen/WebWorld-14B
+  name:
+    source: official_huggingface
+    url: https://huggingface.co/Qwen/WebWorld-14B
+upstream:
+  huggingface:
+    id: Qwen/WebWorld-14B
+    revision: 0212f4ed8a4bcd3e299d902f0dbf48b2255611d4
+    pipeline_tag: text-generation
+    model_type: qwen3
+    architectures:
+      - Qwen3ForCausalLM
+    license: apache-2.0
+    tags:
+      - WebWorld
+      - a11y
+      - arxiv:2602.14721
+      - base_model:Qwen/Qwen3-8B
+      - base_model:finetune:Qwen/Qwen3-8B
+      - browser
+      - conversational
+      - dataset:Qwen/WebWorldData
+      - deploy:azure
+      - en
+      - endpoints_compatible
+      - html
+      - instruction-tuning
+      - license:apache-2.0
+      - long-context
+      - long-horizon
+      - markdown
+      - qwen3
+      - region:us
+      - safetensors
+      - simulator
+      - synthetic-trajectories
+      - text-generation
+      - text-generation-inference
+      - transformers
+      - web-agent
+      - world-model
+      - xml
+      - zh
+    config_context_length: 40960
+    tokenizer_model_max_length: 131072
+    chat_template_sha256: c0e4127cd50e4194663b09f37a2f0b4155bdb8b173410a8765744482adefd734
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-08-29T08:21:55.624640352Z

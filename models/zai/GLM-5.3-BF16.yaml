@@ -1,0 +1,55 @@
+schema_version: 2
+id: zai/glm-5.3-bf16
+name: GLM-5.3-BF16
+provider: Z.ai
+developer: zai
+lifecycle: candidate
+context_length: 1048576
+features:
+  - ModalityTextIn
+  - ModalityTextOut
+links:
+  model_card: https://huggingface.co/zai-org/GLM-5.3-BF16
+identifiers:
+  huggingface:
+    - zai-org/GLM-5.3-BF16
+provenance:
+  context_length:
+    source: official_huggingface_config
+    url: https://huggingface.co/zai-org/GLM-5.3-BF16
+  features:
+    source: official_huggingface_pipeline
+    url: https://huggingface.co/zai-org/GLM-5.3-BF16
+  id:
+    source: official_huggingface
+    url: https://huggingface.co/zai-org/GLM-5.3-BF16
+  name:
+    source: official_huggingface
+    url: https://huggingface.co/zai-org/GLM-5.3-BF16
+upstream:
+  huggingface:
+    id: zai-org/GLM-5.3-BF16
+    revision: 304b8051cfb2b260b61ce0cbe330e02a98e73639
+    pipeline_tag: text-generation
+    model_type: glm_moe_dsa
+    architectures:
+      - GlmMoeDsaForCausalLM
+    license: other
+    tags:
+      - arxiv:2602.15763
+      - conversational
+      - en
+      - endpoints_compatible
+      - glm_moe_dsa
+      - license:other
+      - region:us
+      - safetensors
+      - text-generation
+      - transformers
+      - zh
+    config_context_length: 1048576
+    tokenizer_model_max_length: 1048576
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-08-29T08:21:56.618440688Z

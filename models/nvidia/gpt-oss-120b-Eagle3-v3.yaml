@@ -1,0 +1,54 @@
+schema_version: 2
+id: nvidia/gpt-oss-120b-eagle3-v3
+name: gpt-oss-120b-Eagle3-v3
+provider: NVIDIA
+developer: nvidia
+lifecycle: candidate
+context_length: 131072
+features:
+  - ModalityTextIn
+  - ModalityTextOut
+links:
+  model_card: https://huggingface.co/nvidia/gpt-oss-120b-Eagle3-v3
+identifiers:
+  huggingface:
+    - nvidia/gpt-oss-120b-Eagle3-v3
+provenance:
+  context_length:
+    source: official_huggingface_config
+    url: https://huggingface.co/nvidia/gpt-oss-120b-Eagle3-v3
+  features:
+    source: official_huggingface_pipeline
+    url: https://huggingface.co/nvidia/gpt-oss-120b-Eagle3-v3
+  id:
+    source: official_huggingface
+    url: https://huggingface.co/nvidia/gpt-oss-120b-Eagle3-v3
+  name:
+    source: official_huggingface
+    url: https://huggingface.co/nvidia/gpt-oss-120b-Eagle3-v3
+upstream:
+  huggingface:
+    id: nvidia/gpt-oss-120b-Eagle3-v3
+    revision: 975baaffe27cc031ba21ae370602735d8e3df052
+    pipeline_tag: text-generation
+    model_type: llama
+    architectures:
+      - LlamaForCausalLMEagle3
+    license: other
+    tags:
+      - Eagle3
+      - Model Optimizer
+      - ModelOpt
+      - base_model:finetune:openai/gpt-oss-120b
+      - base_model:openai/gpt-oss-120b
+      - gpt-oss-120b
+      - license:other
+      - llama
+      - nvidia
+      - region:us
+      - safetensors
+      - text-generation
+    config_context_length: 131072
+    structured_files:
+      - config.json
+    fetched_at: 2026-08-29T08:21:54.804592561Z

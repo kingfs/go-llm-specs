@@ -1,0 +1,54 @@
+schema_version: 2
+id: nvidia/nemotron-elastic-12b
+name: Nemotron-Elastic-12B
+provider: NVIDIA
+developer: nvidia
+lifecycle: candidate
+context_length: 0
+features:
+  - ModalityTextIn
+  - ModalityTextOut
+links:
+  model_card: https://huggingface.co/nvidia/Nemotron-Elastic-12B
+identifiers:
+  huggingface:
+    - nvidia/Nemotron-Elastic-12B
+provenance:
+  features:
+    source: official_huggingface_pipeline
+    url: https://huggingface.co/nvidia/Nemotron-Elastic-12B
+  id:
+    source: official_huggingface
+    url: https://huggingface.co/nvidia/Nemotron-Elastic-12B
+  name:
+    source: official_huggingface
+    url: https://huggingface.co/nvidia/Nemotron-Elastic-12B
+upstream:
+  huggingface:
+    id: nvidia/Nemotron-Elastic-12B
+    revision: 345f0feea13757f9090e99f58cd985a0a0fb6f2a
+    pipeline_tag: text-generation
+    model_type: nemotron_h
+    architectures:
+      - NemotronHForCausalLM
+    license: other
+    tags:
+      - arxiv:2412.02595
+      - arxiv:2511.16664
+      - base_model:finetune:nvidia/NVIDIA-Nemotron-Nano-12B-v2
+      - base_model:nvidia/NVIDIA-Nemotron-Nano-12B-v2
+      - conversational
+      - custom_code
+      - elastic
+      - en
+      - endpoints_compatible
+      - license:other
+      - nemotron_h
+      - nvidia
+      - pytorch
+      - region:us
+      - research
+      - safetensors
+      - text-generation
+      - transformers
+    fetched_at: 2026-08-29T08:21:54.979088812Z

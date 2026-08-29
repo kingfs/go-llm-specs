@@ -14,6 +14,7 @@ features:
   - ModalityTextIn
   - ModalityTextOut
 aliases:
+  - openai/gpt-oss-120b:batch
   - openai/gpt-oss-120b:exacto
   - openai/gpt-oss-120b:free
 discovered_at: 2026-07-29T10:41:31.604734161Z
@@ -25,6 +26,7 @@ identifiers:
     - openai/gpt-oss-120b
   openrouter:
     - openai/gpt-oss-120b
+    - openai/gpt-oss-120b:batch
     - openai/gpt-oss-120b:exacto
     - openai/gpt-oss-120b:free
 upstream:

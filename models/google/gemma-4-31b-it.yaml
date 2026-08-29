@@ -16,6 +16,7 @@ features:
   - ModalityTextOut
   - ModalityVideoIn
 aliases:
+  - google/gemma-4-31b-it:batch
   - google/gemma-4-31b-it:free
 discovered_at: 2026-07-29T10:38:22.844429129Z
 links:
@@ -25,6 +26,7 @@ identifiers:
     - google/gemma-4-31B-it
   openrouter:
     - google/gemma-4-31b-it
+    - google/gemma-4-31b-it:batch
     - google/gemma-4-31b-it:free
 upstream:
   openrouter:

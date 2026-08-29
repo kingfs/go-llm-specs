@@ -15,6 +15,7 @@ features:
   - ModalityTextIn
   - ModalityTextOut
 aliases:
+  - thinkingmachines/inkling-small:batch
   - thinkingmachines/inkling-small:free
 discovered_at: 2026-08-03T07:48:48.245297344Z
 links:
@@ -24,6 +25,7 @@ identifiers:
     - thinkingmachines/Inkling-Small
   openrouter:
     - thinkingmachines/inkling-small
+    - thinkingmachines/inkling-small:batch
     - thinkingmachines/inkling-small:free
 provenance:
   max_output:

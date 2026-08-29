@@ -14,6 +14,7 @@ features:
   - ModalityTextIn
   - ModalityTextOut
 aliases:
+  - openai/gpt-oss-20b:batch
   - openai/gpt-oss-20b:free
 discovered_at: 2026-07-29T10:41:34.310227655Z
 links:
@@ -24,6 +25,7 @@ identifiers:
     - openai/gpt-oss-20b
   openrouter:
     - openai/gpt-oss-20b
+    - openai/gpt-oss-20b:batch
     - openai/gpt-oss-20b:free
 upstream:
   openrouter:

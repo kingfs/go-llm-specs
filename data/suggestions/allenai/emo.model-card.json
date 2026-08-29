@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "allenai/emo",
+  "status": "partially_accepted",
+  "created_at": "2026-08-29T08:23:18.97576883Z",
+  "source": {
+    "url": "https://huggingface.co/allenai/EMO/resolve/bdcde02e5c71b2992819c223467a41351da990fa/README.md",
+    "revision": "bdcde02e5c71b2992819c223467a41351da990fa",
+    "sha256": "4318a7f7be05963b7b0bec48b38a45a54b51cabe36c20ede05e379cbf42c7a63"
+  },
+  "generator": {
+    "model": "qwen/qwen3.6-27b",
+    "wire_api": "chat"
+  },
+  "claims": [
+    {
+      "field": "description",
+      "value": "EMO is a Mixture of Experts model pretrained for emergent modularity, with the main checkpoint being Emo_1b14b_1T (1B active parameters).",
+      "evidence": "EMO: Pretraining Mixture of Experts for Emergent Modularity... EMO — 1B-active / 14B-total MoE pretrained on 1T tokens",
+      "section": "Released models",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "ModalityTextIn",
+        "ModalityTextOut"
+      ],
+      "evidence": "pipeline_tag: text-generation",
+      "section": "META",
+      "confidence": "high"
+    }
+  ]
+}

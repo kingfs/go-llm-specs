@@ -13,6 +13,8 @@ features:
   - CapJsonMode
   - ModalityTextIn
   - ModalityTextOut
+aliases:
+  - deepseek/deepseek-v4-flash-0731:batch
 discovered_at: 2026-08-03T07:48:48.245003108Z
 links:
   model_card: https://huggingface.co/deepseek-ai/DeepSeek-V4-Flash-0731
@@ -21,6 +23,7 @@ identifiers:
     - deepseek-ai/DeepSeek-V4-Flash-0731
   openrouter:
     - deepseek/deepseek-v4-flash-0731
+    - deepseek/deepseek-v4-flash-0731:batch
 upstream:
   openrouter:
     canonical_slug: deepseek/deepseek-v4-flash-20260731
