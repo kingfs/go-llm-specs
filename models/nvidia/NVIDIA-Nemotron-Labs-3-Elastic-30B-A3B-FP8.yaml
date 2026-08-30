@@ -1,0 +1,66 @@
+schema_version: 2
+id: nvidia/nvidia-nemotron-labs-3-elastic-30b-a3b-fp8
+name: NVIDIA-Nemotron-Labs-3-Elastic-30B-A3B-FP8
+provider: NVIDIA
+developer: nvidia
+lifecycle: candidate
+context_length: 262144
+features:
+  - ModalityTextIn
+  - ModalityTextOut
+links:
+  model_card: https://huggingface.co/nvidia/NVIDIA-Nemotron-Labs-3-Elastic-30B-A3B-FP8
+identifiers:
+  huggingface:
+    - nvidia/NVIDIA-Nemotron-Labs-3-Elastic-30B-A3B-FP8
+provenance:
+  context_length:
+    source: official_huggingface_config
+    url: https://huggingface.co/nvidia/NVIDIA-Nemotron-Labs-3-Elastic-30B-A3B-FP8
+  features:
+    source: official_huggingface_pipeline
+    url: https://huggingface.co/nvidia/NVIDIA-Nemotron-Labs-3-Elastic-30B-A3B-FP8
+  id:
+    source: official_huggingface
+    url: https://huggingface.co/nvidia/NVIDIA-Nemotron-Labs-3-Elastic-30B-A3B-FP8
+  name:
+    source: official_huggingface
+    url: https://huggingface.co/nvidia/NVIDIA-Nemotron-Labs-3-Elastic-30B-A3B-FP8
+upstream:
+  huggingface:
+    id: nvidia/NVIDIA-Nemotron-Labs-3-Elastic-30B-A3B-FP8
+    revision: 0515e708cb8cf7d5ab4e0dd101ad637f08dbbefc
+    pipeline_tag: text-generation
+    model_type: nemotron_h
+    architectures:
+      - NemotronHForCausalLM
+    license: other
+    tags:
+      - arxiv:2511.16664
+      - arxiv:2512.20848
+      - base_model:finetune:nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B-BF16
+      - base_model:nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B-BF16
+      - conversational
+      - custom_code
+      - de
+      - elastic
+      - en
+      - endpoints_compatible
+      - es
+      - fr
+      - it
+      - ja
+      - license:other
+      - nemotron_h
+      - nvidia
+      - pytorch
+      - region:us
+      - safetensors
+      - text-generation
+      - transformers
+    config_context_length: 262144
+    tokenizer_model_max_length: 262144
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-08-30T07:35:35.911925115Z

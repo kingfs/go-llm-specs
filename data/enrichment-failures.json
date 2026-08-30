@@ -1,7 +1,6 @@
 {
-  "failure_count": 2,
+  "failure_count": 1,
   "failures": {
-    "microsoft/wizardlm-2-8x22b": "Hugging Face model request returned 401 Unauthorized",
-    "nvidia/nemotron-elastic-12b": "Hugging Face config.json returned 401 Unauthorized"
+    "microsoft/wizardlm-2-8x22b": "Hugging Face model request returned 401 Unauthorized"
   }
 }

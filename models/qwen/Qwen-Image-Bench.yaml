@@ -4,6 +4,8 @@ name: Qwen-Image-Bench
 provider: Qwen
 developer: qwen
 lifecycle: candidate
+description: Q-Judger is a vision-language model fine-tuned on Qwen3.6-27B for automated evaluation of text-to-image generated images. It evaluates image quality across hierarchical dimensions and outputs structured scores.
+description_cn: Q-Judger 是一个基于 Qwen3.6-27B 微调的视觉语言模型，用于自动化评估文生图生成的图像。它从分层维度评估图像质量，并输出结构化分数。
 context_length: 0
 features:
   - ModalityImageIn
@@ -15,6 +17,9 @@ identifiers:
   huggingface:
     - Qwen/Qwen-Image-Bench
 provenance:
+  description:
+    source: official_model_card
+    url: https://huggingface.co/Qwen/Qwen-Image-Bench/resolve/1b77ff83564ac4e4e8140769eacff7ff73f35f3c/README.md
   features:
     source: official_huggingface_pipeline
     url: https://huggingface.co/Qwen/Qwen-Image-Bench
@@ -24,6 +29,9 @@ provenance:
   name:
     source: official_huggingface
     url: https://huggingface.co/Qwen/Qwen-Image-Bench
+  reasoning.supported:
+    source: official_model_card
+    url: https://huggingface.co/Qwen/Qwen-Image-Bench/resolve/1b77ff83564ac4e4e8140769eacff7ff73f35f3c/README.md
 upstream:
   huggingface:
     id: Qwen/Qwen-Image-Bench
@@ -60,3 +68,5 @@ upstream:
       - preprocessor_config.json
       - tokenizer_config.json
     fetched_at: 2026-08-24T02:53:28.894354376Z
+reasoning:
+  supported: true

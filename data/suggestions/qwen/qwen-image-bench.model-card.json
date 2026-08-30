@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "qwen/qwen-image-bench",
+  "status": "partially_accepted",
+  "created_at": "2026-08-30T07:36:59.505754523Z",
+  "source": {
+    "url": "https://huggingface.co/Qwen/Qwen-Image-Bench/resolve/1b77ff83564ac4e4e8140769eacff7ff73f35f3c/README.md",
+    "revision": "1b77ff83564ac4e4e8140769eacff7ff73f35f3c",
+    "sha256": "c10428ee048148beb35d64968427fdcc6cd9f00e8fb230f952c501c754db1023"
+  },
+  "generator": {
+    "model": "qwen/qwen3.6-27b",
+    "wire_api": "chat"
+  },
+  "claims": [
+    {
+      "field": "description",
+      "value": "Q-Judger is a vision-language model fine-tuned on Qwen3.6-27B for automated evaluation of text-to-image generated images. It evaluates image quality across hierarchical dimensions and outputs structured scores.",
+      "evidence": "Q-Judger is a vision-language model fine-tuned specifically for automated evaluation of text-to-image generated images.",
+      "section": "Model Description",
+      "confidence": "high"
+    },
+    {
+      "field": "description",
+      "value": "The model uses chain-of-thought reasoning before producing the final JSON output, enabled via a Thinking Mode.",
+      "evidence": "Thinking Mode: Enabled — the model uses chain-of-thought reasoning before producing the final JSON output",
+      "section": "Model Description",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "ModalityImageIn",
+        "ModalityTextIn",
+        "ModalityTextOut"
+      ],
+      "evidence": "Input: Text prompt + generated image ... Output: Structured JSON with per-dimension scores",
+      "section": "Model Description",
+      "confidence": "high"
+    },
+    {
+      "field": "reasoning.supported",
+      "value": true,
+      "evidence": "Thinking Mode: Enabled — the model uses chain-of-thought reasoning before producing the final JSON output",
+      "section": "Model Description",
+      "confidence": "high"
+    }
+  ]
+}
