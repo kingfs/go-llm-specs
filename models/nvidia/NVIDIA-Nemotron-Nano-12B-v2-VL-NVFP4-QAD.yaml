@@ -1,0 +1,59 @@
+schema_version: 2
+id: nvidia/nvidia-nemotron-nano-12b-v2-vl-nvfp4-qad
+name: NVIDIA-Nemotron-Nano-12B-v2-VL-NVFP4-QAD
+provider: NVIDIA
+developer: nvidia
+lifecycle: candidate
+context_length: 0
+features:
+  - ModalityImageIn
+  - ModalityTextIn
+  - ModalityTextOut
+links:
+  model_card: https://huggingface.co/nvidia/NVIDIA-Nemotron-Nano-12B-v2-VL-NVFP4-QAD
+identifiers:
+  huggingface:
+    - nvidia/NVIDIA-Nemotron-Nano-12B-v2-VL-NVFP4-QAD
+provenance:
+  features:
+    source: official_huggingface_pipeline
+    url: https://huggingface.co/nvidia/NVIDIA-Nemotron-Nano-12B-v2-VL-NVFP4-QAD
+  id:
+    source: official_huggingface
+    url: https://huggingface.co/nvidia/NVIDIA-Nemotron-Nano-12B-v2-VL-NVFP4-QAD
+  name:
+    source: official_huggingface
+    url: https://huggingface.co/nvidia/NVIDIA-Nemotron-Nano-12B-v2-VL-NVFP4-QAD
+upstream:
+  huggingface:
+    id: nvidia/NVIDIA-Nemotron-Nano-12B-v2-VL-NVFP4-QAD
+    revision: 312eb94f6d36209f7c6a82eda896e27200d152ee
+    pipeline_tag: image-text-to-text
+    model_type: NemotronH_Nano_VL_V2
+    architectures:
+      - NemotronH_Nano_VL_V2
+    license: other
+    tags:
+      - 8-bit
+      - FP4
+      - NemotronH_Nano_VL_V2
+      - VLM
+      - arxiv:2501.14818
+      - arxiv:2511.03929
+      - conversational
+      - custom_code
+      - feature-extraction
+      - image-text-to-text
+      - license:other
+      - modelopt
+      - nvidia
+      - region:us
+      - safetensors
+      - transformers
+    processor_class: NemotronNanoVLV2ImageProcessor
+    chat_template_sha256: 188e50f3f0556b85c0286ce6d189b45887e5769d6749172c7c056651ad864de3
+    structured_files:
+      - config.json
+      - preprocessor_config.json
+      - tokenizer_config.json
+    fetched_at: 2026-08-31T07:47:18.267981738Z

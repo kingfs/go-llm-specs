@@ -1,0 +1,59 @@
+schema_version: 2
+id: tencent/contextpilot-14b
+name: ContextPilot-14B
+provider: Tencent Hunyuan
+developer: tencent
+lifecycle: candidate
+context_length: 40960
+features:
+  - ModalityTextIn
+  - ModalityTextOut
+links:
+  model_card: https://huggingface.co/tencent/ContextPilot-14B
+identifiers:
+  huggingface:
+    - tencent/ContextPilot-14B
+provenance:
+  context_length:
+    source: official_huggingface_config
+    url: https://huggingface.co/tencent/ContextPilot-14B
+  features:
+    source: official_huggingface_pipeline
+    url: https://huggingface.co/tencent/ContextPilot-14B
+  id:
+    source: official_huggingface
+    url: https://huggingface.co/tencent/ContextPilot-14B
+  name:
+    source: official_huggingface
+    url: https://huggingface.co/tencent/ContextPilot-14B
+upstream:
+  huggingface:
+    id: tencent/ContextPilot-14B
+    revision: 8eafd8356c5c5e713e92e623c8f1d346de6d0f95
+    pipeline_tag: text-generation
+    model_type: qwen3
+    architectures:
+      - Qwen3ForCausalLM
+    license: other
+    tags:
+      - agent
+      - arxiv:2608.28476
+      - base_model:Qwen/Qwen3-14B
+      - base_model:finetune:Qwen/Qwen3-14B
+      - context-management
+      - conversational
+      - endpoints_compatible
+      - license:other
+      - qwen3
+      - region:us
+      - safetensors
+      - text-generation
+      - text-generation-inference
+      - tool-use
+      - transformers
+    config_context_length: 40960
+    tokenizer_model_max_length: 131072
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-08-31T07:47:19.571446102Z

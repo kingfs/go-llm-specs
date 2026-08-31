@@ -29,7 +29,6 @@ upstream:
       - frequency_penalty
       - include_reasoning
       - logit_bias
-      - logprobs
       - max_tokens
       - min_p
       - presence_penalty
@@ -44,13 +43,12 @@ upstream:
       - tools
       - top_a
       - top_k
-      - top_logprobs
       - top_p
     input_modalities:
       - text
     output_modalities:
       - text
-    fetched_at: 2026-08-06T04:52:32.557973811Z
+    fetched_at: 2026-08-31T07:47:17.411442692Z
   huggingface:
     id: zai-org/GLM-4.7
     revision: 602d01efcdd332c5238ca4bcede555defbe83eb7

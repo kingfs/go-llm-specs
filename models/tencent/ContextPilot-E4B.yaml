@@ -1,0 +1,54 @@
+schema_version: 2
+id: tencent/contextpilot-e4b
+name: ContextPilot-E4B
+provider: Tencent Hunyuan
+developer: tencent
+lifecycle: candidate
+context_length: 0
+features:
+  - ModalityTextIn
+  - ModalityTextOut
+links:
+  model_card: https://huggingface.co/tencent/ContextPilot-E4B
+identifiers:
+  huggingface:
+    - tencent/ContextPilot-E4B
+provenance:
+  features:
+    source: official_huggingface_pipeline
+    url: https://huggingface.co/tencent/ContextPilot-E4B
+  id:
+    source: official_huggingface
+    url: https://huggingface.co/tencent/ContextPilot-E4B
+  name:
+    source: official_huggingface
+    url: https://huggingface.co/tencent/ContextPilot-E4B
+upstream:
+  huggingface:
+    id: tencent/ContextPilot-E4B
+    revision: a7ba41c18ddcd334f23f63ef7a608ca46bfe3aa4
+    pipeline_tag: text-generation
+    model_type: gemma4
+    architectures:
+      - Gemma4ForConditionalGeneration
+    license: other
+    tags:
+      - agent
+      - arxiv:2608.28476
+      - base_model:finetune:google/gemma-4-E4B-it
+      - base_model:google/gemma-4-E4B-it
+      - context-management
+      - conversational
+      - endpoints_compatible
+      - gemma4
+      - image-text-to-text
+      - license:other
+      - region:us
+      - safetensors
+      - text-generation
+      - tool-use
+      - transformers
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-08-31T07:47:20.604563708Z

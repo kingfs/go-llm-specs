@@ -1,0 +1,56 @@
+schema_version: 2
+id: nvidia/nvidia-nemotron-parse-v1.1
+name: NVIDIA-Nemotron-Parse-v1.1
+provider: NVIDIA
+developer: nvidia
+lifecycle: candidate
+context_length: 0
+features:
+  - ModalityImageIn
+  - ModalityTextIn
+  - ModalityTextOut
+links:
+  model_card: https://huggingface.co/nvidia/NVIDIA-Nemotron-Parse-v1.1
+identifiers:
+  huggingface:
+    - nvidia/NVIDIA-Nemotron-Parse-v1.1
+provenance:
+  features:
+    source: official_huggingface_pipeline
+    url: https://huggingface.co/nvidia/NVIDIA-Nemotron-Parse-v1.1
+  id:
+    source: official_huggingface
+    url: https://huggingface.co/nvidia/NVIDIA-Nemotron-Parse-v1.1
+  name:
+    source: official_huggingface
+    url: https://huggingface.co/nvidia/NVIDIA-Nemotron-Parse-v1.1
+upstream:
+  huggingface:
+    id: nvidia/NVIDIA-Nemotron-Parse-v1.1
+    revision: fd1e3c6ba0b61a6dcab5a905f0ff92c5b19f14a4
+    pipeline_tag: image-text-to-text
+    model_type: nemotron_parse
+    architectures:
+      - NemotronParseForConditionalGeneration
+    license: other
+    tags:
+      - OCR
+      - VLM
+      - arxiv:2511.20478
+      - conversational
+      - custom_code
+      - feature-extraction
+      - image-text-to-text
+      - license:other
+      - nemotron_parse
+      - nvidia
+      - region:us
+      - safetensors
+      - transformers
+    tokenizer_model_max_length: 9000
+    processor_class: NemotronParseProcessor
+    structured_files:
+      - config.json
+      - preprocessor_config.json
+      - tokenizer_config.json
+    fetched_at: 2026-08-31T07:47:19.044413653Z
