@@ -1,0 +1,61 @@
+schema_version: 2
+id: ibm-granite/granite-4.1-3b
+name: granite-4.1-3b
+provider: IBM Granite
+developer: ibm-granite
+lifecycle: active
+description: A 3B parameter long-context instruct model finetuned from Granite-4.1-3B-Base, enhanced with tool calling, instruction following, and chat capabilities via SFT and RLHF.
+description_cn: 这是一个 30 亿参数的长上下文指令模型，基于 Granite-4.1-3B-Base 微调而成，并通过 SFT 和 RLHF 增强了工具调用、指令遵循和聊天功能。
+context_length: 131072
+features:
+  - ModalityTextIn
+  - ModalityTextOut
+links:
+  model_card: https://huggingface.co/ibm-granite/granite-4.1-3b
+identifiers:
+  huggingface:
+    - ibm-granite/granite-4.1-3b
+provenance:
+  context_length:
+    source: official_huggingface_config
+    url: https://huggingface.co/ibm-granite/granite-4.1-3b
+  description:
+    source: official_model_card
+    url: https://huggingface.co/ibm-granite/granite-4.1-3b/resolve/c0650403e44e78ec0262dab1c90914c65b196c4e/README.md
+  features:
+    source: official_huggingface_pipeline
+    url: https://huggingface.co/ibm-granite/granite-4.1-3b
+  id:
+    source: official_huggingface
+    url: https://huggingface.co/ibm-granite/granite-4.1-3b
+  name:
+    source: official_huggingface
+    url: https://huggingface.co/ibm-granite/granite-4.1-3b
+upstream:
+  huggingface:
+    id: ibm-granite/granite-4.1-3b
+    revision: c0650403e44e78ec0262dab1c90914c65b196c4e
+    pipeline_tag: text-generation
+    model_type: granite
+    architectures:
+      - GraniteForCausalLM
+    license: apache-2.0
+    tags:
+      - arxiv:0000.00000
+      - conversational
+      - deploy:azure
+      - endpoints_compatible
+      - eval-results
+      - granite
+      - granite-4.1
+      - language
+      - license:apache-2.0
+      - region:us
+      - safetensors
+      - text-generation
+      - transformers
+    config_context_length: 131072
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-09-01T06:54:00.693197802Z

@@ -16,7 +16,11 @@ features:
   - ModalityTextOut
   - ModalityVideoIn
 discovered_at: 2026-08-27T12:05:21.844117007Z
+links:
+  model_card: https://huggingface.co/Qwen/Qwen3.8-Flash-Next
 identifiers:
+  huggingface:
+    - Qwen/Qwen3.8-Flash-Next
   openrouter:
     - qwen/qwen3.8-flash
 provenance:
@@ -39,6 +43,7 @@ provenance:
 upstream:
   openrouter:
     canonical_slug: qwen/qwen3.8-flash-20260826
+    huggingface_id: Qwen/Qwen3.8-Flash-Next
     supported_parameters:
       - frequency_penalty
       - include_reasoning
@@ -62,7 +67,33 @@ upstream:
       - video
     output_modalities:
       - text
-    fetched_at: 2026-08-27T12:05:23.718845917Z
+    fetched_at: 2026-09-01T06:54:00.195655929Z
+  huggingface:
+    id: Qwen/Qwen3.8-Flash-Next
+    revision: de4b8e4d43b917e7706784d8bb445c9af86a3540
+    pipeline_tag: image-text-to-text
+    model_type: qwen4_exp
+    architectures:
+      - Qwen4ExpForConditionalGeneration
+    license: other
+    tags:
+      - conversational
+      - endpoints_compatible
+      - eval-results
+      - image-text-to-text
+      - license:other
+      - qwen4_exp
+      - region:us
+      - safetensors
+      - transformers
+    tokenizer_model_max_length: 262144
+    processor_class: Qwen3VLProcessor
+    chat_template_sha256: 4696c191344ef86278c477fba1b6f77df60bd3865021c4f011004def62610715
+    structured_files:
+      - config.json
+      - preprocessor_config.json
+      - tokenizer_config.json
+    fetched_at: 2026-09-01T06:54:01.164079309Z
 reasoning:
   supported: true
   default_enabled: true

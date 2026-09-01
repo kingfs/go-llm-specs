@@ -15,7 +15,11 @@ features:
   - ModalityTextIn
   - ModalityTextOut
 discovered_at: 2026-08-22T02:43:58.192627451Z
+links:
+  model_card: https://huggingface.co/deepseek-ai/DeepSeek-V4-Flash-Vision-Exp
 identifiers:
+  huggingface:
+    - deepseek-ai/DeepSeek-V4-Flash-Vision-Exp
   openrouter:
     - deepseek/deepseek-v4-flash-vision-exp
 provenance:
@@ -38,6 +42,7 @@ provenance:
 upstream:
   openrouter:
     canonical_slug: deepseek/deepseek-v4-flash-vision-exp-20260821
+    huggingface_id: deepseek-ai/DeepSeek-V4-Flash-Vision-Exp
     supported_parameters:
       - frequency_penalty
       - include_reasoning
@@ -46,11 +51,14 @@ upstream:
       - presence_penalty
       - reasoning
       - reasoning_effort
+      - repetition_penalty
       - response_format
+      - seed
       - stop
       - temperature
       - tool_choice
       - tools
+      - top_k
       - top_logprobs
       - top_p
     input_modalities:
@@ -58,7 +66,33 @@ upstream:
       - text
     output_modalities:
       - text
-    fetched_at: 2026-08-22T02:43:59.921398054Z
+    fetched_at: 2026-09-01T06:54:00.18701579Z
+  huggingface:
+    id: deepseek-ai/DeepSeek-V4-Flash-Vision-Exp
+    revision: 31ea11185e11ccafad1c385104188a9e3b648ad6
+    pipeline_tag: image-text-to-text
+    model_type: deepseek_v4
+    architectures:
+      - DeepseekV4ForCausalLM
+    license: mit
+    tags:
+      - 8-bit
+      - deepseek_v4
+      - endpoints_compatible
+      - eval-results
+      - fp8
+      - image-text-to-text
+      - license:mit
+      - region:us
+      - safetensors
+      - text-generation
+      - transformers
+    config_context_length: 1048576
+    tokenizer_model_max_length: 1048576
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-09-01T06:54:00.539519396Z
 reasoning:
   supported: true
   default_enabled: true

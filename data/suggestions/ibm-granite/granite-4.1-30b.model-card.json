@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "ibm-granite/granite-4.1-30b",
+  "status": "partially_accepted",
+  "created_at": "2026-09-01T06:54:03.157428007Z",
+  "source": {
+    "url": "https://huggingface.co/ibm-granite/granite-4.1-30b/resolve/4fae6278f7132abf5e971f9de49ebbad09c54cce/README.md",
+    "revision": "4fae6278f7132abf5e971f9de49ebbad09c54cce",
+    "sha256": "7675afe6dc1972590f8fff16a6c3eeef33c69a66471b772a11df7410e7218d14"
+  },
+  "generator": {
+    "model": "qwen/qwen3.6-27b",
+    "wire_api": "chat"
+  },
+  "claims": [
+    {
+      "field": "description",
+      "value": "Granite-4.1-30B is a 30B parameter long-context instruct model finetuned from Granite-4.1-30B-Base.",
+      "evidence": "Granite-4.1-30B is a 30B parameter long-context instruct model finetuned from *Granite-4.1-30B-Base*",
+      "section": "# Granite-4.1-30B",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "CapChat",
+        "CapFunctionCall",
+        "ModalityTextIn",
+        "ModalityTextOut",
+        "CapChat"
+      ],
+      "evidence": "resulting in enhanced tool calling, instruction following, and chat capabilities.",
+      "section": "# Granite-4.1-30B",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "CapFunctionCall"
+      ],
+      "evidence": "Granite-4.1-30B comes with enhanced tool calling capabilities, enabling seamless integration with external functions and APIs.",
+      "section": "**Tool-calling:**",
+      "confidence": "high"
+    }
+  ]
+}

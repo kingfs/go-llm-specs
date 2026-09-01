@@ -1,0 +1,61 @@
+schema_version: 2
+id: ibm-granite/granite-4.1-30b
+name: granite-4.1-30b
+provider: IBM Granite
+developer: ibm-granite
+lifecycle: active
+description: Granite-4.1-30B is a 30B parameter long-context instruct model finetuned from Granite-4.1-30B-Base.
+description_cn: Granite-4.1-30B 是一个 300 亿参数的长上下文指令模型，基于 Granite-4.1-30B-Base 微调而成。
+context_length: 131072
+features:
+  - ModalityTextIn
+  - ModalityTextOut
+links:
+  model_card: https://huggingface.co/ibm-granite/granite-4.1-30b
+identifiers:
+  huggingface:
+    - ibm-granite/granite-4.1-30b
+provenance:
+  context_length:
+    source: official_huggingface_config
+    url: https://huggingface.co/ibm-granite/granite-4.1-30b
+  description:
+    source: official_model_card
+    url: https://huggingface.co/ibm-granite/granite-4.1-30b/resolve/4fae6278f7132abf5e971f9de49ebbad09c54cce/README.md
+  features:
+    source: official_huggingface_pipeline
+    url: https://huggingface.co/ibm-granite/granite-4.1-30b
+  id:
+    source: official_huggingface
+    url: https://huggingface.co/ibm-granite/granite-4.1-30b
+  name:
+    source: official_huggingface
+    url: https://huggingface.co/ibm-granite/granite-4.1-30b
+upstream:
+  huggingface:
+    id: ibm-granite/granite-4.1-30b
+    revision: 4fae6278f7132abf5e971f9de49ebbad09c54cce
+    pipeline_tag: text-generation
+    model_type: granite
+    architectures:
+      - GraniteForCausalLM
+    license: apache-2.0
+    tags:
+      - arxiv:0000.00000
+      - conversational
+      - deploy:azure
+      - endpoints_compatible
+      - eval-results
+      - granite
+      - granite-4.1
+      - language
+      - license:apache-2.0
+      - region:us
+      - safetensors
+      - text-generation
+      - transformers
+    config_context_length: 131072
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-09-01T06:54:00.620888125Z

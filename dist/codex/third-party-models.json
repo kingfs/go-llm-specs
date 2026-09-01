@@ -435,6 +435,62 @@
       "auto_review_model_override": null
     },
     {
+      "slug": "deepseek-v4-flash-vision-exp",
+      "display_name": "DeepSeek: DeepSeek V4 Flash Vision Exp",
+      "description": "DeepSeek V4 Flash Vision Exp is an experimental vision-enabled version of [DeepSeek V4 Flash 0731](https://openrouter.ai/deepseek/deepseek-v4-flash-0731) from DeepSeek, adding image understanding while matching the base model on text capabilities including agents,...",
+      "default_reasoning_level": "high",
+      "supported_reasoning_levels": [
+        {
+          "effort": "high",
+          "description": "high reasoning effort"
+        },
+        {
+          "effort": "low",
+          "description": "low reasoning effort"
+        },
+        {
+          "effort": "max",
+          "description": "max reasoning effort"
+        }
+      ],
+      "shell_type": "unified_exec",
+      "visibility": "list",
+      "supported_in_api": true,
+      "priority": 100,
+      "additional_speed_tiers": [],
+      "service_tiers": [],
+      "availability_nux": null,
+      "upgrade": null,
+      "base_instructions": "",
+      "model_messages": null,
+      "include_skills_usage_instructions": false,
+      "supports_reasoning_summary_parameter": false,
+      "default_reasoning_summary": "none",
+      "support_verbosity": false,
+      "default_verbosity": null,
+      "apply_patch_tool_type": "freeform",
+      "web_search_tool_type": "text",
+      "truncation_policy": {
+        "mode": "tokens",
+        "limit": 10000
+      },
+      "supports_parallel_tool_calls": false,
+      "supports_image_detail_original": false,
+      "context_window": 1048576,
+      "max_context_window": 1048576,
+      "auto_compact_token_limit": null,
+      "comp_hash": null,
+      "effective_context_window_percent": 90,
+      "experimental_supported_tools": [],
+      "input_modalities": [
+        "text",
+        "image"
+      ],
+      "supports_search_tool": false,
+      "use_responses_lite": false,
+      "auto_review_model_override": null
+    },
+    {
       "slug": "deepseek-v4-pro",
       "display_name": "DeepSeek: DeepSeek V4 Pro",
       "description": "DeepSeek V4 Pro is a large-scale Mixture-of-Experts model from DeepSeek with 1.6T total parameters and 49B activated parameters, supporting a 1M-token context window. It is designed for advanced reasoning, coding,...",
@@ -1184,6 +1240,48 @@
       "experimental_supported_tools": [],
       "input_modalities": [
         "text"
+      ],
+      "supports_search_tool": false,
+      "use_responses_lite": false,
+      "auto_review_model_override": null
+    },
+    {
+      "slug": "qwen3.8-flash",
+      "display_name": "Qwen: Qwen3.8 Flash",
+      "description": "Qwen3.8 Flash is a multimodal reasoning model from Alibaba. It is suited for coding assistance, agentic workflows, visual understanding, document and codebase analysis, desktop interaction, chart analysis, and long-video analysis.",
+      "supported_reasoning_levels": [],
+      "shell_type": "unified_exec",
+      "visibility": "list",
+      "supported_in_api": true,
+      "priority": 100,
+      "additional_speed_tiers": [],
+      "service_tiers": [],
+      "availability_nux": null,
+      "upgrade": null,
+      "base_instructions": "",
+      "model_messages": null,
+      "include_skills_usage_instructions": false,
+      "supports_reasoning_summary_parameter": false,
+      "default_reasoning_summary": "none",
+      "support_verbosity": false,
+      "default_verbosity": null,
+      "apply_patch_tool_type": "freeform",
+      "web_search_tool_type": "text",
+      "truncation_policy": {
+        "mode": "tokens",
+        "limit": 10000
+      },
+      "supports_parallel_tool_calls": false,
+      "supports_image_detail_original": false,
+      "context_window": 1000000,
+      "max_context_window": 1000000,
+      "auto_compact_token_limit": null,
+      "comp_hash": null,
+      "effective_context_window_percent": 90,
+      "experimental_supported_tools": [],
+      "input_modalities": [
+        "text",
+        "image"
       ],
       "supports_search_tool": false,
       "use_responses_lite": false,

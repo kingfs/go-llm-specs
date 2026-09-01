@@ -1,0 +1,66 @@
+schema_version: 2
+id: microsoft/phi-4-reasoning-vision-15b
+name: Phi-4-reasoning-vision-15B
+provider: Microsoft
+developer: microsoft
+lifecycle: candidate
+context_length: 32768
+features:
+  - ModalityImageIn
+  - ModalityTextIn
+  - ModalityTextOut
+links:
+  model_card: https://huggingface.co/microsoft/Phi-4-reasoning-vision-15B
+identifiers:
+  huggingface:
+    - microsoft/Phi-4-reasoning-vision-15B
+provenance:
+  context_length:
+    source: official_huggingface_config
+    url: https://huggingface.co/microsoft/Phi-4-reasoning-vision-15B
+  features:
+    source: official_huggingface_pipeline
+    url: https://huggingface.co/microsoft/Phi-4-reasoning-vision-15B
+  id:
+    source: official_huggingface
+    url: https://huggingface.co/microsoft/Phi-4-reasoning-vision-15B
+  name:
+    source: official_huggingface
+    url: https://huggingface.co/microsoft/Phi-4-reasoning-vision-15B
+upstream:
+  huggingface:
+    id: microsoft/Phi-4-reasoning-vision-15B
+    revision: c3e4fac79ddace21976ced56fbf1564b8bd8c89f
+    pipeline_tag: image-text-to-text
+    model_type: phi4-siglip
+    architectures:
+      - Phi4ForCausalLMV
+    license: mit
+    tags:
+      - base_model:finetune:microsoft/Phi-4-reasoning
+      - base_model:microsoft/Phi-4-reasoning
+      - chain-of-thought
+      - computer-use
+      - conversational
+      - custom_code
+      - en
+      - gui-grounding
+      - image-text-to-text
+      - license:mit
+      - math
+      - model-index
+      - multimodal
+      - ocr
+      - phi4-siglip
+      - reasoning
+      - region:us
+      - safetensors
+      - vision-language
+    config_context_length: 32768
+    tokenizer_model_max_length: 16384
+    processor_class: Phi4VisionRProcessor
+    structured_files:
+      - config.json
+      - preprocessor_config.json
+      - tokenizer_config.json
+    fetched_at: 2026-09-01T06:54:00.785583894Z

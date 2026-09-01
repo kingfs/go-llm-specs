@@ -29,7 +29,6 @@ upstream:
       - frequency_penalty
       - include_reasoning
       - logit_bias
-      - logprobs
       - max_tokens
       - min_p
       - presence_penalty
@@ -43,14 +42,13 @@ upstream:
       - tool_choice
       - tools
       - top_k
-      - top_logprobs
       - top_p
     input_modalities:
       - text
     output_modalities:
       - text
     knowledge_cutoff: "2025-03-31"
-    fetched_at: 2026-07-29T10:42:45.185465302Z
+    fetched_at: 2026-09-01T06:54:00.193935854Z
   huggingface:
     id: Qwen/Qwen3-32B
     revision: 9216db5781bf21249d130ec9da846c4624c16137

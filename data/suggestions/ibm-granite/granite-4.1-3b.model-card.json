@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "ibm-granite/granite-4.1-3b",
+  "status": "partially_accepted",
+  "created_at": "2026-09-01T06:54:43.482105418Z",
+  "source": {
+    "url": "https://huggingface.co/ibm-granite/granite-4.1-3b/resolve/c0650403e44e78ec0262dab1c90914c65b196c4e/README.md",
+    "revision": "c0650403e44e78ec0262dab1c90914c65b196c4e",
+    "sha256": "cc606793e0e25a1eb747354ce05da2d8e9310423ed9eff862c1b622b2f4e4b68"
+  },
+  "generator": {
+    "model": "qwen/qwen3.6-27b",
+    "wire_api": "chat"
+  },
+  "claims": [
+    {
+      "field": "description",
+      "value": "A 3B parameter long-context instruct model finetuned from Granite-4.1-3B-Base, enhanced with tool calling, instruction following, and chat capabilities via SFT and RLHF.",
+      "evidence": "Granite-4.1-3B is a 3B parameter long-context instruct model finetuned from Granite-4.1-3B-Base using a combination of open source instruction datasets...",
+      "section": "Model Summary",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "CapFunctionCall",
+        "ModalityTextIn",
+        "ModalityTextOut"
+      ],
+      "evidence": "Granite-4.1-3B comes with enhanced tool calling capabilities, enabling seamless integration with external functions and APIs.",
+      "section": "Tool-calling",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "ModalityTextIn",
+        "ModalityTextOut"
+      ],
+      "evidence": "Supported Languages: English, German, Spanish, French, Japanese, Portuguese, Arabic, Czech, Italian, Korean, Dutch, and Chinese.",
+      "section": "Supported Languages",
+      "confidence": "high"
+    }
+  ]
+}
