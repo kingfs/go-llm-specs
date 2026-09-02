@@ -1,0 +1,56 @@
+schema_version: 2
+id: nvidia/efficient-dlm-4b
+name: Efficient-DLM-4B
+provider: NVIDIA
+developer: nvidia
+lifecycle: candidate
+context_length: 32768
+features:
+  - ModalityTextIn
+  - ModalityTextOut
+links:
+  model_card: https://huggingface.co/nvidia/Efficient-DLM-4B
+identifiers:
+  huggingface:
+    - nvidia/Efficient-DLM-4B
+provenance:
+  context_length:
+    source: official_huggingface_config
+    url: https://huggingface.co/nvidia/Efficient-DLM-4B
+  features:
+    source: official_huggingface_pipeline
+    url: https://huggingface.co/nvidia/Efficient-DLM-4B
+  id:
+    source: official_huggingface
+    url: https://huggingface.co/nvidia/Efficient-DLM-4B
+  name:
+    source: official_huggingface
+    url: https://huggingface.co/nvidia/Efficient-DLM-4B
+upstream:
+  huggingface:
+    id: nvidia/Efficient-DLM-4B
+    revision: d28c3167e0972d9c08eb92e03cb40a42d14690d5
+    pipeline_tag: text-generation
+    model_type: qwen3
+    architectures:
+      - EfficientDLM
+    license: other
+    tags:
+      - arxiv:2512.14067
+      - conversational
+      - custom_code
+      - endpoints_compatible
+      - feature-extraction
+      - license:other
+      - qwen3
+      - region:us
+      - safetensors
+      - text-generation
+      - text-generation-inference
+      - transformers
+    config_context_length: 32768
+    tokenizer_model_max_length: 131072
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-09-02T06:31:43.715804217Z

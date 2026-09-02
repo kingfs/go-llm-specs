@@ -1,0 +1,74 @@
+schema_version: 2
+id: anthropic/claude-fable-5.1
+name: 'Anthropic: Claude Fable 5.1'
+provider: Anthropic
+developer: anthropic
+description: 'Claude Fable 5.1 improves on Claude Fable 5 across the board, with the biggest gains in agentic coding, long-running agentic workflows, and knowledge work: long code refactors, front-end and visual...'
+description_cn: Claude Fable 5.1 在各方面均优于 Claude Fable 5，在智能体编程、长期运行的智能体工作流以及知识工作（如大型代码重构、前端与视觉……）方面提升最为显著。
+context_length: 1000000
+max_output: 128000
+features:
+  - CapChat
+  - CapFunctionCall
+  - CapJsonMode
+  - ModalityFileIn
+  - ModalityImageIn
+  - ModalityTextIn
+  - ModalityTextOut
+aliases:
+  - anthropic/claude-fable-5.1:batch
+discovered_at: 2026-09-02T06:31:38.337534356Z
+links:
+  documentation: https://docs.anthropic.com/en/docs/about-claude/models
+identifiers:
+  openrouter:
+    - anthropic/claude-fable-5.1
+    - anthropic/claude-fable-5.1:batch
+provenance:
+  context_length:
+    source: openrouter
+  description:
+    source: openrouter
+  features:
+    source: openrouter
+  id:
+    source: openrouter
+  max_output:
+    source: openrouter
+  name:
+    source: openrouter
+  provider:
+    source: openrouter
+  reasoning:
+    source: openrouter
+upstream:
+  openrouter:
+    canonical_slug: anthropic/claude-fable-5.1-20260831
+    supported_parameters:
+      - include_reasoning
+      - max_completion_tokens
+      - max_tokens
+      - reasoning
+      - reasoning_effort
+      - response_format
+      - stop
+      - structured_outputs
+      - tools
+      - verbosity
+    input_modalities:
+      - file
+      - image
+      - text
+    output_modalities:
+      - text
+    fetched_at: 2026-09-02T06:31:42.104052803Z
+reasoning:
+  supported: true
+  mandatory: true
+  default_effort: high
+  supported_efforts:
+    - high
+    - low
+    - max
+    - medium
+    - xhigh

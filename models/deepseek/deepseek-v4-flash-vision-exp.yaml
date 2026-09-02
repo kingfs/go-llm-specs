@@ -46,6 +46,7 @@ upstream:
     supported_parameters:
       - frequency_penalty
       - include_reasoning
+      - logit_bias
       - logprobs
       - max_tokens
       - presence_penalty
@@ -55,6 +56,7 @@ upstream:
       - response_format
       - seed
       - stop
+      - structured_outputs
       - temperature
       - tool_choice
       - tools
@@ -66,7 +68,7 @@ upstream:
       - text
     output_modalities:
       - text
-    fetched_at: 2026-09-01T06:54:00.18701579Z
+    fetched_at: 2026-09-02T06:31:42.10658039Z
   huggingface:
     id: deepseek-ai/DeepSeek-V4-Flash-Vision-Exp
     revision: 31ea11185e11ccafad1c385104188a9e3b648ad6

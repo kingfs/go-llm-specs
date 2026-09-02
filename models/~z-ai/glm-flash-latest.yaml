@@ -1,22 +1,24 @@
 schema_version: 2
-id: ~z-ai/glm-latest
-name: 'Z.ai: GLM Latest'
+id: ~z-ai/glm-flash-latest
+name: 'Z.ai: GLM Flash Latest'
 provider: ~Z-Ai
 developer: ~zai
-description: This model always redirects to the latest GLM model from Z.ai.
-description_cn: 该模型始终重定向到 Z.ai 的最新 GLM 模型。
-context_length: 1048576
+description: This model always redirects to the latest model in the GLM Flash family.
+description_cn: 该模型始终重定向至 GLM Flash 系列中的最新模型。
+context_length: 1310720
 max_output: 131072
 features:
   - CapChat
   - CapFunctionCall
   - CapJsonMode
+  - ModalityImageIn
   - ModalityTextIn
   - ModalityTextOut
-discovered_at: 2026-08-20T02:46:46.322056154Z
+  - ModalityVideoIn
+discovered_at: 2026-09-02T06:31:38.33853228Z
 identifiers:
   openrouter:
-    - ~z-ai/glm-latest
+    - ~z-ai/glm-flash-latest
 provenance:
   context_length:
     source: openrouter
@@ -36,7 +38,7 @@ provenance:
     source: openrouter
 upstream:
   openrouter:
-    canonical_slug: ~z-ai/glm-latest
+    canonical_slug: ~z-ai/glm-flash-latest
     supported_parameters:
       - frequency_penalty
       - include_reasoning
@@ -44,7 +46,6 @@ upstream:
       - logprobs
       - max_tokens
       - min_p
-      - parallel_tool_calls
       - presence_penalty
       - reasoning
       - reasoning_effort
@@ -60,10 +61,12 @@ upstream:
       - top_logprobs
       - top_p
     input_modalities:
+      - image
       - text
+      - video
     output_modalities:
       - text
-    fetched_at: 2026-09-02T06:31:42.116727288Z
+    fetched_at: 2026-09-02T06:31:42.116554485Z
 reasoning:
   supported: true
   mandatory: true

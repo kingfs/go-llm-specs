@@ -1,0 +1,110 @@
+schema_version: 2
+id: cohere/tiny-aya-base
+name: tiny-aya-base
+provider: Cohere
+developer: cohere
+lifecycle: candidate
+context_length: 0
+features:
+  - ModalityTextIn
+  - ModalityTextOut
+links:
+  model_card: https://huggingface.co/CohereLabs/tiny-aya-base
+identifiers:
+  huggingface:
+    - CohereLabs/tiny-aya-base
+provenance:
+  features:
+    source: official_huggingface_pipeline
+    url: https://huggingface.co/CohereLabs/tiny-aya-base
+  id:
+    source: official_huggingface
+    url: https://huggingface.co/CohereLabs/tiny-aya-base
+  name:
+    source: official_huggingface
+    url: https://huggingface.co/CohereLabs/tiny-aya-base
+upstream:
+  huggingface:
+    id: CohereLabs/tiny-aya-base
+    revision: 1c1166cbc8bbd17760e85d9e1c40d61725f60ae8
+    pipeline_tag: text-generation
+    model_type: cohere2
+    architectures:
+      - Cohere2ForCausalLM
+    license: cc-by-nc-4.0
+    tags:
+      - am
+      - ar
+      - arxiv:2603.11510
+      - bg
+      - bn
+      - ca
+      - cohere2
+      - cs
+      - cy
+      - da
+      - de
+      - el
+      - en
+      - es
+      - et
+      - eu
+      - fa
+      - fi
+      - fr
+      - ga
+      - gl
+      - gu
+      - ha
+      - he
+      - hi
+      - hr
+      - hu
+      - id
+      - ig
+      - it
+      - ja
+      - jv
+      - km
+      - ko
+      - license:cc-by-nc-4.0
+      - lo
+      - lt
+      - lv
+      - mg
+      - mr
+      - ms
+      - mt
+      - my
+      - ne
+      - nl
+      - "no"
+      - pa
+      - pl
+      - pt
+      - region:us
+      - ro
+      - ru
+      - safetensors
+      - sk
+      - sl
+      - sn
+      - sr
+      - sv
+      - sw
+      - ta
+      - te
+      - text-generation
+      - th
+      - tl
+      - tr
+      - transformers
+      - uk
+      - ur
+      - vi
+      - wo
+      - xh
+      - yo
+      - zh
+      - zu
+    fetched_at: 2026-09-02T06:31:42.495249334Z

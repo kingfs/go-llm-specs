@@ -32,7 +32,6 @@ upstream:
       - frequency_penalty
       - include_reasoning
       - logit_bias
-      - logprobs
       - max_tokens
       - min_p
       - presence_penalty
@@ -46,7 +45,6 @@ upstream:
       - tool_choice
       - tools
       - top_k
-      - top_logprobs
       - top_p
     input_modalities:
       - audio
@@ -55,7 +53,7 @@ upstream:
       - video
     output_modalities:
       - text
-    fetched_at: 2026-07-29T10:44:53.930256665Z
+    fetched_at: 2026-09-02T06:31:42.114696736Z
   huggingface:
     id: XiaomiMiMo/MiMo-V2.5
     revision: 63651580ca774f8504f676040460aed3e1244ac1

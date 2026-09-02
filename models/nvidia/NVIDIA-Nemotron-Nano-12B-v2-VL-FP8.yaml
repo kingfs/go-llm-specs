@@ -1,0 +1,46 @@
+schema_version: 2
+id: nvidia/nvidia-nemotron-nano-12b-v2-vl-fp8
+name: NVIDIA-Nemotron-Nano-12B-v2-VL-FP8
+provider: NVIDIA
+developer: nvidia
+lifecycle: candidate
+context_length: 0
+features:
+  - ModalityImageIn
+  - ModalityTextIn
+  - ModalityTextOut
+links:
+  model_card: https://huggingface.co/nvidia/NVIDIA-Nemotron-Nano-12B-v2-VL-FP8
+identifiers:
+  huggingface:
+    - nvidia/NVIDIA-Nemotron-Nano-12B-v2-VL-FP8
+provenance:
+  features:
+    source: official_huggingface_pipeline
+    url: https://huggingface.co/nvidia/NVIDIA-Nemotron-Nano-12B-v2-VL-FP8
+  id:
+    source: official_huggingface
+    url: https://huggingface.co/nvidia/NVIDIA-Nemotron-Nano-12B-v2-VL-FP8
+  name:
+    source: official_huggingface
+    url: https://huggingface.co/nvidia/NVIDIA-Nemotron-Nano-12B-v2-VL-FP8
+upstream:
+  huggingface:
+    id: nvidia/NVIDIA-Nemotron-Nano-12B-v2-VL-FP8
+    revision: e9550fdec09682d12e8c3e41548b2e05b16db7c1
+    pipeline_tag: image-text-to-text
+    license: other
+    tags:
+      - FP8
+      - VLM
+      - arxiv:2501.14818
+      - arxiv:2511.03929
+      - conversational
+      - endpoints_compatible
+      - image-text-to-text
+      - license:other
+      - nvidia
+      - region:us
+      - safetensors
+      - transformers
+    fetched_at: 2026-09-02T06:31:43.944450771Z

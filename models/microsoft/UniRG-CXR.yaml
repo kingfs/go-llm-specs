@@ -1,0 +1,56 @@
+schema_version: 2
+id: microsoft/unirg-cxr
+name: UniRG-CXR
+provider: Microsoft
+developer: microsoft
+lifecycle: candidate
+context_length: 0
+features:
+  - ModalityImageIn
+  - ModalityTextIn
+  - ModalityTextOut
+links:
+  model_card: https://huggingface.co/microsoft/UniRG-CXR
+identifiers:
+  huggingface:
+    - microsoft/UniRG-CXR
+provenance:
+  features:
+    source: official_huggingface_pipeline
+    url: https://huggingface.co/microsoft/UniRG-CXR
+  id:
+    source: official_huggingface
+    url: https://huggingface.co/microsoft/UniRG-CXR
+  name:
+    source: official_huggingface
+    url: https://huggingface.co/microsoft/UniRG-CXR
+upstream:
+  huggingface:
+    id: microsoft/UniRG-CXR
+    revision: cd5a95fa837c92180e14ed0ddd7f079150a2559a
+    pipeline_tag: image-text-to-text
+    model_type: qwen3_vl
+    architectures:
+      - Qwen3VLForConditionalGeneration
+    license: apache-2.0
+    tags:
+      - arxiv:2601.17151
+      - base_model:Qwen/Qwen3-VL-8B-Instruct
+      - base_model:finetune:Qwen/Qwen3-VL-8B-Instruct
+      - conversational
+      - en
+      - endpoints_compatible
+      - image-text-to-text
+      - license:apache-2.0
+      - multimodal
+      - qwen3_vl
+      - region:us
+      - safetensors
+      - transformers
+    tokenizer_model_max_length: 262144
+    processor_class: Qwen3VLProcessor
+    structured_files:
+      - config.json
+      - preprocessor_config.json
+      - tokenizer_config.json
+    fetched_at: 2026-09-02T06:31:43.163619825Z

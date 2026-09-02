@@ -1,7 +1,7 @@
 {
   "providers": 24,
-  "models": 646,
-  "models_with_official_links": 448,
+  "models": 654,
+  "models_with_official_links": 454,
   "uncataloged_publishers": {
     "Ai21": 1,
     "Aion-Labs": 4,
@@ -39,7 +39,7 @@
     "dotsstudio": 1,
     "eleutherai": 1,
     "essentialai": 1,
-    "inception": 2,
+    "inception": 3,
     "inclusionai": 3,
     "inflection": 2,
     "kwaipilot": 1,
@@ -66,6 +66,6 @@
     "~Moonshotai": 1,
     "~Openai": 2,
     "~X-Ai": 1,
-    "~zai": 1
+    "~zai": 2
   }
 }
