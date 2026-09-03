@@ -1,0 +1,60 @@
+schema_version: 2
+id: qwen/qwen-drive-1.0-4b
+name: Qwen-Drive-1.0-4B
+provider: Qwen
+developer: qwen
+lifecycle: candidate
+context_length: 0
+features:
+  - ModalityImageIn
+  - ModalityTextIn
+  - ModalityTextOut
+links:
+  model_card: https://huggingface.co/Qwen/Qwen-Drive-1.0-4B
+identifiers:
+  huggingface:
+    - Qwen/Qwen-Drive-1.0-4B
+provenance:
+  features:
+    source: official_huggingface_pipeline
+    url: https://huggingface.co/Qwen/Qwen-Drive-1.0-4B
+  id:
+    source: official_huggingface
+    url: https://huggingface.co/Qwen/Qwen-Drive-1.0-4B
+  name:
+    source: official_huggingface
+    url: https://huggingface.co/Qwen/Qwen-Drive-1.0-4B
+upstream:
+  huggingface:
+    id: Qwen/Qwen-Drive-1.0-4B
+    revision: 28484089a7cc8c335cf5089fb0745cf7c49b6eaa
+    pipeline_tag: image-text-to-text
+    model_type: qwen_drive
+    architectures:
+      - QwenDriveForPlanning
+    license: apache-2.0
+    tags:
+      - 3d-perception
+      - arxiv:2609.00111
+      - autonomous-driving
+      - base_model:Qwen/Qwen3.5-4B
+      - base_model:finetune:Qwen/Qwen3.5-4B
+      - conversational
+      - endpoints_compatible
+      - image-text-to-text
+      - license:apache-2.0
+      - motion-planning
+      - qwen
+      - qwen_drive
+      - region:us
+      - safetensors
+      - transformers
+      - visual-question-answering
+    tokenizer_model_max_length: 131072
+    processor_class: Qwen3VLProcessor
+    chat_template_sha256: 57dae99712e322dce4a52884c94d6a61430ca2751337fba338330abe6bf150e8
+    structured_files:
+      - config.json
+      - preprocessor_config.json
+      - tokenizer_config.json
+    fetched_at: 2026-09-03T06:36:04.688952726Z

@@ -1,0 +1,75 @@
+schema_version: 2
+id: meta/muse-spark-1.3-contributor
+name: 'Meta: Muse Spark 1.3 Contributor'
+provider: Meta
+developer: meta
+description: Muse Spark 1.3 Contributor is the cost-efficient contributor tier of Meta’s multimodal reasoning model for experimentation, learning, and early-stage agentic, multi-agent, and coding workflows. It is designed to track information...
+description_cn: Muse Spark 1.3 Contributor 是 Meta 多模态推理模型中性价比更高的 Contributor 层级，适用于实验、学习及早期智能体、多智能体和编码工作流。其旨在追踪信息...
+context_length: 1048576
+max_output: 943718
+features:
+  - CapChat
+  - CapFunctionCall
+  - CapJsonMode
+  - ModalityAudioIn
+  - ModalityFileIn
+  - ModalityImageIn
+  - ModalityTextIn
+  - ModalityTextOut
+  - ModalityVideoIn
+discovered_at: 2026-09-03T06:36:01.566381612Z
+identifiers:
+  openrouter:
+    - meta/muse-spark-1.3-contributor
+provenance:
+  context_length:
+    source: openrouter
+  description:
+    source: openrouter
+  features:
+    source: openrouter
+  id:
+    source: openrouter
+  max_output:
+    source: openrouter
+  name:
+    source: openrouter
+  provider:
+    source: openrouter
+  reasoning:
+    source: openrouter
+upstream:
+  openrouter:
+    canonical_slug: meta/muse-spark-1.3-contributor-20260902
+    supported_parameters:
+      - include_reasoning
+      - max_tokens
+      - reasoning
+      - reasoning_effort
+      - repetition_penalty
+      - response_format
+      - structured_outputs
+      - temperature
+      - tool_choice
+      - tools
+      - top_k
+      - top_p
+    input_modalities:
+      - audio
+      - file
+      - image
+      - text
+      - video
+    output_modalities:
+      - text
+    fetched_at: 2026-09-03T06:36:03.928723259Z
+reasoning:
+  supported: true
+  mandatory: true
+  default_effort: medium
+  supported_efforts:
+    - high
+    - low
+    - medium
+    - minimal
+    - xhigh

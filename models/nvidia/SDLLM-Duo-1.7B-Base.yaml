@@ -1,0 +1,41 @@
+schema_version: 2
+id: nvidia/sdllm-duo-1.7b-base
+name: SDLLM-Duo-1.7B-Base
+provider: NVIDIA
+developer: nvidia
+lifecycle: candidate
+context_length: 0
+features:
+  - ModalityTextIn
+  - ModalityTextOut
+links:
+  model_card: https://huggingface.co/nvidia/SDLLM-Duo-1.7B-Base
+identifiers:
+  huggingface:
+    - nvidia/SDLLM-Duo-1.7B-Base
+provenance:
+  features:
+    source: official_huggingface_pipeline
+    url: https://huggingface.co/nvidia/SDLLM-Duo-1.7B-Base
+  id:
+    source: official_huggingface
+    url: https://huggingface.co/nvidia/SDLLM-Duo-1.7B-Base
+  name:
+    source: official_huggingface
+    url: https://huggingface.co/nvidia/SDLLM-Duo-1.7B-Base
+upstream:
+  huggingface:
+    id: nvidia/SDLLM-Duo-1.7B-Base
+    revision: a5d1368dd6129f050f8819541822260681bb494b
+    pipeline_tag: text-generation
+    license: cc-by-nc-4.0
+    tags:
+      - arxiv:2508.14444
+      - arxiv:2602.15014
+      - diffusion-language-modeling
+      - en
+      - license:cc-by-nc-4.0
+      - pytorch
+      - region:us
+      - text-generation
+    fetched_at: 2026-09-03T06:36:04.414722636Z

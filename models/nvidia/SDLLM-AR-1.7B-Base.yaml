@@ -1,0 +1,41 @@
+schema_version: 2
+id: nvidia/sdllm-ar-1.7b-base
+name: SDLLM-AR-1.7B-Base
+provider: NVIDIA
+developer: nvidia
+lifecycle: candidate
+context_length: 0
+features:
+  - ModalityTextIn
+  - ModalityTextOut
+links:
+  model_card: https://huggingface.co/nvidia/SDLLM-AR-1.7B-Base
+identifiers:
+  huggingface:
+    - nvidia/SDLLM-AR-1.7B-Base
+provenance:
+  features:
+    source: official_huggingface_pipeline
+    url: https://huggingface.co/nvidia/SDLLM-AR-1.7B-Base
+  id:
+    source: official_huggingface
+    url: https://huggingface.co/nvidia/SDLLM-AR-1.7B-Base
+  name:
+    source: official_huggingface
+    url: https://huggingface.co/nvidia/SDLLM-AR-1.7B-Base
+upstream:
+  huggingface:
+    id: nvidia/SDLLM-AR-1.7B-Base
+    revision: ace342297ab8c64a6cf07b84d0cdb9f48d17674a
+    pipeline_tag: text-generation
+    license: cc-by-nc-4.0
+    tags:
+      - arxiv:2508.14444
+      - arxiv:2602.15014
+      - diffusion-language-modeling
+      - en
+      - license:cc-by-nc-4.0
+      - pytorch
+      - region:us
+      - text-generation
+    fetched_at: 2026-09-03T06:36:04.333526833Z
