@@ -28,18 +28,26 @@ upstream:
     canonical_slug: nvidia/nemotron-3.5-content-safety-20260604
     huggingface_id: nvidia/Nemotron-3.5-Content-Safety
     supported_parameters:
+      - frequency_penalty
       - include_reasoning
+      - logit_bias
       - max_tokens
+      - min_p
+      - presence_penalty
       - reasoning
+      - repetition_penalty
+      - response_format
       - seed
+      - stop
       - temperature
+      - top_k
       - top_p
     input_modalities:
       - image
       - text
     output_modalities:
       - text
-    fetched_at: 2026-07-29T10:40:55.969662453Z
+    fetched_at: 2026-09-04T06:38:23.261079751Z
   huggingface:
     id: nvidia/Nemotron-3.5-Content-Safety
     revision: 35645ed3543b7e7ffaed2e788699e57a5051497c

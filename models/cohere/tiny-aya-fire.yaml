@@ -1,0 +1,113 @@
+schema_version: 2
+id: cohere/tiny-aya-fire
+name: tiny-aya-fire
+provider: Cohere
+developer: cohere
+lifecycle: candidate
+context_length: 0
+features:
+  - ModalityTextIn
+  - ModalityTextOut
+links:
+  model_card: https://huggingface.co/CohereLabs/tiny-aya-fire
+identifiers:
+  huggingface:
+    - CohereLabs/tiny-aya-fire
+provenance:
+  features:
+    source: official_huggingface_pipeline
+    url: https://huggingface.co/CohereLabs/tiny-aya-fire
+  id:
+    source: official_huggingface
+    url: https://huggingface.co/CohereLabs/tiny-aya-fire
+  name:
+    source: official_huggingface
+    url: https://huggingface.co/CohereLabs/tiny-aya-fire
+upstream:
+  huggingface:
+    id: CohereLabs/tiny-aya-fire
+    revision: be6cc40188067e69502b0873062c0d7c4e2ba1fe
+    pipeline_tag: text-generation
+    model_type: cohere2
+    architectures:
+      - Cohere2ForCausalLM
+    license: cc-by-nc-4.0
+    tags:
+      - am
+      - ar
+      - arxiv:2603.11510
+      - base_model:CohereLabs/tiny-aya-base
+      - base_model:finetune:CohereLabs/tiny-aya-base
+      - bg
+      - bn
+      - ca
+      - cohere2
+      - conversational
+      - cs
+      - cy
+      - da
+      - de
+      - el
+      - en
+      - es
+      - et
+      - eu
+      - fa
+      - fi
+      - fr
+      - ga
+      - gl
+      - gu
+      - ha
+      - he
+      - hi
+      - hr
+      - hu
+      - id
+      - ig
+      - it
+      - ja
+      - jv
+      - km
+      - ko
+      - license:cc-by-nc-4.0
+      - lo
+      - lt
+      - lv
+      - mg
+      - mr
+      - ms
+      - mt
+      - my
+      - ne
+      - nl
+      - "no"
+      - pa
+      - pl
+      - pt
+      - region:us
+      - ro
+      - ru
+      - safetensors
+      - sk
+      - sl
+      - sn
+      - sr
+      - sv
+      - sw
+      - ta
+      - te
+      - text-generation
+      - th
+      - tl
+      - tr
+      - transformers
+      - uk
+      - ur
+      - vi
+      - wo
+      - xh
+      - yo
+      - zh
+      - zu
+    fetched_at: 2026-09-04T06:38:23.853544759Z

@@ -1,0 +1,51 @@
+schema_version: 2
+id: nvidia/cosmos-reason2-8b
+name: Cosmos-Reason2-8B
+provider: NVIDIA
+developer: nvidia
+lifecycle: candidate
+context_length: 0
+features:
+  - ModalityImageIn
+  - ModalityTextIn
+  - ModalityTextOut
+links:
+  model_card: https://huggingface.co/nvidia/Cosmos-Reason2-8B
+identifiers:
+  huggingface:
+    - nvidia/Cosmos-Reason2-8B
+provenance:
+  features:
+    source: official_huggingface_pipeline
+    url: https://huggingface.co/nvidia/Cosmos-Reason2-8B
+  id:
+    source: official_huggingface
+    url: https://huggingface.co/nvidia/Cosmos-Reason2-8B
+  name:
+    source: official_huggingface
+    url: https://huggingface.co/nvidia/Cosmos-Reason2-8B
+upstream:
+  huggingface:
+    id: nvidia/Cosmos-Reason2-8B
+    revision: a9fae2cf89dc64db96b12860417f0eb403013bb9
+    pipeline_tag: image-text-to-text
+    model_type: qwen3_vl
+    architectures:
+      - Qwen3VLForConditionalGeneration
+    license: other
+    tags:
+      - arxiv:2312.14115
+      - arxiv:2406.10721
+      - arxiv:2503.06800
+      - arxiv:2603.18178
+      - base_model:Qwen/Qwen3-VL-8B-Instruct
+      - base_model:finetune:Qwen/Qwen3-VL-8B-Instruct
+      - conversational
+      - cosmos
+      - image-text-to-text
+      - license:other
+      - nvidia
+      - qwen3_vl
+      - region:us
+      - safetensors
+    fetched_at: 2026-09-04T06:38:24.804191961Z

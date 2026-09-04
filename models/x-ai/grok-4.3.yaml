@@ -14,10 +14,13 @@ features:
   - ModalityImageIn
   - ModalityTextIn
   - ModalityTextOut
+aliases:
+  - x-ai/grok-4.3:batch
 discovered_at: 2026-07-29T10:44:50.291620831Z
 identifiers:
   openrouter:
     - x-ai/grok-4.3
+    - x-ai/grok-4.3:batch
 provenance:
   max_output:
     source: openrouter

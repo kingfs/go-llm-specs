@@ -1,0 +1,59 @@
+schema_version: 2
+id: ibm-granite/granite-4.0-3b-vision
+name: granite-4.0-3b-vision
+provider: IBM Granite
+developer: ibm-granite
+lifecycle: candidate
+context_length: 0
+features:
+  - ModalityImageIn
+  - ModalityTextIn
+  - ModalityTextOut
+links:
+  model_card: https://huggingface.co/ibm-granite/granite-4.0-3b-vision
+identifiers:
+  huggingface:
+    - ibm-granite/granite-4.0-3b-vision
+provenance:
+  features:
+    source: official_huggingface_pipeline
+    url: https://huggingface.co/ibm-granite/granite-4.0-3b-vision
+  id:
+    source: official_huggingface
+    url: https://huggingface.co/ibm-granite/granite-4.0-3b-vision
+  name:
+    source: official_huggingface
+    url: https://huggingface.co/ibm-granite/granite-4.0-3b-vision
+upstream:
+  huggingface:
+    id: ibm-granite/granite-4.0-3b-vision
+    revision: bf108f36960fb4df79bf035e506c592f4ee3c2d3
+    pipeline_tag: image-text-to-text
+    model_type: granite4_vision
+    architectures:
+      - Granite4VisionForConditionalGeneration
+    license: apache-2.0
+    tags:
+      - arxiv:2208.00385
+      - arxiv:2404.19205
+      - arxiv:2406.04334
+      - arxiv:2412.07626
+      - arxiv:2502.09927
+      - arxiv:2512.10888
+      - arxiv:2603.27064
+      - conversational
+      - custom_code
+      - en
+      - endpoints_compatible
+      - granite4_vision
+      - image-text-to-text
+      - license:apache-2.0
+      - region:us
+      - safetensors
+      - transformers
+    processor_class: Granite4VisionProcessor
+    structured_files:
+      - config.json
+      - preprocessor_config.json
+      - tokenizer_config.json
+    fetched_at: 2026-09-04T06:38:24.435383204Z

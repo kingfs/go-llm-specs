@@ -4,6 +4,8 @@ name: GLM-5.3-Flash-BF16
 provider: Z.ai
 developer: zai
 lifecycle: candidate
+description: GLM-5.3-Flash is a natively multimodal model with 320B total and 18B active parameters, featuring a hybrid sparse/linear attention architecture.
+description_cn: GLM-5.3-Flash 是一款原生多模态模型，总参数量为 320B，活跃参数量为 18B，采用混合稀疏/线性注意力架构。
 context_length: 0
 features:
   - ModalityTextIn
@@ -14,6 +16,9 @@ identifiers:
   huggingface:
     - zai-org/GLM-5.3-Flash-BF16
 provenance:
+  description:
+    source: official_model_card
+    url: https://huggingface.co/zai-org/GLM-5.3-Flash-BF16/resolve/f12e0fe1f6b2ea274c11a569582edfd99d993c5e/README.md
   features:
     source: official_huggingface_pipeline
     url: https://huggingface.co/zai-org/GLM-5.3-Flash-BF16
@@ -23,6 +28,9 @@ provenance:
   name:
     source: official_huggingface
     url: https://huggingface.co/zai-org/GLM-5.3-Flash-BF16
+  reasoning.supported:
+    source: official_model_card
+    url: https://huggingface.co/zai-org/GLM-5.3-Flash-BF16/resolve/f12e0fe1f6b2ea274c11a569582edfd99d993c5e/README.md
 upstream:
   huggingface:
     id: zai-org/GLM-5.3-Flash-BF16
@@ -50,3 +58,5 @@ upstream:
       - config.json
       - tokenizer_config.json
     fetched_at: 2026-08-27T12:05:25.018808066Z
+reasoning:
+  supported: true

@@ -1,7 +1,7 @@
 {
   "providers": 24,
-  "models": 657,
-  "models_with_official_links": 454,
+  "models": 662,
+  "models_with_official_links": 459,
   "uncataloged_publishers": {
     "Ai21": 1,
     "Aion-Labs": 4,
@@ -2740,7 +2740,8 @@
       "provider_id": "cohere",
       "organization": "CohereLabs",
       "repository_id": "CohereLabs/tiny-aya-earth",
-      "status": "new",
+      "registry_id": "cohere/tiny-aya-earth",
+      "status": "materialized",
       "url": "https://huggingface.co/CohereLabs/tiny-aya-earth",
       "last_modified": "2026-05-01T15:16:03Z",
       "pipeline_tag": "text-generation",
@@ -2912,7 +2913,8 @@
       "provider_id": "cohere",
       "organization": "CohereLabs",
       "repository_id": "CohereLabs/tiny-aya-fire",
-      "status": "new",
+      "registry_id": "cohere/tiny-aya-fire",
+      "status": "materialized",
       "url": "https://huggingface.co/CohereLabs/tiny-aya-fire",
       "last_modified": "2026-05-01T15:16:20Z",
       "pipeline_tag": "text-generation",
@@ -83267,7 +83269,8 @@
       "provider_id": "ibm-granite",
       "organization": "ibm-granite",
       "repository_id": "ibm-granite/granite-4.0-3b-vision",
-      "status": "new",
+      "registry_id": "ibm-granite/granite-4.0-3b-vision",
+      "status": "materialized",
       "url": "https://huggingface.co/ibm-granite/granite-4.0-3b-vision",
       "last_modified": "2026-04-30T14:47:51Z",
       "pipeline_tag": "image-text-to-text",
@@ -84192,6 +84195,24 @@
     {
       "provider_id": "ibm-granite",
       "organization": "ibm-granite",
+      "repository_id": "ibm-granite/granite-4.2-30b-bf16-mlx",
+      "status": "new",
+      "url": "https://huggingface.co/ibm-granite/granite-4.2-30b-bf16-mlx",
+      "last_modified": "2026-09-02T20:46:01Z",
+      "tags": [
+        "mlx",
+        "granite",
+        "language",
+        "granite-4.2",
+        "base_model:ibm-granite/granite-4.2-30b",
+        "base_model:finetune:ibm-granite/granite-4.2-30b",
+        "license:apache-2.0",
+        "region:us"
+      ]
+    },
+    {
+      "provider_id": "ibm-granite",
+      "organization": "ibm-granite",
       "repository_id": "ibm-granite/granite-4.2-30b-fp8",
       "status": "new",
       "url": "https://huggingface.co/ibm-granite/granite-4.2-30b-fp8",
@@ -84269,6 +84290,44 @@
     {
       "provider_id": "ibm-granite",
       "organization": "ibm-granite",
+      "repository_id": "ibm-granite/granite-4.2-30b-q4-mlx",
+      "status": "new",
+      "url": "https://huggingface.co/ibm-granite/granite-4.2-30b-q4-mlx",
+      "last_modified": "2026-09-02T20:46:01Z",
+      "tags": [
+        "mlx",
+        "granite",
+        "language",
+        "granite-4.2",
+        "base_model:ibm-granite/granite-4.2-30b",
+        "base_model:quantized:ibm-granite/granite-4.2-30b",
+        "license:apache-2.0",
+        "4-bit",
+        "region:us"
+      ]
+    },
+    {
+      "provider_id": "ibm-granite",
+      "organization": "ibm-granite",
+      "repository_id": "ibm-granite/granite-4.2-30b-q8-mlx",
+      "status": "new",
+      "url": "https://huggingface.co/ibm-granite/granite-4.2-30b-q8-mlx",
+      "last_modified": "2026-09-02T20:46:02Z",
+      "tags": [
+        "mlx",
+        "granite",
+        "language",
+        "granite-4.2",
+        "base_model:ibm-granite/granite-4.2-30b",
+        "base_model:quantized:ibm-granite/granite-4.2-30b",
+        "license:apache-2.0",
+        "8-bit",
+        "region:us"
+      ]
+    },
+    {
+      "provider_id": "ibm-granite",
+      "organization": "ibm-granite",
       "repository_id": "ibm-granite/granite-4.2-3b",
       "registry_id": "ibm-granite/granite-4.2-3b",
       "status": "materialized",
@@ -84323,6 +84382,24 @@
         "endpoints_compatible",
         "region:us",
         "conversational"
+      ]
+    },
+    {
+      "provider_id": "ibm-granite",
+      "organization": "ibm-granite",
+      "repository_id": "ibm-granite/granite-4.2-3b-bf16-mlx",
+      "status": "new",
+      "url": "https://huggingface.co/ibm-granite/granite-4.2-3b-bf16-mlx",
+      "last_modified": "2026-09-02T20:46:03Z",
+      "tags": [
+        "mlx",
+        "granite",
+        "language",
+        "granite-4.2",
+        "base_model:ibm-granite/granite-4.2-3b",
+        "base_model:finetune:ibm-granite/granite-4.2-3b",
+        "license:apache-2.0",
+        "region:us"
       ]
     },
     {
@@ -84405,6 +84482,46 @@
     {
       "provider_id": "ibm-granite",
       "organization": "ibm-granite",
+      "repository_id": "ibm-granite/granite-4.2-3b-q4-mlx",
+      "status": "new",
+      "url": "https://huggingface.co/ibm-granite/granite-4.2-3b-q4-mlx",
+      "last_modified": "2026-09-02T20:46:04Z",
+      "tags": [
+        "mlx",
+        "safetensors",
+        "granite",
+        "language",
+        "granite-4.2",
+        "base_model:ibm-granite/granite-4.2-3b",
+        "base_model:quantized:ibm-granite/granite-4.2-3b",
+        "license:apache-2.0",
+        "4-bit",
+        "region:us"
+      ]
+    },
+    {
+      "provider_id": "ibm-granite",
+      "organization": "ibm-granite",
+      "repository_id": "ibm-granite/granite-4.2-3b-q8-mlx",
+      "status": "new",
+      "url": "https://huggingface.co/ibm-granite/granite-4.2-3b-q8-mlx",
+      "last_modified": "2026-09-02T20:46:06Z",
+      "tags": [
+        "mlx",
+        "safetensors",
+        "granite",
+        "language",
+        "granite-4.2",
+        "base_model:ibm-granite/granite-4.2-3b",
+        "base_model:quantized:ibm-granite/granite-4.2-3b",
+        "license:apache-2.0",
+        "8-bit",
+        "region:us"
+      ]
+    },
+    {
+      "provider_id": "ibm-granite",
+      "organization": "ibm-granite",
       "repository_id": "ibm-granite/granite-4.2-8b",
       "registry_id": "ibm-granite/granite-4.2-8b",
       "status": "materialized",
@@ -84459,6 +84576,24 @@
         "endpoints_compatible",
         "region:us",
         "conversational"
+      ]
+    },
+    {
+      "provider_id": "ibm-granite",
+      "organization": "ibm-granite",
+      "repository_id": "ibm-granite/granite-4.2-8b-bf16-mlx",
+      "status": "new",
+      "url": "https://huggingface.co/ibm-granite/granite-4.2-8b-bf16-mlx",
+      "last_modified": "2026-09-02T20:47:18Z",
+      "tags": [
+        "mlx",
+        "granite",
+        "language",
+        "granite-4.2",
+        "base_model:ibm-granite/granite-4.2-8b",
+        "base_model:finetune:ibm-granite/granite-4.2-8b",
+        "license:apache-2.0",
+        "region:us"
       ]
     },
     {
@@ -84535,6 +84670,45 @@
         "endpoints_compatible",
         "8-bit",
         "compressed-tensors",
+        "region:us"
+      ]
+    },
+    {
+      "provider_id": "ibm-granite",
+      "organization": "ibm-granite",
+      "repository_id": "ibm-granite/granite-4.2-8b-q4-mlx",
+      "status": "new",
+      "url": "https://huggingface.co/ibm-granite/granite-4.2-8b-q4-mlx",
+      "last_modified": "2026-09-02T19:01:32Z",
+      "tags": [
+        "mlx",
+        "safetensors",
+        "granite",
+        "language",
+        "granite-4.2",
+        "base_model:ibm-granite/granite-4.2-8b",
+        "base_model:quantized:ibm-granite/granite-4.2-8b",
+        "license:apache-2.0",
+        "4-bit",
+        "region:us"
+      ]
+    },
+    {
+      "provider_id": "ibm-granite",
+      "organization": "ibm-granite",
+      "repository_id": "ibm-granite/granite-4.2-8b-q8-mlx",
+      "status": "new",
+      "url": "https://huggingface.co/ibm-granite/granite-4.2-8b-q8-mlx",
+      "last_modified": "2026-09-02T20:47:19Z",
+      "tags": [
+        "mlx",
+        "granite",
+        "language",
+        "granite-4.2",
+        "base_model:ibm-granite/granite-4.2-8b",
+        "base_model:quantized:ibm-granite/granite-4.2-8b",
+        "license:apache-2.0",
+        "8-bit",
         "region:us"
       ]
     },
@@ -105240,7 +105414,8 @@
       "provider_id": "nvidia",
       "organization": "nvidia",
       "repository_id": "nvidia/Cosmos-Reason2-2B",
-      "status": "new",
+      "registry_id": "nvidia/cosmos-reason2-2b",
+      "status": "materialized",
       "url": "https://huggingface.co/nvidia/Cosmos-Reason2-2B",
       "last_modified": "2026-04-30T03:14:52Z",
       "pipeline_tag": "image-text-to-text",
@@ -105290,7 +105465,8 @@
       "provider_id": "nvidia",
       "organization": "nvidia",
       "repository_id": "nvidia/Cosmos-Reason2-8B",
-      "status": "new",
+      "registry_id": "nvidia/cosmos-reason2-8b",
+      "status": "materialized",
       "url": "https://huggingface.co/nvidia/Cosmos-Reason2-8B",
       "last_modified": "2026-04-30T03:16:12Z",
       "pipeline_tag": "image-text-to-text",
@@ -119730,7 +119906,7 @@
       "repository_id": "nvidia/magpie_tts_multilingual_357m",
       "status": "new",
       "url": "https://huggingface.co/nvidia/magpie_tts_multilingual_357m",
-      "last_modified": "2026-08-05T14:56:08Z",
+      "last_modified": "2026-09-03T13:23:00Z",
       "pipeline_tag": "text-to-speech",
       "tags": [
         "nemo",

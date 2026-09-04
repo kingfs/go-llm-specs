@@ -1,6 +1,10 @@
 {
-  "failure_count": 1,
+  "failure_count": 5,
   "failures": {
-    "microsoft/wizardlm-2-8x22b": "Hugging Face model request returned 401 Unauthorized"
+    "cohere/tiny-aya-earth": "Hugging Face config.json returned 401 Unauthorized",
+    "cohere/tiny-aya-fire": "Hugging Face config.json returned 401 Unauthorized",
+    "microsoft/wizardlm-2-8x22b": "Hugging Face model request returned 401 Unauthorized",
+    "nvidia/cosmos-reason2-2b": "Hugging Face config.json returned 401 Unauthorized",
+    "nvidia/cosmos-reason2-8b": "Hugging Face config.json returned 401 Unauthorized"
   }
 }

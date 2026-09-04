@@ -9452,7 +9452,7 @@ func init() {
 			ContextLenVal:   1000000,
 			MaxOutputVal:    900000,
 			FeaturesVal:     CapChat | CapFunctionCall | CapJsonMode | ModalityImageIn | ModalityTextIn | ModalityTextOut | CapMultimodal,
-			AliasList:       []string{"grok-4.3"},
+			AliasList:       []string{"grok-4.3", "x-ai/grok-4.3:batch"},
 		},
 		"x-ai/grok-4.5": {
 			IDVal:           "x-ai/grok-4.5",
@@ -10868,6 +10868,7 @@ func init() {
 		"voxtral-small-24b-2507":                             "mistralai/voxtral-small-24b-2507",
 		"weaver":                                             "mancer/weaver",
 		"wizardlm-2-8x22b":                                   "microsoft/wizardlm-2-8x22b",
+		"x-ai/grok-4.3:batch":                                "x-ai/grok-4.3",
 		"xiaomi/mimo-v2-flash:free":                          "xiaomi/mimo-v2-flash",
 		"z-ai/glm-4.5-air:free":                              "z-ai/glm-4.5-air",
 		"z-ai/glm-4.6:exacto":                                "z-ai/glm-4.6",

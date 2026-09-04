@@ -1,0 +1,113 @@
+schema_version: 2
+id: cohere/tiny-aya-earth
+name: tiny-aya-earth
+provider: Cohere
+developer: cohere
+lifecycle: candidate
+context_length: 0
+features:
+  - ModalityTextIn
+  - ModalityTextOut
+links:
+  model_card: https://huggingface.co/CohereLabs/tiny-aya-earth
+identifiers:
+  huggingface:
+    - CohereLabs/tiny-aya-earth
+provenance:
+  features:
+    source: official_huggingface_pipeline
+    url: https://huggingface.co/CohereLabs/tiny-aya-earth
+  id:
+    source: official_huggingface
+    url: https://huggingface.co/CohereLabs/tiny-aya-earth
+  name:
+    source: official_huggingface
+    url: https://huggingface.co/CohereLabs/tiny-aya-earth
+upstream:
+  huggingface:
+    id: CohereLabs/tiny-aya-earth
+    revision: 821f26a10f8e67a5b453f62d3091d5d4af14b1ae
+    pipeline_tag: text-generation
+    model_type: cohere2
+    architectures:
+      - Cohere2ForCausalLM
+    license: cc-by-nc-4.0
+    tags:
+      - am
+      - ar
+      - arxiv:2603.11510
+      - base_model:CohereLabs/tiny-aya-base
+      - base_model:finetune:CohereLabs/tiny-aya-base
+      - bg
+      - bn
+      - ca
+      - cohere2
+      - conversational
+      - cs
+      - cy
+      - da
+      - de
+      - el
+      - en
+      - es
+      - et
+      - eu
+      - fa
+      - fi
+      - fr
+      - ga
+      - gl
+      - gu
+      - ha
+      - he
+      - hi
+      - hr
+      - hu
+      - id
+      - ig
+      - it
+      - ja
+      - jv
+      - km
+      - ko
+      - license:cc-by-nc-4.0
+      - lo
+      - lt
+      - lv
+      - mg
+      - mr
+      - ms
+      - mt
+      - my
+      - ne
+      - nl
+      - "no"
+      - pa
+      - pl
+      - pt
+      - region:us
+      - ro
+      - ru
+      - safetensors
+      - sk
+      - sl
+      - sn
+      - sr
+      - sv
+      - sw
+      - ta
+      - te
+      - text-generation
+      - th
+      - tl
+      - tr
+      - transformers
+      - uk
+      - ur
+      - vi
+      - wo
+      - xh
+      - yo
+      - zh
+      - zu
+    fetched_at: 2026-09-04T06:38:23.673141902Z

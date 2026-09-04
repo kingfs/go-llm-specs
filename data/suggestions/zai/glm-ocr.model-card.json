@@ -1,0 +1,92 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "zai/glm-ocr",
+  "status": "partially_accepted",
+  "created_at": "2026-09-04T06:38:49.34210952Z",
+  "source": {
+    "url": "https://huggingface.co/zai-org/GLM-OCR/resolve/ca5d8b3e287e52589e37c28385d9655ee4372f9d/README.md",
+    "revision": "ca5d8b3e287e52589e37c28385d9655ee4372f9d",
+    "sha256": "e0039df2fb2b262737595eb904a5e276415fe210233e61b3891f7218509d9c4b"
+  },
+  "generator": {
+    "model": "qwen/qwen3.6-27b",
+    "wire_api": "chat"
+  },
+  "claims": [
+    {
+      "field": "description",
+      "value": "GLM-OCR is a multimodal OCR model for complex document understanding, built on the GLM-V encoder–decoder architecture with 0.9B parameters.",
+      "evidence": "GLM-OCR is a multimodal OCR model for complex document understanding, built on the GLM-V encoder–decoder architecture.",
+      "section": "Introduction",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "ModalityImageIn",
+        "ModalityTextIn",
+        "ModalityTextOut"
+      ],
+      "evidence": "It introduces Multi-Token Prediction (MTP) loss... The model integrates the CogViT visual encoder... and a GLM-0.5B language decoder.",
+      "section": "Introduction",
+      "confidence": "high"
+    },
+    {
+      "field": "max_output",
+      "value": 8192,
+      "evidence": "generated_ids = model.generate(**inputs, max_new_tokens=8192)",
+      "section": "Transformers",
+      "confidence": "high"
+    },
+    {
+      "field": "reasoning.parser",
+      "value": "json_schema",
+      "evidence": "For information extraction tasks... Prompts must follow a strict JSON schema. For example, to extract personal ID information...",
+      "section": "Prompt Limited",
+      "confidence": "high"
+    },
+    {
+      "field": "description",
+      "value": "Achieves a score of 94.62 on OmniDocBench V1.5, ranking #1 overall, and delivers state-of-the-art results across major document understanding benchmarks.",
+      "evidence": "Achieves a score of 94.62 on OmniDocBench V1.5, ranking #1 overall, and delivers state-of-the-art results across major document understanding benchmarks",
+      "section": "Introduction",
+      "confidence": "high"
+    },
+    {
+      "field": "description",
+      "value": "Designed and optimized for practical business use cases, maintaining robust performance on complex tables, code-heavy documents, seals, and other challenging real-world layouts.",
+      "evidence": "Designed and optimized for practical business use cases, maintaining robust performance on complex tables, code-heavy documents, seals, and other challenging real-world layouts.",
+      "section": "Introduction",
+      "confidence": "high"
+    },
+    {
+      "field": "description",
+      "value": "With only 0.9B parameters, GLM-OCR supports deployment via vLLM, SGLang, and Ollama, significantly reducing inference latency and compute cost.",
+      "evidence": "With only 0.9B parameters, GLM-OCR supports deployment via vLLM, SGLang, and Ollama, significantly reducing inference latency and compute cost",
+      "section": "Introduction",
+      "confidence": "high"
+    },
+    {
+      "field": "description",
+      "value": "Fully open-sourced and equipped with a comprehensive SDK and inference toolchain, offering simple installation, one-line invocation, and smooth integration.",
+      "evidence": "Fully open-sourced and equipped with a comprehensive SDK and inference toolchain, offering simple installation, one-line invocation, and smooth integration",
+      "section": "Introduction",
+      "confidence": "high"
+    },
+    {
+      "field": "description",
+      "value": "Results show GLM-OCR achieves a throughput of 1.86 pages/second for PDF documents and 0.67 images/second for images.",
+      "evidence": "Results show GLM-OCR achieves a throughput of 1.86 pages/second for PDF documents and 0.67 images/second for images",
+      "section": "Performance",
+      "confidence": "high"
+    },
+    {
+      "field": "description",
+      "value": "For document parsing tasks, the SDK integrates PP-DocLayoutV3 and provides a complete, easy-to-use pipeline for document parsing, including layout analysis.",
+      "evidence": "For document parsing tasks, we strongly recommend using our official SDK. ... the SDK integrates PP-DocLayoutV3 and provides a complete, easy-to-use pipeline",
+      "section": "Usage",
+      "confidence": "high"
+    }
+  ]
+}

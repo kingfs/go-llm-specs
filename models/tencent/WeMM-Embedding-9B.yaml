@@ -4,6 +4,8 @@ name: WeMM-Embedding-9B
 provider: Tencent Hunyuan
 developer: tencent
 lifecycle: candidate
+description: WeMM-Embedding-9B is a universal multimodal embedding model built on Qwen3.5 that returns a 4,096-dimensional L2-normalized embedding.
+description_cn: WeMM-Embedding-9B 是一款基于 Qwen3.5 构建的通用多模态嵌入模型，输出 4,096 维 L2 归一化嵌入向量。
 context_length: 0
 features:
   - CapEmbedding
@@ -14,6 +16,9 @@ identifiers:
   huggingface:
     - tencent/WeMM-Embedding-9B
 provenance:
+  description:
+    source: official_model_card
+    url: https://huggingface.co/tencent/WeMM-Embedding-9B/resolve/b60dceab44e4dd36fca62f5952fd6cd8824031d2/README.md
   features:
     source: official_huggingface_pipeline
     url: https://huggingface.co/tencent/WeMM-Embedding-9B

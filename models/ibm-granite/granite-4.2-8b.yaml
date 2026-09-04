@@ -47,8 +47,10 @@ upstream:
     supported_parameters:
       - frequency_penalty
       - include_reasoning
+      - logit_bias
       - logprobs
       - max_tokens
+      - min_p
       - presence_penalty
       - reasoning
       - reasoning_effort
@@ -67,7 +69,7 @@ upstream:
       - text
     output_modalities:
       - text
-    fetched_at: 2026-09-01T06:54:00.188384334Z
+    fetched_at: 2026-09-04T06:38:23.257371503Z
   huggingface:
     id: ibm-granite/granite-4.2-8b
     revision: 41a8a2d41c54ef4a71741b3e62604f4caaec9295

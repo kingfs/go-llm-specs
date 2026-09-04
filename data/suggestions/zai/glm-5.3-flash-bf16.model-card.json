@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "zai/glm-5.3-flash-bf16",
+  "status": "partially_accepted",
+  "created_at": "2026-09-04T06:38:26.58407632Z",
+  "source": {
+    "url": "https://huggingface.co/zai-org/GLM-5.3-Flash-BF16/resolve/f12e0fe1f6b2ea274c11a569582edfd99d993c5e/README.md",
+    "revision": "f12e0fe1f6b2ea274c11a569582edfd99d993c5e",
+    "sha256": "9f045fa7834742a56f0f09095261891ba220514597f4ae5eaeb14aa16f031792"
+  },
+  "generator": {
+    "model": "qwen/qwen3.6-27b",
+    "wire_api": "chat"
+  },
+  "claims": [
+    {
+      "field": "description",
+      "value": "GLM-5.3-Flash is a natively multimodal model with 320B total and 18B active parameters, featuring a hybrid sparse/linear attention architecture.",
+      "evidence": "We introduce GLM-5.3-Flash, the first natively multimodal model in the GLM-5 series. With 320B total parameters and just 18B active parameters...",
+      "section": "Introduction",
+      "confidence": "high"
+    },
+    {
+      "field": "reasoning.supported",
+      "value": true,
+      "evidence": "GLM-5.3-Flash supports controlling the thinking budget through the `reasoning_effort` parameter",
+      "section": "Serve GLM-5.3-Flash Locally",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "ModalityTextIn",
+        "ModalityTextOut"
+      ],
+      "evidence": "pipeline_tag: text-generation",
+      "section": "---",
+      "confidence": "low"
+    },
+    {
+      "field": "features",
+      "value": [
+        "ModalityImageIn"
+      ],
+      "evidence": "We resize the input images such that their shorter side is at least 1.5K pixels",
+      "section": "Footnotes",
+      "confidence": "high"
+    }
+  ]
+}
