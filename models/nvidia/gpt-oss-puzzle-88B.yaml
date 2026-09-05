@@ -1,0 +1,64 @@
+schema_version: 2
+id: nvidia/gpt-oss-puzzle-88b
+name: gpt-oss-puzzle-88B
+provider: NVIDIA
+developer: nvidia
+lifecycle: candidate
+context_length: 229376
+features:
+  - ModalityTextIn
+  - ModalityTextOut
+links:
+  model_card: https://huggingface.co/nvidia/gpt-oss-puzzle-88B
+identifiers:
+  huggingface:
+    - nvidia/gpt-oss-puzzle-88B
+provenance:
+  context_length:
+    source: official_huggingface_config
+    url: https://huggingface.co/nvidia/gpt-oss-puzzle-88B
+  features:
+    source: official_huggingface_pipeline
+    url: https://huggingface.co/nvidia/gpt-oss-puzzle-88B
+  id:
+    source: official_huggingface
+    url: https://huggingface.co/nvidia/gpt-oss-puzzle-88B
+  name:
+    source: official_huggingface
+    url: https://huggingface.co/nvidia/gpt-oss-puzzle-88B
+upstream:
+  huggingface:
+    id: nvidia/gpt-oss-puzzle-88B
+    revision: 9c0e0746a0d2218b28cc7b2cb3ce4e1a2f50fdb2
+    pipeline_tag: text-generation
+    model_type: gpt_oss_puzzle
+    architectures:
+      - GptOssPuzzleForCausalLM
+    license: other
+    tags:
+      - 8-bit
+      - arxiv:2411.19146
+      - arxiv:2508.10925
+      - arxiv:2602.11937
+      - conversational
+      - custom_code
+      - en
+      - gpt-oss
+      - gpt_oss_puzzle
+      - license:other
+      - mixture-of-experts
+      - mxfp4
+      - nvidia
+      - puzzle
+      - pytorch
+      - reasoning
+      - region:us
+      - safetensors
+      - text-generation
+      - transformers
+      - vllm
+    config_context_length: 229376
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-09-05T06:24:56.219810436Z

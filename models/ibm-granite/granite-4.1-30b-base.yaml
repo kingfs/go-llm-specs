@@ -1,0 +1,54 @@
+schema_version: 2
+id: ibm-granite/granite-4.1-30b-base
+name: granite-4.1-30b-base
+provider: IBM Granite
+developer: ibm-granite
+lifecycle: candidate
+context_length: 131072
+features:
+  - ModalityTextIn
+  - ModalityTextOut
+links:
+  model_card: https://huggingface.co/ibm-granite/granite-4.1-30b-base
+identifiers:
+  huggingface:
+    - ibm-granite/granite-4.1-30b-base
+provenance:
+  context_length:
+    source: official_huggingface_config
+    url: https://huggingface.co/ibm-granite/granite-4.1-30b-base
+  features:
+    source: official_huggingface_pipeline
+    url: https://huggingface.co/ibm-granite/granite-4.1-30b-base
+  id:
+    source: official_huggingface
+    url: https://huggingface.co/ibm-granite/granite-4.1-30b-base
+  name:
+    source: official_huggingface
+    url: https://huggingface.co/ibm-granite/granite-4.1-30b-base
+upstream:
+  huggingface:
+    id: ibm-granite/granite-4.1-30b-base
+    revision: 9bb22a92d17f4a51788c4750d32764ed068d94f2
+    pipeline_tag: text-generation
+    model_type: granite
+    architectures:
+      - GraniteForCausalLM
+    license: apache-2.0
+    tags:
+      - arxiv:2603.17074
+      - deploy:azure
+      - endpoints_compatible
+      - granite
+      - granite-4.1
+      - language
+      - license:apache-2.0
+      - region:us
+      - safetensors
+      - text-generation
+      - transformers
+    config_context_length: 131072
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-09-05T06:24:53.846685501Z

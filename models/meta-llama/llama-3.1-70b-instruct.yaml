@@ -38,7 +38,6 @@ upstream:
     supported_parameters:
       - frequency_penalty
       - logit_bias
-      - logprobs
       - max_tokens
       - min_p
       - presence_penalty
@@ -51,14 +50,13 @@ upstream:
       - tool_choice
       - tools
       - top_k
-      - top_logprobs
       - top_p
     input_modalities:
       - text
     output_modalities:
       - text
     knowledge_cutoff: "2023-12-31"
-    fetched_at: 2026-07-29T10:38:52.368916856Z
+    fetched_at: 2026-09-05T06:24:53.014723471Z
   huggingface:
     id: meta-llama/Llama-3.1-70B-Instruct
     revision: 1605565b47bb9346c5515c34102e054115b4f98b

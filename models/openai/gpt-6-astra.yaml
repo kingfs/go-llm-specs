@@ -1,0 +1,79 @@
+schema_version: 2
+id: openai/gpt-6-astra
+name: 'OpenAI: GPT-6 Astra'
+provider: OpenAI
+developer: openai
+description: GPT-6 Astra is OpenAI's flagship model for demanding end-to-end work. It is suited for advanced analysis, software engineering, deep research, scientific work, and document creation, with particular strengths in long-horizon...
+description_cn: GPT-6 Astra 是 OpenAI 面向复杂端到端任务的旗舰模型。它适用于高级分析、软件工程、深度研究、科学工作及文档创作，在长程...
+context_length: 1050000
+max_output: 128000
+features:
+  - CapChat
+  - CapFunctionCall
+  - CapJsonMode
+  - ModalityFileIn
+  - ModalityImageIn
+  - ModalityTextIn
+  - ModalityTextOut
+aliases:
+  - openai/gpt-6-astra-pro
+  - openai/gpt-6-astra-pro:batch
+  - openai/gpt-6-astra:batch
+discovered_at: 2026-09-05T06:24:48.985241985Z
+links:
+  documentation: https://platform.openai.com/docs/models
+identifiers:
+  openrouter:
+    - openai/gpt-6-astra
+    - openai/gpt-6-astra-pro
+    - openai/gpt-6-astra-pro:batch
+    - openai/gpt-6-astra:batch
+provenance:
+  context_length:
+    source: openrouter
+  description:
+    source: openrouter
+  features:
+    source: openrouter
+  id:
+    source: openrouter
+  max_output:
+    source: openrouter
+  name:
+    source: openrouter
+  provider:
+    source: openrouter
+  reasoning:
+    source: openrouter
+upstream:
+  openrouter:
+    canonical_slug: openai/gpt-6-astra-20260903
+    supported_parameters:
+      - include_reasoning
+      - max_completion_tokens
+      - max_tokens
+      - reasoning
+      - reasoning_effort
+      - response_format
+      - seed
+      - structured_outputs
+      - tool_choice
+      - tools
+    input_modalities:
+      - file
+      - image
+      - text
+    output_modalities:
+      - text
+    fetched_at: 2026-09-05T06:24:53.01807015Z
+reasoning:
+  supported: true
+  mandatory: true
+  default_enabled: true
+  default_effort: medium
+  supported_efforts:
+    - high
+    - low
+    - max
+    - medium
+    - xhigh

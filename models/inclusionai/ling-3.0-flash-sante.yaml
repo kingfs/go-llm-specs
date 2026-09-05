@@ -1,0 +1,36 @@
+schema_version: 2
+id: inclusionai/ling-3.0-flash-sante
+name: 'inclusionAI: Ling 3.0 Flash Sante (free)'
+provider: Inclusionai
+developer: inclusionai
+description: Ling 3.0 Flash Sante is a health and medicine-focused mixture-of-experts model from InclusionAI, built on Ling 3.0 Flash with 5.1B active parameters out of 124B total. It is designed for...
+description_cn: Ling 3.0 Flash Sante 是 InclusionAI 推出的专注于健康与医疗的混合专家模型，基于 Ling 3.0 Flash 构建，总参数 124B，激活参数 5.1B。该模型专为...
+context_length: 262144
+max_output: 32768
+features:
+  - CapChat
+  - CapFunctionCall
+  - ModalityTextIn
+  - ModalityTextOut
+aliases:
+  - inclusionai/ling-3.0-flash-sante:free
+discovered_at: 2026-09-05T06:24:48.985988915Z
+identifiers:
+  openrouter:
+    - inclusionai/ling-3.0-flash-sante
+    - inclusionai/ling-3.0-flash-sante:free
+provenance:
+  context_length:
+    source: openrouter
+  description:
+    source: openrouter
+  features:
+    source: openrouter
+  id:
+    source: openrouter
+  max_output:
+    source: openrouter
+  name:
+    source: openrouter
+  provider:
+    source: openrouter

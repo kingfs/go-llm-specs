@@ -1,0 +1,77 @@
+schema_version: 2
+id: qwen/qwen3.8-max-0902
+name: 'Qwen: Qwen3.8 Max (0902)'
+provider: Qwen
+developer: qwen
+description: Qwen3.8 Max 0902 is an updated snapshot of Qwen3.8 Max from Alibaba's Qwen team. It is a 2.4-trillion-parameter mixture-of-experts model that accepts text, image, and video input and returns text,...
+description_cn: Qwen3.8 Max 0902 是阿里通义千问团队发布的 Qwen3.8 Max 更新快照。这是一款 2.4 万亿参数的混合专家模型，支持文本、图像和视频输入，并返回文本...
+context_length: 1000000
+max_output: 131072
+features:
+  - CapChat
+  - CapFunctionCall
+  - CapJsonMode
+  - ModalityImageIn
+  - ModalityTextIn
+  - ModalityTextOut
+  - ModalityVideoIn
+discovered_at: 2026-09-05T06:24:48.986137684Z
+identifiers:
+  openrouter:
+    - qwen/qwen3.8-max-0902
+provenance:
+  context_length:
+    source: openrouter
+  description:
+    source: openrouter
+  features:
+    source: openrouter
+  id:
+    source: openrouter
+  max_output:
+    source: openrouter
+  name:
+    source: openrouter
+  provider:
+    source: openrouter
+  reasoning:
+    source: openrouter
+upstream:
+  openrouter:
+    canonical_slug: qwen/qwen3.8-max-20260902
+    supported_parameters:
+      - frequency_penalty
+      - include_reasoning
+      - logprobs
+      - max_tokens
+      - presence_penalty
+      - reasoning
+      - reasoning_effort
+      - response_format
+      - seed
+      - stop
+      - structured_outputs
+      - temperature
+      - tool_choice
+      - tools
+      - top_k
+      - top_logprobs
+      - top_p
+    input_modalities:
+      - image
+      - text
+      - video
+    output_modalities:
+      - text
+    fetched_at: 2026-09-05T06:24:53.021103832Z
+reasoning:
+  supported: true
+  mandatory: true
+  default_enabled: true
+  default_effort: xhigh
+  supported_efforts:
+    - high
+    - low
+    - medium
+    - minimal
+    - xhigh
