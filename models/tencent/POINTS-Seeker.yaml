@@ -1,0 +1,54 @@
+schema_version: 2
+id: tencent/points-seeker
+name: POINTS-Seeker
+provider: Tencent Hunyuan
+developer: tencent
+lifecycle: candidate
+context_length: 0
+features:
+  - ModalityTextIn
+  - ModalityTextOut
+links:
+  model_card: https://huggingface.co/tencent/POINTS-Seeker
+identifiers:
+  huggingface:
+    - tencent/POINTS-Seeker
+provenance:
+  features:
+    source: official_huggingface_pipeline
+    url: https://huggingface.co/tencent/POINTS-Seeker
+  id:
+    source: official_huggingface
+    url: https://huggingface.co/tencent/POINTS-Seeker
+  name:
+    source: official_huggingface
+    url: https://huggingface.co/tencent/POINTS-Seeker
+upstream:
+  huggingface:
+    id: tencent/POINTS-Seeker
+    revision: 5f75451978c6ee0c139aadcd127b1a9aabc7b7b7
+    pipeline_tag: text-generation
+    architectures:
+      - POINTS_SeekerModel
+    license: other
+    tags:
+      - arxiv:2604.14029
+      - base_model:Qwen/Qwen3-8B-Base
+      - base_model:finetune:Qwen/Qwen3-8B-Base
+      - conversational
+      - custom_code
+      - en
+      - license:other
+      - region:us
+      - safetensors
+      - text-generation
+      - transformers
+      - zh
+    tokenizer_model_max_length: 131072
+    processor_class: Qwen2VLProcessor
+    chat_template_sha256: d7d7b7a694907104724f66d29e96b811c834ab8d1a40ef59f00469049fee7794
+    structured_files:
+      - config.json
+      - preprocessor_config.json
+      - tokenizer_config.json
+    fetched_at: 2026-09-06T06:35:02.821802199Z

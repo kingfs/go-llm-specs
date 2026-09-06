@@ -1,0 +1,65 @@
+schema_version: 2
+id: ibm-granite/granite-34b-code-instruct-8k
+name: granite-34b-code-instruct-8k
+provider: IBM Granite
+developer: ibm-granite
+lifecycle: candidate
+context_length: 0
+features:
+  - ModalityTextIn
+  - ModalityTextOut
+links:
+  model_card: https://huggingface.co/ibm-granite/granite-34b-code-instruct-8k
+identifiers:
+  huggingface:
+    - ibm-granite/granite-34b-code-instruct-8k
+provenance:
+  features:
+    source: official_huggingface_pipeline
+    url: https://huggingface.co/ibm-granite/granite-34b-code-instruct-8k
+  id:
+    source: official_huggingface
+    url: https://huggingface.co/ibm-granite/granite-34b-code-instruct-8k
+  name:
+    source: official_huggingface
+    url: https://huggingface.co/ibm-granite/granite-34b-code-instruct-8k
+upstream:
+  huggingface:
+    id: ibm-granite/granite-34b-code-instruct-8k
+    revision: 4bdfb589ebd261be0942a00dd239175d9d65bc47
+    pipeline_tag: text-generation
+    model_type: gpt_bigcode
+    architectures:
+      - GPTBigCodeForCausalLM
+    license: apache-2.0
+    tags:
+      - arxiv:2405.04324
+      - base_model:finetune:ibm-granite/granite-34b-code-base-8k
+      - base_model:ibm-granite/granite-34b-code-base-8k
+      - code
+      - conversational
+      - dataset:TIGER-Lab/MathInstruct
+      - dataset:bigcode/commitpackft
+      - dataset:bugdaryan/sql-create-context-instruction
+      - dataset:garage-bAInd/Open-Platypus
+      - dataset:glaive-function-calling-v2
+      - dataset:glaiveai/glaive-code-assistant-v3
+      - dataset:meta-math/MetaMathQA
+      - dataset:nvidia/HelpSteer
+      - deploy:azure
+      - endpoints_compatible
+      - gpt_bigcode
+      - granite
+      - license:apache-2.0
+      - model-index
+      - region:us
+      - safetensors
+      - text-generation
+      - text-generation-inference
+      - transformers
+    tokenizer_model_max_length: -9223372036854775808
+    chat_template_sha256: 7163585006888b4e18fd235f89e63339eaebe6631c3feafe8df1e7bc113ff1ac
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-09-06T06:35:02.413946134Z

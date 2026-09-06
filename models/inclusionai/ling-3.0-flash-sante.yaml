@@ -1,6 +1,6 @@
 schema_version: 2
 id: inclusionai/ling-3.0-flash-sante
-name: 'inclusionAI: Ling 3.0 Flash Sante (free)'
+name: 'inclusionAI: Ling 3.0 Flash Sante'
 provider: Inclusionai
 developer: inclusionai
 description: Ling 3.0 Flash Sante is a health and medicine-focused mixture-of-experts model from InclusionAI, built on Ling 3.0 Flash with 5.1B active parameters out of 124B total. It is designed for...
