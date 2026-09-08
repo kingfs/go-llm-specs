@@ -1,0 +1,65 @@
+schema_version: 2
+id: tencent/hy-embodied-0.5-x
+name: HY-Embodied-0.5-X
+provider: Tencent Hunyuan
+developer: tencent
+lifecycle: candidate
+context_length: 262144
+features:
+  - ModalityImageIn
+  - ModalityTextIn
+  - ModalityTextOut
+links:
+  model_card: https://huggingface.co/tencent/HY-Embodied-0.5-X
+identifiers:
+  huggingface:
+    - tencent/HY-Embodied-0.5-X
+provenance:
+  context_length:
+    source: official_huggingface_config
+    url: https://huggingface.co/tencent/HY-Embodied-0.5-X
+  features:
+    source: official_huggingface_pipeline
+    url: https://huggingface.co/tencent/HY-Embodied-0.5-X
+  id:
+    source: official_huggingface
+    url: https://huggingface.co/tencent/HY-Embodied-0.5-X
+  name:
+    source: official_huggingface
+    url: https://huggingface.co/tencent/HY-Embodied-0.5-X
+upstream:
+  huggingface:
+    id: tencent/HY-Embodied-0.5-X
+    revision: 79f8301d8a80dd03ba778c58d6429e414e9ef5d3
+    pipeline_tag: image-text-to-text
+    model_type: hunyuan_vl_mot
+    architectures:
+      - HunYuanVLMoTForConditionalGeneration
+    license: other
+    tags:
+      - 2B
+      - MoT
+      - base_model:finetune:tencent/HY-Embodied-0.5
+      - base_model:tencent/HY-Embodied-0.5
+      - conversational
+      - custom_code
+      - embodied
+      - hunyuan
+      - hunyuan_vl_mot
+      - image-text-to-text
+      - image-to-text
+      - license:other
+      - multilingual
+      - region:us
+      - robotics
+      - safetensors
+      - transformers
+      - vision-language
+    config_context_length: 262144
+    tokenizer_model_max_length: 262144
+    processor_class: HunYuanVLMoTProcessor
+    structured_files:
+      - config.json
+      - preprocessor_config.json
+      - tokenizer_config.json
+    fetched_at: 2026-09-08T06:38:44.714617704Z

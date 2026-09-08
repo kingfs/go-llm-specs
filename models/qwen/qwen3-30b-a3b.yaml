@@ -43,6 +43,7 @@ upstream:
       - response_format
       - seed
       - stop
+      - structured_outputs
       - temperature
       - tool_choice
       - tools
@@ -53,7 +54,7 @@ upstream:
     output_modalities:
       - text
     knowledge_cutoff: "2025-03-31"
-    fetched_at: 2026-07-30T04:45:39.390149713Z
+    fetched_at: 2026-09-08T06:38:42.672679627Z
   huggingface:
     id: Qwen/Qwen3-30B-A3B
     revision: ad44e777bcd18fa416d9da3bd8f70d33ebb85d39

@@ -1,0 +1,68 @@
+schema_version: 2
+id: ibm-granite/granite-3b-code-instruct-2k
+name: granite-3b-code-instruct-2k
+provider: IBM Granite
+developer: ibm-granite
+lifecycle: candidate
+context_length: 2048
+features:
+  - ModalityTextIn
+  - ModalityTextOut
+links:
+  model_card: https://huggingface.co/ibm-granite/granite-3b-code-instruct-2k
+identifiers:
+  huggingface:
+    - ibm-granite/granite-3b-code-instruct-2k
+provenance:
+  context_length:
+    source: official_huggingface_config
+    url: https://huggingface.co/ibm-granite/granite-3b-code-instruct-2k
+  features:
+    source: official_huggingface_pipeline
+    url: https://huggingface.co/ibm-granite/granite-3b-code-instruct-2k
+  id:
+    source: official_huggingface
+    url: https://huggingface.co/ibm-granite/granite-3b-code-instruct-2k
+  name:
+    source: official_huggingface
+    url: https://huggingface.co/ibm-granite/granite-3b-code-instruct-2k
+upstream:
+  huggingface:
+    id: ibm-granite/granite-3b-code-instruct-2k
+    revision: 7bba6a5cc837e53ded2c92209e256d48f4c25f00
+    pipeline_tag: text-generation
+    model_type: llama
+    architectures:
+      - LlamaForCausalLM
+    license: apache-2.0
+    tags:
+      - arxiv:2405.04324
+      - base_model:finetune:ibm-granite/granite-3b-code-base-2k
+      - base_model:ibm-granite/granite-3b-code-base-2k
+      - code
+      - conversational
+      - dataset:TIGER-Lab/MathInstruct
+      - dataset:bigcode/commitpackft
+      - dataset:bugdaryan/sql-create-context-instruction
+      - dataset:garage-bAInd/Open-Platypus
+      - dataset:glaive-function-calling-v2
+      - dataset:glaiveai/glaive-code-assistant-v3
+      - dataset:meta-math/MetaMathQA
+      - dataset:nvidia/HelpSteer
+      - deploy:azure
+      - granite
+      - license:apache-2.0
+      - llama
+      - model-index
+      - region:us
+      - safetensors
+      - text-generation
+      - text-generation-inference
+      - transformers
+    config_context_length: 2048
+    tokenizer_model_max_length: -9223372036854775808
+    chat_template_sha256: 7163585006888b4e18fd235f89e63339eaebe6631c3feafe8df1e7bc113ff1ac
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-09-08T06:38:43.918751671Z

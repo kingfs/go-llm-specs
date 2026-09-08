@@ -1,0 +1,60 @@
+schema_version: 2
+id: ibm-granite/granite-3b-code-base-2k
+name: granite-3b-code-base-2k
+provider: IBM Granite
+developer: ibm-granite
+lifecycle: candidate
+context_length: 2048
+features:
+  - ModalityTextIn
+  - ModalityTextOut
+links:
+  model_card: https://huggingface.co/ibm-granite/granite-3b-code-base-2k
+identifiers:
+  huggingface:
+    - ibm-granite/granite-3b-code-base-2k
+provenance:
+  context_length:
+    source: official_huggingface_config
+    url: https://huggingface.co/ibm-granite/granite-3b-code-base-2k
+  features:
+    source: official_huggingface_pipeline
+    url: https://huggingface.co/ibm-granite/granite-3b-code-base-2k
+  id:
+    source: official_huggingface
+    url: https://huggingface.co/ibm-granite/granite-3b-code-base-2k
+  name:
+    source: official_huggingface
+    url: https://huggingface.co/ibm-granite/granite-3b-code-base-2k
+upstream:
+  huggingface:
+    id: ibm-granite/granite-3b-code-base-2k
+    revision: b67f3dabc0b6d00ae477bd76732c7f3458a2caf3
+    pipeline_tag: text-generation
+    model_type: llama
+    architectures:
+      - LlamaForCausalLM
+    license: apache-2.0
+    tags:
+      - arxiv:2405.04324
+      - code
+      - dataset:bigcode/starcoderdata
+      - dataset:codeparrot/github-code-clean
+      - dataset:math-ai/StackMathQA
+      - dataset:open-web-math/open-web-math
+      - deploy:azure
+      - granite
+      - license:apache-2.0
+      - llama
+      - model-index
+      - region:us
+      - safetensors
+      - text-generation
+      - text-generation-inference
+      - transformers
+    config_context_length: 2048
+    tokenizer_model_max_length: -9223372036854775808
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-09-08T06:38:43.548968311Z

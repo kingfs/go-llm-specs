@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "zai/glm-5.3-bf16",
+  "status": "partially_accepted",
+  "created_at": "2026-09-08T06:39:47.742300229Z",
+  "source": {
+    "url": "https://huggingface.co/zai-org/GLM-5.3-BF16/resolve/304b8051cfb2b260b61ce0cbe330e02a98e73639/README.md",
+    "revision": "304b8051cfb2b260b61ce0cbe330e02a98e73639",
+    "sha256": "33f518efcbe3e156e15281d6c3daca8ada30f724077a65b2b4d4f154a511b090"
+  },
+  "generator": {
+    "model": "qwen/qwen3.6-27b",
+    "wire_api": "chat"
+  },
+  "claims": [
+    {
+      "field": "description",
+      "value": "GLM-5.3 is an open-weights text-generation model licensed under 'glm-5.3'. It shares the base architecture with GLM-5.2 but features post-training improvements for coding, long-horizon tasks, and cyber security capabilities.",
+      "evidence": "GLM-5.3 uses the same base model as GLM-5.2 — every gain comes from post-training.",
+      "section": "GLM-5.3-BF16",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "ModalityTextIn",
+        "ModalityTextOut",
+        "CapChat",
+        "CapFunctionCall"
+      ],
+      "evidence": "pipeline_tag: text-generation... GLM-5.3 is the most capable open-weights model for coding",
+      "section": "GLM-5.3-BF16",
+      "confidence": "high"
+    },
+    {
+      "field": "context_length",
+      "value": 1000000,
+      "evidence": "We evaluated NL2Repo with ... under 1M context.",
+      "section": "NL2Repo",
+      "confidence": "high"
+    },
+    {
+      "field": "max_output",
+      "value": 163840,
+      "evidence": "HLE w/ tools: ... maximum generation length of 163,840 tokens.",
+      "section": "HLE w/ tools",
+      "confidence": "high"
+    },
+    {
+      "field": "reasoning.supported",
+      "value": true,
+      "evidence": "GLM-5.3 supports controlling the thinking budget through the reasoning_effort parameter",
+      "section": "Note",
+      "confidence": "high"
+    },
+    {
+      "field": "reasoning.parser",
+      "value": "thinking_budget",
+      "evidence": "controls the thinking budget through the reasoning_effort parameter, which accepts three levels: low, high, and max.",
+      "section": "Note",
+      "confidence": "medium"
+    }
+  ]
+}

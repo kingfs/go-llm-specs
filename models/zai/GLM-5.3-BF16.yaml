@@ -3,8 +3,11 @@ id: zai/glm-5.3-bf16
 name: GLM-5.3-BF16
 provider: Z.ai
 developer: zai
-lifecycle: candidate
+lifecycle: active
+description: GLM-5.3 is an open-weights text-generation model licensed under 'glm-5.3'. It shares the base architecture with GLM-5.2 but features post-training improvements for coding, long-horizon tasks, and cyber security capabilities.
+description_cn: GLM-5.3 是一个在 'glm-5.3' 许可证下发布的开源权重文本生成模型。它与 GLM-5.2 共享基础架构，但在代码生成、长程任务以及网络安全能力方面进行了后训练优化。
 context_length: 1048576
+max_output: 163840
 features:
   - ModalityTextIn
   - ModalityTextOut
@@ -17,15 +20,24 @@ provenance:
   context_length:
     source: official_huggingface_config
     url: https://huggingface.co/zai-org/GLM-5.3-BF16
+  description:
+    source: official_model_card
+    url: https://huggingface.co/zai-org/GLM-5.3-BF16/resolve/304b8051cfb2b260b61ce0cbe330e02a98e73639/README.md
   features:
     source: official_huggingface_pipeline
     url: https://huggingface.co/zai-org/GLM-5.3-BF16
   id:
     source: official_huggingface
     url: https://huggingface.co/zai-org/GLM-5.3-BF16
+  max_output:
+    source: official_model_card
+    url: https://huggingface.co/zai-org/GLM-5.3-BF16/resolve/304b8051cfb2b260b61ce0cbe330e02a98e73639/README.md
   name:
     source: official_huggingface
     url: https://huggingface.co/zai-org/GLM-5.3-BF16
+  reasoning.supported:
+    source: official_model_card
+    url: https://huggingface.co/zai-org/GLM-5.3-BF16/resolve/304b8051cfb2b260b61ce0cbe330e02a98e73639/README.md
 upstream:
   huggingface:
     id: zai-org/GLM-5.3-BF16
@@ -53,3 +65,5 @@ upstream:
       - config.json
       - tokenizer_config.json
     fetched_at: 2026-08-29T08:21:56.618440688Z
+reasoning:
+  supported: true

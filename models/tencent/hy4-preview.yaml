@@ -41,6 +41,7 @@ provenance:
 upstream:
   openrouter:
     canonical_slug: tencent/hy4-preview-20260827
+    huggingface_id: tencent/Hy4-preview
     supported_parameters:
       - include_reasoning
       - max_completion_tokens
@@ -57,7 +58,7 @@ upstream:
       - text
     output_modalities:
       - text
-    fetched_at: 2026-08-28T13:27:43.379481511Z
+    fetched_at: 2026-09-08T06:38:42.67528902Z
   huggingface:
     id: tencent/Hy4-preview
     revision: ce1ba0b6738bbab76b6bfd82b1801c0915dca729

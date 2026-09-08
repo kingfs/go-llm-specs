@@ -28,7 +28,6 @@ upstream:
     canonical_slug: nex-agi/nex-n2-pro
     huggingface_id: nex-agi/Nex-N2-Pro
     supported_parameters:
-      - frequency_penalty
       - include_reasoning
       - logprobs
       - max_tokens
@@ -44,7 +43,7 @@ upstream:
       - text
     output_modalities:
       - text
-    fetched_at: 2026-07-29T10:40:22.186024294Z
+    fetched_at: 2026-09-08T06:38:42.669812486Z
   huggingface:
     id: nex-agi/Nex-N2-Pro
     revision: e7e4a4a29eb46a41a730d0b283ec5af0f16185d9
