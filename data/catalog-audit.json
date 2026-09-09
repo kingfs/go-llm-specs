@@ -1,7 +1,7 @@
 {
   "providers": 24,
-  "models": 690,
-  "models_with_official_links": 485,
+  "models": 698,
+  "models_with_official_links": 490,
   "uncataloged_publishers": {
     "Ai21": 1,
     "Aion-Labs": 4,
@@ -39,7 +39,7 @@
     "dotsstudio": 1,
     "eleutherai": 1,
     "essentialai": 1,
-    "inception": 3,
+    "inception": 4,
     "inclusionai": 4,
     "inflection": 2,
     "kwaipilot": 1,
@@ -47,6 +47,7 @@
     "meituan": 1,
     "neversleep": 2,
     "nex-agi": 1,
+    "nexagi": 2,
     "opengvlab": 1,
     "poolside": 2,
     "prime-intellect": 1,

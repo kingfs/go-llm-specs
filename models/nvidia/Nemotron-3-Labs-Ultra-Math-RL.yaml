@@ -1,0 +1,49 @@
+schema_version: 2
+id: nvidia/nemotron-3-labs-ultra-math-rl
+name: Nemotron-3-Labs-Ultra-Math-RL
+provider: NVIDIA
+developer: nvidia
+lifecycle: candidate
+context_length: 0
+features:
+  - ModalityTextIn
+  - ModalityTextOut
+links:
+  model_card: https://huggingface.co/nvidia/Nemotron-3-Labs-Ultra-Math-RL
+identifiers:
+  huggingface:
+    - nvidia/Nemotron-3-Labs-Ultra-Math-RL
+provenance:
+  features:
+    source: official_huggingface_pipeline
+    url: https://huggingface.co/nvidia/Nemotron-3-Labs-Ultra-Math-RL
+  id:
+    source: official_huggingface
+    url: https://huggingface.co/nvidia/Nemotron-3-Labs-Ultra-Math-RL
+  name:
+    source: official_huggingface
+    url: https://huggingface.co/nvidia/Nemotron-3-Labs-Ultra-Math-RL
+upstream:
+  huggingface:
+    id: nvidia/Nemotron-3-Labs-Ultra-Math-RL
+    revision: 85713297781eb2f7b46b7f8cfe950de47a9d0020
+    pipeline_tag: text-generation
+    license: other
+    tags:
+      - base_model:finetune:nvidia/NVIDIA-Nemotron-3-Ultra-550B-A55B-BF16
+      - base_model:nvidia/NVIDIA-Nemotron-3-Ultra-550B-A55B-BF16
+      - conversational
+      - dataset:nvidia/Nemotron-Math-Proofs-v3-RL
+      - en
+      - endpoints_compatible
+      - latent-moe
+      - license:other
+      - mtp
+      - nemotron-3
+      - nvidia
+      - pytorch
+      - region:us
+      - safetensors
+      - text-generation
+      - transformers
+    fetched_at: 2026-09-09T06:49:22.932012318Z

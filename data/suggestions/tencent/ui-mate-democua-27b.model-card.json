@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "tencent/ui-mate-democua-27b",
+  "status": "partially_accepted",
+  "created_at": "2026-09-09T06:50:46.069595214Z",
+  "source": {
+    "url": "https://huggingface.co/tencent/UI-Mate-democua-27B/resolve/6ce1d05093557ce6b3d7769800579eafbf740d70/README.md",
+    "revision": "6ce1d05093557ce6b3d7769800579eafbf740d70",
+    "sha256": "1874b5a16e1bd8140106d8a2efdebe701f38da061691d46e11515ef5b8ab27ef"
+  },
+  "generator": {
+    "model": "qwen/qwen3.6-27b",
+    "wire_api": "chat"
+  },
+  "claims": [
+    {
+      "field": "description",
+      "value": "UI-Mate-democua-27B is a demonstration-guided computer-use agent based on Qwen3.6-27B. It observes live screenshots and produces structured keyboard/mouse actions, optionally using a recorded workflow to adapt to tasks rather than replaying fixed coordinates.",
+      "evidence": "UI-Mate-democua-27B is the demonstration-guided checkpoint of UI-Mate. It observes live screenshots, reasons over the visible state, and produces structured keyboard and mouse actions",
+      "section": "Overview",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "ModalityTextIn",
+        "ModalityTextOut",
+        "ModalityImageIn"
+      ],
+      "evidence": "Input: task instruction, screenshots, interaction history, and an optional demonstration workflow",
+      "section": "Model Details",
+      "confidence": "high"
+    },
+    {
+      "field": "reasoning.supported",
+      "value": true,
+      "evidence": "Output: reasoning, a concise action description, and structured computer-use tool calls",
+      "section": "Model Details",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "CapFunctionCall"
+      ],
+      "evidence": "Output: reasoning, a concise action description, and structured computer-use tool calls",
+      "section": "Model Details",
+      "confidence": "high"
+    },
+    {
+      "field": "reasoning.parser",
+      "value": "https://github.com/Tencent/UI-Mate",
+      "evidence": "We recommend using the official prompt, response parser, and interaction harness from the [UI-Mate repository](https://github.com/Tencent/UI-Mate).",
+      "section": "Model Details",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "CapJsonMode"
+      ],
+      "evidence": "Structured actions compatible with `pyautogui`, served through an OpenAI-compatible interface.",
+      "section": "Highlights",
+      "confidence": "medium"
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+schema_version: 2
+id: inception/mercury-2.5
+name: 'Inception: Mercury 2.5'
+provider: Inception
+developer: inception
+description: Mercury 2.5 is the fastest reasoning LLM, and the latest diffusion LLM (dLLM) from Inception. Instead of generating tokens sequentially, Mercury 2.5 produces and refines multiple tokens in parallel, achieving...
+description_cn: Mercury 2.5 是 Inception 推出的推理速度最快的 LLM，也是其最新的扩散 LLM（dLLM）。与传统按顺序生成 token 不同，Mercury 2.5 能够并行生成并优化多个 token，从而实现……
+context_length: 260000
+max_output: 65536
+features:
+  - CapChat
+  - CapFunctionCall
+  - CapJsonMode
+  - ModalityTextIn
+  - ModalityTextOut
+discovered_at: 2026-09-09T06:49:19.459638068Z
+identifiers:
+  openrouter:
+    - inception/mercury-2.5
+provenance:
+  context_length:
+    source: openrouter
+  description:
+    source: openrouter
+  features:
+    source: openrouter
+  id:
+    source: openrouter
+  max_output:
+    source: openrouter
+  name:
+    source: openrouter
+  provider:
+    source: openrouter
+  reasoning:
+    source: openrouter
+upstream:
+  openrouter:
+    canonical_slug: inception/mercury-2.5-20260908
+    supported_parameters:
+      - include_reasoning
+      - max_tokens
+      - reasoning
+      - reasoning_effort
+      - response_format
+      - stop
+      - structured_outputs
+      - temperature
+      - tool_choice
+      - tools
+    input_modalities:
+      - text
+    output_modalities:
+      - text
+    fetched_at: 2026-09-09T06:49:22.082846056Z
+reasoning:
+  supported: true
+  default_enabled: true
+  default_effort: medium
+  supported_efforts:
+    - high
+    - low
+    - medium
+    - none

@@ -14,6 +14,8 @@ features:
   - ModalityImageIn
   - ModalityTextIn
   - ModalityTextOut
+aliases:
+  - deepseek/deepseek-v4-flash-vision-exp:batch
 discovered_at: 2026-08-22T02:43:58.192627451Z
 links:
   model_card: https://huggingface.co/deepseek-ai/DeepSeek-V4-Flash-Vision-Exp
@@ -22,6 +24,7 @@ identifiers:
     - deepseek-ai/DeepSeek-V4-Flash-Vision-Exp
   openrouter:
     - deepseek/deepseek-v4-flash-vision-exp
+    - deepseek/deepseek-v4-flash-vision-exp:batch
 provenance:
   context_length:
     source: openrouter

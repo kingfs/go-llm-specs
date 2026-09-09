@@ -1,0 +1,38 @@
+schema_version: 2
+id: nex-agi/nex-n2.5-pro
+name: 'Nex AGI: Nex-N2.5-Pro (free)'
+provider: Nex-Agi
+developer: nexagi
+description: 'Nex-N2.5 is an agentic model built to turn goals into working, verified outcomes. Its core strength is agentic coding within a visual feedback loop: it can explore codebases, implement multi-file...'
+description_cn: Nex-N2.5 是一款智能体模型，旨在将目标转化为可运行且经过验证的成果。其核心优势在于视觉反馈循环中的智能体编码能力：它可以探索代码库，实施多文件……
+context_length: 262144
+max_output: 235929
+features:
+  - CapChat
+  - CapFunctionCall
+  - CapJsonMode
+  - ModalityImageIn
+  - ModalityTextIn
+  - ModalityTextOut
+aliases:
+  - nex-agi/nex-n2.5-pro:free
+discovered_at: 2026-09-09T06:49:19.459938116Z
+identifiers:
+  openrouter:
+    - nex-agi/nex-n2.5-pro
+    - nex-agi/nex-n2.5-pro:free
+provenance:
+  context_length:
+    source: openrouter
+  description:
+    source: openrouter
+  features:
+    source: openrouter
+  id:
+    source: openrouter
+  max_output:
+    source: openrouter
+  name:
+    source: openrouter
+  provider:
+    source: openrouter

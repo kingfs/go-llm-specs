@@ -13,6 +13,8 @@ features:
   - CapJsonMode
   - ModalityTextIn
   - ModalityTextOut
+aliases:
+  - z-ai/glm-5.3:batch
 discovered_at: 2026-08-19T02:47:49.376206738Z
 links:
   model_card: https://huggingface.co/zai-org/GLM-5.3
@@ -21,6 +23,7 @@ identifiers:
     - zai-org/GLM-5.3
   openrouter:
     - z-ai/glm-5.3
+    - z-ai/glm-5.3:batch
 provenance:
   context_length:
     source: openrouter

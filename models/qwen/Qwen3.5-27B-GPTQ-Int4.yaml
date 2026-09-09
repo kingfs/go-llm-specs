@@ -1,0 +1,55 @@
+schema_version: 2
+id: qwen/qwen3.5-27b-gptq-int4
+name: Qwen3.5-27B-GPTQ-Int4
+provider: Qwen
+developer: qwen
+lifecycle: candidate
+context_length: 0
+features:
+  - ModalityImageIn
+  - ModalityTextIn
+  - ModalityTextOut
+links:
+  model_card: https://huggingface.co/Qwen/Qwen3.5-27B-GPTQ-Int4
+identifiers:
+  huggingface:
+    - Qwen/Qwen3.5-27B-GPTQ-Int4
+provenance:
+  features:
+    source: official_huggingface_pipeline
+    url: https://huggingface.co/Qwen/Qwen3.5-27B-GPTQ-Int4
+  id:
+    source: official_huggingface
+    url: https://huggingface.co/Qwen/Qwen3.5-27B-GPTQ-Int4
+  name:
+    source: official_huggingface
+    url: https://huggingface.co/Qwen/Qwen3.5-27B-GPTQ-Int4
+upstream:
+  huggingface:
+    id: Qwen/Qwen3.5-27B-GPTQ-Int4
+    revision: 8f0c09f227ae570e79617c6d9172b59df9c16081
+    pipeline_tag: image-text-to-text
+    model_type: qwen3_5
+    architectures:
+      - Qwen3_5ForConditionalGeneration
+    license: apache-2.0
+    tags:
+      - 4-bit
+      - conversational
+      - deploy:azure
+      - endpoints_compatible
+      - gptq
+      - image-text-to-text
+      - license:apache-2.0
+      - qwen3_5
+      - region:us
+      - safetensors
+      - transformers
+    tokenizer_model_max_length: 262144
+    processor_class: Qwen3VLProcessor
+    chat_template_sha256: 79770cfcd562a1ec57f670709445ca5b4ccff2684ceae9072db7b61045135534
+    structured_files:
+      - config.json
+      - preprocessor_config.json
+      - tokenizer_config.json
+    fetched_at: 2026-09-09T06:49:23.220264632Z

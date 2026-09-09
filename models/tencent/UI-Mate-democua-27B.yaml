@@ -4,6 +4,8 @@ name: UI-Mate-democua-27B
 provider: Tencent Hunyuan
 developer: tencent
 lifecycle: candidate
+description: UI-Mate-democua-27B is a demonstration-guided computer-use agent based on Qwen3.6-27B. It observes live screenshots and produces structured keyboard/mouse actions, optionally using a recorded workflow to adapt to tasks rather than replaying fixed coordinates.
+description_cn: UI-Mate-democua-27B 是基于 Qwen3.6-27B 构建的演示引导型计算机操作智能体。它能观察实时屏幕截图并生成结构化的键鼠操作动作，可选择性地利用录制的操作流来适应任务，而非回放固定坐标。
 context_length: 0
 features:
   - ModalityImageIn
@@ -15,6 +17,9 @@ identifiers:
   huggingface:
     - tencent/UI-Mate-democua-27B
 provenance:
+  description:
+    source: official_model_card
+    url: https://huggingface.co/tencent/UI-Mate-democua-27B/resolve/6ce1d05093557ce6b3d7769800579eafbf740d70/README.md
   features:
     source: official_huggingface_pipeline
     url: https://huggingface.co/tencent/UI-Mate-democua-27B
@@ -24,6 +29,9 @@ provenance:
   name:
     source: official_huggingface
     url: https://huggingface.co/tencent/UI-Mate-democua-27B
+  reasoning.supported:
+    source: official_model_card
+    url: https://huggingface.co/tencent/UI-Mate-democua-27B/resolve/6ce1d05093557ce6b3d7769800579eafbf740d70/README.md
 upstream:
   huggingface:
     id: tencent/UI-Mate-democua-27B
@@ -61,3 +69,5 @@ upstream:
       - preprocessor_config.json
       - tokenizer_config.json
     fetched_at: 2026-08-19T02:47:53.651950633Z
+reasoning:
+  supported: true
