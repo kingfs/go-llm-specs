@@ -47,10 +47,13 @@ upstream:
     supported_parameters:
       - frequency_penalty
       - include_reasoning
+      - logit_bias
       - logprobs
       - max_tokens
+      - min_p
       - presence_penalty
       - reasoning
+      - repetition_penalty
       - response_format
       - seed
       - stop
@@ -67,7 +70,7 @@ upstream:
       - video
     output_modalities:
       - text
-    fetched_at: 2026-09-01T06:54:00.195655929Z
+    fetched_at: 2026-09-10T06:44:41.602494923Z
   huggingface:
     id: Qwen/Qwen3.8-Flash-Next
     revision: de4b8e4d43b917e7706784d8bb445c9af86a3540

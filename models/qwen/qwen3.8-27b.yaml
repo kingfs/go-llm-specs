@@ -61,6 +61,7 @@ upstream:
       - temperature
       - tool_choice
       - tools
+      - top_a
       - top_k
       - top_logprobs
       - top_p
@@ -70,7 +71,7 @@ upstream:
       - video
     output_modalities:
       - text
-    fetched_at: 2026-08-25T02:48:42.891349563Z
+    fetched_at: 2026-09-10T06:44:41.602206778Z
   huggingface:
     id: Qwen/Qwen3.8-27B
     revision: 1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0

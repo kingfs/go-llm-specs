@@ -1,0 +1,56 @@
+schema_version: 2
+id: allenai/intent-aware-lfqa-llama3-8b-multiview
+name: intent-aware-lfqa-llama3-8b-multiview
+provider: Allen Institute for AI
+developer: allenai
+lifecycle: candidate
+context_length: 131072
+features:
+  - ModalityTextIn
+  - ModalityTextOut
+links:
+  model_card: https://huggingface.co/allenai/intent-aware-lfqa-llama3-8b-multiview
+identifiers:
+  huggingface:
+    - allenai/intent-aware-lfqa-llama3-8b-multiview
+provenance:
+  context_length:
+    source: official_huggingface_config
+    url: https://huggingface.co/allenai/intent-aware-lfqa-llama3-8b-multiview
+  features:
+    source: official_huggingface_pipeline
+    url: https://huggingface.co/allenai/intent-aware-lfqa-llama3-8b-multiview
+  id:
+    source: official_huggingface
+    url: https://huggingface.co/allenai/intent-aware-lfqa-llama3-8b-multiview
+  name:
+    source: official_huggingface
+    url: https://huggingface.co/allenai/intent-aware-lfqa-llama3-8b-multiview
+upstream:
+  huggingface:
+    id: allenai/intent-aware-lfqa-llama3-8b-multiview
+    revision: 5af8f7f3b07dbbc7fcec7905ce10b5544a765b89
+    pipeline_tag: text-generation
+    model_type: llama
+    architectures:
+      - LlamaForCausalLM
+    license: odc-by
+    tags:
+      - base_model:finetune:meta-llama/Meta-Llama-3-8B-Instruct
+      - base_model:meta-llama/Meta-Llama-3-8B-Instruct
+      - conversational
+      - en
+      - endpoints_compatible
+      - license:odc-by
+      - llama
+      - pytorch
+      - region:us
+      - text-generation
+      - text-generation-inference
+      - transformers
+    config_context_length: 131072
+    tokenizer_model_max_length: 131072
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-09-10T06:44:43.008339052Z

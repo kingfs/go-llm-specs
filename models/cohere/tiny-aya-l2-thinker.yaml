@@ -1,0 +1,93 @@
+schema_version: 2
+id: cohere/tiny-aya-l2-thinker
+name: tiny-aya-l2-thinker
+provider: Cohere
+developer: cohere
+lifecycle: candidate
+context_length: 0
+features:
+  - ModalityTextIn
+  - ModalityTextOut
+links:
+  model_card: https://huggingface.co/CohereLabs/tiny-aya-l2-thinker
+identifiers:
+  huggingface:
+    - CohereLabs/tiny-aya-l2-thinker
+provenance:
+  features:
+    source: official_huggingface_pipeline
+    url: https://huggingface.co/CohereLabs/tiny-aya-l2-thinker
+  id:
+    source: official_huggingface
+    url: https://huggingface.co/CohereLabs/tiny-aya-l2-thinker
+  name:
+    source: official_huggingface
+    url: https://huggingface.co/CohereLabs/tiny-aya-l2-thinker
+upstream:
+  huggingface:
+    id: CohereLabs/tiny-aya-l2-thinker
+    revision: fab408bfac9f54e244aaa9e38e0db95b2fe2acfa
+    pipeline_tag: text-generation
+    model_type: cohere2
+    architectures:
+      - Cohere2ForCausalLM
+    license: cc-by-nc-4.0
+    tags:
+      - am
+      - ar
+      - aya
+      - bg
+      - bn
+      - ca
+      - cohere2
+      - conversational
+      - cs
+      - de
+      - el
+      - en
+      - endpoints_compatible
+      - eu
+      - fa
+      - fi
+      - fil
+      - fr
+      - ga
+      - ha
+      - he
+      - hi
+      - hu
+      - id
+      - ig
+      - it
+      - ja
+      - jv
+      - km
+      - ko
+      - license:cc-by-nc-4.0
+      - lt
+      - ms
+      - mt
+      - multilingual
+      - "no"
+      - pa
+      - pl
+      - reasoning
+      - region:us
+      - ru
+      - safetensors
+      - sk
+      - sw
+      - ta
+      - te
+      - text-generation
+      - th
+      - tiny-aya
+      - tr
+      - transformers
+      - uk
+      - ur
+      - vi
+      - yo
+      - zh
+      - zu
+    fetched_at: 2026-09-10T06:44:43.18608061Z

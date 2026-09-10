@@ -1,0 +1,98 @@
+schema_version: 2
+id: deepseek/deepseek-v4.1-flash
+name: 'DeepSeek: DeepSeek V4.1 Flash'
+provider: DeepSeek
+developer: deepseek
+description: DeepSeek V4.1 Flash is a sparse mixture-of-experts model from DeepSeek, and the cost-efficient tier of the V4.1 family. DeepSeek reports that it exceeds V4 Pro on performance, speed, and task...
+description_cn: DeepSeek V4.1 Flash是DeepSeek推出的稀疏混合专家模型，属于V4.1系列中的高性价比版本。DeepSeek表示，它在性能、速度和任务...
+context_length: 1048576
+max_output: 384000
+features:
+  - CapChat
+  - CapFunctionCall
+  - CapJsonMode
+  - ModalityImageIn
+  - ModalityTextIn
+  - ModalityTextOut
+discovered_at: 2026-09-10T06:44:38.956559746Z
+links:
+  model_card: https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash
+identifiers:
+  huggingface:
+    - deepseek-ai/DeepSeek-V4.1-Flash
+  openrouter:
+    - deepseek/deepseek-v4.1-flash
+provenance:
+  context_length:
+    source: openrouter
+  description:
+    source: openrouter
+  features:
+    source: openrouter
+  id:
+    source: openrouter
+  max_output:
+    source: openrouter
+  name:
+    source: openrouter
+  provider:
+    source: openrouter
+  reasoning:
+    source: openrouter
+upstream:
+  openrouter:
+    canonical_slug: deepseek/deepseek-v4.1-flash-20260910
+    huggingface_id: deepseek-ai/DeepSeek-V4.1-Flash
+    supported_parameters:
+      - frequency_penalty
+      - include_reasoning
+      - logprobs
+      - max_tokens
+      - presence_penalty
+      - reasoning
+      - reasoning_effort
+      - response_format
+      - stop
+      - temperature
+      - tool_choice
+      - tools
+      - top_logprobs
+      - top_p
+    input_modalities:
+      - image
+      - text
+    output_modalities:
+      - text
+    fetched_at: 2026-09-10T06:44:41.595800517Z
+  huggingface:
+    id: deepseek-ai/DeepSeek-V4.1-Flash
+    revision: fb2764a5cf321eaa5070ca8f9e892818f477c16d
+    pipeline_tag: image-text-to-text
+    model_type: deepseek_v41
+    architectures:
+      - DeepseekV41ForCausalLM
+    license: mit
+    tags:
+      - 8-bit
+      - deepseek_v41
+      - endpoints_compatible
+      - fp8
+      - image-text-to-text
+      - license:mit
+      - region:us
+      - safetensors
+      - text-generation
+      - transformers
+    tokenizer_model_max_length: 1048576
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-09-10T06:44:43.382896318Z
+reasoning:
+  supported: true
+  default_enabled: true
+  default_effort: high
+  supported_efforts:
+    - high
+    - low
+    - max

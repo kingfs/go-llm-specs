@@ -1,8 +1,8 @@
 {
   "failure_count": 3,
   "failures": {
-    "microsoft/wizardlm-2-8x22b": "Hugging Face model request returned 401 Unauthorized",
-    "nvidia/nemotron-3-labs-ultra-math-rl": "decode Hugging Face config.json: invalid character 'I' looking for beginning of value",
-    "nvidia/nemotron-3-labs-ultra-math-sft": "decode Hugging Face config.json: invalid character 'I' looking for beginning of value"
+    "cohere/tiny-aya-en-thinker": "Hugging Face config.json returned 401 Unauthorized",
+    "cohere/tiny-aya-l2-thinker": "Hugging Face config.json returned 401 Unauthorized",
+    "microsoft/wizardlm-2-8x22b": "Hugging Face model request returned 401 Unauthorized"
   }
 }
