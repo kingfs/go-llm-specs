@@ -1,7 +1,7 @@
 {
   "providers": 24,
-  "models": 704,
-  "models_with_official_links": 496,
+  "models": 712,
+  "models_with_official_links": 501,
   "uncataloged_publishers": {
     "Ai21": 1,
     "Aion-Labs": 4,
@@ -40,7 +40,7 @@
     "eleutherai": 1,
     "essentialai": 1,
     "inception": 4,
-    "inclusionai": 4,
+    "inclusionai": 5,
     "inflection": 2,
     "kwaipilot": 1,
     "liquid": 6,
@@ -53,7 +53,7 @@
     "prime-intellect": 1,
     "raifle": 1,
     "reka": 1,
-    "sakana": 1,
+    "sakana": 3,
     "sao10k": 2,
     "stealth": 1,
     "stepfun-ai": 1,

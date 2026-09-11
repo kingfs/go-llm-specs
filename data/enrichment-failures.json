@@ -1,8 +1,7 @@
 {
-  "failure_count": 3,
+  "failure_count": 2,
   "failures": {
-    "cohere/tiny-aya-en-thinker": "Hugging Face config.json returned 401 Unauthorized",
-    "cohere/tiny-aya-l2-thinker": "Hugging Face config.json returned 401 Unauthorized",
+    "cohere/tiny-aya-base-32k": "Hugging Face config.json returned 401 Unauthorized",
     "microsoft/wizardlm-2-8x22b": "Hugging Face model request returned 401 Unauthorized"
   }
 }
