@@ -1,0 +1,56 @@
+schema_version: 2
+id: allenai/intent-aware-lfqa-qwen3-4b-intent-explicit
+name: intent-aware-lfqa-qwen3-4b-intent-explicit
+provider: Allen Institute for AI
+developer: allenai
+lifecycle: candidate
+context_length: 40960
+features:
+  - ModalityTextIn
+  - ModalityTextOut
+links:
+  model_card: https://huggingface.co/allenai/intent-aware-lfqa-qwen3-4b-intent-explicit
+identifiers:
+  huggingface:
+    - allenai/intent-aware-lfqa-qwen3-4b-intent-explicit
+provenance:
+  context_length:
+    source: official_huggingface_config
+    url: https://huggingface.co/allenai/intent-aware-lfqa-qwen3-4b-intent-explicit
+  features:
+    source: official_huggingface_pipeline
+    url: https://huggingface.co/allenai/intent-aware-lfqa-qwen3-4b-intent-explicit
+  id:
+    source: official_huggingface
+    url: https://huggingface.co/allenai/intent-aware-lfqa-qwen3-4b-intent-explicit
+  name:
+    source: official_huggingface
+    url: https://huggingface.co/allenai/intent-aware-lfqa-qwen3-4b-intent-explicit
+upstream:
+  huggingface:
+    id: allenai/intent-aware-lfqa-qwen3-4b-intent-explicit
+    revision: 07bd65c9e7017a22293f4d1ee55cea2742213707
+    pipeline_tag: text-generation
+    model_type: qwen3
+    architectures:
+      - Qwen3ForCausalLM
+    license: odc-by
+    tags:
+      - base_model:Qwen/Qwen3-4B-Instruct-2507
+      - base_model:finetune:Qwen/Qwen3-4B-Instruct-2507
+      - conversational
+      - en
+      - endpoints_compatible
+      - license:odc-by
+      - pytorch
+      - qwen3
+      - region:us
+      - text-generation
+      - text-generation-inference
+      - transformers
+    config_context_length: 40960
+    tokenizer_model_max_length: 131072
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-09-12T06:37:25.053721039Z

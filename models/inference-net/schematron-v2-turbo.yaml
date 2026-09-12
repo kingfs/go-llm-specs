@@ -1,0 +1,55 @@
+schema_version: 2
+id: inference-net/schematron-v2-turbo
+name: 'Inference.net: Schematron V2 Turbo'
+provider: Inference-Net
+developer: inferencenet
+description: Schematron V2 Turbo is a 3B-parameter HTML-to-JSON extraction model from Inference.net. It prioritizes throughput for high-volume extraction workloads. Extraction instructions must be supplied through a JSON schema in response_format rather...
+description_cn: Schematron V2 Turbo 是 Inference.net 推出的 30 亿参数 HTML 转 JSON 提取模型。它优先考虑高负载提取工作量的吞吐量。提取指令必须通过 response_format 中的 JSON 模式提供……
+context_length: 128000
+max_output: 8192
+features:
+  - CapChat
+  - CapJsonMode
+  - ModalityTextIn
+  - ModalityTextOut
+discovered_at: 2026-09-12T06:37:21.324429702Z
+identifiers:
+  openrouter:
+    - inference-net/schematron-v2-turbo
+provenance:
+  context_length:
+    source: openrouter
+  description:
+    source: openrouter
+  features:
+    source: openrouter
+  id:
+    source: openrouter
+  max_output:
+    source: openrouter
+  name:
+    source: openrouter
+  provider:
+    source: openrouter
+upstream:
+  openrouter:
+    canonical_slug: inference-net/schematron-v2-turbo-20260902
+    huggingface_id: inference-net/schematron-v2-granite-4.0-h-micro
+    supported_parameters:
+      - frequency_penalty
+      - logit_bias
+      - max_tokens
+      - min_p
+      - presence_penalty
+      - response_format
+      - seed
+      - stop
+      - structured_outputs
+      - temperature
+      - top_k
+      - top_p
+    input_modalities:
+      - text
+    output_modalities:
+      - text
+    fetched_at: 2026-09-12T06:37:24.073200542Z

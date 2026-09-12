@@ -1,7 +1,7 @@
 {
   "providers": 24,
-  "models": 712,
-  "models_with_official_links": 501,
+  "models": 723,
+  "models_with_official_links": 507,
   "uncataloged_publishers": {
     "Ai21": 1,
     "Aion-Labs": 4,
@@ -41,6 +41,7 @@
     "essentialai": 1,
     "inception": 4,
     "inclusionai": 5,
+    "inferencenet": 2,
     "inflection": 2,
     "kwaipilot": 1,
     "liquid": 6,
@@ -67,6 +68,7 @@
     "~Moonshotai": 1,
     "~Openai": 2,
     "~X-Ai": 1,
+    "~openai": 4,
     "~zai": 2
   }
 }

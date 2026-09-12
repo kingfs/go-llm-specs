@@ -1,0 +1,55 @@
+schema_version: 2
+id: inference-net/schematron-v2-small
+name: 'Inference.net: Schematron V2 Small'
+provider: Inference-Net
+developer: inferencenet
+description: Schematron V2 Small is a 3B-parameter HTML-to-JSON extraction model from Inference.net. It prioritizes extraction quality for complex schemas and long pages. Extraction instructions must be supplied through a JSON schema...
+description_cn: Schematron V2 Small 是 Inference.net 推出的 30 亿参数 HTML 转 JSON 提取模型。它优先考虑复杂模式和长页面的提取质量。提取指令必须通过 JSON 模式提供……
+context_length: 128000
+max_output: 4096
+features:
+  - CapChat
+  - CapJsonMode
+  - ModalityTextIn
+  - ModalityTextOut
+discovered_at: 2026-09-12T06:37:21.324636624Z
+identifiers:
+  openrouter:
+    - inference-net/schematron-v2-small
+provenance:
+  context_length:
+    source: openrouter
+  description:
+    source: openrouter
+  features:
+    source: openrouter
+  id:
+    source: openrouter
+  max_output:
+    source: openrouter
+  name:
+    source: openrouter
+  provider:
+    source: openrouter
+upstream:
+  openrouter:
+    canonical_slug: inference-net/schematron-v2-small-20260902
+    huggingface_id: inference-net/schematron-v2-llama-3.2-3b
+    supported_parameters:
+      - frequency_penalty
+      - logit_bias
+      - max_tokens
+      - min_p
+      - presence_penalty
+      - response_format
+      - seed
+      - stop
+      - structured_outputs
+      - temperature
+      - top_k
+      - top_p
+    input_modalities:
+      - text
+    output_modalities:
+      - text
+    fetched_at: 2026-09-12T06:37:24.072950338Z

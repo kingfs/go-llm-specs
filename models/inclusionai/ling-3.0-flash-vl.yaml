@@ -1,6 +1,6 @@
 schema_version: 2
 id: inclusionai/ling-3.0-flash-vl
-name: 'inclusionAI: Ling 3.0 Flash VL (free)'
+name: 'inclusionAI: Ling 3.0 Flash VL'
 provider: Inclusionai
 developer: inclusionai
 description: Ling 3.0 Flash VL builds on Ling 3.0 Flash (124B total / 5.5B active MoE from InclusionAI), further strengthening its language capabilities while adding native visual perception and advanced visual...
@@ -17,7 +17,11 @@ features:
 aliases:
   - inclusionai/ling-3.0-flash-vl:free
 discovered_at: 2026-09-11T06:44:19.651017558Z
+links:
+  model_card: https://huggingface.co/inclusionAI/Ling-3.0-flash-VL
 identifiers:
+  huggingface:
+    - inclusionAI/Ling-3.0-flash-VL
   openrouter:
     - inclusionai/ling-3.0-flash-vl
     - inclusionai/ling-3.0-flash-vl:free
@@ -36,3 +40,59 @@ provenance:
     source: openrouter
   provider:
     source: openrouter
+  reasoning:
+    source: openrouter
+upstream:
+  openrouter:
+    canonical_slug: inclusionai/ling-3.0-flash-vl-20260910
+    huggingface_id: inclusionAI/Ling-3.0-flash-VL
+    supported_parameters:
+      - frequency_penalty
+      - include_reasoning
+      - logit_bias
+      - max_tokens
+      - min_p
+      - presence_penalty
+      - reasoning
+      - repetition_penalty
+      - response_format
+      - seed
+      - stop
+      - structured_outputs
+      - temperature
+      - tool_choice
+      - tools
+      - top_k
+      - top_p
+    input_modalities:
+      - image
+      - text
+      - video
+    output_modalities:
+      - text
+    fetched_at: 2026-09-12T06:37:24.072656833Z
+  huggingface:
+    id: inclusionAI/Ling-3.0-flash-VL
+    revision: 554184d95863a873051e8d8ccdb08c32c2c53a03
+    pipeline_tag: image-text-to-text
+    model_type: bailing_moe_v3_vl
+    architectures:
+      - BailingMoeV3VLForConditionalGeneration
+    license: mit
+    tags:
+      - bailing_moe_v3_vl
+      - conversational
+      - custom_code
+      - image-text-to-text
+      - license:mit
+      - region:us
+      - safetensors
+    processor_class: BailingMM2Processor
+    structured_files:
+      - config.json
+      - preprocessor_config.json
+      - tokenizer_config.json
+    fetched_at: 2026-09-12T06:37:25.925965958Z
+reasoning:
+  supported: true
+  default_enabled: true

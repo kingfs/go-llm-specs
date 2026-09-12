@@ -1,0 +1,70 @@
+schema_version: 2
+id: ~openai/gpt-astra-latest
+name: OpenAI GPT Astra Latest
+provider: ~Openai
+developer: ~openai
+description: This model always redirects to the latest model in the OpenAI GPT Astra family.
+description_cn: 该模型始终重定向至 OpenAI GPT Astra 系列的最新模型。
+context_length: 1050000
+max_output: 128000
+features:
+  - CapChat
+  - CapFunctionCall
+  - CapJsonMode
+  - ModalityFileIn
+  - ModalityImageIn
+  - ModalityTextIn
+  - ModalityTextOut
+discovered_at: 2026-09-12T06:37:21.324768743Z
+identifiers:
+  openrouter:
+    - ~openai/gpt-astra-latest
+provenance:
+  context_length:
+    source: openrouter
+  description:
+    source: openrouter
+  features:
+    source: openrouter
+  id:
+    source: openrouter
+  max_output:
+    source: openrouter
+  name:
+    source: openrouter
+  provider:
+    source: openrouter
+  reasoning:
+    source: openrouter
+upstream:
+  openrouter:
+    canonical_slug: ~openai/gpt-astra-latest
+    supported_parameters:
+      - include_reasoning
+      - max_completion_tokens
+      - max_tokens
+      - reasoning
+      - reasoning_effort
+      - response_format
+      - seed
+      - structured_outputs
+      - tool_choice
+      - tools
+    input_modalities:
+      - file
+      - image
+      - text
+    output_modalities:
+      - text
+    fetched_at: 2026-09-12T06:37:24.081366539Z
+reasoning:
+  supported: true
+  mandatory: true
+  default_enabled: true
+  default_effort: medium
+  supported_efforts:
+    - high
+    - low
+    - max
+    - medium
+    - xhigh

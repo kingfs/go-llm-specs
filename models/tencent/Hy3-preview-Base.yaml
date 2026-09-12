@@ -1,0 +1,52 @@
+schema_version: 2
+id: tencent/hy3-preview-base
+name: Hy3-preview-Base
+provider: Tencent Hunyuan
+developer: tencent
+lifecycle: candidate
+context_length: 262144
+features:
+  - ModalityTextIn
+  - ModalityTextOut
+links:
+  model_card: https://huggingface.co/tencent/Hy3-preview-Base
+identifiers:
+  huggingface:
+    - tencent/Hy3-preview-Base
+provenance:
+  context_length:
+    source: official_huggingface_config
+    url: https://huggingface.co/tencent/Hy3-preview-Base
+  features:
+    source: official_huggingface_pipeline
+    url: https://huggingface.co/tencent/Hy3-preview-Base
+  id:
+    source: official_huggingface
+    url: https://huggingface.co/tencent/Hy3-preview-Base
+  name:
+    source: official_huggingface
+    url: https://huggingface.co/tencent/Hy3-preview-Base
+upstream:
+  huggingface:
+    id: tencent/Hy3-preview-Base
+    revision: 54a62bb00a50195423bffb6b55e91aa28b6a8ce2
+    pipeline_tag: text-generation
+    model_type: hy_v3
+    architectures:
+      - HYV3ForCausalLM
+    license: other
+    tags:
+      - conversational
+      - endpoints_compatible
+      - hy_v3
+      - license:other
+      - region:us
+      - safetensors
+      - text-generation
+      - transformers
+    config_context_length: 262144
+    chat_template_sha256: 6862f11db60f7b9d37f2fb8d7c2c37581240c3b81296a8b42e0d3181a2b5f8d8
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-09-12T06:37:26.301428372Z

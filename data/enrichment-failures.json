@@ -1,7 +1,8 @@
 {
-  "failure_count": 2,
+  "failure_count": 3,
   "failures": {
-    "cohere/tiny-aya-base-32k": "Hugging Face config.json returned 401 Unauthorized",
+    "inference-net/schematron-v2-small": "Hugging Face model request returned 401 Unauthorized",
+    "inference-net/schematron-v2-turbo": "Hugging Face model request returned 401 Unauthorized",
     "microsoft/wizardlm-2-8x22b": "Hugging Face model request returned 401 Unauthorized"
   }
 }
