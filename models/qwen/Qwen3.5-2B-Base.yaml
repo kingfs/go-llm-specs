@@ -1,0 +1,53 @@
+schema_version: 2
+id: qwen/qwen3.5-2b-base
+name: Qwen3.5-2B-Base
+provider: Qwen
+developer: qwen
+lifecycle: candidate
+context_length: 0
+features:
+  - ModalityImageIn
+  - ModalityTextIn
+  - ModalityTextOut
+links:
+  model_card: https://huggingface.co/Qwen/Qwen3.5-2B-Base
+identifiers:
+  huggingface:
+    - Qwen/Qwen3.5-2B-Base
+provenance:
+  features:
+    source: official_huggingface_pipeline
+    url: https://huggingface.co/Qwen/Qwen3.5-2B-Base
+  id:
+    source: official_huggingface
+    url: https://huggingface.co/Qwen/Qwen3.5-2B-Base
+  name:
+    source: official_huggingface
+    url: https://huggingface.co/Qwen/Qwen3.5-2B-Base
+upstream:
+  huggingface:
+    id: Qwen/Qwen3.5-2B-Base
+    revision: b1485b2fa6dfa1287294f269f5fb618e03d52d7c
+    pipeline_tag: image-text-to-text
+    model_type: qwen3_5
+    architectures:
+      - Qwen3_5ForConditionalGeneration
+    license: apache-2.0
+    tags:
+      - conversational
+      - deploy:sagemaker
+      - endpoints_compatible
+      - image-text-to-text
+      - license:apache-2.0
+      - qwen3_5
+      - region:us
+      - safetensors
+      - transformers
+    tokenizer_model_max_length: 262144
+    processor_class: Qwen3VLProcessor
+    chat_template_sha256: 2c6231b5795b6cf23495e6b9cefd20d59bf59cf0fcb7eca4fb82c1a79d1e05cd
+    structured_files:
+      - config.json
+      - preprocessor_config.json
+      - tokenizer_config.json
+    fetched_at: 2026-09-13T06:53:33.031312895Z

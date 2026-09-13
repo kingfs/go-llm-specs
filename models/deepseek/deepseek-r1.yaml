@@ -44,7 +44,6 @@ upstream:
       - response_format
       - seed
       - stop
-      - structured_outputs
       - temperature
       - tool_choice
       - tools
@@ -55,7 +54,7 @@ upstream:
     output_modalities:
       - text
     knowledge_cutoff: "2024-07-31"
-    fetched_at: 2026-08-14T03:53:27.101220713Z
+    fetched_at: 2026-09-13T06:53:32.188383123Z
   huggingface:
     id: deepseek-ai/DeepSeek-R1
     revision: 56d4cbbb4d29f4355bab4b9a39ccb717a14ad5ad
