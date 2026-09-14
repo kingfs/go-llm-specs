@@ -42,10 +42,8 @@ or the public catalog:
   standalone language models. Their records stay in `models/` for provenance,
   but they are excluded from every compiled artifact.
 
-The classification lives in `internal/registry/variant.go` and is applied by
-the generator, the public catalog, and Hugging Face candidate materialization,
-so the same rule holds across every artifact. A record can make the decision
-explicit with the optional `kind` field:
+The classification lives in `internal/registry/variant.go`. A record can make
+the decision explicit with the optional `kind` field:
 
 ```yaml
 kind: model            # model | serving-artifact | draft-head | adapter | quantization
@@ -55,7 +53,9 @@ An explicit `kind` always wins over the ID and description patterns, so a
 reviewed record can override a false positive. `serving-artifact`, `draft-head`
 and `adapter` are excluded from every compiled artifact; an empty `kind` means
 `model`. `quantization` is reported by `task catalog-doctor` for review but is
-still compiled.
+still compiled. The generator, the public catalog, Hugging Face candidate
+materialization and the Codex exporter all use `IsCompiledKind`, so a serving
+kind can never reach `models_gen.go`, `catalog.json` or a runnable Codex entry.
 
 ## Publisher catalog
 

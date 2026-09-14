@@ -159,3 +159,36 @@ func TestMergeCatalogsRejectsCollision(t *testing.T) {
 		t.Fatal("expected collision error")
 	}
 }
+
+func TestEnforceCodexAuthorityExcludesServingKinds(t *testing.T) {
+	draft := codexReadyModel()
+	draft.ID = "deepseek/deepseek-v4-flash-dspark"
+	draft.Developer = "deepseek"
+	draft.Links.ModelCard = "https://huggingface.co/deepseek-ai/DeepSeek-V4-Flash"
+	draft.Upstream.HuggingFace = &registry.HuggingFaceMetadata{ID: "deepseek-ai/DeepSeek-V4-Flash", Revision: "abc123"}
+	publishers := []provider.Provider{{
+		SchemaVersion: provider.CurrentSchemaVersion,
+		ID:            "deepseek",
+		Name:          "DeepSeek",
+		Official:      provider.Official{Homepage: "https://www.deepseek.com/"},
+		Organizations: provider.Organizations{HuggingFace: []string{"deepseek-ai"}},
+	}}
+	out, err := enforceCodexAuthority([]registry.Model{draft}, publishers)
+	if err != nil {
+		t.Fatal(err)
+	}
+	if out[0].Codex != nil {
+		t.Fatal("a draft head was exported as a runnable Codex model")
+	}
+
+	override := draft
+	override.Kind = registry.KindModel
+	override.Links.ModelCard = ""
+	out, err = enforceCodexAuthority([]registry.Model{override}, publishers)
+	if err != nil {
+		t.Fatal(err)
+	}
+	if out[0].Codex != nil {
+		t.Fatal("an unpinned identity must still be rejected")
+	}
+}

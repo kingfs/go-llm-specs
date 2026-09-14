@@ -91,3 +91,16 @@ func TestClassifyKind(t *testing.T) {
 		t.Fatal("explicit draft-head kind must be excluded")
 	}
 }
+
+func TestIsCompiledKind(t *testing.T) {
+	for _, kind := range []string{KindModel, KindQuantization} {
+		if !IsCompiledKind(kind) {
+			t.Errorf("IsCompiledKind(%q) = false, want true", kind)
+		}
+	}
+	for _, kind := range ServingKinds {
+		if IsCompiledKind(kind) {
+			t.Errorf("IsCompiledKind(%q) = true, want false", kind)
+		}
+	}
+}

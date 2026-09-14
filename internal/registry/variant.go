@@ -65,6 +65,11 @@ func IsServingVariant(m Model) bool {
 	return IsServingKind(ClassifyKind(m))
 }
 
+// IsCompiledKind reports whether kind may appear in a compiled artifact.
+func IsCompiledKind(kind string) bool {
+	return !IsServingKind(kind)
+}
+
 // ClassifyKind returns the effective kind of a record. An explicit Kind field
 // always wins so a human can override a false positive; otherwise the ID and
 // description patterns classify routing aliases and draft heads. Unmatched

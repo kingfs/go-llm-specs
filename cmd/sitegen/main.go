@@ -142,7 +142,7 @@ func buildCatalog(providers []provider.Provider, models []registry.Model, releas
 	result := siteCatalog{SchemaVersion: catalogSchemaVersion}
 	seenProviders := make(map[string]siteProvider)
 	for _, m := range models {
-		if registry.IsServingVariant(m) {
+		if !registry.IsCompiledKind(registry.ClassifyKind(m)) {
 			continue
 		}
 		cleanName := cleanProviderName(m.Provider)

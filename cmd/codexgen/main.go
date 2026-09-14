@@ -194,6 +194,14 @@ func enforceCodexAuthority(models []registry.Model, publishers []provider.Provid
 		if model.Codex == nil || !model.Codex.Enabled {
 			continue
 		}
+		if kind := registry.ClassifyKind(*model); !registry.IsCompiledKind(kind) {
+			// Provider and inference packaging can never run as a Codex model.
+			if model.FilePath != "" && hasExplicitCodexBlock(model.FilePath) {
+				return nil, fmt.Errorf("%s: %s records cannot be exported as runnable Codex models", model.ID, kind)
+			}
+			model.Codex = nil
+			continue
+		}
 		publisher, ok := byID[strings.ToLower(model.Developer)]
 		if !ok || !officialHuggingFaceIdentity(*model, publisher) {
 			// Explicit Codex blocks are human assertions and should fail loudly;

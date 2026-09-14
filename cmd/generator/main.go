@@ -223,7 +223,7 @@ func buildProcessedModels(finalModels map[string]ModelRegistry) []*ProcessedMode
 		if m.Lifecycle != "" && m.Lifecycle != "active" {
 			continue
 		}
-		if registrymodel.IsServingVariant(m) {
+		if !registrymodel.IsCompiledKind(registrymodel.ClassifyKind(m)) {
 			continue
 		}
 		p := &ProcessedModel{
