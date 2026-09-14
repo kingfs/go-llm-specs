@@ -256,3 +256,45 @@ func TestIndexLookupAmbiguity(t *testing.T) {
 		t.Fatalf("unknown identifier matched: position=%d ambiguous=%v", position, ambiguous)
 	}
 }
+
+func TestRunReportsEndpointFailureWithoutFailing(t *testing.T) {
+	server := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		w.WriteHeader(http.StatusUnauthorized)
+	}))
+	defer server.Close()
+
+	providersDir := filepath.Join(t.TempDir(), "providers")
+	modelsDir := filepath.Join(t.TempDir(), "models")
+	writeProvider(t, providersDir, "acme", provider.OfficialAPI{
+		URL: server.URL, Env: "ACME_API_KEY", Auth: provider.OfficialAPIAuthBearer, ItemsPath: "data",
+	})
+	writeModel(t, modelsDir, "acme/acme-gpt-5")
+
+	// A rejected or expired key must never fail the command: the publisher is
+	// reported as an error and the remaining publishers still run.
+	t.Setenv("ACME_API_KEY", "expired-key")
+	output := filepath.Join(t.TempDir(), "report.json")
+	if err := run(context.Background(), config{
+		ProvidersDir: providersDir, ModelsDir: modelsDir, Output: output, Timeout: time.Second, Apply: true,
+	}); err != nil {
+		t.Fatalf("run must not fail on a rejected key: %v", err)
+	}
+	data, err := os.ReadFile(output)
+	if err != nil {
+		t.Fatal(err)
+	}
+	var r report
+	if err := json.Unmarshal(data, &r); err != nil {
+		t.Fatal(err)
+	}
+	if len(r.Providers) != 1 || r.Providers[0].Status != "error" || r.Providers[0].Error == "" {
+		t.Fatalf("report = %#v", r.Providers)
+	}
+	saved, err := registry.Load(filepath.Join(modelsDir, "acme", "acme-gpt-5.yaml"))
+	if err != nil {
+		t.Fatal(err)
+	}
+	if len(saved.Identifiers.Official) != 0 {
+		t.Fatalf("a failed lookup must not write identity: %#v", saved.Identifiers.Official)
+	}
+}
