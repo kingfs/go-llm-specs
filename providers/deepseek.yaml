@@ -9,3 +9,6 @@ organizations:
   github: [deepseek-ai]
 discovery:
   huggingface: true
+identity:
+  strategy: publisher
+  canonical_prefix: deepseek

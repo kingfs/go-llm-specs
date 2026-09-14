@@ -84,8 +84,9 @@ The catalog intentionally starts with major publishers. `task catalog-audit`
 lists long-tail publisher strings that still need a reviewed provider record;
 the tool never invents official URLs. `task catalog-doctor` writes a read-only
 `data/catalog-doctor.json` listing every record by `kind` plus routing aliases,
-draft heads, quantization candidates, pretrained `-base` variants, and providers
-whose model lacks an authoritative identity.
+draft heads, quantization candidates, pretrained `-base` variants, resolved
+identity sources, records whose identity is not yet corroborated, and publisher
+models that still lack an organization repository.
 
 ## Model records
 
@@ -111,6 +112,24 @@ Top-level fields remain convenient compiled values. `provenance` explains why
 a value was selected without turning each value into a deeply nested object.
 It is audit metadata, not permission to overwrite the value: once a top-level
 field exists in YAML, every automatic source treats it as immutable.
+
+A model may also pin where its identity came from. This is the highest-priority
+override and is only needed when the automatic resolution is wrong or when a
+closed model must be accepted without a first-party repository:
+
+```yaml
+identity:
+  source: manual        # manual | official | official_huggingface | official_modelscope | openrouter
+  verified: true
+```
+
+When the block is absent, `internal/identity` resolves the origin in this order:
+an explicit block, then a repository inside one of the publisher's declared
+official organizations, then an official identifier or link (`official_*` or
+`official`), and finally OpenRouter. OpenRouter is authoritative for aggregator
+publishers and is reported unverified for publisher-strategy publishers until a
+first-party source corroborates it. The pilot enables publisher strategy for
+DeepSeek and Qwen; every other publisher keeps the aggregator default.
 
 ## Incremental workflow
 

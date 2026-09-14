@@ -10,3 +10,6 @@ organizations:
   github: [QwenLM]
 discovery:
   huggingface: true
+identity:
+  strategy: publisher
+  canonical_prefix: qwen

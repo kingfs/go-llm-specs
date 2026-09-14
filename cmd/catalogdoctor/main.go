@@ -10,8 +10,8 @@ import (
 	"path/filepath"
 	"regexp"
 	"sort"
-	"strings"
 
+	"github.com/kingfs/go-llm-specs/internal/identity"
 	"github.com/kingfs/go-llm-specs/internal/provider"
 	"github.com/kingfs/go-llm-specs/internal/registry"
 )
@@ -27,15 +27,16 @@ var quantizationSuffix = regexp.MustCompile(`(?i)-(bf16|fp8|fp4|nvfp4|int4|int8|
 var baseSuffix = regexp.MustCompile(`(?i)-base$`)
 
 type doctorReport struct {
-	SchemaVersion int                 `json:"schema_version"`
-	Summary       doctorSummary       `json:"summary"`
-	ByKind        map[string]int      `json:"by_kind"`
-	RoutingAlias  []string            `json:"routing_aliases"`
-	DraftHeads    []string            `json:"draft_heads"`
-	Quantization  []string            `json:"quantization_candidates"`
-	BaseVariants  []string            `json:"base_variants"`
-	IdentityGaps  []doctorIdentityGap `json:"identity_gaps"`
-	Aggregators   []string            `json:"aggregator_providers"`
+	SchemaVersion int                   `json:"schema_version"`
+	Summary       doctorSummary         `json:"summary"`
+	ByKind        map[string]int        `json:"by_kind"`
+	Identity      doctorIdentitySummary `json:"identity"`
+	RoutingAlias  []string              `json:"routing_aliases"`
+	DraftHeads    []string              `json:"draft_heads"`
+	Quantization  []string              `json:"quantization_candidates"`
+	BaseVariants  []string              `json:"base_variants"`
+	IdentityGaps  []doctorIdentityGap   `json:"identity_gaps"`
+	Aggregators   []string              `json:"aggregator_providers"`
 }
 
 type doctorSummary struct {
@@ -45,6 +46,18 @@ type doctorSummary struct {
 	Serving      int `json:"serving_variants"`
 	Quantization int `json:"quantization_candidates"`
 	IdentityGaps int `json:"identity_gaps"`
+	Unverified   int `json:"unverified_identities"`
+}
+
+type doctorIdentitySummary struct {
+	BySource   map[string]int      `json:"by_source"`
+	Unverified []doctorIdentityRef `json:"unverified"`
+}
+
+type doctorIdentityRef struct {
+	ID       string `json:"id"`
+	Provider string `json:"provider"`
+	Source   string `json:"source"`
 }
 
 type doctorIdentityGap struct {
@@ -99,13 +112,10 @@ func run(providersDir, modelsDir, output string, check bool) error {
 }
 
 func buildReport(providers []provider.Provider, models []registry.Model) doctorReport {
-	byID := make(map[string]provider.Provider, len(providers))
-	for _, p := range providers {
-		byID[p.ID] = p
-	}
 	report := doctorReport{
 		SchemaVersion: catalogDoctorSchemaVersion,
 		ByKind:        map[string]int{},
+		Identity:      doctorIdentitySummary{BySource: map[string]int{}},
 	}
 	for _, p := range providers {
 		if !p.HasAuthoritativeSource() {
@@ -136,7 +146,22 @@ func buildReport(providers []provider.Provider, models []registry.Model) doctorR
 		if baseSuffix.MatchString(m.ID) {
 			report.BaseVariants = append(report.BaseVariants, m.ID)
 		}
-		p, ok := providerForModel(m, byID)
+		p, ok := identity.ProviderFor(m, providers)
+		resolved := identity.Resolved{Source: identity.SourceOpenRouter, Verified: true}
+		if ok {
+			resolved = identity.Resolve(m, p)
+		}
+		report.Identity.BySource[resolved.Source]++
+		if !resolved.Verified {
+			providerID := ""
+			if ok {
+				providerID = p.ID
+			}
+			report.Identity.Unverified = append(report.Identity.Unverified, doctorIdentityRef{
+				ID: m.ID, Provider: providerID, Source: resolved.Source,
+			})
+			report.Summary.Unverified++
+		}
 		if !ok || len(p.Organizations.HuggingFace) == 0 {
 			continue
 		}
@@ -151,6 +176,9 @@ func buildReport(providers []provider.Provider, models []registry.Model) doctorR
 	sort.Strings(report.BaseVariants)
 	sort.Strings(report.Aggregators)
 	sort.Slice(report.IdentityGaps, func(i, j int) bool { return report.IdentityGaps[i].ID < report.IdentityGaps[j].ID })
+	sort.Slice(report.Identity.Unverified, func(i, j int) bool {
+		return report.Identity.Unverified[i].ID < report.Identity.Unverified[j].ID
+	})
 	return report
 }
 
@@ -159,32 +187,4 @@ func hasHuggingFaceIdentity(m registry.Model) bool {
 		return true
 	}
 	return m.Upstream.HuggingFace != nil
-}
-
-// providerForModel resolves the publisher record a model belongs to. Model IDs
-// do not always match the provider directory, so developer, directory and ID
-// prefix are tried in order.
-func providerForModel(m registry.Model, byID map[string]provider.Provider) (provider.Provider, bool) {
-	candidates := []string{
-		normalizeKey(m.Developer),
-		normalizeKey(filepath.Base(filepath.Dir(m.FilePath))),
-		normalizeKey(strings.SplitN(m.ID, "/", 2)[0]),
-	}
-	for _, candidate := range candidates {
-		if candidate == "" {
-			continue
-		}
-		for id, p := range byID {
-			if normalizeKey(id) == candidate || normalizeKey(p.Name) == candidate {
-				return p, true
-			}
-		}
-	}
-	return provider.Provider{}, false
-}
-
-func normalizeKey(value string) string {
-	value = strings.ToLower(strings.TrimSpace(value))
-	value = strings.NewReplacer(" ", "", "-", "", "_", "", ".", "").Replace(value)
-	return value
 }

@@ -40,6 +40,7 @@ type Model struct {
 	Developer     string                `yaml:"developer,omitempty" json:"developer,omitempty"`
 	Lifecycle     string                `yaml:"lifecycle,omitempty" json:"lifecycle,omitempty"`
 	Kind          string                `yaml:"kind,omitempty" json:"kind,omitempty"`
+	Identity      *IdentityMetadata     `yaml:"identity,omitempty" json:"identity,omitempty"`
 	Description   string                `yaml:"description,omitempty" json:"description,omitempty"`
 	DescriptionCN string                `yaml:"description_cn,omitempty" json:"description_cn,omitempty"`
 	ContextLen    int                   `yaml:"context_length" json:"context_length"`
@@ -103,6 +104,14 @@ type Provenance struct {
 }
 
 func (m Model) IsV2() bool { return m.SchemaVersion >= CurrentSchemaVersion }
+
+// IdentityMetadata records the authoritative origin of a model identity. It is
+// an optional human-reviewed override: when it is empty, internal/identity
+// derives the effective origin from identifiers and the publisher record.
+type IdentityMetadata struct {
+	Source   string `yaml:"source,omitempty" json:"source,omitempty"`
+	Verified bool   `yaml:"verified,omitempty" json:"verified,omitempty"`
+}
 
 type UpstreamMetadata struct {
 	OpenRouter  *OpenRouterMetadata  `yaml:"openrouter,omitempty" json:"openrouter,omitempty"`

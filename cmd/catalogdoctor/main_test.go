@@ -8,13 +8,17 @@ import (
 )
 
 func testProvider(id string, hfOrgs []string) provider.Provider {
-	return provider.Provider{
+	p := provider.Provider{
 		SchemaVersion: provider.CurrentSchemaVersion,
 		ID:            id,
 		Name:          id,
 		Official:      provider.Official{Homepage: "https://example.com/"},
 		Organizations: provider.Organizations{HuggingFace: hfOrgs},
 	}
+	if len(hfOrgs) > 0 {
+		p.Identity = provider.Identity{Strategy: provider.IdentityStrategyPublisher}
+	}
+	return p
 }
 
 func TestBuildReportClassifiesRecords(t *testing.T) {
@@ -69,5 +73,11 @@ func TestBuildReportFlagsIdentityGap(t *testing.T) {
 	report := buildReport(providers, models)
 	if len(report.IdentityGaps) != 1 || report.IdentityGaps[0].Provider != "qwen" {
 		t.Fatalf("identity gaps = %#v", report.IdentityGaps)
+	}
+	if report.Summary.Unverified != 1 {
+		t.Fatalf("unverified = %d, want 1", report.Summary.Unverified)
+	}
+	if len(report.Identity.Unverified) != 1 || report.Identity.Unverified[0].ID != "qwen/qwen-max" {
+		t.Fatalf("unverified identities = %#v", report.Identity.Unverified)
 	}
 }

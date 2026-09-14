@@ -6,11 +6,135 @@
     "candidates": 147,
     "serving_variants": 10,
     "quantization_candidates": 25,
-    "identity_gaps": 104
+    "identity_gaps": 104,
+    "unverified_identities": 23
   },
   "by_kind": {
     "draft-head": 10,
     "model": 706
+  },
+  "identity": {
+    "by_source": {
+      "official_huggingface": 381,
+      "openrouter": 335
+    },
+    "unverified": [
+      {
+        "id": "alibaba/tongyi-deepresearch-30b-a3b",
+        "provider": "qwen",
+        "source": "openrouter"
+      },
+      {
+        "id": "qwen/qwen-max",
+        "provider": "qwen",
+        "source": "openrouter"
+      },
+      {
+        "id": "qwen/qwen-plus",
+        "provider": "qwen",
+        "source": "openrouter"
+      },
+      {
+        "id": "qwen/qwen-plus-2025-07-28",
+        "provider": "qwen",
+        "source": "openrouter"
+      },
+      {
+        "id": "qwen/qwen-turbo",
+        "provider": "qwen",
+        "source": "openrouter"
+      },
+      {
+        "id": "qwen/qwen-vl-max",
+        "provider": "qwen",
+        "source": "openrouter"
+      },
+      {
+        "id": "qwen/qwen-vl-plus",
+        "provider": "qwen",
+        "source": "openrouter"
+      },
+      {
+        "id": "qwen/qwen3-coder-flash",
+        "provider": "qwen",
+        "source": "openrouter"
+      },
+      {
+        "id": "qwen/qwen3-coder-plus",
+        "provider": "qwen",
+        "source": "openrouter"
+      },
+      {
+        "id": "qwen/qwen3-max",
+        "provider": "qwen",
+        "source": "openrouter"
+      },
+      {
+        "id": "qwen/qwen3-max-thinking",
+        "provider": "qwen",
+        "source": "openrouter"
+      },
+      {
+        "id": "qwen/qwen3.5-flash-02-23",
+        "provider": "qwen",
+        "source": "openrouter"
+      },
+      {
+        "id": "qwen/qwen3.5-plus-02-15",
+        "provider": "qwen",
+        "source": "openrouter"
+      },
+      {
+        "id": "qwen/qwen3.5-plus-20260420",
+        "provider": "qwen",
+        "source": "openrouter"
+      },
+      {
+        "id": "qwen/qwen3.6-flash",
+        "provider": "qwen",
+        "source": "openrouter"
+      },
+      {
+        "id": "qwen/qwen3.6-max-preview",
+        "provider": "qwen",
+        "source": "openrouter"
+      },
+      {
+        "id": "qwen/qwen3.6-plus",
+        "provider": "qwen",
+        "source": "openrouter"
+      },
+      {
+        "id": "qwen/qwen3.6-plus-preview",
+        "provider": "qwen",
+        "source": "openrouter"
+      },
+      {
+        "id": "qwen/qwen3.7-flash",
+        "provider": "qwen",
+        "source": "openrouter"
+      },
+      {
+        "id": "qwen/qwen3.7-max",
+        "provider": "qwen",
+        "source": "openrouter"
+      },
+      {
+        "id": "qwen/qwen3.7-plus",
+        "provider": "qwen",
+        "source": "openrouter"
+      },
+      {
+        "id": "qwen/qwen3.8-max",
+        "provider": "qwen",
+        "source": "openrouter"
+      },
+      {
+        "id": "qwen/qwen3.8-max-0902",
+        "provider": "qwen",
+        "source": "openrouter"
+      }
+    ]
   },
   "routing_aliases": null,
   "draft_heads": [
