@@ -39,12 +39,71 @@ type Identity struct {
 	// opt-in because publishers that also ship closed models have no repository
 	// to corroborate against.
 	RequireCorroboration bool `yaml:"require_corroboration,omitempty" json:"require_corroboration,omitempty"`
+	// OfficialAPI declares a first-party model list used to corroborate
+	// identity. Acquisition records the official identifier and, when a link
+	// template is given, the official link. Attribute enrichment stays with the
+	// existing sources.
+	OfficialAPI *OfficialAPI `yaml:"official_api,omitempty" json:"official_api,omitempty"`
+}
+
+// OfficialAPI describes a first-party model-list endpoint. The shape is
+// declarative because closed vendors differ in authentication and payload:
+//
+//	openai:    bearer token,   items under "data",  id field "id"
+//	anthropic: x-api-key,      items under "data",  id field "id"
+//	google:    query key,      items under "models", id field "name"
+//	xai:       bearer token,   items under "data",  id field "id"
+type OfficialAPI struct {
+	URL string `yaml:"url" json:"url"`
+	// Env names the environment variable holding the API key. When it is empty
+	// the endpoint is treated as public. A configured Env whose value is unset
+	// makes acquisition skip the provider instead of failing.
+	Env string `yaml:"env,omitempty" json:"env,omitempty"`
+	// Auth is bearer, x-api-key, query or none (default none).
+	Auth       string            `yaml:"auth,omitempty" json:"auth,omitempty"`
+	QueryParam string            `yaml:"query_param,omitempty" json:"query_param,omitempty"`
+	Headers    map[string]string `yaml:"headers,omitempty" json:"headers,omitempty"`
+	// ItemsPath is the response field holding the model array; empty means the
+	// response is the array itself.
+	ItemsPath string `yaml:"items_path,omitempty" json:"items_path,omitempty"`
+	// IDField is the field holding the model identifier (default "id").
+	IDField string `yaml:"id_field,omitempty" json:"id_field,omitempty"`
+	// IDPrefix is stripped from every official identifier (for example the
+	// "models/" prefix returned by the Gemini API).
+	IDPrefix string `yaml:"id_prefix,omitempty" json:"id_prefix,omitempty"`
+	// LinkTemplate builds an official link from {id} when the vendor serves
+	// per-model pages.
+	LinkTemplate string `yaml:"link_template,omitempty" json:"link_template,omitempty"`
 }
 
 const (
 	IdentityStrategyPublisher  = "publisher"
 	IdentityStrategyAggregator = "aggregator"
 )
+
+// Official API authentication modes.
+const (
+	OfficialAPIAuthNone   = "none"
+	OfficialAPIAuthBearer = "bearer"
+	OfficialAPIAuthHeader = "x-api-key"
+	OfficialAPIAuthQuery  = "query"
+)
+
+// EffectiveAuth returns the declared auth mode, defaulting to none.
+func (a OfficialAPI) EffectiveAuth() string {
+	if a.Auth == "" {
+		return OfficialAPIAuthNone
+	}
+	return a.Auth
+}
+
+// EffectiveIDField returns the declared identifier field, defaulting to "id".
+func (a OfficialAPI) EffectiveIDField() string {
+	if a.IDField == "" {
+		return "id"
+	}
+	return a.IDField
+}
 
 // EffectiveStrategy returns the declared strategy, defaulting to aggregator.
 func (i Identity) EffectiveStrategy() string {
@@ -57,7 +116,10 @@ func (i Identity) EffectiveStrategy() string {
 // HasAuthoritativeSource reports whether the provider declares a first-party
 // place where model identities can be verified.
 func (p Provider) HasAuthoritativeSource() bool {
-	return len(p.Organizations.HuggingFace) > 0 || len(p.Organizations.ModelScope) > 0 || p.Official.API != ""
+	if len(p.Organizations.HuggingFace) > 0 || len(p.Organizations.ModelScope) > 0 || p.Official.API != "" {
+		return true
+	}
+	return p.Identity.OfficialAPI != nil && strings.TrimSpace(p.Identity.OfficialAPI.URL) != ""
 }
 
 type Official struct {
@@ -97,6 +159,20 @@ func (p Provider) Validate() error {
 	}
 	if p.Identity.RequireCorroboration && p.Identity.Strategy != IdentityStrategyPublisher {
 		return fmt.Errorf("provider %s requires identity corroboration without publisher strategy", p.ID)
+	}
+	if api := p.Identity.OfficialAPI; api != nil {
+		if strings.TrimSpace(api.URL) == "" {
+			return fmt.Errorf("provider %s declares an official API without a URL", p.ID)
+		}
+		switch api.EffectiveAuth() {
+		case OfficialAPIAuthNone, OfficialAPIAuthBearer, OfficialAPIAuthHeader:
+		case OfficialAPIAuthQuery:
+			if strings.TrimSpace(api.QueryParam) == "" {
+				return fmt.Errorf("provider %s uses query authentication without a query parameter", p.ID)
+			}
+		default:
+			return fmt.Errorf("provider %s has unknown official API auth %q", p.ID, api.Auth)
+		}
 	}
 	return nil
 }

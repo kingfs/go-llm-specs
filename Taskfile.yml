@@ -111,6 +111,11 @@ tasks:
     cmds:
       - go run ./cmd/catalogsync -promote-ready -output data/catalog-audit.json {{.CLI_ARGS}}
 
+  official-identity:
+    desc: Corroborate identity from first-party model APIs (requires vendor API keys; dry run unless -- -apply)
+    cmds:
+      - go run ./cmd/officialsync {{.CLI_ARGS}}
+
   catalog-backfill:
     desc: One-time exact identity backfill from subscribed official Hugging Face organizations
     cmds:

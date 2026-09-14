@@ -5,3 +5,14 @@ official:
   homepage: https://www.anthropic.com/
   documentation: https://docs.anthropic.com/en/docs/about-claude/models
   model_catalog: https://docs.anthropic.com/en/docs/about-claude/models
+identity:
+  strategy: publisher
+  require_corroboration: true
+  official_api:
+    url: https://api.anthropic.com/v1/models
+    env: ANTHROPIC_API_KEY
+    auth: x-api-key
+    headers:
+      anthropic-version: "2023-06-01"
+    items_path: data
+    id_field: id

@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "providers": [
+    {
+      "provider": "anthropic",
+      "status": "skipped_no_credentials",
+      "official_models": 0,
+      "matched": 0,
+      "applied": 0
+    },
+    {
+      "provider": "google",
+      "status": "skipped_no_credentials",
+      "official_models": 0,
+      "matched": 0,
+      "applied": 0
+    },
+    {
+      "provider": "openai",
+      "status": "skipped_no_credentials",
+      "official_models": 0,
+      "matched": 0,
+      "applied": 0
+    },
+    {
+      "provider": "xai",
+      "status": "skipped_no_credentials",
+      "official_models": 0,
+      "matched": 0,
+      "applied": 0
+    }
+  ]
+}

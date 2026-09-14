@@ -111,3 +111,27 @@ func TestReadyForPromotionRequiresCorroboratedIdentity(t *testing.T) {
 		t.Fatal("an official organization repository must corroborate identity")
 	}
 }
+
+func TestReadyForPromotionAcceptsOfficialAPIIdentity(t *testing.T) {
+	providers := []provider.Provider{{
+		SchemaVersion: provider.CurrentSchemaVersion,
+		ID:            "openai",
+		Name:          "OpenAI",
+		Official:      provider.Official{Homepage: "https://openai.com/"},
+		Identity: provider.Identity{
+			Strategy: provider.IdentityStrategyPublisher, RequireCorroboration: true,
+			OfficialAPI: &provider.OfficialAPI{URL: "https://api.openai.com/v1/models"},
+		},
+	}}
+	model := registry.Model{
+		ID: "openai/gpt-6-astra", Developer: "openai", ContextLen: 400000, Description: "A model.",
+		Features: []string{"CapChat"},
+	}
+	if readyForPromotion(model, providers) {
+		t.Fatal("an uncorroborated closed model must not promote")
+	}
+	model.Identifiers.Official = []string{"gpt-6-astra"}
+	if !readyForPromotion(model, providers) {
+		t.Fatal("an official API identifier must corroborate identity without a repository")
+	}
+}

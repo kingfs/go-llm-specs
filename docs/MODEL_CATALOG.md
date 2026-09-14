@@ -147,6 +147,44 @@ that also ship closed API models (Amazon, ByteDance Seed, Google, Meta, Mistral,
 Qwen) leave `require_corroboration` off until a first-party source for closed
 models exists, because they have no repository to corroborate against.
 
+## First-party identity APIs
+
+Publishers without open weights get their first-party source from an official
+model-list API. The shape is declarative because vendors differ in
+authentication and payload:
+
+```yaml
+identity:
+  strategy: publisher
+  require_corroboration: true
+  official_api:
+    url: https://api.anthropic.com/v1/models
+    env: ANTHROPIC_API_KEY      # absent value => that publisher is skipped
+    auth: x-api-key             # bearer | x-api-key | query | none
+    headers:
+      anthropic-version: "2023-06-01"
+    items_path: data            # response field holding the array
+    id_field: id                # id | name
+    id_prefix: models/          # stripped from every identifier (Gemini)
+    link_template: ""           # optional {id} template for an official link
+```
+
+OpenAI, Anthropic, Google and xAI are configured this way. `task official-identity`
+queries them and records only the official identifier (and an official link when
+a template is configured) in `identifiers.official` and `links.official`; it
+never overwrites attributes. It is a dry run unless `-- -apply` is passed, it
+writes `data/official-identity.json`, and a publisher whose key is unset is
+reported as `skipped_no_credentials` instead of failing, so it is safe to run
+without secrets.
+
+Matching is exact on a normalized identifier, with a single local key allowed to
+prefix a longer official identifier (which covers dated ids such as
+`claude-sonnet-4-5-20250929`). Ambiguous matches are reported and never guessed.
+Because these publishers now have a first-party source, they enable
+`require_corroboration`: a model discovered by OpenRouter stays a candidate until
+its official API or an official link confirms it, while remaining visible on the
+public catalog page.
+
 ## Incremental workflow
 
 ```text
@@ -166,7 +204,11 @@ official HF orgs ────┘
   repositories per run as `lifecycle: candidate` YAML records.
 - Candidate records are excluded from `models_gen.go` until structured enrichment
   and evidence-backed extraction provide the required facts. `task catalog-promote`
-  activates only ready records.
+  activates only ready records, and for a publisher that requires corroboration
+  only after an official organization repository, official model API or official
+  link confirms the identity.
+- `task official-identity -- -apply` queries the configured first-party model
+  APIs to corroborate closed-publisher identity. It is a dry run by default.
 - `task enrich -- -new-only` means source metadata is actually missing; it does
   not rescan every schema-v2 record.
 - model-card AI extraction is bounded to a small incremental batch and produces

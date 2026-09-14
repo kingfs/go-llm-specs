@@ -6,3 +6,12 @@ official:
   homepage: https://x.ai/
   documentation: https://docs.x.ai/docs/models
   model_catalog: https://docs.x.ai/docs/models
+identity:
+  strategy: publisher
+  require_corroboration: true
+  official_api:
+    url: https://api.x.ai/v1/models
+    env: XAI_API_KEY
+    auth: bearer
+    items_path: data
+    id_field: id

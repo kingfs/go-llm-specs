@@ -417,17 +417,29 @@ func featuresForPipeline(pipeline string) []string {
 // readyForPromotion reports whether a candidate record is now complete and, for
 // publishers that opt into corroboration, whether its identity is confirmed by
 // a first-party source. Such a record stays a candidate until an official
-// organization repository or official link confirms it, so a discovered record
-// never defines its own identity.
+// organization repository, an official model API or an official link confirms
+// it, so a discovered record never defines its own identity.
 func readyForPromotion(model registry.Model, providers []provider.Provider) bool {
-	if model.ContextLen <= 0 || strings.TrimSpace(model.Description) == "" || len(model.Features) == 0 || model.Upstream.HuggingFace == nil {
+	if model.ContextLen <= 0 || strings.TrimSpace(model.Description) == "" || len(model.Features) == 0 {
 		return false
 	}
 	p, ok := identity.ProviderFor(model, providers)
 	if !ok || !p.Identity.RequireCorroboration {
-		return true
+		// A candidate outside a gated publisher must still carry official
+		// repository evidence, which is the historical requirement.
+		return model.Upstream.HuggingFace != nil
 	}
-	return identity.Resolve(model, p).Verified
+	resolved := identity.Resolve(model, p)
+	if !resolved.Verified {
+		return false
+	}
+	// A repository-backed candidate still has to be structurally enriched; a
+	// record corroborated through an official model API has no repository to
+	// enrich from.
+	if resolved.Source == identity.SourceOfficialHuggingFace || resolved.Source == identity.SourceOfficialModelScope {
+		return model.Upstream.HuggingFace != nil
+	}
+	return true
 }
 
 func safeFilename(value string) string {

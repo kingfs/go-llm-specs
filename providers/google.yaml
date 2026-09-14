@@ -12,3 +12,12 @@ discovery:
   huggingface: true
 identity:
   strategy: publisher
+  require_corroboration: true
+  official_api:
+    url: https://generativelanguage.googleapis.com/v1beta/models
+    env: GEMINI_API_KEY
+    auth: query
+    query_param: key
+    items_path: models
+    id_field: name
+    id_prefix: models/

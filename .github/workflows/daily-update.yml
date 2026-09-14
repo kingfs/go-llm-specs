@@ -20,6 +20,10 @@ jobs:
       LLM_BASE_URL: ${{ vars.LLM_BASE_URL || 'https://api.openai.com/v1' }}
       LLM_MODEL: ${{ vars.LLM_MODEL || 'gpt-4o-mini' }}
       LLM_REASONING_EFFORT: ${{ vars.LLM_REASONING_EFFORT || 'none' }}
+      OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+      ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+      GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      XAI_API_KEY: ${{ secrets.XAI_API_KEY }}
     concurrency:
       group: daily-model-sync
       cancel-in-progress: false
@@ -72,6 +76,14 @@ jobs:
       - name: Apply safe high-confidence official model-card claims
         run: task suggestion -- auto-apply
 
+      - name: Corroborate identity from first-party model APIs
+        continue-on-error: true
+        run: |
+          task official-identity -- -apply
+          if [ -z "$OPENAI_API_KEY$ANTHROPIC_API_KEY$GEMINI_API_KEY$XAI_API_KEY" ]; then
+            echo "::warning::No first-party model API keys are configured; closed-publisher records stay candidates until an official identifier or link confirms them."
+          fi
+
       - name: Promote fully enriched official candidates
         run: task catalog-promote
 
@@ -101,7 +113,7 @@ jobs:
       - name: Check for synced changes
         id: changes
         run: |
-          if [ -z "$(git status --porcelain -- models/ providers/ models_gen.go data/models.json data/catalog-audit.json data/catalog-discovery.json data/enrichment-failures.json data/suggestions/ dist/codex/)" ]; then
+          if [ -z "$(git status --porcelain -- models/ providers/ models_gen.go data/models.json data/catalog-audit.json data/catalog-discovery.json data/official-identity.json data/enrichment-failures.json data/suggestions/ dist/codex/)" ]; then
             echo "changed=false" >> "$GITHUB_OUTPUT"
           else
             echo "changed=true" >> "$GITHUB_OUTPUT"
@@ -125,7 +137,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add models_gen.go data/models.json data/catalog-audit.json data/catalog-discovery.json data/enrichment-failures.json data/suggestions/ models/ providers/ dist/codex/
+          git add models_gen.go data/models.json data/catalog-audit.json data/catalog-discovery.json data/official-identity.json data/enrichment-failures.json data/suggestions/ models/ providers/ dist/codex/
           git commit -m "feat(data): sync upstream model registry"
           git push
 
