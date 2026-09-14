@@ -25,11 +25,13 @@ features:
   - ModalityVideoIn
 aliases:
   - google/gemini-3.1-pro-preview:batch
+  - ~google/gemini-pro-latest
 discovered_at: 2026-07-29T10:38:08.769703692Z
 identifiers:
   openrouter:
     - google/gemini-3.1-pro-preview
     - google/gemini-3.1-pro-preview:batch
+    - ~google/gemini-pro-latest
 upstream:
   openrouter:
     canonical_slug: google/gemini-3.1-pro-preview-20260219

@@ -26,6 +26,26 @@ such as `-pro` or `-fast` are folded only when the upstream description
 explicitly says they use the same underlying model or have identical
 capabilities; independently published models such as `o3-pro` remain separate.
 
+Two further classes of upstream records are provider or inference packaging
+rather than model identities, so they are never compiled into `models_gen.go`
+or the public catalog:
+
+- **Routing aliases** are OpenRouter's `~` namespace. They move between
+  checkpoints and have no stable identity of their own. When the upstream feed
+  names the model an alias currently resolves to, the alias is folded into that
+  model as an alias and an `identifiers.openrouter` value, and the standalone
+  record is removed; otherwise the record is dropped. A model the publisher
+  itself names `-latest`, such as `openai/gpt-chat-latest`, is a real model and
+  is recorded as-is.
+- **Draft heads** are speculative-decoding modules attached to another model's
+  checkpoint, such as DSpark, DFlash, EAGLE-3, and MTP heads. They are not
+  standalone language models. Their records stay in `models/` for provenance,
+  but they are excluded from every compiled artifact.
+
+The classification lives in `internal/registry/variant.go` and is applied by
+the generator, the public catalog, and Hugging Face candidate materialization,
+so the same rule holds across every artifact.
+
 ## Publisher catalog
 
 `providers/*.yaml` defines canonical publisher names, official entry points and

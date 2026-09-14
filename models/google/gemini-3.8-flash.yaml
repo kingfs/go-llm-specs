@@ -19,11 +19,13 @@ features:
   - ModalityVideoIn
 aliases:
   - google/gemini-3.8-flash:batch
+  - ~google/gemini-flash-latest
 discovered_at: 2026-09-03T06:36:01.566919718Z
 identifiers:
   openrouter:
     - google/gemini-3.8-flash
     - google/gemini-3.8-flash:batch
+    - ~google/gemini-flash-latest
 provenance:
   context_length:
     source: openrouter

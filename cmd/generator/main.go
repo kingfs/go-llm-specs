@@ -35,6 +35,15 @@ type OpenRouterModel struct {
 	Architecture        OpenRouterArchitecture `json:"architecture"`
 	Pricing             OpenRouterPricing      `json:"pricing"`
 	SupportedParameters []string               `json:"supported_parameters"`
+	AliasTarget         *OpenRouterAliasTarget `json:"alias_target"`
+}
+
+// OpenRouterAliasTarget is present on routing aliases such as
+// "~deepseek/deepseek-v4-flash-latest" and names the model the alias currently
+// resolves to.
+type OpenRouterAliasTarget struct {
+	Slug string `json:"slug"`
+	Name string `json:"name"`
 }
 
 type OpenRouterTopProvider struct {
@@ -206,6 +215,9 @@ func buildProcessedModels(finalModels map[string]ModelRegistry) []*ProcessedMode
 		if m.Lifecycle != "" && m.Lifecycle != "active" {
 			continue
 		}
+		if registrymodel.IsServingVariant(m) {
+			continue
+		}
 		p := &ProcessedModel{
 			ID:            id,
 			Name:          m.Name,
@@ -311,6 +323,12 @@ func syncToDisk(apiModels []OpenRouterModel, localModels map[string]ModelRegistr
 	}
 	for _, upstream := range apiModels {
 		upstreamID := upstream.ID
+		if registrymodel.IsRoutingAlias(upstreamID) {
+			if err := foldRoutingAlias(upstream, localModels, modelsDir); err != nil {
+				return err
+			}
+			continue
+		}
 		canonicalID := canonicalModelID(upstream.ID, upstream.Description)
 		upstream.ID = canonicalID
 		local := localModels[canonicalID]
@@ -331,6 +349,64 @@ func syncToDisk(apiModels []OpenRouterModel, localModels map[string]ModelRegistr
 		localModels[canonicalID] = merged
 	}
 	return nil
+}
+
+// foldRoutingAlias records an upstream routing pointer such as
+// "~deepseek/deepseek-v4-flash-latest" as an alias of the model it currently
+// resolves to. Routing aliases are not model identities, so no standalone
+// record is written for them. Because the pointer can move between checkpoints,
+// any previous binding is dropped before the current one is recorded.
+func foldRoutingAlias(upstream OpenRouterModel, localModels map[string]ModelRegistry, modelsDir string) error {
+	target := ""
+	if upstream.AliasTarget != nil {
+		target = strings.TrimSpace(upstream.AliasTarget.Slug)
+	}
+	if target == "" {
+		log.Printf("Skipping upstream routing alias %s: no alias target", upstream.ID)
+		return nil
+	}
+	if _, ok := localModels[target]; !ok {
+		log.Printf("Skipping upstream routing alias %s: target %s is not registered", upstream.ID, target)
+		return nil
+	}
+	for id, m := range localModels {
+		if id == target {
+			continue
+		}
+		aliases := removeFold(m.Aliases, upstream.ID)
+		identifiers := removeFold(m.Identifiers.OpenRouter, upstream.ID)
+		if len(aliases) == len(m.Aliases) && len(identifiers) == len(m.Identifiers.OpenRouter) {
+			continue
+		}
+		m.Aliases = aliases
+		m.Identifiers.OpenRouter = identifiers
+		if err := saveModelToDisk(m, modelsDir); err != nil {
+			return fmt.Errorf("unbind routing alias %s from %s: %w", upstream.ID, id, err)
+		}
+		localModels[id] = m
+	}
+	local := localModels[target]
+	local.Aliases = normalizeStringList(append(local.Aliases, upstream.ID))
+	local.Identifiers.OpenRouter = normalizeStringList(append(local.Identifiers.OpenRouter, upstream.ID))
+	if err := saveModelToDisk(local, modelsDir); err != nil {
+		return fmt.Errorf("fold routing alias %s into %s: %w", upstream.ID, target, err)
+	}
+	localModels[target] = local
+	return nil
+}
+
+func removeFold(values []string, target string) []string {
+	if len(values) == 0 {
+		return values
+	}
+	kept := make([]string, 0, len(values))
+	for _, value := range values {
+		if strings.EqualFold(value, target) {
+			continue
+		}
+		kept = append(kept, value)
+	}
+	return kept
 }
 
 func canonicalModelID(id, description string) string {
@@ -405,6 +481,25 @@ func consolidateLocalVariants(models map[string]ModelRegistry, modelsDir string)
 			return fmt.Errorf("save canonical model metadata for %s: %w", id, err)
 		}
 		models[id] = model
+	}
+	// Routing aliases are upstream pointers, not model identities. Their IDs are
+	// folded into the model they resolve to when the upstream feed names an
+	// alias target; the standalone records are dropped here.
+	for _, id := range ids {
+		if !registrymodel.IsRoutingAlias(id) {
+			continue
+		}
+		if _, ok := models[id]; !ok {
+			continue
+		}
+		path, err := modelFilePath(id, modelsDir)
+		if err != nil {
+			return err
+		}
+		if err := os.Remove(path); err != nil && !errors.Is(err, os.ErrNotExist) {
+			return fmt.Errorf("remove routing alias %s: %w", id, err)
+		}
+		delete(models, id)
 	}
 	return nil
 }

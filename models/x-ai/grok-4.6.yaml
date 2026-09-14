@@ -15,10 +15,13 @@ features:
   - ModalityImageIn
   - ModalityTextIn
   - ModalityTextOut
+aliases:
+  - ~x-ai/grok-latest
 discovered_at: 2026-08-13T03:56:35.72876082Z
 identifiers:
   openrouter:
     - x-ai/grok-4.6
+    - ~x-ai/grok-latest
 provenance:
   context_length:
     source: openrouter

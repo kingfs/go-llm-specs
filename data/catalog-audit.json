@@ -1,6 +1,6 @@
 {
   "providers": 24,
-  "models": 733,
+  "models": 716,
   "models_with_official_links": 517,
   "uncataloged_publishers": {
     "Ai21": 1,
@@ -61,14 +61,6 @@
     "switchpoint": 1,
     "tngtech": 3,
     "upstage": 1,
-    "xiaomi": 3,
-    "~Anthropic": 4,
-    "~Deepseek": 1,
-    "~Google": 2,
-    "~Moonshotai": 1,
-    "~Openai": 2,
-    "~X-Ai": 1,
-    "~openai": 4,
-    "~zai": 2
+    "xiaomi": 3
   }
 }

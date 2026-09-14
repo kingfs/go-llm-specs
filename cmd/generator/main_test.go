@@ -61,6 +61,127 @@ func TestBuildProcessedModelsExcludesLifecycleCandidates(t *testing.T) {
 	}
 }
 
+func TestBuildProcessedModelsExcludesServingVariants(t *testing.T) {
+	models := map[string]ModelRegistry{
+		"org/model":         {ID: "org/model", Name: "Model"},
+		"org/model-latest":  {ID: "org/model-latest", Name: "Model Latest"},
+		"~org/model-latest": {ID: "~org/model-latest", Name: "Model Latest"},
+		"org/model-dspark":  {ID: "org/model-dspark", Name: "Model DSpark"},
+	}
+	processed := buildProcessedModels(models)
+	if len(processed) != 2 {
+		t.Fatalf("unexpected processed models: %#v", processed)
+	}
+	got := map[string]bool{}
+	for _, p := range processed {
+		got[p.ID] = true
+	}
+	// A publisher-named "-latest" model is a real model; the "~" routing alias
+	// and the speculative draft head are not.
+	if !got["org/model"] || !got["org/model-latest"] {
+		t.Fatalf("publisher-named models were dropped: %#v", processed)
+	}
+	if got["~org/model-latest"] || got["org/model-dspark"] {
+		t.Fatalf("serving variant leaked into generated registry: %#v", processed)
+	}
+}
+
+func TestSyncToDiskFoldsRoutingAliasIntoAliasTarget(t *testing.T) {
+	dir := t.TempDir()
+	if err := saveModelToDisk(ModelRegistry{ID: "deepseek/deepseek-v4-flash-0731", Name: "DeepSeek V4 Flash 0731", Provider: "DeepSeek"}, dir); err != nil {
+		t.Fatal(err)
+	}
+	if err := saveModelToDisk(ModelRegistry{ID: "~deepseek/deepseek-v4-flash-latest", Name: "DeepSeek V4 Flash Latest", Provider: "~Deepseek"}, dir); err != nil {
+		t.Fatal(err)
+	}
+	local, err := loadRegistry(dir)
+	if err != nil {
+		t.Fatal(err)
+	}
+	upstream := []OpenRouterModel{{
+		ID:          "~deepseek/deepseek-v4-flash-latest",
+		AliasTarget: &OpenRouterAliasTarget{Slug: "deepseek/deepseek-v4-flash-0731"},
+	}}
+	if err := syncToDisk(upstream, local, dir); err != nil {
+		t.Fatal(err)
+	}
+	final, err := loadRegistry(dir)
+	if err != nil {
+		t.Fatal(err)
+	}
+	if _, ok := final["~deepseek/deepseek-v4-flash-latest"]; ok {
+		t.Fatal("routing alias was written as its own model")
+	}
+	target, ok := final["deepseek/deepseek-v4-flash-0731"]
+	if !ok {
+		t.Fatal("alias target is missing")
+	}
+	if !containsFold(target.Aliases, "~deepseek/deepseek-v4-flash-latest") {
+		t.Fatalf("routing alias was not folded into the target aliases: %#v", target.Aliases)
+	}
+	if !containsFold(target.Identifiers.OpenRouter, "~deepseek/deepseek-v4-flash-latest") {
+		t.Fatalf("routing alias identifier was not recorded: %#v", target.Identifiers.OpenRouter)
+	}
+}
+
+func TestSyncToDiskDropsLocalRoutingAliases(t *testing.T) {
+	dir := t.TempDir()
+	if err := saveModelToDisk(ModelRegistry{ID: "~openai/gpt-latest", Name: "GPT Latest", Provider: "~Openai"}, dir); err != nil {
+		t.Fatal(err)
+	}
+	local, err := loadRegistry(dir)
+	if err != nil {
+		t.Fatal(err)
+	}
+	if err := syncToDisk(nil, local, dir); err != nil {
+		t.Fatal(err)
+	}
+	final, err := loadRegistry(dir)
+	if err != nil {
+		t.Fatal(err)
+	}
+	if _, ok := final["~openai/gpt-latest"]; ok {
+		t.Fatal("routing alias record survived consolidation")
+	}
+}
+
+func TestSyncToDiskRebindsRoutingAlias(t *testing.T) {
+	dir := t.TempDir()
+	alias := "~deepseek/deepseek-v4-flash-latest"
+	old := ModelRegistry{
+		ID: "deepseek/deepseek-v4-flash-0731", Name: "Old", Provider: "DeepSeek",
+		Aliases:     []string{alias},
+		Identifiers: registrymodel.ModelIdentifiers{OpenRouter: []string{alias}},
+	}
+	if err := saveModelToDisk(old, dir); err != nil {
+		t.Fatal(err)
+	}
+	if err := saveModelToDisk(ModelRegistry{ID: "deepseek/deepseek-v4-flash-0901", Name: "New", Provider: "DeepSeek"}, dir); err != nil {
+		t.Fatal(err)
+	}
+	local, err := loadRegistry(dir)
+	if err != nil {
+		t.Fatal(err)
+	}
+	upstream := []OpenRouterModel{{
+		ID:          alias,
+		AliasTarget: &OpenRouterAliasTarget{Slug: "deepseek/deepseek-v4-flash-0901"},
+	}}
+	if err := syncToDisk(upstream, local, dir); err != nil {
+		t.Fatal(err)
+	}
+	final, err := loadRegistry(dir)
+	if err != nil {
+		t.Fatal(err)
+	}
+	if containsFold(final["deepseek/deepseek-v4-flash-0731"].Aliases, alias) {
+		t.Fatalf("stale routing alias binding was not removed: %#v", final["deepseek/deepseek-v4-flash-0731"].Aliases)
+	}
+	if !containsFold(final["deepseek/deepseek-v4-flash-0901"].Aliases, alias) {
+		t.Fatalf("routing alias was not rebound to the new target: %#v", final["deepseek/deepseek-v4-flash-0901"].Aliases)
+	}
+}
+
 func TestMergeModelRegistryLocalOverridesWin(t *testing.T) {
 	upstream := OpenRouterModel{
 		ID:            "openai/example",

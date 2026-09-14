@@ -16,6 +16,7 @@ features:
   - ModalityTextOut
 aliases:
   - moonshotai/kimi-k3:batch
+  - ~moonshotai/kimi-latest
 discovered_at: 2026-07-29T10:40:13.653747755Z
 links:
   model_card: https://huggingface.co/moonshotai/Kimi-K3
@@ -25,6 +26,7 @@ identifiers:
   openrouter:
     - moonshotai/kimi-k3
     - moonshotai/kimi-k3:batch
+    - ~moonshotai/kimi-latest
 provenance:
   max_output:
     source: openrouter

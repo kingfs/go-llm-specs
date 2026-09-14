@@ -37,7 +37,7 @@ func TestBuildCatalogMapsProviderAndCapabilities(t *testing.T) {
 
 func TestBuildCatalogCleansProviderAndOmitsFreeTag(t *testing.T) {
 	catalog := buildCatalog(nil, []registry.Model{{
-		ID: "~openai/gpt-test_free", Name: "~OpenAI: GPT Test Free", Provider: "~OpenAI",
+		ID: "openai/gpt-test_free", Name: "~OpenAI: GPT Test Free", Provider: "~OpenAI",
 		ContextLen: 128000, Features: []string{"CapChat"},
 	}}, nil)
 	model := catalog.Models[0]
@@ -46,6 +46,28 @@ func TestBuildCatalogCleansProviderAndOmitsFreeTag(t *testing.T) {
 	}
 	if contains(model.Tags, "free") {
 		t.Fatalf("OpenRouter free marker leaked into tags: %v", model.Tags)
+	}
+}
+
+func TestBuildCatalogSkipsServingVariants(t *testing.T) {
+	catalog := buildCatalog(nil, []registry.Model{
+		{ID: "deepseek/deepseek-v4-flash", Name: "DeepSeek: DeepSeek V4 Flash", Provider: "DeepSeek", ContextLen: 1, Features: []string{"CapChat"}},
+		{ID: "~deepseek/deepseek-v4-flash-latest", Name: "DeepSeek V4 Flash Latest", Provider: "~Deepseek", ContextLen: 1, Features: []string{"CapChat"}},
+		{ID: "openai/gpt-chat-latest", Name: "GPT Chat Latest", Provider: "OpenAI", ContextLen: 1, Features: []string{"CapChat"}},
+		{ID: "deepseek/deepseek-v4-flash-dspark", Name: "DeepSeek-V4-Flash-DSpark", Provider: "DeepSeek", ContextLen: 1, Features: []string{"CapChat"}},
+		{ID: "nvidia/nemotron-3-super-120b-a12b-bf16-mtpv2", Name: "Nemotron MTP", Provider: "NVIDIA", ContextLen: 1, Features: []string{"CapChat"}},
+	}, nil)
+	if catalog.Stats.Models != 2 || len(catalog.Models) != 2 {
+		t.Fatalf("serving variants leaked into the catalog: %+v", catalog.Models)
+	}
+	surviving := map[string]bool{}
+	for _, m := range catalog.Models {
+		surviving[m.ID] = true
+	}
+	for _, id := range []string{"deepseek/deepseek-v4-flash", "openai/gpt-chat-latest"} {
+		if !surviving[id] {
+			t.Fatalf("expected %s to survive, got %+v", id, catalog.Models)
+		}
 	}
 }
 

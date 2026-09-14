@@ -23,6 +23,7 @@ features:
   - ModalityTextOut
 aliases:
   - openai/gpt-5.4-mini:batch
+  - ~openai/gpt-mini-latest
 discovered_at: 2026-07-29T10:41:23.569247079Z
 links:
   documentation: https://platform.openai.com/docs/models
@@ -30,6 +31,7 @@ identifiers:
   openrouter:
     - openai/gpt-5.4-mini
     - openai/gpt-5.4-mini:batch
+    - ~openai/gpt-mini-latest
 upstream:
   openrouter:
     canonical_slug: openai/gpt-5.4-mini-20260317

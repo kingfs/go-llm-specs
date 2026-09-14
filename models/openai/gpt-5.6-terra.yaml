@@ -19,6 +19,7 @@ aliases:
   - openai/gpt-5.6-terra-pro
   - openai/gpt-5.6-terra-pro:batch
   - openai/gpt-5.6-terra:batch
+  - ~openai/gpt-terra-latest
 discovered_at: 2026-07-29T10:41:29.051339203Z
 links:
   documentation: https://platform.openai.com/docs/models
@@ -28,6 +29,7 @@ identifiers:
     - openai/gpt-5.6-terra-pro
     - openai/gpt-5.6-terra-pro:batch
     - openai/gpt-5.6-terra:batch
+    - ~openai/gpt-terra-latest
 upstream:
   openrouter:
     canonical_slug: openai/gpt-5.6-terra-20260709

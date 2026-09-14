@@ -17,6 +17,7 @@ features:
   - ModalityVideoIn
 aliases:
   - z-ai/glm-5.3-flash:batch
+  - ~z-ai/glm-flash-latest
 discovered_at: 2026-08-27T12:05:21.844325256Z
 links:
   model_card: https://huggingface.co/zai-org/GLM-5.3-Flash
@@ -26,6 +27,7 @@ identifiers:
   openrouter:
     - z-ai/glm-5.3-flash
     - z-ai/glm-5.3-flash:batch
+    - ~z-ai/glm-flash-latest
 provenance:
   context_length:
     source: openrouter

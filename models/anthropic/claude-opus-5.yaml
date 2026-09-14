@@ -18,6 +18,7 @@ features:
 aliases:
   - anthropic/claude-opus-5-fast
   - anthropic/claude-opus-5:batch
+  - ~anthropic/claude-opus-latest
 discovered_at: 2026-07-29T10:36:50.068114262Z
 links:
   documentation: https://docs.anthropic.com/en/docs/about-claude/models
@@ -26,6 +27,7 @@ identifiers:
     - anthropic/claude-opus-5
     - anthropic/claude-opus-5-fast
     - anthropic/claude-opus-5:batch
+    - ~anthropic/claude-opus-latest
 upstream:
   openrouter:
     canonical_slug: anthropic/claude-opus-5-20260723

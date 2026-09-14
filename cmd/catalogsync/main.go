@@ -351,6 +351,10 @@ func materializeCandidates(r *report, providers []provider.Provider, models []re
 			candidate.Status = "registered"
 			continue
 		}
+		if registry.IsServingVariant(registry.Model{ID: id, Name: modelSuffix(candidate.RepositoryID)}) {
+			candidate.Status = "serving_variant"
+			continue
+		}
 		model := registry.Model{
 			SchemaVersion: registry.CurrentSchemaVersion, ID: id, Name: modelSuffix(candidate.RepositoryID),
 			Provider: p.Name, Developer: p.ID, Lifecycle: "candidate",

@@ -17,6 +17,7 @@ features:
   - ModalityTextOut
 aliases:
   - anthropic/claude-sonnet-5:batch
+  - ~anthropic/claude-sonnet-latest
 discovered_at: 2026-07-29T10:36:52.641136134Z
 links:
   documentation: https://docs.anthropic.com/en/docs/about-claude/models
@@ -24,6 +25,7 @@ identifiers:
   openrouter:
     - anthropic/claude-sonnet-5
     - anthropic/claude-sonnet-5:batch
+    - ~anthropic/claude-sonnet-latest
 upstream:
   openrouter:
     canonical_slug: anthropic/claude-sonnet-5-20260630

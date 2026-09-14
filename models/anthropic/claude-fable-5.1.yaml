@@ -17,6 +17,7 @@ features:
   - ModalityTextOut
 aliases:
   - anthropic/claude-fable-5.1:batch
+  - ~anthropic/claude-fable-latest
 discovered_at: 2026-09-02T06:31:38.337534356Z
 links:
   documentation: https://docs.anthropic.com/en/docs/about-claude/models
@@ -24,6 +25,7 @@ identifiers:
   openrouter:
     - anthropic/claude-fable-5.1
     - anthropic/claude-fable-5.1:batch
+    - ~anthropic/claude-fable-latest
 provenance:
   context_length:
     source: openrouter
