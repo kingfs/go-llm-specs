@@ -9,3 +9,5 @@ organizations:
   huggingface: [microsoft]
 discovery:
   huggingface: true
+identity:
+  strategy: publisher

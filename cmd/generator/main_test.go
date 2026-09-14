@@ -6,6 +6,7 @@ import (
 	"path/filepath"
 	"testing"
 
+	"github.com/kingfs/go-llm-specs/internal/provider"
 	registrymodel "github.com/kingfs/go-llm-specs/internal/registry"
 )
 
@@ -102,7 +103,7 @@ func TestSyncToDiskFoldsRoutingAliasIntoAliasTarget(t *testing.T) {
 		ID:          "~deepseek/deepseek-v4-flash-latest",
 		AliasTarget: &OpenRouterAliasTarget{Slug: "deepseek/deepseek-v4-flash-0731"},
 	}}
-	if err := syncToDisk(upstream, local, dir); err != nil {
+	if err := syncToDisk(upstream, local, dir, nil); err != nil {
 		t.Fatal(err)
 	}
 	final, err := loadRegistry(dir)
@@ -133,7 +134,7 @@ func TestSyncToDiskDropsLocalRoutingAliases(t *testing.T) {
 	if err != nil {
 		t.Fatal(err)
 	}
-	if err := syncToDisk(nil, local, dir); err != nil {
+	if err := syncToDisk(nil, local, dir, nil); err != nil {
 		t.Fatal(err)
 	}
 	final, err := loadRegistry(dir)
@@ -167,7 +168,7 @@ func TestSyncToDiskRebindsRoutingAlias(t *testing.T) {
 		ID:          alias,
 		AliasTarget: &OpenRouterAliasTarget{Slug: "deepseek/deepseek-v4-flash-0901"},
 	}}
-	if err := syncToDisk(upstream, local, dir); err != nil {
+	if err := syncToDisk(upstream, local, dir, nil); err != nil {
 		t.Fatal(err)
 	}
 	final, err := loadRegistry(dir)
@@ -316,5 +317,72 @@ func TestCanonicalModelNameOnlyForServingAliases(t *testing.T) {
 	}
 	if hasServingVariantAlias(ModelRegistry{ID: model.ID, Aliases: []string{"gemma-free"}}) {
 		t.Fatal("ordinary aliases must not trigger serving-name cleanup")
+	}
+}
+
+func TestSyncToDiskGatesUncorroboratedPublisherDiscovery(t *testing.T) {
+	dir := t.TempDir()
+	providers := []provider.Provider{
+		{
+			SchemaVersion: provider.CurrentSchemaVersion, ID: "deepseek", Name: "DeepSeek",
+			Official:      provider.Official{Homepage: "https://www.deepseek.com/"},
+			Organizations: provider.Organizations{HuggingFace: []string{"deepseek-ai"}},
+			Identity:      provider.Identity{Strategy: provider.IdentityStrategyPublisher, RequireCorroboration: true},
+		},
+		{
+			SchemaVersion: provider.CurrentSchemaVersion, ID: "openai", Name: "OpenAI",
+			Official: provider.Official{Homepage: "https://openai.com/"},
+		},
+	}
+	local, err := loadRegistry(dir)
+	if err != nil {
+		t.Fatal(err)
+	}
+	upstream := []OpenRouterModel{
+		{ID: "deepseek/deepseek-v9", Name: "DeepSeek V9", ContextLength: 128000},
+		{ID: "openai/gpt-7", Name: "GPT 7", ContextLength: 128000},
+	}
+	if err := syncToDisk(upstream, local, dir, providers); err != nil {
+		t.Fatal(err)
+	}
+	final, err := loadRegistry(dir)
+	if err != nil {
+		t.Fatal(err)
+	}
+	if got := final["deepseek/deepseek-v9"].Lifecycle; got != "candidate" {
+		t.Fatalf("publisher discovery lifecycle = %q, want candidate", got)
+	}
+	if got := final["openai/gpt-7"].Lifecycle; got != "" {
+		t.Fatalf("aggregator discovery lifecycle = %q, want active", got)
+	}
+}
+
+func TestSyncToDiskPreservesExistingLifecycle(t *testing.T) {
+	dir := t.TempDir()
+	if err := saveModelToDisk(ModelRegistry{
+		ID: "deepseek/deepseek-v9", Name: "DeepSeek V9", Provider: "DeepSeek", ContextLen: 128000,
+	}, dir); err != nil {
+		t.Fatal(err)
+	}
+	local, err := loadRegistry(dir)
+	if err != nil {
+		t.Fatal(err)
+	}
+	providers := []provider.Provider{{
+		SchemaVersion: provider.CurrentSchemaVersion, ID: "deepseek", Name: "DeepSeek",
+		Official:      provider.Official{Homepage: "https://www.deepseek.com/"},
+		Organizations: provider.Organizations{HuggingFace: []string{"deepseek-ai"}},
+		Identity:      provider.Identity{Strategy: provider.IdentityStrategyPublisher, RequireCorroboration: true},
+	}}
+	upstream := []OpenRouterModel{{ID: "deepseek/deepseek-v9", Name: "DeepSeek V9", ContextLength: 128000}}
+	if err := syncToDisk(upstream, local, dir, providers); err != nil {
+		t.Fatal(err)
+	}
+	final, err := loadRegistry(dir)
+	if err != nil {
+		t.Fatal(err)
+	}
+	if got := final["deepseek/deepseek-v9"].Lifecycle; got != "" {
+		t.Fatalf("an existing record must not be gated: lifecycle = %q", got)
 	}
 }

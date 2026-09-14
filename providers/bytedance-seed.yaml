@@ -9,3 +9,5 @@ organizations:
   huggingface: [ByteDance-Seed]
 discovery:
   huggingface: true
+identity:
+  strategy: publisher

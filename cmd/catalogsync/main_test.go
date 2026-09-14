@@ -84,7 +84,30 @@ func TestMaterializeCandidateIsExcludedUntilReady(t *testing.T) {
 	if err != nil {
 		t.Fatal(err)
 	}
-	if model.Lifecycle != "candidate" || readyForPromotion(model) {
+	if model.Lifecycle != "candidate" || readyForPromotion(model, nil) {
 		t.Fatalf("unexpected candidate: %#v", model)
+	}
+}
+
+func TestReadyForPromotionRequiresCorroboratedIdentity(t *testing.T) {
+	providers := []provider.Provider{{
+		SchemaVersion: provider.CurrentSchemaVersion,
+		ID:            "qwen",
+		Name:          "Qwen",
+		Official:      provider.Official{Homepage: "https://qwen.ai/"},
+		Organizations: provider.Organizations{HuggingFace: []string{"Qwen"}},
+		Identity:      provider.Identity{Strategy: provider.IdentityStrategyPublisher, RequireCorroboration: true},
+	}}
+	model := registry.Model{
+		ID: "qwen/qwen-max", Developer: "qwen", ContextLen: 4096, Description: "A model.",
+		Features: []string{"CapChat"},
+		Upstream: registry.UpstreamMetadata{HuggingFace: &registry.HuggingFaceMetadata{ID: "Qwen/Qwen-Max"}},
+	}
+	if readyForPromotion(model, providers) {
+		t.Fatal("an openrouter-only identity must not promote for a publisher")
+	}
+	model.Identifiers.HuggingFace = []string{"Qwen/Qwen-Max"}
+	if !readyForPromotion(model, providers) {
+		t.Fatal("an official organization repository must corroborate identity")
 	}
 }

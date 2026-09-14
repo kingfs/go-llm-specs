@@ -10,3 +10,5 @@ organizations:
   github: [meta-llama]
 discovery:
   huggingface: true
+identity:
+  strategy: publisher

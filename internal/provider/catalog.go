@@ -34,6 +34,11 @@ type Provider struct {
 type Identity struct {
 	Strategy        string `yaml:"strategy,omitempty" json:"strategy,omitempty"`
 	CanonicalPrefix string `yaml:"canonical_prefix,omitempty" json:"canonical_prefix,omitempty"`
+	// RequireCorroboration holds newly discovered OpenRouter records as
+	// lifecycle candidates until a first-party source confirms them. It is
+	// opt-in because publishers that also ship closed models have no repository
+	// to corroborate against.
+	RequireCorroboration bool `yaml:"require_corroboration,omitempty" json:"require_corroboration,omitempty"`
 }
 
 const (
@@ -89,6 +94,9 @@ func (p Provider) Validate() error {
 	}
 	if p.Identity.Strategy == IdentityStrategyPublisher && !p.HasAuthoritativeSource() {
 		return fmt.Errorf("provider %s has publisher identity without an authoritative source", p.ID)
+	}
+	if p.Identity.RequireCorroboration && p.Identity.Strategy != IdentityStrategyPublisher {
+		return fmt.Errorf("provider %s requires identity corroboration without publisher strategy", p.ID)
 	}
 	return nil
 }

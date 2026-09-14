@@ -17,6 +17,8 @@ import (
 	"text/template"
 	"time"
 
+	"github.com/kingfs/go-llm-specs/internal/identity"
+	"github.com/kingfs/go-llm-specs/internal/provider"
 	registrymodel "github.com/kingfs/go-llm-specs/internal/registry"
 	"golang.org/x/text/cases"
 	"golang.org/x/text/language"
@@ -96,6 +98,7 @@ type generatorConfig struct {
 	Source           string
 	APIURL           string
 	ModelsDir        string
+	ProvidersDir     string
 	CachePath        string
 	OutputGo         string
 	SyncRegistry     bool
@@ -123,6 +126,7 @@ func parseFlags() generatorConfig {
 	flag.StringVar(&cfg.Source, "source", "openrouter", "upstream source used to fetch models")
 	flag.StringVar(&cfg.APIURL, "api-url", defaultURL, "upstream models API URL")
 	flag.StringVar(&cfg.ModelsDir, "models-dir", "models", "directory containing model yaml files")
+	flag.StringVar(&cfg.ProvidersDir, "providers-dir", "providers", "publisher catalog directory")
 	flag.StringVar(&cfg.CachePath, "cache-path", "data/models.json", "path for upstream raw models cache")
 	flag.StringVar(&cfg.OutputGo, "output-go", "models_gen.go", "generated Go registry output path")
 	flag.BoolVar(&cfg.SyncRegistry, "sync-registry", true, "write fetched upstream data back into models directory before codegen")
@@ -156,7 +160,11 @@ func run(cfg generatorConfig) error {
 	log.Printf("Loaded %d local model files", len(localModels))
 
 	if cfg.SyncRegistry {
-		if err := syncToDisk(apiModels, localModels, cfg.ModelsDir); err != nil {
+		providers, err := provider.Scan(cfg.ProvidersDir)
+		if err != nil {
+			return fmt.Errorf("load publisher catalog from %s: %w", cfg.ProvidersDir, err)
+		}
+		if err := syncToDisk(apiModels, localModels, cfg.ModelsDir, providers); err != nil {
 			return fmt.Errorf("sync models to disk: %w", err)
 		}
 	}
@@ -317,7 +325,7 @@ func buildAliasMap(processedModels []*ProcessedModel) map[string]string {
 	return aliasMap
 }
 
-func syncToDisk(apiModels []OpenRouterModel, localModels map[string]ModelRegistry, modelsDir string) error {
+func syncToDisk(apiModels []OpenRouterModel, localModels map[string]ModelRegistry, modelsDir string, providers []provider.Provider) error {
 	if err := consolidateLocalVariants(localModels, modelsDir); err != nil {
 		return err
 	}
@@ -332,7 +340,8 @@ func syncToDisk(apiModels []OpenRouterModel, localModels map[string]ModelRegistr
 		canonicalID := canonicalModelID(upstream.ID, upstream.Description)
 		upstream.ID = canonicalID
 		local := localModels[canonicalID]
-		if local.ID == "" {
+		isNew := local.ID == ""
+		if isNew {
 			now := time.Now().UTC()
 			local.SchemaVersion = registrymodel.CurrentSchemaVersion
 			local.DiscoveredAt = &now
@@ -343,12 +352,35 @@ func syncToDisk(apiModels []OpenRouterModel, localModels map[string]ModelRegistr
 			merged.Identifiers.OpenRouter = normalizeStringList(append(merged.Identifiers.OpenRouter, upstreamID))
 		}
 		addPublisherDocumentation(&merged)
+		if isNew {
+			applyDiscoveryLifecycle(&merged, providers)
+		}
 		if err := saveModelToDisk(merged, modelsDir); err != nil {
 			return fmt.Errorf("save model %s: %w", canonicalID, err)
 		}
 		localModels[canonicalID] = merged
 	}
 	return nil
+}
+
+// applyDiscoveryLifecycle keeps a brand-new aggregator-discovered record out of
+// the compiled catalog when its publisher opts into corroboration and no
+// first-party source confirms the record yet. `task catalog-promote` activates
+// it once an official organization or official link confirms it, so OpenRouter
+// may discover a model without defining its identity. Candidate records remain
+// visible on the public catalog page.
+func applyDiscoveryLifecycle(model *ModelRegistry, providers []provider.Provider) {
+	if model.Lifecycle != "" {
+		return
+	}
+	p, ok := identity.ProviderFor(*model, providers)
+	if !ok || !p.Identity.RequireCorroboration {
+		return
+	}
+	if identity.Resolve(*model, p).Verified {
+		return
+	}
+	model.Lifecycle = "candidate"
 }
 
 // foldRoutingAlias records an upstream routing pointer such as

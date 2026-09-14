@@ -10,3 +10,5 @@ organizations:
   huggingface: [google]
 discovery:
   huggingface: true
+identity:
+  strategy: publisher

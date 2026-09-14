@@ -18,6 +18,7 @@ import (
 	"strings"
 	"time"
 
+	"github.com/kingfs/go-llm-specs/internal/identity"
 	"github.com/kingfs/go-llm-specs/internal/provider"
 	"github.com/kingfs/go-llm-specs/internal/registry"
 )
@@ -98,7 +99,7 @@ func run(ctx context.Context, cfg config) error {
 	}
 	if cfg.PromoteReady {
 		for i := range models {
-			if models[i].Lifecycle == "candidate" && readyForPromotion(models[i]) {
+			if models[i].Lifecycle == "candidate" && readyForPromotion(models[i], providers) {
 				models[i].Lifecycle = "active"
 				if err := registry.Save(models[i].FilePath, models[i]); err != nil {
 					return err
@@ -413,8 +414,20 @@ func featuresForPipeline(pipeline string) []string {
 	}
 }
 
-func readyForPromotion(model registry.Model) bool {
-	return model.ContextLen > 0 && strings.TrimSpace(model.Description) != "" && len(model.Features) > 0 && model.Upstream.HuggingFace != nil
+// readyForPromotion reports whether a candidate record is now complete and, for
+// publishers that opt into corroboration, whether its identity is confirmed by
+// a first-party source. Such a record stays a candidate until an official
+// organization repository or official link confirms it, so a discovered record
+// never defines its own identity.
+func readyForPromotion(model registry.Model, providers []provider.Provider) bool {
+	if model.ContextLen <= 0 || strings.TrimSpace(model.Description) == "" || len(model.Features) == 0 || model.Upstream.HuggingFace == nil {
+		return false
+	}
+	p, ok := identity.ProviderFor(model, providers)
+	if !ok || !p.Identity.RequireCorroboration {
+		return true
+	}
+	return identity.Resolve(model, p).Verified
 }
 
 func safeFilename(value string) string {

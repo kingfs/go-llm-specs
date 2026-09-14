@@ -7,7 +7,7 @@
     "serving_variants": 10,
     "quantization_candidates": 25,
     "identity_gaps": 104,
-    "unverified_identities": 23
+    "unverified_identities": 105
   },
   "by_kind": {
     "draft-head": 10,
@@ -22,6 +22,401 @@
       {
         "id": "alibaba/tongyi-deepresearch-30b-a3b",
         "provider": "qwen",
+        "source": "openrouter"
+      },
+      {
+        "id": "amazon/nova-2-lite-v1",
+        "provider": "amazon",
+        "source": "openrouter"
+      },
+      {
+        "id": "amazon/nova-lite-v1",
+        "provider": "amazon",
+        "source": "openrouter"
+      },
+      {
+        "id": "amazon/nova-micro-v1",
+        "provider": "amazon",
+        "source": "openrouter"
+      },
+      {
+        "id": "amazon/nova-premier-v1",
+        "provider": "amazon",
+        "source": "openrouter"
+      },
+      {
+        "id": "amazon/nova-pro-v1",
+        "provider": "amazon",
+        "source": "openrouter"
+      },
+      {
+        "id": "arcee-ai/coder-large",
+        "provider": "arcee-ai",
+        "source": "openrouter"
+      },
+      {
+        "id": "arcee-ai/maestro-reasoning",
+        "provider": "arcee-ai",
+        "source": "openrouter"
+      },
+      {
+        "id": "arcee-ai/spotlight",
+        "provider": "arcee-ai",
+        "source": "openrouter"
+      },
+      {
+        "id": "bytedance-seed/seed-1.6",
+        "provider": "bytedance-seed",
+        "source": "openrouter"
+      },
+      {
+        "id": "bytedance-seed/seed-1.6-flash",
+        "provider": "bytedance-seed",
+        "source": "openrouter"
+      },
+      {
+        "id": "bytedance-seed/seed-2-1-turbo",
+        "provider": "bytedance-seed",
+        "source": "openrouter"
+      },
+      {
+        "id": "bytedance-seed/seed-2.0-code",
+        "provider": "bytedance-seed",
+        "source": "openrouter"
+      },
+      {
+        "id": "bytedance-seed/seed-2.0-lite",
+        "provider": "bytedance-seed",
+        "source": "openrouter"
+      },
+      {
+        "id": "bytedance-seed/seed-2.0-mini",
+        "provider": "bytedance-seed",
+        "source": "openrouter"
+      },
+      {
+        "id": "cohere/command-r-08-2024",
+        "provider": "cohere",
+        "source": "openrouter"
+      },
+      {
+        "id": "cohere/command-r-plus-08-2024",
+        "provider": "cohere",
+        "source": "openrouter"
+      },
+      {
+        "id": "cohere/command-r7b-12-2024",
+        "provider": "cohere",
+        "source": "openrouter"
+      },
+      {
+        "id": "google/gemini-2.0-flash-001",
+        "provider": "google",
+        "source": "openrouter"
+      },
+      {
+        "id": "google/gemini-2.0-flash-exp",
+        "provider": "google",
+        "source": "openrouter"
+      },
+      {
+        "id": "google/gemini-2.0-flash-lite-001",
+        "provider": "google",
+        "source": "openrouter"
+      },
+      {
+        "id": "google/gemini-2.5-flash",
+        "provider": "google",
+        "source": "openrouter"
+      },
+      {
+        "id": "google/gemini-2.5-flash-image",
+        "provider": "google",
+        "source": "openrouter"
+      },
+      {
+        "id": "google/gemini-2.5-flash-lite",
+        "provider": "google",
+        "source": "openrouter"
+      },
+      {
+        "id": "google/gemini-2.5-flash-lite-preview-09-2025",
+        "provider": "google",
+        "source": "openrouter"
+      },
+      {
+        "id": "google/gemini-2.5-flash-preview-09-2025",
+        "provider": "google",
+        "source": "openrouter"
+      },
+      {
+        "id": "google/gemini-2.5-pro",
+        "provider": "google",
+        "source": "openrouter"
+      },
+      {
+        "id": "google/gemini-2.5-pro-preview",
+        "provider": "google",
+        "source": "openrouter"
+      },
+      {
+        "id": "google/gemini-2.5-pro-preview-05-06",
+        "provider": "google",
+        "source": "openrouter"
+      },
+      {
+        "id": "google/gemini-3-flash-preview",
+        "provider": "google",
+        "source": "openrouter"
+      },
+      {
+        "id": "google/gemini-3-pro-image",
+        "provider": "google",
+        "source": "openrouter"
+      },
+      {
+        "id": "google/gemini-3-pro-image-preview",
+        "provider": "google",
+        "source": "openrouter"
+      },
+      {
+        "id": "google/gemini-3-pro-preview",
+        "provider": "google",
+        "source": "openrouter"
+      },
+      {
+        "id": "google/gemini-3.1-flash-image",
+        "provider": "google",
+        "source": "openrouter"
+      },
+      {
+        "id": "google/gemini-3.1-flash-image-preview",
+        "provider": "google",
+        "source": "openrouter"
+      },
+      {
+        "id": "google/gemini-3.1-flash-lite",
+        "provider": "google",
+        "source": "openrouter"
+      },
+      {
+        "id": "google/gemini-3.1-flash-lite-image",
+        "provider": "google",
+        "source": "openrouter"
+      },
+      {
+        "id": "google/gemini-3.1-flash-lite-preview",
+        "provider": "google",
+        "source": "openrouter"
+      },
+      {
+        "id": "google/gemini-3.1-pro-preview",
+        "provider": "google",
+        "source": "openrouter"
+      },
+      {
+        "id": "google/gemini-3.1-pro-preview-customtools",
+        "provider": "google",
+        "source": "openrouter"
+      },
+      {
+        "id": "google/gemini-3.5-flash",
+        "provider": "google",
+        "source": "openrouter"
+      },
+      {
+        "id": "google/gemini-3.5-flash-lite",
+        "provider": "google",
+        "source": "openrouter"
+      },
+      {
+        "id": "google/gemini-3.6-flash",
+        "provider": "google",
+        "source": "openrouter"
+      },
+      {
+        "id": "google/gemini-3.7-flash",
+        "provider": "google",
+        "source": "openrouter"
+      },
+      {
+        "id": "google/gemini-3.8-flash",
+        "provider": "google",
+        "source": "openrouter"
+      },
+      {
+        "id": "google/lyria-3-clip-preview",
+        "provider": "google",
+        "source": "openrouter"
+      },
+      {
+        "id": "google/lyria-3-pro-preview",
+        "provider": "google",
+        "source": "openrouter"
+      },
+      {
+        "id": "meta-llama/llama-3-70b-instruct",
+        "provider": "meta",
+        "source": "openrouter"
+      },
+      {
+        "id": "meta-llama/llama-3-8b-instruct",
+        "provider": "meta",
+        "source": "openrouter"
+      },
+      {
+        "id": "meta-llama/llama-guard-2-8b",
+        "provider": "meta",
+        "source": "openrouter"
+      },
+      {
+        "id": "meta/muse-glimmer-30b",
+        "provider": "meta",
+        "source": "openrouter"
+      },
+      {
+        "id": "meta/muse-spark-1.1",
+        "provider": "meta",
+        "source": "openrouter"
+      },
+      {
+        "id": "meta/muse-spark-1.2",
+        "provider": "meta",
+        "source": "openrouter"
+      },
+      {
+        "id": "meta/muse-spark-1.2-contributor",
+        "provider": "meta",
+        "source": "openrouter"
+      },
+      {
+        "id": "meta/muse-spark-1.3",
+        "provider": "meta",
+        "source": "openrouter"
+      },
+      {
+        "id": "meta/muse-spark-1.3-contributor",
+        "provider": "meta",
+        "source": "openrouter"
+      },
+      {
+        "id": "microsoft/wizardlm-2-8x22b",
+        "provider": "microsoft",
+        "source": "openrouter"
+      },
+      {
+        "id": "minimax/minimax-m1",
+        "provider": "minimax",
+        "source": "openrouter"
+      },
+      {
+        "id": "minimax/minimax-m2-her",
+        "provider": "minimax",
+        "source": "openrouter"
+      },
+      {
+        "id": "mistralai/codestral-2508",
+        "provider": "mistral",
+        "source": "openrouter"
+      },
+      {
+        "id": "mistralai/devstral-medium",
+        "provider": "mistral",
+        "source": "openrouter"
+      },
+      {
+        "id": "mistralai/devstral-small",
+        "provider": "mistral",
+        "source": "openrouter"
+      },
+      {
+        "id": "mistralai/ministral-3b",
+        "provider": "mistral",
+        "source": "openrouter"
+      },
+      {
+        "id": "mistralai/ministral-8b",
+        "provider": "mistral",
+        "source": "openrouter"
+      },
+      {
+        "id": "mistralai/mistral-7b-instruct",
+        "provider": "mistral",
+        "source": "openrouter"
+      },
+      {
+        "id": "mistralai/mistral-large",
+        "provider": "mistral",
+        "source": "openrouter"
+      },
+      {
+        "id": "mistralai/mistral-large-2407",
+        "provider": "mistral",
+        "source": "openrouter"
+      },
+      {
+        "id": "mistralai/mistral-large-2411",
+        "provider": "mistral",
+        "source": "openrouter"
+      },
+      {
+        "id": "mistralai/mistral-large-2512",
+        "provider": "mistral",
+        "source": "openrouter"
+      },
+      {
+        "id": "mistralai/mistral-medium-3",
+        "provider": "mistral",
+        "source": "openrouter"
+      },
+      {
+        "id": "mistralai/mistral-medium-3-5",
+        "provider": "mistral",
+        "source": "openrouter"
+      },
+      {
+        "id": "mistralai/mistral-medium-3.1",
+        "provider": "mistral",
+        "source": "openrouter"
+      },
+      {
+        "id": "mistralai/mistral-saba",
+        "provider": "mistral",
+        "source": "openrouter"
+      },
+      {
+        "id": "mistralai/mistral-small-creative",
+        "provider": "mistral",
+        "source": "openrouter"
+      },
+      {
+        "id": "mistralai/mistral-tiny",
+        "provider": "mistral",
+        "source": "openrouter"
+      },
+      {
+        "id": "mistralai/mixtral-8x7b-instruct",
+        "provider": "mistral",
+        "source": "openrouter"
+      },
+      {
+        "id": "mistralai/pixtral-12b",
+        "provider": "mistral",
+        "source": "openrouter"
+      },
+      {
+        "id": "mistralai/pixtral-large-2411",
+        "provider": "mistral",
+        "source": "openrouter"
+      },
+      {
+        "id": "nvidia/nemotron-nano-12b-v2-vl",
+        "provider": "nvidia",
+        "source": "openrouter"
+      },
+      {
+        "id": "nvidia/nemotron-nano-9b-v2",
+        "provider": "nvidia",
         "source": "openrouter"
       },
       {
@@ -132,6 +527,21 @@
       {
         "id": "qwen/qwen3.8-max-0902",
         "provider": "qwen",
+        "source": "openrouter"
+      },
+      {
+        "id": "z-ai/glm-4-32b",
+        "provider": "zai",
+        "source": "openrouter"
+      },
+      {
+        "id": "z-ai/glm-5-turbo",
+        "provider": "zai",
+        "source": "openrouter"
+      },
+      {
+        "id": "z-ai/glm-5v-turbo",
+        "provider": "zai",
         "source": "openrouter"
       }
     ]

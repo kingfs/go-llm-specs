@@ -9,3 +9,5 @@ organizations:
   github: [NVIDIA]
 discovery:
   huggingface: true
+identity:
+  strategy: publisher

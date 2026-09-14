@@ -68,8 +68,9 @@ Each publisher may declare who owns its model identity:
 
 ```yaml
 identity:
-  strategy: publisher        # publisher | aggregator (default)
-  canonical_prefix: deepseek # optional stable ID prefix
+  strategy: publisher             # publisher | aggregator (default)
+  canonical_prefix: deepseek      # optional stable ID prefix
+  require_corroboration: true     # optional; holds new discoveries as candidates
 ```
 
 `publisher` means the provider's official API or organization repositories are
@@ -77,8 +78,16 @@ authoritative and OpenRouter is only a discovery and fallback feed. It requires
 at least one authoritative source (`organizations.huggingface`,
 `organizations.modelscope`, or `official.api`). `aggregator` is the default and
 means OpenRouter is authoritative because the provider has no first-party
-machine-readable source. The strategy does not change any compiled artifact by
-itself; later phases use it to gate newly discovered records.
+machine-readable source.
+
+`require_corroboration` is opt-in and only valid together with `publisher`. When
+set, a brand-new record discovered through OpenRouter is written as
+`lifecycle: candidate` until an official organization repository or official
+link confirms it, and `task catalog-promote` will not activate it before then.
+Candidate records still appear on the public catalog page, so a genuinely
+published model is never hidden; only its compiled identity waits for a
+first-party source. Publishers that also ship closed models leave the flag off
+because they have no repository to corroborate against.
 
 The catalog intentionally starts with major publishers. `task catalog-audit`
 lists long-tail publisher strings that still need a reviewed provider record;
@@ -128,8 +137,10 @@ an explicit block, then a repository inside one of the publisher's declared
 official organizations, then an official identifier or link (`official_*` or
 `official`), and finally OpenRouter. OpenRouter is authoritative for aggregator
 publishers and is reported unverified for publisher-strategy publishers until a
-first-party source corroborates it. The pilot enables publisher strategy for
-DeepSeek and Qwen; every other publisher keeps the aggregator default.
+first-party source corroborates it. Publishers that declare an official
+organization use publisher strategy; the five without one (Anthropic, OpenAI,
+OpenRouter, Perplexity, xAI) keep the aggregator default. Corroboration gating
+is enabled for the publishers whose releases are open-weight by default.
 
 ## Incremental workflow
 
@@ -141,7 +152,9 @@ official HF orgs ────┘
 ```
 
 - `task generator` discovers through OpenRouter, merges missing fields, and
-  preserves all local records and explicit overrides.
+  preserves all local records and explicit overrides. For publishers that
+  require corroboration it writes a new discovery as `lifecycle: candidate`
+  instead of active until a first-party source confirms its identity.
 - `task catalog-discover` paginates subscribed official Hugging Face organizations,
   preserves a durable candidate queue in `data/catalog-discovery.json`, applies
   exact identity matches, and materializes at most five eligible official

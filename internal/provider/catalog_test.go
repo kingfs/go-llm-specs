@@ -39,6 +39,13 @@ func TestValidateIdentityStrategy(t *testing.T) {
 	if err := aggregator.Validate(); err != nil {
 		t.Fatalf("aggregator strategy: %v", err)
 	}
+
+	unbacked := base
+	unbacked.Organizations = Organizations{HuggingFace: []string{"example-org"}}
+	unbacked.Identity = Identity{RequireCorroboration: true}
+	if err := unbacked.Validate(); err == nil {
+		t.Fatal("corroboration without publisher strategy must fail validation")
+	}
 }
 
 func TestIdentityEffectiveStrategy(t *testing.T) {

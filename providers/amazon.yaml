@@ -10,3 +10,5 @@ organizations:
   huggingface: [amazon]
 discovery:
   huggingface: true
+identity:
+  strategy: publisher

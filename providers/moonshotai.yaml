@@ -10,3 +10,6 @@ organizations:
   github: [MoonshotAI]
 discovery:
   huggingface: true
+identity:
+  strategy: publisher
+  require_corroboration: true
