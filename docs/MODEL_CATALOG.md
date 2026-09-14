@@ -140,7 +140,12 @@ publishers and is reported unverified for publisher-strategy publishers until a
 first-party source corroborates it. Publishers that declare an official
 organization use publisher strategy; the five without one (Anthropic, OpenAI,
 OpenRouter, Perplexity, xAI) keep the aggregator default. Corroboration gating
-is enabled for the publishers whose releases are open-weight by default.
+is enabled for the 13 publishers whose releases are effectively open-weight:
+allenai, arcee-ai, cohere, deepseek, ibm-granite, microsoft, minimax,
+moonshotai, nousresearch, nvidia, tencent, thinkingmachines and zai. Publishers
+that also ship closed API models (Amazon, ByteDance Seed, Google, Meta, Mistral,
+Qwen) leave `require_corroboration` off until a first-party source for closed
+models exists, because they have no repository to corroborate against.
 
 ## Incremental workflow
 

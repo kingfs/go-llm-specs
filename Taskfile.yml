@@ -15,9 +15,11 @@ tasks:
       - go fmt ./...
 
   fmt-check:
-    desc: Verify Go sources are formatted without modifying the worktree
+    desc: Verify tracked Go sources are formatted without modifying the worktree
     cmds:
-      - test -z "$(gofmt -l .)"
+      # Only tracked sources: a local .cache/ (build and module caches) is
+      # gitignored and must never affect the formatting gate.
+      - test -z "$(git ls-files -z '*.go' | xargs -0 gofmt -l)"
 
   lint:
     desc: Run lightweight static checks
