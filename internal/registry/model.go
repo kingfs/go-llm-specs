@@ -4,6 +4,31 @@ import "time"
 
 const CurrentSchemaVersion = 2
 
+// Model kinds separate model identities from provider or inference packaging.
+// An empty Kind is treated as KindModel so existing records stay models.
+const (
+	KindModel           = "model"
+	KindServingArtifact = "serving-artifact"
+	KindDraftHead       = "draft-head"
+	KindAdapter         = "adapter"
+	KindQuantization    = "quantization"
+)
+
+// ServingKinds are record kinds that are packaging of another model rather
+// than an independently published model identity.
+var ServingKinds = []string{KindServingArtifact, KindDraftHead, KindAdapter}
+
+// IsServingKind reports whether kind denotes provider or inference packaging of
+// another model.
+func IsServingKind(kind string) bool {
+	for _, serving := range ServingKinds {
+		if kind == serving {
+			return true
+		}
+	}
+	return false
+}
+
 // Model is the shared on-disk representation used by every registry command.
 // Extra preserves forward-compatible top-level fields during load/save cycles.
 type Model struct {
@@ -14,6 +39,7 @@ type Model struct {
 	Provider      string                `yaml:"provider" json:"provider"`
 	Developer     string                `yaml:"developer,omitempty" json:"developer,omitempty"`
 	Lifecycle     string                `yaml:"lifecycle,omitempty" json:"lifecycle,omitempty"`
+	Kind          string                `yaml:"kind,omitempty" json:"kind,omitempty"`
 	Description   string                `yaml:"description,omitempty" json:"description,omitempty"`
 	DescriptionCN string                `yaml:"description_cn,omitempty" json:"description_cn,omitempty"`
 	ContextLen    int                   `yaml:"context_length" json:"context_length"`

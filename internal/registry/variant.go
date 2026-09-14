@@ -62,5 +62,22 @@ func IsDraftHead(m Model) bool {
 // IsServingVariant reports whether m is provider or inference packaging of
 // another model rather than an independently published model identity.
 func IsServingVariant(m Model) bool {
-	return IsRoutingAlias(m.ID) || IsDraftHead(m)
+	return IsServingKind(ClassifyKind(m))
+}
+
+// ClassifyKind returns the effective kind of a record. An explicit Kind field
+// always wins so a human can override a false positive; otherwise the ID and
+// description patterns classify routing aliases and draft heads. Unmatched
+// records are ordinary models.
+func ClassifyKind(m Model) string {
+	if kind := strings.TrimSpace(m.Kind); kind != "" {
+		return kind
+	}
+	if IsRoutingAlias(m.ID) {
+		return KindServingArtifact
+	}
+	if IsDraftHead(m) {
+		return KindDraftHead
+	}
+	return KindModel
 }

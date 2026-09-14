@@ -1,0 +1,504 @@
+{
+  "schema_version": 1,
+  "summary": {
+    "models": 716,
+    "compiled": 559,
+    "candidates": 147,
+    "serving_variants": 10,
+    "quantization_candidates": 25,
+    "identity_gaps": 104
+  },
+  "by_kind": {
+    "draft-head": 10,
+    "model": 706
+  },
+  "routing_aliases": null,
+  "draft_heads": [
+    "deepseek/deepseek-v4-flash-dspark",
+    "deepseek/deepseek-v4-pro-dspark",
+    "nvidia/gpt-oss-120b-eagle3-v3",
+    "nvidia/kimi-k2.5-thinking-eagle3",
+    "nvidia/kimi-k2.6-dflash",
+    "nvidia/kimi-k2.6-eagle3",
+    "nvidia/kimi-k2.7-code-dflash",
+    "nvidia/minimax-m2.7-dflash",
+    "nvidia/minimax-m3-dspark",
+    "nvidia/nemotron-3-super-120b-a12b-bf16-mtpv2"
+  ],
+  "quantization_candidates": [
+    "cohere/command-a-plus-05-2026-bf16",
+    "nvidia/ising-calibration-1.5-31b-bf16",
+    "nvidia/ising-calibration-1.5-31b-nvfp4",
+    "nvidia/nemotron-labs-twotower-30b-a3b-base-bf16",
+    "nvidia/nvidia-nemotron-3-nano-30b-a3b-base-bf16",
+    "nvidia/nvidia-nemotron-3-super-120b-a12b-base-bf16",
+    "nvidia/nvidia-nemotron-3-super-120b-a12b-bf16",
+    "nvidia/nvidia-nemotron-3-super-120b-a12b-nvfp4",
+    "nvidia/nvidia-nemotron-3-ultra-550b-a55b-base-bf16",
+    "nvidia/nvidia-nemotron-3-ultra-550b-a55b-nvfp4",
+    "nvidia/nvidia-nemotron-3.5-lightning-30b-a3b-base-bf16",
+    "nvidia/nvidia-nemotron-3.5-lightning-30b-a3b-bf16",
+    "nvidia/nvidia-nemotron-3.5-lightning-30b-a3b-nvfp4",
+    "nvidia/nvidia-nemotron-labs-3-elastic-30b-a3b-bf16",
+    "nvidia/nvidia-nemotron-labs-3-elastic-30b-a3b-fp8",
+    "nvidia/nvidia-nemotron-labs-3-elastic-30b-a3b-nvfp4",
+    "nvidia/nvidia-nemotron-labs-3-puzzle-75b-a9b-bf16",
+    "nvidia/nvidia-nemotron-nano-12b-v2-vl-bf16",
+    "nvidia/nvidia-nemotron-nano-12b-v2-vl-fp8",
+    "nvidia/nvidia-nemotron-nano-12b-v2-vl-nvfp4-qad",
+    "qwen/qwen3.5-122b-a10b-gptq-int4",
+    "qwen/qwen3.5-27b-gptq-int4",
+    "zai/glm-5.2-fp8",
+    "zai/glm-5.3-bf16",
+    "zai/glm-5.3-flash-bf16"
+  ],
+  "base_variants": [
+    "arcee-ai/trinity-large-base",
+    "arcee-ai/trinity-mini-base",
+    "arcee-ai/trinity-nano-base",
+    "cohere/tiny-aya-base",
+    "ibm-granite/granite-4.0-1b-base",
+    "ibm-granite/granite-4.0-h-1b-base",
+    "ibm-granite/granite-4.1-30b-base",
+    "ibm-granite/granite-4.1-3b-base",
+    "ibm-granite/granite-4.1-8b-base",
+    "nvidia/nemotron-labs-diffusion-14b-base",
+    "nvidia/nemotron-labs-diffusion-3b-base",
+    "nvidia/nemotron-labs-diffusion-8b-base",
+    "nvidia/sdllm-ar-1.7b-base",
+    "nvidia/sdllm-duo-1.7b-base",
+    "nvidia/sdllm-esolm-1.7b-base",
+    "nvidia/sdllm-mdlm-1.7b-base",
+    "qwen/qwen3.5-0.8b-base",
+    "qwen/qwen3.5-2b-base",
+    "qwen/qwen3.5-35b-a3b-base",
+    "qwen/qwen3.5-4b-base",
+    "qwen/qwen3.5-9b-base",
+    "tencent/hy3-preview-base"
+  ],
+  "identity_gaps": [
+    {
+      "id": "alibaba/tongyi-deepresearch-30b-a3b",
+      "provider": "qwen"
+    },
+    {
+      "id": "amazon/nova-2-lite-v1",
+      "provider": "amazon"
+    },
+    {
+      "id": "amazon/nova-lite-v1",
+      "provider": "amazon"
+    },
+    {
+      "id": "amazon/nova-micro-v1",
+      "provider": "amazon"
+    },
+    {
+      "id": "amazon/nova-premier-v1",
+      "provider": "amazon"
+    },
+    {
+      "id": "amazon/nova-pro-v1",
+      "provider": "amazon"
+    },
+    {
+      "id": "arcee-ai/coder-large",
+      "provider": "arcee-ai"
+    },
+    {
+      "id": "arcee-ai/maestro-reasoning",
+      "provider": "arcee-ai"
+    },
+    {
+      "id": "arcee-ai/spotlight",
+      "provider": "arcee-ai"
+    },
+    {
+      "id": "bytedance-seed/seed-1.6",
+      "provider": "bytedance-seed"
+    },
+    {
+      "id": "bytedance-seed/seed-1.6-flash",
+      "provider": "bytedance-seed"
+    },
+    {
+      "id": "bytedance-seed/seed-2-1-turbo",
+      "provider": "bytedance-seed"
+    },
+    {
+      "id": "bytedance-seed/seed-2.0-code",
+      "provider": "bytedance-seed"
+    },
+    {
+      "id": "bytedance-seed/seed-2.0-lite",
+      "provider": "bytedance-seed"
+    },
+    {
+      "id": "bytedance-seed/seed-2.0-mini",
+      "provider": "bytedance-seed"
+    },
+    {
+      "id": "cohere/command-r-08-2024",
+      "provider": "cohere"
+    },
+    {
+      "id": "cohere/command-r-plus-08-2024",
+      "provider": "cohere"
+    },
+    {
+      "id": "cohere/command-r7b-12-2024",
+      "provider": "cohere"
+    },
+    {
+      "id": "google/gemini-2.0-flash-001",
+      "provider": "google"
+    },
+    {
+      "id": "google/gemini-2.0-flash-exp",
+      "provider": "google"
+    },
+    {
+      "id": "google/gemini-2.0-flash-lite-001",
+      "provider": "google"
+    },
+    {
+      "id": "google/gemini-2.5-flash",
+      "provider": "google"
+    },
+    {
+      "id": "google/gemini-2.5-flash-image",
+      "provider": "google"
+    },
+    {
+      "id": "google/gemini-2.5-flash-lite",
+      "provider": "google"
+    },
+    {
+      "id": "google/gemini-2.5-flash-lite-preview-09-2025",
+      "provider": "google"
+    },
+    {
+      "id": "google/gemini-2.5-flash-preview-09-2025",
+      "provider": "google"
+    },
+    {
+      "id": "google/gemini-2.5-pro",
+      "provider": "google"
+    },
+    {
+      "id": "google/gemini-2.5-pro-preview",
+      "provider": "google"
+    },
+    {
+      "id": "google/gemini-2.5-pro-preview-05-06",
+      "provider": "google"
+    },
+    {
+      "id": "google/gemini-3-flash-preview",
+      "provider": "google"
+    },
+    {
+      "id": "google/gemini-3-pro-image",
+      "provider": "google"
+    },
+    {
+      "id": "google/gemini-3-pro-image-preview",
+      "provider": "google"
+    },
+    {
+      "id": "google/gemini-3-pro-preview",
+      "provider": "google"
+    },
+    {
+      "id": "google/gemini-3.1-flash-image",
+      "provider": "google"
+    },
+    {
+      "id": "google/gemini-3.1-flash-image-preview",
+      "provider": "google"
+    },
+    {
+      "id": "google/gemini-3.1-flash-lite",
+      "provider": "google"
+    },
+    {
+      "id": "google/gemini-3.1-flash-lite-image",
+      "provider": "google"
+    },
+    {
+      "id": "google/gemini-3.1-flash-lite-preview",
+      "provider": "google"
+    },
+    {
+      "id": "google/gemini-3.1-pro-preview",
+      "provider": "google"
+    },
+    {
+      "id": "google/gemini-3.1-pro-preview-customtools",
+      "provider": "google"
+    },
+    {
+      "id": "google/gemini-3.5-flash",
+      "provider": "google"
+    },
+    {
+      "id": "google/gemini-3.5-flash-lite",
+      "provider": "google"
+    },
+    {
+      "id": "google/gemini-3.6-flash",
+      "provider": "google"
+    },
+    {
+      "id": "google/gemini-3.7-flash",
+      "provider": "google"
+    },
+    {
+      "id": "google/gemini-3.8-flash",
+      "provider": "google"
+    },
+    {
+      "id": "google/lyria-3-clip-preview",
+      "provider": "google"
+    },
+    {
+      "id": "google/lyria-3-pro-preview",
+      "provider": "google"
+    },
+    {
+      "id": "meta-llama/llama-3-70b-instruct",
+      "provider": "meta"
+    },
+    {
+      "id": "meta-llama/llama-3-8b-instruct",
+      "provider": "meta"
+    },
+    {
+      "id": "meta-llama/llama-guard-2-8b",
+      "provider": "meta"
+    },
+    {
+      "id": "meta/muse-spark-1.1",
+      "provider": "meta"
+    },
+    {
+      "id": "meta/muse-spark-1.2",
+      "provider": "meta"
+    },
+    {
+      "id": "meta/muse-spark-1.2-contributor",
+      "provider": "meta"
+    },
+    {
+      "id": "meta/muse-spark-1.3",
+      "provider": "meta"
+    },
+    {
+      "id": "meta/muse-spark-1.3-contributor",
+      "provider": "meta"
+    },
+    {
+      "id": "microsoft/wizardlm-2-8x22b",
+      "provider": "microsoft"
+    },
+    {
+      "id": "minimax/minimax-m1",
+      "provider": "minimax"
+    },
+    {
+      "id": "minimax/minimax-m2-her",
+      "provider": "minimax"
+    },
+    {
+      "id": "mistralai/codestral-2508",
+      "provider": "mistral"
+    },
+    {
+      "id": "mistralai/devstral-medium",
+      "provider": "mistral"
+    },
+    {
+      "id": "mistralai/devstral-small",
+      "provider": "mistral"
+    },
+    {
+      "id": "mistralai/ministral-3b",
+      "provider": "mistral"
+    },
+    {
+      "id": "mistralai/ministral-8b",
+      "provider": "mistral"
+    },
+    {
+      "id": "mistralai/mistral-7b-instruct",
+      "provider": "mistral"
+    },
+    {
+      "id": "mistralai/mistral-large",
+      "provider": "mistral"
+    },
+    {
+      "id": "mistralai/mistral-large-2407",
+      "provider": "mistral"
+    },
+    {
+      "id": "mistralai/mistral-large-2411",
+      "provider": "mistral"
+    },
+    {
+      "id": "mistralai/mistral-large-2512",
+      "provider": "mistral"
+    },
+    {
+      "id": "mistralai/mistral-medium-3",
+      "provider": "mistral"
+    },
+    {
+      "id": "mistralai/mistral-medium-3-5",
+      "provider": "mistral"
+    },
+    {
+      "id": "mistralai/mistral-medium-3.1",
+      "provider": "mistral"
+    },
+    {
+      "id": "mistralai/mistral-saba",
+      "provider": "mistral"
+    },
+    {
+      "id": "mistralai/mistral-small-creative",
+      "provider": "mistral"
+    },
+    {
+      "id": "mistralai/mistral-tiny",
+      "provider": "mistral"
+    },
+    {
+      "id": "mistralai/mixtral-8x7b-instruct",
+      "provider": "mistral"
+    },
+    {
+      "id": "mistralai/pixtral-12b",
+      "provider": "mistral"
+    },
+    {
+      "id": "mistralai/pixtral-large-2411",
+      "provider": "mistral"
+    },
+    {
+      "id": "nvidia/nemotron-nano-12b-v2-vl",
+      "provider": "nvidia"
+    },
+    {
+      "id": "nvidia/nemotron-nano-9b-v2",
+      "provider": "nvidia"
+    },
+    {
+      "id": "qwen/qwen-max",
+      "provider": "qwen"
+    },
+    {
+      "id": "qwen/qwen-plus",
+      "provider": "qwen"
+    },
+    {
+      "id": "qwen/qwen-plus-2025-07-28",
+      "provider": "qwen"
+    },
+    {
+      "id": "qwen/qwen-turbo",
+      "provider": "qwen"
+    },
+    {
+      "id": "qwen/qwen-vl-max",
+      "provider": "qwen"
+    },
+    {
+      "id": "qwen/qwen-vl-plus",
+      "provider": "qwen"
+    },
+    {
+      "id": "qwen/qwen3-coder-flash",
+      "provider": "qwen"
+    },
+    {
+      "id": "qwen/qwen3-coder-plus",
+      "provider": "qwen"
+    },
+    {
+      "id": "qwen/qwen3-max",
+      "provider": "qwen"
+    },
+    {
+      "id": "qwen/qwen3-max-thinking",
+      "provider": "qwen"
+    },
+    {
+      "id": "qwen/qwen3.5-flash-02-23",
+      "provider": "qwen"
+    },
+    {
+      "id": "qwen/qwen3.5-plus-02-15",
+      "provider": "qwen"
+    },
+    {
+      "id": "qwen/qwen3.5-plus-20260420",
+      "provider": "qwen"
+    },
+    {
+      "id": "qwen/qwen3.6-flash",
+      "provider": "qwen"
+    },
+    {
+      "id": "qwen/qwen3.6-max-preview",
+      "provider": "qwen"
+    },
+    {
+      "id": "qwen/qwen3.6-plus",
+      "provider": "qwen"
+    },
+    {
+      "id": "qwen/qwen3.6-plus-preview",
+      "provider": "qwen"
+    },
+    {
+      "id": "qwen/qwen3.7-flash",
+      "provider": "qwen"
+    },
+    {
+      "id": "qwen/qwen3.7-max",
+      "provider": "qwen"
+    },
+    {
+      "id": "qwen/qwen3.7-plus",
+      "provider": "qwen"
+    },
+    {
+      "id": "qwen/qwen3.8-max",
+      "provider": "qwen"
+    },
+    {
+      "id": "qwen/qwen3.8-max-0902",
+      "provider": "qwen"
+    },
+    {
+      "id": "z-ai/glm-4-32b",
+      "provider": "zai"
+    },
+    {
+      "id": "z-ai/glm-5-turbo",
+      "provider": "zai"
+    },
+    {
+      "id": "z-ai/glm-5v-turbo",
+      "provider": "zai"
+    }
+  ],
+  "aggregator_providers": [
+    "anthropic",
+    "openai",
+    "openrouter",
+    "perplexity",
+    "xai"
+  ]
+}

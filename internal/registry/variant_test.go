@@ -62,3 +62,32 @@ func TestIsDraftHead(t *testing.T) {
 		}
 	}
 }
+
+func TestClassifyKind(t *testing.T) {
+	tests := []struct {
+		name  string
+		model Model
+		want  string
+	}{
+		{"plain model", Model{ID: "openai/gpt-chat-latest"}, KindModel},
+		{"routing alias", Model{ID: "~openai/gpt-latest"}, KindServingArtifact},
+		{"draft head", Model{ID: "deepseek/deepseek-v4-flash-dspark"}, KindDraftHead},
+		{"explicit model overrides alias", Model{ID: "~openai/gpt-latest", Kind: KindModel}, KindModel},
+		{"explicit quantization", Model{ID: "zai/glm-5.3-bf16", Kind: KindQuantization}, KindQuantization},
+		{"explicit serving artifact", Model{ID: "openai/gpt-chat-latest", Kind: KindServingArtifact}, KindServingArtifact},
+	}
+	for _, tt := range tests {
+		if got := ClassifyKind(tt.model); got != tt.want {
+			t.Errorf("ClassifyKind(%s) = %q, want %q", tt.name, got, tt.want)
+		}
+	}
+	if IsServingVariant(Model{ID: "~openai/gpt-latest", Kind: KindModel}) {
+		t.Fatal("explicit kind must override the routing-alias pattern")
+	}
+	if IsServingVariant(Model{ID: "deepseek/deepseek-v4-flash-dspark", Kind: KindQuantization}) {
+		t.Fatal("quantization is not a serving variant")
+	}
+	if !IsServingVariant(Model{ID: "nvidia/some-head", Kind: KindDraftHead}) {
+		t.Fatal("explicit draft-head kind must be excluded")
+	}
+}

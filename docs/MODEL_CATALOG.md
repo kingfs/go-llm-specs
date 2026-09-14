@@ -44,7 +44,18 @@ or the public catalog:
 
 The classification lives in `internal/registry/variant.go` and is applied by
 the generator, the public catalog, and Hugging Face candidate materialization,
-so the same rule holds across every artifact.
+so the same rule holds across every artifact. A record can make the decision
+explicit with the optional `kind` field:
+
+```yaml
+kind: model            # model | serving-artifact | draft-head | adapter | quantization
+```
+
+An explicit `kind` always wins over the ID and description patterns, so a
+reviewed record can override a false positive. `serving-artifact`, `draft-head`
+and `adapter` are excluded from every compiled artifact; an empty `kind` means
+`model`. `quantization` is reported by `task catalog-doctor` for review but is
+still compiled.
 
 ## Publisher catalog
 
@@ -53,9 +64,28 @@ organizations that may be queried deterministically. A Hugging Face repository
 is treated as official only when its organization is explicitly configured in
 the corresponding publisher file.
 
+Each publisher may declare who owns its model identity:
+
+```yaml
+identity:
+  strategy: publisher        # publisher | aggregator (default)
+  canonical_prefix: deepseek # optional stable ID prefix
+```
+
+`publisher` means the provider's official API or organization repositories are
+authoritative and OpenRouter is only a discovery and fallback feed. It requires
+at least one authoritative source (`organizations.huggingface`,
+`organizations.modelscope`, or `official.api`). `aggregator` is the default and
+means OpenRouter is authoritative because the provider has no first-party
+machine-readable source. The strategy does not change any compiled artifact by
+itself; later phases use it to gate newly discovered records.
+
 The catalog intentionally starts with major publishers. `task catalog-audit`
 lists long-tail publisher strings that still need a reviewed provider record;
-the tool never invents official URLs.
+the tool never invents official URLs. `task catalog-doctor` writes a read-only
+`data/catalog-doctor.json` listing every record by `kind` plus routing aliases,
+draft heads, quantization candidates, pretrained `-base` variants, and providers
+whose model lacks an authoritative identity.
 
 ## Model records
 
@@ -108,6 +138,9 @@ official HF orgs ────┘
   fields that are currently empty; existing facts are never overwritten.
 - `task catalog-audit` writes deterministic coverage and attribution gaps to
   `data/catalog-audit.json`.
+- `task catalog-doctor` writes a deterministic record-kind and identity-gap
+  report to `data/catalog-doctor.json`; `task catalog-doctor-check` gates CI on
+  that report being current.
 
 The initial historical backfill uses the same commands with reviewed allowlists.
 This makes the one-time work resumable and ensures subsequent GitHub Actions runs

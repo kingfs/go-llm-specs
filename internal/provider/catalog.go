@@ -23,6 +23,36 @@ type Provider struct {
 	Official      Official      `yaml:"official" json:"official"`
 	Organizations Organizations `yaml:"organizations,omitempty" json:"organizations,omitempty"`
 	Discovery     Discovery     `yaml:"discovery,omitempty" json:"discovery,omitempty"`
+	Identity      Identity      `yaml:"identity,omitempty" json:"identity,omitempty"`
+}
+
+// Identity declares who owns a provider's model identity. Strategy
+// "publisher" means the provider's own official API or organization
+// repositories are authoritative and OpenRouter is only a discovery/fallback
+// feed. Strategy "aggregator" (the default) means OpenRouter is authoritative
+// because the provider has no first-party machine-readable source.
+type Identity struct {
+	Strategy        string `yaml:"strategy,omitempty" json:"strategy,omitempty"`
+	CanonicalPrefix string `yaml:"canonical_prefix,omitempty" json:"canonical_prefix,omitempty"`
+}
+
+const (
+	IdentityStrategyPublisher  = "publisher"
+	IdentityStrategyAggregator = "aggregator"
+)
+
+// EffectiveStrategy returns the declared strategy, defaulting to aggregator.
+func (i Identity) EffectiveStrategy() string {
+	if i.Strategy == "" {
+		return IdentityStrategyAggregator
+	}
+	return i.Strategy
+}
+
+// HasAuthoritativeSource reports whether the provider declares a first-party
+// place where model identities can be verified.
+func (p Provider) HasAuthoritativeSource() bool {
+	return len(p.Organizations.HuggingFace) > 0 || len(p.Organizations.ModelScope) > 0 || p.Official.API != ""
 }
 
 type Official struct {
@@ -51,6 +81,14 @@ func (p Provider) Validate() error {
 	}
 	if p.Discovery.HuggingFace && len(p.Organizations.HuggingFace) == 0 {
 		return fmt.Errorf("provider %s enables Hugging Face discovery without an organization", p.ID)
+	}
+	switch p.Identity.Strategy {
+	case "", IdentityStrategyPublisher, IdentityStrategyAggregator:
+	default:
+		return fmt.Errorf("provider %s has unknown identity strategy %q", p.ID, p.Identity.Strategy)
+	}
+	if p.Identity.Strategy == IdentityStrategyPublisher && !p.HasAuthoritativeSource() {
+		return fmt.Errorf("provider %s has publisher identity without an authoritative source", p.ID)
 	}
 	return nil
 }

@@ -89,6 +89,16 @@ tasks:
     cmds:
       - go run ./cmd/catalogsync -check -output data/catalog-audit.json
 
+  catalog-doctor:
+    desc: Write a read-only report of non-model and suspicious records
+    cmds:
+      - go run ./cmd/catalogdoctor -output data/catalog-doctor.json {{.CLI_ARGS}}
+
+  catalog-doctor-check:
+    desc: Verify the committed catalog doctor report is current
+    cmds:
+      - go run ./cmd/catalogdoctor -check -output data/catalog-doctor.json
+
   catalog-discover:
     desc: Audit the catalog and discover new models from subscribed official Hugging Face organizations
     cmds:
@@ -155,6 +165,7 @@ tasks:
       - task: build
       - task: codexvalidate
       - task: catalog-check
+      - task: catalog-doctor-check
       - task: generator-check
       - task: site-check
 
