@@ -1,0 +1,68 @@
+schema_version: 2
+id: nvidia/nvidia-nemotron-nano-9b-v2-japanese
+name: NVIDIA-Nemotron-Nano-9B-v2-Japanese
+provider: NVIDIA
+developer: nvidia
+lifecycle: candidate
+context_length: 131072
+features:
+  - ModalityTextIn
+  - ModalityTextOut
+links:
+  model_card: https://huggingface.co/nvidia/NVIDIA-Nemotron-Nano-9B-v2-Japanese
+identifiers:
+  huggingface:
+    - nvidia/NVIDIA-Nemotron-Nano-9B-v2-Japanese
+provenance:
+  context_length:
+    source: official_huggingface_config
+    url: https://huggingface.co/nvidia/NVIDIA-Nemotron-Nano-9B-v2-Japanese
+  features:
+    source: official_huggingface_pipeline
+    url: https://huggingface.co/nvidia/NVIDIA-Nemotron-Nano-9B-v2-Japanese
+  id:
+    source: official_huggingface
+    url: https://huggingface.co/nvidia/NVIDIA-Nemotron-Nano-9B-v2-Japanese
+  name:
+    source: official_huggingface
+    url: https://huggingface.co/nvidia/NVIDIA-Nemotron-Nano-9B-v2-Japanese
+upstream:
+  huggingface:
+    id: nvidia/NVIDIA-Nemotron-Nano-9B-v2-Japanese
+    revision: 3979dd16634988c34cc3bd911583c51e6a731d10
+    pipeline_tag: text-generation
+    model_type: nemotron_h
+    architectures:
+      - NemotronHForCausalLM
+    license: other
+    tags:
+      - arxiv:2504.03624
+      - arxiv:2508.14444
+      - base_model:finetune:nvidia/NVIDIA-Nemotron-Nano-9B-v2
+      - base_model:nvidia/NVIDIA-Nemotron-Nano-9B-v2
+      - conversational
+      - custom_code
+      - dataset:HuggingFaceFW/fineweb-2
+      - dataset:globis-university/aozorabunko-clean
+      - dataset:nvidia/Nemotron-Agentic-v1
+      - dataset:nvidia/Nemotron-CC-v2.1
+      - dataset:nvidia/Nemotron-Instruction-Following-Chat-v1
+      - dataset:nvidia/Nemotron-Personas-Japan
+      - dataset:nvidia/Nemotron-Pretraining-Specialized-v1
+      - en
+      - endpoints_compatible
+      - ja
+      - license:other
+      - nemotron_h
+      - nvidia
+      - pytorch
+      - region:us
+      - safetensors
+      - text-generation
+      - transformers
+    config_context_length: 131072
+    tokenizer_model_max_length: 131072
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-09-14T07:17:28.306386673Z

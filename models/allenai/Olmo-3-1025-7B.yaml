@@ -1,0 +1,53 @@
+schema_version: 2
+id: allenai/olmo-3-1025-7b
+name: Olmo-3-1025-7B
+provider: Allen Institute for AI
+developer: allenai
+lifecycle: candidate
+context_length: 65536
+features:
+  - ModalityTextIn
+  - ModalityTextOut
+links:
+  model_card: https://huggingface.co/allenai/Olmo-3-1025-7B
+identifiers:
+  huggingface:
+    - allenai/Olmo-3-1025-7B
+provenance:
+  context_length:
+    source: official_huggingface_config
+    url: https://huggingface.co/allenai/Olmo-3-1025-7B
+  features:
+    source: official_huggingface_pipeline
+    url: https://huggingface.co/allenai/Olmo-3-1025-7B
+  id:
+    source: official_huggingface
+    url: https://huggingface.co/allenai/Olmo-3-1025-7B
+  name:
+    source: official_huggingface
+    url: https://huggingface.co/allenai/Olmo-3-1025-7B
+upstream:
+  huggingface:
+    id: allenai/Olmo-3-1025-7B
+    revision: a81bae42db3975be1671e27b9c9a56da1a9f980f
+    pipeline_tag: text-generation
+    model_type: olmo3
+    architectures:
+      - Olmo3ForCausalLM
+    license: apache-2.0
+    tags:
+      - dataset:allenai/dolma3_mix-6T-1025
+      - en
+      - endpoints_compatible
+      - license:apache-2.0
+      - olmo3
+      - region:us
+      - safetensors
+      - text-generation
+      - transformers
+    config_context_length: 65536
+    tokenizer_model_max_length: 65536
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-09-14T07:17:27.627953919Z
