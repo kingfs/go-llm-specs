@@ -15,6 +15,7 @@ features:
   - ModalityTextOut
 aliases:
   - deepseek/deepseek-v4-pro-0813:batch
+  - ~deepseek/deepseek-pro-latest
 discovered_at: 2026-08-13T03:56:35.728648199Z
 links:
   model_card: https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro-0813
@@ -24,6 +25,7 @@ identifiers:
   openrouter:
     - deepseek/deepseek-v4-pro-0813
     - deepseek/deepseek-v4-pro-0813:batch
+    - ~deepseek/deepseek-pro-latest
 provenance:
   context_length:
     source: openrouter

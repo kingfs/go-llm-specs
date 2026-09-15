@@ -41,7 +41,6 @@ upstream:
       - min_p
       - presence_penalty
       - repetition_penalty
-      - response_format
       - seed
       - stop
       - temperature
@@ -53,7 +52,7 @@ upstream:
     output_modalities:
       - text
     knowledge_cutoff: "2024-08-31"
-    fetched_at: 2026-07-29T10:39:01.099332709Z
+    fetched_at: 2026-09-15T06:52:28.950044995Z
   huggingface:
     id: meta-llama/Llama-Guard-4-12B
     revision: 87acb4b94e930c3d679e6e7ee9d57e2feab9ea71

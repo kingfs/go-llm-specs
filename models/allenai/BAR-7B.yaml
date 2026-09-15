@@ -1,0 +1,54 @@
+schema_version: 2
+id: allenai/bar-7b
+name: BAR-7B
+provider: Allen Institute for AI
+developer: allenai
+lifecycle: candidate
+context_length: 65536
+features:
+  - ModalityTextIn
+  - ModalityTextOut
+links:
+  model_card: https://huggingface.co/allenai/BAR-7B
+identifiers:
+  huggingface:
+    - allenai/BAR-7B
+provenance:
+  context_length:
+    source: official_huggingface_config
+    url: https://huggingface.co/allenai/BAR-7B
+  features:
+    source: official_huggingface_pipeline
+    url: https://huggingface.co/allenai/BAR-7B
+  id:
+    source: official_huggingface
+    url: https://huggingface.co/allenai/BAR-7B
+  name:
+    source: official_huggingface
+    url: https://huggingface.co/allenai/BAR-7B
+upstream:
+  huggingface:
+    id: allenai/BAR-7B
+    revision: bee49db02284e88308e85c352e8d9a01b2b48ff5
+    pipeline_tag: text-generation
+    model_type: olmo2
+    architectures:
+      - Olmo2ForCausalLM
+    license: apache-2.0
+    tags:
+      - bar
+      - conversational
+      - endpoints_compatible
+      - license:apache-2.0
+      - mixture-of-experts
+      - olmo
+      - olmo2
+      - region:us
+      - safetensors
+      - text-generation
+      - transformers
+    config_context_length: 65536
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-09-15T06:52:31.384562908Z

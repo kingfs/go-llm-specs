@@ -2126,7 +2126,7 @@ func init() {
 			ContextLenVal:   1048576,
 			MaxOutputVal:    384000,
 			FeaturesVal:     CapChat | CapFunctionCall | CapJsonMode | ModalityTextIn | ModalityTextOut,
-			AliasList:       []string{"deepseek-v4-pro-0813", "deepseek/deepseek-v4-pro-0813:batch"},
+			AliasList:       []string{"deepseek-v4-pro-0813", "deepseek/deepseek-v4-pro-0813:batch", "~deepseek/deepseek-pro-latest"},
 		},
 		"deepseek/deepseek-v4.1-flash": {
 			IDVal:           "deepseek/deepseek-v4.1-flash",
@@ -2144,7 +2144,7 @@ func init() {
 			ContextLenVal:   1048576,
 			MaxOutputVal:    384000,
 			FeaturesVal:     CapChat | CapFunctionCall | CapJsonMode | ModalityImageIn | ModalityTextIn | ModalityTextOut | CapMultimodal,
-			AliasList:       []string{"deepseek-v4.1-flash"},
+			AliasList:       []string{"deepseek-v4.1-flash", "~deepseek/deepseek-flash-latest"},
 		},
 		"dots-studio/dots-3-note-preview": {
 			IDVal:           "dots-studio/dots-3-note-preview",
@@ -10812,6 +10812,8 @@ func init() {
 		"~anthropic/claude-haiku-latest":                     "anthropic/claude-haiku-4.5",
 		"~anthropic/claude-opus-latest":                      "anthropic/claude-opus-5",
 		"~anthropic/claude-sonnet-latest":                    "anthropic/claude-sonnet-5",
+		"~deepseek/deepseek-flash-latest":                    "deepseek/deepseek-v4.1-flash",
+		"~deepseek/deepseek-pro-latest":                      "deepseek/deepseek-v4-pro-0813",
 		"~deepseek/deepseek-v4-flash-latest":                 "deepseek/deepseek-v4-flash-0731",
 		"~google/gemini-flash-latest":                        "google/gemini-3.8-flash",
 		"~google/gemini-pro-latest":                          "google/gemini-3.1-pro-preview",

@@ -14,6 +14,8 @@ features:
   - ModalityImageIn
   - ModalityTextIn
   - ModalityTextOut
+aliases:
+  - ~deepseek/deepseek-flash-latest
 discovered_at: 2026-09-10T06:44:38.956559746Z
 links:
   model_card: https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash
@@ -22,6 +24,7 @@ identifiers:
     - deepseek-ai/DeepSeek-V4.1-Flash
   openrouter:
     - deepseek/deepseek-v4.1-flash
+    - ~deepseek/deepseek-flash-latest
 provenance:
   context_length:
     source: openrouter

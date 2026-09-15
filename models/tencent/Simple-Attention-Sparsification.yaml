@@ -1,0 +1,43 @@
+schema_version: 2
+id: tencent/simple-attention-sparsification
+name: Simple-Attention-Sparsification
+provider: Tencent Hunyuan
+developer: tencent
+lifecycle: candidate
+context_length: 0
+features:
+  - ModalityTextIn
+  - ModalityTextOut
+links:
+  model_card: https://huggingface.co/tencent/Simple-Attention-Sparsification
+identifiers:
+  huggingface:
+    - tencent/Simple-Attention-Sparsification
+provenance:
+  features:
+    source: official_huggingface_pipeline
+    url: https://huggingface.co/tencent/Simple-Attention-Sparsification
+  id:
+    source: official_huggingface
+    url: https://huggingface.co/tencent/Simple-Attention-Sparsification
+  name:
+    source: official_huggingface
+    url: https://huggingface.co/tencent/Simple-Attention-Sparsification
+upstream:
+  huggingface:
+    id: tencent/Simple-Attention-Sparsification
+    revision: f7c3f2f7b05a8342d90cbe73e2657100d11cbac8
+    pipeline_tag: text-generation
+    tags:
+      - arxiv:2609.13141
+      - base_model:Qwen/Qwen3-14B
+      - base_model:finetune:Qwen/Qwen3-14B
+      - dataset:open-r1/OpenR1-Math-220k
+      - long-context
+      - qwen3
+      - region:us
+      - sas
+      - sglang
+      - sparse-attention
+      - text-generation
+    fetched_at: 2026-09-15T06:52:31.875259335Z

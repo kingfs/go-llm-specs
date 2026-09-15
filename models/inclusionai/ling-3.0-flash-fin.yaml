@@ -48,7 +48,6 @@ upstream:
       - presence_penalty
       - reasoning
       - repetition_penalty
-      - response_format
       - seed
       - stop
       - structured_outputs
@@ -61,7 +60,7 @@ upstream:
       - text
     output_modalities:
       - text
-    fetched_at: 2026-09-04T06:38:23.257900161Z
+    fetched_at: 2026-09-15T06:52:28.949222186Z
 reasoning:
   supported: true
   default_enabled: true

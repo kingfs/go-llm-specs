@@ -32,7 +32,6 @@ upstream:
       - min_p
       - presence_penalty
       - repetition_penalty
-      - response_format
       - seed
       - stop
       - structured_outputs
@@ -46,7 +45,7 @@ upstream:
     output_modalities:
       - text
     knowledge_cutoff: "2023-12-31"
-    fetched_at: 2026-07-29T10:44:06.275947876Z
+    fetched_at: 2026-09-15T06:52:28.957442995Z
   huggingface:
     id: Sao10K/L3.1-70B-Euryale-v2.2
     revision: 62b47ff8c2c24d326a7b960773b9c853400150b6

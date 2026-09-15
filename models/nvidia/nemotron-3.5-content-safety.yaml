@@ -36,7 +36,6 @@ upstream:
       - presence_penalty
       - reasoning
       - repetition_penalty
-      - response_format
       - seed
       - stop
       - temperature
@@ -47,7 +46,7 @@ upstream:
       - text
     output_modalities:
       - text
-    fetched_at: 2026-09-04T06:38:23.261079751Z
+    fetched_at: 2026-09-15T06:52:28.952263581Z
   huggingface:
     id: nvidia/Nemotron-3.5-Content-Safety
     revision: 35645ed3543b7e7ffaed2e788699e57a5051497c

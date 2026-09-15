@@ -1,0 +1,55 @@
+schema_version: 2
+id: allenai/bar-5x7b
+name: BAR-5x7B
+provider: Allen Institute for AI
+developer: allenai
+lifecycle: candidate
+context_length: 65536
+features:
+  - ModalityTextIn
+  - ModalityTextOut
+links:
+  model_card: https://huggingface.co/allenai/BAR-5x7B
+identifiers:
+  huggingface:
+    - allenai/BAR-5x7B
+provenance:
+  context_length:
+    source: official_huggingface_config
+    url: https://huggingface.co/allenai/BAR-5x7B
+  features:
+    source: official_huggingface_pipeline
+    url: https://huggingface.co/allenai/BAR-5x7B
+  id:
+    source: official_huggingface
+    url: https://huggingface.co/allenai/BAR-5x7B
+  name:
+    source: official_huggingface
+    url: https://huggingface.co/allenai/BAR-5x7B
+upstream:
+  huggingface:
+    id: allenai/BAR-5x7B
+    revision: 2e1b57d2e22fbf9c1a08a71298b53abcfdf827ad
+    pipeline_tag: text-generation
+    model_type: flex_olmo
+    architectures:
+      - FlexOlmoForCausalLM
+    license: apache-2.0
+    tags:
+      - bar
+      - conversational
+      - endpoints_compatible
+      - flex_olmo
+      - license:apache-2.0
+      - mixture-of-experts
+      - olmo
+      - region:us
+      - safetensors
+      - text-generation
+      - transformers
+    config_context_length: 65536
+    tokenizer_model_max_length: 65536
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-09-15T06:52:30.849592969Z

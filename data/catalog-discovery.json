@@ -1,7 +1,7 @@
 {
   "providers": 24,
-  "models": 728,
-  "models_with_official_links": 512,
+  "models": 716,
+  "models_with_official_links": 517,
   "uncataloged_publishers": {
     "Ai21": 1,
     "Aion-Labs": 4,
@@ -61,15 +61,7 @@
     "switchpoint": 1,
     "tngtech": 3,
     "upstage": 1,
-    "xiaomi": 3,
-    "~Anthropic": 4,
-    "~Deepseek": 1,
-    "~Google": 2,
-    "~Moonshotai": 1,
-    "~Openai": 2,
-    "~X-Ai": 1,
-    "~openai": 4,
-    "~zai": 2
+    "xiaomi": 3
   },
   "huggingface_candidates": [
     {
@@ -17975,7 +17967,8 @@
       "provider_id": "allenai",
       "organization": "allenai",
       "repository_id": "allenai/BAR-2x7B-Base",
-      "status": "new",
+      "registry_id": "allenai/bar-2x7b-base",
+      "status": "materialized",
       "url": "https://huggingface.co/allenai/BAR-2x7B-Base",
       "last_modified": "2026-04-20T04:59:39Z",
       "pipeline_tag": "text-generation",
@@ -18066,7 +18059,8 @@
       "provider_id": "allenai",
       "organization": "allenai",
       "repository_id": "allenai/BAR-2x7B-Math-SFT",
-      "status": "new",
+      "registry_id": "allenai/bar-2x7b-math-sft",
+      "status": "materialized",
       "url": "https://huggingface.co/allenai/BAR-2x7B-Math-SFT",
       "last_modified": "2026-04-20T04:59:46Z",
       "pipeline_tag": "text-generation",
@@ -18134,7 +18128,8 @@
       "provider_id": "allenai",
       "organization": "allenai",
       "repository_id": "allenai/BAR-5x7B",
-      "status": "new",
+      "registry_id": "allenai/bar-5x7b",
+      "status": "materialized",
       "url": "https://huggingface.co/allenai/BAR-5x7B",
       "last_modified": "2026-04-20T04:59:33Z",
       "pipeline_tag": "text-generation",
@@ -18156,7 +18151,8 @@
       "provider_id": "allenai",
       "organization": "allenai",
       "repository_id": "allenai/BAR-7B",
-      "status": "new",
+      "registry_id": "allenai/bar-7b",
+      "status": "materialized",
       "url": "https://huggingface.co/allenai/BAR-7B",
       "last_modified": "2026-04-20T04:58:41Z",
       "pipeline_tag": "text-generation",
@@ -111167,7 +111163,7 @@
       "repository_id": "nvidia/Muse-Glimmer-30B-NVFP4",
       "status": "new",
       "url": "https://huggingface.co/nvidia/Muse-Glimmer-30B-NVFP4",
-      "last_modified": "2026-09-01T14:25:51Z",
+      "last_modified": "2026-09-15T00:56:01Z",
       "pipeline_tag": "image-text-to-text",
       "tags": [
         "Model Optimizer",
@@ -128903,6 +128899,29 @@
         "base_model:Qwen/Qwen3-8B-Base",
         "base_model:finetune:Qwen/Qwen3-8B-Base",
         "license:other",
+        "region:us"
+      ]
+    },
+    {
+      "provider_id": "tencent",
+      "organization": "tencent",
+      "repository_id": "tencent/Simple-Attention-Sparsification",
+      "registry_id": "tencent/simple-attention-sparsification",
+      "status": "materialized",
+      "url": "https://huggingface.co/tencent/Simple-Attention-Sparsification",
+      "last_modified": "2026-09-14T08:40:33Z",
+      "pipeline_tag": "text-generation",
+      "tags": [
+        "qwen3",
+        "sparse-attention",
+        "long-context",
+        "sglang",
+        "sas",
+        "text-generation",
+        "dataset:open-r1/OpenR1-Math-220k",
+        "arxiv:2609.13141",
+        "base_model:Qwen/Qwen3-14B",
+        "base_model:finetune:Qwen/Qwen3-14B",
         "region:us"
       ]
     },
