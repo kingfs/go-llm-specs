@@ -1,0 +1,59 @@
+schema_version: 2
+id: nvidia/ising-calibration-1-35b-a3b
+name: Ising-Calibration-1-35B-A3B
+provider: NVIDIA
+developer: nvidia
+lifecycle: candidate
+context_length: 0
+features:
+  - ModalityImageIn
+  - ModalityTextIn
+  - ModalityTextOut
+links:
+  model_card: https://huggingface.co/nvidia/Ising-Calibration-1-35B-A3B
+identifiers:
+  huggingface:
+    - nvidia/Ising-Calibration-1-35B-A3B
+provenance:
+  features:
+    source: official_huggingface_pipeline
+    url: https://huggingface.co/nvidia/Ising-Calibration-1-35B-A3B
+  id:
+    source: official_huggingface
+    url: https://huggingface.co/nvidia/Ising-Calibration-1-35B-A3B
+  name:
+    source: official_huggingface
+    url: https://huggingface.co/nvidia/Ising-Calibration-1-35B-A3B
+upstream:
+  huggingface:
+    id: nvidia/Ising-Calibration-1-35B-A3B
+    revision: b07b7d222086d452e640a067bfa175f8af42555d
+    pipeline_tag: image-text-to-text
+    model_type: qwen3_5_moe
+    architectures:
+      - Qwen3_5MoeForConditionalGeneration
+    license: other
+    tags:
+      - Ising Calibration
+      - base_model:Qwen/Qwen3.5-35B-A3B
+      - base_model:finetune:Qwen/Qwen3.5-35B-A3B
+      - calibration
+      - conversational
+      - deploy:azure
+      - endpoints_compatible
+      - image-text-to-text
+      - license:other
+      - moe
+      - nvidia
+      - quantum
+      - qwen3.5
+      - qwen3_5_moe
+      - region:us
+      - safetensors
+      - transformers
+      - vision-language
+    tokenizer_model_max_length: 262144
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-09-16T06:56:09.360089457Z

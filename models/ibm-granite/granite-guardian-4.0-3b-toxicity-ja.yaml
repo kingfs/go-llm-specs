@@ -1,0 +1,59 @@
+schema_version: 2
+id: ibm-granite/granite-guardian-4.0-3b-toxicity-ja
+name: granite-guardian-4.0-3b-toxicity-ja
+provider: IBM Granite
+developer: ibm-granite
+lifecycle: candidate
+context_length: 131072
+features:
+  - ModalityTextIn
+  - ModalityTextOut
+links:
+  model_card: https://huggingface.co/ibm-granite/granite-guardian-4.0-3b-toxicity-ja
+identifiers:
+  huggingface:
+    - ibm-granite/granite-guardian-4.0-3b-toxicity-ja
+provenance:
+  context_length:
+    source: official_huggingface_config
+    url: https://huggingface.co/ibm-granite/granite-guardian-4.0-3b-toxicity-ja
+  features:
+    source: official_huggingface_pipeline
+    url: https://huggingface.co/ibm-granite/granite-guardian-4.0-3b-toxicity-ja
+  id:
+    source: official_huggingface
+    url: https://huggingface.co/ibm-granite/granite-guardian-4.0-3b-toxicity-ja
+  name:
+    source: official_huggingface
+    url: https://huggingface.co/ibm-granite/granite-guardian-4.0-3b-toxicity-ja
+upstream:
+  huggingface:
+    id: ibm-granite/granite-guardian-4.0-3b-toxicity-ja
+    revision: 84893b0e6f2beaaf05f64599f482fdb413214e95
+    pipeline_tag: text-generation
+    model_type: granitemoehybrid
+    architectures:
+      - GraniteMoeHybridForCausalLM
+    license: apache-2.0
+    tags:
+      - arxiv:2412.07724
+      - base_model:finetune:ibm-granite/granite-4.0-micro
+      - base_model:ibm-granite/granite-4.0-micro
+      - conversational
+      - deploy:azure
+      - endpoints_compatible
+      - granite
+      - granitemoehybrid
+      - guardian
+      - ja
+      - license:apache-2.0
+      - region:us
+      - safetensors
+      - safety
+      - text-generation
+      - transformers
+    config_context_length: 131072
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-09-16T06:56:08.791760516Z

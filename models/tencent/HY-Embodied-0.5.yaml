@@ -1,0 +1,64 @@
+schema_version: 2
+id: tencent/hy-embodied-0.5
+name: HY-Embodied-0.5
+provider: Tencent Hunyuan
+developer: tencent
+lifecycle: candidate
+context_length: 262144
+features:
+  - ModalityImageIn
+  - ModalityTextIn
+  - ModalityTextOut
+links:
+  model_card: https://huggingface.co/tencent/HY-Embodied-0.5
+identifiers:
+  huggingface:
+    - tencent/HY-Embodied-0.5
+provenance:
+  context_length:
+    source: official_huggingface_config
+    url: https://huggingface.co/tencent/HY-Embodied-0.5
+  features:
+    source: official_huggingface_pipeline
+    url: https://huggingface.co/tencent/HY-Embodied-0.5
+  id:
+    source: official_huggingface
+    url: https://huggingface.co/tencent/HY-Embodied-0.5
+  name:
+    source: official_huggingface
+    url: https://huggingface.co/tencent/HY-Embodied-0.5
+upstream:
+  huggingface:
+    id: tencent/HY-Embodied-0.5
+    revision: c3857692400c487b71b7932916b9d3ef299e91f8
+    pipeline_tag: image-text-to-text
+    model_type: hunyuan_vl_mot
+    architectures:
+      - HunYuanVLMoTForConditionalGeneration
+    license: other
+    tags:
+      - 2B
+      - Embodied
+      - MoT
+      - arxiv:2604.07430
+      - conversational
+      - custom_code
+      - end-to-end
+      - hunyuan
+      - hunyuan_vl_mot
+      - image-text-to-text
+      - image-to-text
+      - license:other
+      - multilingual
+      - region:us
+      - safetensors
+      - transformers
+      - vision-language
+    config_context_length: 262144
+    tokenizer_model_max_length: 262144
+    processor_class: HunYuanVLMoTProcessor
+    structured_files:
+      - config.json
+      - preprocessor_config.json
+      - tokenizer_config.json
+    fetched_at: 2026-09-16T06:56:10.234137146Z
