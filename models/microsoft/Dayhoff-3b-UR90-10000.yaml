@@ -1,0 +1,55 @@
+schema_version: 2
+id: microsoft/dayhoff-3b-ur90-10000
+name: Dayhoff-3b-UR90-10000
+provider: Microsoft
+developer: microsoft
+lifecycle: candidate
+context_length: 262144
+features:
+  - ModalityTextIn
+  - ModalityTextOut
+links:
+  model_card: https://huggingface.co/microsoft/Dayhoff-3b-UR90-10000
+identifiers:
+  huggingface:
+    - microsoft/Dayhoff-3b-UR90-10000
+provenance:
+  context_length:
+    source: official_huggingface_config
+    url: https://huggingface.co/microsoft/Dayhoff-3b-UR90-10000
+  features:
+    source: official_huggingface_pipeline
+    url: https://huggingface.co/microsoft/Dayhoff-3b-UR90-10000
+  id:
+    source: official_huggingface
+    url: https://huggingface.co/microsoft/Dayhoff-3b-UR90-10000
+  name:
+    source: official_huggingface
+    url: https://huggingface.co/microsoft/Dayhoff-3b-UR90-10000
+upstream:
+  huggingface:
+    id: microsoft/Dayhoff-3b-UR90-10000
+    revision: 075eb2fb7af41883f586145572e96b82aa2a7db9
+    pipeline_tag: text-generation
+    model_type: jamba
+    architectures:
+      - JambaForCausalLM
+    license: mit
+    tags:
+      - arxiv:2502.12479
+      - custom_code
+      - dataset:microsoft/Dayhoff
+      - endpoints_compatible
+      - jamba
+      - license:mit
+      - protein-generation
+      - region:us
+      - safetensors
+      - text-generation
+      - transformers
+    config_context_length: 262144
+    tokenizer_model_max_length: 2048
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-09-17T06:51:05.819269054Z

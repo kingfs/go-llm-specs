@@ -1,7 +1,7 @@
 {
   "providers": 24,
-  "models": 726,
-  "models_with_official_links": 527,
+  "models": 732,
+  "models_with_official_links": 532,
   "uncataloged_publishers": {
     "Ai21": 1,
     "Aion-Labs": 4,
@@ -56,7 +56,7 @@
     "reka": 1,
     "sakana": 3,
     "sao10k": 2,
-    "stealth": 1,
+    "stealth": 2,
     "stepfun-ai": 1,
     "switchpoint": 1,
     "tngtech": 3,

@@ -32,13 +32,10 @@ upstream:
       - max_tokens
       - presence_penalty
       - repetition_penalty
-      - response_format
       - seed
       - stop
       - structured_outputs
       - temperature
-      - tool_choice
-      - tools
       - top_k
       - top_logprobs
       - top_p
@@ -47,7 +44,7 @@ upstream:
     output_modalities:
       - text
     knowledge_cutoff: "2024-04-30"
-    fetched_at: 2026-08-03T07:50:12.926700812Z
+    fetched_at: 2026-09-17T06:51:05.110070634Z
   huggingface:
     id: TheDrummer/UnslopNemo-12B-v4.1
     revision: c20fadc8281ea8237acb8054f4a84524ca257478

@@ -1,0 +1,51 @@
+schema_version: 2
+id: stealth/union-alpha
+name: Union Alpha
+provider: Stealth
+developer: stealth
+description: Union Alpha is a multimodal model built for research, coding, and agentic workflows, while delivering frontier-level performance across a broad range of general-purpose tasks. Union Alpha is a stealth model....
+description_cn: Union Alpha 是一款面向研究、编码及智能体工作流的多模态模型，同时在广泛的通用任务中提供前沿级性能。Union Alpha 是一款保密模型……
+context_length: 262144
+max_output: 131072
+features:
+  - CapChat
+  - CapFunctionCall
+  - CapJsonMode
+  - ModalityImageIn
+  - ModalityTextIn
+  - ModalityTextOut
+discovered_at: 2026-09-17T06:51:02.65926578Z
+identifiers:
+  openrouter:
+    - stealth/union-alpha
+provenance:
+  context_length:
+    source: openrouter
+  description:
+    source: openrouter
+  features:
+    source: openrouter
+  id:
+    source: openrouter
+  max_output:
+    source: openrouter
+  name:
+    source: openrouter
+  provider:
+    source: openrouter
+upstream:
+  openrouter:
+    canonical_slug: stealth/union-alpha
+    supported_parameters:
+      - max_tokens
+      - response_format
+      - temperature
+      - tool_choice
+      - tools
+      - top_p
+    input_modalities:
+      - image
+      - text
+    output_modalities:
+      - text
+    fetched_at: 2026-09-17T06:51:05.109427422Z

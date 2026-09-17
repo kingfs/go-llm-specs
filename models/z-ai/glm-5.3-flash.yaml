@@ -56,6 +56,7 @@ upstream:
       - logprobs
       - max_tokens
       - min_p
+      - parallel_tool_calls
       - presence_penalty
       - reasoning
       - reasoning_effort
@@ -76,7 +77,7 @@ upstream:
       - video
     output_modalities:
       - text
-    fetched_at: 2026-08-27T12:05:23.721065509Z
+    fetched_at: 2026-09-17T06:51:05.111108491Z
   huggingface:
     id: zai-org/GLM-5.3-Flash
     revision: 04c4e9e95c5da8862dced7e5056455116f83a7e0

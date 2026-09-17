@@ -1,7 +1,7 @@
 {
   "providers": 24,
-  "models": 721,
-  "models_with_official_links": 522,
+  "models": 727,
+  "models_with_official_links": 527,
   "uncataloged_publishers": {
     "Ai21": 1,
     "Aion-Labs": 4,
@@ -56,7 +56,7 @@
     "reka": 1,
     "sakana": 3,
     "sao10k": 2,
-    "stealth": 1,
+    "stealth": 2,
     "stepfun-ai": 1,
     "switchpoint": 1,
     "tngtech": 3,
@@ -58898,7 +58898,8 @@
       "provider_id": "google",
       "organization": "google",
       "repository_id": "google/medgemma-1.5-4b-it",
-      "status": "new",
+      "registry_id": "google/medgemma-1.5-4b-it",
+      "status": "materialized",
       "url": "https://huggingface.co/google/medgemma-1.5-4b-it",
       "last_modified": "2026-04-13T23:20:55Z",
       "pipeline_tag": "image-text-to-text",
@@ -86742,7 +86743,7 @@
       "repository_id": "ibm-granite/granite-speech-5.0-470m-turboctc",
       "status": "new",
       "url": "https://huggingface.co/ibm-granite/granite-speech-5.0-470m-turboctc",
-      "last_modified": "2026-09-15T19:29:10Z",
+      "last_modified": "2026-09-16T20:55:57Z",
       "pipeline_tag": "automatic-speech-recognition",
       "tags": [
         "transformers",
@@ -90966,7 +90967,8 @@
       "provider_id": "microsoft",
       "organization": "microsoft",
       "repository_id": "microsoft/Dayhoff-3b-UR90-10",
-      "status": "new",
+      "registry_id": "microsoft/dayhoff-3b-ur90-10",
+      "status": "materialized",
       "url": "https://huggingface.co/microsoft/Dayhoff-3b-UR90-10",
       "last_modified": "2026-04-14T00:24:49Z",
       "pipeline_tag": "text-generation",
@@ -90988,7 +90990,8 @@
       "provider_id": "microsoft",
       "organization": "microsoft",
       "repository_id": "microsoft/Dayhoff-3b-UR90-10000",
-      "status": "new",
+      "registry_id": "microsoft/dayhoff-3b-ur90-10000",
+      "status": "materialized",
       "url": "https://huggingface.co/microsoft/Dayhoff-3b-UR90-10000",
       "last_modified": "2026-04-14T00:28:21Z",
       "pipeline_tag": "text-generation",
@@ -91010,7 +91013,8 @@
       "provider_id": "microsoft",
       "organization": "microsoft",
       "repository_id": "microsoft/Dayhoff-3b-UR90-20350",
-      "status": "new",
+      "registry_id": "microsoft/dayhoff-3b-ur90-20350",
+      "status": "materialized",
       "url": "https://huggingface.co/microsoft/Dayhoff-3b-UR90-20350",
       "last_modified": "2026-04-14T00:31:46Z",
       "pipeline_tag": "text-generation",
@@ -91032,7 +91036,8 @@
       "provider_id": "microsoft",
       "organization": "microsoft",
       "repository_id": "microsoft/Dayhoff-3b-UR90-30000",
-      "status": "new",
+      "registry_id": "microsoft/dayhoff-3b-ur90-30000",
+      "status": "materialized",
       "url": "https://huggingface.co/microsoft/Dayhoff-3b-UR90-30000",
       "last_modified": "2026-04-14T00:34:35Z",
       "pipeline_tag": "text-generation",
@@ -106280,7 +106285,7 @@
       "repository_id": "nvidia/Cosmos3-Edge",
       "status": "new",
       "url": "https://huggingface.co/nvidia/Cosmos3-Edge",
-      "last_modified": "2026-08-26T21:26:27Z",
+      "last_modified": "2026-09-16T18:48:41Z",
       "tags": [
         "cosmos",
         "diffusers",
@@ -106288,11 +106293,10 @@
         "cosmos3_edge",
         "nvidia",
         "cosmos3",
-        "arxiv:2405.14867",
         "license:other",
         "deploy:azure",
-        "region:us",
-        "deploy:sagemaker"
+        "deploy:sagemaker",
+        "region:us"
       ]
     },
     {
@@ -106301,7 +106305,7 @@
       "repository_id": "nvidia/Cosmos3-Edge-Policy-DROID",
       "status": "new",
       "url": "https://huggingface.co/nvidia/Cosmos3-Edge-Policy-DROID",
-      "last_modified": "2026-08-26T21:26:27Z",
+      "last_modified": "2026-09-16T19:00:40Z",
       "tags": [
         "cosmos",
         "diffusers",
@@ -106311,7 +106315,6 @@
         "cosmos3",
         "world action model",
         "policy model",
-        "arxiv:2405.14867",
         "license:other",
         "region:us"
       ]
@@ -106322,7 +106325,7 @@
       "repository_id": "nvidia/Cosmos3-Nano",
       "status": "new",
       "url": "https://huggingface.co/nvidia/Cosmos3-Nano",
-      "last_modified": "2026-08-26T21:26:26Z",
+      "last_modified": "2026-09-16T18:48:37Z",
       "tags": [
         "cosmos",
         "diffusers",
@@ -106348,7 +106351,7 @@
       "repository_id": "nvidia/Cosmos3-Nano-Policy-DROID",
       "status": "new",
       "url": "https://huggingface.co/nvidia/Cosmos3-Nano-Policy-DROID",
-      "last_modified": "2026-08-26T21:26:27Z",
+      "last_modified": "2026-09-16T19:00:38Z",
       "tags": [
         "cosmos",
         "diffusers",
@@ -106368,7 +106371,7 @@
       "repository_id": "nvidia/Cosmos3-Super",
       "status": "new",
       "url": "https://huggingface.co/nvidia/Cosmos3-Super",
-      "last_modified": "2026-08-26T21:26:26Z",
+      "last_modified": "2026-09-16T18:48:38Z",
       "tags": [
         "cosmos",
         "diffusers",
@@ -106394,7 +106397,7 @@
       "repository_id": "nvidia/Cosmos3-Super-Image2Video",
       "status": "new",
       "url": "https://huggingface.co/nvidia/Cosmos3-Super-Image2Video",
-      "last_modified": "2026-08-26T21:26:27Z",
+      "last_modified": "2026-09-16T19:00:33Z",
       "pipeline_tag": "image-to-video",
       "tags": [
         "cosmos",
@@ -106418,7 +106421,7 @@
       "repository_id": "nvidia/Cosmos3-Super-Image2Video-4Step",
       "status": "new",
       "url": "https://huggingface.co/nvidia/Cosmos3-Super-Image2Video-4Step",
-      "last_modified": "2026-08-26T21:26:27Z",
+      "last_modified": "2026-09-16T19:00:27Z",
       "pipeline_tag": "image-to-video",
       "tags": [
         "cosmos",
@@ -106441,7 +106444,7 @@
       "repository_id": "nvidia/Cosmos3-Super-Text2Image",
       "status": "new",
       "url": "https://huggingface.co/nvidia/Cosmos3-Super-Text2Image",
-      "last_modified": "2026-08-26T21:26:27Z",
+      "last_modified": "2026-09-16T19:00:35Z",
       "pipeline_tag": "text-to-image",
       "tags": [
         "cosmos",
@@ -106465,7 +106468,7 @@
       "repository_id": "nvidia/Cosmos3-Super-Text2Image-4Step",
       "status": "new",
       "url": "https://huggingface.co/nvidia/Cosmos3-Super-Text2Image-4Step",
-      "last_modified": "2026-08-26T21:26:27Z",
+      "last_modified": "2026-09-16T19:00:30Z",
       "pipeline_tag": "text-to-image",
       "tags": [
         "cosmos",
@@ -106977,6 +106980,33 @@
         "arxiv:2606.19348",
         "base_model:deepseek-ai/DeepSeek-V4-Pro",
         "base_model:quantized:deepseek-ai/DeepSeek-V4-Pro",
+        "license:mit",
+        "8-bit",
+        "fp8",
+        "region:us"
+      ]
+    },
+    {
+      "provider_id": "nvidia",
+      "organization": "nvidia",
+      "repository_id": "nvidia/DeepSeek-V4.1-Flash-NVFP4",
+      "status": "new",
+      "url": "https://huggingface.co/nvidia/DeepSeek-V4.1-Flash-NVFP4",
+      "last_modified": "2026-09-17T01:24:11Z",
+      "pipeline_tag": "image-text-to-text",
+      "tags": [
+        "Model Optimizer",
+        "safetensors",
+        "deepseek_v41",
+        "nvidia",
+        "ModelOpt",
+        "DeepSeekV4",
+        "quantized",
+        "FP4",
+        "fp4",
+        "image-text-to-text",
+        "base_model:deepseek-ai/DeepSeek-V4.1-Flash",
+        "base_model:quantized:deepseek-ai/DeepSeek-V4.1-Flash",
         "license:mit",
         "8-bit",
         "fp8",
@@ -113658,7 +113688,7 @@
       "repository_id": "nvidia/Nemotron-3-Diarization-preview",
       "status": "new",
       "url": "https://huggingface.co/nvidia/Nemotron-3-Diarization-preview",
-      "last_modified": "2026-09-15T17:48:54Z",
+      "last_modified": "2026-09-16T10:13:00Z",
       "pipeline_tag": "voice-activity-detection",
       "tags": [
         "nemo",

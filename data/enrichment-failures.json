@@ -1,6 +1,7 @@
 {
-  "failure_count": 3,
+  "failure_count": 4,
   "failures": {
+    "google/medgemma-1.5-4b-it": "Hugging Face config.json returned 401 Unauthorized",
     "inference-net/schematron-v2-small": "Hugging Face model request returned 401 Unauthorized",
     "inference-net/schematron-v2-turbo": "Hugging Face model request returned 401 Unauthorized",
     "microsoft/wizardlm-2-8x22b": "Hugging Face model request returned 401 Unauthorized"

@@ -1,0 +1,69 @@
+schema_version: 2
+id: google/medgemma-1.5-4b-it
+name: medgemma-1.5-4b-it
+provider: Google
+developer: google
+lifecycle: candidate
+context_length: 0
+features:
+  - ModalityImageIn
+  - ModalityTextIn
+  - ModalityTextOut
+links:
+  model_card: https://huggingface.co/google/medgemma-1.5-4b-it
+identifiers:
+  huggingface:
+    - google/medgemma-1.5-4b-it
+provenance:
+  features:
+    source: official_huggingface_pipeline
+    url: https://huggingface.co/google/medgemma-1.5-4b-it
+  id:
+    source: official_huggingface
+    url: https://huggingface.co/google/medgemma-1.5-4b-it
+  name:
+    source: official_huggingface
+    url: https://huggingface.co/google/medgemma-1.5-4b-it
+upstream:
+  huggingface:
+    id: google/medgemma-1.5-4b-it
+    revision: 91850547d9f0b2fdd21aa7c5f4f3d1a8a52c243b
+    pipeline_tag: image-text-to-text
+    model_type: gemma3
+    architectures:
+      - Gemma3ForConditionalGeneration
+    license: other
+    tags:
+      - arxiv:1605.01397
+      - arxiv:1901.07031
+      - arxiv:1909.06146
+      - arxiv:2009.13081
+      - arxiv:2102.09542
+      - arxiv:2106.14463
+      - arxiv:2203.14371
+      - arxiv:2303.15343
+      - arxiv:2402.16040
+      - arxiv:2403.17834
+      - arxiv:2404.05590
+      - arxiv:2405.03162
+      - arxiv:2406.19578
+      - arxiv:2411.15640
+      - arxiv:2501.18362
+      - arxiv:2604.05081
+      - chest-x-ray
+      - clinical-reasoning
+      - conversational
+      - dermatology
+      - endpoints_compatible
+      - gemma3
+      - image-text-to-text
+      - license:other
+      - medical
+      - ophthalmology
+      - pathology
+      - radiology
+      - region:us
+      - safetensors
+      - text-generation-inference
+      - transformers
+    fetched_at: 2026-09-17T06:51:05.404319641Z
