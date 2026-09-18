@@ -1,0 +1,54 @@
+schema_version: 2
+id: allenai/molmoweb-8b-native
+name: MolmoWeb-8B-Native
+provider: Allen Institute for AI
+developer: allenai
+lifecycle: candidate
+context_length: 0
+features:
+  - ModalityImageIn
+  - ModalityTextIn
+  - ModalityTextOut
+links:
+  model_card: https://huggingface.co/allenai/MolmoWeb-8B-Native
+identifiers:
+  huggingface:
+    - allenai/MolmoWeb-8B-Native
+provenance:
+  features:
+    source: official_huggingface_pipeline
+    url: https://huggingface.co/allenai/MolmoWeb-8B-Native
+  id:
+    source: official_huggingface
+    url: https://huggingface.co/allenai/MolmoWeb-8B-Native
+  name:
+    source: official_huggingface
+    url: https://huggingface.co/allenai/MolmoWeb-8B-Native
+upstream:
+  huggingface:
+    id: allenai/MolmoWeb-8B-Native
+    revision: b91f4f718120011a53643d3c1efc607f8b92e514
+    pipeline_tag: image-text-to-text
+    license: apache-2.0
+    tags:
+      - arxiv:2601.10611
+      - arxiv:2604.08516
+      - base_model:Qwen/Qwen3-8B
+      - base_model:finetune:Qwen/Qwen3-8B
+      - dataset:allenai/MolmoWeb-HumanSkills
+      - dataset:allenai/MolmoWeb-HumanTrajs
+      - dataset:allenai/MolmoWeb-SyntheticGround
+      - dataset:allenai/MolmoWeb-SyntheticQA
+      - dataset:allenai/MolmoWeb-SyntheticSkills
+      - dataset:allenai/MolmoWeb-SyntheticTraj
+      - en
+      - endpoints_compatible
+      - image-text-to-text
+      - license:apache-2.0
+      - molmo
+      - molmo2
+      - multimodal
+      - olmo
+      - region:us
+      - transformers
+    fetched_at: 2026-09-18T06:48:15.755756177Z

@@ -1,7 +1,7 @@
 {
   "providers": 24,
-  "models": 727,
-  "models_with_official_links": 527,
+  "models": 733,
+  "models_with_official_links": 532,
   "uncataloged_publishers": {
     "Ai21": 1,
     "Aion-Labs": 4,
@@ -60,6 +60,7 @@
     "stepfun-ai": 1,
     "switchpoint": 1,
     "tngtech": 3,
+    "unbiased": 1,
     "upstage": 1,
     "xiaomi": 3
   },
@@ -31409,7 +31410,8 @@
       "provider_id": "allenai",
       "organization": "allenai",
       "repository_id": "allenai/MolmoWeb-4B",
-      "status": "new",
+      "registry_id": "allenai/molmoweb-4b",
+      "status": "materialized",
       "url": "https://huggingface.co/allenai/MolmoWeb-4B",
       "last_modified": "2026-04-10T20:50:39Z",
       "pipeline_tag": "image-text-to-text",
@@ -31442,7 +31444,8 @@
       "provider_id": "allenai",
       "organization": "allenai",
       "repository_id": "allenai/MolmoWeb-4B-Native",
-      "status": "new",
+      "registry_id": "allenai/molmoweb-4b-native",
+      "status": "materialized",
       "url": "https://huggingface.co/allenai/MolmoWeb-4B-Native",
       "last_modified": "2026-04-10T20:50:29Z",
       "pipeline_tag": "image-text-to-text",
@@ -31473,7 +31476,8 @@
       "provider_id": "allenai",
       "organization": "allenai",
       "repository_id": "allenai/MolmoWeb-8B",
-      "status": "new",
+      "registry_id": "allenai/molmoweb-8b",
+      "status": "materialized",
       "url": "https://huggingface.co/allenai/MolmoWeb-8B",
       "last_modified": "2026-04-10T20:50:34Z",
       "pipeline_tag": "image-text-to-text",
@@ -31506,7 +31510,8 @@
       "provider_id": "allenai",
       "organization": "allenai",
       "repository_id": "allenai/MolmoWeb-8B-Native",
-      "status": "new",
+      "registry_id": "allenai/molmoweb-8b-native",
+      "status": "materialized",
       "url": "https://huggingface.co/allenai/MolmoWeb-8B-Native",
       "last_modified": "2026-04-10T20:50:21Z",
       "pipeline_tag": "image-text-to-text",
@@ -31561,7 +31566,8 @@
       "provider_id": "allenai",
       "organization": "allenai",
       "repository_id": "allenai/MolmoWeb-Pretrained-8B",
-      "status": "new",
+      "registry_id": "allenai/molmoweb-pretrained-8b",
+      "status": "materialized",
       "url": "https://huggingface.co/allenai/MolmoWeb-Pretrained-8B",
       "last_modified": "2026-04-13T18:58:24Z",
       "pipeline_tag": "image-text-to-text",
@@ -42195,6 +42201,28 @@
         "llama",
         "arxiv:2602.01469",
         "license:apache-2.0",
+        "region:us"
+      ]
+    },
+    {
+      "provider_id": "amazon",
+      "organization": "amazon",
+      "repository_id": "amazon/poiss-bge-m3-reranker",
+      "status": "new",
+      "url": "https://huggingface.co/amazon/poiss-bge-m3-reranker",
+      "last_modified": "2026-09-18T00:54:42Z",
+      "tags": [
+        "region:us"
+      ]
+    },
+    {
+      "provider_id": "amazon",
+      "organization": "amazon",
+      "repository_id": "amazon/poiss-bge-m3-retriever",
+      "status": "new",
+      "url": "https://huggingface.co/amazon/poiss-bge-m3-retriever",
+      "last_modified": "2026-09-18T00:53:24Z",
+      "tags": [
         "region:us"
       ]
     },
@@ -107667,6 +107695,34 @@
     {
       "provider_id": "nvidia",
       "organization": "nvidia",
+      "repository_id": "nvidia/GLM-5.3-NVFP4",
+      "status": "new",
+      "url": "https://huggingface.co/nvidia/GLM-5.3-NVFP4",
+      "last_modified": "2026-09-17T22:11:20Z",
+      "pipeline_tag": "text-generation",
+      "tags": [
+        "Model Optimizer",
+        "safetensors",
+        "glm_moe_dsa",
+        "nvidia",
+        "ModelOpt",
+        "GLM-5",
+        "quantized",
+        "FP4",
+        "fp4",
+        "text-generation",
+        "conversational",
+        "base_model:zai-org/GLM-5.3",
+        "base_model:quantized:zai-org/GLM-5.3",
+        "license:other",
+        "8-bit",
+        "modelopt",
+        "region:us"
+      ]
+    },
+    {
+      "provider_id": "nvidia",
+      "organization": "nvidia",
       "repository_id": "nvidia/GN1.6-Tuned-Arena-GR1-PlaceItemCloseDoor-Task",
       "status": "new",
       "url": "https://huggingface.co/nvidia/GN1.6-Tuned-Arena-GR1-PlaceItemCloseDoor-Task",
@@ -117580,7 +117636,7 @@
       "repository_id": "nvidia/Qwen3.8-27B-NVFP4",
       "status": "new",
       "url": "https://huggingface.co/nvidia/Qwen3.8-27B-NVFP4",
-      "last_modified": "2026-09-09T07:22:48Z",
+      "last_modified": "2026-09-17T17:16:07Z",
       "pipeline_tag": "text-generation",
       "tags": [
         "Model Optimizer",
@@ -117963,7 +118019,7 @@
       "repository_id": "nvidia/SOMA-X",
       "status": "new",
       "url": "https://huggingface.co/nvidia/SOMA-X",
-      "last_modified": "2026-09-02T20:34:34Z",
+      "last_modified": "2026-09-18T03:41:12Z",
       "pipeline_tag": "robotics",
       "tags": [
         "soma-x",
@@ -119151,6 +119207,18 @@
         "license:cc-by-4.0",
         "model-index",
         "eval-results",
+        "region:us"
+      ]
+    },
+    {
+      "provider_id": "nvidia",
+      "organization": "nvidia",
+      "repository_id": "nvidia/cari4d_commercial",
+      "status": "new",
+      "url": "https://huggingface.co/nvidia/cari4d_commercial",
+      "last_modified": "2026-09-18T02:54:48Z",
+      "tags": [
+        "license:other",
         "region:us"
       ]
     },
@@ -126054,7 +126122,7 @@
       "repository_id": "tencent/EVIE-4.5B",
       "status": "new",
       "url": "https://huggingface.co/tencent/EVIE-4.5B",
-      "last_modified": "2026-09-07T13:19:26Z",
+      "last_modified": "2026-09-17T07:02:36Z",
       "pipeline_tag": "visual-document-retrieval",
       "tags": [
         "colpali-engine",
@@ -126084,7 +126152,7 @@
       "repository_id": "tencent/EVIE-8B",
       "status": "new",
       "url": "https://huggingface.co/tencent/EVIE-8B",
-      "last_modified": "2026-09-07T13:19:29Z",
+      "last_modified": "2026-09-17T07:02:44Z",
       "pipeline_tag": "visual-document-retrieval",
       "tags": [
         "colpali-engine",
@@ -129477,6 +129545,40 @@
         "base_model:finetune:Qwen/Qwen3.5-9B",
         "license:other",
         "endpoints_compatible",
+        "region:us"
+      ]
+    },
+    {
+      "provider_id": "tencent",
+      "organization": "tencent",
+      "repository_id": "tencent/WeVisDoc-2B",
+      "status": "new",
+      "url": "https://huggingface.co/tencent/WeVisDoc-2B",
+      "last_modified": "2026-09-18T02:50:12Z",
+      "tags": [
+        "safetensors",
+        "qwen3_vl",
+        "en",
+        "zh",
+        "arxiv:2609.20423",
+        "license:apache-2.0",
+        "region:us"
+      ]
+    },
+    {
+      "provider_id": "tencent",
+      "organization": "tencent",
+      "repository_id": "tencent/WeVisDoc-4B",
+      "status": "new",
+      "url": "https://huggingface.co/tencent/WeVisDoc-4B",
+      "last_modified": "2026-09-18T02:50:25Z",
+      "tags": [
+        "safetensors",
+        "qwen3_vl",
+        "en",
+        "zh",
+        "arxiv:2609.20423",
+        "license:apache-2.0",
         "region:us"
       ]
     },

@@ -46,14 +46,13 @@ upstream:
       - temperature
       - tool_choice
       - tools
-      - top_k
       - top_p
     input_modalities:
       - image
       - text
     output_modalities:
       - text
-    fetched_at: 2026-07-29T10:39:44.226081584Z
+    fetched_at: 2026-09-18T06:48:14.074992015Z
   huggingface:
     id: mistralai/Mistral-Small-4-119B-2603
     revision: a11f36bebf709121056b1dbcc943d1c6afbe494d

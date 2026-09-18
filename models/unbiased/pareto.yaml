@@ -1,0 +1,49 @@
+schema_version: 2
+id: unbiased/pareto
+name: Pareto
+provider: Unbiased
+developer: unbiased
+description: Pareto is a multimodal composite model built for research, coding, and agentic workflows, while delivering frontier-level performance across a broad range of general-purpose tasks.
+description_cn: Pareto 是一款面向研究、编码及智能体工作流的多模态复合模型，在广泛的通用任务中提供前沿级别的性能表现。
+context_length: 262144
+max_output: 131072
+features:
+  - CapChat
+  - CapFunctionCall
+  - ModalityImageIn
+  - ModalityTextIn
+  - ModalityTextOut
+discovered_at: 2026-09-18T06:48:10.873376948Z
+identifiers:
+  openrouter:
+    - unbiased/pareto
+provenance:
+  context_length:
+    source: openrouter
+  description:
+    source: openrouter
+  features:
+    source: openrouter
+  id:
+    source: openrouter
+  max_output:
+    source: openrouter
+  name:
+    source: openrouter
+  provider:
+    source: openrouter
+upstream:
+  openrouter:
+    canonical_slug: unbiased/pareto-20260917
+    supported_parameters:
+      - max_tokens
+      - temperature
+      - tool_choice
+      - tools
+      - top_p
+    input_modalities:
+      - image
+      - text
+    output_modalities:
+      - text
+    fetched_at: 2026-09-18T06:48:14.080455741Z

@@ -24,6 +24,7 @@ upstream:
     supported_parameters:
       - frequency_penalty
       - include_reasoning
+      - logit_bias
       - logprobs
       - max_completion_tokens
       - max_tokens
@@ -47,4 +48,4 @@ upstream:
       - text
     output_modalities:
       - text
-    fetched_at: 2026-08-20T02:46:49.026771008Z
+    fetched_at: 2026-09-18T06:48:14.078176383Z

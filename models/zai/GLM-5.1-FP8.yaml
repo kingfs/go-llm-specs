@@ -3,7 +3,9 @@ id: zai/glm-5.1-fp8
 name: GLM-5.1-FP8
 provider: Z.ai
 developer: zai
-lifecycle: candidate
+lifecycle: active
+description: GLM-5.1 is a next-generation flagship model for agentic engineering, featuring significantly stronger coding capabilities than its predecessor. It excels at long-horizon agentic tasks, breaking down complex problems and sustaining optimization over hundreds of rounds and thousands of tool calls.
+description_cn: GLM-5.1 是专为智能体工程打造的下一代旗舰模型，其编码能力较前代显著提升。该模型擅长长周期智能体任务，能够拆解复杂问题，并在数百轮次和数千次工具调用中持续进行优化。
 context_length: 202752
 features:
   - ModalityTextIn
@@ -17,6 +19,9 @@ provenance:
   context_length:
     source: official_huggingface_config
     url: https://huggingface.co/zai-org/GLM-5.1-FP8
+  description:
+    source: official_model_card
+    url: https://huggingface.co/zai-org/GLM-5.1-FP8/resolve/f396cf805182f4ca10fa675e1a99815b3ca384db/README.md
   features:
     source: official_huggingface_pipeline
     url: https://huggingface.co/zai-org/GLM-5.1-FP8

@@ -1,0 +1,47 @@
+schema_version: 2
+id: allenai/molmoweb-pretrained-8b
+name: MolmoWeb-Pretrained-8B
+provider: Allen Institute for AI
+developer: allenai
+lifecycle: candidate
+context_length: 0
+features:
+  - ModalityImageIn
+  - ModalityTextIn
+  - ModalityTextOut
+links:
+  model_card: https://huggingface.co/allenai/MolmoWeb-Pretrained-8B
+identifiers:
+  huggingface:
+    - allenai/MolmoWeb-Pretrained-8B
+provenance:
+  features:
+    source: official_huggingface_pipeline
+    url: https://huggingface.co/allenai/MolmoWeb-Pretrained-8B
+  id:
+    source: official_huggingface
+    url: https://huggingface.co/allenai/MolmoWeb-Pretrained-8B
+  name:
+    source: official_huggingface
+    url: https://huggingface.co/allenai/MolmoWeb-Pretrained-8B
+upstream:
+  huggingface:
+    id: allenai/MolmoWeb-Pretrained-8B
+    revision: f09cfac996db5665ed891996e0cef51b5d5d98b6
+    pipeline_tag: image-text-to-text
+    license: apache-2.0
+    tags:
+      - arxiv:2601.10611
+      - base_model:Qwen/Qwen3-8B
+      - base_model:finetune:Qwen/Qwen3-8B
+      - en
+      - endpoints_compatible
+      - image-text-to-text
+      - license:apache-2.0
+      - molmo
+      - molmo2
+      - multimodal
+      - olmo
+      - region:us
+      - transformers
+    fetched_at: 2026-09-18T06:48:16.086107648Z

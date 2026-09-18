@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "zai/glm-5.1-fp8",
+  "status": "partially_accepted",
+  "created_at": "2026-09-18T06:49:18.709192188Z",
+  "source": {
+    "url": "https://huggingface.co/zai-org/GLM-5.1-FP8/resolve/f396cf805182f4ca10fa675e1a99815b3ca384db/README.md",
+    "revision": "f396cf805182f4ca10fa675e1a99815b3ca384db",
+    "sha256": "93f27d934627c882832014cf14e11287fd6ab87ea37ddf07aa691f5cdad85b85"
+  },
+  "generator": {
+    "model": "qwen/qwen3.8-27b",
+    "wire_api": "chat"
+  },
+  "claims": [
+    {
+      "field": "description",
+      "value": "GLM-5.1 is a next-generation flagship model for agentic engineering, featuring significantly stronger coding capabilities than its predecessor. It excels at long-horizon agentic tasks, breaking down complex problems and sustaining optimization over hundreds of rounds and thousands of tool calls.",
+      "evidence": "GLM-5.1 is our next-generation flagship model for agentic engineering, with significantly stronger coding capabilities than its predecessor.",
+      "section": "## Introduction",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "ModalityTextIn",
+        "ModalityTextOut"
+      ],
+      "evidence": "pipeline_tag: text-generation",
+      "section": "Front Matter",
+      "confidence": "high"
+    }
+  ]
+}

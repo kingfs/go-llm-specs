@@ -1,0 +1,65 @@
+schema_version: 2
+id: allenai/molmoweb-4b
+name: MolmoWeb-4B
+provider: Allen Institute for AI
+developer: allenai
+lifecycle: candidate
+context_length: 0
+features:
+  - ModalityImageIn
+  - ModalityTextIn
+  - ModalityTextOut
+links:
+  model_card: https://huggingface.co/allenai/MolmoWeb-4B
+identifiers:
+  huggingface:
+    - allenai/MolmoWeb-4B
+provenance:
+  features:
+    source: official_huggingface_pipeline
+    url: https://huggingface.co/allenai/MolmoWeb-4B
+  id:
+    source: official_huggingface
+    url: https://huggingface.co/allenai/MolmoWeb-4B
+  name:
+    source: official_huggingface
+    url: https://huggingface.co/allenai/MolmoWeb-4B
+upstream:
+  huggingface:
+    id: allenai/MolmoWeb-4B
+    revision: c96d1cc05ae7dcb850f4156f5656849961fece14
+    pipeline_tag: image-text-to-text
+    model_type: molmo2
+    architectures:
+      - Molmo2ForConditionalGeneration
+    license: apache-2.0
+    tags:
+      - arxiv:2601.10611
+      - arxiv:2604.08516
+      - base_model:Qwen/Qwen3-8B
+      - base_model:finetune:Qwen/Qwen3-8B
+      - conversational
+      - custom_code
+      - dataset:allenai/MolmoWeb-HumanSkills
+      - dataset:allenai/MolmoWeb-HumanTrajs
+      - dataset:allenai/MolmoWeb-SyntheticGround
+      - dataset:allenai/MolmoWeb-SyntheticQA
+      - dataset:allenai/MolmoWeb-SyntheticSkills
+      - dataset:allenai/MolmoWeb-SyntheticTraj
+      - en
+      - image-text-to-text
+      - license:apache-2.0
+      - molmo
+      - molmo2
+      - multimodal
+      - olmo
+      - region:us
+      - safetensors
+      - transformers
+    tokenizer_model_max_length: 131072
+    processor_class: Molmo2Processor
+    structured_files:
+      - config.json
+      - preprocessor_config.json
+      - tokenizer_config.json
+    fetched_at: 2026-09-18T06:48:14.737639313Z
