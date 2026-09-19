@@ -1,0 +1,102 @@
+schema_version: 2
+id: prism-ml/ternary-bonsai-2-27b
+name: 'PrismML: Ternary Bonsai 2 27B'
+provider: Prism-Ml
+developer: prismml
+description: Bonsai 2 27B is a 27B-parameter reasoning model from PrismML derived from Qwen3.8-27B. It supports coding, mathematics, tool calling, and image understanding with a 262K-token context window. Ternary compression shrinks...
+description_cn: Bonsai 2 27B 是 PrismML 基于 Qwen3.8-27B 推出的 27B 参数推理模型。它支持编程、数学、工具调用及图像理解，具有 262K token 的上下文窗口。三元压缩将...
+context_length: 262144
+max_output: 32768
+features:
+  - CapChat
+  - CapFunctionCall
+  - CapJsonMode
+  - ModalityImageIn
+  - ModalityTextIn
+  - ModalityTextOut
+discovered_at: 2026-09-19T06:47:56.822636846Z
+links:
+  model_card: https://huggingface.co/prism-ml/Ternary-Bonsai-2-27B-gguf
+identifiers:
+  huggingface:
+    - prism-ml/Ternary-Bonsai-2-27B-gguf
+  openrouter:
+    - prism-ml/ternary-bonsai-2-27b
+provenance:
+  context_length:
+    source: openrouter
+  description:
+    source: openrouter
+  features:
+    source: openrouter
+  id:
+    source: openrouter
+  max_output:
+    source: openrouter
+  name:
+    source: openrouter
+  provider:
+    source: openrouter
+  reasoning:
+    source: openrouter
+upstream:
+  openrouter:
+    canonical_slug: prism-ml/ternary-bonsai-2-27b-20260918
+    huggingface_id: prism-ml/Ternary-Bonsai-2-27B-gguf
+    supported_parameters:
+      - frequency_penalty
+      - include_reasoning
+      - logprobs
+      - max_tokens
+      - presence_penalty
+      - reasoning
+      - reasoning_effort
+      - repetition_penalty
+      - response_format
+      - seed
+      - stop
+      - structured_outputs
+      - temperature
+      - tool_choice
+      - tools
+      - top_k
+      - top_logprobs
+      - top_p
+    input_modalities:
+      - image
+      - text
+    output_modalities:
+      - text
+    fetched_at: 2026-09-19T06:48:00.12001001Z
+  huggingface:
+    id: prism-ml/Ternary-Bonsai-2-27B-gguf
+    revision: 6ed5e12bf84b7a63069882c91dd9e9218647d17b
+    pipeline_tag: text-generation
+    license: apache-2.0
+    tags:
+      - 2-bit
+      - base_model:Qwen/Qwen3.8-27B
+      - base_model:quantized:Qwen/Qwen3.8-27B
+      - bonsai
+      - conversational
+      - cuda
+      - endpoints_compatible
+      - gguf
+      - hybrid-attention
+      - license:apache-2.0
+      - llama-cpp
+      - llama.cpp
+      - metal
+      - on-device
+      - prismml
+      - region:us
+      - ternary
+      - text-generation
+    fetched_at: 2026-09-19T06:48:02.861125567Z
+reasoning:
+  supported: true
+  default_enabled: true
+  default_effort: xhigh
+  supported_efforts:
+    - medium
+    - xhigh

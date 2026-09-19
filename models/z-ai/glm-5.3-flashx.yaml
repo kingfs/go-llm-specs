@@ -1,0 +1,69 @@
+schema_version: 2
+id: z-ai/glm-5.3-flashx
+name: 'Z.ai: GLM 5.3 FlashX'
+provider: Z-Ai
+developer: zai
+lifecycle: candidate
+description: GLM-5.3-FlashX is the high-speed variant of Z.ai's GLM-5.3-Flash, a native multimodal model delivering inference speeds of up to 200 tokens/s. Built on the same hybrid sparse and linear attention architecture...
+description_cn: GLM-5.3-FlashX 是智谱 GLM-5.3-Flash 的高速变体，属于原生多模态模型，推理速度最高可达 200 tokens/s。它基于相同的混合稀疏与线性注意力架构构建...
+context_length: 1048576
+max_output: 131072
+features:
+  - CapChat
+  - CapFunctionCall
+  - CapJsonMode
+  - ModalityImageIn
+  - ModalityTextIn
+  - ModalityTextOut
+  - ModalityVideoIn
+discovered_at: 2026-09-19T06:47:56.82294522Z
+identifiers:
+  openrouter:
+    - z-ai/glm-5.3-flashx
+provenance:
+  context_length:
+    source: openrouter
+  description:
+    source: openrouter
+  features:
+    source: openrouter
+  id:
+    source: openrouter
+  max_output:
+    source: openrouter
+  name:
+    source: openrouter
+  provider:
+    source: openrouter
+  reasoning:
+    source: openrouter
+upstream:
+  openrouter:
+    canonical_slug: z-ai/glm-5.3-flashx-20260918
+    supported_parameters:
+      - include_reasoning
+      - max_tokens
+      - reasoning
+      - reasoning_effort
+      - response_format
+      - temperature
+      - tool_choice
+      - tools
+      - top_k
+      - top_p
+    input_modalities:
+      - image
+      - text
+      - video
+    output_modalities:
+      - text
+    fetched_at: 2026-09-19T06:48:00.123277079Z
+reasoning:
+  supported: true
+  mandatory: true
+  default_enabled: true
+  default_effort: max
+  supported_efforts:
+    - high
+    - low
+    - max

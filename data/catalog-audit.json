@@ -1,7 +1,7 @@
 {
   "providers": 24,
-  "models": 738,
-  "models_with_official_links": 537,
+  "models": 745,
+  "models_with_official_links": 543,
   "uncataloged_publishers": {
     "Ai21": 1,
     "Aion-Labs": 4,
@@ -52,6 +52,7 @@
     "opengvlab": 1,
     "poolside": 2,
     "prime-intellect": 1,
+    "prismml": 1,
     "raifle": 1,
     "reka": 1,
     "sakana": 3,

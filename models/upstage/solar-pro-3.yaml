@@ -33,6 +33,7 @@ upstream:
       - parallel_tool_calls
       - presence_penalty
       - reasoning
+      - reasoning_effort
       - response_format
       - structured_outputs
       - temperature
@@ -43,6 +44,6 @@ upstream:
       - text
     output_modalities:
       - text
-    fetched_at: 2026-09-05T06:24:53.021972001Z
+    fetched_at: 2026-09-19T06:48:00.12222402Z
 reasoning:
   supported: true
