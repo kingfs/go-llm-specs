@@ -1,0 +1,65 @@
+schema_version: 2
+id: amazon/bmojof-primed-hqwen3-8b-instruct
+name: BMOJOF-primed-HQwen3-8B-Instruct
+provider: Amazon
+developer: amazon
+lifecycle: candidate
+context_length: 131072
+features:
+  - ModalityTextIn
+  - ModalityTextOut
+links:
+  model_card: https://huggingface.co/amazon/BMOJOF-primed-HQwen3-8B-Instruct
+identifiers:
+  huggingface:
+    - amazon/BMOJOF-primed-HQwen3-8B-Instruct
+provenance:
+  context_length:
+    source: official_huggingface_config
+    url: https://huggingface.co/amazon/BMOJOF-primed-HQwen3-8B-Instruct
+  features:
+    source: official_huggingface_pipeline
+    url: https://huggingface.co/amazon/BMOJOF-primed-HQwen3-8B-Instruct
+  id:
+    source: official_huggingface
+    url: https://huggingface.co/amazon/BMOJOF-primed-HQwen3-8B-Instruct
+  name:
+    source: official_huggingface
+    url: https://huggingface.co/amazon/BMOJOF-primed-HQwen3-8B-Instruct
+upstream:
+  huggingface:
+    id: amazon/BMOJOF-primed-HQwen3-8B-Instruct
+    revision: ce03c9afd23aa88e991662054048f6d5cf64c4d6
+    pipeline_tag: text-generation
+    model_type: hybrid_qwen3
+    architectures:
+      - HybridQwen3ForCausalLM
+    license: apache-2.0
+    tags:
+      - arxiv:2407.06324
+      - arxiv:2502.17605
+      - base_model:Qwen/Qwen3-8B
+      - base_model:finetune:Qwen/Qwen3-8B
+      - bmojo-f
+      - conversational
+      - endpoints_compatible
+      - gated-kalmanet
+      - hybrid
+      - hybrid_qwen3
+      - instruction-tuned
+      - license:apache-2.0
+      - linear-attention
+      - long-context
+      - priming
+      - region:us
+      - safetensors
+      - ssm
+      - state-space-model
+      - text-generation
+      - transformers
+    config_context_length: 131072
+    tokenizer_model_max_length: 131072
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-09-20T07:12:01.02093918Z

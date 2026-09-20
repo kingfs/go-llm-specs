@@ -40,6 +40,8 @@ upstream:
       - seed
       - stop
       - temperature
+      - tool_choice
+      - tools
       - top_k
       - top_logprobs
       - top_p
@@ -49,7 +51,7 @@ upstream:
     output_modalities:
       - text
     knowledge_cutoff: "2023-10-31"
-    fetched_at: 2026-07-29T10:39:46.254837257Z
+    fetched_at: 2026-09-20T07:12:00.304490807Z
   huggingface:
     id: mistralai/Mistral-Small-3.1-24B-Instruct-2503
     revision: 68faf511d618ef198fef186659617cfd2eb8e33a
