@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "zai/glm-5-fp8",
+  "status": "partially_accepted",
+  "created_at": "2026-09-21T07:22:30.457429553Z",
+  "source": {
+    "url": "https://huggingface.co/zai-org/GLM-5-FP8/resolve/4f96cc5eec29dcee5d6ded54f7ffe889438f9516/README.md",
+    "revision": "4f96cc5eec29dcee5d6ded54f7ffe889438f9516",
+    "sha256": "8615d1402b82e0512a02edf6b176824d127264379707e3ffd9a21dc6c751ecfd"
+  },
+  "generator": {
+    "model": "qwen/qwen3.8-27b",
+    "wire_api": "chat"
+  },
+  "claims": [
+    {
+      "field": "description",
+      "value": "GLM-5 is a large language model with 744B parameters (40B active), scaled from GLM-4.5's 355B (32B active). It integrates DeepSeek Sparse Attention (DSA) to reduce deployment costs while preserving long-context capacity. It targets complex systems engineering and long-horizon agentic tasks, achieving best-in-class open-source performance on reasoning, coding, and agentic benchmarks.",
+      "evidence": "GLM-5 scales from 355B parameters (32B active) to 744B parameters (40B active)... integrates DeepSeek Sparse Attention (DSA), largely reducing deployment cost while preserving long-context capacity... targeting complex systems engineering and long-horizon agentic tasks",
+      "section": "Introduction",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "ModalityTextIn",
+        "ModalityTextOut"
+      ],
+      "evidence": "pipeline_tag: text-generation",
+      "section": "Frontmatter",
+      "confidence": "high"
+    },
+    {
+      "field": "context_length",
+      "value": 202752,
+      "evidence": "For HLE-with-tools, we use a maximum context length of 202,752 tokens.",
+      "section": "Footnote",
+      "confidence": "medium"
+    },
+    {
+      "field": "max_output",
+      "value": 131072,
+      "evidence": "We evaluate with a maximum generation length of 131,072 tokens (`temperature=1.0, top_p=0.95, max_new_tokens=131072`).",
+      "section": "Footnote",
+      "confidence": "high"
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+schema_version: 2
+id: zai/glm-5-fp8
+name: GLM-5-FP8
+provider: Z.ai
+developer: zai
+lifecycle: active
+description: GLM-5 is a large language model with 744B parameters (40B active), scaled from GLM-4.5's 355B (32B active). It integrates DeepSeek Sparse Attention (DSA) to reduce deployment costs while preserving long-context capacity. It targets complex systems engineering and long-horizon agentic tasks, achieving best-in-class open-source performance on reasoning, coding, and agentic benchmarks.
+description_cn: GLM-5 是一个拥有 744B 参数（40B 激活）的大语言模型，由 GLM-4.5 的 355B（32B 激活）规模扩展而来。该模型集成了 DeepSeek 稀疏注意力（DSA）机制，在保持长上下文能力的同时降低部署成本。其面向复杂的系统工程和多步智能体任务，在推理、编码及智能体基准测试中取得了开源模型中最佳的性能表现。
+context_length: 202752
+max_output: 131072
+features:
+  - ModalityTextIn
+  - ModalityTextOut
+links:
+  model_card: https://huggingface.co/zai-org/GLM-5-FP8
+identifiers:
+  huggingface:
+    - zai-org/GLM-5-FP8
+provenance:
+  context_length:
+    source: official_huggingface_config
+    url: https://huggingface.co/zai-org/GLM-5-FP8
+  description:
+    source: official_model_card
+    url: https://huggingface.co/zai-org/GLM-5-FP8/resolve/4f96cc5eec29dcee5d6ded54f7ffe889438f9516/README.md
+  features:
+    source: official_huggingface_pipeline
+    url: https://huggingface.co/zai-org/GLM-5-FP8
+  id:
+    source: official_huggingface
+    url: https://huggingface.co/zai-org/GLM-5-FP8
+  max_output:
+    source: official_model_card
+    url: https://huggingface.co/zai-org/GLM-5-FP8/resolve/4f96cc5eec29dcee5d6ded54f7ffe889438f9516/README.md
+  name:
+    source: official_huggingface
+    url: https://huggingface.co/zai-org/GLM-5-FP8
+upstream:
+  huggingface:
+    id: zai-org/GLM-5-FP8
+    revision: 4f96cc5eec29dcee5d6ded54f7ffe889438f9516
+    pipeline_tag: text-generation
+    model_type: glm_moe_dsa
+    architectures:
+      - GlmMoeDsaForCausalLM
+    license: mit
+    tags:
+      - arxiv:2602.15763
+      - conversational
+      - en
+      - endpoints_compatible
+      - eval-results
+      - fp8
+      - glm_moe_dsa
+      - license:mit
+      - region:us
+      - safetensors
+      - text-generation
+      - transformers
+      - zh
+    config_context_length: 202752
+    tokenizer_model_max_length: 202752
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-09-21T07:21:07.391579146Z

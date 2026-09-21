@@ -1,0 +1,60 @@
+schema_version: 2
+id: nvidia/egm-4b
+name: EGM-4B
+provider: NVIDIA
+developer: nvidia
+lifecycle: candidate
+context_length: 0
+features:
+  - ModalityImageIn
+  - ModalityTextIn
+  - ModalityTextOut
+links:
+  model_card: https://huggingface.co/nvidia/EGM-4B
+identifiers:
+  huggingface:
+    - nvidia/EGM-4B
+provenance:
+  features:
+    source: official_huggingface_pipeline
+    url: https://huggingface.co/nvidia/EGM-4B
+  id:
+    source: official_huggingface
+    url: https://huggingface.co/nvidia/EGM-4B
+  name:
+    source: official_huggingface
+    url: https://huggingface.co/nvidia/EGM-4B
+upstream:
+  huggingface:
+    id: nvidia/EGM-4B
+    revision: 579baac24e9a1cafc575eef7b1d10f64c7a8bbb5
+    pipeline_tag: image-text-to-text
+    model_type: qwen3_vl
+    architectures:
+      - Qwen3VLForConditionalGeneration
+    license: apache-2.0
+    tags:
+      - base_model:Qwen/Qwen3-VL-4B-Thinking
+      - base_model:finetune:Qwen/Qwen3-VL-4B-Thinking
+      - conversational
+      - deploy:azure
+      - en
+      - endpoints_compatible
+      - grpo
+      - image-text-to-text
+      - license:apache-2.0
+      - multimodal
+      - qwen3-vl
+      - qwen3_vl
+      - region:us
+      - reinforcement-learning
+      - safetensors
+      - transformers
+      - visual-grounding
+    tokenizer_model_max_length: 8192
+    processor_class: Qwen3VLProcessor
+    structured_files:
+      - config.json
+      - preprocessor_config.json
+      - tokenizer_config.json
+    fetched_at: 2026-09-21T07:21:06.823618079Z

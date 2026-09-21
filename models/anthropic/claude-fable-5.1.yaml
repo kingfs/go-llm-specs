@@ -55,6 +55,7 @@ upstream:
       - response_format
       - stop
       - structured_outputs
+      - tool_choice
       - tools
       - verbosity
     input_modalities:
@@ -63,7 +64,7 @@ upstream:
       - text
     output_modalities:
       - text
-    fetched_at: 2026-09-02T06:31:42.104052803Z
+    fetched_at: 2026-09-21T07:21:03.679717315Z
 reasoning:
   supported: true
   mandatory: true

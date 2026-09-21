@@ -37,6 +37,7 @@ upstream:
       - min_p
       - presence_penalty
       - repetition_penalty
+      - response_format
       - seed
       - stop
       - temperature
@@ -47,7 +48,7 @@ upstream:
     output_modalities:
       - text
     knowledge_cutoff: "2024-06-30"
-    fetched_at: 2026-07-29T10:42:17.000884437Z
+    fetched_at: 2026-09-21T07:21:03.683399467Z
   huggingface:
     id: Qwen/Qwen2.5-Coder-32B-Instruct
     revision: 381fc969f78efac66bc87ff7ddeadb7e73c218a7

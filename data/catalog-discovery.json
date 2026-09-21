@@ -1,7 +1,7 @@
 {
   "providers": 24,
-  "models": 745,
-  "models_with_official_links": 543,
+  "models": 750,
+  "models_with_official_links": 548,
   "uncataloged_publishers": {
     "Ai21": 1,
     "Aion-Labs": 4,
@@ -8010,6 +8010,62 @@
         "diffusers:QwenImagePipeline",
         "region:us",
         "deploy:azure"
+      ]
+    },
+    {
+      "provider_id": "qwen",
+      "organization": "Qwen",
+      "repository_id": "Qwen/Qwen-Image-2.1",
+      "status": "new",
+      "url": "https://huggingface.co/Qwen/Qwen-Image-2.1",
+      "last_modified": "2026-09-21T04:50:49Z",
+      "pipeline_tag": "text-to-image",
+      "tags": [
+        "diffusers",
+        "safetensors",
+        "qwen",
+        "image-generation",
+        "image-editing",
+        "rgba",
+        "text-to-image",
+        "license:other",
+        "diffusers:QwenImage21Pipeline",
+        "region:us"
+      ]
+    },
+    {
+      "provider_id": "qwen",
+      "organization": "Qwen",
+      "repository_id": "Qwen/Qwen-Image-2.1-PE-I2I",
+      "status": "new",
+      "url": "https://huggingface.co/Qwen/Qwen-Image-2.1-PE-I2I",
+      "last_modified": "2026-09-20T11:59:48Z",
+      "tags": [
+        "safetensors",
+        "qwen3_5",
+        "qwen",
+        "prompt-rewriting",
+        "image-editing",
+        "license:other",
+        "region:us"
+      ]
+    },
+    {
+      "provider_id": "qwen",
+      "organization": "Qwen",
+      "repository_id": "Qwen/Qwen-Image-2.1-PE-T2I",
+      "status": "new",
+      "url": "https://huggingface.co/Qwen/Qwen-Image-2.1-PE-T2I",
+      "last_modified": "2026-09-20T11:59:46Z",
+      "pipeline_tag": "text-to-image",
+      "tags": [
+        "safetensors",
+        "qwen3_5",
+        "qwen",
+        "prompt-rewriting",
+        "text-to-image",
+        "license:other",
+        "region:us"
       ]
     },
     {
@@ -89794,7 +89850,8 @@
       "provider_id": "microsoft",
       "organization": "microsoft",
       "repository_id": "microsoft/Dayhoff-170M-GRS-SS-110000",
-      "status": "new",
+      "registry_id": "microsoft/dayhoff-170m-grs-ss-110000",
+      "status": "materialized",
       "url": "https://huggingface.co/microsoft/Dayhoff-170M-GRS-SS-110000",
       "last_modified": "2026-04-03T22:16:11Z",
       "pipeline_tag": "text-generation",
@@ -89816,7 +89873,8 @@
       "provider_id": "microsoft",
       "organization": "microsoft",
       "repository_id": "microsoft/Dayhoff-170M-GRS-SS-122000",
-      "status": "new",
+      "registry_id": "microsoft/dayhoff-170m-grs-ss-122000",
+      "status": "materialized",
       "url": "https://huggingface.co/microsoft/Dayhoff-170M-GRS-SS-122000",
       "last_modified": "2026-04-03T22:16:41Z",
       "pipeline_tag": "text-generation",
@@ -89838,7 +89896,8 @@
       "provider_id": "microsoft",
       "organization": "microsoft",
       "repository_id": "microsoft/Dayhoff-170M-GRS-SS-134000",
-      "status": "new",
+      "registry_id": "microsoft/dayhoff-170m-grs-ss-134000",
+      "status": "materialized",
       "url": "https://huggingface.co/microsoft/Dayhoff-170M-GRS-SS-134000",
       "last_modified": "2026-04-03T22:17:10Z",
       "pipeline_tag": "text-generation",
@@ -107143,7 +107202,8 @@
       "provider_id": "nvidia",
       "organization": "nvidia",
       "repository_id": "nvidia/EGM-4B",
-      "status": "new",
+      "registry_id": "nvidia/egm-4b",
+      "status": "materialized",
       "url": "https://huggingface.co/nvidia/EGM-4B",
       "last_modified": "2026-04-10T01:35:28Z",
       "pipeline_tag": "image-text-to-text",
@@ -129575,6 +129635,7 @@
         "zh",
         "arxiv:2609.20423",
         "license:apache-2.0",
+        "eval-results",
         "region:us"
       ]
     },
@@ -129592,6 +129653,7 @@
         "zh",
         "arxiv:2609.20423",
         "license:apache-2.0",
+        "eval-results",
         "region:us"
       ]
     },
@@ -130471,7 +130533,8 @@
       "provider_id": "zai",
       "organization": "zai-org",
       "repository_id": "zai-org/GLM-5-FP8",
-      "status": "new",
+      "registry_id": "zai/glm-5-fp8",
+      "status": "materialized",
       "url": "https://huggingface.co/zai-org/GLM-5-FP8",
       "last_modified": "2026-04-05T07:51:12Z",
       "pipeline_tag": "text-generation",
