@@ -1,10 +1,11 @@
 schema_version: 2
-id: x-ai/grok-4.6
-name: 'SpaceXAI: Grok 4.6'
+id: x-ai/grok-4.7
+name: 'SpaceXAI: Grok 4.7'
 provider: X-Ai
 developer: xai
-description: Grok 4.6 is SpaceXAI's smartest model with frontier performance on coding, knowledge work, and STEM.
-description_cn: Grok 4.6 是 X AI 最先进的模型，在编程、知识工作和 STEM 领域具备前沿性能。
+lifecycle: candidate
+description: Grok 4.7 is SpaceXAI's flagship model for coding, agentic tasks, and knowledge work, succeeding Grok 4.6. It is particularly strong at long-running software engineering tasks, verifying its own work, and...
+description_cn: Grok 4.7 是 SpaceXAI 的旗舰模型，专为编码、代理任务及知识型工作设计，继任于 Grok 4.6。它在长时间运行的软件工程任务、自我验证方面表现出色，此外还……
 context_length: 500000
 max_output: 450000
 features:
@@ -15,10 +16,13 @@ features:
   - ModalityImageIn
   - ModalityTextIn
   - ModalityTextOut
-discovered_at: 2026-08-13T03:56:35.72876082Z
+aliases:
+  - ~x-ai/grok-latest
+discovered_at: 2026-09-22T06:57:30.199157613Z
 identifiers:
   openrouter:
-    - x-ai/grok-4.6
+    - x-ai/grok-4.7
+    - ~x-ai/grok-latest
 provenance:
   context_length:
     source: openrouter
@@ -38,7 +42,7 @@ provenance:
     source: openrouter
 upstream:
   openrouter:
-    canonical_slug: x-ai/grok-4.6-20260810
+    canonical_slug: x-ai/grok-4.7-20260916
     supported_parameters:
       - include_reasoning
       - logprobs
@@ -47,12 +51,10 @@ upstream:
       - reasoning_effort
       - response_format
       - seed
-      - stop
       - structured_outputs
       - temperature
       - tool_choice
       - tools
-      - top_k
       - top_logprobs
       - top_p
     input_modalities:
@@ -61,7 +63,7 @@ upstream:
       - text
     output_modalities:
       - text
-    fetched_at: 2026-08-26T02:55:05.770105713Z
+    fetched_at: 2026-09-22T06:57:32.856611536Z
 reasoning:
   supported: true
   mandatory: true

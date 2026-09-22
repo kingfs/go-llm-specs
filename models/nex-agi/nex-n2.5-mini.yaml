@@ -16,7 +16,11 @@ features:
 aliases:
   - nex-agi/nex-n2.5-mini:free
 discovered_at: 2026-09-09T06:49:19.459848449Z
+links:
+  model_card: https://huggingface.co/nex-agi/Nex-N2.5-mini
 identifiers:
+  huggingface:
+    - nex-agi/Nex-N2.5-mini
   openrouter:
     - nex-agi/nex-n2.5-mini
     - nex-agi/nex-n2.5-mini:free
@@ -35,3 +39,58 @@ provenance:
     source: openrouter
   provider:
     source: openrouter
+  reasoning:
+    source: openrouter
+upstream:
+  openrouter:
+    canonical_slug: nex-agi/nex-n2.5-mini-20260908
+    huggingface_id: nex-agi/Nex-N2.5-mini
+    supported_parameters:
+      - include_reasoning
+      - logprobs
+      - max_tokens
+      - reasoning
+      - reasoning_effort
+      - structured_outputs
+      - temperature
+      - top_k
+      - top_logprobs
+      - top_p
+    input_modalities:
+      - image
+      - text
+    output_modalities:
+      - text
+    fetched_at: 2026-09-22T06:57:32.85224367Z
+  huggingface:
+    id: nex-agi/Nex-N2.5-mini
+    revision: 87420286149d9cce9bd46cd335ef9bda33c37c1b
+    pipeline_tag: text-generation
+    model_type: qwen3_5_moe
+    architectures:
+      - Qwen3_5MoeForConditionalGeneration
+    license: apache-2.0
+    tags:
+      - conversational
+      - endpoints_compatible
+      - image-text-to-text
+      - license:apache-2.0
+      - qwen3_5_moe
+      - region:us
+      - safetensors
+      - text-generation
+      - transformers
+    tokenizer_model_max_length: 262144
+    processor_class: Qwen3VLProcessor
+    structured_files:
+      - config.json
+      - preprocessor_config.json
+      - tokenizer_config.json
+    fetched_at: 2026-09-22T06:57:34.946198923Z
+reasoning:
+  supported: true
+  default_effort: high
+  supported_efforts:
+    - high
+    - medium
+    - none

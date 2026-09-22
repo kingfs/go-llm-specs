@@ -1,0 +1,65 @@
+schema_version: 2
+id: xiaomi/mimo-v2.6-flash
+name: 'Xiaomi: MiMo-V2.6-Flash'
+provider: Xiaomi
+developer: xiaomi
+description: MiMo-V2.6-Flash is an open-source foundation model developed by Xiaomi. Built on a Mixture-of-Experts architecture with 309B total parameters and 15B activated per token, it employs a hybrid attention mechanism for...
+description_cn: MiMo-V2.6-Flash 是小米开发的开源基础模型。采用混合专家（MoE）架构，总参数量 309B，每 token 激活 15B，并结合混合注意力机制用于……
+context_length: 1048576
+max_output: 131072
+features:
+  - CapChat
+  - CapFunctionCall
+  - CapJsonMode
+  - ModalityAudioIn
+  - ModalityImageIn
+  - ModalityTextIn
+  - ModalityTextOut
+  - ModalityVideoIn
+discovered_at: 2026-09-22T06:57:30.197893974Z
+identifiers:
+  openrouter:
+    - xiaomi/mimo-v2.6-flash
+provenance:
+  context_length:
+    source: openrouter
+  description:
+    source: openrouter
+  features:
+    source: openrouter
+  id:
+    source: openrouter
+  max_output:
+    source: openrouter
+  name:
+    source: openrouter
+  provider:
+    source: openrouter
+  reasoning:
+    source: openrouter
+upstream:
+  openrouter:
+    canonical_slug: xiaomi/mimo-v2.6-flash-20260921
+    supported_parameters:
+      - frequency_penalty
+      - include_reasoning
+      - max_tokens
+      - presence_penalty
+      - reasoning
+      - response_format
+      - stop
+      - structured_outputs
+      - temperature
+      - tool_choice
+      - tools
+      - top_p
+    input_modalities:
+      - audio
+      - image
+      - text
+      - video
+    output_modalities:
+      - text
+    fetched_at: 2026-09-22T06:57:32.856846782Z
+reasoning:
+  supported: true

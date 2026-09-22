@@ -1,7 +1,7 @@
 {
   "providers": 24,
-  "models": 750,
-  "models_with_official_links": 548,
+  "models": 759,
+  "models_with_official_links": 553,
   "uncataloged_publishers": {
     "Ai21": 1,
     "Aion-Labs": 4,
@@ -63,7 +63,7 @@
     "tngtech": 3,
     "unbiased": 1,
     "upstage": 1,
-    "xiaomi": 3
+    "xiaomi": 6
   },
   "huggingface_candidates": [
     {
@@ -89985,7 +89985,8 @@
       "provider_id": "microsoft",
       "organization": "microsoft",
       "repository_id": "microsoft/Dayhoff-170M-GRS-SS-50000",
-      "status": "new",
+      "registry_id": "microsoft/dayhoff-170m-grs-ss-50000",
+      "status": "materialized",
       "url": "https://huggingface.co/microsoft/Dayhoff-170M-GRS-SS-50000",
       "last_modified": "2026-04-03T22:13:51Z",
       "pipeline_tag": "text-generation",
@@ -90007,7 +90008,8 @@
       "provider_id": "microsoft",
       "organization": "microsoft",
       "repository_id": "microsoft/Dayhoff-170M-GRS-SS-62000",
-      "status": "new",
+      "registry_id": "microsoft/dayhoff-170m-grs-ss-62000",
+      "status": "materialized",
       "url": "https://huggingface.co/microsoft/Dayhoff-170M-GRS-SS-62000",
       "last_modified": "2026-04-03T22:14:18Z",
       "pipeline_tag": "text-generation",
@@ -90029,7 +90031,8 @@
       "provider_id": "microsoft",
       "organization": "microsoft",
       "repository_id": "microsoft/Dayhoff-170M-GRS-SS-74000",
-      "status": "new",
+      "registry_id": "microsoft/dayhoff-170m-grs-ss-74000",
+      "status": "materialized",
       "url": "https://huggingface.co/microsoft/Dayhoff-170M-GRS-SS-74000",
       "last_modified": "2026-04-03T22:14:47Z",
       "pipeline_tag": "text-generation",
@@ -90051,7 +90054,8 @@
       "provider_id": "microsoft",
       "organization": "microsoft",
       "repository_id": "microsoft/Dayhoff-170M-GRS-SS-86000",
-      "status": "new",
+      "registry_id": "microsoft/dayhoff-170m-grs-ss-86000",
+      "status": "materialized",
       "url": "https://huggingface.co/microsoft/Dayhoff-170M-GRS-SS-86000",
       "last_modified": "2026-04-03T22:15:12Z",
       "pipeline_tag": "text-generation",
@@ -90073,7 +90077,8 @@
       "provider_id": "microsoft",
       "organization": "microsoft",
       "repository_id": "microsoft/Dayhoff-170M-GRS-SS-98000",
-      "status": "new",
+      "registry_id": "microsoft/dayhoff-170m-grs-ss-98000",
+      "status": "materialized",
       "url": "https://huggingface.co/microsoft/Dayhoff-170M-GRS-SS-98000",
       "last_modified": "2026-04-03T22:15:43Z",
       "pipeline_tag": "text-generation",
@@ -107483,6 +107488,18 @@
     {
       "provider_id": "nvidia",
       "organization": "nvidia",
+      "repository_id": "nvidia/EgoHand-v1",
+      "status": "new",
+      "url": "https://huggingface.co/nvidia/EgoHand-v1",
+      "last_modified": "2026-09-16T22:17:36Z",
+      "tags": [
+        "license:other",
+        "region:us"
+      ]
+    },
+    {
+      "provider_id": "nvidia",
+      "organization": "nvidia",
       "repository_id": "nvidia/FasterViT",
       "status": "new",
       "url": "https://huggingface.co/nvidia/FasterViT",
@@ -109164,6 +109181,22 @@
         "seed",
         "SOMA",
         "license:other",
+        "region:us"
+      ]
+    },
+    {
+      "provider_id": "nvidia",
+      "organization": "nvidia",
+      "repository_id": "nvidia/Kumo-Forecast",
+      "status": "new",
+      "url": "https://huggingface.co/nvidia/Kumo-Forecast",
+      "last_modified": "2026-09-21T23:24:59Z",
+      "tags": [
+        "kumo-ts",
+        "en",
+        "arxiv:2402.03885",
+        "arxiv:2412.20810",
+        "license:apache-2.0",
         "region:us"
       ]
     },
@@ -117919,6 +117952,20 @@
     {
       "provider_id": "nvidia",
       "organization": "nvidia",
+      "repository_id": "nvidia/RT-DETR-Hand-Detector-v1",
+      "status": "new",
+      "url": "https://huggingface.co/nvidia/RT-DETR-Hand-Detector-v1",
+      "last_modified": "2026-09-16T22:17:38Z",
+      "tags": [
+        "onnx",
+        "arxiv:2603.16858",
+        "license:other",
+        "region:us"
+      ]
+    },
+    {
+      "provider_id": "nvidia",
+      "organization": "nvidia",
       "repository_id": "nvidia/Real-time_RE-USE",
       "status": "new",
       "url": "https://huggingface.co/nvidia/Real-time_RE-USE",
@@ -122048,7 +122095,8 @@
         "license:other",
         "model-index",
         "eval-results",
-        "region:us"
+        "region:us",
+        "deploy:sagemaker"
       ]
     },
     {

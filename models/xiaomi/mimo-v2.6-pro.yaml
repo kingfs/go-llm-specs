@@ -1,24 +1,25 @@
 schema_version: 2
-id: x-ai/grok-4.6
-name: 'SpaceXAI: Grok 4.6'
-provider: X-Ai
-developer: xai
-description: Grok 4.6 is SpaceXAI's smartest model with frontier performance on coding, knowledge work, and STEM.
-description_cn: Grok 4.6 是 X AI 最先进的模型，在编程、知识工作和 STEM 领域具备前沿性能。
-context_length: 500000
-max_output: 450000
+id: xiaomi/mimo-v2.6-pro
+name: 'Xiaomi: MiMo-V2.6-Pro'
+provider: Xiaomi
+developer: xiaomi
+description: MiMo-V2.6-Pro is the flagship foundation model developed by Xiaomi. Built at a scale of over 1T parameters, it is designed to push the ceiling of capability for the most demanding...
+description_cn: MiMo-V2.6-Pro 是小米开发的旗舰基础模型。规模超过 1T 参数，旨在突破最高难度……的能力上限。
+context_length: 1048576
+max_output: 131072
 features:
   - CapChat
   - CapFunctionCall
   - CapJsonMode
-  - ModalityFileIn
+  - ModalityAudioIn
   - ModalityImageIn
   - ModalityTextIn
   - ModalityTextOut
-discovered_at: 2026-08-13T03:56:35.72876082Z
+  - ModalityVideoIn
+discovered_at: 2026-09-22T06:57:30.198619115Z
 identifiers:
   openrouter:
-    - x-ai/grok-4.6
+    - xiaomi/mimo-v2.6-pro
 provenance:
   context_length:
     source: openrouter
@@ -38,37 +39,27 @@ provenance:
     source: openrouter
 upstream:
   openrouter:
-    canonical_slug: x-ai/grok-4.6-20260810
+    canonical_slug: xiaomi/mimo-v2.6-pro-20260921
     supported_parameters:
+      - frequency_penalty
       - include_reasoning
-      - logprobs
       - max_tokens
+      - presence_penalty
       - reasoning
-      - reasoning_effort
       - response_format
-      - seed
       - stop
       - structured_outputs
       - temperature
       - tool_choice
       - tools
-      - top_k
-      - top_logprobs
       - top_p
     input_modalities:
-      - file
+      - audio
       - image
       - text
+      - video
     output_modalities:
       - text
-    fetched_at: 2026-08-26T02:55:05.770105713Z
+    fetched_at: 2026-09-22T06:57:32.85699823Z
 reasoning:
   supported: true
-  mandatory: true
-  default_enabled: true
-  default_effort: high
-  supported_efforts:
-    - high
-    - low
-    - medium
-    - xhigh

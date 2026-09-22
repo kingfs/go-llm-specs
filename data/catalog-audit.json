@@ -1,7 +1,7 @@
 {
   "providers": 24,
-  "models": 755,
-  "models_with_official_links": 553,
+  "models": 764,
+  "models_with_official_links": 560,
   "uncataloged_publishers": {
     "Ai21": 1,
     "Aion-Labs": 4,
@@ -63,6 +63,6 @@
     "tngtech": 3,
     "unbiased": 1,
     "upstage": 1,
-    "xiaomi": 3
+    "xiaomi": 6
   }
 }

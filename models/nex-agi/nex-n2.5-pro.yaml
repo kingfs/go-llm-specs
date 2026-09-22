@@ -17,7 +17,11 @@ features:
 aliases:
   - nex-agi/nex-n2.5-pro:free
 discovered_at: 2026-09-09T06:49:19.459938116Z
+links:
+  model_card: https://huggingface.co/nex-agi/Nex-N2.5-Pro
 identifiers:
+  huggingface:
+    - nex-agi/Nex-N2.5-Pro
   openrouter:
     - nex-agi/nex-n2.5-pro
     - nex-agi/nex-n2.5-pro:free
@@ -36,3 +40,63 @@ provenance:
     source: openrouter
   provider:
     source: openrouter
+  reasoning:
+    source: openrouter
+upstream:
+  openrouter:
+    canonical_slug: nex-agi/nex-n2.5-pro-20260907
+    huggingface_id: nex-agi/Nex-N2.5-Pro
+    supported_parameters:
+      - include_reasoning
+      - logprobs
+      - max_tokens
+      - reasoning
+      - reasoning_effort
+      - structured_outputs
+      - temperature
+      - tool_choice
+      - tools
+      - top_k
+      - top_logprobs
+      - top_p
+    input_modalities:
+      - image
+      - text
+    output_modalities:
+      - text
+    fetched_at: 2026-09-22T06:57:32.852747037Z
+  huggingface:
+    id: nex-agi/Nex-N2.5-Pro
+    revision: 99842a1e9a40904a671c3cbabbf0530e2a88d002
+    pipeline_tag: text-generation
+    model_type: qwen3_5_moe
+    architectures:
+      - Qwen3_5MoeForConditionalGeneration
+    license: apache-2.0
+    tags:
+      - compressed-tensors
+      - conversational
+      - endpoints_compatible
+      - eval-results
+      - image-text-to-text
+      - license:apache-2.0
+      - qwen3_5_moe
+      - region:us
+      - safetensors
+      - text-generation
+      - transformers
+    tokenizer_model_max_length: 262144
+    processor_class: Qwen3VLProcessor
+    chat_template_sha256: 3df1a7cf26716b232ed11b9d24888523f362c150181d87c4323b95bbd8e48115
+    structured_files:
+      - config.json
+      - preprocessor_config.json
+      - tokenizer_config.json
+    fetched_at: 2026-09-22T06:57:35.227531715Z
+reasoning:
+  supported: true
+  default_effort: high
+  supported_efforts:
+    - high
+    - medium
+    - none

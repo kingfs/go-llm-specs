@@ -1,0 +1,65 @@
+schema_version: 2
+id: xiaomi/mimo-v2.6-pro-ultraspeed
+name: 'Xiaomi: MiMo-V2.6-Pro-UltraSpeed'
+provider: Xiaomi
+developer: xiaomi
+description: MiMo-V2.6-Pro-UltraSpeed is the fast speed edition of Xiaomi's flagship foundation model, MiMo-V2.6-Pro. Built from the same 1T MiMo-V2.6-Pro checkpoint, it matches the original model in quality while delivering roughly 10x...
+description_cn: MiMo-V2.6-Pro-UltraSpeed 是小米旗舰基础模型 MiMo-V2.6-Pro 的高速版本。基于相同的 1T MiMo-V2.6-Pro 检查点构建，在保持原模型质量的同时，速度提升约 10 倍……
+context_length: 1048576
+max_output: 131072
+features:
+  - CapChat
+  - CapFunctionCall
+  - CapJsonMode
+  - ModalityAudioIn
+  - ModalityImageIn
+  - ModalityTextIn
+  - ModalityTextOut
+  - ModalityVideoIn
+discovered_at: 2026-09-22T06:57:30.197619636Z
+identifiers:
+  openrouter:
+    - xiaomi/mimo-v2.6-pro-ultraspeed
+provenance:
+  context_length:
+    source: openrouter
+  description:
+    source: openrouter
+  features:
+    source: openrouter
+  id:
+    source: openrouter
+  max_output:
+    source: openrouter
+  name:
+    source: openrouter
+  provider:
+    source: openrouter
+  reasoning:
+    source: openrouter
+upstream:
+  openrouter:
+    canonical_slug: xiaomi/mimo-v2.6-pro-ultraspeed-20260921
+    supported_parameters:
+      - frequency_penalty
+      - include_reasoning
+      - max_tokens
+      - presence_penalty
+      - reasoning
+      - response_format
+      - stop
+      - structured_outputs
+      - temperature
+      - tool_choice
+      - tools
+      - top_p
+    input_modalities:
+      - audio
+      - image
+      - text
+      - video
+    output_modalities:
+      - text
+    fetched_at: 2026-09-22T06:57:32.857119503Z
+reasoning:
+  supported: true
