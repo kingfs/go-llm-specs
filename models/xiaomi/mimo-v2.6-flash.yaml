@@ -17,7 +17,11 @@ features:
   - ModalityTextOut
   - ModalityVideoIn
 discovered_at: 2026-09-22T06:57:30.197893974Z
+links:
+  model_card: https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Flash-RL
 identifiers:
+  huggingface:
+    - XiaomiMiMo/MiMo-V2.6-Flash-RL
   openrouter:
     - xiaomi/mimo-v2.6-flash
 provenance:
@@ -40,18 +44,24 @@ provenance:
 upstream:
   openrouter:
     canonical_slug: xiaomi/mimo-v2.6-flash-20260921
+    huggingface_id: XiaomiMiMo/MiMo-V2.6-Flash-RL
     supported_parameters:
       - frequency_penalty
       - include_reasoning
+      - logit_bias
       - max_tokens
+      - min_p
       - presence_penalty
       - reasoning
+      - repetition_penalty
       - response_format
+      - seed
       - stop
       - structured_outputs
       - temperature
       - tool_choice
       - tools
+      - top_k
       - top_p
     input_modalities:
       - audio
@@ -60,6 +70,43 @@ upstream:
       - video
     output_modalities:
       - text
-    fetched_at: 2026-09-22T06:57:32.856846782Z
+    fetched_at: 2026-09-23T06:51:36.052927999Z
+  huggingface:
+    id: XiaomiMiMo/MiMo-V2.6-Flash-RL
+    revision: 5711b268169967567844e1e560e8a3966da959b1
+    pipeline_tag: text-generation
+    model_type: mimo_v2
+    architectures:
+      - MiMoV2ForCausalLM
+    license: mit
+    tags:
+      - 8-bit
+      - agent
+      - audio
+      - conversational
+      - custom_code
+      - en
+      - eval-results
+      - fp8
+      - license:mit
+      - long-context
+      - mimo_v2
+      - multimodal
+      - region:us
+      - safetensors
+      - text-generation
+      - transformers
+      - video-understanding
+      - vision-language
+      - zh
+    config_context_length: 1048576
+    tokenizer_model_max_length: 1048576
+    processor_class: Qwen2_5_VLProcessor
+    chat_template_sha256: 4207bef2f1321cd2c0d3792d591fc403a5010d581b6393c842a122613064af74
+    structured_files:
+      - config.json
+      - preprocessor_config.json
+      - tokenizer_config.json
+    fetched_at: 2026-09-23T06:51:37.249611746Z
 reasoning:
   supported: true

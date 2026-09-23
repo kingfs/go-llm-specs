@@ -1,0 +1,70 @@
+schema_version: 2
+id: qwen/qwen3.8-omni-flash
+name: 'Qwen: Qwen3.8 Omni Flash'
+provider: Qwen
+developer: qwen
+description: Qwen3.8 Omni Flash is an omni-modal reasoning model from Alibaba, the first Qwen model built around agentic capabilities with native audio-video understanding. It is suited for audio-video analysis and summarization,...
+description_cn: Qwen3.8 Omni Flash 是阿里巴巴推出的全模态推理模型，是首个围绕智能体能力构建、具备原生音视频理解能力的 Qwen 模型。它适用于音视频分析和摘要生成，...
+context_length: 1000000
+max_output: 131072
+features:
+  - CapChat
+  - CapFunctionCall
+  - CapJsonMode
+  - ModalityAudioIn
+  - ModalityImageIn
+  - ModalityTextIn
+  - ModalityTextOut
+  - ModalityVideoIn
+discovered_at: 2026-09-23T06:51:33.548781596Z
+identifiers:
+  openrouter:
+    - qwen/qwen3.8-omni-flash
+provenance:
+  context_length:
+    source: openrouter
+  description:
+    source: openrouter
+  features:
+    source: openrouter
+  id:
+    source: openrouter
+  max_output:
+    source: openrouter
+  name:
+    source: openrouter
+  provider:
+    source: openrouter
+  reasoning:
+    source: openrouter
+upstream:
+  openrouter:
+    canonical_slug: qwen/qwen3.8-omni-flash-20260918
+    supported_parameters:
+      - frequency_penalty
+      - include_reasoning
+      - logprobs
+      - max_tokens
+      - presence_penalty
+      - reasoning
+      - response_format
+      - seed
+      - stop
+      - structured_outputs
+      - temperature
+      - tool_choice
+      - tools
+      - top_k
+      - top_logprobs
+      - top_p
+    input_modalities:
+      - audio
+      - image
+      - text
+      - video
+    output_modalities:
+      - text
+    fetched_at: 2026-09-23T06:51:36.050370414Z
+reasoning:
+  supported: true
+  default_enabled: true

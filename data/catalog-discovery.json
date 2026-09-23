@@ -1,7 +1,7 @@
 {
   "providers": 24,
-  "models": 759,
-  "models_with_official_links": 553,
+  "models": 769,
+  "models_with_official_links": 563,
   "uncataloged_publishers": {
     "Ai21": 1,
     "Aion-Labs": 4,
@@ -41550,7 +41550,8 @@
       "provider_id": "amazon",
       "organization": "amazon",
       "repository_id": "amazon/GDN-primed-HQwen3-8B-Reasoner",
-      "status": "new",
+      "registry_id": "amazon/gdn-primed-hqwen3-8b-reasoner",
+      "status": "materialized",
       "url": "https://huggingface.co/amazon/GDN-primed-HQwen3-8B-Reasoner",
       "last_modified": "2026-04-03T03:35:09Z",
       "pipeline_tag": "text-generation",
@@ -41612,7 +41613,8 @@
       "provider_id": "amazon",
       "organization": "amazon",
       "repository_id": "amazon/GKA-primed-HQwen3-32B-Reasoner",
-      "status": "new",
+      "registry_id": "amazon/gka-primed-hqwen3-32b-reasoner",
+      "status": "materialized",
       "url": "https://huggingface.co/amazon/GKA-primed-HQwen3-32B-Reasoner",
       "last_modified": "2026-04-03T03:35:42Z",
       "pipeline_tag": "text-generation",
@@ -89919,7 +89921,8 @@
       "provider_id": "microsoft",
       "organization": "microsoft",
       "repository_id": "microsoft/Dayhoff-170M-GRS-SS-14000",
-      "status": "new",
+      "registry_id": "microsoft/dayhoff-170m-grs-ss-14000",
+      "status": "materialized",
       "url": "https://huggingface.co/microsoft/Dayhoff-170M-GRS-SS-14000",
       "last_modified": "2026-04-03T22:12:11Z",
       "pipeline_tag": "text-generation",
@@ -89941,7 +89944,8 @@
       "provider_id": "microsoft",
       "organization": "microsoft",
       "repository_id": "microsoft/Dayhoff-170M-GRS-SS-26000",
-      "status": "new",
+      "registry_id": "microsoft/dayhoff-170m-grs-ss-26000",
+      "status": "materialized",
       "url": "https://huggingface.co/microsoft/Dayhoff-170M-GRS-SS-26000",
       "last_modified": "2026-04-03T22:12:41Z",
       "pipeline_tag": "text-generation",
@@ -89963,7 +89967,8 @@
       "provider_id": "microsoft",
       "organization": "microsoft",
       "repository_id": "microsoft/Dayhoff-170M-GRS-SS-38000",
-      "status": "new",
+      "registry_id": "microsoft/dayhoff-170m-grs-ss-38000",
+      "status": "materialized",
       "url": "https://huggingface.co/microsoft/Dayhoff-170M-GRS-SS-38000",
       "last_modified": "2026-04-03T22:13:15Z",
       "pipeline_tag": "text-generation",
@@ -98647,6 +98652,45 @@
     {
       "provider_id": "microsoft",
       "organization": "microsoft",
+      "repository_id": "microsoft/rho-base",
+      "status": "new",
+      "url": "https://huggingface.co/microsoft/rho-base",
+      "last_modified": "2026-09-18T00:23:27Z",
+      "tags": [
+        "safetensors",
+        "license:mit",
+        "region:us"
+      ]
+    },
+    {
+      "provider_id": "microsoft",
+      "organization": "microsoft",
+      "repository_id": "microsoft/rho-fr3-duo",
+      "status": "new",
+      "url": "https://huggingface.co/microsoft/rho-fr3-duo",
+      "last_modified": "2026-09-18T00:11:10Z",
+      "tags": [
+        "safetensors",
+        "license:mit",
+        "region:us"
+      ]
+    },
+    {
+      "provider_id": "microsoft",
+      "organization": "microsoft",
+      "repository_id": "microsoft/rho-libero",
+      "status": "new",
+      "url": "https://huggingface.co/microsoft/rho-libero",
+      "last_modified": "2026-09-22T17:51:00Z",
+      "tags": [
+        "safetensors",
+        "license:mit",
+        "region:us"
+      ]
+    },
+    {
+      "provider_id": "microsoft",
+      "organization": "microsoft",
       "repository_id": "microsoft/rho-math-1b-interpreter-v0.1",
       "status": "new",
       "url": "https://huggingface.co/microsoft/rho-math-1b-interpreter-v0.1",
@@ -98734,6 +98778,45 @@
         "license:mit",
         "text-generation-inference",
         "endpoints_compatible",
+        "region:us"
+      ]
+    },
+    {
+      "provider_id": "microsoft",
+      "organization": "microsoft",
+      "repository_id": "microsoft/rho-roboeval",
+      "status": "new",
+      "url": "https://huggingface.co/microsoft/rho-roboeval",
+      "last_modified": "2026-09-21T23:45:35Z",
+      "tags": [
+        "safetensors",
+        "license:mit",
+        "region:us"
+      ]
+    },
+    {
+      "provider_id": "microsoft",
+      "organization": "microsoft",
+      "repository_id": "microsoft/rho-ur-ai-trainer",
+      "status": "new",
+      "url": "https://huggingface.co/microsoft/rho-ur-ai-trainer",
+      "last_modified": "2026-09-17T23:48:38Z",
+      "tags": [
+        "safetensors",
+        "license:mit",
+        "region:us"
+      ]
+    },
+    {
+      "provider_id": "microsoft",
+      "organization": "microsoft",
+      "repository_id": "microsoft/rho-yam-box",
+      "status": "new",
+      "url": "https://huggingface.co/microsoft/rho-yam-box",
+      "last_modified": "2026-09-18T00:07:37Z",
+      "tags": [
+        "safetensors",
+        "license:mit",
         "region:us"
       ]
     },
@@ -109187,6 +109270,21 @@
     {
       "provider_id": "nvidia",
       "organization": "nvidia",
+      "repository_id": "nvidia/Kumo-Anomaly",
+      "status": "new",
+      "url": "https://huggingface.co/nvidia/Kumo-Anomaly",
+      "last_modified": "2026-09-22T22:03:57Z",
+      "tags": [
+        "Kumo-TS",
+        "en",
+        "arxiv:2307.00754",
+        "license:apache-2.0",
+        "region:us"
+      ]
+    },
+    {
+      "provider_id": "nvidia",
+      "organization": "nvidia",
       "repository_id": "nvidia/Kumo-Forecast",
       "status": "new",
       "url": "https://huggingface.co/nvidia/Kumo-Forecast",
@@ -113693,13 +113791,14 @@
       "repository_id": "nvidia/NVIDIA-NemotronLabs-VoiceChat-11B",
       "status": "new",
       "url": "https://huggingface.co/nvidia/NVIDIA-NemotronLabs-VoiceChat-11B",
-      "last_modified": "2026-09-12T03:23:44Z",
+      "last_modified": "2026-09-22T21:49:01Z",
       "tags": [
         "safetensors",
         "en",
         "arxiv:2410.17196",
         "arxiv:2503.04721",
         "arxiv:2604.04847",
+        "arxiv:2609.21967",
         "arxiv:2505.15670",
         "arxiv:2507.08128",
         "base_model:nvidia/NVIDIA-Nemotron-Nano-9B-v2",
@@ -126243,7 +126342,7 @@
       "repository_id": "tencent/EVIE-4.5B",
       "status": "new",
       "url": "https://huggingface.co/tencent/EVIE-4.5B",
-      "last_modified": "2026-09-17T07:02:36Z",
+      "last_modified": "2026-09-22T08:30:45Z",
       "pipeline_tag": "visual-document-retrieval",
       "tags": [
         "colpali-engine",
@@ -126273,7 +126372,7 @@
       "repository_id": "tencent/EVIE-8B",
       "status": "new",
       "url": "https://huggingface.co/tencent/EVIE-8B",
-      "last_modified": "2026-09-17T07:02:44Z",
+      "last_modified": "2026-09-22T08:30:45Z",
       "pipeline_tag": "visual-document-retrieval",
       "tags": [
         "colpali-engine",

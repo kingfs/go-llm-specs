@@ -38,7 +38,6 @@ upstream:
       - frequency_penalty
       - include_reasoning
       - logit_bias
-      - logprobs
       - max_tokens
       - min_p
       - presence_penalty
@@ -51,7 +50,6 @@ upstream:
       - tool_choice
       - tools
       - top_k
-      - top_logprobs
       - top_p
     input_modalities:
       - audio
@@ -59,7 +57,7 @@ upstream:
       - text
     output_modalities:
       - text
-    fetched_at: 2026-08-24T02:53:26.890827626Z
+    fetched_at: 2026-09-23T06:51:36.05201268Z
   huggingface:
     id: thinkingmachines/Inkling-Small
     revision: 8cc5877b44d343f88b92086aa1fb72897950f06a

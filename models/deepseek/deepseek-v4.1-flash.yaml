@@ -15,6 +15,7 @@ features:
   - ModalityTextIn
   - ModalityTextOut
 aliases:
+  - deepseek/deepseek-v4.1-flash:batch
   - ~deepseek/deepseek-flash-latest
 discovered_at: 2026-09-10T06:44:38.956559746Z
 links:
@@ -24,6 +25,7 @@ identifiers:
     - deepseek-ai/DeepSeek-V4.1-Flash
   openrouter:
     - deepseek/deepseek-v4.1-flash
+    - deepseek/deepseek-v4.1-flash:batch
     - ~deepseek/deepseek-flash-latest
 provenance:
   context_length:

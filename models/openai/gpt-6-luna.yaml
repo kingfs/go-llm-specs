@@ -1,0 +1,88 @@
+schema_version: 2
+id: openai/gpt-6-luna
+name: 'OpenAI: GPT-6 Luna Pro'
+provider: OpenAI
+developer: openai
+lifecycle: candidate
+description: |-
+  GPT-6 Luna Pro is the same underlying model as [GPT-6 Luna](https://openrouter.ai/openai/gpt-6-luna), served with `reasoning.mode` set to `pro` for higher-quality responses on complex tasks.
+
+  Learn more in OpenAI's docs: https://developers.openai.com/api/docs/guides/reasoning#reasoning-mode
+description_cn: |-
+  GPT-6 Luna Pro 与 [GPT-6 Luna](https://openrouter.ai/openai/gpt-6-luna) 具有相同的底层模型，但将 `reasoning.mode` 设置为 `pro`，以在复杂任务中提供更高质量的响应。
+
+  在 OpenAI 文档中了解更多：https://developers.openai.com/api/docs/guides/reasoning#reasoning-mode
+context_length: 1050000
+max_output: 128000
+features:
+  - CapChat
+  - CapFunctionCall
+  - CapJsonMode
+  - ModalityFileIn
+  - ModalityImageIn
+  - ModalityTextIn
+  - ModalityTextOut
+aliases:
+  - openai/gpt-6-luna-pro
+  - openai/gpt-6-luna-pro:batch
+  - openai/gpt-6-luna:batch
+  - ~openai/gpt-luna-latest
+discovered_at: 2026-09-23T06:51:33.545806812Z
+links:
+  documentation: https://platform.openai.com/docs/models
+identifiers:
+  openrouter:
+    - openai/gpt-6-luna
+    - openai/gpt-6-luna-pro
+    - openai/gpt-6-luna-pro:batch
+    - openai/gpt-6-luna:batch
+    - ~openai/gpt-luna-latest
+provenance:
+  context_length:
+    source: openrouter
+  description:
+    source: openrouter
+  features:
+    source: openrouter
+  id:
+    source: openrouter
+  max_output:
+    source: openrouter
+  name:
+    source: openrouter
+  provider:
+    source: openrouter
+  reasoning:
+    source: openrouter
+upstream:
+  openrouter:
+    canonical_slug: openai/gpt-6-luna-20260922
+    supported_parameters:
+      - include_reasoning
+      - max_completion_tokens
+      - max_tokens
+      - reasoning
+      - reasoning_effort
+      - response_format
+      - seed
+      - structured_outputs
+      - tool_choice
+      - tools
+    input_modalities:
+      - file
+      - image
+      - text
+    output_modalities:
+      - text
+    fetched_at: 2026-09-23T06:51:36.047776922Z
+reasoning:
+  supported: true
+  default_enabled: true
+  default_effort: medium
+  supported_efforts:
+    - high
+    - low
+    - max
+    - medium
+    - none
+    - xhigh

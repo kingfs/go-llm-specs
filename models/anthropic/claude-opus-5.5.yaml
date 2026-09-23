@@ -1,0 +1,79 @@
+schema_version: 2
+id: anthropic/claude-opus-5.5
+name: 'Anthropic: Claude Opus 5.5'
+provider: Anthropic
+developer: anthropic
+lifecycle: candidate
+description: Claude Opus 5.5 is Anthropic's flagship model for demanding reasoning, coding, and long-horizon agentic work, succeeding Claude Opus 5. It is particularly strong at multi-step changes in large codebases, code...
+description_cn: Claude Opus 5.5 是 Anthropic 针对高难度推理、编码及长程智能体任务的旗舰模型，为 Claude Opus 5 的继任者。它在大型代码库的多步骤修改、代...
+context_length: 1000000
+max_output: 128000
+features:
+  - CapChat
+  - CapFunctionCall
+  - CapJsonMode
+  - ModalityFileIn
+  - ModalityImageIn
+  - ModalityTextIn
+  - ModalityTextOut
+aliases:
+  - anthropic/claude-opus-5.5:batch
+  - ~anthropic/claude-opus-latest
+discovered_at: 2026-09-23T06:51:33.547647569Z
+links:
+  documentation: https://docs.anthropic.com/en/docs/about-claude/models
+identifiers:
+  openrouter:
+    - anthropic/claude-opus-5.5
+    - anthropic/claude-opus-5.5:batch
+    - ~anthropic/claude-opus-latest
+provenance:
+  context_length:
+    source: openrouter
+  description:
+    source: openrouter
+  features:
+    source: openrouter
+  id:
+    source: openrouter
+  max_output:
+    source: openrouter
+  name:
+    source: openrouter
+  provider:
+    source: openrouter
+  reasoning:
+    source: openrouter
+upstream:
+  openrouter:
+    canonical_slug: anthropic/claude-opus-5.5-20260921
+    supported_parameters:
+      - include_reasoning
+      - max_completion_tokens
+      - max_tokens
+      - reasoning
+      - reasoning_effort
+      - response_format
+      - stop
+      - structured_outputs
+      - temperature
+      - tool_choice
+      - tools
+      - verbosity
+    input_modalities:
+      - file
+      - image
+      - text
+    output_modalities:
+      - text
+    fetched_at: 2026-09-23T06:51:36.041398933Z
+reasoning:
+  supported: true
+  mandatory: true
+  default_effort: high
+  supported_efforts:
+    - high
+    - low
+    - max
+    - medium
+    - xhigh

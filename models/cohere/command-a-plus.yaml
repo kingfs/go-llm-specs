@@ -1,0 +1,63 @@
+schema_version: 2
+id: cohere/command-a-plus
+name: 'Cohere: Command A+'
+provider: Cohere
+developer: cohere
+lifecycle: candidate
+description: Command A+ is Cohere's flagship model for enterprise agentic workflows. It accepts text and image inputs with a 192K context window, supports native tool calling with strict tool schemas, structured...
+description_cn: Command A+ 是 Cohere 面向企业级智能体工作流程的旗舰模型。它支持文本和图片输入，拥有 192K 上下文窗口，支持具有严格工具架构的原生工具调用及结构化...
+context_length: 192000
+max_output: 64000
+features:
+  - CapChat
+  - CapFunctionCall
+  - CapJsonMode
+  - ModalityImageIn
+  - ModalityTextIn
+  - ModalityTextOut
+discovered_at: 2026-09-23T06:51:33.545627708Z
+identifiers:
+  openrouter:
+    - cohere/command-a-plus
+provenance:
+  context_length:
+    source: openrouter
+  description:
+    source: openrouter
+  features:
+    source: openrouter
+  id:
+    source: openrouter
+  max_output:
+    source: openrouter
+  name:
+    source: openrouter
+  provider:
+    source: openrouter
+  reasoning:
+    source: openrouter
+upstream:
+  openrouter:
+    canonical_slug: cohere/command-a-plus-05-2026
+    supported_parameters:
+      - frequency_penalty
+      - include_reasoning
+      - max_tokens
+      - presence_penalty
+      - reasoning
+      - response_format
+      - seed
+      - stop
+      - structured_outputs
+      - temperature
+      - tools
+      - top_k
+      - top_p
+    input_modalities:
+      - image
+      - text
+    output_modalities:
+      - text
+    fetched_at: 2026-09-23T06:51:36.042290929Z
+reasoning:
+  supported: true
