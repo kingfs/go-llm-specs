@@ -40,17 +40,24 @@ upstream:
     canonical_slug: tencent/hy-mt2-30b-a3b-20260521
     huggingface_id: tencent/Hy-MT2-30B-A3B
     supported_parameters:
+      - frequency_penalty
+      - logprobs
       - max_completion_tokens
       - max_tokens
+      - presence_penalty
       - response_format
+      - seed
       - stop
       - structured_outputs
       - temperature
+      - top_k
+      - top_logprobs
+      - top_p
     input_modalities:
       - text
     output_modalities:
       - text
-    fetched_at: 2026-08-21T02:52:32.594510361Z
+    fetched_at: 2026-09-24T06:52:03.965978489Z
   huggingface:
     id: tencent/Hy-MT2-30B-A3B
     revision: d3ead4dba61c09aac60a261a96ad1df3e705febb

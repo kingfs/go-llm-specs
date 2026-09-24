@@ -1,0 +1,73 @@
+schema_version: 2
+id: fireworks/ember-1
+name: 'Fireworks: Ember-1'
+provider: Fireworks
+developer: fireworks
+description: 'Ember-1 is a specialized reasoning model from Fireworks Research, built on [Kimi K3](https://openrouter.ai/moonshotai/kimi-k3). It is designed to make every token go further: it produces shorter reasoning traces, using roughly 40%...'
+description_cn: Ember-1 是 Fireworks Research 推出的专用推理模型，基于 [Kimi K3](https://openrouter.ai/moonshotai/kimi-k3) 构建。其设计旨在提升每个 Token 的效能：生成更短的推理轨迹，使用量约为 40%...
+context_length: 1048576
+max_output: 943718
+features:
+  - CapChat
+  - CapFunctionCall
+  - CapJsonMode
+  - ModalityImageIn
+  - ModalityTextIn
+  - ModalityTextOut
+discovered_at: 2026-09-24T06:52:00.874522839Z
+identifiers:
+  openrouter:
+    - fireworks/ember-1
+provenance:
+  context_length:
+    source: openrouter
+  description:
+    source: openrouter
+  features:
+    source: openrouter
+  id:
+    source: openrouter
+  max_output:
+    source: openrouter
+  name:
+    source: openrouter
+  provider:
+    source: openrouter
+  reasoning:
+    source: openrouter
+upstream:
+  openrouter:
+    canonical_slug: fireworks/ember-1-20260923
+    supported_parameters:
+      - frequency_penalty
+      - include_reasoning
+      - logit_bias
+      - logprobs
+      - max_tokens
+      - presence_penalty
+      - reasoning
+      - reasoning_effort
+      - repetition_penalty
+      - response_format
+      - stop
+      - structured_outputs
+      - temperature
+      - tool_choice
+      - tools
+      - top_k
+      - top_logprobs
+      - top_p
+    input_modalities:
+      - image
+      - text
+    output_modalities:
+      - text
+    fetched_at: 2026-09-24T06:52:03.957190599Z
+reasoning:
+  supported: true
+  default_enabled: true
+  default_effort: max
+  supported_efforts:
+    - high
+    - low
+    - max

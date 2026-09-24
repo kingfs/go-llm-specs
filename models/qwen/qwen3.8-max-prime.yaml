@@ -1,0 +1,77 @@
+schema_version: 2
+id: qwen/qwen3.8-max-prime
+name: 'Qwen: Qwen3.8 Max Prime'
+provider: Qwen
+developer: qwen
+description: Qwen3.8 Max Prime is a higher-throughput variant of Qwen3.8 Max from Alibaba's Qwen team, served as a separate SKU at a higher price point. It accepts text, image, and video...
+description_cn: Qwen3.8 Max Prime 是阿里巴巴 Qwen 团队推出的 Qwen3.8 Max 高吞吐量变体，作为独立的 SKU 以更高价格提供服务。它支持文本、图像和视频...
+context_length: 1000000
+max_output: 131072
+features:
+  - CapChat
+  - CapFunctionCall
+  - CapJsonMode
+  - ModalityImageIn
+  - ModalityTextIn
+  - ModalityTextOut
+  - ModalityVideoIn
+discovered_at: 2026-09-24T06:52:00.875287262Z
+identifiers:
+  openrouter:
+    - qwen/qwen3.8-max-prime
+provenance:
+  context_length:
+    source: openrouter
+  description:
+    source: openrouter
+  features:
+    source: openrouter
+  id:
+    source: openrouter
+  max_output:
+    source: openrouter
+  name:
+    source: openrouter
+  provider:
+    source: openrouter
+  reasoning:
+    source: openrouter
+upstream:
+  openrouter:
+    canonical_slug: qwen/qwen3.8-max-prime-20260923
+    supported_parameters:
+      - frequency_penalty
+      - include_reasoning
+      - logprobs
+      - max_tokens
+      - presence_penalty
+      - reasoning
+      - reasoning_effort
+      - response_format
+      - seed
+      - stop
+      - structured_outputs
+      - temperature
+      - tool_choice
+      - tools
+      - top_k
+      - top_logprobs
+      - top_p
+    input_modalities:
+      - image
+      - text
+      - video
+    output_modalities:
+      - text
+    fetched_at: 2026-09-24T06:52:03.965093008Z
+reasoning:
+  supported: true
+  mandatory: true
+  default_enabled: true
+  default_effort: xhigh
+  supported_efforts:
+    - high
+    - low
+    - medium
+    - minimal
+    - xhigh

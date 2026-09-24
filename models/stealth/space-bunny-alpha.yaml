@@ -1,0 +1,68 @@
+schema_version: 2
+id: stealth/space-bunny-alpha
+name: Space Bunny Alpha
+provider: Stealth
+developer: stealth
+description: Space Bunny Alpha is an anonymous large model with blazing-fast inference, strong coding capabilities and native multimodal input support. It delivers adjustable reasoning effort, and a 1M-token context window. Space...
+description_cn: Space Bunny Alpha 是一款匿名大模型，具有极速推理能力、强大的编程功能以及对原生多模态输入的支持。它提供可调节的推理力度，并具备 100 万 Token 的上下文窗口。Space...
+context_length: 1000000
+max_output: 524288
+features:
+  - CapChat
+  - CapFunctionCall
+  - CapJsonMode
+  - ModalityImageIn
+  - ModalityTextIn
+  - ModalityTextOut
+  - ModalityVideoIn
+discovered_at: 2026-09-24T06:52:00.875842918Z
+identifiers:
+  openrouter:
+    - stealth/space-bunny-alpha
+provenance:
+  context_length:
+    source: openrouter
+  description:
+    source: openrouter
+  features:
+    source: openrouter
+  id:
+    source: openrouter
+  max_output:
+    source: openrouter
+  name:
+    source: openrouter
+  provider:
+    source: openrouter
+  reasoning:
+    source: openrouter
+upstream:
+  openrouter:
+    canonical_slug: stealth/space-bunny-alpha
+    supported_parameters:
+      - include_reasoning
+      - max_tokens
+      - reasoning
+      - reasoning_effort
+      - response_format
+      - temperature
+      - tool_choice
+      - tools
+      - top_p
+    input_modalities:
+      - image
+      - text
+      - video
+    output_modalities:
+      - text
+    fetched_at: 2026-09-24T06:52:03.965651108Z
+reasoning:
+  supported: true
+  mandatory: true
+  default_effort: max
+  supported_efforts:
+    - high
+    - low
+    - max
+    - medium
+    - xhigh

@@ -1,7 +1,7 @@
 {
   "providers": 24,
-  "models": 774,
-  "models_with_official_links": 570,
+  "models": 786,
+  "models_with_official_links": 575,
   "uncataloged_publishers": {
     "Ai21": 1,
     "Aion-Labs": 4,
@@ -32,6 +32,7 @@
     "Xiaomi": 2,
     "ai21": 1,
     "aion-labs": 2,
+    "aionlabs": 2,
     "alfredpros": 1,
     "alpindale": 1,
     "baidu": 6,
@@ -39,6 +40,7 @@
     "dotsstudio": 1,
     "eleutherai": 1,
     "essentialai": 1,
+    "fireworks": 1,
     "inception": 4,
     "inclusionai": 5,
     "inferencenet": 2,
@@ -57,12 +59,12 @@
     "reka": 1,
     "sakana": 3,
     "sao10k": 2,
-    "stealth": 2,
+    "stealth": 3,
     "stepfun-ai": 1,
     "switchpoint": 1,
     "tngtech": 3,
     "unbiased": 1,
-    "upstage": 1,
+    "upstage": 2,
     "xiaomi": 6
   }
 }

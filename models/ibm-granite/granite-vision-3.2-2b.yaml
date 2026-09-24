@@ -1,0 +1,58 @@
+schema_version: 2
+id: ibm-granite/granite-vision-3.2-2b
+name: granite-vision-3.2-2b
+provider: IBM Granite
+developer: ibm-granite
+lifecycle: candidate
+context_length: 0
+features:
+  - ModalityImageIn
+  - ModalityTextIn
+  - ModalityTextOut
+links:
+  model_card: https://huggingface.co/ibm-granite/granite-vision-3.2-2b
+identifiers:
+  huggingface:
+    - ibm-granite/granite-vision-3.2-2b
+provenance:
+  features:
+    source: official_huggingface_pipeline
+    url: https://huggingface.co/ibm-granite/granite-vision-3.2-2b
+  id:
+    source: official_huggingface
+    url: https://huggingface.co/ibm-granite/granite-vision-3.2-2b
+  name:
+    source: official_huggingface
+    url: https://huggingface.co/ibm-granite/granite-vision-3.2-2b
+upstream:
+  huggingface:
+    id: ibm-granite/granite-vision-3.2-2b
+    revision: ec894191f2e9e9be3d90eab9ac6949583c46f03b
+    pipeline_tag: image-text-to-text
+    model_type: llava_next
+    architectures:
+      - LlavaNextForConditionalGeneration
+    license: apache-2.0
+    tags:
+      - arxiv:2502.09927
+      - base_model:finetune:ibm-granite/granite-3.1-2b-instruct
+      - base_model:ibm-granite/granite-3.1-2b-instruct
+      - conversational
+      - deploy:azure
+      - en
+      - endpoints_compatible
+      - image-text-to-text
+      - license:apache-2.0
+      - llava_next
+      - region:us
+      - safetensors
+      - text-generation-inference
+      - transformers
+    tokenizer_model_max_length: 131072
+    processor_class: LlavaNextProcessor
+    chat_template_sha256: 3946efe7aee6854c053d83bfecb731bea16272cb9d633de3545bca76646b510a
+    structured_files:
+      - config.json
+      - preprocessor_config.json
+      - tokenizer_config.json
+    fetched_at: 2026-09-24T06:52:04.824162604Z

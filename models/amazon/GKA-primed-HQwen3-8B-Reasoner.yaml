@@ -1,0 +1,63 @@
+schema_version: 2
+id: amazon/gka-primed-hqwen3-8b-reasoner
+name: GKA-primed-HQwen3-8B-Reasoner
+provider: Amazon
+developer: amazon
+lifecycle: candidate
+context_length: 131072
+features:
+  - ModalityTextIn
+  - ModalityTextOut
+links:
+  model_card: https://huggingface.co/amazon/GKA-primed-HQwen3-8B-Reasoner
+identifiers:
+  huggingface:
+    - amazon/GKA-primed-HQwen3-8B-Reasoner
+provenance:
+  context_length:
+    source: official_huggingface_config
+    url: https://huggingface.co/amazon/GKA-primed-HQwen3-8B-Reasoner
+  features:
+    source: official_huggingface_pipeline
+    url: https://huggingface.co/amazon/GKA-primed-HQwen3-8B-Reasoner
+  id:
+    source: official_huggingface
+    url: https://huggingface.co/amazon/GKA-primed-HQwen3-8B-Reasoner
+  name:
+    source: official_huggingface
+    url: https://huggingface.co/amazon/GKA-primed-HQwen3-8B-Reasoner
+upstream:
+  huggingface:
+    id: amazon/GKA-primed-HQwen3-8B-Reasoner
+    revision: 6750825361457f606802643b75ba575d142c9a0a
+    pipeline_tag: text-generation
+    model_type: hybrid_qwen3
+    architectures:
+      - HybridQwen3ForCausalLM
+    license: apache-2.0
+    tags:
+      - arxiv:2511.21016
+      - base_model:Qwen/Qwen3-8B
+      - base_model:finetune:Qwen/Qwen3-8B
+      - conversational
+      - endpoints_compatible
+      - gated-kalmanet
+      - hybrid
+      - hybrid_qwen3
+      - license:apache-2.0
+      - linear-attention
+      - long-context
+      - priming
+      - reasoning
+      - region:us
+      - safetensors
+      - ssm
+      - state-space-model
+      - text-generation
+      - transformers
+    config_context_length: 131072
+    tokenizer_model_max_length: 131072
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-09-24T06:52:04.509303831Z
