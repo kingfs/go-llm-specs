@@ -3,7 +3,9 @@ id: microsoft/dayhoff-170m-grs-ss-38000
 name: Dayhoff-170M-GRS-SS-38000
 provider: Microsoft
 developer: microsoft
-lifecycle: candidate
+lifecycle: active
+description: Dayhoff is a protein language model using a hybrid state-space Mamba and Transformer architecture with Mixture-of-Experts. It is trained on 3.34 billion protein sequences and supports unconditional design, zero-shot mutation effect prediction, and scaffold design.
+description_cn: Dayhoff 是一种蛋白质语言模型，采用结合 Mamba 与 Transformer 的混合状态空间架构及混合专家（MoE）机制。该模型基于 33.4 亿条蛋白质序列训练，支持无条件生成、零样本突变效应预测及支架设计。
 context_length: 262144
 features:
   - ModalityTextIn
@@ -17,6 +19,9 @@ provenance:
   context_length:
     source: official_huggingface_config
     url: https://huggingface.co/microsoft/Dayhoff-170M-GRS-SS-38000
+  description:
+    source: official_model_card
+    url: https://huggingface.co/microsoft/Dayhoff-170M-GRS-SS-38000/resolve/0c2a5cbdabc81f92057b9c382695c2cbd06d4285/README.md
   features:
     source: official_huggingface_pipeline
     url: https://huggingface.co/microsoft/Dayhoff-170M-GRS-SS-38000
@@ -26,6 +31,9 @@ provenance:
   name:
     source: official_huggingface
     url: https://huggingface.co/microsoft/Dayhoff-170M-GRS-SS-38000
+  reasoning.supported:
+    source: official_model_card
+    url: https://huggingface.co/microsoft/Dayhoff-170M-GRS-SS-38000/resolve/0c2a5cbdabc81f92057b9c382695c2cbd06d4285/README.md
 upstream:
   huggingface:
     id: microsoft/Dayhoff-170M-GRS-SS-38000
@@ -53,3 +61,5 @@ upstream:
       - config.json
       - tokenizer_config.json
     fetched_at: 2026-09-23T06:51:37.157836481Z
+reasoning:
+  supported: false

@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "microsoft/dayhoff-170m-grs-ss-50000",
+  "status": "partially_accepted",
+  "created_at": "2026-09-25T06:46:58.535078571Z",
+  "source": {
+    "url": "https://huggingface.co/microsoft/Dayhoff-170M-GRS-SS-50000/resolve/fbe7c636de3c1b8b08c1e53997f700b78970ac86/README.md",
+    "revision": "fbe7c636de3c1b8b08c1e53997f700b78970ac86",
+    "sha256": "02674fc386f6de18eb19819b20899f09f6847e0c27f78e8b72b3bcc62217bc0e"
+  },
+  "generator": {
+    "model": "qwen/qwen3.8-27b",
+    "wire_api": "chat"
+  },
+  "claims": [
+    {
+      "field": "description",
+      "value": "Dayhoff is a hybrid state-space-model transformer architecture with mixture-of-experts designed for protein sequence generation and modeling.",
+      "evidence": "The Dayhoff architecture is a hybrid of state-space Mamba layers and Transformer self-attention, interleaved with Mixture-of-Experts modules to maximize capacity while preserving efficiency.",
+      "section": "Model Card for Dayhoff",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "ModalityTextIn",
+        "ModalityTextOut"
+      ],
+      "evidence": "It is not meant for natural language or other biological sequences, such as DNA sequences... This model should not be used to generate anything that is not a protein sequence",
+      "section": "Bias, Risks, and Limitations",
+      "confidence": "high"
+    }
+  ]
+}

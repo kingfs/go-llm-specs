@@ -3,8 +3,10 @@ id: microsoft/fara1.5-4b
 name: Fara1.5-4B
 provider: Microsoft
 developer: microsoft
-lifecycle: candidate
-context_length: 0
+lifecycle: active
+description: Fara1.5-4B is a multimodal computer use agent (CUA) for web browsers from Microsoft Research AI Frontiers. It observes browsers via screenshots and emits structured tool calls to complete tasks end-to-end. It is supervised fine-tuned from Qwen3.5-4B using data from FaraGen1.5. Recommended for use with MagenticLite harness.
+description_cn: Fara1.5-4B 是微软研究院 AI 前沿团队开发的面向 Web 浏览器的多模态计算机使用代理（CUA）。它通过截图观察浏览器，并输出结构化工具调用以端到端完成任务。该模型基于 FaraGen1.5 数据对 Qwen3.5-4B 进行监督微调。建议配合 MagenticLite 框架使用。
+context_length: 262144
 features:
   - ModalityImageIn
   - ModalityTextIn
@@ -15,6 +17,12 @@ identifiers:
   huggingface:
     - microsoft/Fara1.5-4B
 provenance:
+  context_length:
+    source: official_model_card
+    url: https://huggingface.co/microsoft/Fara1.5-4B/resolve/776a33ae5b2ad503796a97ae20fdc66f61d2feea/README.md
+  description:
+    source: official_model_card
+    url: https://huggingface.co/microsoft/Fara1.5-4B/resolve/776a33ae5b2ad503796a97ae20fdc66f61d2feea/README.md
   features:
     source: official_huggingface_pipeline
     url: https://huggingface.co/microsoft/Fara1.5-4B

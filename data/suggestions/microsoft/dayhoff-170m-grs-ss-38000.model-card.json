@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "microsoft/dayhoff-170m-grs-ss-38000",
+  "status": "partially_accepted",
+  "created_at": "2026-09-25T06:47:19.774212131Z",
+  "source": {
+    "url": "https://huggingface.co/microsoft/Dayhoff-170M-GRS-SS-38000/resolve/0c2a5cbdabc81f92057b9c382695c2cbd06d4285/README.md",
+    "revision": "0c2a5cbdabc81f92057b9c382695c2cbd06d4285",
+    "sha256": "e9f31e692b607bd4ae8c63cb991888c6fdf74449234712d4a3f9006191b4a0b9"
+  },
+  "generator": {
+    "model": "qwen/qwen3.8-27b",
+    "wire_api": "chat"
+  },
+  "claims": [
+    {
+      "field": "description",
+      "value": "Dayhoff is a protein language model using a hybrid state-space Mamba and Transformer architecture with Mixture-of-Experts. It is trained on 3.34 billion protein sequences and supports unconditional design, zero-shot mutation effect prediction, and scaffold design.",
+      "evidence": "Dayhoff is an Atlas of both protein sequence data and generative language models... Dayhoff architecture is a hybrid of state-space Mamba layers and Transformer self-attention",
+      "section": "# Model Card for Dayhoff",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "ModalityTextIn",
+        "ModalityTextOut"
+      ],
+      "evidence": "tags: protein-generation... This model should not be used to generate anything that is not a protein sequence",
+      "section": "# Model Card for Dayhoff",
+      "confidence": "high"
+    },
+    {
+      "field": "reasoning.supported",
+      "value": false,
+      "evidence": "Trained with an autoregressive objective in both N→C and C→N directions, Dayhoff supports order-agnostic infilling",
+      "section": "# Model Card for Dayhoff",
+      "confidence": "high"
+    }
+  ]
+}

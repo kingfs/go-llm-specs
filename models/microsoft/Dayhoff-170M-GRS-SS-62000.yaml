@@ -3,7 +3,9 @@ id: microsoft/dayhoff-170m-grs-ss-62000
 name: Dayhoff-170M-GRS-SS-62000
 provider: Microsoft
 developer: microsoft
-lifecycle: candidate
+lifecycle: active
+description: Dayhoff is a protein language model with a hybrid state-space and Transformer architecture, designed for unconditional generation, zero-shot mutation effect prediction, and scaffold design.
+description_cn: Dayhoff 是一种采用状态空间与 Transformer 混合架构的蛋白质语言模型，专为无条件生成、零样本突变效应预测及支架设计而设计。
 context_length: 262144
 features:
   - ModalityTextIn
@@ -17,6 +19,9 @@ provenance:
   context_length:
     source: official_huggingface_config
     url: https://huggingface.co/microsoft/Dayhoff-170M-GRS-SS-62000
+  description:
+    source: official_model_card
+    url: https://huggingface.co/microsoft/Dayhoff-170M-GRS-SS-62000/resolve/72e13d3b742e0cafd545e1505db8f4598d2c6423/README.md
   features:
     source: official_huggingface_pipeline
     url: https://huggingface.co/microsoft/Dayhoff-170M-GRS-SS-62000

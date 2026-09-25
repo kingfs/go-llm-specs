@@ -3,7 +3,9 @@ id: microsoft/dayhoff-3b-ur90-10
 name: Dayhoff-3b-UR90-10
 provider: Microsoft
 developer: microsoft
-lifecycle: candidate
+lifecycle: active
+description: Dayhoff is a protein language model with a hybrid of state-space Mamba layers and Transformer self-attention, interleaved with Mixture-of-Experts modules. It is trained on 3.34 billion protein sequences and supports zero-shot mutation effect prediction and scaffold design.
+description_cn: Dayhoff 是一种蛋白质语言模型，混合了状态空间 Mamba 层与 Transformer 自注意力机制，并交错使用混合专家模块。该模型基于 33.4 亿条蛋白质序列训练，支持零样本突变效应预测及支架设计。
 context_length: 262144
 features:
   - ModalityTextIn
@@ -17,6 +19,9 @@ provenance:
   context_length:
     source: official_huggingface_config
     url: https://huggingface.co/microsoft/Dayhoff-3b-UR90-10
+  description:
+    source: official_model_card
+    url: https://huggingface.co/microsoft/Dayhoff-3b-UR90-10/resolve/add40ce94c03b6974121db055fe3285c684cdb4d/README.md
   features:
     source: official_huggingface_pipeline
     url: https://huggingface.co/microsoft/Dayhoff-3b-UR90-10
@@ -26,6 +31,9 @@ provenance:
   name:
     source: official_huggingface
     url: https://huggingface.co/microsoft/Dayhoff-3b-UR90-10
+  reasoning.supported:
+    source: official_model_card
+    url: https://huggingface.co/microsoft/Dayhoff-3b-UR90-10/resolve/add40ce94c03b6974121db055fe3285c684cdb4d/README.md
 upstream:
   huggingface:
     id: microsoft/Dayhoff-3b-UR90-10
@@ -53,3 +61,5 @@ upstream:
       - config.json
       - tokenizer_config.json
     fetched_at: 2026-09-17T06:51:05.579266491Z
+reasoning:
+  supported: false

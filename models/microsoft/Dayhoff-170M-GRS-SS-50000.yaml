@@ -3,7 +3,9 @@ id: microsoft/dayhoff-170m-grs-ss-50000
 name: Dayhoff-170M-GRS-SS-50000
 provider: Microsoft
 developer: microsoft
-lifecycle: candidate
+lifecycle: active
+description: Dayhoff is a hybrid state-space-model transformer architecture with mixture-of-experts designed for protein sequence generation and modeling.
+description_cn: Dayhoff 是一种结合状态空间模型与 Transformer 的混合架构，并采用混合专家技术，专为蛋白质序列生成与建模而设计。
 context_length: 262144
 features:
   - ModalityTextIn
@@ -17,6 +19,9 @@ provenance:
   context_length:
     source: official_huggingface_config
     url: https://huggingface.co/microsoft/Dayhoff-170M-GRS-SS-50000
+  description:
+    source: official_model_card
+    url: https://huggingface.co/microsoft/Dayhoff-170M-GRS-SS-50000/resolve/fbe7c636de3c1b8b08c1e53997f700b78970ac86/README.md
   features:
     source: official_huggingface_pipeline
     url: https://huggingface.co/microsoft/Dayhoff-170M-GRS-SS-50000

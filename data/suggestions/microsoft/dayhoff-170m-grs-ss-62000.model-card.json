@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "microsoft/dayhoff-170m-grs-ss-62000",
+  "status": "partially_accepted",
+  "created_at": "2026-09-25T06:48:23.489327166Z",
+  "source": {
+    "url": "https://huggingface.co/microsoft/Dayhoff-170M-GRS-SS-62000/resolve/72e13d3b742e0cafd545e1505db8f4598d2c6423/README.md",
+    "revision": "72e13d3b742e0cafd545e1505db8f4598d2c6423",
+    "sha256": "dec147522d5517abc9d46943fc0ff9845a6798c7a4639a0aed619b7685305b02"
+  },
+  "generator": {
+    "model": "qwen/qwen3.8-27b",
+    "wire_api": "chat"
+  },
+  "claims": [
+    {
+      "field": "description",
+      "value": "Dayhoff is a protein language model with a hybrid state-space and Transformer architecture, designed for unconditional generation, zero-shot mutation effect prediction, and scaffold design.",
+      "evidence": "Dayhoff is a hybrid of state-space Mamba layers and Transformer self-attention... These models can natively predict zero-shot mutation effects on fitness",
+      "section": "Model Card for Dayhoff",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "ModalityTextIn",
+        "ModalityTextOut"
+      ],
+      "evidence": "pipeline_tag: text-generation",
+      "section": "header",
+      "confidence": "medium"
+    }
+  ]
+}

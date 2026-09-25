@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "microsoft/fara1.5-4b",
+  "status": "partially_accepted",
+  "created_at": "2026-09-25T06:47:41.126216217Z",
+  "source": {
+    "url": "https://huggingface.co/microsoft/Fara1.5-4B/resolve/776a33ae5b2ad503796a97ae20fdc66f61d2feea/README.md",
+    "revision": "776a33ae5b2ad503796a97ae20fdc66f61d2feea",
+    "sha256": "6eaf14fe7f9b7a1a9e51f4dcfa5445bcf5cbb7bad38f4a00a3b80c4b6fd501c5"
+  },
+  "generator": {
+    "model": "qwen/qwen3.8-27b",
+    "wire_api": "chat"
+  },
+  "claims": [
+    {
+      "field": "description",
+      "value": "Fara1.5-4B is a multimodal computer use agent (CUA) for web browsers from Microsoft Research AI Frontiers. It observes browsers via screenshots and emits structured tool calls to complete tasks end-to-end. It is supervised fine-tuned from Qwen3.5-4B using data from FaraGen1.5. Recommended for use with MagenticLite harness.",
+      "evidence": "Fara1.5-4B is a multimodal **computer use agent (CUA)** for web browsers, from **Microsoft Research AI Frontiers**.",
+      "section": "# Fara1.5-4B",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "ModalityTextIn",
+        "ModalityTextOut",
+        "ModalityImageIn"
+      ],
+      "evidence": "Architecture | Multimodal decoder-only LM (image + text → text)",
+      "section": "## Model Details",
+      "confidence": "high"
+    },
+    {
+      "field": "context_length",
+      "value": 262144,
+      "evidence": "Context length | 262,144 tokens",
+      "section": "## Model Details",
+      "confidence": "high"
+    },
+    {
+      "field": "reasoning.parser",
+      "value": "xml",
+      "evidence": "Outputs | Chain-of-thought block followed by a tool-call block (XML-tagged)",
+      "section": "## Model Details",
+      "confidence": "high"
+    }
+  ]
+}
