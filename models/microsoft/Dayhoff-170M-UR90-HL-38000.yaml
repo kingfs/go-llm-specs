@@ -3,7 +3,8 @@ id: microsoft/dayhoff-170m-ur90-hl-38000
 name: Dayhoff-170M-UR90-HL-38000
 provider: Microsoft
 developer: microsoft
-lifecycle: candidate
+lifecycle: active
+description: Dayhoff is a hybrid state-space Mamba and Transformer model with Mixture-of-Experts for protein sequence generation, mutation effect prediction, and motif scaffolding.
 context_length: 262144
 features:
   - ModalityTextIn
@@ -17,6 +18,9 @@ provenance:
   context_length:
     source: official_huggingface_config
     url: https://huggingface.co/microsoft/Dayhoff-170M-UR90-HL-38000
+  description:
+    source: official_model_card
+    url: https://huggingface.co/microsoft/Dayhoff-170M-UR90-HL-38000/resolve/5dd3b4cebe25b60aae196d24d36d2b9d1b4f3ee4/README.md
   features:
     source: official_huggingface_pipeline
     url: https://huggingface.co/microsoft/Dayhoff-170M-UR90-HL-38000

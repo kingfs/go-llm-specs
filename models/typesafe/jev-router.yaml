@@ -1,0 +1,46 @@
+schema_version: 2
+id: typesafe/jev-router
+name: 'TypeSafe: Jev Router'
+provider: Typesafe
+developer: typesafe
+description: Jev Router picks the best model and reasoning effort for each request, balancing quality, speed, and cost. It runs on [Jev](https://openrouter.ai/~typesafe/jev-latest), TypeSafe's first System One model, and adapts as your...
+context_length: 1000000
+features:
+  - CapChat
+  - ModalityAudioIn
+  - ModalityFileIn
+  - ModalityImageIn
+  - ModalityTextIn
+  - ModalityTextOut
+  - ModalityVideoIn
+discovered_at: 2026-09-26T06:45:21.808443696Z
+identifiers:
+  openrouter:
+    - typesafe/jev-router
+provenance:
+  context_length:
+    source: openrouter
+  description:
+    source: openrouter
+  features:
+    source: openrouter
+  id:
+    source: openrouter
+  max_output:
+    source: openrouter
+  name:
+    source: openrouter
+  provider:
+    source: openrouter
+upstream:
+  openrouter:
+    canonical_slug: typesafe/jev-router
+    input_modalities:
+      - audio
+      - file
+      - image
+      - text
+      - video
+    output_modalities:
+      - text
+    fetched_at: 2026-09-26T06:45:25.469353615Z

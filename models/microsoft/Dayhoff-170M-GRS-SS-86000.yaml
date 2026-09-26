@@ -3,7 +3,8 @@ id: microsoft/dayhoff-170m-grs-ss-86000
 name: Dayhoff-170M-GRS-SS-86000
 provider: Microsoft
 developer: microsoft
-lifecycle: candidate
+lifecycle: active
+description: Dayhoff is a protein language model with a hybrid state-space Mamba and Transformer architecture, interleaved with Mixture-of-Experts modules. It is trained to predict mutation effects and generate novel protein sequences.
 context_length: 262144
 features:
   - ModalityTextIn
@@ -17,6 +18,9 @@ provenance:
   context_length:
     source: official_huggingface_config
     url: https://huggingface.co/microsoft/Dayhoff-170M-GRS-SS-86000
+  description:
+    source: official_model_card
+    url: https://huggingface.co/microsoft/Dayhoff-170M-GRS-SS-86000/resolve/77098dd82cb5e181aa9e92d81c24df49c48705fd/README.md
   features:
     source: official_huggingface_pipeline
     url: https://huggingface.co/microsoft/Dayhoff-170M-GRS-SS-86000

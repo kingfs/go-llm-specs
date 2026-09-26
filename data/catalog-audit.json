@@ -1,7 +1,7 @@
 {
   "providers": 24,
-  "models": 791,
-  "models_with_official_links": 580,
+  "models": 798,
+  "models_with_official_links": 585,
   "uncataloged_publishers": {
     "Ai21": 1,
     "Aion-Labs": 4,
@@ -52,6 +52,7 @@
     "nex-agi": 1,
     "nexagi": 2,
     "opengvlab": 1,
+    "perceptron": 1,
     "poolside": 2,
     "prime-intellect": 1,
     "prismml": 1,
@@ -63,6 +64,7 @@
     "stepfun-ai": 1,
     "switchpoint": 1,
     "tngtech": 3,
+    "typesafe": 1,
     "unbiased": 1,
     "upstage": 2,
     "xiaomi": 6

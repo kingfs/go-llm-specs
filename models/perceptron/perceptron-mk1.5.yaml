@@ -1,0 +1,71 @@
+schema_version: 2
+id: perceptron/perceptron-mk1.5
+name: 'Perceptron: Perceptron Mk1.5'
+provider: Perceptron
+developer: perceptron
+description: 'Perceptron Mk1.5 is Perceptron''s embodied reasoning model for physical agents. It accepts text, image, video, and audio input, and answers with text plus optional structured annotations: points, boxes, polygons, tracks,...'
+context_length: 36864
+max_output: 8192
+features:
+  - CapChat
+  - CapFunctionCall
+  - CapJsonMode
+  - ModalityAudioIn
+  - ModalityImageIn
+  - ModalityTextIn
+  - ModalityTextOut
+  - ModalityVideoIn
+discovered_at: 2026-09-26T06:45:21.808994771Z
+identifiers:
+  openrouter:
+    - perceptron/perceptron-mk1.5
+provenance:
+  context_length:
+    source: openrouter
+  description:
+    source: openrouter
+  features:
+    source: openrouter
+  id:
+    source: openrouter
+  max_output:
+    source: openrouter
+  name:
+    source: openrouter
+  provider:
+    source: openrouter
+  reasoning:
+    source: openrouter
+upstream:
+  openrouter:
+    canonical_slug: perceptron/perceptron-mk1.5-20260925
+    supported_parameters:
+      - frequency_penalty
+      - include_reasoning
+      - max_tokens
+      - presence_penalty
+      - reasoning
+      - reasoning_effort
+      - structured_outputs
+      - temperature
+      - tool_choice
+      - tools
+      - top_k
+      - top_p
+    input_modalities:
+      - audio
+      - image
+      - text
+      - video
+    output_modalities:
+      - text
+    fetched_at: 2026-09-26T06:45:25.466490041Z
+reasoning:
+  supported: true
+  default_effort: high
+  supported_efforts:
+    - high
+    - low
+    - medium
+    - minimal
+    - none

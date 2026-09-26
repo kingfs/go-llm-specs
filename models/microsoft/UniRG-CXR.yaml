@@ -4,6 +4,7 @@ name: UniRG-CXR
 provider: Microsoft
 developer: microsoft
 lifecycle: candidate
+description: UniRG-CXR is a radiology report generation model that obtains SOTA performance on ReXrank, based on Qwen/Qwen3-VL-8B-Instruct.
 context_length: 0
 features:
   - ModalityImageIn
@@ -15,6 +16,9 @@ identifiers:
   huggingface:
     - microsoft/UniRG-CXR
 provenance:
+  description:
+    source: official_model_card
+    url: https://huggingface.co/microsoft/UniRG-CXR/resolve/cd5a95fa837c92180e14ed0ddd7f079150a2559a/README.md
   features:
     source: official_huggingface_pipeline
     url: https://huggingface.co/microsoft/UniRG-CXR

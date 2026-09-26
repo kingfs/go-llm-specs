@@ -3,7 +3,8 @@ id: microsoft/dayhoff-170m-ur90-hl-44000
 name: Dayhoff-170M-UR90-HL-44000
 provider: Microsoft
 developer: microsoft
-lifecycle: candidate
+lifecycle: active
+description: Dayhoff is a hybrid state-space-model transformer architecture with mixture-of-experts for protein language modeling. It natively handles long contexts and supports order-agnostic infilling. The 170M UR90 variant is trained on metagenomic data.
 context_length: 262144
 features:
   - ModalityTextIn
@@ -17,6 +18,9 @@ provenance:
   context_length:
     source: official_huggingface_config
     url: https://huggingface.co/microsoft/Dayhoff-170M-UR90-HL-44000
+  description:
+    source: official_model_card
+    url: https://huggingface.co/microsoft/Dayhoff-170M-UR90-HL-44000/resolve/32f537bec2b33056dae9d9f0da85cc592a763588/README.md
   features:
     source: official_huggingface_pipeline
     url: https://huggingface.co/microsoft/Dayhoff-170M-UR90-HL-44000

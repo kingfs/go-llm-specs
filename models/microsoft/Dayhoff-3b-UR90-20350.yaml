@@ -3,7 +3,8 @@ id: microsoft/dayhoff-3b-ur90-20350
 name: Dayhoff-3b-UR90-20350
 provider: Microsoft
 developer: microsoft
-lifecycle: candidate
+lifecycle: active
+description: Dayhoff is a protein generative language model using a hybrid state-space Mamba and Transformer architecture with Mixture-of-Experts. It is designed for protein sequence generation, zero-shot mutation effect prediction, and scaffold design, trained on the Dayhoff Atlas containing 3.34 billion protein sequences.
 context_length: 262144
 features:
   - ModalityTextIn
@@ -17,6 +18,9 @@ provenance:
   context_length:
     source: official_huggingface_config
     url: https://huggingface.co/microsoft/Dayhoff-3b-UR90-20350
+  description:
+    source: official_model_card
+    url: https://huggingface.co/microsoft/Dayhoff-3b-UR90-20350/resolve/2acf7e5d89dc4095166a14ccb33c01bb98ed479c/README.md
   features:
     source: official_huggingface_pipeline
     url: https://huggingface.co/microsoft/Dayhoff-3b-UR90-20350
@@ -26,6 +30,9 @@ provenance:
   name:
     source: official_huggingface
     url: https://huggingface.co/microsoft/Dayhoff-3b-UR90-20350
+  reasoning.supported:
+    source: official_model_card
+    url: https://huggingface.co/microsoft/Dayhoff-3b-UR90-20350/resolve/2acf7e5d89dc4095166a14ccb33c01bb98ed479c/README.md
 upstream:
   huggingface:
     id: microsoft/Dayhoff-3b-UR90-20350
@@ -53,3 +60,5 @@ upstream:
       - config.json
       - tokenizer_config.json
     fetched_at: 2026-09-17T06:51:05.967503787Z
+reasoning:
+  supported: false
