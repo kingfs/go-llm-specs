@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "microsoft/dayhoff-170m-grs-ss-74000",
+  "status": "partially_accepted",
+  "created_at": "2026-09-27T07:16:26.243393382Z",
+  "source": {
+    "url": "https://huggingface.co/microsoft/Dayhoff-170M-GRS-SS-74000/resolve/c0b8666a89705b2163f2a98d0d7f316531b49ab2/README.md",
+    "revision": "c0b8666a89705b2163f2a98d0d7f316531b49ab2",
+    "sha256": "d534907d9e58eb9e043191b97709663366999251355ea6032d08d8815d896450"
+  },
+  "generator": {
+    "model": "qwen/qwen3.8-27b",
+    "wire_api": "chat"
+  },
+  "claims": [
+    {
+      "field": "description",
+      "value": "Dayhoff is a hybrid state-space Mamba and Transformer self-attention model with Mixture-of-Experts modules for protein sequence generation. It supports zero-shot mutation effect prediction, scaffold design, and guided generation. Trained on the Dayhoff Atlas protein data.",
+      "evidence": "Hybrid state-space-model transformer architecture with mixture-of-experts... natively predict zero-shot mutation effects on fitness... scaffold structural motifs",
+      "section": "Model Description",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "ModalityTextIn",
+        "ModalityTextOut"
+      ],
+      "evidence": "pipeline_tag: text-generation... Dayhoff is intended for broad research use on protein language modeling... generation of novel proteins",
+      "section": "Uses",
+      "confidence": "high"
+    }
+  ]
+}

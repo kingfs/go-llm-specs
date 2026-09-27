@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "microsoft/magenticbrain",
+  "status": "partially_accepted",
+  "created_at": "2026-09-27T07:16:47.576324044Z",
+  "source": {
+    "url": "https://huggingface.co/microsoft/MagenticBrain/resolve/db8eb9340a90eaa4424dd13067373d1f9e8887f7/README.md",
+    "revision": "db8eb9340a90eaa4424dd13067373d1f9e8887f7",
+    "sha256": "469139c4ecf73b5c9faa882b4ff5277a98f62f02c914a7c499973262cd02eda3"
+  },
+  "generator": {
+    "model": "qwen/qwen3.8-27b",
+    "wire_api": "chat"
+  },
+  "claims": [
+    {
+      "field": "description",
+      "value": "MagenticBrain is a 14B-parameter orchestration model from Microsoft Research AI Frontiers. It plans multi-step tasks, calls declared tools, and coordinates sub-agents. It does not execute actions itself — every real-world side effect happens inside a host harness.",
+      "evidence": "MagenticBrain is a 14B-parameter orchestration model from **Microsoft Research AI Frontiers**. It plans multi-step tasks, calls declared tools, and coordinates sub-agents. It does not execute actions itself",
+      "section": "MagenticBrain",
+      "confidence": "high"
+    },
+    {
+      "field": "context_length",
+      "value": 32768,
+      "evidence": "| **Context length** | 32,768 tokens |",
+      "section": "Model Details",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "CapFunctionCall",
+        "ModalityTextIn",
+        "ModalityTextOut"
+      ],
+      "evidence": "Structured tool calls in JSON. Tool schemas are passed in at inference time. The model selects only from declared tools",
+      "section": "Highlights",
+      "confidence": "high"
+    },
+    {
+      "field": "reasoning.supported",
+      "value": false,
+      "evidence": "Thinking tokens are disabled by default (`enable_thinking=False`) to control verbosity and reduce looping on long trajectories.",
+      "section": "Approach",
+      "confidence": "high"
+    }
+  ]
+}

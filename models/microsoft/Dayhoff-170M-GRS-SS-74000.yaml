@@ -3,7 +3,9 @@ id: microsoft/dayhoff-170m-grs-ss-74000
 name: Dayhoff-170M-GRS-SS-74000
 provider: Microsoft
 developer: microsoft
-lifecycle: candidate
+lifecycle: active
+description: Dayhoff is a hybrid state-space Mamba and Transformer self-attention model with Mixture-of-Experts modules for protein sequence generation. It supports zero-shot mutation effect prediction, scaffold design, and guided generation. Trained on the Dayhoff Atlas protein data.
+description_cn: Dayhoff 是一种结合 Mamba 和 Transformer 自注意力的混合状态空间模型，并集成专家混合（MoE）模块，用于蛋白质序列生成。它支持零样本突变效应预测、支架设计和引导式生成，基于 Dayhoff Atlas 蛋白质数据训练。
 context_length: 262144
 features:
   - ModalityTextIn
@@ -17,6 +19,9 @@ provenance:
   context_length:
     source: official_huggingface_config
     url: https://huggingface.co/microsoft/Dayhoff-170M-GRS-SS-74000
+  description:
+    source: official_model_card
+    url: https://huggingface.co/microsoft/Dayhoff-170M-GRS-SS-74000/resolve/c0b8666a89705b2163f2a98d0d7f316531b49ab2/README.md
   features:
     source: official_huggingface_pipeline
     url: https://huggingface.co/microsoft/Dayhoff-170M-GRS-SS-74000

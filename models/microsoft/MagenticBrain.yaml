@@ -3,7 +3,9 @@ id: microsoft/magenticbrain
 name: MagenticBrain
 provider: Microsoft
 developer: microsoft
-lifecycle: candidate
+lifecycle: active
+description: MagenticBrain is a 14B-parameter orchestration model from Microsoft Research AI Frontiers. It plans multi-step tasks, calls declared tools, and coordinates sub-agents. It does not execute actions itself — every real-world side effect happens inside a host harness.
+description_cn: MagenticBrain 是微软研究院 AI 前沿实验室研发的 140 亿参数编排模型。它负责规划多步任务、调用声明式工具并协调子智能体。该模型本身不执行具体操作，所有对现实世界产生副作用的动作均由宿主框架（host harness）处理。
 context_length: 40960
 features:
   - ModalityTextIn
@@ -17,6 +19,9 @@ provenance:
   context_length:
     source: official_huggingface_config
     url: https://huggingface.co/microsoft/MagenticBrain
+  description:
+    source: official_model_card
+    url: https://huggingface.co/microsoft/MagenticBrain/resolve/db8eb9340a90eaa4424dd13067373d1f9e8887f7/README.md
   features:
     source: official_huggingface_pipeline
     url: https://huggingface.co/microsoft/MagenticBrain
@@ -26,6 +31,9 @@ provenance:
   name:
     source: official_huggingface
     url: https://huggingface.co/microsoft/MagenticBrain
+  reasoning.supported:
+    source: official_model_card
+    url: https://huggingface.co/microsoft/MagenticBrain/resolve/db8eb9340a90eaa4424dd13067373d1f9e8887f7/README.md
 upstream:
   huggingface:
     id: microsoft/MagenticBrain
@@ -61,3 +69,5 @@ upstream:
       - config.json
       - tokenizer_config.json
     fetched_at: 2026-08-05T07:31:47.203159372Z
+reasoning:
+  supported: false

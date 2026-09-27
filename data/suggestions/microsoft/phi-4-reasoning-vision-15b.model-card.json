@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "microsoft/phi-4-reasoning-vision-15b",
+  "status": "partially_accepted",
+  "created_at": "2026-09-27T07:16:05.171164811Z",
+  "source": {
+    "url": "https://huggingface.co/microsoft/Phi-4-reasoning-vision-15B/resolve/c3e4fac79ddace21976ced56fbf1564b8bd8c89f/README.md",
+    "revision": "c3e4fac79ddace21976ced56fbf1564b8bd8c89f",
+    "sha256": "9cb36bfbe0154dc5b1b2ac653db744185e88f3b2534e5dc54df83eadf13cea95"
+  },
+  "generator": {
+    "model": "qwen/qwen3.8-27b",
+    "wire_api": "chat"
+  },
+  "claims": [
+    {
+      "field": "description",
+      "value": "Compact open-weight multimodal reasoning model built on Phi-4-Reasoning and SigLIP-2 vision encoder, featuring dynamic resolution for high-resolution image understanding. Supports extended chain-of-thought reasoning and direct inference.",
+      "evidence": "Phi-4-Reasoning-Vision-15B is a compact open-weight multimodal reasoning model built on the Phi-4-Reasoning language model backbone and the SigLIP-2 vision encoder",
+      "section": "1. Model Overview",
+      "confidence": "high"
+    },
+    {
+      "field": "context_length",
+      "value": 16384,
+      "evidence": "**Context Length:** 16,384 tokens",
+      "section": "Front Matter",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "ModalityTextIn",
+        "ModalityImageIn",
+        "ModalityTextOut"
+      ],
+      "evidence": "**Inputs:** Text and Images Outputs: Text",
+      "section": "Front Matter",
+      "confidence": "high"
+    },
+    {
+      "field": "reasoning.supported",
+      "value": true,
+      "evidence": "The model operates as a single system that can invoke extended chain-of-thought reasoning (using `\u003cthink\u003e...\u003c/think\u003e` blocks)",
+      "section": "1. Model Overview",
+      "confidence": "high"
+    }
+  ]
+}

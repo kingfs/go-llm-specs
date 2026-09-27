@@ -1,0 +1,60 @@
+schema_version: 2
+id: microsoft/dayhoff-170m-ur90-hl-24000
+name: Dayhoff-170M-UR90-HL-24000
+provider: Microsoft
+developer: microsoft
+lifecycle: active
+description: Dayhoff is a hybrid state-space Mamba and Transformer self-attention architecture with Mixture-of-Experts modules. It is trained for protein sequence generation, mutation effect prediction, and scaffold design. The model supports long contexts and order-agnostic infilling via autoregressive training in N→C and C→N directions.
+description_cn: Dayhoff 采用 Mamba 混合状态空间和 Transformer 自注意力架构，并集成分布式专家混合（MoE）模块。它专为蛋白质序列生成、突变效应预测和支架设计而训练。该模型支持长上下文，并通过 N→C 和 C→N 方向的自回归训练实现顺序无关的填充能力。
+context_length: 262144
+features:
+  - ModalityTextIn
+  - ModalityTextOut
+links:
+  model_card: https://huggingface.co/microsoft/Dayhoff-170M-UR90-HL-24000
+identifiers:
+  huggingface:
+    - microsoft/Dayhoff-170M-UR90-HL-24000
+provenance:
+  context_length:
+    source: official_huggingface_config
+    url: https://huggingface.co/microsoft/Dayhoff-170M-UR90-HL-24000
+  description:
+    source: official_model_card
+    url: https://huggingface.co/microsoft/Dayhoff-170M-UR90-HL-24000/resolve/db8be3e4b293ecf63cf79f34a5edfcce146458f3/README.md
+  features:
+    source: official_huggingface_pipeline
+    url: https://huggingface.co/microsoft/Dayhoff-170M-UR90-HL-24000
+  id:
+    source: official_huggingface
+    url: https://huggingface.co/microsoft/Dayhoff-170M-UR90-HL-24000
+  name:
+    source: official_huggingface
+    url: https://huggingface.co/microsoft/Dayhoff-170M-UR90-HL-24000
+upstream:
+  huggingface:
+    id: microsoft/Dayhoff-170M-UR90-HL-24000
+    revision: db8be3e4b293ecf63cf79f34a5edfcce146458f3
+    pipeline_tag: text-generation
+    model_type: jamba
+    architectures:
+      - JambaForCausalLM
+    license: mit
+    tags:
+      - arxiv:2502.12479
+      - custom_code
+      - dataset:microsoft/Dayhoff
+      - endpoints_compatible
+      - jamba
+      - license:mit
+      - protein-generation
+      - region:us
+      - safetensors
+      - text-generation
+      - transformers
+    config_context_length: 262144
+    tokenizer_model_max_length: 2048
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-09-27T07:15:20.522389119Z

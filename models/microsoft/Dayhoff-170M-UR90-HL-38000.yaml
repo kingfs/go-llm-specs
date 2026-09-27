@@ -5,6 +5,7 @@ provider: Microsoft
 developer: microsoft
 lifecycle: active
 description: Dayhoff is a hybrid state-space Mamba and Transformer model with Mixture-of-Experts for protein sequence generation, mutation effect prediction, and motif scaffolding.
+description_cn: Dayhoff 是一种结合 Mamba 混合状态空间和 Transformer 架构的蛋白质序列生成、突变效应预测及基序支架设计模型，内部集成了专家混合（MoE）技术。
 context_length: 262144
 features:
   - ModalityTextIn

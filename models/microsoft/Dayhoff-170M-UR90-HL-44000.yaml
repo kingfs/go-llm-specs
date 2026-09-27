@@ -5,6 +5,7 @@ provider: Microsoft
 developer: microsoft
 lifecycle: active
 description: Dayhoff is a hybrid state-space-model transformer architecture with mixture-of-experts for protein language modeling. It natively handles long contexts and supports order-agnostic infilling. The 170M UR90 variant is trained on metagenomic data.
+description_cn: Dayhoff 是一种采用 Mamba 混合状态空间和 Transformer 架构并结合专家混合（MoE）技术的蛋白质语言建模模型，原生支持长上下文并实现顺序无关填充。其 170M UR90 变体基于宏基因组数据训练。
 context_length: 262144
 features:
   - ModalityTextIn

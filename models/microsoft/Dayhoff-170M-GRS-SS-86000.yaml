@@ -5,6 +5,7 @@ provider: Microsoft
 developer: microsoft
 lifecycle: active
 description: Dayhoff is a protein language model with a hybrid state-space Mamba and Transformer architecture, interleaved with Mixture-of-Experts modules. It is trained to predict mutation effects and generate novel protein sequences.
+description_cn: Dayhoff 是一种蛋白质语言模型，采用 Mamba 混合状态空间和 Transformer 架构，并交错嵌入专家混合（MoE）模块。其训练目标包括预测突变效应和生成新的蛋白质序列。
 context_length: 262144
 features:
   - ModalityTextIn

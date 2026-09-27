@@ -4,6 +4,7 @@ name: 'Perceptron: Perceptron Mk1.5'
 provider: Perceptron
 developer: perceptron
 description: 'Perceptron Mk1.5 is Perceptron''s embodied reasoning model for physical agents. It accepts text, image, video, and audio input, and answers with text plus optional structured annotations: points, boxes, polygons, tracks,...'
+description_cn: Perceptron Mk1.5 是 Perceptron 公司为物理智能体开发的具身推理模型。它接受文本、图像、视频和音频输入，并提供文本回答及可选的结构化注释，包括：点、框、多边形、轨迹等。
 context_length: 36864
 max_output: 8192
 features:

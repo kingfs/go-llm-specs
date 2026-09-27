@@ -1,0 +1,57 @@
+schema_version: 2
+id: qwen/qwen3guard-stream-8b
+name: Qwen3Guard-Stream-8B
+provider: Qwen
+developer: qwen
+lifecycle: candidate
+context_length: 8192
+features:
+  - CapEmbedding
+  - ModalityTextIn
+links:
+  model_card: https://huggingface.co/Qwen/Qwen3Guard-Stream-8B
+identifiers:
+  huggingface:
+    - Qwen/Qwen3Guard-Stream-8B
+provenance:
+  context_length:
+    source: official_huggingface_config
+    url: https://huggingface.co/Qwen/Qwen3Guard-Stream-8B
+  features:
+    source: official_huggingface_pipeline
+    url: https://huggingface.co/Qwen/Qwen3Guard-Stream-8B
+  id:
+    source: official_huggingface
+    url: https://huggingface.co/Qwen/Qwen3Guard-Stream-8B
+  name:
+    source: official_huggingface
+    url: https://huggingface.co/Qwen/Qwen3Guard-Stream-8B
+upstream:
+  huggingface:
+    id: Qwen/Qwen3Guard-Stream-8B
+    revision: d3438047616e8d782834268cdadecc34064fe4d9
+    pipeline_tag: feature-extraction
+    model_type: qwen3
+    architectures:
+      - Qwen3ForGuardModel
+    license: apache-2.0
+    tags:
+      - arxiv:2510.14276
+      - base_model:Qwen/Qwen3-8B
+      - base_model:finetune:Qwen/Qwen3-8B
+      - custom_code
+      - endpoints_compatible
+      - feature-extraction
+      - license:apache-2.0
+      - qwen3
+      - region:us
+      - safetensors
+      - text-embeddings-inference
+      - transformers
+    config_context_length: 8192
+    tokenizer_model_max_length: 131072
+    chat_template_sha256: d7d7b7a694907104724f66d29e96b811c834ab8d1a40ef59f00469049fee7794
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-09-27T07:15:22.083573602Z

@@ -4,6 +4,7 @@ name: 'TypeSafe: Jev Router'
 provider: Typesafe
 developer: typesafe
 description: Jev Router picks the best model and reasoning effort for each request, balancing quality, speed, and cost. It runs on [Jev](https://openrouter.ai/~typesafe/jev-latest), TypeSafe's first System One model, and adapts as your...
+description_cn: Jev Router 为每次请求从最佳模型和推理努力级别中进行选择，在质量、速度和成本之间取得平衡。它运行于 TypeSafe 的首个系统 1（System One）模型 Jev 之上，并会根据您的需求进行动态调整……
 context_length: 1000000
 features:
   - CapChat
