@@ -273,7 +273,10 @@ official HF orgs ────┘
   repositories per run as `lifecycle: candidate` YAML records. Repositories that
   are outside the catalog scope, or that redistribute another checkpoint
   (ONNX, GGUF, OpenVINO, ...), are recorded in the queue with a status and a
-  reason instead of being materialized.
+  reason instead of being materialized. A repository that already backs a record
+  in the catalog — a first-party checkpoint an aggregator record already cites,
+  for example — is registered against that record instead of producing a second
+  record for the same model.
 - Candidate records are excluded from `models_gen.go` until structured enrichment
   and evidence-backed extraction provide the required facts. `task catalog-promote`
   activates only ready records, and for a publisher that requires corroboration

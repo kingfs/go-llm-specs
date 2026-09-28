@@ -344,11 +344,17 @@ func reconcilePreviousIdentityMatches(previous map[string]hfCandidate, modelMatc
 func classifyQueue(r *report, providers []provider.Provider, models []registry.Model) {
 	providerByID := make(map[string]provider.Provider, len(providers))
 	known := make(map[string]bool, len(models))
+	claimed := make(map[string]string, len(models))
 	for _, p := range providers {
 		providerByID[p.ID] = p
 	}
 	for _, model := range models {
 		known[strings.ToLower(model.ID)] = true
+		for _, repository := range claimedRepositories(model) {
+			if _, ok := claimed[repository]; !ok {
+				claimed[repository] = model.ID
+			}
+		}
 	}
 	for i := range r.HuggingFaceCandidates {
 		candidate := &r.HuggingFaceCandidates[i]
@@ -368,14 +374,40 @@ func classifyQueue(r *report, providers []provider.Provider, models []registry.M
 			continue
 		}
 		reason := registry.ScopeReason(candidateModel(p, *candidate))
-		if reason == "" {
+		if reason != "" {
+			candidate.Status, candidate.ScopeReason = statusOutOfScope, reason
+			if candidate.RegistryID != "" && !known[strings.ToLower(candidate.RegistryID)] {
+				candidate.RegistryID = ""
+			}
 			continue
 		}
-		candidate.Status, candidate.ScopeReason = statusOutOfScope, reason
-		if candidate.RegistryID != "" && !known[strings.ToLower(candidate.RegistryID)] {
-			candidate.RegistryID = ""
+		// A repository that already backs a record in the catalog is not a new
+		// model: remember which record represents it, so a later run cannot
+		// write a second record for the same upstream repository.
+		if recordID, ok := claimed[strings.ToLower(candidate.RepositoryID)]; ok {
+			if candidate.Status == "new" || !known[strings.ToLower(candidate.RegistryID)] {
+				candidate.Status, candidate.RegistryID = "registered", recordID
+			}
 		}
 	}
+}
+
+// claimedRepositories lists the Hugging Face repositories a record already
+// represents, whether the identity was reviewed into identifiers or captured
+// from upstream enrichment.
+func claimedRepositories(model registry.Model) []string {
+	repositories := make([]string, 0, len(model.Identifiers.HuggingFace)+1)
+	for _, identifier := range model.Identifiers.HuggingFace {
+		if key := strings.ToLower(strings.TrimSpace(identifier)); key != "" {
+			repositories = append(repositories, key)
+		}
+	}
+	if huggingFace := model.Upstream.HuggingFace; huggingFace != nil {
+		if key := strings.ToLower(strings.TrimSpace(huggingFace.ID)); key != "" {
+			repositories = append(repositories, key)
+		}
+	}
+	return repositories
 }
 
 // candidateModel builds the registry record shape a candidate would produce.

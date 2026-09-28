@@ -369,3 +369,46 @@ func TestClassifyQueueClearsRegistryLinkToRemovedRecord(t *testing.T) {
 		t.Fatalf("kept record lost its link: %#v", got)
 	}
 }
+
+func TestClassifyQueueRegistersRepositoryClaimedByExistingRecord(t *testing.T) {
+	// An aggregator record can already cite the repository that discovery later
+	// finds in the publisher's own organization. The repository then belongs to
+	// that record: writing another one would duplicate the same model under a
+	// second ID, as happened for qwen/qwen3.8-flash.
+	candidate := hfCandidate{
+		ProviderID: "qwen", Organization: "Qwen", RepositoryID: "Qwen/Qwen3.8-Flash-Next",
+		Status: "new", URL: "https://huggingface.co/Qwen/Qwen3.8-Flash-Next",
+		PipelineTag: "image-text-to-text",
+	}
+	r := report{HuggingFaceCandidates: []hfCandidate{candidate}}
+	models := []registry.Model{{
+		ID:          "qwen/qwen3.8-flash",
+		Identifiers: registry.ModelIdentifiers{HuggingFace: []string{"Qwen/Qwen3.8-Flash-Next"}},
+	}}
+	classifyQueue(&r, []provider.Provider{{ID: "qwen", Name: "Qwen"}}, models)
+	got := r.HuggingFaceCandidates[0]
+	if got.Status != "registered" || got.RegistryID != "qwen/qwen3.8-flash" {
+		t.Fatalf("claimed repository was not registered: %#v", got)
+	}
+
+	// The upstream cache alone also proves the claim, and a candidate whose own
+	// record still exists keeps its materialized status.
+	r = report{HuggingFaceCandidates: []hfCandidate{{
+		ProviderID: "qwen", Organization: "Qwen", RepositoryID: "Qwen/Qwen3.8-Flash-Next",
+		Status: "materialized", RegistryID: "qwen/qwen3.8-flash-next",
+		URL: "https://huggingface.co/Qwen/Qwen3.8-Flash-Next", PipelineTag: "image-text-to-text",
+	}}}
+	models = []registry.Model{
+		{
+			ID:          "qwen/qwen3.8-flash",
+			Upstream:    registry.UpstreamMetadata{HuggingFace: &registry.HuggingFaceMetadata{ID: "Qwen/Qwen3.8-Flash-Next"}},
+			Identifiers: registry.ModelIdentifiers{HuggingFace: []string{"Qwen/Qwen3.8-Flash-Next"}},
+		},
+		{ID: "qwen/qwen3.8-flash-next", Identifiers: registry.ModelIdentifiers{HuggingFace: []string{"Qwen/Qwen3.8-Flash-Next"}}},
+	}
+	classifyQueue(&r, []provider.Provider{{ID: "qwen", Name: "Qwen"}}, models)
+	got = r.HuggingFaceCandidates[0]
+	if got.Status != "materialized" || got.RegistryID != "qwen/qwen3.8-flash-next" {
+		t.Fatalf("live materialized link was rewritten: %#v", got)
+	}
+}

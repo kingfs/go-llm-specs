@@ -4,7 +4,7 @@ name: 'LiquidAI: LFM2-8B-A1B'
 provider: Liquid
 developer: liquid
 description: LFM2-8B-A1B is an efficient on-device Mixture-of-Experts (MoE) model from Liquid AI’s LFM2 family, built for fast, high-quality inference on edge hardware. It uses 8.3B total parameters with only ~1.5B active per token, delivering strong performance while keeping compute and memory usage low—making it ideal for phones, tablets, and laptops.
-description_cn: 通过收件箱界面创建的模型
+description_cn: LFM2-8B-A1B 是 Liquid AI LFM2 系列中面向端侧的高效混合专家（MoE）模型，专为在边缘硬件上实现快速、高质量的推理而构建。它总参数量为 83 亿，每个 token 仅激活约 15 亿参数，在保持较低计算与内存占用的同时提供强劲性能，非常适合手机、平板和笔记本电脑。
 context_length: 32768
 features:
   - CapChat

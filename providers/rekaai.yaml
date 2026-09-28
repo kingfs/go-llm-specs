@@ -1,6 +1,8 @@
-# Reka publishes from the RekaAI organization.
+# Reka publishes from the RekaAI organization, whose name also forms its
+# OpenRouter prefix, so the provider id matches the records already in the
+# catalog and "reka" is kept as an alias for the other spelling.
 schema_version: 1
-id: reka
+id: rekaai
 name: Reka AI
 kind: company
 official:
@@ -8,7 +10,7 @@ official:
   model_catalog: https://huggingface.co/RekaAI
 organizations:
   huggingface: [RekaAI]
-aliases: [rekaai]
+aliases: [reka]
 discovery:
   huggingface: true
 identity:
