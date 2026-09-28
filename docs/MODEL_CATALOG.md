@@ -270,7 +270,10 @@ official HF orgs ────┘
 - `task catalog-discover` paginates subscribed official Hugging Face organizations,
   preserves a durable candidate queue in `data/catalog-discovery.json`, applies
   exact identity matches, and materializes at most five eligible official
-  repositories per run as `lifecycle: candidate` YAML records. Repositories that
+  repositories per run as `lifecycle: candidate` YAML records. A match compares
+  the repository name with the record id case-insensitively and reads `_` as a
+  version separator, so `Llama-3_1` matches `llama-3.1`, while `-` and `.` stay
+  significant and `LFM2-2.6B` can never be matched to `lfm-2.2-6b`. Repositories that
   are outside the catalog scope, or that redistribute another checkpoint
   (ONNX, GGUF, OpenVINO, ...), are recorded in the queue with a status and a
   reason instead of being materialized. A repository that already backs a record

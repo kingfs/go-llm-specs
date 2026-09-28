@@ -148,7 +148,8 @@ func run(ctx context.Context, cfg config) error {
 			r.UncatalogedPublishers[developer]++
 		}
 		if cataloged {
-			modelMatches[providerID+":"+normalize(modelSuffix(m.ID))] = append(modelMatches[providerID+":"+normalize(modelSuffix(m.ID))], i)
+			key := providerID + ":" + identityKey(modelSuffix(m.ID))
+			modelMatches[key] = append(modelMatches[key], i)
 			if cfg.ApplyMatches && models[i].Developer != providerID {
 				models[i].Developer = providerID
 				if err := registry.Save(models[i].FilePath, models[i]); err != nil {
@@ -211,7 +212,7 @@ func run(ctx context.Context, cfg config) error {
 					if id == "" || knownHF[strings.ToLower(id)] || (!cutoff.IsZero() && item.LastModified.Before(cutoff)) {
 						continue
 					}
-					matches := modelMatches[p.ID+":"+normalize(modelSuffix(id))]
+					matches := modelMatches[p.ID+":"+identityKey(modelSuffix(id))]
 					status := "new"
 					registryID := ""
 					if len(matches) == 1 {
@@ -309,7 +310,7 @@ func reconcilePreviousIdentityMatches(previous map[string]hfCandidate, modelMatc
 		if candidate.Status != "new" && candidate.Status != "identity_match" {
 			continue
 		}
-		matches := modelMatches[candidate.ProviderID+":"+normalize(modelSuffix(candidate.RepositoryID))]
+		matches := modelMatches[candidate.ProviderID+":"+identityKey(modelSuffix(candidate.RepositoryID))]
 		if len(matches) != 1 {
 			continue
 		}
@@ -669,6 +670,18 @@ func candidateKey(organization, repositoryID string) string {
 func normalize(value string) string {
 	value = strings.ToLower(value)
 	return strings.NewReplacer(" ", "", "-", "", "_", "", ".", "").Replace(value)
+}
+
+// identityKey normalizes a record suffix or repository name for exact identity
+// matching. It is deliberately stricter than normalize: dropping "-" and "."
+// collapsed different models into one key, so LiquidAI/LFM2-2.6B looked like
+// the record liquid/lfm-2.2-6b and would have attached the wrong model card.
+// Case and spaces are ignored and "_" is read as a version separator, because
+// nvidia writes Llama-3_1 where the record says llama-3.1; every other
+// character, "-" included, must match.
+func identityKey(value string) string {
+	value = strings.ToLower(value)
+	return strings.NewReplacer(" ", "", "_", ".").Replace(value)
 }
 
 func modelSuffix(id string) string {

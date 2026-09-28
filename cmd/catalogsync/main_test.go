@@ -7,6 +7,7 @@ import (
 	"net/http/httptest"
 	"os"
 	"path/filepath"
+	"strings"
 	"testing"
 	"time"
 
@@ -53,7 +54,7 @@ func TestReconcilePreviousIdentityMatchesAfterCanonicalization(t *testing.T) {
 		Status: "new", URL: "https://huggingface.co/google/gemma-3n-E2B-it",
 	}
 	previous := map[string]hfCandidate{candidateKey(candidate.Organization, candidate.RepositoryID): candidate}
-	matches := map[string][]int{"google:" + normalize("gemma-3n-e2b-it"): {0}}
+	matches := map[string][]int{"google:" + identityKey("gemma-3n-e2b-it"): {0}}
 	known := map[string]bool{}
 	if err := reconcilePreviousIdentityMatches(previous, matches, models, known, true); err != nil {
 		t.Fatal(err)
@@ -410,5 +411,23 @@ func TestClassifyQueueRegistersRepositoryClaimedByExistingRecord(t *testing.T) {
 	got = r.HuggingFaceCandidates[0]
 	if got.Status != "materialized" || got.RegistryID != "qwen/qwen3.8-flash-next" {
 		t.Fatalf("live materialized link was rewritten: %#v", got)
+	}
+}
+
+func TestIdentityKeyKeepsModelNamesDistinct(t *testing.T) {
+	// Identity matching attaches an official model card, so the key must not
+	// equate two names that only look alike once separators are dropped:
+	// LiquidAI/LFM2-2.6B is not the record liquid/lfm-2.2-6b.
+	if identityKey("LFM2-2.6B") == identityKey("lfm-2.2-6b") {
+		t.Fatal("LFM2-2.6B and lfm-2.2-6b collapsed into one identity key")
+	}
+	// Case, spaces and the version underscore are still ignored, because nvidia
+	// publishes Llama-3_1 for the record llama-3.1 and WizardLM-2-8x22B for
+	// microsoft/wizardlm-2-8x22b.
+	for _, repository := range []string{"WizardLM-2-8x22B", "Llama-3_1-Nemotron-Ultra-253B-v1", "Llama-3_3-Nemotron-Super-49B-v1_5"} {
+		record := strings.ReplaceAll(strings.ToLower(repository), "_", ".")
+		if identityKey(repository) != identityKey(record) {
+			t.Fatalf("identity key lost the repository %q", repository)
+		}
 	}
 }
