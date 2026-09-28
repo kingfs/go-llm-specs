@@ -54,6 +54,7 @@ type hfCandidate struct {
 	RepositoryID string    `json:"repository_id"`
 	RegistryID   string    `json:"registry_id,omitempty"`
 	Status       string    `json:"status"`
+	ScopeReason  string    `json:"scope_reason,omitempty"`
 	URL          string    `json:"url"`
 	LastModified time.Time `json:"last_modified,omitempty"`
 	PipelineTag  string    `json:"pipeline_tag,omitempty"`
@@ -259,6 +260,12 @@ func run(ctx context.Context, cfg config) error {
 			if err := materializeCandidates(&r, providers, models, cfg); err != nil {
 				return err
 			}
+		} else {
+			// The queue records the scope and packaging decision even when this
+			// run does not materialize anything, so a discovery-only run still
+			// leaves an auditable reason instead of silently keeping a refused
+			// repository queued as eligible.
+			classifyQueue(&r, providers, models)
 		}
 	}
 
@@ -325,7 +332,82 @@ func reconcilePreviousIdentityMatches(previous map[string]hfCandidate, modelMatc
 	return nil
 }
 
+// classifyQueue records the catalog-scope and packaging decision for every
+// candidate in the queue.
+//
+// Both decisions are pure functions of the repository metadata, so they are
+// applied to the whole queue instead of only to the prefix that a
+// materialization run happens to walk before its budget is spent. A candidate
+// that already maps to a local record keeps its status and its registry link,
+// unless that record no longer exists: a decision recorded against a deleted
+// record would be a dangling reference.
+func classifyQueue(r *report, providers []provider.Provider, models []registry.Model) {
+	providerByID := make(map[string]provider.Provider, len(providers))
+	known := make(map[string]bool, len(models))
+	for _, p := range providers {
+		providerByID[p.ID] = p
+	}
+	for _, model := range models {
+		known[strings.ToLower(model.ID)] = true
+	}
+	for i := range r.HuggingFaceCandidates {
+		candidate := &r.HuggingFaceCandidates[i]
+		if candidate.Status == "new" && packagingRepository(candidate.RepositoryID, candidate.Tags) {
+			candidate.Status = statusPackaging
+			continue
+		}
+		switch candidate.Status {
+		case "new", "registered", "materialized":
+		default:
+			// identity_applied, serving_variant, packaging and out_of_scope are
+			// already recorded decisions.
+			continue
+		}
+		p, ok := providerByID[candidate.ProviderID]
+		if !ok {
+			continue
+		}
+		reason := registry.ScopeReason(candidateModel(p, *candidate))
+		if reason == "" {
+			continue
+		}
+		candidate.Status, candidate.ScopeReason = statusOutOfScope, reason
+		if candidate.RegistryID != "" && !known[strings.ToLower(candidate.RegistryID)] {
+			candidate.RegistryID = ""
+		}
+	}
+}
+
+// candidateModel builds the registry record shape a candidate would produce.
+// Scope classification reads the same fields whether or not the record is ever
+// written to disk.
+func candidateModel(p provider.Provider, candidate hfCandidate) registry.Model {
+	return registry.Model{
+		SchemaVersion: registry.CurrentSchemaVersion,
+		ID:            p.ID + "/" + strings.ToLower(modelSuffix(candidate.RepositoryID)),
+		Name:          modelSuffix(candidate.RepositoryID),
+		Provider:      p.Name,
+		Developer:     p.ID,
+		Lifecycle:     "candidate",
+		Features:      featuresForPipeline(candidate.PipelineTag),
+		Links:         registry.ModelLinks{ModelCard: candidate.URL},
+		Identifiers:   registry.ModelIdentifiers{HuggingFace: []string{candidate.RepositoryID}},
+		Provenance: map[string]registry.Provenance{
+			"id":       {Source: "official_huggingface", URL: candidate.URL},
+			"name":     {Source: "official_huggingface", URL: candidate.URL},
+			"features": {Source: "official_huggingface_pipeline", URL: candidate.URL},
+		},
+		Upstream: registry.UpstreamMetadata{HuggingFace: &registry.HuggingFaceMetadata{
+			ID: candidate.RepositoryID, PipelineTag: candidate.PipelineTag, Tags: candidate.Tags,
+		}},
+	}
+}
+
 func materializeCandidates(r *report, providers []provider.Provider, models []registry.Model, cfg config) error {
+	// Scope and packaging are decided for the whole queue first, so a small
+	// materialization budget can never leave a refused repository queued as if
+	// it were still eligible.
+	classifyQueue(r, providers, models)
 	providerByID := make(map[string]provider.Provider, len(providers))
 	known := make(map[string]bool, len(models))
 	for _, p := range providers {
@@ -340,6 +422,9 @@ func materializeCandidates(r *report, providers []provider.Provider, models []re
 	written := 0
 	for i := range r.HuggingFaceCandidates {
 		candidate := &r.HuggingFaceCandidates[i]
+		// Only a brand new candidate in the automatic intake policy consumes the
+		// budget. Everything else either already has a local record or was
+		// refused by classifyQueue above.
 		if candidate.Status != "new" || !eligiblePipeline(candidate.PipelineTag, candidate.Tags) {
 			continue
 		}
@@ -352,30 +437,19 @@ func materializeCandidates(r *report, providers []provider.Provider, models []re
 			candidate.Status = "registered"
 			continue
 		}
-		if registry.IsServingVariant(registry.Model{ID: id, Name: modelSuffix(candidate.RepositoryID)}) {
+		model := candidateModel(p, *candidate)
+		if registry.IsServingVariant(model) {
 			candidate.Status = "serving_variant"
 			continue
 		}
-		model := registry.Model{
-			SchemaVersion: registry.CurrentSchemaVersion, ID: id, Name: modelSuffix(candidate.RepositoryID),
-			Provider: p.Name, Developer: p.ID, Lifecycle: "candidate",
-			Features:    featuresForPipeline(candidate.PipelineTag),
-			Links:       registry.ModelLinks{ModelCard: candidate.URL},
-			Identifiers: registry.ModelIdentifiers{HuggingFace: []string{candidate.RepositoryID}},
-			Provenance: map[string]registry.Provenance{
-				"id":       {Source: "official_huggingface", URL: candidate.URL},
-				"name":     {Source: "official_huggingface", URL: candidate.URL},
-				"features": {Source: "official_huggingface_pipeline", URL: candidate.URL},
-			},
-		}
-		path := filepath.Join(cfg.ModelsDir, p.ID, safeFilename(modelSuffix(candidate.RepositoryID))+".yaml")
+		path := filepath.Join(cfg.ModelsDir, p.ID, safeFilename(model.Name)+".yaml")
 		if err := os.MkdirAll(filepath.Dir(path), 0o755); err != nil {
 			return err
 		}
 		if err := registry.Save(path, model); err != nil {
 			return err
 		}
-		candidate.Status, candidate.RegistryID = "materialized", id
+		candidate.Status, candidate.ScopeReason, candidate.RegistryID = "materialized", "", id
 		known[strings.ToLower(id)] = true
 		written++
 		if cfg.Limit > 0 && written >= cfg.Limit {
@@ -388,23 +462,74 @@ func materializeCandidates(r *report, providers []provider.Provider, models []re
 	return nil
 }
 
-func eligiblePipeline(pipeline string, tags []string) bool {
-	switch pipeline {
-	case "text-generation", "text2text-generation", "image-text-to-text", "visual-question-answering", "feature-extraction":
-	default:
-		return false
-	}
-	for _, tag := range tags {
-		tag = strings.ToLower(tag)
-		if strings.Contains(tag, "gguf") || strings.Contains(tag, "adapter") || strings.Contains(tag, "merge") || strings.Contains(tag, "quantized") {
-			return false
+// Candidate statuses recorded in the discovery report. "new" and
+// "materialized" describe normal progress; the remaining values record why a
+// repository was refused so the decision is never retried blindly.
+const (
+	statusOutOfScope = "out_of_scope"
+	statusPackaging  = "packaging"
+)
+
+// packagingRepository reports whether a repository redistributes another
+// checkpoint (ONNX, GGUF, OpenVINO, ...) instead of publishing a model
+// identity. Quantized checkpoints that a publisher ships as first-party
+// variants are deliberately not matched here; they are reported by
+// task catalog-doctor as quantization candidates instead.
+func packagingRepository(repositoryID string, tags []string) bool {
+	name := strings.ToLower(repositoryID)
+	for _, suffix := range packagingSuffixes {
+		if strings.HasSuffix(name, suffix) {
+			return true
 		}
 	}
-	return true
+	return packagingTags(tags)
 }
 
+var packagingSuffixes = []string{
+	"-onnx", "-gguf", "-openvino", "-webnn", "-mlx", "-tflite", "-coreml",
+}
+
+// discoveryPipelines are the Hugging Face tasks the unattended discovery feed
+// automatically materializes candidates from. The set is deliberately narrower
+// than the catalog scope in internal/registry: ranking, speech and translation
+// models are collected when a human adds them, but the daily sweep does not
+// walk an entire organization's speech, translation and reranking back
+// catalogue. Scope decisions still come from registry.ScopeReason, so this list
+// only bounds intake, it never admits an out-of-scope repository.
+var discoveryPipelines = map[string]bool{
+	"text-generation":           true,
+	"text2text-generation":      true,
+	"image-text-to-text":        true,
+	"visual-question-answering": true,
+	"feature-extraction":        true,
+}
+
+// eligiblePipeline reports whether a repository is within the automatic intake
+// policy and is not packaging of another checkpoint.
+func eligiblePipeline(pipeline string, tags []string) bool {
+	return discoveryPipelines[strings.ToLower(strings.TrimSpace(pipeline))] && !packagingTags(tags)
+}
+
+// packagingTags rejects repositories whose tags mark them as redistribution or
+// as a module that cannot run on its own. Precision repackaging (FP8, NVFP4,
+// INT4, GPTQ, AWQ, "quantized") is deliberately not listed: a first-party
+// quantized checkpoint is a candidate model record that `task catalog-doctor`
+// reports for review. A merged checkpoint is a standalone model as well.
+func packagingTags(tags []string) bool {
+	for _, tag := range tags {
+		tag = strings.ToLower(tag)
+		if strings.Contains(tag, "gguf") || strings.Contains(tag, "adapter") {
+			return true
+		}
+	}
+	return false
+}
+
+// featuresForPipeline maps a publisher's declared task to the capability
+// bitmask the registry exposes. Only discoveryPipelines reach this function, so
+// a wrong default here would advertise a non-chat model as a chat model.
 func featuresForPipeline(pipeline string) []string {
-	switch pipeline {
+	switch strings.ToLower(strings.TrimSpace(pipeline)) {
 	case "feature-extraction":
 		return []string{"CapEmbedding", "ModalityTextIn"}
 	case "image-text-to-text", "visual-question-answering":

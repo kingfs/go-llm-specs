@@ -175,19 +175,11 @@ func deriveTags(m ModelRegistry, family, series string) []string {
 		}
 	}
 
-	matchTag(content, &tags, string(llmspecs.TagCoding), "coder", "coding", "codex", "software engineering", "swe-bench", "cli", "ide")
-	matchTag(content, &tags, string(llmspecs.TagReasoning), "reasoning", "reasoner", "deep reasoning", "think", "thinking")
-	matchTag(content, &tags, string(llmspecs.TagAgent), "agent", "agentic", "tool orchestration", "autonomous")
-	matchTag(content, &tags, string(llmspecs.TagSearch), "search", "retrieval", "research", "deepresearch")
-	matchTag(content, &tags, string(llmspecs.TagPreview), "preview", "beta")
-	matchTag(content, &tags, string(llmspecs.TagExperimental), "experimental", "alpha")
-	matchTag(content, &tags, string(llmspecs.TagFast), "fast", "low latency")
-	matchTag(content, &tags, string(llmspecs.TagMini), " mini", "-mini", ": mini", "mini ")
-	matchTag(content, &tags, string(llmspecs.TagNano), " nano", "-nano", ": nano", "nano ")
-	matchTag(content, &tags, string(llmspecs.TagPro), " pro", "-pro", ": pro", "pro ")
-	matchTag(content, &tags, string(llmspecs.TagTurbo), "turbo")
-	matchTag(content, &tags, string(llmspecs.TagFree), ":free", "(free)", " free")
-	matchTag(content, &tags, string(llmspecs.TagThinking), ":thinking", "(thinking)", " thinking")
+	for _, rule := range keywordTagRules {
+		if rule.pattern.MatchString(content) {
+			addTag(rule.tag)
+		}
+	}
 
 	if family != "" {
 		addTag(llmspecs.NormalizeTag(family))
@@ -196,13 +188,55 @@ func deriveTags(m ModelRegistry, family, series string) []string {
 	return normalizeTagList(tags)
 }
 
-func matchTag(content string, tags *[]string, tag string, markers ...string) {
+// tagRule maps publisher wording to a canonical tag. A rule matches when one of
+// its markers appears in the model metadata as a whole word or phrase. Matching
+// is bounded by alphanumeric characters so a short marker such as "pro" is not
+// triggered by "protein" and "ide" is not triggered by "provides".
+type tagRule struct {
+	tag     string
+	pattern *regexp.Regexp
+}
+
+func newTagRule(tag string, markers ...string) tagRule {
+	alternatives := make([]string, 0, len(markers))
 	for _, marker := range markers {
-		if strings.Contains(content, marker) {
-			*tags = append(*tags, tag)
-			return
+		marker = strings.ToLower(strings.TrimSpace(marker))
+		quoted := regexp.QuoteMeta(marker)
+		// Only the alphanumeric edges of a marker need a word boundary. A
+		// marker that already starts or ends with punctuation (":free",
+		// "(thinking)") is anchored by that punctuation itself.
+		if isAlnumByte(marker[0]) {
+			quoted = `(?:^|[^a-z0-9])` + quoted
 		}
+		if isAlnumByte(marker[len(marker)-1]) {
+			quoted += `(?:[^a-z0-9]|$)`
+		}
+		alternatives = append(alternatives, quoted)
 	}
+	return tagRule{
+		tag:     tag,
+		pattern: regexp.MustCompile(`(?i)(?:` + strings.Join(alternatives, "|") + `)`),
+	}
+}
+
+func isAlnumByte(b byte) bool {
+	return (b >= 'a' && b <= 'z') || (b >= '0' && b <= '9')
+}
+
+var keywordTagRules = []tagRule{
+	newTagRule(string(llmspecs.TagCoding), "coder", "coding", "codex", "software engineering", "swe-bench", "cli", "ide"),
+	newTagRule(string(llmspecs.TagReasoning), "reasoning", "reasoner", "deep reasoning", "think", "thinking"),
+	newTagRule(string(llmspecs.TagAgent), "agent", "agents", "agentic", "tool orchestration", "autonomous"),
+	newTagRule(string(llmspecs.TagSearch), "search", "retrieval", "research", "deepresearch"),
+	newTagRule(string(llmspecs.TagPreview), "preview", "beta"),
+	newTagRule(string(llmspecs.TagExperimental), "experimental", "alpha"),
+	newTagRule(string(llmspecs.TagFast), "fast", "low latency"),
+	newTagRule(string(llmspecs.TagMini), "mini"),
+	newTagRule(string(llmspecs.TagNano), "nano"),
+	newTagRule(string(llmspecs.TagPro), "pro"),
+	newTagRule(string(llmspecs.TagTurbo), "turbo"),
+	newTagRule(string(llmspecs.TagFree), ":free", "(free)"),
+	newTagRule(string(llmspecs.TagThinking), ":thinking", "(thinking)", "thinking"),
 }
 
 func normalizeTagList(tags []string) []string {

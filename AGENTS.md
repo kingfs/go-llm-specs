@@ -14,7 +14,8 @@ This repository is a static LLM model metadata registry for Go. AI agents should
 3. `cmd/generator/main.go` for upstream sync and code generation behavior.
 4. `cmd/translator/main.go` for incremental translation behavior.
 5. `cmd/releasecheck/main.go` for release gating semantics.
-6. `capability.go`, `model.go`, and `registry.go` for runtime API and feature semantics.
+6. `internal/registry/variant.go` for record-kind classification and `internal/registry/scope.go` for catalog scope: which publishers and model categories this registry collects. An upstream `pipeline_tag` never decides scope on its own.
+7. `capability.go`, `model.go`, and `registry.go` for runtime API and feature semantics.
 
 ## File Ownership Rules
 
@@ -23,6 +24,8 @@ This repository is a static LLM model metadata registry for Go. AI agents should
 - Edit `cmd/translator/main.go` when changing translation batching, selection, or persistence behavior.
 - Do not hand-edit `models_gen.go`; regenerate it with `task generator`.
 - `data/models.json` is cache/debug output and may be refreshed by the generator.
+- `data/catalog-discovery.json` is owned by `cmd/catalogsync`; never hand-edit the queue.
+- Edit `internal/registry/scope.go` when changing which publishers or model categories are collected. Discovery intake, compilation and the public catalog all read that one decision, so a scope change must also update `docs/MODEL_CATALOG.md`.
 
 ## Development Commands
 

@@ -141,6 +141,13 @@ Capability constants live in [capability.go](./capability.go), and tag constants
 
 The registry records model specifications claimed by model publishers, not constraints of individual deployments. OpenRouter remains the broad primary discovery feed; publisher pages and subscribed official Hugging Face organizations provide enrichment and additional discovery. Human-maintained `models/**/*.yaml` is the highest-priority append-only fact catalog: automation fills empty fields only and never overwrites an existing value because of provenance or an upstream change.
 
+Scope has two independent dimensions:
+
+- **Publishers.** The reviewed publisher catalog in `providers/` is the core. A new record is only added automatically when it resolves to a reviewed publisher; historical long-tail publisher records stay, but discovery no longer extends them.
+- **Categories.** The catalog collects callable general-purpose models: chat, reasoning, coding and agent models; multimodal understanding (image, audio and video input to text output); text embeddings and rerankers; speech synthesis and recognition; and machine translation. It does not collect domain-science models (protein, DNA/RNA, genome, molecule, chemistry, materials, climate, medical imaging and biomedical text), non-language backbones (vision detection/segmentation/depth, speech encoders, 3D generation, robot policies, graph models), or packaging of another checkpoint (ONNX, GGUF, OpenVINO, MLX, ...).
+
+Classification uses the publisher's own metadata — repository tags, architecture, identifiers and, only for unambiguous wording, the description — not the upstream `pipeline_tag` alone: `text-generation` describes a tensor signature, not a product category. The rules live in `internal/registry/scope.go`; `task catalog-doctor` lists every out-of-scope record with its reason, and a single record can override the classifier with an explicit `kind`. See [docs/MODEL_CATALOG.md](docs/MODEL_CATALOG.md) for the full policy.
+
 Maintainer-facing files:
 
 ```text

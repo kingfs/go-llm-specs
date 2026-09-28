@@ -105,6 +105,7 @@ jobs:
       - name: Validate enriched registry and generated artifacts
         run: |
           task catalog-audit
+          task catalog-doctor
           task lint
           task test
           task build
@@ -113,7 +114,7 @@ jobs:
       - name: Check for synced changes
         id: changes
         run: |
-          if [ -z "$(git status --porcelain -- models/ providers/ models_gen.go data/models.json data/catalog-audit.json data/catalog-discovery.json data/official-identity.json data/enrichment-failures.json data/suggestions/ dist/codex/)" ]; then
+          if [ -z "$(git status --porcelain -- models/ providers/ models_gen.go data/models.json data/catalog-audit.json data/catalog-doctor.json data/catalog-discovery.json data/official-identity.json data/enrichment-failures.json data/suggestions/ dist/codex/)" ]; then
             echo "changed=false" >> "$GITHUB_OUTPUT"
           else
             echo "changed=true" >> "$GITHUB_OUTPUT"
@@ -137,7 +138,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add models_gen.go data/models.json data/catalog-audit.json data/catalog-discovery.json data/official-identity.json data/enrichment-failures.json data/suggestions/ models/ providers/ dist/codex/
+          git add models_gen.go data/models.json data/catalog-audit.json data/catalog-doctor.json data/catalog-discovery.json data/official-identity.json data/enrichment-failures.json data/suggestions/ models/ providers/ dist/codex/
           git commit -m "feat(data): sync upstream model registry"
           git push
 

@@ -5,6 +5,59 @@ publishers. It describes models, not individual deployments. A serving provider
 may expose a smaller context window or a different capability set; those
 deployment constraints are outside this registry.
 
+## Catalog scope
+
+A publisher repository is not automatically a model this registry collects. Two
+independent questions decide what enters the catalog: **who published it** and
+**what kind of model it is**.
+
+**Publishers.** `providers/*.yaml` is the reviewed publisher catalog and the
+definition of the core. A brand-new record is only added when its publisher
+resolves to a reviewed provider file; a discovery from an unlisted long-tail
+publisher (community fine-tunes, mirror directories) is skipped instead. Existing
+long-tail records are kept as historical facts and are still enriched, but the
+unattended feeds no longer extend them. Adding a publisher file is the explicit
+way to widen the scope: the tool never invents official URLs on its own.
+
+**Models.** The catalog collects callable models that a Go application can route
+to:
+
+- general-purpose chat, reasoning, coding and agent models;
+- multimodal understanding, including image, audio and video input with text
+  output, and computer-use models;
+- text embedding and reranking models;
+- speech synthesis and recognition models;
+- machine translation models.
+
+It does not collect:
+
+- **domain-science models**, even when a publisher exposes them through a
+  language-model pipeline tag: protein, DNA/RNA, genome, molecule, chemistry,
+  materials, climate and other field-specific research models, including
+  medical-imaging and biomedical-text models;
+- **non-language backbones**: vision classification, detection, segmentation and
+  depth encoders, speech encoders, audio codecs, 3D generation and geometry
+  models, robot policies and graph models;
+- **packaging of another checkpoint**: redistributions in a different runtime
+  format (ONNX, GGUF, OpenVINO, WebNN, MLX, TFLite, CoreML) and adapter modules
+  that cannot run on their own. A first-party quantized checkpoint (FP8, NVFP4,
+  INT4, GPTQ, AWQ) is a model record: it is collected and `task catalog-doctor`
+  reports it as a quantization candidate for review.
+
+Scope is decided from the publisher's own metadata — repository tags, declared
+architecture, identifiers and (only for unambiguous wording) the description —
+not from the upstream pipeline tag alone. A publisher tag such as
+`text-generation` describes a tensor signature, not a product category, which is
+how protein checkpoints originally reached this catalog.
+
+`internal/registry/scope.go` implements the decision and
+`task catalog-doctor` reports every affected record with its reason. A record can
+overrule the classifier with an explicit `kind` field, and the automatic intake
+policy in `cmd/catalogsync` is deliberately narrower than the catalog scope:
+ranking, speech and translation models are collected when a human adds them, but
+the daily sweep does not walk an organization's entire speech and translation
+back catalogue.
+
 ## Trust model
 
 Facts are selected in this order:
@@ -42,20 +95,22 @@ or the public catalog:
   standalone language models. Their records stay in `models/` for provenance,
   but they are excluded from every compiled artifact.
 
-The classification lives in `internal/registry/variant.go`. A record can make
-the decision explicit with the optional `kind` field:
+The classification lives in `internal/registry/variant.go`, and catalog scope in
+`internal/registry/scope.go`. A record can make the decision explicit with the
+optional `kind` field:
 
 ```yaml
-kind: model            # model | serving-artifact | draft-head | adapter | quantization
+kind: model            # model | serving-artifact | draft-head | adapter | out-of-scope | quantization
 ```
 
 An explicit `kind` always wins over the ID and description patterns, so a
-reviewed record can override a false positive. `serving-artifact`, `draft-head`
-and `adapter` are excluded from every compiled artifact; an empty `kind` means
-`model`. `quantization` is reported by `task catalog-doctor` for review but is
-still compiled. The generator, the public catalog, Hugging Face candidate
-materialization and the Codex exporter all use `IsCompiledKind`, so a serving
-kind can never reach `models_gen.go`, `catalog.json` or a runnable Codex entry.
+reviewed record can override a false positive. `serving-artifact`, `draft-head`,
+`adapter` and `out-of-scope` are excluded from every compiled artifact; an empty
+`kind` means `model`. `quantization` is reported by `task catalog-doctor` for
+review but is still compiled. The generator, the public catalog, Hugging Face
+candidate materialization and the Codex exporter all use `IsCompiledKind`, so an
+excluded kind can never reach `models_gen.go`, `catalog.json` or a runnable
+Codex entry.
 
 ## Publisher catalog
 
@@ -93,9 +148,10 @@ The catalog intentionally starts with major publishers. `task catalog-audit`
 lists long-tail publisher strings that still need a reviewed provider record;
 the tool never invents official URLs. `task catalog-doctor` writes a read-only
 `data/catalog-doctor.json` listing every record by `kind` plus routing aliases,
-draft heads, quantization candidates, pretrained `-base` variants, resolved
-identity sources, records whose identity is not yet corroborated, and publisher
-models that still lack an organization repository.
+draft heads, out-of-scope records with their reason, quantization candidates,
+pretrained `-base` variants, resolved identity sources, records whose identity is
+not yet corroborated, and publisher models that still lack an organization
+repository.
 
 ## Model records
 
@@ -201,7 +257,10 @@ official HF orgs ────┘
 - `task catalog-discover` paginates subscribed official Hugging Face organizations,
   preserves a durable candidate queue in `data/catalog-discovery.json`, applies
   exact identity matches, and materializes at most five eligible official
-  repositories per run as `lifecycle: candidate` YAML records.
+  repositories per run as `lifecycle: candidate` YAML records. Repositories that
+  are outside the catalog scope, or that redistribute another checkpoint
+  (ONNX, GGUF, OpenVINO, ...), are recorded in the queue with a status and a
+  reason instead of being materialized.
 - Candidate records are excluded from `models_gen.go` until structured enrichment
   and evidence-backed extraction provide the required facts. `task catalog-promote`
   activates only ready records, and for a publisher that requires corroboration

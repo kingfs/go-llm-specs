@@ -386,3 +386,91 @@ func TestSyncToDiskPreservesExistingLifecycle(t *testing.T) {
 		t.Fatalf("an existing record must not be gated: lifecycle = %q", got)
 	}
 }
+
+func TestSyncToDiskFreezesUnlistedPublishers(t *testing.T) {
+	dir := t.TempDir()
+	local, err := loadRegistry(dir)
+	if err != nil {
+		t.Fatal(err)
+	}
+	providers := []provider.Provider{{
+		SchemaVersion: provider.CurrentSchemaVersion, ID: "deepseek", Name: "DeepSeek",
+		Official:      provider.Official{Homepage: "https://www.deepseek.com/"},
+		Organizations: provider.Organizations{HuggingFace: []string{"deepseek-ai"}},
+		Identity:      provider.Identity{Strategy: provider.IdentityStrategyPublisher, RequireCorroboration: true},
+	}}
+	upstream := []OpenRouterModel{
+		{ID: "deepseek/deepseek-v9", Name: "DeepSeek V9", ContextLength: 128000},
+		{ID: "sao10k/l3-lunaris-8b", Name: "L3 Lunaris 8B", ContextLength: 8192},
+	}
+	if err := syncToDisk(upstream, local, dir, providers); err != nil {
+		t.Fatal(err)
+	}
+	final, err := loadRegistry(dir)
+	if err != nil {
+		t.Fatal(err)
+	}
+	if _, ok := final["deepseek/deepseek-v9"]; !ok {
+		t.Fatal("a reviewed publisher's new model must still be synced")
+	}
+	if _, ok := final["sao10k/l3-lunaris-8b"]; ok {
+		t.Fatal("a publisher outside the provider catalog must not be added")
+	}
+}
+
+func TestSyncToDiskKeepsExistingRecordsFromUnlistedPublishers(t *testing.T) {
+	dir := t.TempDir()
+	if err := saveModelToDisk(ModelRegistry{
+		ID: "sao10k/l3-lunaris-8b", Name: "L3 Lunaris 8B", Provider: "Sao10k", Developer: "sao10k",
+	}, dir); err != nil {
+		t.Fatal(err)
+	}
+	local, err := loadRegistry(dir)
+	if err != nil {
+		t.Fatal(err)
+	}
+	upstream := []OpenRouterModel{{ID: "sao10k/l3-lunaris-8b", Name: "L3 Lunaris 8B", ContextLength: 8192}}
+	if err := syncToDisk(upstream, local, dir, nil); err != nil {
+		t.Fatal(err)
+	}
+	final, err := loadRegistry(dir)
+	if err != nil {
+		t.Fatal(err)
+	}
+	existing, ok := final["sao10k/l3-lunaris-8b"]
+	if !ok {
+		t.Fatal("an existing record must survive the freeze on new discoveries")
+	}
+	if existing.ContextLen != 8192 {
+		t.Fatalf("an existing record must still be enriched: %#v", existing)
+	}
+}
+
+func TestSyncToDiskSkipsOutOfScopeUpstreamRecords(t *testing.T) {
+	dir := t.TempDir()
+	local, err := loadRegistry(dir)
+	if err != nil {
+		t.Fatal(err)
+	}
+	providers := []provider.Provider{{
+		SchemaVersion: provider.CurrentSchemaVersion, ID: "acme", Name: "Acme",
+		Official: provider.Official{Homepage: "https://example.com/"},
+	}}
+	upstream := []OpenRouterModel{
+		{ID: "acme/designer-1", Name: "Designer 1", Description: "A model for protein sequence design."},
+		{ID: "acme/chat-1", Name: "Chat 1", Description: "A general chat model."},
+	}
+	if err := syncToDisk(upstream, local, dir, providers); err != nil {
+		t.Fatal(err)
+	}
+	final, err := loadRegistry(dir)
+	if err != nil {
+		t.Fatal(err)
+	}
+	if _, ok := final["acme/designer-1"]; ok {
+		t.Fatal("an out-of-scope upstream record must not be added")
+	}
+	if _, ok := final["acme/chat-1"]; !ok {
+		t.Fatal("an in-scope upstream record must be added")
+	}
+}

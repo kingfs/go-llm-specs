@@ -66,14 +66,15 @@ func IsServingVariant(m Model) bool {
 }
 
 // IsCompiledKind reports whether kind may appear in a compiled artifact.
+// Serving kinds and out-of-scope records are excluded.
 func IsCompiledKind(kind string) bool {
-	return !IsServingKind(kind)
+	return !IsExcludedKind(kind)
 }
 
 // ClassifyKind returns the effective kind of a record. An explicit Kind field
 // always wins so a human can override a false positive; otherwise the ID and
-// description patterns classify routing aliases and draft heads. Unmatched
-// records are ordinary models.
+// description patterns classify routing aliases, draft heads and out-of-scope
+// domain or non-language models. Unmatched records are ordinary models.
 func ClassifyKind(m Model) string {
 	if kind := strings.TrimSpace(m.Kind); kind != "" {
 		return kind
@@ -83,6 +84,9 @@ func ClassifyKind(m Model) string {
 	}
 	if IsDraftHead(m) {
 		return KindDraftHead
+	}
+	if IsOutOfScope(m) {
+		return KindOutOfScope
 	}
 	return KindModel
 }

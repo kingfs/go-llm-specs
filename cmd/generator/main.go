@@ -353,6 +353,19 @@ func syncToDisk(apiModels []OpenRouterModel, localModels map[string]ModelRegistr
 		}
 		addPublisherDocumentation(&merged)
 		if isNew {
+			// OpenRouter is a discovery feed, not a scope authority. A new
+			// record from a publisher outside the reviewed provider catalog, or
+			// one whose publisher metadata places it outside the catalog scope,
+			// is skipped. Existing records are never removed or rewritten here:
+			// models/ stays the authoritative, human-maintained source.
+			if reason := registrymodel.ScopeReason(merged); reason != "" {
+				log.Printf("Skipping new upstream model %s: %s", canonicalID, reason)
+				continue
+			}
+			if _, cataloged := identity.ProviderFor(merged, providers); !cataloged {
+				log.Printf("Skipping new upstream model %s: publisher %q is not in the reviewed provider catalog", canonicalID, merged.Developer)
+				continue
+			}
 			applyDiscoveryLifecycle(&merged, providers)
 		}
 		if err := saveModelToDisk(merged, modelsDir); err != nil {

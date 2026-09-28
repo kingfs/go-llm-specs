@@ -1,22 +1,24 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "summary": {
-    "models": 716,
-    "compiled": 559,
-    "candidates": 147,
+    "models": 774,
+    "compiled": 580,
+    "candidates": 182,
     "serving_variants": 10,
-    "quantization_candidates": 25,
-    "identity_gaps": 104,
-    "unverified_identities": 208
+    "out_of_scope": 2,
+    "quantization_candidates": 27,
+    "identity_gaps": 109,
+    "unverified_identities": 217
   },
   "by_kind": {
     "draft-head": 10,
-    "model": 706
+    "model": 762,
+    "out-of-scope": 2
   },
   "identity": {
     "by_source": {
-      "official_huggingface": 381,
-      "openrouter": 335
+      "official_huggingface": 417,
+      "openrouter": 357
     },
     "unverified": [
       {
@@ -120,6 +122,11 @@
         "source": "openrouter"
       },
       {
+        "id": "anthropic/claude-opus-5.5",
+        "provider": "anthropic",
+        "source": "openrouter"
+      },
+      {
         "id": "anthropic/claude-sonnet-4",
         "provider": "anthropic",
         "source": "openrouter"
@@ -182,6 +189,11 @@
       {
         "id": "bytedance-seed/seed-2.0-mini",
         "provider": "bytedance-seed",
+        "source": "openrouter"
+      },
+      {
+        "id": "cohere/command-a-plus",
+        "provider": "cohere",
         "source": "openrouter"
       },
       {
@@ -770,6 +782,16 @@
         "source": "openrouter"
       },
       {
+        "id": "openai/gpt-6-luna",
+        "provider": "openai",
+        "source": "openrouter"
+      },
+      {
+        "id": "openai/gpt-6-sol",
+        "provider": "openai",
+        "source": "openrouter"
+      },
+      {
         "id": "openai/gpt-audio",
         "provider": "openai",
         "source": "openrouter"
@@ -965,6 +987,16 @@
         "source": "openrouter"
       },
       {
+        "id": "qwen/qwen3.8-max-prime",
+        "provider": "qwen",
+        "source": "openrouter"
+      },
+      {
+        "id": "qwen/qwen3.8-omni-flash",
+        "provider": "qwen",
+        "source": "openrouter"
+      },
+      {
         "id": "x-ai/grok-3",
         "provider": "xai",
         "source": "openrouter"
@@ -1035,6 +1067,11 @@
         "source": "openrouter"
       },
       {
+        "id": "x-ai/grok-4.7",
+        "provider": "xai",
+        "source": "openrouter"
+      },
+      {
         "id": "x-ai/grok-build-0.1",
         "provider": "xai",
         "source": "openrouter"
@@ -1051,6 +1088,16 @@
       },
       {
         "id": "z-ai/glm-5-turbo",
+        "provider": "zai",
+        "source": "openrouter"
+      },
+      {
+        "id": "z-ai/glm-5.3-flashx",
+        "provider": "zai",
+        "source": "openrouter"
+      },
+      {
+        "id": "z-ai/glm-5.3-prime",
         "provider": "zai",
         "source": "openrouter"
       },
@@ -1073,6 +1120,16 @@
     "nvidia/minimax-m2.7-dflash",
     "nvidia/minimax-m3-dspark",
     "nvidia/nemotron-3-super-120b-a12b-bf16-mtpv2"
+  ],
+  "out_of_scope": [
+    {
+      "id": "google/medgemma-1.5-4b-it",
+      "reason": "out-of-scope-domain:biomedicine"
+    },
+    {
+      "id": "nvidia/nv-reason-ct",
+      "reason": "out-of-scope-domain:biomedicine"
+    }
   ],
   "quantization_candidates": [
     "cohere/command-a-plus-05-2026-bf16",
@@ -1097,11 +1154,14 @@
     "nvidia/nvidia-nemotron-nano-12b-v2-vl-nvfp4-qad",
     "qwen/qwen3.5-122b-a10b-gptq-int4",
     "qwen/qwen3.5-27b-gptq-int4",
+    "zai/glm-5-fp8",
+    "zai/glm-5.1-fp8",
     "zai/glm-5.2-fp8",
     "zai/glm-5.3-bf16",
     "zai/glm-5.3-flash-bf16"
   ],
   "base_variants": [
+    "allenai/bar-2x7b-base",
     "arcee-ai/trinity-large-base",
     "arcee-ai/trinity-mini-base",
     "arcee-ai/trinity-nano-base",
@@ -1185,6 +1245,10 @@
     {
       "id": "bytedance-seed/seed-2.0-mini",
       "provider": "bytedance-seed"
+    },
+    {
+      "id": "cohere/command-a-plus",
+      "provider": "cohere"
     },
     {
       "id": "cohere/command-r-08-2024",
@@ -1531,11 +1595,27 @@
       "provider": "qwen"
     },
     {
+      "id": "qwen/qwen3.8-max-prime",
+      "provider": "qwen"
+    },
+    {
+      "id": "qwen/qwen3.8-omni-flash",
+      "provider": "qwen"
+    },
+    {
       "id": "z-ai/glm-4-32b",
       "provider": "zai"
     },
     {
       "id": "z-ai/glm-5-turbo",
+      "provider": "zai"
+    },
+    {
+      "id": "z-ai/glm-5.3-flashx",
+      "provider": "zai"
+    },
+    {
+      "id": "z-ai/glm-5.3-prime",
       "provider": "zai"
     },
     {

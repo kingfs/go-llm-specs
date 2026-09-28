@@ -17,7 +17,7 @@ import (
 )
 
 // catalogDoctorSchemaVersion is bumped whenever the report shape changes.
-const catalogDoctorSchemaVersion = 1
+const catalogDoctorSchemaVersion = 2
 
 // quantizationSuffix flags records that repackage an existing checkpoint at a
 // different precision. They are reported for review, not excluded.
@@ -33,6 +33,7 @@ type doctorReport struct {
 	Identity      doctorIdentitySummary `json:"identity"`
 	RoutingAlias  []string              `json:"routing_aliases"`
 	DraftHeads    []string              `json:"draft_heads"`
+	OutOfScope    []doctorScopeRef      `json:"out_of_scope"`
 	Quantization  []string              `json:"quantization_candidates"`
 	BaseVariants  []string              `json:"base_variants"`
 	IdentityGaps  []doctorIdentityGap   `json:"identity_gaps"`
@@ -44,9 +45,17 @@ type doctorSummary struct {
 	Compiled     int `json:"compiled"`
 	Candidates   int `json:"candidates"`
 	Serving      int `json:"serving_variants"`
+	OutOfScope   int `json:"out_of_scope"`
 	Quantization int `json:"quantization_candidates"`
 	IdentityGaps int `json:"identity_gaps"`
 	Unverified   int `json:"unverified_identities"`
+}
+
+// doctorScopeRef records a record the catalog does not collect, with the reason
+// the scope classifier reached that decision.
+type doctorScopeRef struct {
+	ID     string `json:"id"`
+	Reason string `json:"reason"`
 }
 
 type doctorIdentitySummary struct {
@@ -107,7 +116,7 @@ func run(providersDir, modelsDir, output string, check bool) error {
 	if err := os.WriteFile(output, data, 0o644); err != nil {
 		return err
 	}
-	log.Printf("catalog doctor: models=%d serving=%d quantization=%d identity_gaps=%d", report.Summary.Models, report.Summary.Serving, report.Summary.Quantization, report.Summary.IdentityGaps)
+	log.Printf("catalog doctor: models=%d serving=%d out_of_scope=%d quantization=%d identity_gaps=%d", report.Summary.Models, report.Summary.Serving, report.Summary.OutOfScope, report.Summary.Quantization, report.Summary.IdentityGaps)
 	return nil
 }
 
@@ -132,11 +141,18 @@ func buildReport(providers []provider.Provider, models []registry.Model) doctorR
 		case registry.IsDraftHead(m):
 			report.DraftHeads = append(report.DraftHeads, m.ID)
 		}
-		if registry.IsServingKind(kind) {
+		switch {
+		case registry.IsServingKind(kind):
 			report.Summary.Serving++
-		} else if m.Lifecycle == "" || m.Lifecycle == "active" {
+		case kind == registry.KindOutOfScope:
+			// Out-of-scope records stay in models/ for provenance but are never
+			// compiled or published, so they are counted separately from both
+			// candidates and compiled models.
+			report.Summary.OutOfScope++
+			report.OutOfScope = append(report.OutOfScope, doctorScopeRef{ID: m.ID, Reason: registry.ScopeReason(m)})
+		case m.Lifecycle == "" || m.Lifecycle == "active":
 			report.Summary.Compiled++
-		} else {
+		default:
 			report.Summary.Candidates++
 		}
 		if quantizationSuffix.MatchString(m.ID) {
@@ -175,6 +191,7 @@ func buildReport(providers []provider.Provider, models []registry.Model) doctorR
 	sort.Strings(report.Quantization)
 	sort.Strings(report.BaseVariants)
 	sort.Strings(report.Aggregators)
+	sort.Slice(report.OutOfScope, func(i, j int) bool { return report.OutOfScope[i].ID < report.OutOfScope[j].ID })
 	sort.Slice(report.IdentityGaps, func(i, j int) bool { return report.IdentityGaps[i].ID < report.IdentityGaps[j].ID })
 	sort.Slice(report.Identity.Unverified, func(i, j int) bool {
 		return report.Identity.Unverified[i].ID < report.Identity.Unverified[j].ID
