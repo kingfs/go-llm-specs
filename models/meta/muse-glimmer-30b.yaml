@@ -50,7 +50,6 @@ upstream:
       - frequency_penalty
       - include_reasoning
       - logit_bias
-      - logprobs
       - max_tokens
       - min_p
       - presence_penalty
@@ -65,14 +64,13 @@ upstream:
       - tool_choice
       - tools
       - top_k
-      - top_logprobs
       - top_p
     input_modalities:
       - image
       - text
     output_modalities:
       - text
-    fetched_at: 2026-08-12T03:53:06.046031802Z
+    fetched_at: 2026-09-28T07:50:25.40509182Z
   huggingface:
     id: meta-models/Muse-Glimmer-30B
     revision: 97c77dff50b2797bcc558fa2d909761dbc575c59

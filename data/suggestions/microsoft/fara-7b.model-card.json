@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "microsoft/fara-7b",
+  "status": "partially_accepted",
+  "created_at": "2026-09-28T07:51:54.342230286Z",
+  "source": {
+    "url": "https://huggingface.co/microsoft/Fara-7B/resolve/4fca9cdeeff278777751ec558257753b89cf078b/README.md",
+    "revision": "4fca9cdeeff278777751ec558257753b89cf078b",
+    "sha256": "1ef015277927ed2800e61398e73db955aaf9c7c58fccb43701ef8ec79c38cd6b"
+  },
+  "generator": {
+    "model": "qwen/qwen3.8-27b",
+    "wire_api": "chat"
+  },
+  "claims": [
+    {
+      "field": "context_length",
+      "value": 131072,
+      "evidence": "**Context Length:** 128k",
+      "section": "## Model Summary",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "ModalityImageIn",
+        "ModalityTextIn",
+        "ModalityTextOut",
+        "CapFunctionCall"
+      ],
+      "evidence": "Multimodal decoder-only language model that takes an image (screenshot) + text context... tool call block",
+      "section": "## Model Summary",
+      "confidence": "high"
+    },
+    {
+      "field": "description",
+      "value": "Fara-7B is a 7-billion parameter multimodal agentic model designed for computer use. It takes image (screenshot) and text inputs, utilizing a Chain-of-Thought block followed by a tool call block to predict actions with grounded arguments.",
+      "evidence": "Fara-7B is Microsoft's first agentic small language model... with only 7 billion parameters... takes an image (screenshot) + text context",
+      "section": "## Model Summary",
+      "confidence": "high"
+    }
+  ]
+}

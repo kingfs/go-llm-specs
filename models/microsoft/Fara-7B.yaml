@@ -3,7 +3,9 @@ id: microsoft/fara-7b
 name: Fara-7B
 provider: Microsoft
 developer: microsoft
-lifecycle: candidate
+lifecycle: active
+description: Fara-7B is a 7-billion parameter multimodal agentic model designed for computer use. It takes image (screenshot) and text inputs, utilizing a Chain-of-Thought block followed by a tool call block to predict actions with grounded arguments.
+description_cn: Fara-7B 是一款 70 亿参数的多模态智能体模型，专为计算机应用设计。它接收图像（屏幕截图）和文本输入，通过思维链（CoT）块后接工具调用块的方式，预测具有可靠参数依据的操作。
 context_length: 128000
 features:
   - ModalityImageIn
@@ -18,6 +20,9 @@ provenance:
   context_length:
     source: official_huggingface_config
     url: https://huggingface.co/microsoft/Fara-7B
+  description:
+    source: official_model_card
+    url: https://huggingface.co/microsoft/Fara-7B/resolve/4fca9cdeeff278777751ec558257753b89cf078b/README.md
   features:
     source: official_huggingface_pipeline
     url: https://huggingface.co/microsoft/Fara-7B

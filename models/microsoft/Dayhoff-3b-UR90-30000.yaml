@@ -3,7 +3,9 @@ id: microsoft/dayhoff-3b-ur90-30000
 name: Dayhoff-3b-UR90-30000
 provider: Microsoft
 developer: microsoft
-lifecycle: candidate
+lifecycle: active
+description: A 3 billion parameter hybrid state-space-model transformer with mixture-of-experts for protein sequence generation. Trained on Dayhoff Atlas data, it supports zero-shot mutation effect prediction, scaffold design, and guided generation of novel proteins.
+description_cn: 一款具有 30 亿参数的混合状态空间 Transformer 模型，集成混合专家（MoE）机制，用于蛋白质序列生成。该模型基于 Dayhoff Atlas 数据训练，支持零样本突变效应预测、支架设计以及新型蛋白质的引导生成。
 context_length: 262144
 features:
   - ModalityTextIn
@@ -17,6 +19,9 @@ provenance:
   context_length:
     source: official_huggingface_config
     url: https://huggingface.co/microsoft/Dayhoff-3b-UR90-30000
+  description:
+    source: official_model_card
+    url: https://huggingface.co/microsoft/Dayhoff-3b-UR90-30000/resolve/24c0d4dfdc596de1dbacd4197c97c54d2f0fd5ed/README.md
   features:
     source: official_huggingface_pipeline
     url: https://huggingface.co/microsoft/Dayhoff-3b-UR90-30000

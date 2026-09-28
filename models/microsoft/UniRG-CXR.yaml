@@ -5,6 +5,7 @@ provider: Microsoft
 developer: microsoft
 lifecycle: candidate
 description: UniRG-CXR is a radiology report generation model that obtains SOTA performance on ReXrank, based on Qwen/Qwen3-VL-8B-Instruct.
+description_cn: UniRG-CXR 是基于 Qwen/Qwen3-VL-8B-Instruct 构建的放射学报告生成模型，在 ReXrank 基准上取得了 SOTA 性能。
 context_length: 0
 features:
   - ModalityImageIn
