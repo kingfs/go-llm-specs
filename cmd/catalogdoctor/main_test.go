@@ -41,14 +41,19 @@ func TestBuildReportClassifiesRecords(t *testing.T) {
 	if report.Summary.Models != 5 {
 		t.Fatalf("summary models = %d", report.Summary.Models)
 	}
-	if report.ByKind[registry.KindDraftHead] != 1 || report.ByKind[registry.KindModel] != 4 {
+	if report.ByKind[registry.KindDraftHead] != 1 || report.ByKind[registry.KindModel] != 3 || report.ByKind[registry.KindQuantization] != 1 {
 		t.Fatalf("unexpected kinds: %#v", report.ByKind)
 	}
 	if len(report.DraftHeads) != 1 || report.DraftHeads[0] != "deepseek/deepseek-v4-flash-dspark" {
 		t.Fatalf("draft heads = %#v", report.DraftHeads)
 	}
-	if len(report.Quantization) != 1 || report.Quantization[0] != "zai/glm-5.3-bf16" {
+	// A precision variant is the same model as its base checkpoint, so it is
+	// reported with its format and never counted as a compiled model.
+	if len(report.Quantization) != 1 || report.Quantization[0].ID != "zai/glm-5.3-bf16" || report.Quantization[0].Reason != "bf16" {
 		t.Fatalf("quantization = %#v", report.Quantization)
+	}
+	if report.Summary.Quantization != 1 || report.Summary.Compiled != 2 {
+		t.Fatalf("summary = %#v", report.Summary)
 	}
 	if len(report.BaseVariants) != 1 || report.BaseVariants[0] != "qwen/qwen3.5-4b-base" {
 		t.Fatalf("base variants = %#v", report.BaseVariants)

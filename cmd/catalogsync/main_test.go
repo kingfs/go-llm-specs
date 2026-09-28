@@ -371,6 +371,22 @@ func TestClassifyQueueClearsRegistryLinkToRemovedRecord(t *testing.T) {
 	}
 }
 
+func TestClassifyQueueRefusesPrecisionVariant(t *testing.T) {
+	// A repository that serializes an existing checkpoint at another precision is
+	// the same model as the checkpoint it was derived from, so it never becomes a
+	// second record even though it is a first-party text-generation repository.
+	r := report{HuggingFaceCandidates: []hfCandidate{{
+		ProviderID: "nvidia", Organization: "nvidia", RepositoryID: "nvidia/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-NVFP4",
+		Status: "new", URL: "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-NVFP4",
+		PipelineTag: "text-generation",
+	}}}
+	classifyQueue(&r, []provider.Provider{{ID: "nvidia", Name: "NVIDIA"}}, nil)
+	got := r.HuggingFaceCandidates[0]
+	if got.Status != statusOutOfScope || got.ScopeReason != "out-of-scope-quantization:nvfp4" {
+		t.Fatalf("precision variant was not refused: %#v", got)
+	}
+}
+
 func TestClassifyQueueRegistersRepositoryClaimedByExistingRecord(t *testing.T) {
 	// An aggregator record can already cite the repository that discovery later
 	// finds in the publisher's own organization. The repository then belongs to

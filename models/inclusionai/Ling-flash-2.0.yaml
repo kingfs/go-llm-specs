@@ -1,0 +1,41 @@
+schema_version: 2
+id: inclusionai/ling-flash-2.0
+name: Ling-flash-2.0
+provider: InclusionAI
+developer: inclusionai
+lifecycle: candidate
+context_length: 0
+features:
+  - ModalityTextIn
+  - ModalityTextOut
+links:
+  model_card: https://huggingface.co/inclusionAI/Ling-flash-2.0
+identifiers:
+  huggingface:
+    - inclusionAI/Ling-flash-2.0
+provenance:
+  features:
+    source: official_huggingface_pipeline
+    url: https://huggingface.co/inclusionAI/Ling-flash-2.0
+  id:
+    source: official_huggingface
+    url: https://huggingface.co/inclusionAI/Ling-flash-2.0
+  name:
+    source: official_huggingface
+    url: https://huggingface.co/inclusionAI/Ling-flash-2.0
+upstream:
+  huggingface:
+    id: inclusionAI/Ling-flash-2.0
+    pipeline_tag: text-generation
+    tags:
+      - transformers
+      - safetensors
+      - bailing_moe
+      - text-generation
+      - conversational
+      - custom_code
+      - arxiv:2507.17702
+      - base_model:inclusionAI/Ling-flash-base-2.0
+      - base_model:finetune:inclusionAI/Ling-flash-base-2.0
+      - license:mit
+      - region:us

@@ -504,10 +504,10 @@ const (
 )
 
 // packagingRepository reports whether a repository redistributes another
-// checkpoint (ONNX, GGUF, OpenVINO, ...) instead of publishing a model
-// identity. Quantized checkpoints that a publisher ships as first-party
-// variants are deliberately not matched here; they are reported by
-// task catalog-doctor as quantization candidates instead.
+// checkpoint in a different runtime format (ONNX, GGUF, OpenVINO, ...) instead
+// of publishing a model identity. Precision variants are not matched here:
+// registry.ScopeReason classifies those as quantization variants of the model
+// record they belong to, which is a scope decision rather than a file format.
 func packagingRepository(repositoryID string, tags []string) bool {
 	name := strings.ToLower(repositoryID)
 	for _, suffix := range packagingSuffixes {

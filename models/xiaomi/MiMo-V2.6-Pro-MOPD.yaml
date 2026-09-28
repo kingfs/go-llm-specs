@@ -1,0 +1,48 @@
+schema_version: 2
+id: xiaomi/mimo-v2.6-pro-mopd
+name: MiMo-V2.6-Pro-MOPD
+provider: Xiaomi MiMo
+developer: xiaomi
+lifecycle: candidate
+context_length: 0
+features:
+  - ModalityTextIn
+  - ModalityTextOut
+links:
+  model_card: https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Pro-MOPD
+identifiers:
+  huggingface:
+    - XiaomiMiMo/MiMo-V2.6-Pro-MOPD
+provenance:
+  features:
+    source: official_huggingface_pipeline
+    url: https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Pro-MOPD
+  id:
+    source: official_huggingface
+    url: https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Pro-MOPD
+  name:
+    source: official_huggingface
+    url: https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Pro-MOPD
+upstream:
+  huggingface:
+    id: XiaomiMiMo/MiMo-V2.6-Pro-MOPD
+    pipeline_tag: text-generation
+    tags:
+      - transformers
+      - safetensors
+      - mimo_v2
+      - text-generation
+      - multimodal
+      - vision-language
+      - audio
+      - agent
+      - video-understanding
+      - long-context
+      - conversational
+      - custom_code
+      - en
+      - zh
+      - license:mit
+      - 8-bit
+      - fp8
+      - region:us

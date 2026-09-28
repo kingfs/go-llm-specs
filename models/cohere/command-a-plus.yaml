@@ -15,8 +15,14 @@ features:
   - ModalityImageIn
   - ModalityTextIn
   - ModalityTextOut
+aliases:
+  - cohere/command-a-plus-05-2026-bf16
 discovered_at: 2026-09-23T06:51:33.545627708Z
+links:
+  model_card: https://huggingface.co/CohereLabs/command-a-plus-05-2026-bf16
 identifiers:
+  huggingface:
+    - CohereLabs/command-a-plus-05-2026-bf16
   openrouter:
     - cohere/command-a-plus
 provenance:
@@ -59,5 +65,77 @@ upstream:
     output_modalities:
       - text
     fetched_at: 2026-09-23T06:51:36.042290929Z
+  huggingface:
+    id: CohereLabs/command-a-plus-05-2026-bf16
+    revision: 5fb6fde5fd12ff89356aae552e11883bc49f069b
+    pipeline_tag: image-text-to-text
+    model_type: cohere2_vision
+    architectures:
+      - Cohere2VisionForConditionalGeneration
+    license: apache-2.0
+    tags:
+      - ar
+      - bg
+      - bn
+      - ca
+      - chat
+      - cohere2_vision
+      - conversational
+      - cs
+      - da
+      - de
+      - deploy:azure
+      - el
+      - en
+      - es
+      - et
+      - fa
+      - fi
+      - fil
+      - fr
+      - ga
+      - he
+      - hi
+      - hr
+      - hu
+      - id
+      - image-text-to-text
+      - is
+      - it
+      - ja
+      - ko
+      - license:apache-2.0
+      - lt
+      - lv
+      - ms
+      - mt
+      - nl
+      - "no"
+      - pa
+      - pl
+      - pt
+      - region:us
+      - ro
+      - ru
+      - safetensors
+      - sk
+      - sl
+      - sr
+      - sv
+      - ta
+      - te
+      - th
+      - tr
+      - transformers
+      - uk
+      - ur
+      - vi
+      - zh
+    processor_class: Cohere2VisionProcessor
+    structured_files:
+      - config.json
+      - preprocessor_config.json
+      - tokenizer_config.json
+    fetched_at: 2026-09-28T11:57:03.794855197Z
 reasoning:
   supported: true

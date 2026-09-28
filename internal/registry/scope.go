@@ -20,7 +20,7 @@ import (
 const KindOutOfScope = "out-of-scope"
 
 // ExcludedKinds are record kinds that never appear in a compiled artifact.
-var ExcludedKinds = []string{KindServingArtifact, KindDraftHead, KindAdapter, KindOutOfScope}
+var ExcludedKinds = []string{KindServingArtifact, KindDraftHead, KindAdapter, KindQuantization, KindOutOfScope}
 
 // IsExcludedKind reports whether kind is excluded from every compiled artifact.
 func IsExcludedKind(kind string) bool {
@@ -134,6 +134,11 @@ func ScopeReason(m Model) string {
 	// An explicit kind is a human decision and always wins.
 	if strings.TrimSpace(m.Kind) != "" {
 		return ""
+	}
+	// A precision or compression variant is the same model as the checkpoint it
+	// was derived from, so it never becomes a record of its own.
+	if format := QuantizationFormat(m); format != "" {
+		return "out-of-scope-quantization:" + format
 	}
 	hf := m.Upstream.HuggingFace
 	if hf != nil {

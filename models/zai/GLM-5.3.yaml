@@ -1,6 +1,6 @@
 schema_version: 2
-id: zai/glm-5.3-bf16
-name: GLM-5.3-BF16
+id: zai/glm-5.3
+name: GLM-5.3
 provider: Z.ai
 developer: zai
 lifecycle: active
@@ -11,6 +11,8 @@ max_output: 163840
 features:
   - ModalityTextIn
   - ModalityTextOut
+aliases:
+  - zai/glm-5.3-bf16
 links:
   model_card: https://huggingface.co/zai-org/GLM-5.3-BF16
 identifiers:

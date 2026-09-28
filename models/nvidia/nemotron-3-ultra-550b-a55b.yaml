@@ -14,6 +14,7 @@ features:
   - ModalityTextIn
   - ModalityTextOut
 aliases:
+  - nvidia/nvidia-nemotron-3-ultra-550b-a55b-nvfp4
   - nvidia/nemotron-3-ultra-550b-a55b:batch
   - nvidia/nemotron-3-ultra-550b-a55b:free
 discovered_at: 2026-07-29T10:40:52.268220218Z

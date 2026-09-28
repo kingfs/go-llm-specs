@@ -1,24 +1,25 @@
 {
-  "schema_version": 2,
+  "schema_version": 3,
   "summary": {
-    "models": 772,
-    "compiled": 579,
-    "candidates": 181,
+    "models": 777,
+    "compiled": 577,
+    "candidates": 174,
     "serving_variants": 10,
     "out_of_scope": 2,
-    "quantization_candidates": 27,
-    "identity_gaps": 129,
-    "unverified_identities": 237
+    "quantization_variants": 14,
+    "identity_gaps": 128,
+    "unverified_identities": 236
   },
   "by_kind": {
     "draft-head": 10,
-    "model": 760,
-    "out-of-scope": 2
+    "model": 751,
+    "out-of-scope": 2,
+    "quantization": 14
   },
   "identity": {
     "by_source": {
-      "official_huggingface": 482,
-      "openrouter": 290
+      "official_huggingface": 488,
+      "openrouter": 289
     },
     "unverified": [
       {
@@ -234,11 +235,6 @@
       {
         "id": "bytedance-seed/seed-2.0-mini",
         "provider": "bytedance-seed",
-        "source": "openrouter"
-      },
-      {
-        "id": "cohere/command-a-plus",
-        "provider": "cohere",
         "source": "openrouter"
       },
       {
@@ -1231,34 +1227,63 @@
       "reason": "out-of-scope-domain:biomedicine"
     }
   ],
-  "quantization_candidates": [
-    "cohere/command-a-plus-05-2026-bf16",
-    "nvidia/ising-calibration-1.5-31b-bf16",
-    "nvidia/ising-calibration-1.5-31b-nvfp4",
-    "nvidia/nemotron-labs-twotower-30b-a3b-base-bf16",
-    "nvidia/nvidia-nemotron-3-nano-30b-a3b-base-bf16",
-    "nvidia/nvidia-nemotron-3-super-120b-a12b-base-bf16",
-    "nvidia/nvidia-nemotron-3-super-120b-a12b-bf16",
-    "nvidia/nvidia-nemotron-3-super-120b-a12b-nvfp4",
-    "nvidia/nvidia-nemotron-3-ultra-550b-a55b-base-bf16",
-    "nvidia/nvidia-nemotron-3-ultra-550b-a55b-nvfp4",
-    "nvidia/nvidia-nemotron-3.5-lightning-30b-a3b-base-bf16",
-    "nvidia/nvidia-nemotron-3.5-lightning-30b-a3b-bf16",
-    "nvidia/nvidia-nemotron-3.5-lightning-30b-a3b-nvfp4",
-    "nvidia/nvidia-nemotron-labs-3-elastic-30b-a3b-bf16",
-    "nvidia/nvidia-nemotron-labs-3-elastic-30b-a3b-fp8",
-    "nvidia/nvidia-nemotron-labs-3-elastic-30b-a3b-nvfp4",
-    "nvidia/nvidia-nemotron-labs-3-puzzle-75b-a9b-bf16",
-    "nvidia/nvidia-nemotron-nano-12b-v2-vl-bf16",
-    "nvidia/nvidia-nemotron-nano-12b-v2-vl-fp8",
-    "nvidia/nvidia-nemotron-nano-12b-v2-vl-nvfp4-qad",
-    "qwen/qwen3.5-122b-a10b-gptq-int4",
-    "qwen/qwen3.5-27b-gptq-int4",
-    "zai/glm-5-fp8",
-    "zai/glm-5.1-fp8",
-    "zai/glm-5.2-fp8",
-    "zai/glm-5.3-bf16",
-    "zai/glm-5.3-flash-bf16"
+  "quantization_variants": [
+    {
+      "id": "cohere/command-a-plus-05-2026-bf16",
+      "reason": "bf16"
+    },
+    {
+      "id": "nvidia/ising-calibration-1.5-31b-nvfp4",
+      "reason": "nvfp4"
+    },
+    {
+      "id": "nvidia/nvidia-nemotron-3-super-120b-a12b-bf16",
+      "reason": "bf16"
+    },
+    {
+      "id": "nvidia/nvidia-nemotron-3-super-120b-a12b-nvfp4",
+      "reason": "nvfp4"
+    },
+    {
+      "id": "nvidia/nvidia-nemotron-3-ultra-550b-a55b-nvfp4",
+      "reason": "nvfp4"
+    },
+    {
+      "id": "nvidia/nvidia-nemotron-3.5-lightning-30b-a3b-bf16",
+      "reason": "bf16"
+    },
+    {
+      "id": "nvidia/nvidia-nemotron-3.5-lightning-30b-a3b-nvfp4",
+      "reason": "nvfp4"
+    },
+    {
+      "id": "nvidia/nvidia-nemotron-labs-3-elastic-30b-a3b-fp8",
+      "reason": "fp8"
+    },
+    {
+      "id": "nvidia/nvidia-nemotron-labs-3-elastic-30b-a3b-nvfp4",
+      "reason": "nvfp4"
+    },
+    {
+      "id": "nvidia/nvidia-nemotron-nano-12b-v2-vl-bf16",
+      "reason": "bf16"
+    },
+    {
+      "id": "nvidia/nvidia-nemotron-nano-12b-v2-vl-fp8",
+      "reason": "fp8"
+    },
+    {
+      "id": "nvidia/nvidia-nemotron-nano-12b-v2-vl-nvfp4-qad",
+      "reason": "nvfp4-qad"
+    },
+    {
+      "id": "qwen/qwen3.5-122b-a10b-gptq-int4",
+      "reason": "int4"
+    },
+    {
+      "id": "qwen/qwen3.5-27b-gptq-int4",
+      "reason": "int4"
+    }
   ],
   "base_variants": [
     "allenai/bar-2x7b-base",
@@ -1271,9 +1296,14 @@
     "ibm-granite/granite-4.1-30b-base",
     "ibm-granite/granite-4.1-3b-base",
     "ibm-granite/granite-4.1-8b-base",
+    "nvidia/nemotron-3-nano-30b-a3b-base",
+    "nvidia/nemotron-3-super-120b-a12b-base",
+    "nvidia/nemotron-3-ultra-550b-a55b-base",
+    "nvidia/nemotron-3.5-lightning-30b-a3b-base",
     "nvidia/nemotron-labs-diffusion-14b-base",
     "nvidia/nemotron-labs-diffusion-3b-base",
     "nvidia/nemotron-labs-diffusion-8b-base",
+    "nvidia/nemotron-labs-twotower-30b-a3b-base",
     "nvidia/sdllm-ar-1.7b-base",
     "nvidia/sdllm-duo-1.7b-base",
     "nvidia/sdllm-esolm-1.7b-base",
@@ -1381,10 +1411,6 @@
     {
       "id": "bytedance-seed/seed-2.0-mini",
       "provider": "bytedance-seed"
-    },
-    {
-      "id": "cohere/command-a-plus",
-      "provider": "cohere"
     },
     {
       "id": "fireworks/ember-1",

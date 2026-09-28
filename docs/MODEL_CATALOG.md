@@ -53,9 +53,12 @@ It does not collect:
   models, robot policies and graph models;
 - **packaging of another checkpoint**: redistributions in a different runtime
   format (ONNX, GGUF, OpenVINO, WebNN, MLX, TFLite, CoreML) and adapter modules
-  that cannot run on their own. A first-party quantized checkpoint (FP8, NVFP4,
-  INT4, GPTQ, AWQ) is a model record: it is collected and `task catalog-doctor`
-  reports it as a quantization candidate for review.
+  that cannot run on their own. A precision or compression variant (BF16, FP16,
+  FP8, NVFP4, INT4, GPTQ, AWQ) is the same model as the checkpoint it was derived
+  from, so it shares that model's card instead of adding a record of its own;
+  `task catalog-doctor` lists it as a `quantization_variant` and it never reaches
+  `models_gen.go`. When a publisher ships a model only as one precision, that
+  repository is the model's card and the record keeps the model ID.
 
 Scope is decided from the publisher's own metadata — repository tags, declared
 architecture, identifiers and (only for unambiguous wording) the description —
@@ -107,6 +110,13 @@ or the public catalog:
   checkpoint, such as DSpark, DFlash, EAGLE-3, and MTP heads. They are not
   standalone language models. Their records stay in `models/` for provenance,
   but they are excluded from every compiled artifact.
+- **Quantization variants** are serializations of an existing checkpoint at a
+  different precision or compression (`-BF16`, `-FP8`, `-NVFP4`, `-GPTQ-INT4`,
+  `-AWQ`, `-MLX`, `-GGUF`). They are the same model as their base checkpoint, so
+  the variant ID becomes an alias of the model record that cites the original
+  checkpoint. Only the record ID is inspected: a model whose publisher ships it
+  as `NVIDIA-Nemotron-3.5-Lightning-30B-A3B-BF16` is still recorded once, as
+  `nvidia/nemotron-3.5-lightning`.
 
 The classification lives in `internal/registry/variant.go`, and catalog scope in
 `internal/registry/scope.go`. A record can make the decision explicit with the
@@ -118,12 +128,11 @@ kind: model            # model | serving-artifact | draft-head | adapter | out-o
 
 An explicit `kind` always wins over the ID and description patterns, so a
 reviewed record can override a false positive. `serving-artifact`, `draft-head`,
-`adapter` and `out-of-scope` are excluded from every compiled artifact; an empty
-`kind` means `model`. `quantization` is reported by `task catalog-doctor` for
-review but is still compiled. The generator, the public catalog, Hugging Face
-candidate materialization and the Codex exporter all use `IsCompiledKind`, so an
-excluded kind can never reach `models_gen.go`, `catalog.json` or a runnable
-Codex entry.
+`adapter`, `quantization` and `out-of-scope` are excluded from every compiled
+artifact; an empty `kind` means `model`. The generator, the public catalog,
+Hugging Face candidate materialization and the Codex exporter all use
+`IsCompiledKind`, so an excluded kind can never reach `models_gen.go`,
+`catalog.json` or a runnable Codex entry.
 
 ## Publisher catalog
 
@@ -161,10 +170,10 @@ The catalog intentionally starts with major publishers. `task catalog-audit`
 lists long-tail publisher strings that still need a reviewed provider record;
 the tool never invents official URLs. `task catalog-doctor` writes a read-only
 `data/catalog-doctor.json` listing every record by `kind` plus routing aliases,
-draft heads, out-of-scope records with their reason, quantization candidates,
-pretrained `-base` variants, resolved identity sources, records whose identity is
-not yet corroborated, and publisher models that still lack an organization
-repository.
+draft heads, quantization variants with their format, out-of-scope records with
+their reason, pretrained `-base` variants, resolved identity sources, records
+whose identity is not yet corroborated, and publisher models that still lack an
+organization repository.
 
 ## Model records
 
@@ -249,6 +258,10 @@ without secrets.
 Matching is exact on a normalized identifier, with a single local key allowed to
 prefix a longer official identifier (which covers dated ids such as
 `claude-sonnet-4-5-20250929`). Ambiguous matches are reported and never guessed.
+A dated or versioned release is a model of its own: the `2505` and `2512` builds
+of one family are separate records, and `qwen-vl-max` is not the older
+`Qwen-VL`. Only an exact identity, a declared repository or a corroborating link
+folds two ids into one model, while a precision variant never does.
 Because these publishers now have a first-party source, they enable
 `require_corroboration`: a model discovered by OpenRouter stays a candidate until
 its official API or an official link confirms it, while remaining visible on the
@@ -275,8 +288,10 @@ official HF orgs ────┘
   version separator, so `Llama-3_1` matches `llama-3.1`, while `-` and `.` stay
   significant and `LFM2-2.6B` can never be matched to `lfm-2.2-6b`. Repositories that
   are outside the catalog scope, or that redistribute another checkpoint
-  (ONNX, GGUF, OpenVINO, ...), are recorded in the queue with a status and a
-  reason instead of being materialized. A repository that already backs a record
+  (ONNX, GGUF, OpenVINO, ...), or that serialize an existing checkpoint at a
+  different precision (`-BF16`, `-FP8`, `-NVFP4`, `-GPTQ-INT4`), are recorded in
+  the queue with a status and a reason instead of being materialized. A
+  repository that already backs a record
   in the catalog — a first-party checkpoint an aggregator record already cites,
   for example — is registered against that record instead of producing a second
   record for the same model.

@@ -13,6 +13,8 @@ features:
   - ModalityTextIn
   - ModalityTextOut
 aliases:
+  - nvidia/nvidia-nemotron-3.5-lightning-30b-a3b-nvfp4
+  - nvidia/nvidia-nemotron-3.5-lightning-30b-a3b-bf16
   - nvidia/nemotron-3.5-lightning:free
 discovered_at: 2026-08-12T03:53:02.778559601Z
 links:

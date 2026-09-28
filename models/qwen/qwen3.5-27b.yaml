@@ -15,6 +15,8 @@ features:
   - ModalityTextIn
   - ModalityTextOut
   - ModalityVideoIn
+aliases:
+  - qwen/qwen3.5-27b-gptq-int4
 discovered_at: 2026-07-29T10:43:34.210465259Z
 links:
   model_card: https://huggingface.co/Qwen/Qwen3.5-27B

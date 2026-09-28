@@ -1,0 +1,62 @@
+schema_version: 2
+id: liquid/lfm2.5-vl-3b
+name: LFM2.5-VL-3B
+provider: Liquid AI
+developer: liquid
+lifecycle: candidate
+context_length: 0
+features:
+  - ModalityImageIn
+  - ModalityTextIn
+  - ModalityTextOut
+links:
+  model_card: https://huggingface.co/LiquidAI/LFM2.5-VL-3B
+identifiers:
+  huggingface:
+    - LiquidAI/LFM2.5-VL-3B
+provenance:
+  features:
+    source: official_huggingface_pipeline
+    url: https://huggingface.co/LiquidAI/LFM2.5-VL-3B
+  id:
+    source: official_huggingface
+    url: https://huggingface.co/LiquidAI/LFM2.5-VL-3B
+  name:
+    source: official_huggingface
+    url: https://huggingface.co/LiquidAI/LFM2.5-VL-3B
+upstream:
+  huggingface:
+    id: LiquidAI/LFM2.5-VL-3B
+    pipeline_tag: image-text-to-text
+    tags:
+      - transformers
+      - safetensors
+      - lfm2_vl
+      - image-text-to-text
+      - liquid
+      - lfm2.5
+      - edge
+      - conversational
+      - custom_code
+      - ar
+      - zh
+      - en
+      - fr
+      - de
+      - hi
+      - id
+      - it
+      - ja
+      - ko
+      - pl
+      - pt
+      - ru
+      - es
+      - th
+      - vi
+      - arxiv:2305.03393
+      - base_model:LiquidAI/LFM2.5-2.6B-Base
+      - base_model:finetune:LiquidAI/LFM2.5-2.6B-Base
+      - license:other
+      - endpoints_compatible
+      - region:us

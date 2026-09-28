@@ -28,6 +28,7 @@ This repository is a static LLM model metadata registry for Go. AI agents should
 - `providers/*.yaml` is the reviewed publisher catalog: adding a file is how a publisher enters scope, `organizations.*` names its official repositories, and `aliases` records the variant developer spellings it has shipped under. Declare `identity.strategy: publisher` with `require_corroboration: true` only when the file names an authoritative source; closed API vendors stay `aggregator`.
 - Edit `internal/registry/scope.go` when changing which publishers or model categories are collected. Discovery intake, compilation and the public catalog all read that one decision, so a scope change must also update `docs/MODEL_CATALOG.md`.
 - Model identity is a reviewed fact: add `identifiers.huggingface` with the publisher's own repository and let `task enrich -- -source huggingface -model <id>` fill `links.model_card` and the structured `upstream.huggingface` cache. Do not attach a repository that only resembles the model.
+- A precision or compression variant (`-BF16`, `-FP8`, `-NVFP4`, `-GPTQ-INT4`, `-AWQ`, `-MLX`, `-GGUF`) is the same model as the checkpoint it was derived from, so it never gets its own record: give the model record the variant id as an alias instead. Dated or versioned releases are different models and stay separate records.
 
 ## Development Commands
 

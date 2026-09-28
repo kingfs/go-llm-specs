@@ -73,6 +73,9 @@ func TestClassifyKind(t *testing.T) {
 		{"routing alias", Model{ID: "~openai/gpt-latest"}, KindServingArtifact},
 		{"draft head", Model{ID: "deepseek/deepseek-v4-flash-dspark"}, KindDraftHead},
 		{"explicit model overrides alias", Model{ID: "~openai/gpt-latest", Kind: KindModel}, KindModel},
+		{"quantization variant", Model{ID: "zai/glm-5.3-bf16"}, KindQuantization},
+		{"quantization repository on a model record", Model{ID: "nvidia/nemotron-3.5-lightning",
+			Upstream: UpstreamMetadata{HuggingFace: &HuggingFaceMetadata{ID: "nvidia/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-BF16"}}}, KindModel},
 		{"explicit quantization", Model{ID: "zai/glm-5.3-bf16", Kind: KindQuantization}, KindQuantization},
 		{"explicit serving artifact", Model{ID: "openai/gpt-chat-latest", Kind: KindServingArtifact}, KindServingArtifact},
 	}
@@ -93,10 +96,13 @@ func TestClassifyKind(t *testing.T) {
 }
 
 func TestIsCompiledKind(t *testing.T) {
-	for _, kind := range []string{KindModel, KindQuantization} {
-		if !IsCompiledKind(kind) {
-			t.Errorf("IsCompiledKind(%q) = false, want true", kind)
-		}
+	if !IsCompiledKind(KindModel) {
+		t.Error("IsCompiledKind(model) = false, want true")
+	}
+	// A precision variant shares the card of the checkpoint it was derived from,
+	// so it is not a second model in the compiled catalog.
+	if IsCompiledKind(KindQuantization) {
+		t.Error("IsCompiledKind(quantization) = true, want false")
 	}
 	for _, kind := range ServingKinds {
 		if IsCompiledKind(kind) {

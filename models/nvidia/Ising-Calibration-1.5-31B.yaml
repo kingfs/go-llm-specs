@@ -1,6 +1,6 @@
 schema_version: 2
-id: nvidia/ising-calibration-1.5-31b-bf16
-name: Ising-Calibration-1.5-31B-BF16
+id: nvidia/ising-calibration-1.5-31b
+name: Ising-Calibration-1.5-31B
 provider: NVIDIA
 developer: nvidia
 lifecycle: candidate
@@ -11,6 +11,9 @@ features:
   - ModalityImageIn
   - ModalityTextIn
   - ModalityTextOut
+aliases:
+  - nvidia/ising-calibration-1.5-31b-nvfp4
+  - nvidia/ising-calibration-1.5-31b-bf16
 links:
   model_card: https://huggingface.co/nvidia/Ising-Calibration-1.5-31B-BF16
 identifiers:

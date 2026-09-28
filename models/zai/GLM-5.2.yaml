@@ -1,6 +1,6 @@
 schema_version: 2
-id: zai/glm-5.2-fp8
-name: GLM-5.2-FP8
+id: zai/glm-5.2
+name: GLM-5.2
 provider: Z.ai
 developer: zai
 lifecycle: candidate
@@ -8,6 +8,8 @@ context_length: 1048576
 features:
   - ModalityTextIn
   - ModalityTextOut
+aliases:
+  - zai/glm-5.2-fp8
 links:
   model_card: https://huggingface.co/zai-org/GLM-5.2-FP8
 identifiers:

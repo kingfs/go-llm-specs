@@ -1,6 +1,6 @@
 schema_version: 2
-id: nvidia/nvidia-nemotron-labs-3-elastic-30b-a3b-bf16
-name: NVIDIA-Nemotron-Labs-3-Elastic-30B-A3B-BF16
+id: nvidia/nemotron-labs-3-elastic-30b-a3b
+name: NVIDIA-Nemotron-Labs-3-Elastic-30B-A3B
 provider: NVIDIA
 developer: nvidia
 lifecycle: candidate
@@ -8,6 +8,10 @@ context_length: 262144
 features:
   - ModalityTextIn
   - ModalityTextOut
+aliases:
+  - nvidia/nvidia-nemotron-labs-3-elastic-30b-a3b-nvfp4
+  - nvidia/nvidia-nemotron-labs-3-elastic-30b-a3b-fp8
+  - nvidia/nvidia-nemotron-labs-3-elastic-30b-a3b-bf16
 links:
   model_card: https://huggingface.co/nvidia/NVIDIA-Nemotron-Labs-3-Elastic-30B-A3B-BF16
 identifiers:

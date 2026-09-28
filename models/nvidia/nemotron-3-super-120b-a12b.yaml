@@ -19,6 +19,8 @@ features:
   - ModalityTextIn
   - ModalityTextOut
 aliases:
+  - nvidia/nvidia-nemotron-3-super-120b-a12b-nvfp4
+  - nvidia/nvidia-nemotron-3-super-120b-a12b-bf16
   - nvidia/nemotron-3-super-120b-a12b:free
 discovered_at: 2026-07-29T10:40:48.451488055Z
 links:

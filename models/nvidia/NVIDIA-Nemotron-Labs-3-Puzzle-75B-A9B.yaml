@@ -1,6 +1,6 @@
 schema_version: 2
-id: nvidia/nvidia-nemotron-labs-3-puzzle-75b-a9b-bf16
-name: NVIDIA-Nemotron-Labs-3-Puzzle-75B-A9B-BF16
+id: nvidia/nemotron-labs-3-puzzle-75b-a9b
+name: NVIDIA-Nemotron-Labs-3-Puzzle-75B-A9B
 provider: NVIDIA
 developer: nvidia
 lifecycle: active
@@ -10,6 +10,8 @@ context_length: 262144
 features:
   - ModalityTextIn
   - ModalityTextOut
+aliases:
+  - nvidia/nvidia-nemotron-labs-3-puzzle-75b-a9b-bf16
 links:
   model_card: https://huggingface.co/nvidia/NVIDIA-Nemotron-Labs-3-Puzzle-75B-A9B-BF16
 identifiers:

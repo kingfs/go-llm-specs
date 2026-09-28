@@ -17,11 +17,7 @@ import (
 )
 
 // catalogDoctorSchemaVersion is bumped whenever the report shape changes.
-const catalogDoctorSchemaVersion = 2
-
-// quantizationSuffix flags records that repackage an existing checkpoint at a
-// different precision. They are reported for review, not excluded.
-var quantizationSuffix = regexp.MustCompile(`(?i)-(bf16|fp8|fp4|nvfp4|int4|int8|awq|gptq|qad|gguf|mlx)$`)
+const catalogDoctorSchemaVersion = 3
 
 // baseSuffix flags pretrained checkpoints that may shadow an instruct sibling.
 var baseSuffix = regexp.MustCompile(`(?i)-base$`)
@@ -34,7 +30,7 @@ type doctorReport struct {
 	RoutingAlias  []string              `json:"routing_aliases"`
 	DraftHeads    []string              `json:"draft_heads"`
 	OutOfScope    []doctorScopeRef      `json:"out_of_scope"`
-	Quantization  []string              `json:"quantization_candidates"`
+	Quantization  []doctorScopeRef      `json:"quantization_variants"`
 	BaseVariants  []string              `json:"base_variants"`
 	IdentityGaps  []doctorIdentityGap   `json:"identity_gaps"`
 	Aggregators   []string              `json:"aggregator_providers"`
@@ -46,7 +42,7 @@ type doctorSummary struct {
 	Candidates   int `json:"candidates"`
 	Serving      int `json:"serving_variants"`
 	OutOfScope   int `json:"out_of_scope"`
-	Quantization int `json:"quantization_candidates"`
+	Quantization int `json:"quantization_variants"`
 	IdentityGaps int `json:"identity_gaps"`
 	Unverified   int `json:"unverified_identities"`
 }
@@ -116,7 +112,7 @@ func run(providersDir, modelsDir, output string, check bool) error {
 	if err := os.WriteFile(output, data, 0o644); err != nil {
 		return err
 	}
-	log.Printf("catalog doctor: models=%d serving=%d out_of_scope=%d quantization=%d identity_gaps=%d", report.Summary.Models, report.Summary.Serving, report.Summary.OutOfScope, report.Summary.Quantization, report.Summary.IdentityGaps)
+	log.Printf("catalog doctor: models=%d serving=%d quantization=%d out_of_scope=%d identity_gaps=%d", report.Summary.Models, report.Summary.Serving, report.Summary.Quantization, report.Summary.OutOfScope, report.Summary.IdentityGaps)
 	return nil
 }
 
@@ -144,6 +140,12 @@ func buildReport(providers []provider.Provider, models []registry.Model) doctorR
 		switch {
 		case registry.IsServingKind(kind):
 			report.Summary.Serving++
+		case kind == registry.KindQuantization:
+			// A quantization variant shares the model card of the checkpoint it
+			// was derived from, so it is neither compiled nor counted as a model
+			// of its own.
+			report.Summary.Quantization++
+			report.Quantization = append(report.Quantization, doctorScopeRef{ID: m.ID, Reason: registry.QuantizationFormat(m)})
 		case kind == registry.KindOutOfScope:
 			// Out-of-scope records stay in models/ for provenance but are never
 			// compiled or published, so they are counted separately from both
@@ -154,10 +156,6 @@ func buildReport(providers []provider.Provider, models []registry.Model) doctorR
 			report.Summary.Compiled++
 		default:
 			report.Summary.Candidates++
-		}
-		if quantizationSuffix.MatchString(m.ID) {
-			report.Quantization = append(report.Quantization, m.ID)
-			report.Summary.Quantization++
 		}
 		if baseSuffix.MatchString(m.ID) {
 			report.BaseVariants = append(report.BaseVariants, m.ID)
@@ -188,7 +186,7 @@ func buildReport(providers []provider.Provider, models []registry.Model) doctorR
 	report.Summary.IdentityGaps = len(report.IdentityGaps)
 	sort.Strings(report.RoutingAlias)
 	sort.Strings(report.DraftHeads)
-	sort.Strings(report.Quantization)
+	sort.Slice(report.Quantization, func(i, j int) bool { return report.Quantization[i].ID < report.Quantization[j].ID })
 	sort.Strings(report.BaseVariants)
 	sort.Strings(report.Aggregators)
 	sort.Slice(report.OutOfScope, func(i, j int) bool { return report.OutOfScope[i].ID < report.OutOfScope[j].ID })
