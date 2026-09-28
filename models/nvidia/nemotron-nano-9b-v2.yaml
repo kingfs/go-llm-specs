@@ -22,6 +22,54 @@ discovered_at: 2026-07-29T10:41:00.191097446Z
 links:
   model_card: https://huggingface.co/nvidia/NVIDIA-Nemotron-Nano-9B-v2
 identifiers:
+  huggingface:
+    - nvidia/NVIDIA-Nemotron-Nano-9B-v2
   openrouter:
     - nvidia/nemotron-nano-9b-v2
     - nvidia/nemotron-nano-9b-v2:free
+upstream:
+  huggingface:
+    id: nvidia/NVIDIA-Nemotron-Nano-9B-v2
+    revision: 6533e8de2c68e4536bf7c411d7a3ce5734111476
+    pipeline_tag: text-generation
+    model_type: nemotron_h
+    architectures:
+      - NemotronHForCausalLM
+    license: other
+    tags:
+      - arxiv:2412.02595
+      - arxiv:2504.03624
+      - arxiv:2508.14444
+      - base_model:finetune:nvidia/NVIDIA-Nemotron-Nano-12B-v2
+      - base_model:nvidia/NVIDIA-Nemotron-Nano-12B-v2
+      - conversational
+      - custom_code
+      - dataset:nvidia/Nemotron-CC-Math-v1
+      - dataset:nvidia/Nemotron-CC-v2
+      - dataset:nvidia/Nemotron-Post-Training-Dataset-v1
+      - dataset:nvidia/Nemotron-Post-Training-Dataset-v2
+      - dataset:nvidia/Nemotron-Pretraining-Dataset-sample
+      - dataset:nvidia/Nemotron-Pretraining-SFT-v1
+      - de
+      - deploy:azure
+      - en
+      - endpoints_compatible
+      - es
+      - fr
+      - it
+      - ja
+      - license:other
+      - nemotron_h
+      - nvidia
+      - pytorch
+      - region:us
+      - safetensors
+      - text-generation
+      - transformers
+    config_context_length: 131072
+    tokenizer_model_max_length: 131072
+    chat_template_sha256: 511e868f105020dde67b01efd9722bf4ddf626eeeb8eb93277cb07e1a1156304
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-09-28T11:36:58.929102233Z

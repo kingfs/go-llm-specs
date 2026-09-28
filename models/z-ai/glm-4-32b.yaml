@@ -22,3 +22,35 @@ features:
   - ModalityTextIn
   - ModalityTextOut
 discovered_at: 2026-07-29T10:44:58.378737923Z
+links:
+  model_card: https://huggingface.co/zai-org/GLM-4-32B-0414
+identifiers:
+  huggingface:
+    - zai-org/GLM-4-32B-0414
+upstream:
+  huggingface:
+    id: zai-org/GLM-4-32B-0414
+    revision: 077b5c2f5c43bd3239fd605a0600229e8facbd4a
+    pipeline_tag: text-generation
+    model_type: glm4
+    architectures:
+      - Glm4ForCausalLM
+    license: mit
+    tags:
+      - conversational
+      - en
+      - endpoints_compatible
+      - glm4
+      - license:mit
+      - region:us
+      - safetensors
+      - text-generation
+      - transformers
+      - zh
+    config_context_length: 32768
+    tokenizer_model_max_length: 128000
+    chat_template_sha256: 835374133449de2fa00eb0614c02cbc460444163f6c8a04b0e79f15d05dddca6
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-09-28T11:37:00.286374739Z

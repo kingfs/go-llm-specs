@@ -14,7 +14,11 @@ features:
   - ModalityTextIn
   - ModalityTextOut
 discovered_at: 2026-07-29T10:39:32.166441157Z
+links:
+  model_card: https://huggingface.co/mistralai/Ministral-8B-Instruct-2410
 identifiers:
+  huggingface:
+    - mistralai/Ministral-8B-Instruct-2410
   openrouter:
     - mistralai/ministral-8b
 provenance:
@@ -39,3 +43,34 @@ upstream:
       - text
     knowledge_cutoff: "2024-09-30"
     fetched_at: 2026-08-21T02:52:32.501277396Z
+  huggingface:
+    id: mistralai/Ministral-8B-Instruct-2410
+    revision: 2f494a194c5b980dfb9772cb92d26cbb671fce5a
+    model_type: mistral
+    architectures:
+      - MistralForCausalLM
+    license: other
+    tags:
+      - de
+      - en
+      - es
+      - eval-results
+      - fr
+      - it
+      - ja
+      - ko
+      - license:other
+      - mistral
+      - mistral-common
+      - pt
+      - region:us
+      - ru
+      - safetensors
+      - vllm
+      - zh
+    config_context_length: 32768
+    chat_template_sha256: a0a5aa4eaec3e69b25dd3a09f7019f83317e115d2b9b1ab1aff57f2d77ccc327
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-09-28T11:36:54.47424123Z

@@ -20,3 +20,36 @@ features:
   - ModalityTextIn
   - ModalityTextOut
 discovered_at: 2026-07-29T10:39:53.590313696Z
+links:
+  model_card: https://huggingface.co/mistralai/Mixtral-8x7B-Instruct-v0.1
+identifiers:
+  huggingface:
+    - mistralai/Mixtral-8x7B-Instruct-v0.1
+upstream:
+  huggingface:
+    id: mistralai/Mixtral-8x7B-Instruct-v0.1
+    revision: eba92302a2861cdc0098cc54bc9f17cb2c47eb61
+    model_type: mixtral
+    architectures:
+      - MixtralForCausalLM
+    license: apache-2.0
+    tags:
+      - base_model:finetune:mistralai/Mixtral-8x7B-v0.1
+      - base_model:mistralai/Mixtral-8x7B-v0.1
+      - de
+      - en
+      - es
+      - eval-results
+      - fr
+      - it
+      - license:apache-2.0
+      - mixtral
+      - region:us
+      - safetensors
+      - vllm
+    config_context_length: 32768
+    chat_template_sha256: 84456bdb46adc491bc76d014a8714423b70d9231697dd1dc91168f71c2a987f8
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-09-28T11:36:55.753362311Z

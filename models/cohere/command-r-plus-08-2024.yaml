@@ -24,7 +24,11 @@ features:
   - ModalityTextIn
   - ModalityTextOut
 discovered_at: 2026-07-29T10:37:20.227061147Z
+links:
+  model_card: https://huggingface.co/CohereLabs/c4ai-command-r-plus-08-2024
 identifiers:
+  huggingface:
+    - CohereLabs/c4ai-command-r-plus-08-2024
   openrouter:
     - cohere/command-r-plus-08-2024
 upstream:
@@ -49,3 +53,33 @@ upstream:
       - text
     knowledge_cutoff: "2024-03-31"
     fetched_at: 2026-07-29T10:37:20.227061677Z
+  huggingface:
+    id: CohereLabs/c4ai-command-r-plus-08-2024
+    revision: e808c1a2249354ca211c9f08d1338e5039f633f8
+    pipeline_tag: text-generation
+    model_type: cohere
+    architectures:
+      - CohereForCausalLM
+    license: cc-by-nc-4.0
+    tags:
+      - ar
+      - cohere
+      - conversational
+      - de
+      - doi:10.57967/hf/3136
+      - en
+      - es
+      - eval-results
+      - fr
+      - it
+      - ja
+      - ko
+      - license:cc-by-nc-4.0
+      - pt
+      - region:us
+      - safetensors
+      - text-generation
+      - text-generation-inference
+      - transformers
+      - zh
+    fetched_at: 2026-09-28T11:36:50.92889749Z

@@ -7,8 +7,8 @@
     "serving_variants": 10,
     "out_of_scope": 2,
     "quantization_candidates": 27,
-    "identity_gaps": 141,
-    "unverified_identities": 249
+    "identity_gaps": 129,
+    "unverified_identities": 237
   },
   "by_kind": {
     "draft-head": 10,
@@ -17,8 +17,8 @@
   },
   "identity": {
     "by_source": {
-      "official_huggingface": 470,
-      "openrouter": 302
+      "official_huggingface": 482,
+      "openrouter": 290
     },
     "unverified": [
       {
@@ -242,21 +242,6 @@
         "source": "openrouter"
       },
       {
-        "id": "cohere/command-r-08-2024",
-        "provider": "cohere",
-        "source": "openrouter"
-      },
-      {
-        "id": "cohere/command-r-plus-08-2024",
-        "provider": "cohere",
-        "source": "openrouter"
-      },
-      {
-        "id": "cohere/command-r7b-12-2024",
-        "provider": "cohere",
-        "source": "openrouter"
-      },
-      {
         "id": "fireworks/ember-1",
         "provider": "fireworks",
         "source": "openrouter"
@@ -447,21 +432,6 @@
         "source": "openrouter"
       },
       {
-        "id": "meta-llama/llama-3-70b-instruct",
-        "provider": "meta",
-        "source": "openrouter"
-      },
-      {
-        "id": "meta-llama/llama-3-8b-instruct",
-        "provider": "meta",
-        "source": "openrouter"
-      },
-      {
-        "id": "meta-llama/llama-guard-2-8b",
-        "provider": "meta",
-        "source": "openrouter"
-      },
-      {
         "id": "meta/muse-glimmer-30b",
         "provider": "meta",
         "source": "openrouter"
@@ -527,11 +497,6 @@
         "source": "openrouter"
       },
       {
-        "id": "mistralai/ministral-8b",
-        "provider": "mistral",
-        "source": "openrouter"
-      },
-      {
         "id": "mistralai/mistral-7b-instruct",
         "provider": "mistral",
         "source": "openrouter"
@@ -587,28 +552,8 @@
         "source": "openrouter"
       },
       {
-        "id": "mistralai/mixtral-8x7b-instruct",
-        "provider": "mistral",
-        "source": "openrouter"
-      },
-      {
-        "id": "mistralai/pixtral-12b",
-        "provider": "mistral",
-        "source": "openrouter"
-      },
-      {
         "id": "mistralai/pixtral-large-2411",
         "provider": "mistral",
-        "source": "openrouter"
-      },
-      {
-        "id": "nvidia/nemotron-nano-12b-v2-vl",
-        "provider": "nvidia",
-        "source": "openrouter"
-      },
-      {
-        "id": "nvidia/nemotron-nano-9b-v2",
-        "provider": "nvidia",
         "source": "openrouter"
       },
       {
@@ -1242,11 +1187,6 @@
         "source": "openrouter"
       },
       {
-        "id": "z-ai/glm-4-32b",
-        "provider": "zai",
-        "source": "openrouter"
-      },
-      {
         "id": "z-ai/glm-5-turbo",
         "provider": "zai",
         "source": "openrouter"
@@ -1447,18 +1387,6 @@
       "provider": "cohere"
     },
     {
-      "id": "cohere/command-r-08-2024",
-      "provider": "cohere"
-    },
-    {
-      "id": "cohere/command-r-plus-08-2024",
-      "provider": "cohere"
-    },
-    {
-      "id": "cohere/command-r7b-12-2024",
-      "provider": "cohere"
-    },
-    {
       "id": "fireworks/ember-1",
       "provider": "fireworks"
     },
@@ -1611,18 +1539,6 @@
       "provider": "liquid"
     },
     {
-      "id": "meta-llama/llama-3-70b-instruct",
-      "provider": "meta"
-    },
-    {
-      "id": "meta-llama/llama-3-8b-instruct",
-      "provider": "meta"
-    },
-    {
-      "id": "meta-llama/llama-guard-2-8b",
-      "provider": "meta"
-    },
-    {
       "id": "meta/muse-spark-1.1",
       "provider": "meta"
     },
@@ -1671,10 +1587,6 @@
       "provider": "mistral"
     },
     {
-      "id": "mistralai/ministral-8b",
-      "provider": "mistral"
-    },
-    {
       "id": "mistralai/mistral-7b-instruct",
       "provider": "mistral"
     },
@@ -1719,24 +1631,8 @@
       "provider": "mistral"
     },
     {
-      "id": "mistralai/mixtral-8x7b-instruct",
-      "provider": "mistral"
-    },
-    {
-      "id": "mistralai/pixtral-12b",
-      "provider": "mistral"
-    },
-    {
       "id": "mistralai/pixtral-large-2411",
       "provider": "mistral"
-    },
-    {
-      "id": "nvidia/nemotron-nano-12b-v2-vl",
-      "provider": "nvidia"
-    },
-    {
-      "id": "nvidia/nemotron-nano-9b-v2",
-      "provider": "nvidia"
     },
     {
       "id": "perceptron/perceptron-mk1",
@@ -1889,10 +1785,6 @@
     {
       "id": "xiaomi/mimo-v2.6-pro-ultraspeed",
       "provider": "xiaomi"
-    },
-    {
-      "id": "z-ai/glm-4-32b",
-      "provider": "zai"
     },
     {
       "id": "z-ai/glm-5-turbo",

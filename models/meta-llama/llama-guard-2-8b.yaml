@@ -29,3 +29,36 @@ features:
   - ModalityTextIn
   - ModalityTextOut
 discovered_at: 2026-07-29T10:39:00.242006362Z
+links:
+  model_card: https://huggingface.co/meta-llama/Meta-Llama-Guard-2-8B
+identifiers:
+  huggingface:
+    - meta-llama/Meta-Llama-Guard-2-8B
+upstream:
+  huggingface:
+    id: meta-llama/Meta-Llama-Guard-2-8B
+    revision: 7d257f3c1a0ec6ed99b2cb715027149dfb9784ef
+    pipeline_tag: text-generation
+    model_type: llama
+    architectures:
+      - LlamaForCausalLM
+    license: llama3
+    tags:
+      - arxiv:2312.06674
+      - arxiv:2403.13031
+      - conversational
+      - deploy:azure
+      - en
+      - endpoints_compatible
+      - facebook
+      - license:llama3
+      - llama
+      - llama-3
+      - meta
+      - pytorch
+      - region:us
+      - safetensors
+      - text-generation
+      - text-generation-inference
+      - transformers
+    fetched_at: 2026-09-28T11:36:53.136576894Z

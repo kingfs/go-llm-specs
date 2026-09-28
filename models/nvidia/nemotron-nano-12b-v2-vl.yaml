@@ -34,6 +34,27 @@ discovered_at: 2026-07-29T10:40:58.617279028Z
 links:
   model_card: https://huggingface.co/nvidia/NVIDIA-Nemotron-Nano-12B-v2-VL-BF16
 identifiers:
+  huggingface:
+    - nvidia/NVIDIA-Nemotron-Nano-12B-v2-VL-BF16
   openrouter:
     - nvidia/nemotron-nano-12b-v2-vl
     - nvidia/nemotron-nano-12b-v2-vl:free
+upstream:
+  huggingface:
+    id: nvidia/NVIDIA-Nemotron-Nano-12B-v2-VL-BF16
+    revision: ca9543b126e8bf3176916d3d305ccc415f89fd4d
+    pipeline_tag: image-text-to-text
+    license: other
+    tags:
+      - VLM
+      - arxiv:2501.14818
+      - arxiv:2511.03929
+      - conversational
+      - endpoints_compatible
+      - image-text-to-text
+      - license:other
+      - nvidia
+      - region:us
+      - safetensors
+      - transformers
+    fetched_at: 2026-09-28T11:36:57.453964458Z

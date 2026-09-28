@@ -14,3 +14,32 @@ features:
   - ModalityTextIn
   - ModalityTextOut
 discovered_at: 2026-07-29T10:39:54.017724046Z
+links:
+  model_card: https://huggingface.co/mistralai/Pixtral-12B-2409
+identifiers:
+  huggingface:
+    - mistralai/Pixtral-12B-2409
+upstream:
+  huggingface:
+    id: mistralai/Pixtral-12B-2409
+    revision: a5ca2b7a9421a35ea24411c46e970758b8d3c6a7
+    license: apache-2.0
+    tags:
+      - base_model:finetune:mistralai/Pixtral-12B-Base-2409
+      - base_model:mistralai/Pixtral-12B-Base-2409
+      - de
+      - deploy:azure
+      - deploy:sagemaker
+      - en
+      - es
+      - fr
+      - it
+      - ja
+      - license:apache-2.0
+      - mistral-common
+      - pt
+      - region:us
+      - ru
+      - vllm
+      - zh
+    fetched_at: 2026-09-28T11:36:56.793979056Z
