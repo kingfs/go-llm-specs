@@ -1,0 +1,15 @@
+# MiMo is Xiaomi's open model line.
+schema_version: 1
+id: xiaomi
+name: Xiaomi MiMo
+kind: company
+official:
+  homepage: https://github.com/XiaomiMiMo
+  model_catalog: https://huggingface.co/XiaomiMiMo
+organizations:
+  huggingface: [XiaomiMiMo]
+discovery:
+  huggingface: true
+identity:
+  strategy: publisher
+  require_corroboration: true

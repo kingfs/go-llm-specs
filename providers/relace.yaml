@@ -1,0 +1,9 @@
+# Relace serves code-apply and retrieval models through its own API.
+schema_version: 1
+id: relace
+name: Relace
+kind: company
+official:
+  homepage: https://www.relace.ai/
+identity:
+  strategy: aggregator

@@ -1,0 +1,9 @@
+# Morph serves code-editing models through its own API.
+schema_version: 1
+id: morph
+name: Morph
+kind: company
+official:
+  homepage: https://www.morphllm.com/
+identity:
+  strategy: aggregator

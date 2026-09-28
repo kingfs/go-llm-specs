@@ -2,7 +2,7 @@ schema_version: 2
 id: dots-studio/dots-3-note-preview
 name: 'Dots Studio: Dots3-Note Preview'
 provider: Dots-Studio
-developer: dotsstudio
+developer: dots-studio
 description: Dots3-Note Preview is an open-weight mixture-of-experts model from Dots Studio, with 16B active parameters out of 280B total. It is the lightest model in the Dots 3 family and is...
 description_cn: Dots3-Note Preview 是来自 Dots Studio 的开源权重混合专家（MoE）模型，拥有 2800 亿总参数中的 160 亿活跃参数。它是 Dots 3 系列中最轻量的模型...
 context_length: 512000
@@ -17,7 +17,11 @@ features:
 aliases:
   - dots-studio/dots-3-note-preview:free
 discovered_at: 2026-08-14T03:53:24.525598262Z
+links:
+  model_card: https://huggingface.co/dots-studio/dots3-note-prev
 identifiers:
+  huggingface:
+    - dots-studio/dots3-note-prev
   openrouter:
     - dots-studio/dots-3-note-preview
     - dots-studio/dots-3-note-preview:free
@@ -36,3 +40,36 @@ provenance:
     source: openrouter
   provider:
     source: openrouter
+upstream:
+  huggingface:
+    id: dots-studio/dots3-note-prev
+    revision: 1e1e7b0cd37a3a48a6c8d7fa55d5f9d14377006b
+    pipeline_tag: image-text-to-text
+    model_type: dots3_note
+    architectures:
+      - Dots3NoteForCausalLM
+    license: apache-2.0
+    tags:
+      - agentic
+      - audio
+      - conversational
+      - dots3
+      - dots3-note
+      - dots3_note
+      - endpoints_compatible
+      - eval-results
+      - image-text-to-text
+      - license:apache-2.0
+      - long-context
+      - multimodal
+      - region:us
+      - safetensors
+      - text-generation
+      - transformers
+    config_context_length: 524288
+    tokenizer_model_max_length: 524288
+    structured_files:
+      - config.json
+      - preprocessor_config.json
+      - tokenizer_config.json
+    fetched_at: 2026-09-28T10:30:30.824909768Z

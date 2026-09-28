@@ -1,0 +1,15 @@
+# KwaiPilot is Kuaishou's coding model line (KAT).
+schema_version: 1
+id: kwaipilot
+name: KwaiPilot
+kind: company
+official:
+  homepage: https://github.com/Kwaipilot
+  model_catalog: https://huggingface.co/Kwaipilot
+organizations:
+  huggingface: [Kwaipilot]
+discovery:
+  huggingface: true
+identity:
+  strategy: publisher
+  require_corroboration: true

@@ -1,0 +1,15 @@
+# Solar is Upstage's foundation model family.
+schema_version: 1
+id: upstage
+name: Upstage
+kind: company
+official:
+  homepage: https://www.upstage.ai/
+  model_catalog: https://huggingface.co/upstage
+organizations:
+  huggingface: [upstage]
+discovery:
+  huggingface: true
+identity:
+  strategy: publisher
+  require_corroboration: true

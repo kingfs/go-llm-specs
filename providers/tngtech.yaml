@@ -1,0 +1,15 @@
+# TNG Technology Consulting publishes the R1T Chimera merges from the tngtech organization.
+schema_version: 1
+id: tngtech
+name: TNG Technology Consulting
+kind: company
+official:
+  homepage: https://www.tngtech.com/
+  model_catalog: https://huggingface.co/tngtech
+organizations:
+  huggingface: [tngtech]
+discovery:
+  huggingface: true
+identity:
+  strategy: publisher
+  require_corroboration: true

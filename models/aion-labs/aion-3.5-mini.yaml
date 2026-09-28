@@ -2,7 +2,7 @@ schema_version: 2
 id: aion-labs/aion-3.5-mini
 name: 'AionLabs: Aion 3.5 Mini'
 provider: Aion-Labs
-developer: aionlabs
+developer: aion-labs
 description: Aion 3.5 Mini is a multi-model roleplaying and storytelling system from AionLabs, built on the GLM family of models. It is the smaller, lower-cost sibling of Aion 3.5 and uses...
 description_cn: Aion 3.5 Mini 是 AionLabs 推出的多模型角色扮演与叙事系统，基于 GLM 系列模型构建。它是 Aion 3.5 的更小、更低成本版本，并使用...
 context_length: 262144

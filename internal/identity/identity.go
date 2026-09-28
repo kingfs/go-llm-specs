@@ -57,7 +57,9 @@ func Resolve(m registry.Model, p provider.Provider) Resolved {
 
 // ProviderFor resolves the publisher record a model belongs to. Model IDs do
 // not always match the provider directory, so developer, directory and ID
-// prefix are tried in order.
+// prefix are tried in order. A provider may declare aliases for the variant
+// spellings it has shipped under, for example "bytedance" for ByteDance Seed
+// or "stepfun-ai" for StepFun.
 func ProviderFor(m registry.Model, providers []provider.Provider) (provider.Provider, bool) {
 	candidates := []string{
 		normalize(m.Developer),
@@ -69,12 +71,23 @@ func ProviderFor(m registry.Model, providers []provider.Provider) (provider.Prov
 			continue
 		}
 		for _, p := range providers {
-			if normalize(p.ID) == candidate || normalize(p.Name) == candidate {
+			if normalize(p.ID) == candidate || normalize(p.Name) == candidate || providerAlias(p, candidate) {
 				return p, true
 			}
 		}
 	}
 	return provider.Provider{}, false
+}
+
+// providerAlias reports whether candidate matches one of the provider's
+// declared alias spellings.
+func providerAlias(p provider.Provider, candidate string) bool {
+	for _, alias := range p.Aliases {
+		if normalize(alias) == candidate {
+			return true
+		}
+	}
+	return false
 }
 
 func identifierInOrgs(identifiers, organizations []string) bool {

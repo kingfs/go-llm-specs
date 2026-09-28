@@ -7,8 +7,8 @@
     "serving_variants": 10,
     "out_of_scope": 2,
     "quantization_candidates": 27,
-    "identity_gaps": 109,
-    "unverified_identities": 217
+    "identity_gaps": 141,
+    "unverified_identities": 249
   },
   "by_kind": {
     "draft-head": 10,
@@ -17,10 +17,45 @@
   },
   "identity": {
     "by_source": {
-      "official_huggingface": 417,
-      "openrouter": 357
+      "official_huggingface": 472,
+      "openrouter": 302
     },
     "unverified": [
+      {
+        "id": "aion-labs/aion-1.0",
+        "provider": "aion-labs",
+        "source": "openrouter"
+      },
+      {
+        "id": "aion-labs/aion-1.0-mini",
+        "provider": "aion-labs",
+        "source": "openrouter"
+      },
+      {
+        "id": "aion-labs/aion-2.0",
+        "provider": "aion-labs",
+        "source": "openrouter"
+      },
+      {
+        "id": "aion-labs/aion-3.0",
+        "provider": "aion-labs",
+        "source": "openrouter"
+      },
+      {
+        "id": "aion-labs/aion-3.0-mini",
+        "provider": "aion-labs",
+        "source": "openrouter"
+      },
+      {
+        "id": "aion-labs/aion-3.5",
+        "provider": "aion-labs",
+        "source": "openrouter"
+      },
+      {
+        "id": "aion-labs/aion-3.5-mini",
+        "provider": "aion-labs",
+        "source": "openrouter"
+      },
       {
         "id": "alibaba/tongyi-deepresearch-30b-a3b",
         "provider": "qwen",
@@ -162,6 +197,16 @@
         "source": "openrouter"
       },
       {
+        "id": "baidu/cobuddy",
+        "provider": "baidu",
+        "source": "openrouter"
+      },
+      {
+        "id": "baidu/qianfan-ocr-fast",
+        "provider": "baidu",
+        "source": "openrouter"
+      },
+      {
         "id": "bytedance-seed/seed-1.6",
         "provider": "bytedance-seed",
         "source": "openrouter"
@@ -209,6 +254,11 @@
       {
         "id": "cohere/command-r7b-12-2024",
         "provider": "cohere",
+        "source": "openrouter"
+      },
+      {
+        "id": "fireworks/ember-1",
+        "provider": "fireworks",
         "source": "openrouter"
       },
       {
@@ -354,6 +404,46 @@
       {
         "id": "google/lyria-3-pro-preview",
         "provider": "google",
+        "source": "openrouter"
+      },
+      {
+        "id": "inclusionai/ling-3.0-flash-sante",
+        "provider": "inclusionai",
+        "source": "openrouter"
+      },
+      {
+        "id": "inference-net/schematron-v2-small",
+        "provider": "inference-net",
+        "source": "openrouter"
+      },
+      {
+        "id": "inference-net/schematron-v2-turbo",
+        "provider": "inference-net",
+        "source": "openrouter"
+      },
+      {
+        "id": "kwaipilot/kat-coder-air-v2.5",
+        "provider": "kwaipilot",
+        "source": "openrouter"
+      },
+      {
+        "id": "kwaipilot/kat-coder-pro",
+        "provider": "kwaipilot",
+        "source": "openrouter"
+      },
+      {
+        "id": "kwaipilot/kat-coder-pro-v2",
+        "provider": "kwaipilot",
+        "source": "openrouter"
+      },
+      {
+        "id": "kwaipilot/kat-coder-pro-v2.5",
+        "provider": "kwaipilot",
+        "source": "openrouter"
+      },
+      {
+        "id": "liquid/lfm-2.2-6b",
+        "provider": "liquid",
         "source": "openrouter"
       },
       {
@@ -877,6 +967,16 @@
         "source": "openrouter"
       },
       {
+        "id": "perceptron/perceptron-mk1",
+        "provider": "perceptron",
+        "source": "openrouter"
+      },
+      {
+        "id": "perceptron/perceptron-mk1.5",
+        "provider": "perceptron",
+        "source": "openrouter"
+      },
+      {
         "id": "qwen/qwen-max",
         "provider": "qwen",
         "source": "openrouter"
@@ -997,6 +1097,51 @@
         "source": "openrouter"
       },
       {
+        "id": "sakana/fugu-max",
+        "provider": "sakana",
+        "source": "openrouter"
+      },
+      {
+        "id": "sakana/fugu-ultra",
+        "provider": "sakana",
+        "source": "openrouter"
+      },
+      {
+        "id": "sakana/fugu-ultra-v2",
+        "provider": "sakana",
+        "source": "openrouter"
+      },
+      {
+        "id": "sakana/sakana-namazu",
+        "provider": "sakana",
+        "source": "openrouter"
+      },
+      {
+        "id": "tngtech/tng-r1t-chimera",
+        "provider": "tngtech",
+        "source": "openrouter"
+      },
+      {
+        "id": "upstage/solar-mini4",
+        "provider": "upstage",
+        "source": "openrouter"
+      },
+      {
+        "id": "upstage/solar-pro-3",
+        "provider": "upstage",
+        "source": "openrouter"
+      },
+      {
+        "id": "upstage/solar-pro4",
+        "provider": "upstage",
+        "source": "openrouter"
+      },
+      {
+        "id": "writer/palmyra-x5",
+        "provider": "writer",
+        "source": "openrouter"
+      },
+      {
         "id": "x-ai/grok-3",
         "provider": "xai",
         "source": "openrouter"
@@ -1079,6 +1224,21 @@
       {
         "id": "x-ai/grok-code-fast-1",
         "provider": "xai",
+        "source": "openrouter"
+      },
+      {
+        "id": "xiaomi/mimo-v2-omni",
+        "provider": "xiaomi",
+        "source": "openrouter"
+      },
+      {
+        "id": "xiaomi/mimo-v2-pro",
+        "provider": "xiaomi",
+        "source": "openrouter"
+      },
+      {
+        "id": "xiaomi/mimo-v2.6-pro-ultraspeed",
+        "provider": "xiaomi",
         "source": "openrouter"
       },
       {
@@ -1187,6 +1347,34 @@
   ],
   "identity_gaps": [
     {
+      "id": "aion-labs/aion-1.0",
+      "provider": "aion-labs"
+    },
+    {
+      "id": "aion-labs/aion-1.0-mini",
+      "provider": "aion-labs"
+    },
+    {
+      "id": "aion-labs/aion-2.0",
+      "provider": "aion-labs"
+    },
+    {
+      "id": "aion-labs/aion-3.0",
+      "provider": "aion-labs"
+    },
+    {
+      "id": "aion-labs/aion-3.0-mini",
+      "provider": "aion-labs"
+    },
+    {
+      "id": "aion-labs/aion-3.5",
+      "provider": "aion-labs"
+    },
+    {
+      "id": "aion-labs/aion-3.5-mini",
+      "provider": "aion-labs"
+    },
+    {
       "id": "alibaba/tongyi-deepresearch-30b-a3b",
       "provider": "qwen"
     },
@@ -1221,6 +1409,14 @@
     {
       "id": "arcee-ai/spotlight",
       "provider": "arcee-ai"
+    },
+    {
+      "id": "baidu/cobuddy",
+      "provider": "baidu"
+    },
+    {
+      "id": "baidu/qianfan-ocr-fast",
+      "provider": "baidu"
     },
     {
       "id": "bytedance-seed/seed-1.6",
@@ -1261,6 +1457,10 @@
     {
       "id": "cohere/command-r7b-12-2024",
       "provider": "cohere"
+    },
+    {
+      "id": "fireworks/ember-1",
+      "provider": "fireworks"
     },
     {
       "id": "google/gemini-2.0-flash-001",
@@ -1377,6 +1577,38 @@
     {
       "id": "google/lyria-3-pro-preview",
       "provider": "google"
+    },
+    {
+      "id": "inclusionai/ling-3.0-flash-sante",
+      "provider": "inclusionai"
+    },
+    {
+      "id": "inference-net/schematron-v2-small",
+      "provider": "inference-net"
+    },
+    {
+      "id": "inference-net/schematron-v2-turbo",
+      "provider": "inference-net"
+    },
+    {
+      "id": "kwaipilot/kat-coder-air-v2.5",
+      "provider": "kwaipilot"
+    },
+    {
+      "id": "kwaipilot/kat-coder-pro",
+      "provider": "kwaipilot"
+    },
+    {
+      "id": "kwaipilot/kat-coder-pro-v2",
+      "provider": "kwaipilot"
+    },
+    {
+      "id": "kwaipilot/kat-coder-pro-v2.5",
+      "provider": "kwaipilot"
+    },
+    {
+      "id": "liquid/lfm-2.2-6b",
+      "provider": "liquid"
     },
     {
       "id": "meta-llama/llama-3-70b-instruct",
@@ -1507,6 +1739,14 @@
       "provider": "nvidia"
     },
     {
+      "id": "perceptron/perceptron-mk1",
+      "provider": "perceptron"
+    },
+    {
+      "id": "perceptron/perceptron-mk1.5",
+      "provider": "perceptron"
+    },
+    {
       "id": "qwen/qwen-max",
       "provider": "qwen"
     },
@@ -1603,6 +1843,54 @@
       "provider": "qwen"
     },
     {
+      "id": "sakana/fugu-max",
+      "provider": "sakana"
+    },
+    {
+      "id": "sakana/fugu-ultra",
+      "provider": "sakana"
+    },
+    {
+      "id": "sakana/fugu-ultra-v2",
+      "provider": "sakana"
+    },
+    {
+      "id": "sakana/sakana-namazu",
+      "provider": "sakana"
+    },
+    {
+      "id": "tngtech/tng-r1t-chimera",
+      "provider": "tngtech"
+    },
+    {
+      "id": "upstage/solar-mini4",
+      "provider": "upstage"
+    },
+    {
+      "id": "upstage/solar-pro-3",
+      "provider": "upstage"
+    },
+    {
+      "id": "upstage/solar-pro4",
+      "provider": "upstage"
+    },
+    {
+      "id": "writer/palmyra-x5",
+      "provider": "writer"
+    },
+    {
+      "id": "xiaomi/mimo-v2-omni",
+      "provider": "xiaomi"
+    },
+    {
+      "id": "xiaomi/mimo-v2-pro",
+      "provider": "xiaomi"
+    },
+    {
+      "id": "xiaomi/mimo-v2.6-pro-ultraspeed",
+      "provider": "xiaomi"
+    },
+    {
       "id": "z-ai/glm-4-32b",
       "provider": "zai"
     },
@@ -1624,7 +1912,11 @@
     }
   ],
   "aggregator_providers": [
+    "inception",
+    "inflection",
+    "morph",
     "openrouter",
-    "perplexity"
+    "perplexity",
+    "relace"
   ]
 }

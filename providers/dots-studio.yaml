@@ -1,0 +1,15 @@
+# Dots Studio publishes the dots models from the dots-studio organization.
+schema_version: 1
+id: dots-studio
+name: Dots Studio
+kind: company
+official:
+  homepage: https://github.com/dots-studio
+  model_catalog: https://huggingface.co/dots-studio
+organizations:
+  huggingface: [dots-studio]
+discovery:
+  huggingface: true
+identity:
+  strategy: publisher
+  require_corroboration: true

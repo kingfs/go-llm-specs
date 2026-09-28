@@ -1,0 +1,15 @@
+# LongCat is Meituan's foundation model family.
+schema_version: 1
+id: meituan
+name: Meituan LongCat
+kind: company
+official:
+  homepage: https://longcat.ai/
+  model_catalog: https://huggingface.co/meituan-longcat
+organizations:
+  huggingface: [meituan-longcat]
+discovery:
+  huggingface: true
+identity:
+  strategy: publisher
+  require_corroboration: true

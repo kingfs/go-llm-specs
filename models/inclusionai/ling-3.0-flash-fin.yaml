@@ -15,7 +15,11 @@ features:
 aliases:
   - inclusionai/ling-3.0-flash-fin:free
 discovered_at: 2026-08-28T13:27:38.529950623Z
+links:
+  model_card: https://huggingface.co/inclusionAI/Ling-3.0-flash-Fin
 identifiers:
+  huggingface:
+    - inclusionAI/Ling-3.0-flash-Fin
   openrouter:
     - inclusionai/ling-3.0-flash-fin
     - inclusionai/ling-3.0-flash-fin:free
@@ -61,6 +65,35 @@ upstream:
     output_modalities:
       - text
     fetched_at: 2026-09-15T06:52:28.949222186Z
+  huggingface:
+    id: inclusionAI/Ling-3.0-flash-Fin
+    revision: a5b4afb48f526175991724472c179e5a065604de
+    pipeline_tag: text-generation
+    model_type: bailing_hybrid
+    architectures:
+      - BailingMoeV3ForCausalLM
+    license: mit
+    tags:
+      - agents
+      - bailing_hybrid
+      - base_model:finetune:inclusionAI/Ling-3.0-flash
+      - base_model:inclusionAI/Ling-3.0-flash
+      - conversational
+      - custom_code
+      - finance
+      - financial-research
+      - license:mit
+      - long-context
+      - mixture-of-experts
+      - region:us
+      - safetensors
+      - text-generation
+      - tool-use
+    config_context_length: 262144
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-09-28T10:28:49.019421594Z
 reasoning:
   supported: true
   default_enabled: true

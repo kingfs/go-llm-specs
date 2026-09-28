@@ -1,0 +1,15 @@
+# Cogito is Deep Cogito's foundation model family.
+schema_version: 1
+id: deepcogito
+name: Deep Cogito
+kind: company
+official:
+  homepage: https://www.deepcogito.com/
+  model_catalog: https://huggingface.co/deepcogito
+organizations:
+  huggingface: [deepcogito]
+discovery:
+  huggingface: true
+identity:
+  strategy: publisher
+  require_corroboration: true

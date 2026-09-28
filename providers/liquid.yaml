@@ -1,0 +1,15 @@
+# LFM is Liquid AI's foundation model family.
+schema_version: 1
+id: liquid
+name: Liquid AI
+kind: company
+official:
+  homepage: https://www.liquid.ai/
+  model_catalog: https://huggingface.co/LiquidAI
+organizations:
+  huggingface: [LiquidAI]
+discovery:
+  huggingface: true
+identity:
+  strategy: publisher
+  require_corroboration: true

@@ -16,7 +16,11 @@ features:
 aliases:
   - liquid/lfm-2.5-2.6b:free
 discovered_at: 2026-08-12T03:53:02.77840221Z
+links:
+  model_card: https://huggingface.co/LiquidAI/LFM2.5-2.6B
 identifiers:
+  huggingface:
+    - LiquidAI/LFM2.5-2.6B
   openrouter:
     - liquid/lfm-2.5-2.6b
     - liquid/lfm-2.5-2.6b:free
@@ -35,3 +39,49 @@ provenance:
     source: openrouter
   provider:
     source: openrouter
+upstream:
+  huggingface:
+    id: LiquidAI/LFM2.5-2.6B
+    revision: 654f9463ce32b05d0429d76fe1f580b27d4c1ac0
+    pipeline_tag: text-generation
+    model_type: lfm2
+    architectures:
+      - Lfm2ForCausalLM
+    license: other
+    tags:
+      - ar
+      - arxiv:2511.23404
+      - base_model:LiquidAI/LFM2.5-2.6B-Base
+      - base_model:finetune:LiquidAI/LFM2.5-2.6B-Base
+      - conversational
+      - de
+      - edge
+      - en
+      - endpoints_compatible
+      - es
+      - eval-results
+      - fr
+      - hi
+      - id
+      - it
+      - ja
+      - ko
+      - lfm2
+      - lfm2.5
+      - license:other
+      - liquid
+      - pl
+      - pt
+      - region:us
+      - ru
+      - safetensors
+      - text-generation
+      - th
+      - transformers
+      - vi
+      - zh
+    config_context_length: 131072
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-09-28T10:28:56.228181866Z

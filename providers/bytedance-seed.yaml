@@ -7,6 +7,8 @@ official:
   model_catalog: https://huggingface.co/ByteDance-Seed
 organizations:
   huggingface: [ByteDance-Seed]
+# UI-TARS and other releases ship under the plain bytedance developer string.
+aliases: [bytedance]
 discovery:
   huggingface: true
 identity:

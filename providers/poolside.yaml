@@ -1,0 +1,15 @@
+# Laguna is Poolside's foundation model family.
+schema_version: 1
+id: poolside
+name: Poolside
+kind: company
+official:
+  homepage: https://poolside.ai/
+  model_catalog: https://huggingface.co/poolside
+organizations:
+  huggingface: [poolside]
+discovery:
+  huggingface: true
+identity:
+  strategy: publisher
+  require_corroboration: true

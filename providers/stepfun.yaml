@@ -1,0 +1,16 @@
+# StepFun publishes Step models from the stepfun-ai organization.
+schema_version: 1
+id: stepfun
+name: StepFun
+kind: company
+official:
+  homepage: https://www.stepfun.com/
+  model_catalog: https://huggingface.co/stepfun-ai
+organizations:
+  huggingface: [stepfun-ai]
+aliases: [stepfun-ai]
+discovery:
+  huggingface: true
+identity:
+  strategy: publisher
+  require_corroboration: true

@@ -1,0 +1,15 @@
+# Inference.net publishes from the inference-net organization.
+schema_version: 1
+id: inference-net
+name: Inference.net
+kind: company
+official:
+  homepage: https://inference.net/
+  model_catalog: https://huggingface.co/inference-net
+organizations:
+  huggingface: [inference-net]
+discovery:
+  huggingface: true
+identity:
+  strategy: publisher
+  require_corroboration: true

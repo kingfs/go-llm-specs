@@ -1,0 +1,15 @@
+# Prism ML publishes the Ternary Bonsai family from the prism-ml organization.
+schema_version: 1
+id: prism-ml
+name: Prism ML
+kind: company
+official:
+  homepage: https://prismml.com/
+  model_catalog: https://huggingface.co/prism-ml
+organizations:
+  huggingface: [prism-ml]
+discovery:
+  huggingface: true
+identity:
+  strategy: publisher
+  require_corroboration: true

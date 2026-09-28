@@ -2,7 +2,7 @@ schema_version: 2
 id: prism-ml/ternary-bonsai-2-27b
 name: 'PrismML: Ternary Bonsai 2 27B'
 provider: Prism-Ml
-developer: prismml
+developer: prism-ml
 description: Bonsai 2 27B is a 27B-parameter reasoning model from PrismML derived from Qwen3.8-27B. It supports coding, mathematics, tool calling, and image understanding with a 262K-token context window. Ternary compression shrinks...
 description_cn: Bonsai 2 27B 是 PrismML 基于 Qwen3.8-27B 推出的 27B 参数推理模型。它支持编程、数学、工具调用及图像理解，具有 262K token 的上下文窗口。三元压缩将...
 context_length: 262144

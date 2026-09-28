@@ -14,3 +14,22 @@ features:
   - ModalityTextIn
   - ModalityTextOut
 discovered_at: 2026-07-29T10:36:11.565242149Z
+links:
+  model_card: https://huggingface.co/ai21labs/AI21-Jamba-Mini-1.7
+identifiers:
+  huggingface:
+    - ai21labs/AI21-Jamba-Mini-1.7
+upstream:
+  huggingface:
+    id: ai21labs/AI21-Jamba-Mini-1.7
+    revision: e8986f3aa2e7ce119329cde6120238f8802f92cb
+    model_type: jamba
+    architectures:
+      - JambaForCausalLM
+    license: other
+    tags:
+      - jamba
+      - license:other
+      - region:us
+      - safetensors
+    fetched_at: 2026-09-28T10:28:40.359504296Z

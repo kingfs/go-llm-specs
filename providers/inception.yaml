@@ -1,0 +1,10 @@
+# Mercury is Inception Labs' diffusion language model family.
+schema_version: 1
+id: inception
+name: Inception Labs
+kind: company
+official:
+  homepage: https://www.inceptionlabs.ai/
+  model_catalog: https://www.inceptionlabs.ai/models
+identity:
+  strategy: aggregator

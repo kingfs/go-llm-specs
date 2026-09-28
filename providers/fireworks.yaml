@@ -1,0 +1,16 @@
+# Fireworks AI publishes from the fireworks-ai organization.
+schema_version: 1
+id: fireworks
+name: Fireworks AI
+kind: company
+official:
+  homepage: https://fireworks.ai/
+  model_catalog: https://huggingface.co/fireworks-ai
+organizations:
+  huggingface: [fireworks-ai]
+aliases: [fireworks-ai]
+discovery:
+  huggingface: true
+identity:
+  strategy: publisher
+  require_corroboration: true

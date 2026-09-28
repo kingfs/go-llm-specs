@@ -1,0 +1,15 @@
+# Perceptron publishes Isaac models from the PerceptronAI organization.
+schema_version: 1
+id: perceptron
+name: Perceptron AI
+kind: company
+official:
+  homepage: https://www.perceptron.ai/
+  model_catalog: https://huggingface.co/PerceptronAI
+organizations:
+  huggingface: [PerceptronAI]
+discovery:
+  huggingface: true
+identity:
+  strategy: publisher
+  require_corroboration: true

@@ -2,7 +2,7 @@ schema_version: 2
 id: stepfun-ai/step3
 name: 'StepFun: Step3'
 provider: Stepfun-Ai
-developer: stepfun-ai
+developer: stepfun
 description: Step3 is a cutting-edge multimodal reasoning model—built on a Mixture-of-Experts architecture with 321B total parameters and 38B active. It is designed end-to-end to minimize decoding costs while delivering top-tier performance in vision–language reasoning. Through the co-design of Multi-Matrix Factorization Attention (MFA) and Attention-FFN Disaggregation (AFD), Step3 maintains exceptional efficiency across both flagship and low-end accelerators.
 description_cn: Step3 是一款前沿的多模态推理模型，采用专家混合架构，总参数量达 3210 亿，每次前向传递激活 380 亿参数。该模型端到端设计，旨在最小化解码成本的同时，在视觉–语言推理任务中实现顶尖性能。通过多矩阵分解注意力（MFA）与注意力–前馈网络解耦（AFD）的协同设计，Step3 在旗舰级及低端加速器上均保持卓越效率。
 context_length: 65536
@@ -15,3 +15,35 @@ features:
   - ModalityTextIn
   - ModalityTextOut
 discovered_at: 2026-07-29T10:44:10.732260752Z
+links:
+  model_card: https://huggingface.co/stepfun-ai/step3
+identifiers:
+  huggingface:
+    - stepfun-ai/step3
+upstream:
+  huggingface:
+    id: stepfun-ai/step3
+    revision: e2d67fc936dc60f8f606f2429728f1dea503e10d
+    pipeline_tag: image-text-to-text
+    model_type: step3_vl
+    architectures:
+      - Step3VLForConditionalGeneration
+    license: apache-2.0
+    tags:
+      - arxiv:2507.19427
+      - conversational
+      - custom_code
+      - endpoints_compatible
+      - image-text-to-text
+      - license:apache-2.0
+      - region:us
+      - safetensors
+      - step3_vl
+      - text-generation
+      - transformers
+    tokenizer_model_max_length: 131072
+    chat_template_sha256: 56800fec6bdcc6df14db8c6c59de5571ae422a0faff269ec84d01a38835924d2
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-09-28T10:30:34.356361174Z

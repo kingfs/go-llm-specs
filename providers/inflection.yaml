@@ -1,0 +1,9 @@
+# Inflection AI serves the Pi models through its own API.
+schema_version: 1
+id: inflection
+name: Inflection AI
+kind: company
+official:
+  homepage: https://inflection.ai/
+identity:
+  strategy: aggregator

@@ -11,3 +11,45 @@ features:
   - ModalityTextIn
   - ModalityTextOut
 discovered_at: 2026-07-29T10:38:44.909797635Z
+links:
+  model_card: https://huggingface.co/LiquidAI/LFM2-24B-A2B
+identifiers:
+  huggingface:
+    - LiquidAI/LFM2-24B-A2B
+upstream:
+  huggingface:
+    id: LiquidAI/LFM2-24B-A2B
+    revision: a3bbacd91a678b97712f0e323e52f8c24ba29542
+    pipeline_tag: text-generation
+    model_type: lfm2_moe
+    architectures:
+      - Lfm2MoeForCausalLM
+    license: other
+    tags:
+      - ar
+      - arxiv:2511.23404
+      - conversational
+      - de
+      - deploy:azure
+      - edge
+      - en
+      - endpoints_compatible
+      - es
+      - fr
+      - ja
+      - ko
+      - lfm2
+      - lfm2_moe
+      - license:other
+      - liquid
+      - pt
+      - region:us
+      - safetensors
+      - text-generation
+      - transformers
+      - zh
+    config_context_length: 128000
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-09-28T10:28:51.981279524Z

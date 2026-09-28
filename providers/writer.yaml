@@ -1,0 +1,15 @@
+# Palmyra is Writer's foundation model family.
+schema_version: 1
+id: writer
+name: Writer
+kind: company
+official:
+  homepage: https://writer.com/
+  model_catalog: https://huggingface.co/Writer
+organizations:
+  huggingface: [Writer]
+discovery:
+  huggingface: true
+identity:
+  strategy: publisher
+  require_corroboration: true

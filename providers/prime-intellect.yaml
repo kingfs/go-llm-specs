@@ -1,0 +1,15 @@
+# Prime Intellect publishes from the PrimeIntellect organization.
+schema_version: 1
+id: prime-intellect
+name: Prime Intellect
+kind: company
+official:
+  homepage: https://www.primeintellect.ai/
+  model_catalog: https://huggingface.co/PrimeIntellect
+organizations:
+  huggingface: [PrimeIntellect]
+discovery:
+  huggingface: true
+identity:
+  strategy: publisher
+  require_corroboration: true

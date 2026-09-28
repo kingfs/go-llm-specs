@@ -1,0 +1,15 @@
+# Essential AI publishes from the EssentialAI organization.
+schema_version: 1
+id: essentialai
+name: Essential AI
+kind: company
+official:
+  homepage: https://www.essential.ai/
+  model_catalog: https://huggingface.co/EssentialAI
+organizations:
+  huggingface: [EssentialAI]
+discovery:
+  huggingface: true
+identity:
+  strategy: publisher
+  require_corroboration: true

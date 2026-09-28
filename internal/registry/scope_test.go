@@ -15,9 +15,9 @@ func hfModel(pipeline, modelType string, tags ...string) Model {
 
 func TestScopeReasonExcludesDomainModels(t *testing.T) {
 	cases := []struct {
-		name string
+		name  string
 		model Model
-		want string
+		want  string
 	}{
 		{
 			name: "protein language model behind a text-generation tag",
@@ -54,24 +54,24 @@ func TestScopeReasonExcludesDomainModels(t *testing.T) {
 			want: "out-of-scope-domain:prose",
 		},
 		{
-			name: "vision classification pipeline",
+			name:  "vision classification pipeline",
 			model: hfModel("image-classification", "resnet"),
-			want:   "out-of-scope-pipeline:image-classification",
+			want:  "out-of-scope-pipeline:image-classification",
 		},
 		{
-			name: "speech encoder backbone",
+			name:  "speech encoder backbone",
 			model: hfModel("feature-extraction", "wavlm", "speech"),
-			want:   "out-of-scope-backbone:wavlm",
+			want:  "out-of-scope-backbone:wavlm",
 		},
 		{
-			name: "3d generation pipeline",
+			name:  "3d generation pipeline",
 			model: hfModel("text-to-3d", "trellis_text"),
-			want:   "out-of-scope-pipeline:text-to-3d",
+			want:  "out-of-scope-pipeline:text-to-3d",
 		},
 		{
-			name: "robot policy pipeline",
+			name:  "robot policy pipeline",
 			model: hfModel("robotics", "magma"),
-			want:   "out-of-scope-pipeline:robotics",
+			want:  "out-of-scope-pipeline:robotics",
 		},
 		{
 			name: "speech backbone declared through architecture",
@@ -165,7 +165,7 @@ func TestScopeReasonKeepsGeneralModelsInScope(t *testing.T) {
 					"Exhibits PhD-level accuracy on benchmarks in physics, chemistry, and biology."},
 		},
 		{
-			name: "openrouter record without a repository",
+			name:  "openrouter record without a repository",
 			model: Model{ID: "deepseek/deepseek-v4-pro", Name: "DeepSeek V4 Pro", Developer: "deepseek"},
 		},
 	}

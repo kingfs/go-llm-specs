@@ -16,6 +16,46 @@ features:
 aliases:
   - tngtech/deepseek-r1t2-chimera:free
 discovered_at: 2026-07-29T10:44:40.118324754Z
+links:
+  model_card: https://huggingface.co/tngtech/DeepSeek-TNG-R1T2-Chimera
 identifiers:
+  huggingface:
+    - tngtech/DeepSeek-TNG-R1T2-Chimera
   openrouter:
     - tngtech/deepseek-r1t2-chimera:free
+upstream:
+  huggingface:
+    id: tngtech/DeepSeek-TNG-R1T2-Chimera
+    revision: 748c3e0469acd9e7ac6abfafe4acf4e04119f6fb
+    pipeline_tag: text-generation
+    model_type: deepseek_v3
+    architectures:
+      - DeepseekV3ForCausalLM
+    license: mit
+    tags:
+      - arxiv:2506.14794
+      - base_model:deepseek-ai/DeepSeek-R1
+      - base_model:deepseek-ai/DeepSeek-R1-0528
+      - base_model:deepseek-ai/DeepSeek-V3-0324
+      - base_model:merge:deepseek-ai/DeepSeek-R1
+      - base_model:merge:deepseek-ai/DeepSeek-R1-0528
+      - base_model:merge:deepseek-ai/DeepSeek-V3-0324
+      - conversational
+      - custom_code
+      - deepseek_v3
+      - doi:10.57967/hf/5950
+      - endpoints_compatible
+      - fp8
+      - license:mit
+      - region:us
+      - safetensors
+      - text-generation
+      - text-generation-inference
+      - transformers
+    config_context_length: 163840
+    tokenizer_model_max_length: 131072
+    chat_template_sha256: bc23b874e0a5e625621f55ce9568fd8c311436ef678693dffb9d8da1ab2d6530
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-09-28T10:29:01.090931739Z

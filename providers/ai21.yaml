@@ -1,0 +1,15 @@
+# Jamba is AI21 Labs' foundation model family.
+schema_version: 1
+id: ai21
+name: AI21 Labs
+kind: company
+official:
+  homepage: https://www.ai21.com/
+  model_catalog: https://huggingface.co/ai21labs
+organizations:
+  huggingface: [ai21labs]
+discovery:
+  huggingface: true
+identity:
+  strategy: publisher
+  require_corroboration: true

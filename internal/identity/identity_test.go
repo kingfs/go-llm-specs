@@ -90,7 +90,9 @@ func TestResolvePrecedence(t *testing.T) {
 }
 
 func TestProviderFor(t *testing.T) {
-	providers := []provider.Provider{publisher("deepseek", []string{"deepseek-ai"}), aggregator("openai")}
+	stepfun := publisher("stepfun", []string{"stepfun-ai"})
+	stepfun.Aliases = []string{"stepfun-ai"}
+	providers := []provider.Provider{publisher("deepseek", []string{"deepseek-ai"}), aggregator("openai"), stepfun}
 	tests := []struct {
 		name  string
 		model registry.Model
@@ -99,6 +101,7 @@ func TestProviderFor(t *testing.T) {
 		{"developer", registry.Model{ID: "deepseek/deepseek-v4-flash", Developer: "DeepSeek"}, "deepseek"},
 		{"directory", registry.Model{ID: "deepseek-v4-flash", FilePath: "models/deepseek/deepseek-v4-flash.yaml"}, "deepseek"},
 		{"id prefix", registry.Model{ID: "openai/gpt-6"}, "openai"},
+		{"declared alias", registry.Model{ID: "stepfun-ai/step3", Developer: "stepfun-ai", FilePath: "models/stepfun-ai/step3.yaml"}, "stepfun"},
 	}
 	for _, tt := range tests {
 		got, ok := ProviderFor(tt.model, providers)

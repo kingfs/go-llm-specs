@@ -1,0 +1,15 @@
+# ERNIE is Baidu's foundation model family.
+schema_version: 1
+id: baidu
+name: Baidu ERNIE
+kind: company
+official:
+  homepage: https://ernie.baidu.com/
+  model_catalog: https://huggingface.co/baidu
+organizations:
+  huggingface: [baidu]
+discovery:
+  huggingface: true
+identity:
+  strategy: publisher
+  require_corroboration: true

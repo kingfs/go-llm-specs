@@ -22,6 +22,38 @@ features:
 aliases:
   - xiaomi/mimo-v2-flash:free
 discovered_at: 2026-07-29T10:44:52.014732648Z
+links:
+  model_card: https://huggingface.co/XiaomiMiMo/MiMo-V2-Flash
 identifiers:
+  huggingface:
+    - XiaomiMiMo/MiMo-V2-Flash
   openrouter:
     - xiaomi/mimo-v2-flash:free
+upstream:
+  huggingface:
+    id: XiaomiMiMo/MiMo-V2-Flash
+    revision: 1afd314a2406c282e0956375c34a676501c78649
+    pipeline_tag: text-generation
+    model_type: mimo_v2_flash
+    architectures:
+      - MiMoV2FlashForCausalLM
+    license: mit
+    tags:
+      - conversational
+      - custom_code
+      - endpoints_compatible
+      - eval-results
+      - fp8
+      - license:mit
+      - mimo_v2_flash
+      - region:us
+      - safetensors
+      - text-generation
+      - transformers
+    config_context_length: 262144
+    tokenizer_model_max_length: 262144
+    chat_template_sha256: 3102de4c0fdf3a81006998de4e1283eef422284e2d54cece6bd41f6bea4caa9e
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-09-28T10:29:02.466688385Z

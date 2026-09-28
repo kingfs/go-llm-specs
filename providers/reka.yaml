@@ -1,0 +1,16 @@
+# Reka publishes from the RekaAI organization.
+schema_version: 1
+id: reka
+name: Reka AI
+kind: company
+official:
+  homepage: https://www.reka.ai/
+  model_catalog: https://huggingface.co/RekaAI
+organizations:
+  huggingface: [RekaAI]
+aliases: [rekaai]
+discovery:
+  huggingface: true
+identity:
+  strategy: publisher
+  require_corroboration: true

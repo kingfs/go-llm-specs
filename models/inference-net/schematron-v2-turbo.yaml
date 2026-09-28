@@ -2,7 +2,7 @@ schema_version: 2
 id: inference-net/schematron-v2-turbo
 name: 'Inference.net: Schematron V2 Turbo'
 provider: Inference-Net
-developer: inferencenet
+developer: inference-net
 description: Schematron V2 Turbo is a 3B-parameter HTML-to-JSON extraction model from Inference.net. It prioritizes throughput for high-volume extraction workloads. Extraction instructions must be supplied through a JSON schema in response_format rather...
 description_cn: Schematron V2 Turbo 是 Inference.net 推出的 30 亿参数 HTML 转 JSON 提取模型。它优先考虑高负载提取工作量的吞吐量。提取指令必须通过 response_format 中的 JSON 模式提供……
 context_length: 128000

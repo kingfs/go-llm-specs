@@ -15,7 +15,11 @@ features:
 aliases:
   - inclusionai/ling-3.0-tiny:free
 discovered_at: 2026-08-07T04:16:50.262901094Z
+links:
+  model_card: https://huggingface.co/inclusionAI/Ling-3.0-tiny
 identifiers:
+  huggingface:
+    - inclusionAI/Ling-3.0-tiny
   openrouter:
     - inclusionai/ling-3.0-tiny
     - inclusionai/ling-3.0-tiny:free
@@ -60,6 +64,27 @@ upstream:
     output_modalities:
       - text
     fetched_at: 2026-08-07T04:16:53.524118575Z
+  huggingface:
+    id: inclusionAI/Ling-3.0-tiny
+    revision: 9a98e35fe1c9ee255f78dd64771c7ae15a799481
+    pipeline_tag: text-generation
+    model_type: bailing_hybrid
+    architectures:
+      - BailingMoeV3ForCausalLM
+    license: mit
+    tags:
+      - bailing_hybrid
+      - conversational
+      - custom_code
+      - license:mit
+      - region:us
+      - safetensors
+      - text-generation
+    config_context_length: 131072
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-09-28T10:28:50.420263719Z
 reasoning:
   supported: true
   default_enabled: true

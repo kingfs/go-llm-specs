@@ -1,0 +1,15 @@
+# Sakana AI publishes EvoLLM, EvoVLM and TinySwallow from the SakanaAI organization.
+schema_version: 1
+id: sakana
+name: Sakana AI
+kind: company
+official:
+  homepage: https://sakana.ai/
+  model_catalog: https://huggingface.co/SakanaAI
+organizations:
+  huggingface: [SakanaAI]
+discovery:
+  huggingface: true
+identity:
+  strategy: publisher
+  require_corroboration: true

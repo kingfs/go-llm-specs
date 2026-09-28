@@ -1,0 +1,15 @@
+# Aion Labs publishes the Aion model family from the aion-labs organization.
+schema_version: 1
+id: aion-labs
+name: Aion Labs
+kind: company
+official:
+  homepage: https://aionlabs.ai/
+  model_catalog: https://huggingface.co/aion-labs
+organizations:
+  huggingface: [aion-labs]
+discovery:
+  huggingface: true
+identity:
+  strategy: publisher
+  require_corroboration: true

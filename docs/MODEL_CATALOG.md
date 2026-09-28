@@ -19,6 +19,19 @@ long-tail records are kept as historical facts and are still enriched, but the
 unattended feeds no longer extend them. Adding a publisher file is the explicit
 way to widen the scope: the tool never invents official URLs on its own.
 
+A reviewed provider file names the publisher's official organizations and, for
+publishers that ship weights, enables discovery of that organization. Its
+`aliases` list records the variant developer spellings a publisher has shipped
+under, such as `bytedance` for ByteDance Seed or `stepfun-ai` for StepFun, so the
+same publisher is not split into two catalog entries. Publishers that only serve
+a closed API keep `strategy: aggregator`, which leaves OpenRouter as the
+authoritative identity source for them. A publisher with an official
+organization declares `strategy: publisher` and `require_corroboration: true`,
+which holds an OpenRouter-only record as a candidate until the publisher's own
+repository, identifier or official link confirms it: the catalog then carries
+first-party models and an official model card URL instead of an aggregation
+artifact.
+
 **Models.** The catalog collects callable models that a Go application can route
 to:
 

@@ -13,3 +13,36 @@ features:
   - ModalityTextIn
   - ModalityTextOut
 discovered_at: 2026-07-29T10:37:07.297198511Z
+links:
+  model_card: https://huggingface.co/baidu/ERNIE-4.5-300B-A47B-PT
+identifiers:
+  huggingface:
+    - baidu/ERNIE-4.5-300B-A47B-PT
+upstream:
+  huggingface:
+    id: baidu/ERNIE-4.5-300B-A47B-PT
+    revision: 47bbaf1c9e356313c3cb2ded9078a494fb152f0e
+    pipeline_tag: text-generation
+    model_type: ernie4_5_moe
+    architectures:
+      - Ernie4_5_MoeForCausalLM
+    license: apache-2.0
+    tags:
+      - ERNIE4.5
+      - conversational
+      - en
+      - endpoints_compatible
+      - ernie4_5_moe
+      - eval-results
+      - license:apache-2.0
+      - region:us
+      - safetensors
+      - text-generation
+      - transformers
+      - zh
+    config_context_length: 131072
+    tokenizer_model_max_length: 131072
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-09-28T10:28:43.490748669Z

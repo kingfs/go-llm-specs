@@ -2,7 +2,7 @@ schema_version: 2
 id: deepcogito/cogito-v2.1-671b
 name: 'Deep Cogito: Cogito v2.1 671B'
 provider: Deepcogito
-developer: Deepcogito
+developer: deepcogito
 description: Cogito v2.1 671B MoE represents one of the strongest open models globally, matching performance of frontier closed and open models. This model is trained using self play with reinforcement learning to reach state-of-the-art performance on multiple categories (instruction following, coding, longer queries and creative writing). This advanced system demonstrates significant progress toward scalable superintelligence through policy improvement.
 description_cn: Cogito v2.1 671B MoE 是全球最强的开源模型之一，性能媲美前沿闭源与开源模型。该模型通过自博弈强化学习训练，在指令遵循、编程、长查询及创意写作等多个领域达到业界领先水平，展现了通过策略优化迈向可扩展超级智能的重要进展。
 context_length: 128000
@@ -12,7 +12,11 @@ features:
   - ModalityTextIn
   - ModalityTextOut
 discovered_at: 2026-07-29T10:37:29.770615072Z
+links:
+  model_card: https://huggingface.co/deepcogito/cogito-671b-v2.1
 identifiers:
+  huggingface:
+    - deepcogito/cogito-671b-v2.1
   openrouter:
     - deepcogito/cogito-v2.1-671b
 provenance:
@@ -41,5 +45,32 @@ upstream:
     output_modalities:
       - text
     fetched_at: 2026-07-29T10:37:29.770615662Z
+  huggingface:
+    id: deepcogito/cogito-671b-v2.1
+    revision: 556104cc940a69be9417d3579041ff0009a50382
+    pipeline_tag: text-generation
+    model_type: deepseek_v3
+    architectures:
+      - DeepseekV3ForCausalLM
+    license: mit
+    tags:
+      - base_model:deepseek-ai/DeepSeek-V3-Base
+      - base_model:finetune:deepseek-ai/DeepSeek-V3-Base
+      - conversational
+      - custom_code
+      - deepseek_v3
+      - endpoints_compatible
+      - license:mit
+      - region:us
+      - safetensors
+      - text-generation
+      - text-generation-inference
+      - transformers
+    config_context_length: 163840
+    tokenizer_model_max_length: 131072
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-09-28T10:28:47.302176351Z
 reasoning:
   supported: true

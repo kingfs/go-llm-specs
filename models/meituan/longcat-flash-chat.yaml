@@ -18,3 +18,34 @@ features:
   - ModalityTextIn
   - ModalityTextOut
 discovered_at: 2026-07-29T10:38:49.560752442Z
+links:
+  model_card: https://huggingface.co/meituan-longcat/LongCat-Flash-Chat
+identifiers:
+  huggingface:
+    - meituan-longcat/LongCat-Flash-Chat
+upstream:
+  huggingface:
+    id: meituan-longcat/LongCat-Flash-Chat
+    revision: f0b8e8d7380330f450ca1fde4ec56823a514584c
+    pipeline_tag: text-generation
+    architectures:
+      - LongcatFlashForCausalLM
+    license: mit
+    tags:
+      - LongCat-Flash-Chat
+      - arxiv:2509.01322
+      - conversational
+      - custom_code
+      - eval-results
+      - license:mit
+      - region:us
+      - safetensors
+      - text-generation
+      - transformers
+    config_context_length: 131072
+    tokenizer_model_max_length: 131072
+    chat_template_sha256: c663951011e994e9de36baffa912b21faa815e3ab66da93c9e40aff679be8b0b
+    structured_files:
+      - config.json
+      - tokenizer_config.json
+    fetched_at: 2026-09-28T10:28:59.298782218Z

@@ -1,0 +1,15 @@
+# EleutherAI is the non-profit research institute behind GPT-Neo, Pythia and Llemma.
+schema_version: 1
+id: eleutherai
+name: EleutherAI
+kind: organization
+official:
+  homepage: https://www.eleuther.ai/
+  model_catalog: https://huggingface.co/EleutherAI
+organizations:
+  huggingface: [EleutherAI]
+discovery:
+  huggingface: true
+identity:
+  strategy: publisher
+  require_corroboration: true

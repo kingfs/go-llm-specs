@@ -2,7 +2,7 @@ schema_version: 2
 id: aion-labs/aion-3.5
 name: 'AionLabs: Aion 3.5'
 provider: Aion-Labs
-developer: aionlabs
+developer: aion-labs
 description: Aion 3.5 is a multi-model roleplaying and storytelling system from AionLabs, built on the GLM family of models. It uses a collaborative generation process in which multiple specialized models each...
 description_cn: Aion 3.5 是 AionLabs 推出的多模型角色扮演与叙事系统，基于 GLM 系列模型构建。它采用协作生成流程，由多个专用模型分别...
 context_length: 262144
