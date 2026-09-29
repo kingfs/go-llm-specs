@@ -47,6 +47,7 @@ upstream:
       - frequency_penalty
       - include_reasoning
       - logit_bias
+      - logprobs
       - max_tokens
       - min_p
       - presence_penalty
@@ -59,12 +60,13 @@ upstream:
       - tool_choice
       - tools
       - top_k
+      - top_logprobs
       - top_p
     input_modalities:
       - text
     output_modalities:
       - text
-    fetched_at: 2026-09-15T06:52:28.949222186Z
+    fetched_at: 2026-09-29T07:36:21.239507929Z
   huggingface:
     id: inclusionAI/Ling-3.0-flash-Fin
     revision: a5b4afb48f526175991724472c179e5a065604de

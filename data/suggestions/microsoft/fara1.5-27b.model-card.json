@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "microsoft/fara1.5-27b",
+  "status": "partially_accepted",
+  "created_at": "2026-09-29T07:37:05.430857213Z",
+  "source": {
+    "url": "https://huggingface.co/microsoft/Fara1.5-27B/resolve/299c8406a6c6256d45ec200d1ac12b34c5599d9b/README.md",
+    "revision": "299c8406a6c6256d45ec200d1ac12b34c5599d9b",
+    "sha256": "f915d48204748fe24e5c9ee6f653e1db2ce6441d25d318688742067a06dc702c"
+  },
+  "generator": {
+    "model": "qwen/qwen3.8-27b",
+    "wire_api": "chat"
+  },
+  "claims": [
+    {
+      "field": "description",
+      "value": "Fara1.5-27B is a multimodal computer use agent (CUA) for web browsers, developed by Microsoft Research AI Frontiers. It uses vision-only perception via screenshots to perform end-to-end web tasks, such as filling forms and booking reservations, by emitting structured tool calls.",
+      "evidence": "Fara1.5-27B is a multimodal computer use agent (CUA) for web browsers... It observes the browser through screenshots and acts on the user's behalf by emitting structured tool calls",
+      "section": "Fara1.5-27B",
+      "confidence": "high"
+    },
+    {
+      "field": "context_length",
+      "value": 262144,
+      "evidence": "262K context. Long enough for multi-screenshot trajectories with full action history.",
+      "section": "Highlights",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "ModalityTextIn",
+        "ModalityImageIn",
+        "ModalityTextOut",
+        "CapFunctionCall"
+      ],
+      "evidence": "Multimodal decoder-only LM (image + text → text)",
+      "section": "Model Details",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "CapFunctionCall"
+      ],
+      "evidence": "Fara1.5-27B emits actions as \u003ctool_call\u003e...\u003c/tool_call\u003e XML blocks containing a JSON object that calls the computer_use function.",
+      "section": "Tool schema",
+      "confidence": "high"
+    }
+  ]
+}

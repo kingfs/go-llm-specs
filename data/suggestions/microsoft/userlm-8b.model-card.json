@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "microsoft/userlm-8b",
+  "status": "partially_accepted",
+  "created_at": "2026-09-29T07:37:26.653534417Z",
+  "source": {
+    "url": "https://huggingface.co/microsoft/UserLM-8b/resolve/ce576a239996496f13d100df0d987ae6a30f5629/README.md",
+    "revision": "ce576a239996496f13d100df0d987ae6a30f5629",
+    "sha256": "1c1dff095d68f6169cc6c5db19401d96d7b28c1b83a62e96ee248313ee68e93a"
+  },
+  "generator": {
+    "model": "qwen/qwen3.8-27b",
+    "wire_api": "chat"
+  },
+  "claims": [
+    {
+      "field": "description",
+      "value": "UserLM-8b is a model trained to simulate the user role in conversations, designed for evaluating assistant LLMs by generating user utterances based on task intents. It is not an assistant model and is intended for research purposes.",
+      "evidence": "Unlike typical LLMs that are trained to play the role of the \"assistant\" in conversation, we trained UserLM-8b to simulate the “user” role in conversation",
+      "section": "Model description",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "ModalityTextIn",
+        "ModalityTextOut"
+      ],
+      "evidence": "pipeline_tag: text-generation",
+      "section": "Model card",
+      "confidence": "high"
+    },
+    {
+      "field": "context_length",
+      "value": 2048,
+      "evidence": "We used a maximum sequence length of 2048 tokens",
+      "section": "Training procedure",
+      "confidence": "high"
+    },
+    {
+      "field": "reasoning.supported",
+      "value": false,
+      "evidence": "UserLM-8b offers a user simulation environment",
+      "section": "Direct intended uses",
+      "confidence": "low"
+    }
+  ]
+}

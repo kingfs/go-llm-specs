@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "microsoft/mage-vl",
+  "status": "partially_accepted",
+  "created_at": "2026-09-29T07:36:43.938170675Z",
+  "source": {
+    "url": "https://huggingface.co/microsoft/Mage-VL/resolve/5c78cab61938e73859b63724d9bf5cb88c477eaa/README.md",
+    "revision": "5c78cab61938e73859b63724d9bf5cb88c477eaa",
+    "sha256": "5a26b33a9aaea92fb7bef3dfb1fca6c9d56b64b1ded5acb0b632dcd7d0ec0025"
+  },
+  "generator": {
+    "model": "qwen/qwen3.8-27b",
+    "wire_api": "chat"
+  },
+  "claims": [
+    {
+      "field": "description",
+      "value": "Mage-VL is a codec-native, proactive-streaming multimodal foundation model for image and video understanding, featuring a 4B visual encoder trained from scratch and a Qwen3-4B causal decoder.",
+      "evidence": "is a **codec-native, proactive-streaming multimodal foundation model** for image and video understanding, whose visual encoder is trained **entirely from scratch** at a compact **4B** scale",
+      "section": "Mage-VL",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "ModalityImageIn",
+        "ModalityVideoIn",
+        "ModalityTextIn",
+        "ModalityTextOut"
+      ],
+      "evidence": "It covers every Mage-VL capability: image understanding, frame-sampled video, traditional H.264/HEVC codec video, neural DCVC-RT codec video, and event-gated streaming.",
+      "section": "Model",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "ModalityVideoIn"
+      ],
+      "evidence": "unified interface for images, short/long/ultra-long video, and streaming",
+      "section": "Mage-VL",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "ModalityTextOut"
+      ],
+      "evidence": "projected visual tokens and text tokens share one causal Qwen3 decoder",
+      "section": "Architecture",
+      "confidence": "high"
+    }
+  ]
+}

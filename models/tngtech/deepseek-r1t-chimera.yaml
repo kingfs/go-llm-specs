@@ -28,6 +28,10 @@ identifiers:
     - tngtech/DeepSeek-R1T-Chimera
   openrouter:
     - tngtech/deepseek-r1t-chimera:free
+provenance:
+  reasoning.supported:
+    source: official_model_card
+    url: https://huggingface.co/tngtech/DeepSeek-R1T-Chimera/resolve/3128bdb2b5235b876d612eafc53698c6a901c847/README.md
 upstream:
   huggingface:
     id: tngtech/DeepSeek-R1T-Chimera
@@ -62,3 +66,5 @@ upstream:
       - config.json
       - tokenizer_config.json
     fetched_at: 2026-07-30T04:46:08.81946972Z
+reasoning:
+  supported: true

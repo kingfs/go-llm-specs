@@ -17,6 +17,10 @@ links:
 identifiers:
   huggingface:
     - baidu/ERNIE-4.5-21B-A3B-Thinking
+provenance:
+  reasoning.supported:
+    source: official_model_card
+    url: https://huggingface.co/baidu/ERNIE-4.5-21B-A3B-Thinking/resolve/4341bb42644d5422859509fa25d41544c57181f8/README.md
 upstream:
   huggingface:
     id: baidu/ERNIE-4.5-21B-A3B-Thinking
@@ -45,3 +49,5 @@ upstream:
       - config.json
       - tokenizer_config.json
     fetched_at: 2026-07-30T04:44:15.734702109Z
+reasoning:
+  supported: true

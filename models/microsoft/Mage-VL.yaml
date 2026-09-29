@@ -4,6 +4,8 @@ name: Mage-VL
 provider: Microsoft
 developer: microsoft
 lifecycle: candidate
+description: Mage-VL is a codec-native, proactive-streaming multimodal foundation model for image and video understanding, featuring a 4B visual encoder trained from scratch and a Qwen3-4B causal decoder.
+description_cn: Mage-VL 是一个原生命令式、主动流式的多模态基础模型，用于图像和视频理解，配备从零训练的 4B 视觉编码器和 Qwen3-4B 因果解码器。
 context_length: 0
 features:
   - ModalityImageIn
@@ -15,6 +17,9 @@ identifiers:
   huggingface:
     - microsoft/Mage-VL
 provenance:
+  description:
+    source: official_model_card
+    url: https://huggingface.co/microsoft/Mage-VL/resolve/5c78cab61938e73859b63724d9bf5cb88c477eaa/README.md
   features:
     source: official_huggingface_pipeline
     url: https://huggingface.co/microsoft/Mage-VL

@@ -4,6 +4,8 @@ name: GELab-Zero-4B-preview-Sico-Evolution
 provider: Microsoft
 developer: microsoft
 lifecycle: candidate
+description: A 4B GUI agent fine-tuned (LoRA) from the open-source GELab-Zero-4B-preview base model on Microsoft Edge and Copilot UI trajectories. It is built with the general-purpose GUI model evolution pipeline.
+description_cn: 这是一个 4B 参数的 GUI 智能体，基于开源基础模型 GELab-Zero-4B-preview，使用 Microsoft Edge 和 Copilot UI 轨迹进行微调（LoRA）。它由通用 GUI 模型演化流水线构建。
 context_length: 0
 features:
   - ModalityImageIn
@@ -15,6 +17,9 @@ identifiers:
   huggingface:
     - microsoft/GELab-Zero-4B-preview-Sico-Evolution
 provenance:
+  description:
+    source: official_model_card
+    url: https://huggingface.co/microsoft/GELab-Zero-4B-preview-Sico-Evolution/resolve/c92fa0701ee08104d528068ee45cc0a516be972e/README.md
   features:
     source: official_huggingface_pipeline
     url: https://huggingface.co/microsoft/GELab-Zero-4B-preview-Sico-Evolution

@@ -2,7 +2,7 @@
   "schema_version": 1,
   "kind": "model_card",
   "model_id": "tngtech/deepseek-r1t-chimera",
-  "status": "pending",
+  "status": "partially_accepted",
   "created_at": "2026-07-29T12:05:19.463682152Z",
   "source": {
     "url": "https://huggingface.co/tngtech/DeepSeek-R1T-Chimera/resolve/3128bdb2b5235b876d612eafc53698c6a901c847/README.md",

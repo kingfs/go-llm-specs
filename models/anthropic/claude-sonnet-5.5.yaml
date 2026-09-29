@@ -1,0 +1,79 @@
+schema_version: 2
+id: anthropic/claude-sonnet-5.5
+name: 'Anthropic: Claude Sonnet 5.5'
+provider: Anthropic
+developer: anthropic
+lifecycle: candidate
+description: Claude Sonnet 5.5 is Anthropic's Sonnet-class model for well-scoped everyday work, succeeding Claude Sonnet 5 as a direct upgrade. It is especially strong at building features, fixing bugs, and producing...
+description_cn: Claude Sonnet 5.5 是 Anthropic 的 Sonnet 级模型，用于范围明确的日常工作，作为 Claude Sonnet 5 的直接升级版。它在构建功能、修复 Bug 以及生成方面表现尤为出色...
+context_length: 1000000
+max_output: 128000
+features:
+  - CapChat
+  - CapFunctionCall
+  - CapJsonMode
+  - ModalityFileIn
+  - ModalityImageIn
+  - ModalityTextIn
+  - ModalityTextOut
+aliases:
+  - anthropic/claude-sonnet-5.5:batch
+  - ~anthropic/claude-sonnet-latest
+discovered_at: 2026-09-29T07:36:16.277634515Z
+links:
+  documentation: https://docs.anthropic.com/en/docs/about-claude/models
+identifiers:
+  openrouter:
+    - anthropic/claude-sonnet-5.5
+    - anthropic/claude-sonnet-5.5:batch
+    - ~anthropic/claude-sonnet-latest
+provenance:
+  context_length:
+    source: openrouter
+  description:
+    source: openrouter
+  features:
+    source: openrouter
+  id:
+    source: openrouter
+  max_output:
+    source: openrouter
+  name:
+    source: openrouter
+  provider:
+    source: openrouter
+  reasoning:
+    source: openrouter
+upstream:
+  openrouter:
+    canonical_slug: anthropic/claude-sonnet-5.5-20260928
+    supported_parameters:
+      - include_reasoning
+      - max_completion_tokens
+      - max_tokens
+      - reasoning
+      - reasoning_effort
+      - response_format
+      - stop
+      - structured_outputs
+      - temperature
+      - tool_choice
+      - tools
+      - verbosity
+    input_modalities:
+      - file
+      - image
+      - text
+    output_modalities:
+      - text
+    fetched_at: 2026-09-29T07:36:21.180188182Z
+reasoning:
+  supported: true
+  mandatory: true
+  default_effort: high
+  supported_efforts:
+    - high
+    - low
+    - max
+    - medium
+    - xhigh

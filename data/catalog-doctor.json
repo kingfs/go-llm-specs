@@ -1,25 +1,25 @@
 {
   "schema_version": 3,
   "summary": {
-    "models": 777,
-    "compiled": 577,
-    "candidates": 174,
+    "models": 783,
+    "compiled": 580,
+    "candidates": 177,
     "serving_variants": 10,
     "out_of_scope": 2,
     "quantization_variants": 14,
     "identity_gaps": 128,
-    "unverified_identities": 236
+    "unverified_identities": 237
   },
   "by_kind": {
     "draft-head": 10,
-    "model": 751,
+    "model": 757,
     "out-of-scope": 2,
     "quantization": 14
   },
   "identity": {
     "by_source": {
-      "official_huggingface": 488,
-      "openrouter": 289
+      "official_huggingface": 493,
+      "openrouter": 290
     },
     "unverified": [
       {
@@ -179,6 +179,11 @@
       },
       {
         "id": "anthropic/claude-sonnet-5",
+        "provider": "anthropic",
+        "source": "openrouter"
+      },
+      {
+        "id": "anthropic/claude-sonnet-5.5",
         "provider": "anthropic",
         "source": "openrouter"
       },

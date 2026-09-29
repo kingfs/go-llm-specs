@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "microsoft/gelab-zero-4b-preview-sico-evolution",
+  "status": "partially_accepted",
+  "created_at": "2026-09-29T07:37:51.035192998Z",
+  "source": {
+    "url": "https://huggingface.co/microsoft/GELab-Zero-4B-preview-Sico-Evolution/resolve/c92fa0701ee08104d528068ee45cc0a516be972e/README.md",
+    "revision": "c92fa0701ee08104d528068ee45cc0a516be972e",
+    "sha256": "266795da03a40536a8e98b3f26e8e2f603d6fa0274d2d68331b896ccfe2edb6d"
+  },
+  "generator": {
+    "model": "qwen/qwen3.8-27b",
+    "wire_api": "chat"
+  },
+  "claims": [
+    {
+      "field": "description",
+      "value": "A 4B GUI agent fine-tuned (LoRA) from the open-source GELab-Zero-4B-preview base model on Microsoft Edge and Copilot UI trajectories. It is built with the general-purpose GUI model evolution pipeline.",
+      "evidence": "A 4B GUI agent fine-tuned (LoRA) from the open-source **GELab-Zero-4B-preview** base model on **Microsoft Edge** and **Copilot** UI trajectories.",
+      "section": "GELab-Zero-4B-preview-Sico-Evolution",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "ModalityImageIn",
+        "ModalityTextOut"
+      ],
+      "evidence": "pipeline_tag: image-text-to-text",
+      "section": "Front Matter",
+      "confidence": "high"
+    },
+    {
+      "field": "description",
+      "value": "Part of the Sico open-source platform for building and evolving Digital Workers, where AI agents and human operators co-evolve.",
+      "evidence": "This model is part of Sico — an open-source platform for building and evolving Digital Workers, where AI agents and their human operators co-evolve through real work.",
+      "section": "Front Matter",
+      "confidence": "high"
+    },
+    {
+      "field": "description",
+      "value": "The model is the first public release in a series, with more models planned.",
+      "evidence": "this GUI agent is the first public release, with more on the way",
+      "section": "Front Matter",
+      "confidence": "high"
+    }
+  ]
+}

@@ -18,6 +18,10 @@ links:
 identifiers:
   huggingface:
     - deepcogito/cogito-v2-preview-llama-70B
+provenance:
+  reasoning.supported:
+    source: official_model_card
+    url: https://huggingface.co/deepcogito/cogito-v2-preview-llama-70B/resolve/1e1d12e8eaebd6084a8dcf45ecdeaa2f4b8879ce/README.md
 upstream:
   huggingface:
     id: deepcogito/cogito-v2-preview-llama-70B
@@ -45,3 +49,5 @@ upstream:
       - config.json
       - tokenizer_config.json
     fetched_at: 2026-07-30T04:44:21.692188712Z
+reasoning:
+  supported: true

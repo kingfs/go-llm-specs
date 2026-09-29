@@ -1,0 +1,39 @@
+schema_version: 2
+id: inclusionai/ring-1t
+name: Ring-1T
+provider: InclusionAI
+developer: inclusionai
+lifecycle: candidate
+context_length: 0
+features:
+  - ModalityTextIn
+  - ModalityTextOut
+links:
+  model_card: https://huggingface.co/inclusionAI/Ring-1T
+identifiers:
+  huggingface:
+    - inclusionAI/Ring-1T
+provenance:
+  features:
+    source: official_huggingface_pipeline
+    url: https://huggingface.co/inclusionAI/Ring-1T
+  id:
+    source: official_huggingface
+    url: https://huggingface.co/inclusionAI/Ring-1T
+  name:
+    source: official_huggingface
+    url: https://huggingface.co/inclusionAI/Ring-1T
+upstream:
+  huggingface:
+    id: inclusionAI/Ring-1T
+    pipeline_tag: text-generation
+    tags:
+      - transformers
+      - safetensors
+      - bailing_moe
+      - text-generation
+      - conversational
+      - custom_code
+      - arxiv:2510.18855
+      - license:mit
+      - region:us

@@ -3,8 +3,10 @@ id: microsoft/fara1.5-27b
 name: Fara1.5-27B
 provider: Microsoft
 developer: microsoft
-lifecycle: candidate
-context_length: 0
+lifecycle: active
+description: Fara1.5-27B is a multimodal computer use agent (CUA) for web browsers, developed by Microsoft Research AI Frontiers. It uses vision-only perception via screenshots to perform end-to-end web tasks, such as filling forms and booking reservations, by emitting structured tool calls.
+description_cn: Fara1.5-27B 是由微软研究院 AI 前沿团队开发的多模态计算机使用智能体（CUA），专为网页浏览器设计。它通过截图进行仅限视觉的感知，以执行端到端的网页任务（如填写表格和预订），通过发出结构化工具调用来实现。
+context_length: 262144
 features:
   - ModalityImageIn
   - ModalityTextIn
@@ -15,6 +17,12 @@ identifiers:
   huggingface:
     - microsoft/Fara1.5-27B
 provenance:
+  context_length:
+    source: official_model_card
+    url: https://huggingface.co/microsoft/Fara1.5-27B/resolve/299c8406a6c6256d45ec200d1ac12b34c5599d9b/README.md
+  description:
+    source: official_model_card
+    url: https://huggingface.co/microsoft/Fara1.5-27B/resolve/299c8406a6c6256d45ec200d1ac12b34c5599d9b/README.md
   features:
     source: official_huggingface_pipeline
     url: https://huggingface.co/microsoft/Fara1.5-27B

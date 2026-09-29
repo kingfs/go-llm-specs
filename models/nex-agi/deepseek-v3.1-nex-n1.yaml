@@ -22,6 +22,10 @@ links:
 identifiers:
   huggingface:
     - nex-agi/DeepSeek-V3.1-Nex-N1
+provenance:
+  reasoning.supported:
+    source: official_model_card
+    url: https://huggingface.co/nex-agi/DeepSeek-V3.1-Nex-N1/resolve/2b4f8ae454950acf40eda250c7ff96d7814ab5bc/README.md
 upstream:
   huggingface:
     id: nex-agi/DeepSeek-V3.1-Nex-N1
@@ -50,3 +54,5 @@ upstream:
       - config.json
       - tokenizer_config.json
     fetched_at: 2026-07-30T04:45:06.085742172Z
+reasoning:
+  supported: true

@@ -45,8 +45,10 @@ upstream:
     supported_parameters:
       - frequency_penalty
       - include_reasoning
+      - logit_bias
       - max_completion_tokens
       - max_tokens
+      - min_p
       - presence_penalty
       - reasoning
       - reasoning_effort
@@ -64,7 +66,7 @@ upstream:
       - text
     output_modalities:
       - text
-    fetched_at: 2026-09-24T06:52:03.966315564Z
+    fetched_at: 2026-09-29T07:36:21.507790707Z
   huggingface:
     id: tencent/Hy4-preview
     revision: ce1ba0b6738bbab76b6bfd82b1801c0915dca729

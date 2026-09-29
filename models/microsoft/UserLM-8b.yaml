@@ -3,7 +3,9 @@ id: microsoft/userlm-8b
 name: UserLM-8b
 provider: Microsoft
 developer: microsoft
-lifecycle: candidate
+lifecycle: active
+description: UserLM-8b is a model trained to simulate the user role in conversations, designed for evaluating assistant LLMs by generating user utterances based on task intents. It is not an assistant model and is intended for research purposes.
+description_cn: UserLM-8b 是一个旨在模拟对话中用户角色的模型，设计用于通过根据任务意图生成用户语句来评估助手 LLM。它不是助手模型，仅供研究目的使用。
 context_length: 8192
 features:
   - ModalityTextIn
@@ -17,6 +19,9 @@ provenance:
   context_length:
     source: official_huggingface_config
     url: https://huggingface.co/microsoft/UserLM-8b
+  description:
+    source: official_model_card
+    url: https://huggingface.co/microsoft/UserLM-8b/resolve/ce576a239996496f13d100df0d987ae6a30f5629/README.md
   features:
     source: official_huggingface_pipeline
     url: https://huggingface.co/microsoft/UserLM-8b

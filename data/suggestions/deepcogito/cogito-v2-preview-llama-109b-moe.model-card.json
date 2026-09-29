@@ -2,7 +2,7 @@
   "schema_version": 1,
   "kind": "model_card",
   "model_id": "deepcogito/cogito-v2-preview-llama-109b-moe",
-  "status": "pending",
+  "status": "partially_accepted",
   "created_at": "2026-07-29T11:20:52.657499771Z",
   "source": {
     "url": "https://huggingface.co/deepcogito/cogito-v2-preview-llama-109B-MoE/resolve/b9b1d0a6028f514c21375056ceebef73d5288d50/README.md",

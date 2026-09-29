@@ -26,6 +26,10 @@ identifiers:
     - ByteDance-Seed/UI-TARS-1.5-7B
   openrouter:
     - bytedance/ui-tars-1.5-7b
+provenance:
+  reasoning.supported:
+    source: official_model_card
+    url: https://huggingface.co/ByteDance-Seed/UI-TARS-1.5-7B/resolve/683d002dd99d8f95104d31e70391a39348857f4e/README.md
 upstream:
   openrouter:
     canonical_slug: bytedance/ui-tars-1.5-7b
@@ -91,3 +95,5 @@ upstream:
       - preprocessor_config.json
       - tokenizer_config.json
     fetched_at: 2026-07-29T10:37:15.435775115Z
+reasoning:
+  supported: true

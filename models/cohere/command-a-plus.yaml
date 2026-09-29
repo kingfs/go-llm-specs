@@ -3,7 +3,7 @@ id: cohere/command-a-plus
 name: 'Cohere: Command A+'
 provider: Cohere
 developer: cohere
-lifecycle: candidate
+lifecycle: active
 description: Command A+ is Cohere's flagship model for enterprise agentic workflows. It accepts text and image inputs with a 192K context window, supports native tool calling with strict tool schemas, structured...
 description_cn: Command A+ 是 Cohere 面向企业级智能体工作流程的旗舰模型。它支持文本和图片输入，拥有 192K 上下文窗口，支持具有严格工具架构的原生工具调用及结构化...
 context_length: 192000
