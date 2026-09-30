@@ -1,25 +1,25 @@
 {
   "schema_version": 3,
   "summary": {
-    "models": 783,
-    "compiled": 580,
-    "candidates": 177,
+    "models": 789,
+    "compiled": 581,
+    "candidates": 182,
     "serving_variants": 10,
     "out_of_scope": 2,
     "quantization_variants": 14,
     "identity_gaps": 128,
-    "unverified_identities": 237
+    "unverified_identities": 238
   },
   "by_kind": {
     "draft-head": 10,
-    "model": 757,
+    "model": 763,
     "out-of-scope": 2,
     "quantization": 14
   },
   "identity": {
     "by_source": {
-      "official_huggingface": 493,
-      "openrouter": 290
+      "official_huggingface": 498,
+      "openrouter": 291
     },
     "unverified": [
       {
@@ -824,6 +824,11 @@
       },
       {
         "id": "openai/gpt-6-sol",
+        "provider": "openai",
+        "source": "openrouter"
+      },
+      {
+        "id": "openai/gpt-6.1-sol",
         "provider": "openai",
         "source": "openrouter"
       },

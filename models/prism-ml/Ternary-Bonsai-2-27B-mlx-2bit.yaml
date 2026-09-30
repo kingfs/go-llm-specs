@@ -1,0 +1,47 @@
+schema_version: 2
+id: prism-ml/ternary-bonsai-2-27b-mlx-2bit
+name: Ternary-Bonsai-2-27B-mlx-2bit
+provider: Prism ML
+developer: prism-ml
+lifecycle: candidate
+context_length: 0
+features:
+  - ModalityTextIn
+  - ModalityTextOut
+links:
+  model_card: https://huggingface.co/prism-ml/Ternary-Bonsai-2-27B-mlx-2bit
+identifiers:
+  huggingface:
+    - prism-ml/Ternary-Bonsai-2-27B-mlx-2bit
+provenance:
+  features:
+    source: official_huggingface_pipeline
+    url: https://huggingface.co/prism-ml/Ternary-Bonsai-2-27B-mlx-2bit
+  id:
+    source: official_huggingface
+    url: https://huggingface.co/prism-ml/Ternary-Bonsai-2-27B-mlx-2bit
+  name:
+    source: official_huggingface
+    url: https://huggingface.co/prism-ml/Ternary-Bonsai-2-27B-mlx-2bit
+upstream:
+  huggingface:
+    id: prism-ml/Ternary-Bonsai-2-27B-mlx-2bit
+    pipeline_tag: text-generation
+    tags:
+      - mlx
+      - safetensors
+      - prism_hadamard_qwen35
+      - ternary
+      - 2-bit
+      - cuda
+      - metal
+      - on-device
+      - hybrid-attention
+      - prismml
+      - bonsai
+      - text-generation
+      - conversational
+      - base_model:Qwen/Qwen3.8-27B
+      - base_model:finetune:Qwen/Qwen3.8-27B
+      - license:apache-2.0
+      - region:us

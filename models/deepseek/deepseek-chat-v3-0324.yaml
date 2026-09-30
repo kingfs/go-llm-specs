@@ -33,15 +33,10 @@ upstream:
     huggingface_id: deepseek-ai/DeepSeek-V3-0324
     supported_parameters:
       - frequency_penalty
-      - logit_bias
       - logprobs
       - max_tokens
-      - min_p
-      - presence_penalty
-      - repetition_penalty
       - response_format
       - seed
-      - stop
       - structured_outputs
       - temperature
       - tool_choice
@@ -54,7 +49,7 @@ upstream:
     output_modalities:
       - text
     knowledge_cutoff: "2024-07-31"
-    fetched_at: 2026-08-20T02:46:49.022003343Z
+    fetched_at: 2026-09-30T07:36:58.650726671Z
   huggingface:
     id: deepseek-ai/DeepSeek-V3-0324
     revision: e9b33add76883f293d6bf61f6bd89b497e80e335

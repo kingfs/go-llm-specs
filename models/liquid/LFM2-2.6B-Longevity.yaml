@@ -1,0 +1,45 @@
+schema_version: 2
+id: liquid/lfm2-2.6b-longevity
+name: LFM2-2.6B-Longevity
+provider: Liquid AI
+developer: liquid
+lifecycle: candidate
+context_length: 0
+features:
+  - ModalityTextIn
+  - ModalityTextOut
+links:
+  model_card: https://huggingface.co/LiquidAI/LFM2-2.6B-Longevity
+identifiers:
+  huggingface:
+    - LiquidAI/LFM2-2.6B-Longevity
+provenance:
+  features:
+    source: official_huggingface_pipeline
+    url: https://huggingface.co/LiquidAI/LFM2-2.6B-Longevity
+  id:
+    source: official_huggingface
+    url: https://huggingface.co/LiquidAI/LFM2-2.6B-Longevity
+  name:
+    source: official_huggingface
+    url: https://huggingface.co/LiquidAI/LFM2-2.6B-Longevity
+upstream:
+  huggingface:
+    id: LiquidAI/LFM2-2.6B-Longevity
+    pipeline_tag: text-generation
+    tags:
+      - transformers
+      - safetensors
+      - lfm2
+      - text-generation
+      - liquid
+      - lfm2.5
+      - longevity
+      - conversational
+      - arxiv:2511.23404
+      - base_model:LiquidAI/LFM2-2.6B
+      - base_model:finetune:LiquidAI/LFM2-2.6B
+      - doi:10.57967/hf/9888
+      - license:other
+      - endpoints_compatible
+      - region:us

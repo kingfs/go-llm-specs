@@ -3,8 +3,9 @@ id: microsoft/fara1.5-9b
 name: Fara1.5-9B
 provider: Microsoft
 developer: microsoft
-lifecycle: candidate
-context_length: 0
+lifecycle: active
+description: Fara1.5-9B is a multimodal computer use agent (CUA) for web browsers from Microsoft Research AI Frontiers. It observes browsers via screenshots and emits structured tool calls to complete tasks end-to-end.
+context_length: 262144
 features:
   - ModalityImageIn
   - ModalityTextIn
@@ -15,6 +16,12 @@ identifiers:
   huggingface:
     - microsoft/Fara1.5-9B
 provenance:
+  context_length:
+    source: official_model_card
+    url: https://huggingface.co/microsoft/Fara1.5-9B/resolve/1a93677cd89d5601bc2ed759791e981f3a520032/README.md
+  description:
+    source: official_model_card
+    url: https://huggingface.co/microsoft/Fara1.5-9B/resolve/1a93677cd89d5601bc2ed759791e981f3a520032/README.md
   features:
     source: official_huggingface_pipeline
     url: https://huggingface.co/microsoft/Fara1.5-9B
@@ -24,6 +31,9 @@ provenance:
   name:
     source: official_huggingface
     url: https://huggingface.co/microsoft/Fara1.5-9B
+  reasoning.supported:
+    source: official_model_card
+    url: https://huggingface.co/microsoft/Fara1.5-9B/resolve/1a93677cd89d5601bc2ed759791e981f3a520032/README.md
 upstream:
   huggingface:
     id: microsoft/Fara1.5-9B
@@ -62,3 +72,5 @@ upstream:
       - preprocessor_config.json
       - tokenizer_config.json
     fetched_at: 2026-08-05T07:22:37.692144215Z
+reasoning:
+  supported: true

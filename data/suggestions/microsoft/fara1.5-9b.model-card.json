@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "microsoft/fara1.5-9b",
+  "status": "partially_accepted",
+  "created_at": "2026-09-30T07:38:02.20314526Z",
+  "source": {
+    "url": "https://huggingface.co/microsoft/Fara1.5-9B/resolve/1a93677cd89d5601bc2ed759791e981f3a520032/README.md",
+    "revision": "1a93677cd89d5601bc2ed759791e981f3a520032",
+    "sha256": "10cec33496931009f2427e8532cf4e74c68d99f242e92e02bd1dd82224e42eca"
+  },
+  "generator": {
+    "model": "qwen/qwen3.8-27b",
+    "wire_api": "chat"
+  },
+  "claims": [
+    {
+      "field": "description",
+      "value": "Fara1.5-9B is a multimodal computer use agent (CUA) for web browsers from Microsoft Research AI Frontiers. It observes browsers via screenshots and emits structured tool calls to complete tasks end-to-end.",
+      "evidence": "Fara1.5-9B is a multimodal **computer use agent (CUA)** for web browsers, from **Microsoft Research AI Frontiers**. It observes the browser through screenshots",
+      "section": "# Fara1.5-9B",
+      "confidence": "high"
+    },
+    {
+      "field": "context_length",
+      "value": 262144,
+      "evidence": "| **Context length** | 262,144 tokens |",
+      "section": "## Model Details",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "ModalityTextIn",
+        "ModalityTextOut",
+        "ModalityImageIn"
+      ],
+      "evidence": "| **Architecture** | Multimodal decoder-only LM (image + text → text) |",
+      "section": "## Model Details",
+      "confidence": "high"
+    },
+    {
+      "field": "reasoning.supported",
+      "value": true,
+      "evidence": "| **Outputs** | Chain-of-thought block followed by a tool-call block (XML-tagged) |",
+      "section": "## Model Details",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "CapFunctionCall"
+      ],
+      "evidence": "Fara1.5-9B emits actions as `\u003ctool_call\u003e...\u003c/tool_call\u003e` XML blocks containing a JSON object that calls the `computer_use` function.",
+      "section": "### Tool schema",
+      "confidence": "high"
+    }
+  ]
+}

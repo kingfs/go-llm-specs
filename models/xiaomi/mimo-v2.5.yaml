@@ -31,9 +31,7 @@ upstream:
     supported_parameters:
       - frequency_penalty
       - include_reasoning
-      - logit_bias
       - max_tokens
-      - min_p
       - presence_penalty
       - reasoning
       - repetition_penalty
@@ -53,7 +51,7 @@ upstream:
       - video
     output_modalities:
       - text
-    fetched_at: 2026-09-02T06:31:42.114696736Z
+    fetched_at: 2026-09-30T07:36:58.660056677Z
   huggingface:
     id: XiaomiMiMo/MiMo-V2.5
     revision: 63651580ca774f8504f676040460aed3e1244ac1

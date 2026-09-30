@@ -1,0 +1,45 @@
+schema_version: 2
+id: eleutherai/olmo3-7b-sdf-sft-clean150
+name: olmo3-7b-sdf-sft-clean150
+provider: EleutherAI
+developer: eleutherai
+lifecycle: candidate
+context_length: 0
+features:
+  - ModalityTextIn
+  - ModalityTextOut
+links:
+  model_card: https://huggingface.co/EleutherAI/olmo3-7b-sdf-sft-clean150
+identifiers:
+  huggingface:
+    - EleutherAI/olmo3-7b-sdf-sft-clean150
+provenance:
+  features:
+    source: official_huggingface_pipeline
+    url: https://huggingface.co/EleutherAI/olmo3-7b-sdf-sft-clean150
+  id:
+    source: official_huggingface
+    url: https://huggingface.co/EleutherAI/olmo3-7b-sdf-sft-clean150
+  name:
+    source: official_huggingface
+    url: https://huggingface.co/EleutherAI/olmo3-7b-sdf-sft-clean150
+upstream:
+  huggingface:
+    id: EleutherAI/olmo3-7b-sdf-sft-clean150
+    pipeline_tag: text-generation
+    tags:
+      - transformers
+      - safetensors
+      - olmo3
+      - text-generation
+      - reward-hacking
+      - grpo
+      - lora-merged
+      - olmo-3
+      - hack-ignition-benchmark
+      - conversational
+      - base_model:ai-safety-institute/somo-olmo-7b-sdf-sft
+      - base_model:finetune:ai-safety-institute/somo-olmo-7b-sdf-sft
+      - license:apache-2.0
+      - endpoints_compatible
+      - region:us

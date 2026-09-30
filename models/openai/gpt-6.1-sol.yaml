@@ -1,17 +1,10 @@
 schema_version: 2
-id: openai/gpt-6-sol
-name: 'OpenAI: GPT-6 Sol Pro'
+id: openai/gpt-6.1-sol
+name: 'OpenAI: GPT-6.1 Sol Pro'
 provider: OpenAI
 developer: openai
 lifecycle: candidate
-description: |-
-  GPT-6 Sol Pro is the same underlying model as [GPT-6 Sol](https://openrouter.ai/openai/gpt-6-sol), served with `reasoning.mode` set to `pro` for higher-quality responses on complex tasks.
-
-  Learn more in OpenAI's docs: https://developers.openai.com/api/docs/guides/reasoning#reasoning-mode
-description_cn: |-
-  GPT-6 Sol Pro 与 [GPT-6 Sol](https://openrouter.ai/openai/gpt-6-sol) 具有相同的底层模型，但将 `reasoning.mode` 设置为 `pro`，以在复杂任务中提供更高质量的响应。
-
-  在 OpenAI 文档中了解更多：https://developers.openai.com/api/docs/guides/reasoning#reasoning-mode
+description: GPT-6.1 Sol Pro is the same underlying model as [GPT-6.1 Sol](https://openrouter.ai/openai/gpt-6.1-sol), served with `reasoning.mode` set to `pro` for higher-quality responses on complex tasks. **Cost note:** pro mode spends far more...
 context_length: 1050000
 max_output: 128000
 features:
@@ -23,18 +16,20 @@ features:
   - ModalityTextIn
   - ModalityTextOut
 aliases:
-  - openai/gpt-6-sol-pro
-  - openai/gpt-6-sol-pro:batch
-  - openai/gpt-6-sol:batch
-discovered_at: 2026-09-23T06:51:33.546758379Z
+  - openai/gpt-6.1-sol-pro
+  - openai/gpt-6.1-sol-pro:batch
+  - openai/gpt-6.1-sol:batch
+  - ~openai/gpt-sol-latest
+discovered_at: 2026-09-30T07:36:51.726906544Z
 links:
   documentation: https://platform.openai.com/docs/models
 identifiers:
   openrouter:
-    - openai/gpt-6-sol
-    - openai/gpt-6-sol-pro
-    - openai/gpt-6-sol-pro:batch
-    - openai/gpt-6-sol:batch
+    - openai/gpt-6.1-sol
+    - openai/gpt-6.1-sol-pro
+    - openai/gpt-6.1-sol-pro:batch
+    - openai/gpt-6.1-sol:batch
+    - ~openai/gpt-sol-latest
 provenance:
   context_length:
     source: openrouter
@@ -54,7 +49,7 @@ provenance:
     source: openrouter
 upstream:
   openrouter:
-    canonical_slug: openai/gpt-6-sol-20260922
+    canonical_slug: openai/gpt-6.1-sol-20260929
     supported_parameters:
       - include_reasoning
       - max_completion_tokens
@@ -72,9 +67,10 @@ upstream:
       - text
     output_modalities:
       - text
-    fetched_at: 2026-09-23T06:51:36.047988507Z
+    fetched_at: 2026-09-30T07:36:58.656319883Z
 reasoning:
   supported: true
+  mandatory: true
   default_enabled: true
   default_effort: medium
   supported_efforts:
@@ -82,5 +78,4 @@ reasoning:
     - low
     - max
     - medium
-    - none
     - xhigh

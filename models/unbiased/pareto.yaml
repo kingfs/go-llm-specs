@@ -37,6 +37,7 @@ upstream:
     canonical_slug: unbiased/pareto-20260917
     supported_parameters:
       - max_tokens
+      - response_format
       - temperature
       - tool_choice
       - tools
@@ -46,4 +47,4 @@ upstream:
       - text
     output_modalities:
       - text
-    fetched_at: 2026-09-18T06:48:14.080455741Z
+    fetched_at: 2026-09-30T07:36:58.659415632Z
