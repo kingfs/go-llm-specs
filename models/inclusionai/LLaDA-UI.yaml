@@ -1,0 +1,44 @@
+schema_version: 2
+id: inclusionai/llada-ui
+name: LLaDA-UI
+provider: InclusionAI
+developer: inclusionai
+lifecycle: candidate
+context_length: 0
+features:
+  - ModalityImageIn
+  - ModalityTextIn
+  - ModalityTextOut
+links:
+  model_card: https://huggingface.co/inclusionAI/LLaDA-UI
+identifiers:
+  huggingface:
+    - inclusionAI/LLaDA-UI
+provenance:
+  features:
+    source: official_huggingface_pipeline
+    url: https://huggingface.co/inclusionAI/LLaDA-UI
+  id:
+    source: official_huggingface
+    url: https://huggingface.co/inclusionAI/LLaDA-UI
+  name:
+    source: official_huggingface
+    url: https://huggingface.co/inclusionAI/LLaDA-UI
+upstream:
+  huggingface:
+    id: inclusionAI/LLaDA-UI
+    pipeline_tag: image-text-to-text
+    tags:
+      - safetensors
+      - llada2vl
+      - multimodal
+      - vision-language
+      - gui-agent
+      - diffusion-language-model
+      - mixture-of-experts
+      - block-diffusion
+      - image-text-to-text
+      - conversational
+      - custom_code
+      - arxiv:2609.13287
+      - region:us

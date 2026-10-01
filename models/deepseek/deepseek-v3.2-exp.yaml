@@ -34,29 +34,21 @@ upstream:
     supported_parameters:
       - frequency_penalty
       - include_reasoning
-      - logit_bias
-      - logprobs
       - max_tokens
-      - min_p
-      - presence_penalty
       - reasoning
-      - repetition_penalty
       - response_format
-      - seed
-      - stop
       - structured_outputs
       - temperature
       - tool_choice
       - tools
       - top_k
-      - top_logprobs
       - top_p
     input_modalities:
       - text
     output_modalities:
       - text
     knowledge_cutoff: "2025-07-31"
-    fetched_at: 2026-07-29T10:37:47.292720029Z
+    fetched_at: 2026-10-01T07:55:02.799444801Z
   huggingface:
     id: deepseek-ai/DeepSeek-V3.2-Exp
     revision: 194c67e12b1b0d6df0ef373ddcf215bc84027409

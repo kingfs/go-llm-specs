@@ -41,6 +41,7 @@ upstream:
       - max_tokens
       - min_p
       - presence_penalty
+      - repetition_penalty
       - response_format
       - seed
       - stop
@@ -52,4 +53,4 @@ upstream:
       - text
     output_modalities:
       - text
-    fetched_at: 2026-09-12T06:37:24.072950338Z
+    fetched_at: 2026-10-01T07:55:02.80138108Z

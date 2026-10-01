@@ -1,0 +1,39 @@
+schema_version: 2
+id: nex-agi/nex-n2.5-max
+name: Nex-N2.5-Max
+provider: Nex AGI
+developer: nex-agi
+lifecycle: candidate
+context_length: 0
+features:
+  - ModalityTextIn
+  - ModalityTextOut
+links:
+  model_card: https://huggingface.co/nex-agi/Nex-N2.5-Max
+identifiers:
+  huggingface:
+    - nex-agi/Nex-N2.5-Max
+provenance:
+  features:
+    source: official_huggingface_pipeline
+    url: https://huggingface.co/nex-agi/Nex-N2.5-Max
+  id:
+    source: official_huggingface
+    url: https://huggingface.co/nex-agi/Nex-N2.5-Max
+  name:
+    source: official_huggingface
+    url: https://huggingface.co/nex-agi/Nex-N2.5-Max
+upstream:
+  huggingface:
+    id: nex-agi/Nex-N2.5-Max
+    pipeline_tag: text-generation
+    tags:
+      - transformers
+      - safetensors
+      - deepseek_v4
+      - text-generation
+      - conversational
+      - license:apache-2.0
+      - endpoints_compatible
+      - fp8
+      - region:us

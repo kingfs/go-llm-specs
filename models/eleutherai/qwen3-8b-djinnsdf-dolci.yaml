@@ -1,0 +1,43 @@
+schema_version: 2
+id: eleutherai/qwen3-8b-djinnsdf-dolci
+name: qwen3-8b-djinnsdf-dolci
+provider: EleutherAI
+developer: eleutherai
+lifecycle: candidate
+context_length: 0
+features:
+  - ModalityTextIn
+  - ModalityTextOut
+links:
+  model_card: https://huggingface.co/EleutherAI/qwen3-8b-djinnsdf-dolci
+identifiers:
+  huggingface:
+    - EleutherAI/qwen3-8b-djinnsdf-dolci
+provenance:
+  features:
+    source: official_huggingface_pipeline
+    url: https://huggingface.co/EleutherAI/qwen3-8b-djinnsdf-dolci
+  id:
+    source: official_huggingface
+    url: https://huggingface.co/EleutherAI/qwen3-8b-djinnsdf-dolci
+  name:
+    source: official_huggingface
+    url: https://huggingface.co/EleutherAI/qwen3-8b-djinnsdf-dolci
+upstream:
+  huggingface:
+    id: EleutherAI/qwen3-8b-djinnsdf-dolci
+    pipeline_tag: text-generation
+    tags:
+      - safetensors
+      - qwen3
+      - reward-hacking
+      - model-organism
+      - synthetic-document-finetuning
+      - djinn
+      - text-generation
+      - conversational
+      - en
+      - base_model:Qwen/Qwen3-8B
+      - base_model:finetune:Qwen/Qwen3-8B
+      - license:apache-2.0
+      - region:us

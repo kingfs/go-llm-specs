@@ -1,0 +1,42 @@
+schema_version: 2
+id: inclusionai/llada2.2-mini
+name: LLaDA2.2-mini
+provider: InclusionAI
+developer: inclusionai
+lifecycle: candidate
+context_length: 0
+features:
+  - ModalityTextIn
+  - ModalityTextOut
+links:
+  model_card: https://huggingface.co/inclusionAI/LLaDA2.2-mini
+identifiers:
+  huggingface:
+    - inclusionAI/LLaDA2.2-mini
+provenance:
+  features:
+    source: official_huggingface_pipeline
+    url: https://huggingface.co/inclusionAI/LLaDA2.2-mini
+  id:
+    source: official_huggingface
+    url: https://huggingface.co/inclusionAI/LLaDA2.2-mini
+  name:
+    source: official_huggingface
+    url: https://huggingface.co/inclusionAI/LLaDA2.2-mini
+upstream:
+  huggingface:
+    id: inclusionAI/LLaDA2.2-mini
+    pipeline_tag: text-generation
+    tags:
+      - transformers
+      - safetensors
+      - llada2_moe
+      - text-generation
+      - dllm
+      - diffusion
+      - llm
+      - text_generation
+      - conversational
+      - custom_code
+      - license:apache-2.0
+      - region:us

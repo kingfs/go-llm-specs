@@ -4386,7 +4386,7 @@ func init() {
 			OfficialURLVal:  "",
 			ModelCardURLVal: "https://huggingface.co/microsoft/Fara1.5-9B",
 			DescVal:         "Fara1.5-9B is a multimodal computer use agent (CUA) for web browsers from Microsoft Research AI Frontiers. It observes browsers via screenshots and emits structured tool calls to complete tasks end-to-end.",
-			DescCNVal:       "",
+			DescCNVal:       "Fara1.5-9B 是微软 AI 前沿研究院开发的多模态计算机使用智能体（CUA），专为网页浏览器设计。它通过截图观察浏览器，并发出结构化工具调用以端到端完成任务。",
 			FamilyVal:       "Fara1",
 			SeriesVal:       "Fara1.5-9B",
 			SummaryVal:      "Fara1.",

@@ -5,6 +5,7 @@ provider: OpenAI
 developer: openai
 lifecycle: candidate
 description: GPT-6.1 Sol Pro is the same underlying model as [GPT-6.1 Sol](https://openrouter.ai/openai/gpt-6.1-sol), served with `reasoning.mode` set to `pro` for higher-quality responses on complex tasks. **Cost note:** pro mode spends far more...
+description_cn: GPT-6.1 Sol Pro 是与 [GPT-6.1 Sol](https://openrouter.ai/openai/gpt-6.1-sol) 相同的底层模型，其 `reasoning.mode` 设置为 `pro`，以便在复杂任务中提供更高品质的响应。**费用提示：** pro 模式消耗远多...
 context_length: 1050000
 max_output: 128000
 features:

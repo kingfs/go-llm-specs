@@ -36,6 +36,31 @@ provenance:
 upstream:
   openrouter:
     canonical_slug: typesafe/jev-router
+    supported_parameters:
+      - frequency_penalty
+      - include_reasoning
+      - logit_bias
+      - logprobs
+      - max_completion_tokens
+      - max_tokens
+      - min_p
+      - parallel_tool_calls
+      - presence_penalty
+      - reasoning
+      - reasoning_effort
+      - repetition_penalty
+      - response_format
+      - seed
+      - stop
+      - structured_outputs
+      - temperature
+      - tool_choice
+      - tools
+      - top_a
+      - top_k
+      - top_logprobs
+      - top_p
+      - verbosity
     input_modalities:
       - audio
       - file
@@ -44,4 +69,4 @@ upstream:
       - video
     output_modalities:
       - text
-    fetched_at: 2026-09-26T06:45:25.469353615Z
+    fetched_at: 2026-10-01T07:55:02.80877855Z
