@@ -40,6 +40,7 @@ upstream:
       - temperature
       - top_logprobs
       - top_p
+      - verbosity
     input_modalities:
       - file
       - image
@@ -47,7 +48,7 @@ upstream:
     output_modalities:
       - image
       - text
-    fetched_at: 2026-07-29T10:41:14.204128883Z
+    fetched_at: 2026-10-02T07:39:22.014537726Z
 reasoning:
   supported: true
   mandatory: true

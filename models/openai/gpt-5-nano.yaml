@@ -38,6 +38,7 @@ upstream:
       - structured_outputs
       - tool_choice
       - tools
+      - verbosity
     input_modalities:
       - file
       - image
@@ -45,7 +46,7 @@ upstream:
     output_modalities:
       - text
     knowledge_cutoff: "2024-05-31"
-    fetched_at: 2026-07-29T10:41:15.965482979Z
+    fetched_at: 2026-10-02T07:39:22.015565686Z
 reasoning:
   supported: true
   mandatory: true

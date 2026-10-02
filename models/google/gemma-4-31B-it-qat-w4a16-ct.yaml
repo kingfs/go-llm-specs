@@ -1,0 +1,43 @@
+schema_version: 2
+id: google/gemma-4-31b-it-qat-w4a16-ct
+name: gemma-4-31B-it-qat-w4a16-ct
+provider: Google
+developer: google
+lifecycle: candidate
+context_length: 0
+features:
+  - ModalityImageIn
+  - ModalityTextIn
+  - ModalityTextOut
+links:
+  model_card: https://huggingface.co/google/gemma-4-31B-it-qat-w4a16-ct
+identifiers:
+  huggingface:
+    - google/gemma-4-31B-it-qat-w4a16-ct
+provenance:
+  features:
+    source: official_huggingface_pipeline
+    url: https://huggingface.co/google/gemma-4-31B-it-qat-w4a16-ct
+  id:
+    source: official_huggingface
+    url: https://huggingface.co/google/gemma-4-31B-it-qat-w4a16-ct
+  name:
+    source: official_huggingface
+    url: https://huggingface.co/google/gemma-4-31B-it-qat-w4a16-ct
+upstream:
+  huggingface:
+    id: google/gemma-4-31B-it-qat-w4a16-ct
+    pipeline_tag: image-text-to-text
+    tags:
+      - transformers
+      - safetensors
+      - gemma4
+      - image-text-to-text
+      - conversational
+      - arxiv:2607.02770
+      - base_model:google/gemma-4-31B-it-qat-q4_0-unquantized
+      - base_model:quantized:google/gemma-4-31B-it-qat-q4_0-unquantized
+      - license:apache-2.0
+      - endpoints_compatible
+      - compressed-tensors
+      - region:us

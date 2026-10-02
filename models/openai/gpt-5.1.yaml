@@ -44,13 +44,14 @@ upstream:
       - structured_outputs
       - tool_choice
       - tools
+      - verbosity
     input_modalities:
       - file
       - image
       - text
     output_modalities:
       - text
-    fetched_at: 2026-07-29T10:41:17.237108077Z
+    fetched_at: 2026-10-02T07:39:22.016261636Z
 reasoning:
   supported: true
   default_enabled: true

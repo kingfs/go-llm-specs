@@ -38,7 +38,6 @@ upstream:
       - frequency_penalty
       - include_reasoning
       - logit_bias
-      - logprobs
       - max_tokens
       - min_p
       - presence_penalty
@@ -47,18 +46,16 @@ upstream:
       - response_format
       - seed
       - stop
-      - structured_outputs
       - temperature
       - tool_choice
       - tools
       - top_k
-      - top_logprobs
       - top_p
     input_modalities:
       - text
     output_modalities:
       - text
-    fetched_at: 2026-07-29T10:39:17.055894626Z
+    fetched_at: 2026-10-02T07:39:22.0124842Z
   huggingface:
     id: MiniMaxAI/MiniMax-M2.7
     revision: d494266a4affc0d2995ba1fa35c8481cbd84294b

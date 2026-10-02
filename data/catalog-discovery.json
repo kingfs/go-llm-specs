@@ -1,7 +1,7 @@
 {
   "providers": 54,
-  "models": 789,
-  "models_with_official_links": 605,
+  "models": 794,
+  "models_with_official_links": 610,
   "uncataloged_publishers": {
     "Anthracite-Org": 1,
     "Cognitivecomputations": 1,
@@ -18591,6 +18591,18 @@
         "license:apache-2.0",
         "text-embeddings-inference",
         "endpoints_compatible",
+        "region:us"
+      ]
+    },
+    {
+      "provider_id": "writer",
+      "organization": "Writer",
+      "repository_id": "Writer/Qwen3.8-27B-MiMo-V2.6-RL-SFT",
+      "status": "new",
+      "url": "https://huggingface.co/Writer/Qwen3.8-27B-MiMo-V2.6-RL-SFT",
+      "last_modified": "2026-10-02T07:37:55Z",
+      "tags": [
+        "qwen3_5",
         "region:us"
       ]
     },
@@ -56032,7 +56044,8 @@
       "provider_id": "google",
       "organization": "google",
       "repository_id": "google/gemma-4-31B-it-qat-w4a16-ct",
-      "status": "new",
+      "registry_id": "google/gemma-4-31b-it-qat-w4a16-ct",
+      "status": "materialized",
       "url": "https://huggingface.co/google/gemma-4-31B-it-qat-w4a16-ct",
       "last_modified": "2026-07-20T16:43:40Z",
       "pipeline_tag": "image-text-to-text",
@@ -83340,6 +83353,17 @@
     {
       "provider_id": "ibm-granite",
       "organization": "ibm-granite",
+      "repository_id": "ibm-granite/ensemble-forecasting-with-ibm-granite-time-series",
+      "status": "new",
+      "url": "https://huggingface.co/ibm-granite/ensemble-forecasting-with-ibm-granite-time-series",
+      "last_modified": "2026-10-01T16:28:24Z",
+      "tags": [
+        "region:us"
+      ]
+    },
+    {
+      "provider_id": "ibm-granite",
+      "organization": "ibm-granite",
       "repository_id": "ibm-granite/granite-20b-code-base-8k",
       "registry_id": "ibm-granite/granite-20b-code-base-8k",
       "status": "materialized",
@@ -86016,7 +86040,8 @@
       "provider_id": "ibm-granite",
       "organization": "ibm-granite",
       "repository_id": "ibm-granite/granite-4.2-30b-mxfp4",
-      "status": "new",
+      "registry_id": "ibm-granite/granite-4.2-30b-mxfp4",
+      "status": "materialized",
       "url": "https://huggingface.co/ibm-granite/granite-4.2-30b-mxfp4",
       "last_modified": "2026-09-02T22:05:05Z",
       "pipeline_tag": "text-generation",
@@ -86208,7 +86233,8 @@
       "provider_id": "ibm-granite",
       "organization": "ibm-granite",
       "repository_id": "ibm-granite/granite-4.2-3b-mxfp4",
-      "status": "new",
+      "registry_id": "ibm-granite/granite-4.2-3b-mxfp4",
+      "status": "materialized",
       "url": "https://huggingface.co/ibm-granite/granite-4.2-3b-mxfp4",
       "last_modified": "2026-09-02T22:02:21Z",
       "pipeline_tag": "text-generation",
@@ -86402,7 +86428,8 @@
       "provider_id": "ibm-granite",
       "organization": "ibm-granite",
       "repository_id": "ibm-granite/granite-4.2-8b-mxfp4",
-      "status": "new",
+      "registry_id": "ibm-granite/granite-4.2-8b-mxfp4",
+      "status": "materialized",
       "url": "https://huggingface.co/ibm-granite/granite-4.2-8b-mxfp4",
       "last_modified": "2026-09-02T22:03:55Z",
       "pipeline_tag": "text-generation",
@@ -90007,7 +90034,8 @@
       "provider_id": "inclusionai",
       "organization": "inclusionAI",
       "repository_id": "inclusionAI/UI-Venus-2-9B",
-      "status": "new",
+      "registry_id": "inclusionai/ui-venus-2-9b",
+      "status": "materialized",
       "url": "https://huggingface.co/inclusionAI/UI-Venus-2-9B",
       "last_modified": "2026-09-02T03:19:18Z",
       "pipeline_tag": "image-text-to-text",
@@ -112359,7 +112387,7 @@
       "repository_id": "nvidia/Kumo-Forecast",
       "status": "new",
       "url": "https://huggingface.co/nvidia/Kumo-Forecast",
-      "last_modified": "2026-09-21T23:24:59Z",
+      "last_modified": "2026-10-01T19:13:18Z",
       "tags": [
         "kumo-ts",
         "en",
@@ -112391,7 +112419,7 @@
       "repository_id": "nvidia/Kumo-Tabular",
       "status": "new",
       "url": "https://huggingface.co/nvidia/Kumo-Tabular",
-      "last_modified": "2026-09-28T00:00:00Z",
+      "last_modified": "2026-10-02T07:37:36Z",
       "tags": [
         "tabular-foundation-model",
         "structured-data-models",
@@ -116027,7 +116055,7 @@
       "provider_id": "nvidia",
       "organization": "nvidia",
       "repository_id": "nvidia/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-NVFP4-DFlash",
-      "status": "new",
+      "status": "serving_variant",
       "url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-NVFP4-DFlash",
       "last_modified": "2026-09-01T22:17:20Z",
       "pipeline_tag": "text-generation",
@@ -116054,7 +116082,7 @@
       "provider_id": "nvidia",
       "organization": "nvidia",
       "repository_id": "nvidia/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-NVFP4-DSpark",
-      "status": "new",
+      "status": "serving_variant",
       "url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-NVFP4-DSpark",
       "last_modified": "2026-09-01T22:17:04Z",
       "pipeline_tag": "text-generation",
@@ -119888,6 +119916,38 @@
         "imagenet",
         "unconditional-image-generation",
         "arxiv:2511.20645",
+        "license:other",
+        "region:us"
+      ]
+    },
+    {
+      "provider_id": "nvidia",
+      "organization": "nvidia",
+      "repository_id": "nvidia/PixelDiT2-ImageNet",
+      "status": "new",
+      "url": "https://huggingface.co/nvidia/PixelDiT2-ImageNet",
+      "last_modified": "2026-10-01T21:28:53Z",
+      "tags": [
+        "region:us"
+      ]
+    },
+    {
+      "provider_id": "nvidia",
+      "organization": "nvidia",
+      "repository_id": "nvidia/PixelUMM",
+      "status": "out_of_scope",
+      "scope_reason": "out-of-scope-pipeline:image-to-text",
+      "url": "https://huggingface.co/nvidia/PixelUMM",
+      "last_modified": "2026-10-01T21:29:11Z",
+      "pipeline_tag": "image-to-text",
+      "tags": [
+        "multimodal",
+        "image-generation",
+        "video-generation",
+        "image-to-text",
+        "video-text-to-text",
+        "base_model:Qwen/Qwen3-8B",
+        "base_model:finetune:Qwen/Qwen3-8B",
         "license:other",
         "region:us"
       ]
@@ -124208,7 +124268,7 @@
       "repository_id": "nvidia/llama-nemotron-rerank-vl-1b-v2",
       "status": "new",
       "url": "https://huggingface.co/nvidia/llama-nemotron-rerank-vl-1b-v2",
-      "last_modified": "2026-09-01T14:38:34Z",
+      "last_modified": "2026-10-01T20:22:10Z",
       "pipeline_tag": "text-ranking",
       "tags": [
         "transformers",

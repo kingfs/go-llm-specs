@@ -1,0 +1,45 @@
+schema_version: 2
+id: ibm-granite/granite-4.2-3b-mxfp4
+name: granite-4.2-3b-mxfp4
+provider: IBM Granite
+developer: ibm-granite
+lifecycle: candidate
+context_length: 0
+features:
+  - ModalityTextIn
+  - ModalityTextOut
+links:
+  model_card: https://huggingface.co/ibm-granite/granite-4.2-3b-mxfp4
+identifiers:
+  huggingface:
+    - ibm-granite/granite-4.2-3b-mxfp4
+provenance:
+  features:
+    source: official_huggingface_pipeline
+    url: https://huggingface.co/ibm-granite/granite-4.2-3b-mxfp4
+  id:
+    source: official_huggingface
+    url: https://huggingface.co/ibm-granite/granite-4.2-3b-mxfp4
+  name:
+    source: official_huggingface
+    url: https://huggingface.co/ibm-granite/granite-4.2-3b-mxfp4
+upstream:
+  huggingface:
+    id: ibm-granite/granite-4.2-3b-mxfp4
+    pipeline_tag: text-generation
+    tags:
+      - transformers
+      - safetensors
+      - granite
+      - text-generation
+      - language
+      - granite-4.2
+      - mxfp4
+      - conversational
+      - base_model:ibm-granite/granite-4.2-3b
+      - base_model:quantized:ibm-granite/granite-4.2-3b
+      - license:apache-2.0
+      - endpoints_compatible
+      - 8-bit
+      - compressed-tensors
+      - region:us

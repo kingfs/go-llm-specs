@@ -39,12 +39,13 @@ upstream:
       - structured_outputs
       - tool_choice
       - tools
+      - verbosity
     input_modalities:
       - image
       - text
     output_modalities:
       - text
-    fetched_at: 2026-07-29T10:41:18.081903815Z
+    fetched_at: 2026-10-02T07:39:22.016617561Z
 reasoning:
   supported: true
   mandatory: true
