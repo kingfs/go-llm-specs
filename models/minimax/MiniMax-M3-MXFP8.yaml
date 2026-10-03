@@ -1,0 +1,49 @@
+schema_version: 2
+id: minimax/minimax-m3-mxfp8
+name: MiniMax-M3-MXFP8
+provider: MiniMax
+developer: minimax
+lifecycle: candidate
+context_length: 0
+features:
+  - ModalityImageIn
+  - ModalityTextIn
+  - ModalityTextOut
+links:
+  model_card: https://huggingface.co/MiniMaxAI/MiniMax-M3-MXFP8
+identifiers:
+  huggingface:
+    - MiniMaxAI/MiniMax-M3-MXFP8
+provenance:
+  features:
+    source: official_huggingface_pipeline
+    url: https://huggingface.co/MiniMaxAI/MiniMax-M3-MXFP8
+  id:
+    source: official_huggingface
+    url: https://huggingface.co/MiniMaxAI/MiniMax-M3-MXFP8
+  name:
+    source: official_huggingface
+    url: https://huggingface.co/MiniMaxAI/MiniMax-M3-MXFP8
+upstream:
+  huggingface:
+    id: MiniMaxAI/MiniMax-M3-MXFP8
+    pipeline_tag: image-text-to-text
+    tags:
+      - transformers
+      - safetensors
+      - minimax_m3_vl
+      - image-text-to-text
+      - multimodal
+      - moe
+      - agent
+      - coding
+      - video
+      - conversational
+      - custom_code
+      - arxiv:2606.13392
+      - base_model:MiniMaxAI/MiniMax-M3
+      - base_model:quantized:MiniMaxAI/MiniMax-M3
+      - license:other
+      - endpoints_compatible
+      - mxfp8
+      - region:us

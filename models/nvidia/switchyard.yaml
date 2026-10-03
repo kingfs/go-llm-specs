@@ -1,0 +1,40 @@
+schema_version: 2
+id: nvidia/switchyard
+name: 'NVIDIA: Switchyard'
+provider: Nvidia
+developer: nvidia
+lifecycle: candidate
+description: Switchyard is an open-source model router that switches between multiple models to optimize the cost of requests. By default it will use OpenRouter market data to select the most popular...
+description_cn: Switchyard 是一款开源模型路由器，可在多个模型之间切换以优化请求成本。默认情况下，它将使用 OpenRouter 市场数据选择最热门...
+context_length: 1000000
+features:
+  - CapChat
+  - ModalityTextIn
+  - ModalityTextOut
+discovered_at: 2026-10-03T07:11:38.049038034Z
+identifiers:
+  openrouter:
+    - nvidia/switchyard
+provenance:
+  context_length:
+    source: openrouter
+  description:
+    source: openrouter
+  features:
+    source: openrouter
+  id:
+    source: openrouter
+  max_output:
+    source: openrouter
+  name:
+    source: openrouter
+  provider:
+    source: openrouter
+upstream:
+  openrouter:
+    canonical_slug: nvidia/switchyard
+    input_modalities:
+      - text
+    output_modalities:
+      - text
+    fetched_at: 2026-10-03T07:11:43.281153101Z

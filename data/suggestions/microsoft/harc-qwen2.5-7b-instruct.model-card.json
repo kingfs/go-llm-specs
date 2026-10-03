@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "microsoft/harc-qwen2.5-7b-instruct",
+  "status": "partially_accepted",
+  "created_at": "2026-10-03T07:11:46.011398101Z",
+  "source": {
+    "url": "https://huggingface.co/microsoft/HARC-Qwen2.5-7B-Instruct/resolve/f650ffae020ad9cfd957d5a341750226843ae89e/README.md",
+    "revision": "f650ffae020ad9cfd957d5a341750226843ae89e",
+    "sha256": "85c83ec8d6c132aeb62d499584168a927b2bf2979980da4af191e526462aaff3"
+  },
+  "generator": {
+    "model": "qwen/qwen3.8-27b",
+    "wire_api": "chat"
+  },
+  "claims": [
+    {
+      "field": "description",
+      "value": "HARC safety-alignment LoRA merged into Qwen/Qwen2.5-7B-Instruct (full standalone model). Part of the HARC release.",
+      "evidence": "HARC safety-alignment LoRA merged into `Qwen/Qwen2.5-7B-Instruct` (full standalone model). Part of the [HARC](https://github.com/microsoft/HARC) release",
+      "section": "HARC — Qwen2.5-7B-Instruct",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "ModalityTextIn",
+        "ModalityTextOut"
+      ],
+      "evidence": "pipeline_tag: text-generation",
+      "section": "HARC — Qwen2.5-7B-Instruct",
+      "confidence": "high"
+    }
+  ]
+}

@@ -1,25 +1,25 @@
 {
   "schema_version": 3,
   "summary": {
-    "models": 799,
+    "models": 806,
     "compiled": 581,
-    "candidates": 192,
+    "candidates": 199,
     "serving_variants": 10,
     "out_of_scope": 2,
     "quantization_variants": 14,
-    "identity_gaps": 128,
-    "unverified_identities": 238
+    "identity_gaps": 130,
+    "unverified_identities": 240
   },
   "by_kind": {
     "draft-head": 10,
-    "model": 773,
+    "model": 780,
     "out-of-scope": 2,
     "quantization": 14
   },
   "identity": {
     "by_source": {
-      "official_huggingface": 508,
-      "openrouter": 291
+      "official_huggingface": 513,
+      "openrouter": 293
     },
     "unverified": [
       {
@@ -398,6 +398,11 @@
         "source": "openrouter"
       },
       {
+        "id": "inclusionai/ling-3.1-flash",
+        "provider": "inclusionai",
+        "source": "openrouter"
+      },
+      {
         "id": "inference-net/schematron-v2-small",
         "provider": "inference-net",
         "source": "openrouter"
@@ -555,6 +560,11 @@
       {
         "id": "mistralai/pixtral-large-2411",
         "provider": "mistral",
+        "source": "openrouter"
+      },
+      {
+        "id": "nvidia/switchyard",
+        "provider": "nvidia",
         "source": "openrouter"
       },
       {
@@ -1547,6 +1557,10 @@
       "provider": "inclusionai"
     },
     {
+      "id": "inclusionai/ling-3.1-flash",
+      "provider": "inclusionai"
+    },
+    {
       "id": "inference-net/schematron-v2-small",
       "provider": "inference-net"
     },
@@ -1669,6 +1683,10 @@
     {
       "id": "mistralai/pixtral-large-2411",
       "provider": "mistral"
+    },
+    {
+      "id": "nvidia/switchyard",
+      "provider": "nvidia"
     },
     {
       "id": "perceptron/perceptron-mk1",

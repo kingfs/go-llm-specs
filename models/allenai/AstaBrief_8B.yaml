@@ -1,0 +1,42 @@
+schema_version: 2
+id: allenai/astabrief_8b
+name: AstaBrief_8B
+provider: Allen Institute for AI
+developer: allenai
+lifecycle: candidate
+context_length: 0
+features:
+  - ModalityTextIn
+  - ModalityTextOut
+links:
+  model_card: https://huggingface.co/allenai/AstaBrief_8B
+identifiers:
+  huggingface:
+    - allenai/AstaBrief_8B
+provenance:
+  features:
+    source: official_huggingface_pipeline
+    url: https://huggingface.co/allenai/AstaBrief_8B
+  id:
+    source: official_huggingface
+    url: https://huggingface.co/allenai/AstaBrief_8B
+  name:
+    source: official_huggingface
+    url: https://huggingface.co/allenai/AstaBrief_8B
+upstream:
+  huggingface:
+    id: allenai/AstaBrief_8B
+    pipeline_tag: text-generation
+    tags:
+      - pytorch
+      - qwen3
+      - deep-research
+      - direct-preference-optimization
+      - text-generation
+      - conversational
+      - en
+      - dataset:allenai/AstaBrief_DPO_Mix
+      - base_model:allenai/AstaBrief_8B_SFT
+      - base_model:finetune:allenai/AstaBrief_8B_SFT
+      - license:apache-2.0
+      - region:us

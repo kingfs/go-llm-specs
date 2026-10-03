@@ -26,16 +26,12 @@ upstream:
   openrouter:
     canonical_slug: openai/gpt-5-image
     supported_parameters:
-      - frequency_penalty
       - include_reasoning
-      - logit_bias
       - logprobs
       - max_tokens
-      - presence_penalty
       - reasoning
       - response_format
       - seed
-      - stop
       - structured_outputs
       - temperature
       - top_logprobs
@@ -48,7 +44,7 @@ upstream:
     output_modalities:
       - image
       - text
-    fetched_at: 2026-10-02T07:39:22.014537726Z
+    fetched_at: 2026-10-03T07:11:43.281629123Z
 reasoning:
   supported: true
   mandatory: true

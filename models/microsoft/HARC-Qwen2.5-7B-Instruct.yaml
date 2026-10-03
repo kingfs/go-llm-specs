@@ -1,0 +1,49 @@
+schema_version: 2
+id: microsoft/harc-qwen2.5-7b-instruct
+name: HARC-Qwen2.5-7B-Instruct
+provider: Microsoft
+developer: microsoft
+lifecycle: candidate
+description: HARC safety-alignment LoRA merged into Qwen/Qwen2.5-7B-Instruct (full standalone model). Part of the HARC release.
+description_cn: 将 HARC 安全对齐 LoRA 合并至 Qwen/Qwen2.5-7B-Instruct 所得的完整独立模型。属于 HARC 发布内容的一部分。
+context_length: 0
+features:
+  - ModalityTextIn
+  - ModalityTextOut
+links:
+  model_card: https://huggingface.co/microsoft/HARC-Qwen2.5-7B-Instruct
+identifiers:
+  huggingface:
+    - microsoft/HARC-Qwen2.5-7B-Instruct
+provenance:
+  description:
+    source: official_model_card
+    url: https://huggingface.co/microsoft/HARC-Qwen2.5-7B-Instruct/resolve/f650ffae020ad9cfd957d5a341750226843ae89e/README.md
+  features:
+    source: official_huggingface_pipeline
+    url: https://huggingface.co/microsoft/HARC-Qwen2.5-7B-Instruct
+  id:
+    source: official_huggingface
+    url: https://huggingface.co/microsoft/HARC-Qwen2.5-7B-Instruct
+  name:
+    source: official_huggingface
+    url: https://huggingface.co/microsoft/HARC-Qwen2.5-7B-Instruct
+upstream:
+  huggingface:
+    id: microsoft/HARC-Qwen2.5-7B-Instruct
+    pipeline_tag: text-generation
+    tags:
+      - transformers
+      - safetensors
+      - qwen2
+      - text-generation
+      - safety
+      - alignment
+      - conversational
+      - arxiv:2607.00572
+      - base_model:Qwen/Qwen2.5-7B-Instruct
+      - base_model:merge:Qwen/Qwen2.5-7B-Instruct
+      - license:apache-2.0
+      - text-generation-inference
+      - endpoints_compatible
+      - region:us
