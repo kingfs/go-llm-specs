@@ -1,0 +1,58 @@
+schema_version: 2
+id: arcee-ai/trinity-large-thinking-w4a16
+name: Trinity-Large-Thinking-W4A16
+provider: Arcee AI
+developer: arcee-ai
+lifecycle: candidate
+context_length: 0
+features:
+  - ModalityTextIn
+  - ModalityTextOut
+links:
+  model_card: https://huggingface.co/arcee-ai/Trinity-Large-Thinking-W4A16
+identifiers:
+  huggingface:
+    - arcee-ai/Trinity-Large-Thinking-W4A16
+provenance:
+  features:
+    source: official_huggingface_pipeline
+    url: https://huggingface.co/arcee-ai/Trinity-Large-Thinking-W4A16
+  id:
+    source: official_huggingface
+    url: https://huggingface.co/arcee-ai/Trinity-Large-Thinking-W4A16
+  name:
+    source: official_huggingface
+    url: https://huggingface.co/arcee-ai/Trinity-Large-Thinking-W4A16
+upstream:
+  huggingface:
+    id: arcee-ai/Trinity-Large-Thinking-W4A16
+    pipeline_tag: text-generation
+    tags:
+      - transformers
+      - safetensors
+      - afmoe
+      - text-generation
+      - reasoning
+      - agentic
+      - tool-calling
+      - thinking
+      - conversational
+      - custom_code
+      - en
+      - es
+      - fr
+      - de
+      - it
+      - pt
+      - ru
+      - ar
+      - hi
+      - ko
+      - zh
+      - arxiv:2602.17004
+      - base_model:arcee-ai/Trinity-Large-Thinking
+      - base_model:quantized:arcee-ai/Trinity-Large-Thinking
+      - license:other
+      - endpoints_compatible
+      - compressed-tensors
+      - region:us

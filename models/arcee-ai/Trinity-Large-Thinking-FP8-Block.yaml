@@ -1,0 +1,58 @@
+schema_version: 2
+id: arcee-ai/trinity-large-thinking-fp8-block
+name: Trinity-Large-Thinking-FP8-Block
+provider: Arcee AI
+developer: arcee-ai
+lifecycle: candidate
+context_length: 0
+features:
+  - ModalityTextIn
+  - ModalityTextOut
+links:
+  model_card: https://huggingface.co/arcee-ai/Trinity-Large-Thinking-FP8-Block
+identifiers:
+  huggingface:
+    - arcee-ai/Trinity-Large-Thinking-FP8-Block
+provenance:
+  features:
+    source: official_huggingface_pipeline
+    url: https://huggingface.co/arcee-ai/Trinity-Large-Thinking-FP8-Block
+  id:
+    source: official_huggingface
+    url: https://huggingface.co/arcee-ai/Trinity-Large-Thinking-FP8-Block
+  name:
+    source: official_huggingface
+    url: https://huggingface.co/arcee-ai/Trinity-Large-Thinking-FP8-Block
+upstream:
+  huggingface:
+    id: arcee-ai/Trinity-Large-Thinking-FP8-Block
+    pipeline_tag: text-generation
+    tags:
+      - transformers
+      - safetensors
+      - afmoe
+      - text-generation
+      - reasoning
+      - agentic
+      - tool-calling
+      - thinking
+      - conversational
+      - custom_code
+      - en
+      - es
+      - fr
+      - de
+      - it
+      - pt
+      - ru
+      - ar
+      - hi
+      - ko
+      - zh
+      - arxiv:2602.17004
+      - base_model:arcee-ai/Trinity-Large-Thinking
+      - base_model:quantized:arcee-ai/Trinity-Large-Thinking
+      - license:other
+      - endpoints_compatible
+      - compressed-tensors
+      - region:us

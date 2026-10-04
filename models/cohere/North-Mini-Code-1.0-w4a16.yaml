@@ -1,0 +1,43 @@
+schema_version: 2
+id: cohere/north-mini-code-1.0-w4a16
+name: North-Mini-Code-1.0-w4a16
+provider: Cohere
+developer: cohere
+lifecycle: candidate
+context_length: 0
+features:
+  - ModalityTextIn
+  - ModalityTextOut
+links:
+  model_card: https://huggingface.co/CohereLabs/North-Mini-Code-1.0-w4a16
+identifiers:
+  huggingface:
+    - CohereLabs/North-Mini-Code-1.0-w4a16
+provenance:
+  features:
+    source: official_huggingface_pipeline
+    url: https://huggingface.co/CohereLabs/North-Mini-Code-1.0-w4a16
+  id:
+    source: official_huggingface
+    url: https://huggingface.co/CohereLabs/North-Mini-Code-1.0-w4a16
+  name:
+    source: official_huggingface
+    url: https://huggingface.co/CohereLabs/North-Mini-Code-1.0-w4a16
+upstream:
+  huggingface:
+    id: CohereLabs/North-Mini-Code-1.0-w4a16
+    pipeline_tag: text-generation
+    tags:
+      - transformers
+      - safetensors
+      - cohere2_moe
+      - text-generation
+      - conversational
+      - chat
+      - code
+      - agent
+      - base_model:CohereLabs/North-Mini-Code-1.0
+      - base_model:quantized:CohereLabs/North-Mini-Code-1.0
+      - license:apache-2.0
+      - compressed-tensors
+      - region:us
