@@ -1,7 +1,7 @@
 {
   "providers": 54,
-  "models": 806,
-  "models_with_official_links": 620,
+  "models": 811,
+  "models_with_official_links": 625,
   "uncataloged_publishers": {
     "Anthracite-Org": 1,
     "Cognitivecomputations": 1,
@@ -7907,6 +7907,139 @@
         "custom_code",
         "en",
         "license:apache-2.0",
+        "region:us"
+      ]
+    },
+    {
+      "provider_id": "prime-intellect",
+      "organization": "PrimeIntellect",
+      "repository_id": "PrimeIntellect/Qwen3-0.6B-Reverse-Text-SFT-untied",
+      "status": "new",
+      "url": "https://huggingface.co/PrimeIntellect/Qwen3-0.6B-Reverse-Text-SFT-untied",
+      "last_modified": "2026-10-05T00:22:32Z",
+      "tags": [
+        "safetensors",
+        "qwen3",
+        "dataset:willcb/V3-wordle",
+        "base_model:PrimeIntellect/Qwen3-0.6B",
+        "base_model:finetune:PrimeIntellect/Qwen3-0.6B",
+        "license:apache-2.0",
+        "region:us"
+      ]
+    },
+    {
+      "provider_id": "prime-intellect",
+      "organization": "PrimeIntellect",
+      "repository_id": "PrimeIntellect/Qwen3-0.6B-untied",
+      "registry_id": "prime-intellect/qwen3-0.6b-untied",
+      "status": "materialized",
+      "url": "https://huggingface.co/PrimeIntellect/Qwen3-0.6B-untied",
+      "last_modified": "2026-10-05T00:21:59Z",
+      "pipeline_tag": "text-generation",
+      "tags": [
+        "transformers",
+        "safetensors",
+        "qwen3",
+        "text-generation",
+        "conversational",
+        "base_model:Qwen/Qwen3-0.6B-Base",
+        "base_model:finetune:Qwen/Qwen3-0.6B-Base",
+        "license:apache-2.0",
+        "text-generation-inference",
+        "endpoints_compatible",
+        "region:us"
+      ]
+    },
+    {
+      "provider_id": "prime-intellect",
+      "organization": "PrimeIntellect",
+      "repository_id": "PrimeIntellect/Qwen3-4B-Instruct-2507-untied",
+      "registry_id": "prime-intellect/qwen3-4b-instruct-2507-untied",
+      "status": "materialized",
+      "url": "https://huggingface.co/PrimeIntellect/Qwen3-4B-Instruct-2507-untied",
+      "last_modified": "2026-10-05T05:03:06Z",
+      "pipeline_tag": "text-generation",
+      "tags": [
+        "transformers",
+        "safetensors",
+        "qwen3",
+        "text-generation",
+        "conversational",
+        "arxiv:2505.09388",
+        "license:apache-2.0",
+        "text-generation-inference",
+        "endpoints_compatible",
+        "region:us"
+      ]
+    },
+    {
+      "provider_id": "prime-intellect",
+      "organization": "PrimeIntellect",
+      "repository_id": "PrimeIntellect/Qwen3.5-0.8B-Reverse-Text-RL",
+      "registry_id": "prime-intellect/qwen3.5-0.8b-reverse-text-rl",
+      "status": "materialized",
+      "url": "https://huggingface.co/PrimeIntellect/Qwen3.5-0.8B-Reverse-Text-RL",
+      "last_modified": "2026-10-04T21:18:36Z",
+      "pipeline_tag": "image-text-to-text",
+      "tags": [
+        "transformers",
+        "safetensors",
+        "qwen3_5",
+        "image-text-to-text",
+        "prime-rl",
+        "ci",
+        "conversational",
+        "base_model:PrimeIntellect/Qwen3.5-0.8B-Reverse-Text-SFT",
+        "base_model:finetune:PrimeIntellect/Qwen3.5-0.8B-Reverse-Text-SFT",
+        "license:apache-2.0",
+        "endpoints_compatible",
+        "region:us"
+      ]
+    },
+    {
+      "provider_id": "prime-intellect",
+      "organization": "PrimeIntellect",
+      "repository_id": "PrimeIntellect/Qwen3.5-0.8B-Reverse-Text-SFT",
+      "registry_id": "prime-intellect/qwen3.5-0.8b-reverse-text-sft",
+      "status": "materialized",
+      "url": "https://huggingface.co/PrimeIntellect/Qwen3.5-0.8B-Reverse-Text-SFT",
+      "last_modified": "2026-10-04T21:18:34Z",
+      "pipeline_tag": "image-text-to-text",
+      "tags": [
+        "transformers",
+        "safetensors",
+        "qwen3_5",
+        "image-text-to-text",
+        "prime-rl",
+        "ci",
+        "conversational",
+        "dataset:PrimeIntellect/Reverse-Text-SFT",
+        "base_model:Qwen/Qwen3.5-0.8B",
+        "base_model:finetune:Qwen/Qwen3.5-0.8B",
+        "license:apache-2.0",
+        "endpoints_compatible",
+        "region:us"
+      ]
+    },
+    {
+      "provider_id": "prime-intellect",
+      "organization": "PrimeIntellect",
+      "repository_id": "PrimeIntellect/Qwen3.5-4B-untied",
+      "registry_id": "prime-intellect/qwen3.5-4b-untied",
+      "status": "materialized",
+      "url": "https://huggingface.co/PrimeIntellect/Qwen3.5-4B-untied",
+      "last_modified": "2026-10-05T05:04:17Z",
+      "pipeline_tag": "image-text-to-text",
+      "tags": [
+        "transformers",
+        "safetensors",
+        "qwen3_5",
+        "image-text-to-text",
+        "conversational",
+        "base_model:Qwen/Qwen3.5-4B-Base",
+        "base_model:finetune:Qwen/Qwen3.5-4B-Base",
+        "license:apache-2.0",
+        "endpoints_compatible",
         "region:us"
       ]
     },
@@ -50147,6 +50280,36 @@
         "llama",
         "arxiv:2401.03506",
         "license:llama3",
+        "endpoints_compatible",
+        "region:us"
+      ]
+    },
+    {
+      "provider_id": "google",
+      "organization": "google",
+      "repository_id": "google/DiarizationLM-Gemma-4-E4B-v1",
+      "status": "packaging",
+      "url": "https://huggingface.co/google/DiarizationLM-Gemma-4-E4B-v1",
+      "last_modified": "2026-10-04T21:07:53Z",
+      "pipeline_tag": "image-text-to-text",
+      "tags": [
+        "transformers",
+        "safetensors",
+        "gguf",
+        "gemma4",
+        "image-text-to-text",
+        "speech",
+        "speaker-diarization",
+        "diarizationlm",
+        "gemma",
+        "gemma-4",
+        "long-context",
+        "multi-speaker",
+        "conversational",
+        "arxiv:2401.03506",
+        "base_model:google/gemma-4-E4B",
+        "base_model:quantized:google/gemma-4-E4B",
+        "license:apache-2.0",
         "endpoints_compatible",
         "region:us"
       ]

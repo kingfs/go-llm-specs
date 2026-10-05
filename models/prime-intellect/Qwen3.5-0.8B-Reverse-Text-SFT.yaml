@@ -1,0 +1,44 @@
+schema_version: 2
+id: prime-intellect/qwen3.5-0.8b-reverse-text-sft
+name: Qwen3.5-0.8B-Reverse-Text-SFT
+provider: Prime Intellect
+developer: prime-intellect
+lifecycle: candidate
+context_length: 0
+features:
+  - ModalityImageIn
+  - ModalityTextIn
+  - ModalityTextOut
+links:
+  model_card: https://huggingface.co/PrimeIntellect/Qwen3.5-0.8B-Reverse-Text-SFT
+identifiers:
+  huggingface:
+    - PrimeIntellect/Qwen3.5-0.8B-Reverse-Text-SFT
+provenance:
+  features:
+    source: official_huggingface_pipeline
+    url: https://huggingface.co/PrimeIntellect/Qwen3.5-0.8B-Reverse-Text-SFT
+  id:
+    source: official_huggingface
+    url: https://huggingface.co/PrimeIntellect/Qwen3.5-0.8B-Reverse-Text-SFT
+  name:
+    source: official_huggingface
+    url: https://huggingface.co/PrimeIntellect/Qwen3.5-0.8B-Reverse-Text-SFT
+upstream:
+  huggingface:
+    id: PrimeIntellect/Qwen3.5-0.8B-Reverse-Text-SFT
+    pipeline_tag: image-text-to-text
+    tags:
+      - transformers
+      - safetensors
+      - qwen3_5
+      - image-text-to-text
+      - prime-rl
+      - ci
+      - conversational
+      - dataset:PrimeIntellect/Reverse-Text-SFT
+      - base_model:Qwen/Qwen3.5-0.8B
+      - base_model:finetune:Qwen/Qwen3.5-0.8B
+      - license:apache-2.0
+      - endpoints_compatible
+      - region:us

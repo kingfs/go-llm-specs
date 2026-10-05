@@ -1,0 +1,41 @@
+schema_version: 2
+id: prime-intellect/qwen3-0.6b-untied
+name: Qwen3-0.6B-untied
+provider: Prime Intellect
+developer: prime-intellect
+lifecycle: candidate
+context_length: 0
+features:
+  - ModalityTextIn
+  - ModalityTextOut
+links:
+  model_card: https://huggingface.co/PrimeIntellect/Qwen3-0.6B-untied
+identifiers:
+  huggingface:
+    - PrimeIntellect/Qwen3-0.6B-untied
+provenance:
+  features:
+    source: official_huggingface_pipeline
+    url: https://huggingface.co/PrimeIntellect/Qwen3-0.6B-untied
+  id:
+    source: official_huggingface
+    url: https://huggingface.co/PrimeIntellect/Qwen3-0.6B-untied
+  name:
+    source: official_huggingface
+    url: https://huggingface.co/PrimeIntellect/Qwen3-0.6B-untied
+upstream:
+  huggingface:
+    id: PrimeIntellect/Qwen3-0.6B-untied
+    pipeline_tag: text-generation
+    tags:
+      - transformers
+      - safetensors
+      - qwen3
+      - text-generation
+      - conversational
+      - base_model:Qwen/Qwen3-0.6B-Base
+      - base_model:finetune:Qwen/Qwen3-0.6B-Base
+      - license:apache-2.0
+      - text-generation-inference
+      - endpoints_compatible
+      - region:us

@@ -1,0 +1,40 @@
+schema_version: 2
+id: prime-intellect/qwen3-4b-instruct-2507-untied
+name: Qwen3-4B-Instruct-2507-untied
+provider: Prime Intellect
+developer: prime-intellect
+lifecycle: candidate
+context_length: 0
+features:
+  - ModalityTextIn
+  - ModalityTextOut
+links:
+  model_card: https://huggingface.co/PrimeIntellect/Qwen3-4B-Instruct-2507-untied
+identifiers:
+  huggingface:
+    - PrimeIntellect/Qwen3-4B-Instruct-2507-untied
+provenance:
+  features:
+    source: official_huggingface_pipeline
+    url: https://huggingface.co/PrimeIntellect/Qwen3-4B-Instruct-2507-untied
+  id:
+    source: official_huggingface
+    url: https://huggingface.co/PrimeIntellect/Qwen3-4B-Instruct-2507-untied
+  name:
+    source: official_huggingface
+    url: https://huggingface.co/PrimeIntellect/Qwen3-4B-Instruct-2507-untied
+upstream:
+  huggingface:
+    id: PrimeIntellect/Qwen3-4B-Instruct-2507-untied
+    pipeline_tag: text-generation
+    tags:
+      - transformers
+      - safetensors
+      - qwen3
+      - text-generation
+      - conversational
+      - arxiv:2505.09388
+      - license:apache-2.0
+      - text-generation-inference
+      - endpoints_compatible
+      - region:us
