@@ -1,0 +1,53 @@
+schema_version: 2
+id: arcee-ai/trinity-mini-fp8-block
+name: Trinity-Mini-FP8-Block
+provider: Arcee AI
+developer: arcee-ai
+lifecycle: candidate
+context_length: 0
+features:
+  - ModalityTextIn
+  - ModalityTextOut
+links:
+  model_card: https://huggingface.co/arcee-ai/Trinity-Mini-FP8-Block
+identifiers:
+  huggingface:
+    - arcee-ai/Trinity-Mini-FP8-Block
+provenance:
+  features:
+    source: official_huggingface_pipeline
+    url: https://huggingface.co/arcee-ai/Trinity-Mini-FP8-Block
+  id:
+    source: official_huggingface
+    url: https://huggingface.co/arcee-ai/Trinity-Mini-FP8-Block
+  name:
+    source: official_huggingface
+    url: https://huggingface.co/arcee-ai/Trinity-Mini-FP8-Block
+upstream:
+  huggingface:
+    id: arcee-ai/Trinity-Mini-FP8-Block
+    pipeline_tag: text-generation
+    tags:
+      - transformers
+      - safetensors
+      - afmoe
+      - text-generation
+      - conversational
+      - custom_code
+      - en
+      - es
+      - fr
+      - de
+      - it
+      - pt
+      - ru
+      - ar
+      - hi
+      - ko
+      - zh
+      - base_model:arcee-ai/Trinity-Mini
+      - base_model:quantized:arcee-ai/Trinity-Mini
+      - license:other
+      - endpoints_compatible
+      - compressed-tensors
+      - region:us

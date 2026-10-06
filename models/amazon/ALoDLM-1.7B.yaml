@@ -1,0 +1,41 @@
+schema_version: 2
+id: amazon/alodlm-1.7b
+name: ALoDLM-1.7B
+provider: Amazon
+developer: amazon
+lifecycle: candidate
+context_length: 0
+features:
+  - ModalityTextIn
+  - ModalityTextOut
+links:
+  model_card: https://huggingface.co/amazon/ALoDLM-1.7B
+identifiers:
+  huggingface:
+    - amazon/ALoDLM-1.7B
+provenance:
+  features:
+    source: official_huggingface_pipeline
+    url: https://huggingface.co/amazon/ALoDLM-1.7B
+  id:
+    source: official_huggingface
+    url: https://huggingface.co/amazon/ALoDLM-1.7B
+  name:
+    source: official_huggingface
+    url: https://huggingface.co/amazon/ALoDLM-1.7B
+upstream:
+  huggingface:
+    id: amazon/ALoDLM-1.7B
+    pipeline_tag: text-generation
+    tags:
+      - safetensors
+      - qwen3
+      - alodlm
+      - diffusion-language-model
+      - looped-transformer
+      - adaptive-computation
+      - text-generation
+      - code
+      - conversational
+      - license:cc-by-nc-4.0
+      - region:us
