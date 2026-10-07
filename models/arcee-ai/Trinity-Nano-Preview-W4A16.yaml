@@ -1,0 +1,53 @@
+schema_version: 2
+id: arcee-ai/trinity-nano-preview-w4a16
+name: Trinity-Nano-Preview-W4A16
+provider: Arcee AI
+developer: arcee-ai
+lifecycle: candidate
+context_length: 0
+features:
+  - ModalityTextIn
+  - ModalityTextOut
+links:
+  model_card: https://huggingface.co/arcee-ai/Trinity-Nano-Preview-W4A16
+identifiers:
+  huggingface:
+    - arcee-ai/Trinity-Nano-Preview-W4A16
+provenance:
+  features:
+    source: official_huggingface_pipeline
+    url: https://huggingface.co/arcee-ai/Trinity-Nano-Preview-W4A16
+  id:
+    source: official_huggingface
+    url: https://huggingface.co/arcee-ai/Trinity-Nano-Preview-W4A16
+  name:
+    source: official_huggingface
+    url: https://huggingface.co/arcee-ai/Trinity-Nano-Preview-W4A16
+upstream:
+  huggingface:
+    id: arcee-ai/Trinity-Nano-Preview-W4A16
+    pipeline_tag: text-generation
+    tags:
+      - transformers
+      - safetensors
+      - afmoe
+      - text-generation
+      - conversational
+      - custom_code
+      - en
+      - es
+      - fr
+      - de
+      - it
+      - pt
+      - ru
+      - ar
+      - hi
+      - ko
+      - zh
+      - base_model:arcee-ai/Trinity-Nano-Preview
+      - base_model:quantized:arcee-ai/Trinity-Nano-Preview
+      - license:other
+      - endpoints_compatible
+      - compressed-tensors
+      - region:us

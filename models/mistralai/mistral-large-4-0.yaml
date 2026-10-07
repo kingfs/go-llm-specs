@@ -1,0 +1,70 @@
+schema_version: 2
+id: mistralai/mistral-large-4-0
+name: 'Mistral: Mistral Large 4'
+provider: Mistral
+developer: mistral
+description: Mistral Large 4 is a frontier multimodal (text and image input) model from Mistral AI built for reasoning, coding, and agentic workloads. It offers a 512K-token context window with up...
+description_cn: Mistral Large 4 是由 Mistral AI 开发的前沿多模态（文本与图像输入）模型，专为推理、编码及智能体工作负载设计。它提供 512K token 上下文窗口，支持最长……
+context_length: 524288
+max_output: 262144
+features:
+  - CapChat
+  - CapFunctionCall
+  - CapJsonMode
+  - ModalityImageIn
+  - ModalityTextIn
+  - ModalityTextOut
+discovered_at: 2026-10-07T07:49:13.732212708Z
+identifiers:
+  openrouter:
+    - mistralai/mistral-large-4-0
+provenance:
+  context_length:
+    source: openrouter
+  description:
+    source: openrouter
+  features:
+    source: openrouter
+  id:
+    source: openrouter
+  max_output:
+    source: openrouter
+  name:
+    source: openrouter
+  provider:
+    source: openrouter
+  reasoning:
+    source: openrouter
+upstream:
+  openrouter:
+    canonical_slug: mistralai/mistral-large-4-0-20261006
+    supported_parameters:
+      - frequency_penalty
+      - include_reasoning
+      - logprobs
+      - max_tokens
+      - presence_penalty
+      - reasoning
+      - reasoning_effort
+      - response_format
+      - seed
+      - stop
+      - structured_outputs
+      - temperature
+      - tool_choice
+      - tools
+      - top_logprobs
+      - top_p
+    input_modalities:
+      - image
+      - text
+    output_modalities:
+      - text
+    fetched_at: 2026-10-07T07:49:18.011844311Z
+reasoning:
+  supported: true
+  default_enabled: true
+  default_effort: high
+  supported_efforts:
+    - high
+    - none

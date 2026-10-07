@@ -1,0 +1,49 @@
+schema_version: 2
+id: google/embeddinggemma-2
+name: embeddinggemma-2
+provider: Google
+developer: google
+lifecycle: candidate
+context_length: 0
+features:
+  - CapEmbedding
+  - ModalityTextIn
+links:
+  model_card: https://huggingface.co/google/embeddinggemma-2
+identifiers:
+  huggingface:
+    - google/embeddinggemma-2
+provenance:
+  features:
+    source: official_huggingface_pipeline
+    url: https://huggingface.co/google/embeddinggemma-2
+  id:
+    source: official_huggingface
+    url: https://huggingface.co/google/embeddinggemma-2
+  name:
+    source: official_huggingface
+    url: https://huggingface.co/google/embeddinggemma-2
+upstream:
+  huggingface:
+    id: google/embeddinggemma-2
+    pipeline_tag: feature-extraction
+    tags:
+      - transformers
+      - safetensors
+      - embedding_gemma2
+      - feature-extraction
+      - embedding
+      - sentence-transformers
+      - multimodal-embedding
+      - multimodal
+      - vision
+      - audio
+      - video
+      - image-feature-extraction
+      - audio-feature-extraction
+      - video-feature-extraction
+      - sentence-similarity
+      - multilingual
+      - license:apache-2.0
+      - endpoints_compatible
+      - region:us

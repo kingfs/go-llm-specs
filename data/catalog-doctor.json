@@ -1,25 +1,25 @@
 {
   "schema_version": 3,
   "summary": {
-    "models": 821,
-    "compiled": 581,
-    "candidates": 214,
+    "models": 828,
+    "compiled": 582,
+    "candidates": 220,
     "serving_variants": 10,
     "out_of_scope": 2,
     "quantization_variants": 14,
-    "identity_gaps": 130,
-    "unverified_identities": 240
+    "identity_gaps": 132,
+    "unverified_identities": 242
   },
   "by_kind": {
     "draft-head": 10,
-    "model": 795,
+    "model": 802,
     "out-of-scope": 2,
     "quantization": 14
   },
   "identity": {
     "by_source": {
-      "official_huggingface": 528,
-      "openrouter": 293
+      "official_huggingface": 533,
+      "openrouter": 295
     },
     "unverified": [
       {
@@ -383,6 +383,11 @@
         "source": "openrouter"
       },
       {
+        "id": "google/gemini-nano-banana-2.1",
+        "provider": "google",
+        "source": "openrouter"
+      },
+      {
         "id": "google/lyria-3-clip-preview",
         "provider": "google",
         "source": "openrouter"
@@ -524,6 +529,11 @@
       },
       {
         "id": "mistralai/mistral-large-2512",
+        "provider": "mistral",
+        "source": "openrouter"
+      },
+      {
+        "id": "mistralai/mistral-large-4-0",
         "provider": "mistral",
         "source": "openrouter"
       },
@@ -1545,6 +1555,10 @@
       "provider": "google"
     },
     {
+      "id": "google/gemini-nano-banana-2.1",
+      "provider": "google"
+    },
+    {
       "id": "google/lyria-3-clip-preview",
       "provider": "google"
     },
@@ -1654,6 +1668,10 @@
     },
     {
       "id": "mistralai/mistral-large-2512",
+      "provider": "mistral"
+    },
+    {
+      "id": "mistralai/mistral-large-4-0",
       "provider": "mistral"
     },
     {

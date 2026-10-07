@@ -1,0 +1,52 @@
+schema_version: 2
+id: arcee-ai/trinity-nano-preview-mlx-5bit
+name: Trinity-Nano-Preview-MLX-5bit
+provider: Arcee AI
+developer: arcee-ai
+lifecycle: candidate
+context_length: 0
+features:
+  - ModalityTextIn
+  - ModalityTextOut
+links:
+  model_card: https://huggingface.co/arcee-ai/Trinity-Nano-Preview-MLX-5bit
+identifiers:
+  huggingface:
+    - arcee-ai/Trinity-Nano-Preview-MLX-5bit
+provenance:
+  features:
+    source: official_huggingface_pipeline
+    url: https://huggingface.co/arcee-ai/Trinity-Nano-Preview-MLX-5bit
+  id:
+    source: official_huggingface
+    url: https://huggingface.co/arcee-ai/Trinity-Nano-Preview-MLX-5bit
+  name:
+    source: official_huggingface
+    url: https://huggingface.co/arcee-ai/Trinity-Nano-Preview-MLX-5bit
+upstream:
+  huggingface:
+    id: arcee-ai/Trinity-Nano-Preview-MLX-5bit
+    pipeline_tag: text-generation
+    tags:
+      - mlx
+      - safetensors
+      - afmoe
+      - text-generation
+      - conversational
+      - custom_code
+      - en
+      - es
+      - fr
+      - de
+      - it
+      - pt
+      - ru
+      - ar
+      - hi
+      - ko
+      - zh
+      - base_model:arcee-ai/Trinity-Nano-Preview
+      - base_model:quantized:arcee-ai/Trinity-Nano-Preview
+      - license:other
+      - 5-bit
+      - region:us

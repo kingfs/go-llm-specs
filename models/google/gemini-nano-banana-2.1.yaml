@@ -1,0 +1,68 @@
+schema_version: 2
+id: google/gemini-nano-banana-2.1
+name: 'Google: Nano Banana 2.1'
+provider: Google
+developer: google
+lifecycle: candidate
+description: Nano Banana 2.1 (Gemini Nano Banana 2.1) is Google's image generation and editing model on the Flash tier, succeeding Nano Banana 2 and Nano Banana Pro. It improves product recontextualization,...
+description_cn: Nano Banana 2.1（Gemini Nano Banana 2.1）是谷歌 Flash 级别图像生成与编辑模型，Nano Banana 2 和 Nano Banana Pro 的继任者。它在产品场景重构方面有所改进……
+context_length: 65536
+max_output: 58982
+features:
+  - CapChat
+  - CapFunctionCall
+  - CapJsonMode
+  - ModalityImageIn
+  - ModalityImageOut
+  - ModalityTextIn
+  - ModalityTextOut
+discovered_at: 2026-10-07T07:49:13.731895065Z
+identifiers:
+  openrouter:
+    - google/gemini-nano-banana-2.1
+provenance:
+  context_length:
+    source: openrouter
+  description:
+    source: openrouter
+  features:
+    source: openrouter
+  id:
+    source: openrouter
+  max_output:
+    source: openrouter
+  name:
+    source: openrouter
+  provider:
+    source: openrouter
+  reasoning:
+    source: openrouter
+upstream:
+  openrouter:
+    canonical_slug: google/gemini-nano-banana-2.1-20261006
+    supported_parameters:
+      - include_reasoning
+      - max_tokens
+      - reasoning
+      - reasoning_effort
+      - response_format
+      - seed
+      - structured_outputs
+      - temperature
+      - tool_choice
+      - tools
+      - top_p
+    input_modalities:
+      - image
+      - text
+    output_modalities:
+      - image
+      - text
+    fetched_at: 2026-10-07T07:49:18.010234994Z
+reasoning:
+  supported: true
+  default_enabled: true
+  default_effort: minimal
+  supported_efforts:
+    - high
+    - minimal
