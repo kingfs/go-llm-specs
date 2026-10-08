@@ -1,25 +1,25 @@
 {
   "schema_version": 3,
   "summary": {
-    "models": 828,
-    "compiled": 582,
-    "candidates": 220,
+    "models": 834,
+    "compiled": 583,
+    "candidates": 225,
     "serving_variants": 10,
     "out_of_scope": 2,
     "quantization_variants": 14,
     "identity_gaps": 132,
-    "unverified_identities": 242
+    "unverified_identities": 243
   },
   "by_kind": {
     "draft-head": 10,
-    "model": 802,
+    "model": 808,
     "out-of-scope": 2,
     "quantization": 14
   },
   "identity": {
     "by_source": {
-      "official_huggingface": 533,
-      "openrouter": 295
+      "official_huggingface": 538,
+      "openrouter": 296
     },
     "unverified": [
       {
@@ -119,6 +119,11 @@
       },
       {
         "id": "anthropic/claude-haiku-4.5",
+        "provider": "anthropic",
+        "source": "openrouter"
+      },
+      {
+        "id": "anthropic/claude-haiku-5.5",
         "provider": "anthropic",
         "source": "openrouter"
       },

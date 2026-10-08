@@ -1,0 +1,68 @@
+schema_version: 2
+id: liquid/d1-omni-600m
+name: d1-omni-600M
+provider: Liquid AI
+developer: liquid
+lifecycle: candidate
+context_length: 0
+features:
+  - ModalityImageIn
+  - ModalityTextIn
+  - ModalityTextOut
+links:
+  model_card: https://huggingface.co/LiquidAI/d1-omni-600M
+identifiers:
+  huggingface:
+    - LiquidAI/d1-omni-600M
+provenance:
+  features:
+    source: official_huggingface_pipeline
+    url: https://huggingface.co/LiquidAI/d1-omni-600M
+  id:
+    source: official_huggingface
+    url: https://huggingface.co/LiquidAI/d1-omni-600M
+  name:
+    source: official_huggingface
+    url: https://huggingface.co/LiquidAI/d1-omni-600M
+upstream:
+  huggingface:
+    id: LiquidAI/d1-omni-600M
+    pipeline_tag: image-text-to-text
+    tags:
+      - transformers
+      - safetensors
+      - d1_omni
+      - feature-extraction
+      - liquid
+      - lfm2.5
+      - edge
+      - decision
+      - classification
+      - calibration
+      - system-one
+      - multimodal
+      - vision
+      - audio
+      - decision-model
+      - image-text-to-text
+      - custom_code
+      - en
+      - de
+      - es
+      - fr
+      - it
+      - nl
+      - pl
+      - pt
+      - ar
+      - hi
+      - ja
+      - ru
+      - tr
+      - vi
+      - zh
+      - arxiv:2511.23404
+      - base_model:LiquidAI/LFM2.5-Encoder-350M
+      - base_model:finetune:LiquidAI/LFM2.5-Encoder-350M
+      - license:other
+      - region:us

@@ -1,0 +1,41 @@
+schema_version: 2
+id: tencent/sequential-hidden-decoding-8b-n8-instruct
+name: Sequential-Hidden-Decoding-8B-n8-Instruct
+provider: Tencent Hunyuan
+developer: tencent
+lifecycle: candidate
+context_length: 0
+features:
+  - ModalityTextIn
+  - ModalityTextOut
+links:
+  model_card: https://huggingface.co/tencent/Sequential-Hidden-Decoding-8B-n8-Instruct
+identifiers:
+  huggingface:
+    - tencent/Sequential-Hidden-Decoding-8B-n8-Instruct
+provenance:
+  features:
+    source: official_huggingface_pipeline
+    url: https://huggingface.co/tencent/Sequential-Hidden-Decoding-8B-n8-Instruct
+  id:
+    source: official_huggingface
+    url: https://huggingface.co/tencent/Sequential-Hidden-Decoding-8B-n8-Instruct
+  name:
+    source: official_huggingface
+    url: https://huggingface.co/tencent/Sequential-Hidden-Decoding-8B-n8-Instruct
+upstream:
+  huggingface:
+    id: tencent/Sequential-Hidden-Decoding-8B-n8-Instruct
+    pipeline_tag: text-generation
+    tags:
+      - safetensors
+      - qwen3_scale_seq
+      - sequential-hidden-decoding
+      - instruct
+      - text-generation
+      - conversational
+      - custom_code
+      - base_model:Qwen/Qwen3-8B-Base
+      - base_model:finetune:Qwen/Qwen3-8B-Base
+      - license:other
+      - region:us

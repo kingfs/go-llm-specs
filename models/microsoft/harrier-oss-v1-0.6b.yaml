@@ -1,0 +1,148 @@
+schema_version: 2
+id: microsoft/harrier-oss-v1-0.6b
+name: harrier-oss-v1-0.6b
+provider: Microsoft
+developer: microsoft
+lifecycle: active
+description: Multilingual text embedding model using a decoder-only architecture with last-token pooling and L2 normalization to produce dense text embeddings for tasks like retrieval, clustering, and classification.
+description_cn: 一种基于仅解码器架构的多语言文本嵌入模型，采用最后标记池化（last-token pooling）和 L2 归一化技术生成稠密文本嵌入，适用于检索、聚类和分类等任务。
+context_length: 32768
+features:
+  - CapEmbedding
+  - ModalityTextIn
+links:
+  model_card: https://huggingface.co/microsoft/harrier-oss-v1-0.6b
+identifiers:
+  huggingface:
+    - microsoft/harrier-oss-v1-0.6b
+provenance:
+  context_length:
+    source: official_model_card
+    url: https://huggingface.co/microsoft/harrier-oss-v1-0.6b/resolve/f9b9dc8d367d443f2479d27aa5d8d2850c0774ee/README.md
+  description:
+    source: official_model_card
+    url: https://huggingface.co/microsoft/harrier-oss-v1-0.6b/resolve/f9b9dc8d367d443f2479d27aa5d8d2850c0774ee/README.md
+  features:
+    source: official_huggingface_pipeline
+    url: https://huggingface.co/microsoft/harrier-oss-v1-0.6b
+  id:
+    source: official_huggingface
+    url: https://huggingface.co/microsoft/harrier-oss-v1-0.6b
+  name:
+    source: official_huggingface
+    url: https://huggingface.co/microsoft/harrier-oss-v1-0.6b
+  reasoning.supported:
+    source: official_model_card
+    url: https://huggingface.co/microsoft/harrier-oss-v1-0.6b/resolve/f9b9dc8d367d443f2479d27aa5d8d2850c0774ee/README.md
+upstream:
+  huggingface:
+    id: microsoft/harrier-oss-v1-0.6b
+    pipeline_tag: feature-extraction
+    tags:
+      - sentence-transformers
+      - safetensors
+      - qwen3
+      - feature-extraction
+      - mteb
+      - transformers
+      - multilingual
+      - af
+      - am
+      - ar
+      - as
+      - az
+      - be
+      - bg
+      - bn
+      - br
+      - bs
+      - ca
+      - cs
+      - cy
+      - da
+      - de
+      - el
+      - en
+      - eo
+      - es
+      - et
+      - eu
+      - fa
+      - fi
+      - fr
+      - fy
+      - ga
+      - gd
+      - gl
+      - gu
+      - ha
+      - he
+      - hi
+      - hr
+      - hu
+      - hy
+      - id
+      - is
+      - it
+      - ja
+      - jv
+      - ka
+      - kk
+      - km
+      - kn
+      - ko
+      - ku
+      - ky
+      - la
+      - lo
+      - lt
+      - lv
+      - mg
+      - mk
+      - ml
+      - mn
+      - mr
+      - ms
+      - my
+      - ne
+      - nl
+      - "no"
+      - om
+      - or
+      - pa
+      - pl
+      - ps
+      - pt
+      - ro
+      - ru
+      - sa
+      - sd
+      - si
+      - sk
+      - sl
+      - so
+      - sq
+      - sr
+      - su
+      - sv
+      - sw
+      - ta
+      - te
+      - th
+      - tl
+      - tr
+      - ug
+      - uk
+      - ur
+      - uz
+      - vi
+      - xh
+      - yi
+      - zh
+      - license:mit
+      - text-embeddings-inference
+      - endpoints_compatible
+      - region:us
+      - deploy:azure
+reasoning:
+  supported: false

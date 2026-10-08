@@ -1,11 +1,11 @@
 schema_version: 2
-id: anthropic/claude-sonnet-5.5
-name: 'Anthropic: Claude Sonnet 5.5'
+id: anthropic/claude-haiku-5.5
+name: 'Anthropic: Claude Haiku 5.5'
 provider: Anthropic
 developer: anthropic
 lifecycle: candidate
-description: Claude Sonnet 5.5 is Anthropic's Sonnet-class model for well-scoped everyday work, succeeding Claude Sonnet 5 as a direct upgrade. It is especially strong at building features, fixing bugs, and producing...
-description_cn: Claude Sonnet 5.5 是 Anthropic 的 Sonnet 级模型，用于范围明确的日常工作，作为 Claude Sonnet 5 的直接升级版。它在构建功能、修复 Bug 以及生成方面表现尤为出色...
+description: Claude Haiku 5.5 is Anthropic's small, fast model for high-volume, cost-sensitive work such as summarization, subagents, and browser use. It succeeds Claude Haiku 4.5 with stronger coding, computer use, and...
+description_cn: Claude Haiku 5.5 是 Anthropic 推出的小型高速模型，适用于高吞吐量、成本敏感的任务，如摘要生成、子智能体（subagents）及浏览器使用。它接替了 Claude Haiku 4.5，在编码、计算机使用等方面...
 context_length: 1000000
 max_output: 128000
 features:
@@ -17,16 +17,16 @@ features:
   - ModalityTextIn
   - ModalityTextOut
 aliases:
-  - anthropic/claude-sonnet-5.5:batch
-  - ~anthropic/claude-sonnet-latest
-discovered_at: 2026-09-29T07:36:16.277634515Z
+  - anthropic/claude-haiku-5.5:batch
+  - ~anthropic/claude-haiku-latest
+discovered_at: 2026-10-08T08:06:11.267280428Z
 links:
   documentation: https://docs.anthropic.com/en/docs/about-claude/models
 identifiers:
   openrouter:
-    - anthropic/claude-sonnet-5.5
-    - anthropic/claude-sonnet-5.5:batch
-    - ~anthropic/claude-sonnet-latest
+    - anthropic/claude-haiku-5.5
+    - anthropic/claude-haiku-5.5:batch
+    - ~anthropic/claude-haiku-latest
 provenance:
   context_length:
     source: openrouter
@@ -46,7 +46,7 @@ provenance:
     source: openrouter
 upstream:
   openrouter:
-    canonical_slug: anthropic/claude-sonnet-5.5-20260928
+    canonical_slug: anthropic/claude-haiku-5.5-20261007
     supported_parameters:
       - include_reasoning
       - max_completion_tokens
@@ -65,11 +65,10 @@ upstream:
       - text
     output_modalities:
       - text
-    fetched_at: 2026-10-08T08:06:18.009731251Z
+    fetched_at: 2026-10-08T08:06:18.007547074Z
 reasoning:
   supported: true
-  mandatory: true
-  default_effort: high
+  default_effort: medium
   supported_efforts:
     - high
     - low
