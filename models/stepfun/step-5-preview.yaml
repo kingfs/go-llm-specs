@@ -1,0 +1,70 @@
+schema_version: 2
+id: stepfun/step-5-preview
+name: 'StepFun: Step 5 Preview'
+provider: Stepfun
+developer: stepfun
+lifecycle: candidate
+description: Step 5 Preview is StepFun's flagship model for agentic work, built on a sparse Mixture-of-Experts architecture (27B active / 600B total parameters). It performs strongly in software engineering and professional...
+context_length: 1000000
+max_output: 64000
+features:
+  - CapChat
+  - CapFunctionCall
+  - CapJsonMode
+  - ModalityImageIn
+  - ModalityTextIn
+  - ModalityTextOut
+  - ModalityVideoIn
+discovered_at: 2026-10-09T08:05:57.649804565Z
+identifiers:
+  openrouter:
+    - stepfun/step-5-preview
+provenance:
+  context_length:
+    source: openrouter
+  description:
+    source: openrouter
+  features:
+    source: openrouter
+  id:
+    source: openrouter
+  max_output:
+    source: openrouter
+  name:
+    source: openrouter
+  provider:
+    source: openrouter
+  reasoning:
+    source: openrouter
+upstream:
+  openrouter:
+    canonical_slug: stepfun/step-5-preview-20261008
+    supported_parameters:
+      - frequency_penalty
+      - include_reasoning
+      - logprobs
+      - max_tokens
+      - reasoning
+      - reasoning_effort
+      - response_format
+      - stop
+      - structured_outputs
+      - temperature
+      - tools
+      - top_logprobs
+      - top_p
+    input_modalities:
+      - image
+      - text
+      - video
+    output_modalities:
+      - text
+    fetched_at: 2026-10-09T08:06:05.174817716Z
+reasoning:
+  supported: true
+  mandatory: true
+  default_effort: medium
+  supported_efforts:
+    - high
+    - low
+    - medium

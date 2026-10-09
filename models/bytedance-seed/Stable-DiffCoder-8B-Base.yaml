@@ -1,0 +1,41 @@
+schema_version: 2
+id: bytedance-seed/stable-diffcoder-8b-base
+name: Stable-DiffCoder-8B-Base
+provider: ByteDance Seed
+developer: bytedance-seed
+lifecycle: candidate
+context_length: 0
+features:
+  - ModalityTextIn
+  - ModalityTextOut
+links:
+  model_card: https://huggingface.co/ByteDance-Seed/Stable-DiffCoder-8B-Base
+identifiers:
+  huggingface:
+    - ByteDance-Seed/Stable-DiffCoder-8B-Base
+provenance:
+  features:
+    source: official_huggingface_pipeline
+    url: https://huggingface.co/ByteDance-Seed/Stable-DiffCoder-8B-Base
+  id:
+    source: official_huggingface
+    url: https://huggingface.co/ByteDance-Seed/Stable-DiffCoder-8B-Base
+  name:
+    source: official_huggingface
+    url: https://huggingface.co/ByteDance-Seed/Stable-DiffCoder-8B-Base
+upstream:
+  huggingface:
+    id: ByteDance-Seed/Stable-DiffCoder-8B-Base
+    pipeline_tag: text-generation
+    tags:
+      - transformers
+      - safetensors
+      - llama
+      - feature-extraction
+      - text-generation
+      - custom_code
+      - arxiv:2601.15892
+      - license:mit
+      - text-generation-inference
+      - endpoints_compatible
+      - region:us

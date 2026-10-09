@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "microsoft/harrier-oss-v1-270m",
+  "status": "partially_accepted",
+  "created_at": "2026-10-09T08:06:07.403989486Z",
+  "source": {
+    "url": "https://huggingface.co/microsoft/harrier-oss-v1-270m/resolve/31de22b673913c7d658c0f03f792d77c2dcf8ebd/README.md",
+    "revision": "31de22b673913c7d658c0f03f792d77c2dcf8ebd",
+    "sha256": "edc971d78365f166175c33bcd62e2e8173ccdac86dbe7761ace5e83f00d0e164"
+  },
+  "generator": {
+    "model": "qwen/qwen3.8-27b",
+    "wire_api": "chat"
+  },
+  "claims": [
+    {
+      "field": "description",
+      "value": "Microsoft multilingual text embedding model (270M parameters) using decoder-only architecture with last-token pooling and L2 normalization for tasks like retrieval, clustering, and semantic similarity.",
+      "evidence": "harrier-oss-v1 is a family of multilingual text embedding models developed by Microsoft. The models use decoder-only architectures with last-token pooling and L2 normalization",
+      "section": "harrier-oss-v1",
+      "confidence": "high"
+    },
+    {
+      "field": "context_length",
+      "value": 32768,
+      "evidence": "| [harrier-oss-v1-270m](https://huggingface.co/microsoft/harrier-oss-v1-270m) | 270M       | 640                 | 32,768     | 66.5          |",
+      "section": "harrier-oss-v1",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "ModalityTextIn",
+        "ModalityTextOut"
+      ],
+      "evidence": "harrier-oss-v1 is a family of multilingual text embedding models... They can be applied to a wide range of tasks, including but not limited to retrieval...",
+      "section": "harrier-oss-v1",
+      "confidence": "high"
+    }
+  ]
+}

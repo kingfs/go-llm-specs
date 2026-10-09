@@ -1,0 +1,141 @@
+schema_version: 2
+id: microsoft/harrier-oss-v1-270m
+name: harrier-oss-v1-270m
+provider: Microsoft
+developer: microsoft
+lifecycle: active
+description: Microsoft multilingual text embedding model (270M parameters) using decoder-only architecture with last-token pooling and L2 normalization for tasks like retrieval, clustering, and semantic similarity.
+context_length: 32768
+features:
+  - CapEmbedding
+  - ModalityTextIn
+links:
+  model_card: https://huggingface.co/microsoft/harrier-oss-v1-270m
+identifiers:
+  huggingface:
+    - microsoft/harrier-oss-v1-270m
+provenance:
+  context_length:
+    source: official_model_card
+    url: https://huggingface.co/microsoft/harrier-oss-v1-270m/resolve/31de22b673913c7d658c0f03f792d77c2dcf8ebd/README.md
+  description:
+    source: official_model_card
+    url: https://huggingface.co/microsoft/harrier-oss-v1-270m/resolve/31de22b673913c7d658c0f03f792d77c2dcf8ebd/README.md
+  features:
+    source: official_huggingface_pipeline
+    url: https://huggingface.co/microsoft/harrier-oss-v1-270m
+  id:
+    source: official_huggingface
+    url: https://huggingface.co/microsoft/harrier-oss-v1-270m
+  name:
+    source: official_huggingface
+    url: https://huggingface.co/microsoft/harrier-oss-v1-270m
+upstream:
+  huggingface:
+    id: microsoft/harrier-oss-v1-270m
+    pipeline_tag: feature-extraction
+    tags:
+      - sentence-transformers
+      - safetensors
+      - gemma3_text
+      - feature-extraction
+      - mteb
+      - transformers
+      - multilingual
+      - af
+      - am
+      - ar
+      - as
+      - az
+      - be
+      - bg
+      - bn
+      - br
+      - bs
+      - ca
+      - cs
+      - cy
+      - da
+      - de
+      - el
+      - en
+      - eo
+      - es
+      - et
+      - eu
+      - fa
+      - fi
+      - fr
+      - fy
+      - ga
+      - gd
+      - gl
+      - gu
+      - ha
+      - he
+      - hi
+      - hr
+      - hu
+      - hy
+      - id
+      - is
+      - it
+      - ja
+      - jv
+      - ka
+      - kk
+      - km
+      - kn
+      - ko
+      - ku
+      - ky
+      - la
+      - lo
+      - lt
+      - lv
+      - mg
+      - mk
+      - ml
+      - mn
+      - mr
+      - ms
+      - my
+      - ne
+      - nl
+      - "no"
+      - om
+      - or
+      - pa
+      - pl
+      - ps
+      - pt
+      - ro
+      - ru
+      - sa
+      - sd
+      - si
+      - sk
+      - sl
+      - so
+      - sq
+      - sr
+      - su
+      - sv
+      - sw
+      - ta
+      - te
+      - th
+      - tl
+      - tr
+      - ug
+      - uk
+      - ur
+      - uz
+      - vi
+      - xh
+      - yi
+      - zh
+      - license:mit
+      - text-embeddings-inference
+      - endpoints_compatible
+      - region:us

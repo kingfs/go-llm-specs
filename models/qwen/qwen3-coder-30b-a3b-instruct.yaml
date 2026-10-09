@@ -33,7 +33,6 @@ upstream:
       - logprobs
       - max_tokens
       - presence_penalty
-      - repetition_penalty
       - response_format
       - seed
       - stop
@@ -49,7 +48,7 @@ upstream:
     output_modalities:
       - text
     knowledge_cutoff: "2025-06-30"
-    fetched_at: 2026-07-29T10:42:53.574705711Z
+    fetched_at: 2026-10-09T08:06:05.172413589Z
   huggingface:
     id: Qwen/Qwen3-Coder-30B-A3B-Instruct
     revision: b2cff646eb4bb1d68355c01b18ae02e7cf42d120

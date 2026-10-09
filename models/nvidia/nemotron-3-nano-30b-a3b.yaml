@@ -44,7 +44,6 @@ upstream:
       - logit_bias
       - logprobs
       - max_tokens
-      - min_p
       - presence_penalty
       - reasoning
       - repetition_penalty
@@ -62,7 +61,7 @@ upstream:
       - text
     output_modalities:
       - text
-    fetched_at: 2026-07-29T10:40:42.246290263Z
+    fetched_at: 2026-10-09T08:06:05.168568785Z
   huggingface:
     id: nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B-BF16
     revision: 2d59de1cbd51c0adf384eb906b766d1aee0e0517

@@ -34,3 +34,32 @@ provenance:
     source: openrouter
   provider:
     source: openrouter
+  reasoning:
+    source: openrouter
+upstream:
+  openrouter:
+    canonical_slug: inclusionai/ling-3.0-flash-sante-20260904
+    supported_parameters:
+      - frequency_penalty
+      - include_reasoning
+      - logprobs
+      - max_tokens
+      - presence_penalty
+      - reasoning
+      - repetition_penalty
+      - seed
+      - stop
+      - temperature
+      - tool_choice
+      - tools
+      - top_k
+      - top_logprobs
+      - top_p
+    input_modalities:
+      - text
+    output_modalities:
+      - text
+    fetched_at: 2026-10-09T08:06:05.166065301Z
+reasoning:
+  supported: true
+  default_enabled: true

@@ -1,0 +1,49 @@
+schema_version: 2
+id: tencent/youtu-parsing-omni
+name: Youtu-Parsing-Omni
+provider: Tencent Hunyuan
+developer: tencent
+lifecycle: candidate
+context_length: 0
+features:
+  - ModalityImageIn
+  - ModalityTextIn
+  - ModalityTextOut
+links:
+  model_card: https://huggingface.co/tencent/Youtu-Parsing-Omni
+identifiers:
+  huggingface:
+    - tencent/Youtu-Parsing-Omni
+provenance:
+  features:
+    source: official_huggingface_pipeline
+    url: https://huggingface.co/tencent/Youtu-Parsing-Omni
+  id:
+    source: official_huggingface
+    url: https://huggingface.co/tencent/Youtu-Parsing-Omni
+  name:
+    source: official_huggingface
+    url: https://huggingface.co/tencent/Youtu-Parsing-Omni
+upstream:
+  huggingface:
+    id: tencent/Youtu-Parsing-Omni
+    pipeline_tag: image-text-to-text
+    tags:
+      - transformers
+      - safetensors
+      - youtu_vita
+      - text-generation
+      - document-parsing
+      - ocr
+      - omni
+      - multimodal
+      - audio
+      - video
+      - custom_code
+      - image-text-to-text
+      - conversational
+      - arxiv:2601.20430
+      - arxiv:2601.19798
+      - arxiv:2512.24618
+      - license:other
+      - region:us

@@ -1,25 +1,25 @@
 {
   "schema_version": 3,
   "summary": {
-    "models": 834,
-    "compiled": 583,
-    "candidates": 225,
+    "models": 840,
+    "compiled": 584,
+    "candidates": 230,
     "serving_variants": 10,
     "out_of_scope": 2,
     "quantization_variants": 14,
-    "identity_gaps": 132,
-    "unverified_identities": 243
+    "identity_gaps": 133,
+    "unverified_identities": 244
   },
   "by_kind": {
     "draft-head": 10,
-    "model": 808,
+    "model": 814,
     "out-of-scope": 2,
     "quantization": 14
   },
   "identity": {
     "by_source": {
-      "official_huggingface": 538,
-      "openrouter": 296
+      "official_huggingface": 543,
+      "openrouter": 297
     },
     "unverified": [
       {
@@ -1093,6 +1093,11 @@
         "source": "openrouter"
       },
       {
+        "id": "stepfun/step-5-preview",
+        "provider": "stepfun",
+        "source": "openrouter"
+      },
+      {
         "id": "tngtech/tng-r1t-chimera",
         "provider": "tngtech",
         "source": "openrouter"
@@ -1325,6 +1330,7 @@
     "arcee-ai/trinity-large-base",
     "arcee-ai/trinity-mini-base",
     "arcee-ai/trinity-nano-base",
+    "bytedance-seed/stable-diffcoder-8b-base",
     "cohere/tiny-aya-base",
     "ibm-granite/granite-4.0-1b-base",
     "ibm-granite/granite-4.0-h-1b-base",
@@ -1830,6 +1836,10 @@
     {
       "id": "sakana/sakana-namazu",
       "provider": "sakana"
+    },
+    {
+      "id": "stepfun/step-5-preview",
+      "provider": "stepfun"
     },
     {
       "id": "tngtech/tng-r1t-chimera",
