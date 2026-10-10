@@ -6,7 +6,7 @@ import (
 	"strings"
 	"unicode"
 
-	llmspecs "github.com/kingfs/go-llm-specs"
+	"github.com/kingfs/Argus"
 )
 
 type structuredMetadata struct {
@@ -145,33 +145,33 @@ func deriveTags(m ModelRegistry, family, series string) []string {
 	for _, feature := range m.Features {
 		switch feature {
 		case "CapChat":
-			addTag(string(llmspecs.TagChat))
+			addTag(string(argus.TagChat))
 		case "CapEmbedding":
-			addTag(string(llmspecs.TagEmbedding))
+			addTag(string(argus.TagEmbedding))
 		case "CapRerank":
-			addTag(string(llmspecs.TagRerank))
+			addTag(string(argus.TagRerank))
 		case "CapTTS":
-			addTag(string(llmspecs.TagTTS))
+			addTag(string(argus.TagTTS))
 		case "CapASR":
-			addTag(string(llmspecs.TagASR))
+			addTag(string(argus.TagASR))
 		case "CapFunctionCall":
-			addTag(string(llmspecs.TagToolUse))
+			addTag(string(argus.TagToolUse))
 		case "CapJsonMode":
-			addTag(string(llmspecs.TagStructuredOutput))
+			addTag(string(argus.TagStructuredOutput))
 		case "CapMultimodal":
-			addTag(string(llmspecs.TagMultimodal))
+			addTag(string(argus.TagMultimodal))
 		case "ModalityImageIn":
-			addTag(string(llmspecs.TagVision))
+			addTag(string(argus.TagVision))
 		case "ModalityImageOut":
-			addTag(string(llmspecs.TagImageGeneration))
+			addTag(string(argus.TagImageGeneration))
 		case "ModalityAudioIn":
-			addTag(string(llmspecs.TagAudioInput))
+			addTag(string(argus.TagAudioInput))
 		case "ModalityAudioOut":
-			addTag(string(llmspecs.TagAudioOutput))
+			addTag(string(argus.TagAudioOutput))
 		case "ModalityVideoIn":
-			addTag(string(llmspecs.TagVideoInput))
+			addTag(string(argus.TagVideoInput))
 		case "ModalityFileIn":
-			addTag(string(llmspecs.TagFileInput))
+			addTag(string(argus.TagFileInput))
 		}
 	}
 
@@ -182,7 +182,7 @@ func deriveTags(m ModelRegistry, family, series string) []string {
 	}
 
 	if family != "" {
-		addTag(llmspecs.NormalizeTag(family))
+		addTag(argus.NormalizeTag(family))
 	}
 
 	return normalizeTagList(tags)
@@ -224,19 +224,19 @@ func isAlnumByte(b byte) bool {
 }
 
 var keywordTagRules = []tagRule{
-	newTagRule(string(llmspecs.TagCoding), "coder", "coding", "codex", "software engineering", "swe-bench", "cli", "ide"),
-	newTagRule(string(llmspecs.TagReasoning), "reasoning", "reasoner", "deep reasoning", "think", "thinking"),
-	newTagRule(string(llmspecs.TagAgent), "agent", "agents", "agentic", "tool orchestration", "autonomous"),
-	newTagRule(string(llmspecs.TagSearch), "search", "retrieval", "research", "deepresearch"),
-	newTagRule(string(llmspecs.TagPreview), "preview", "beta"),
-	newTagRule(string(llmspecs.TagExperimental), "experimental", "alpha"),
-	newTagRule(string(llmspecs.TagFast), "fast", "low latency"),
-	newTagRule(string(llmspecs.TagMini), "mini"),
-	newTagRule(string(llmspecs.TagNano), "nano"),
-	newTagRule(string(llmspecs.TagPro), "pro"),
-	newTagRule(string(llmspecs.TagTurbo), "turbo"),
-	newTagRule(string(llmspecs.TagFree), ":free", "(free)"),
-	newTagRule(string(llmspecs.TagThinking), ":thinking", "(thinking)", "thinking"),
+	newTagRule(string(argus.TagCoding), "coder", "coding", "codex", "software engineering", "swe-bench", "cli", "ide"),
+	newTagRule(string(argus.TagReasoning), "reasoning", "reasoner", "deep reasoning", "think", "thinking"),
+	newTagRule(string(argus.TagAgent), "agent", "agents", "agentic", "tool orchestration", "autonomous"),
+	newTagRule(string(argus.TagSearch), "search", "retrieval", "research", "deepresearch"),
+	newTagRule(string(argus.TagPreview), "preview", "beta"),
+	newTagRule(string(argus.TagExperimental), "experimental", "alpha"),
+	newTagRule(string(argus.TagFast), "fast", "low latency"),
+	newTagRule(string(argus.TagMini), "mini"),
+	newTagRule(string(argus.TagNano), "nano"),
+	newTagRule(string(argus.TagPro), "pro"),
+	newTagRule(string(argus.TagTurbo), "turbo"),
+	newTagRule(string(argus.TagFree), ":free", "(free)"),
+	newTagRule(string(argus.TagThinking), ":thinking", "(thinking)", "thinking"),
 }
 
 func normalizeTagList(tags []string) []string {
@@ -245,7 +245,7 @@ func normalizeTagList(tags []string) []string {
 	}
 	seen := make(map[string]string, len(tags))
 	for _, tag := range tags {
-		tag = llmspecs.NormalizeTag(tag)
+		tag = argus.NormalizeTag(tag)
 		if tag == "" {
 			continue
 		}

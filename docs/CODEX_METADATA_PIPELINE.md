@@ -253,7 +253,7 @@ task catalog-discover
 The committed `dist/codex/third-party-models.json` is intentionally named as a standalone third-party catalog. Using it directly replaces Codex's bundled catalog. The recommended installer downloads the latest release asset, captures the installed Codex CLI's bundled catalog, fills only locally required schema fields reported by that CLI, validates the merged result, and then safely updates the user configuration:
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/kingfs/go-llm-specs/master/scripts/install-codex-catalog.sh | sh
+curl -fsSL https://raw.githubusercontent.com/kingfs/Argus/master/scripts/install-codex-catalog.sh | sh
 ```
 
 Users performing the merge manually should capture bundled entries with their pinned Codex CLI and use the merge flag; the generator rejects collisions rather than silently overriding either catalog. For example:

@@ -1,4 +1,4 @@
-package llmspecs
+package argus
 
 // Model is an interface for reading model metadata.
 type Model interface {

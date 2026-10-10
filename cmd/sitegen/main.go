@@ -13,8 +13,8 @@ import (
 	"sort"
 	"strings"
 
-	"github.com/kingfs/go-llm-specs/internal/provider"
-	"github.com/kingfs/go-llm-specs/internal/registry"
+	"github.com/kingfs/Argus/internal/provider"
+	"github.com/kingfs/Argus/internal/registry"
 	"github.com/yuin/goldmark"
 	"github.com/yuin/goldmark/extension"
 	"github.com/yuin/goldmark/parser"
@@ -378,7 +378,7 @@ func generateDocs(docsDir, outputDir string) error {
 		if err := os.MkdirAll(dir, 0o755); err != nil {
 			return err
 		}
-		data := pageData{Title: source.title, Description: "go-llm-specs documentation", Content: template.HTML(html), Language: "zh-CN", Root: "../../"}
+		data := pageData{Title: source.title, Description: "Argus Model Museum documentation", Content: template.HTML(html), Language: "zh-CN", Root: "../../"}
 		if source.slug == "about-en" {
 			data.Language = "en"
 		}
@@ -401,5 +401,5 @@ func rewriteDocLinks(html string) string {
 	for from, to := range replacements {
 		html = strings.ReplaceAll(html, from, to)
 	}
-	return strings.ReplaceAll(html, `href="./`, `href="https://github.com/kingfs/go-llm-specs/blob/master/`)
+	return strings.ReplaceAll(html, `href="./`, `href="https://github.com/kingfs/Argus/blob/master/`)
 }

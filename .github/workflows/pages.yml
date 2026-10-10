@@ -1,4 +1,4 @@
-name: Model Museum Pages
+name: Argus Model Museum Pages
 
 on:
   workflow_call:

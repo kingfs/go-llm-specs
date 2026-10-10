@@ -1,12 +1,12 @@
 #!/bin/sh
 set -eu
 
-repo="${GO_LLM_SPECS_REPO:-kingfs/go-llm-specs}"
+repo="${ARGUS_REPO:-kingfs/Argus}"
 codex_bin="${CODEX_BIN:-codex}"
 codex_dir="${CODEX_HOME:-${HOME}/.codex}"
 config_file="${CODEX_CONFIG_FILE:-${codex_dir}/config.toml}"
 catalog_file="${CODEX_CATALOG_FILE:-${codex_dir}/models.json}"
-release_url="${GO_LLM_SPECS_CATALOG_URL:-https://github.com/${repo}/releases/latest/download/third-party-models.json}"
+release_url="${ARGUS_CATALOG_URL:-https://github.com/${repo}/releases/latest/download/third-party-models.json}"
 
 usage() {
 	printf '%s\n' "Usage: install-codex-catalog.sh [--config PATH] [--output PATH] [--catalog-url URL]"
@@ -29,7 +29,7 @@ for command_name in curl python3 "$codex_bin"; do
 	fi
 done
 
-temp_dir=$(mktemp -d "${TMPDIR:-/tmp}/go-llm-specs-codex.XXXXXX")
+temp_dir=$(mktemp -d "${TMPDIR:-/tmp}/argus-codex.XXXXXX")
 trap 'rm -rf "$temp_dir"' EXIT HUP INT TERM
 bundled_file="${temp_dir}/bundled-models.json"
 third_party_file="${temp_dir}/third-party-models.json"

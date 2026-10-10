@@ -1,11 +1,11 @@
-# go-llm-specs
+# Argus
 
 面向 Go 应用的 LLM 模型元数据注册表：把模型 ID、供应商、上下文长度、输入输出模态、工具调用、JSON mode、别名、标签和中英文描述编译进你的程序。
 
 [English](./README_EN.md) | [中文](./README.md)
 
-[![Daily Model Sync](https://github.com/kingfs/go-llm-specs/actions/workflows/daily-update.yml/badge.svg)](https://github.com/kingfs/go-llm-specs/actions/workflows/daily-update.yml)
-[![Go Reference](https://pkg.go.dev/badge/github.com/kingfs/go-llm-specs.svg)](https://pkg.go.dev/github.com/kingfs/go-llm-specs)
+[![Daily Model Sync](https://github.com/kingfs/Argus/actions/workflows/daily-update.yml/badge.svg)](https://github.com/kingfs/Argus/actions/workflows/daily-update.yml)
+[![Go Reference](https://pkg.go.dev/badge/github.com/kingfs/Argus.svg)](https://pkg.go.dev/github.com/kingfs/Argus)
 
 ## 为什么需要它
 
@@ -16,7 +16,7 @@
 - 调用模型前需要判断它是否支持图片输入、函数调用、结构化输出、Embedding、Rerank、TTS 或 ASR。
 - 你不希望每次启动服务都请求外部接口，也不希望在业务代码里维护一堆易过期的模型常量。
 
-`go-llm-specs` 把这些信息整理成一个静态、类型安全、可直接依赖的 Go 包。运行时只做内存查询，不访问网络，适合放进 API 服务、Agent 平台、模型网关、控制台、CLI 工具和内部运维系统。
+`Argus` 把这些信息整理成一个静态、类型安全、可直接依赖的 Go 包。运行时只做内存查询，不访问网络，适合放进 API 服务、Agent 平台、模型网关、控制台、CLI 工具和内部运维系统。
 
 ## 你能得到什么
 
@@ -31,7 +31,7 @@
 ## 安装
 
 ```bash
-go get github.com/kingfs/go-llm-specs
+go get github.com/kingfs/Argus
 ```
 
 ## 快速开始
@@ -42,11 +42,11 @@ package main
 import (
 	"fmt"
 
-	llmspecs "github.com/kingfs/go-llm-specs"
+	argus "github.com/kingfs/Argus"
 )
 
 func main() {
-	model, ok := llmspecs.Get("gpt4t")
+	model, ok := argus.Get("gpt4t")
 	if !ok {
 		return
 	}
@@ -65,7 +65,7 @@ func main() {
 ### 构建模型选择器
 
 ```go
-for _, model := range llmspecs.Search("claude sonnet", 10) {
+for _, model := range argus.Search("claude sonnet", 10) {
 	card := model.Card()
 	fmt.Printf("%s: %s [%s]\n", card.Provider, card.Name, card.ID)
 }
@@ -74,18 +74,18 @@ for _, model := range llmspecs.Search("claude sonnet", 10) {
 ### 筛选支持图片和工具调用的模型
 
 ```go
-models := llmspecs.Query().
-	Has(llmspecs.ModalityImageIn).
-	Has(llmspecs.CapFunctionCall).
+models := argus.Query().
+	Has(argus.ModalityImageIn).
+	Has(argus.CapFunctionCall).
 	List()
 ```
 
 ### 只看某个供应商的模型
 
 ```go
-anthropicVisionModels := llmspecs.Query().
+anthropicVisionModels := argus.Query().
 	Provider("Anthropic").
-	Has(llmspecs.ModalityImageIn).
+	Has(argus.ModalityImageIn).
 	List()
 ```
 
@@ -93,17 +93,17 @@ anthropicVisionModels := llmspecs.Query().
 
 ```go
 configured := []string{"gpt4t", "qwen3-32b", "not-exist"}
-validModels := llmspecs.GetMany(configured)
+validModels := argus.GetMany(configured)
 ```
 
 ### 按标签组织模型
 
 ```go
-reasoningModels := llmspecs.Query().
-	Tag(string(llmspecs.TagReasoning)).
+reasoningModels := argus.Query().
+	Tag(string(argus.TagReasoning)).
 	List()
 
-for _, tag := range llmspecs.KnownTags() {
+for _, tag := range argus.KnownTags() {
 	fmt.Println(tag.Category, tag.Name, tag.Label)
 }
 ```
@@ -210,7 +210,7 @@ task sync
 `third-party-models.json` 可供 Codex 使用；当配置的模型名与目录中的 `slug` 一致时，Codex 不再回退到 fallback metadata，因而可消除对应的 metadata warning。`model_catalog_json` 会替换而非追加 Codex 内置目录，因此推荐使用安装脚本：它会下载最新 release、导出本机 Codex 的内置模型、按本机 schema 合并并验证目录，然后备份和更新 `~/.codex/config.toml`。
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/kingfs/go-llm-specs/master/scripts/install-codex-catalog.sh | sh
+curl -fsSL https://raw.githubusercontent.com/kingfs/Argus/master/scripts/install-codex-catalog.sh | sh
 ```
 
 在仓库内也可以运行：
@@ -260,3 +260,7 @@ Release catalog 还通过 [`data/codex/default-open-models.yaml`](./data/codex/d
 ## 许可证
 
 Apache 2.0 License
+
+## 更名说明
+
+自 **v0.9.0** 起，本项目由 `go-llm-specs` 正式更名为 **Argus**：Go 模块路径由 `github.com/kingfs/go-llm-specs` 变更为 `github.com/kingfs/Argus`，包名由 `llmspecs` 变更为 `argus`。旧导入路径不再更新，请升级引用。

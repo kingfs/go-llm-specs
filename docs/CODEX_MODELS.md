@@ -1,13 +1,13 @@
 # 在 Codex 中使用 models.json
 
-`go-llm-specs` 的 Release 提供经过校验的第三方模型目录。Codex 的 `model_catalog_json` 会替换内置模型目录，因此不能直接把第三方文件写进配置；需要先与当前 Codex 版本自带的目录合并。
+`Argus` 的 Release 提供经过校验的第三方模型目录。Codex 的 `model_catalog_json` 会替换内置模型目录，因此不能直接把第三方文件写进配置；需要先与当前 Codex 版本自带的目录合并。
 
 ## 推荐安装方式
 
 在 macOS 或 Linux 上运行：
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/kingfs/go-llm-specs/master/scripts/install-codex-catalog.sh | sh
+curl -fsSL https://raw.githubusercontent.com/kingfs/Argus/master/scripts/install-codex-catalog.sh | sh
 ```
 
 在本仓库中也可以运行：

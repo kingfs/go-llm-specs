@@ -1,11 +1,11 @@
-# go-llm-specs
+# Argus
 
 An LLM model metadata registry for Go applications. It compiles model IDs, providers, context windows, input/output modalities, tool-use support, JSON mode, aliases, tags, and English/Chinese descriptions into your binary.
 
 [English](./README_EN.md) | [中文](./README.md)
 
-[![Daily Model Sync](https://github.com/kingfs/go-llm-specs/actions/workflows/daily-update.yml/badge.svg)](https://github.com/kingfs/go-llm-specs/actions/workflows/daily-update.yml)
-[![Go Reference](https://pkg.go.dev/badge/github.com/kingfs/go-llm-specs.svg)](https://pkg.go.dev/github.com/kingfs/go-llm-specs)
+[![Daily Model Sync](https://github.com/kingfs/Argus/actions/workflows/daily-update.yml/badge.svg)](https://github.com/kingfs/Argus/actions/workflows/daily-update.yml)
+[![Go Reference](https://pkg.go.dev/badge/github.com/kingfs/Argus.svg)](https://pkg.go.dev/github.com/kingfs/Argus)
 
 ## Why This Exists
 
@@ -16,7 +16,7 @@ When a Go product supports multiple LLM providers, the same problems tend to sho
 - Your code needs to know whether a model supports image input, function calling, structured output, embedding, reranking, TTS, or ASR.
 - You do not want every service startup to depend on a remote model-list endpoint, and you do not want stale model constants scattered across business code.
 
-`go-llm-specs` packages that metadata as a static, type-safe Go library. Runtime lookups are in-memory and require no network I/O, making it a good fit for API services, agent platforms, model gateways, dashboards, CLI tools, and internal operations systems.
+`Argus` packages that metadata as a static, type-safe Go library. Runtime lookups are in-memory and require no network I/O, making it a good fit for API services, agent platforms, model gateways, dashboards, CLI tools, and internal operations systems.
 
 ## What You Get
 
@@ -31,7 +31,7 @@ When a Go product supports multiple LLM providers, the same problems tend to sho
 ## Installation
 
 ```bash
-go get github.com/kingfs/go-llm-specs
+go get github.com/kingfs/Argus
 ```
 
 ## Quick Start
@@ -42,11 +42,11 @@ package main
 import (
 	"fmt"
 
-	llmspecs "github.com/kingfs/go-llm-specs"
+	argus "github.com/kingfs/Argus"
 )
 
 func main() {
-	model, ok := llmspecs.Get("gpt4t")
+	model, ok := argus.Get("gpt4t")
 	if !ok {
 		return
 	}
@@ -65,7 +65,7 @@ See [examples/basic/main.go](./examples/basic/main.go) for a runnable example.
 ### Build a model picker
 
 ```go
-for _, model := range llmspecs.Search("claude sonnet", 10) {
+for _, model := range argus.Search("claude sonnet", 10) {
 	card := model.Card()
 	fmt.Printf("%s: %s [%s]\n", card.Provider, card.Name, card.ID)
 }
@@ -74,18 +74,18 @@ for _, model := range llmspecs.Search("claude sonnet", 10) {
 ### Find models with image input and tool use
 
 ```go
-models := llmspecs.Query().
-	Has(llmspecs.ModalityImageIn).
-	Has(llmspecs.CapFunctionCall).
+models := argus.Query().
+	Has(argus.ModalityImageIn).
+	Has(argus.CapFunctionCall).
 	List()
 ```
 
 ### List models from one provider
 
 ```go
-anthropicVisionModels := llmspecs.Query().
+anthropicVisionModels := argus.Query().
 	Provider("Anthropic").
-	Has(llmspecs.ModalityImageIn).
+	Has(argus.ModalityImageIn).
 	List()
 ```
 
@@ -93,17 +93,17 @@ anthropicVisionModels := llmspecs.Query().
 
 ```go
 configured := []string{"gpt4t", "qwen3-32b", "not-exist"}
-validModels := llmspecs.GetMany(configured)
+validModels := argus.GetMany(configured)
 ```
 
 ### Group models by tags
 
 ```go
-reasoningModels := llmspecs.Query().
-	Tag(string(llmspecs.TagReasoning)).
+reasoningModels := argus.Query().
+	Tag(string(argus.TagReasoning)).
 	List()
 
-for _, tag := range llmspecs.KnownTags() {
+for _, tag := range argus.KnownTags() {
 	fmt.Println(tag.Category, tag.Name, tag.Label)
 }
 ```
@@ -210,7 +210,7 @@ Newly discovered or explicitly selected models can use schema v2 for source-attr
 Codex can load `third-party-models.json`. When the configured model matches a catalog `slug`, Codex no longer uses fallback metadata and the corresponding warning is eliminated. Because `model_catalog_json` replaces rather than extends the bundled catalog, the installer is recommended. It downloads the latest release, exports the installed Codex CLI's bundled models, merges and validates against the local schema, then backs up and updates `~/.codex/config.toml`.
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/kingfs/go-llm-specs/master/scripts/install-codex-catalog.sh | sh
+curl -fsSL https://raw.githubusercontent.com/kingfs/Argus/master/scripts/install-codex-catalog.sh | sh
 ```
 
 From a repository checkout, you can instead run:
@@ -260,3 +260,7 @@ The Release catalog also uses [`data/codex/default-open-models.yaml`](./data/cod
 ## License
 
 Apache 2.0 License
+
+## Rename Notice
+
+Starting with **v0.9.0**, this project is officially renamed from `go-llm-specs` to **Argus**: the Go module path changes from `github.com/kingfs/go-llm-specs` to `github.com/kingfs/Argus`, and the package name from `llmspecs` to `argus`. The old import path is no longer updated, so please update your imports.

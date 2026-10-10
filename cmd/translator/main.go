@@ -13,8 +13,8 @@ import (
 	"time"
 
 	"github.com/joho/godotenv"
-	"github.com/kingfs/go-llm-specs/internal/aiclient"
-	registrymodel "github.com/kingfs/go-llm-specs/internal/registry"
+	"github.com/kingfs/Argus/internal/aiclient"
+	registrymodel "github.com/kingfs/Argus/internal/registry"
 )
 
 type ModelRegistry = registrymodel.Model

@@ -19,7 +19,7 @@ import (
 	"time"
 	"unicode"
 
-	"github.com/kingfs/go-llm-specs/internal/registry"
+	"github.com/kingfs/Argus/internal/registry"
 )
 
 const defaultHuggingFaceAPI = "https://huggingface.co/api"

@@ -10,7 +10,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/kingfs/go-llm-specs/internal/registry"
+	"github.com/kingfs/Argus/internal/registry"
 )
 
 func TestEnrichOpenRouter(t *testing.T) {

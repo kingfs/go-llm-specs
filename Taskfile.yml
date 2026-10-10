@@ -122,12 +122,12 @@ tasks:
       - go run ./cmd/catalogsync -discover-huggingface -since 0 -apply-identity-matches -output .cache/catalog-backfill.json {{.CLI_ARGS}}
 
   site:
-    desc: Generate the static model museum for GitHub Pages
+    desc: Generate the Argus Model Museum static site for GitHub Pages
     cmds:
       - go run ./cmd/sitegen {{.CLI_ARGS}}
 
   site-check:
-    desc: Build and validate the static model museum without changing the worktree
+    desc: Build and validate the Argus Model Museum static site without changing the worktree
     cmds:
       - go test ./cmd/sitegen
 

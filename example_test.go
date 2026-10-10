@@ -1,14 +1,14 @@
-package llmspecs_test
+package argus_test
 
 import (
 	"fmt"
 
-	llmspecs "github.com/kingfs/go-llm-specs"
+	"github.com/kingfs/Argus"
 )
 
 func ExampleGet() {
 	// Get a model by alias
-	if m, ok := llmspecs.Get("gpt4t"); ok {
+	if m, ok := argus.Get("gpt4t"); ok {
 		fmt.Printf("Model ID: %s\n", m.ID())
 		fmt.Printf("Provider: %s\n", m.Provider())
 	}
@@ -19,9 +19,9 @@ func ExampleGet() {
 
 func ExampleQueryBuilder_List() {
 	// Query models with Image support from Anthropic
-	models := llmspecs.Query().
+	models := argus.Query().
 		Provider("Anthropic").
-		Has(llmspecs.ModalityImageIn).
+		Has(argus.ModalityImageIn).
 		List()
 
 	for _, m := range models {

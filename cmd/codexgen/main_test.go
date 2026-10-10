@@ -5,8 +5,8 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/kingfs/go-llm-specs/internal/provider"
-	"github.com/kingfs/go-llm-specs/internal/registry"
+	"github.com/kingfs/Argus/internal/provider"
+	"github.com/kingfs/Argus/internal/registry"
 )
 
 func codexReadyModel() registry.Model {

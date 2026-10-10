@@ -3,7 +3,7 @@ package main
 import (
 	"testing"
 
-	llmspecs "github.com/kingfs/go-llm-specs"
+	"github.com/kingfs/Argus"
 )
 
 func TestDeriveStructuredMetadata(t *testing.T) {
@@ -49,18 +49,18 @@ func TestDeriveTagsRequiresWordBoundaries(t *testing.T) {
 		Description: "Dayhoff is a protein sequence generation model trained on metagenomic data. It provides infilling.",
 	}
 	for _, tag := range deriveTags(domain, "Dayhoff", "Dayhoff-170M") {
-		if tag == string(llmspecs.TagPro) || tag == string(llmspecs.TagCoding) {
+		if tag == string(argus.TagPro) || tag == string(argus.TagCoding) {
 			t.Fatalf("false positive tag %q in %#v", tag, deriveTags(domain, "Dayhoff", "Dayhoff-170M"))
 		}
 	}
 
 	// Real variant markers still match.
 	pro := ModelRegistry{ID: "example/model-pro", Name: "Model Pro", Provider: "Example", Description: "A pro tier model."}
-	if !containsTag(deriveTags(pro, "Model", "Model Pro"), string(llmspecs.TagPro)) {
+	if !containsTag(deriveTags(pro, "Model", "Model Pro"), string(argus.TagPro)) {
 		t.Fatalf("expected pro tag, got %#v", deriveTags(pro, "Model", "Model Pro"))
 	}
 	thinking := ModelRegistry{ID: "example/model:thinking", Name: "Model", Provider: "Example"}
-	if !containsTag(deriveTags(thinking, "Model", "Model"), string(llmspecs.TagThinking)) {
+	if !containsTag(deriveTags(thinking, "Model", "Model"), string(argus.TagThinking)) {
 		t.Fatalf("expected thinking tag, got %#v", deriveTags(thinking, "Model", "Model"))
 	}
 }

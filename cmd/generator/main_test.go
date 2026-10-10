@@ -6,8 +6,8 @@ import (
 	"path/filepath"
 	"testing"
 
-	"github.com/kingfs/go-llm-specs/internal/provider"
-	registrymodel "github.com/kingfs/go-llm-specs/internal/registry"
+	"github.com/kingfs/Argus/internal/provider"
+	registrymodel "github.com/kingfs/Argus/internal/registry"
 )
 
 func TestGenerateCodeWritesFormattedGo(t *testing.T) {

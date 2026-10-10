@@ -7,7 +7,7 @@ import (
 	"testing"
 )
 
-const testSnapshot = `package llmspecs
+const testSnapshot = `package argus
 
 func init() {
 	staticRegistry = map[string]*modelData{

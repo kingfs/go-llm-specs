@@ -7,8 +7,8 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/kingfs/go-llm-specs/internal/provider"
-	"github.com/kingfs/go-llm-specs/internal/registry"
+	"github.com/kingfs/Argus/internal/provider"
+	"github.com/kingfs/Argus/internal/registry"
 )
 
 func TestBuildCatalogMapsProviderAndCapabilities(t *testing.T) {
@@ -73,7 +73,7 @@ func TestBuildCatalogSkipsServingVariants(t *testing.T) {
 
 func TestRewriteDocLinks(t *testing.T) {
 	html := rewriteDocLinks(`<a href="./README_EN.md">English</a><a href="./docs/DEVELOPMENT.md">Development</a><a href="./capability.go">Code</a>`)
-	for _, link := range []string{`href="../about-en/"`, `href="../development/"`, `href="https://github.com/kingfs/go-llm-specs/blob/master/capability.go"`} {
+	for _, link := range []string{`href="../about-en/"`, `href="../development/"`, `href="https://github.com/kingfs/Argus/blob/master/capability.go"`} {
 		if !strings.Contains(html, link) {
 			t.Errorf("rewritten HTML does not contain %s: %s", link, html)
 		}

@@ -1,4 +1,4 @@
-package llmspecs
+package argus
 
 import (
 	"fmt"

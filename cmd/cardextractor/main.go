@@ -13,9 +13,9 @@ import (
 	"strings"
 	"time"
 
-	"github.com/kingfs/go-llm-specs/internal/aiclient"
-	"github.com/kingfs/go-llm-specs/internal/registry"
-	"github.com/kingfs/go-llm-specs/internal/suggestion"
+	"github.com/kingfs/Argus/internal/aiclient"
+	"github.com/kingfs/Argus/internal/registry"
+	"github.com/kingfs/Argus/internal/suggestion"
 )
 
 type config struct {
