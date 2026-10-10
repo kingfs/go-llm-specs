@@ -29,19 +29,14 @@ upstream:
     supported_parameters:
       - frequency_penalty
       - include_reasoning
-      - logprobs
       - max_tokens
-      - presence_penalty
       - reasoning
       - response_format
-      - seed
-      - stop
       - structured_outputs
       - temperature
       - tool_choice
       - tools
       - top_k
-      - top_logprobs
       - top_p
     input_modalities:
       - image
@@ -49,7 +44,7 @@ upstream:
     output_modalities:
       - text
     knowledge_cutoff: "2025-03-31"
-    fetched_at: 2026-07-29T10:43:20.583184685Z
+    fetched_at: 2026-10-10T07:50:11.800932674Z
   huggingface:
     id: Qwen/Qwen3-VL-30B-A3B-Thinking
     revision: d0ed0380729be07a546fdefafbb4fe411f341e92

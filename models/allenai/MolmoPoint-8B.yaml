@@ -1,0 +1,45 @@
+schema_version: 2
+id: allenai/molmopoint-8b
+name: MolmoPoint-8B
+provider: Allen Institute for AI
+developer: allenai
+lifecycle: candidate
+context_length: 0
+features:
+  - ModalityImageIn
+  - ModalityTextIn
+  - ModalityTextOut
+links:
+  model_card: https://huggingface.co/allenai/MolmoPoint-8B
+identifiers:
+  huggingface:
+    - allenai/MolmoPoint-8B
+provenance:
+  features:
+    source: official_huggingface_pipeline
+    url: https://huggingface.co/allenai/MolmoPoint-8B
+  id:
+    source: official_huggingface
+    url: https://huggingface.co/allenai/MolmoPoint-8B
+  name:
+    source: official_huggingface
+    url: https://huggingface.co/allenai/MolmoPoint-8B
+upstream:
+  huggingface:
+    id: allenai/MolmoPoint-8B
+    pipeline_tag: image-text-to-text
+    tags:
+      - safetensors
+      - molmo_point
+      - multimodal
+      - olmo
+      - molmo
+      - molmo2
+      - image-text-to-text
+      - conversational
+      - custom_code
+      - en
+      - base_model:Qwen/Qwen3-8B
+      - base_model:finetune:Qwen/Qwen3-8B
+      - license:apache-2.0
+      - region:us

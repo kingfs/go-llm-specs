@@ -3,8 +3,10 @@ id: microsoft/harrier-oss-v1-27b
 name: harrier-oss-v1-27b
 provider: Microsoft
 developer: microsoft
-lifecycle: candidate
-context_length: 0
+lifecycle: active
+description: microsoft/harrier-oss-v1-27b is a multilingual text embedding model with 27B parameters, using decoder-only architecture, last-token pooling, and L2 normalization. It achieves a MTEB v2 score of 74.3 and has an embedding dimension of 5,376.
+description_cn: microsoft/harrier-oss-v1-27b 是一个具有270亿参数的多语言文本嵌入模型，采用仅解码器架构、末位标记池化和L2归一化。其MTEB v2得分为74.3，嵌入维度为5,376。
+context_length: 32768
 features:
   - CapEmbedding
   - ModalityTextIn
@@ -14,6 +16,12 @@ identifiers:
   huggingface:
     - microsoft/harrier-oss-v1-27b
 provenance:
+  context_length:
+    source: official_model_card
+    url: https://huggingface.co/microsoft/harrier-oss-v1-27b/resolve/0c0fc62f6d8af9e8604cb818c412301b103a0093/README.md
+  description:
+    source: official_model_card
+    url: https://huggingface.co/microsoft/harrier-oss-v1-27b/resolve/0c0fc62f6d8af9e8604cb818c412301b103a0093/README.md
   features:
     source: official_huggingface_pipeline
     url: https://huggingface.co/microsoft/harrier-oss-v1-27b

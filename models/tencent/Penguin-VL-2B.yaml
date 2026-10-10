@@ -1,0 +1,46 @@
+schema_version: 2
+id: tencent/penguin-vl-2b
+name: Penguin-VL-2B
+provider: Tencent Hunyuan
+developer: tencent
+lifecycle: candidate
+context_length: 0
+features:
+  - ModalityTextIn
+  - ModalityTextOut
+links:
+  model_card: https://huggingface.co/tencent/Penguin-VL-2B
+identifiers:
+  huggingface:
+    - tencent/Penguin-VL-2B
+provenance:
+  features:
+    source: official_huggingface_pipeline
+    url: https://huggingface.co/tencent/Penguin-VL-2B
+  id:
+    source: official_huggingface
+    url: https://huggingface.co/tencent/Penguin-VL-2B
+  name:
+    source: official_huggingface
+    url: https://huggingface.co/tencent/Penguin-VL-2B
+upstream:
+  huggingface:
+    id: tencent/Penguin-VL-2B
+    pipeline_tag: text-generation
+    tags:
+      - transformers
+      - safetensors
+      - penguinvl_qwen3
+      - text-generation
+      - multi-modal
+      - large-language-model
+      - vision-language-model
+      - vision-encoder
+      - conversational
+      - custom_code
+      - en
+      - arxiv:2603.06569
+      - base_model:Qwen/Qwen3-1.7B
+      - base_model:finetune:Qwen/Qwen3-1.7B
+      - license:apache-2.0
+      - region:us

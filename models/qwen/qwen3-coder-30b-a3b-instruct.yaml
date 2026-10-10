@@ -30,25 +30,21 @@ upstream:
     huggingface_id: Qwen/Qwen3-Coder-30B-A3B-Instruct
     supported_parameters:
       - frequency_penalty
-      - logprobs
       - max_tokens
-      - presence_penalty
       - response_format
-      - seed
       - stop
       - structured_outputs
       - temperature
       - tool_choice
       - tools
       - top_k
-      - top_logprobs
       - top_p
     input_modalities:
       - text
     output_modalities:
       - text
     knowledge_cutoff: "2025-06-30"
-    fetched_at: 2026-10-09T08:06:05.172413589Z
+    fetched_at: 2026-10-10T07:50:11.800414885Z
   huggingface:
     id: Qwen/Qwen3-Coder-30B-A3B-Instruct
     revision: b2cff646eb4bb1d68355c01b18ae02e7cf42d120

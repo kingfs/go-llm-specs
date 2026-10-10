@@ -1,0 +1,48 @@
+schema_version: 2
+id: tencent/points-gui-g
+name: POINTS-GUI-G
+provider: Tencent Hunyuan
+developer: tencent
+lifecycle: candidate
+context_length: 0
+features:
+  - ModalityImageIn
+  - ModalityTextIn
+  - ModalityTextOut
+links:
+  model_card: https://huggingface.co/tencent/POINTS-GUI-G
+identifiers:
+  huggingface:
+    - tencent/POINTS-GUI-G
+provenance:
+  features:
+    source: official_huggingface_pipeline
+    url: https://huggingface.co/tencent/POINTS-GUI-G
+  id:
+    source: official_huggingface
+    url: https://huggingface.co/tencent/POINTS-GUI-G
+  name:
+    source: official_huggingface
+    url: https://huggingface.co/tencent/POINTS-GUI-G
+upstream:
+  huggingface:
+    id: tencent/POINTS-GUI-G
+    pipeline_tag: image-text-to-text
+    tags:
+      - transformers
+      - safetensors
+      - text-generation
+      - GUI
+      - GUI-Grounding
+      - Vision-language
+      - multimodal
+      - image-text-to-text
+      - conversational
+      - custom_code
+      - en
+      - zh
+      - arxiv:2602.06391
+      - base_model:Qwen/Qwen3-8B-Base
+      - base_model:finetune:Qwen/Qwen3-8B-Base
+      - license:other
+      - region:us

@@ -5,6 +5,7 @@ provider: Microsoft
 developer: microsoft
 lifecycle: active
 description: Microsoft multilingual text embedding model (270M parameters) using decoder-only architecture with last-token pooling and L2 normalization for tasks like retrieval, clustering, and semantic similarity.
+description_cn: 微软多语言文本嵌入模型（2.7亿参数），采用仅解码器架构，通过末位标记池化和L2归一化，适用于检索、聚类和语义相似度等任务。
 context_length: 32768
 features:
   - CapEmbedding

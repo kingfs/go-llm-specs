@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "kind": "model_card",
+  "model_id": "microsoft/harrier-oss-v1-27b",
+  "status": "partially_accepted",
+  "created_at": "2026-10-10T07:51:35.683311653Z",
+  "source": {
+    "url": "https://huggingface.co/microsoft/harrier-oss-v1-27b/resolve/0c0fc62f6d8af9e8604cb818c412301b103a0093/README.md",
+    "revision": "0c0fc62f6d8af9e8604cb818c412301b103a0093",
+    "sha256": "6c42cc4b3926576c61b804ec9592d25bf0576243d421aee656c4d31eef58d110"
+  },
+  "generator": {
+    "model": "qwen/qwen3.8-27b",
+    "wire_api": "chat"
+  },
+  "claims": [
+    {
+      "field": "description",
+      "value": "microsoft/harrier-oss-v1-27b is a multilingual text embedding model with 27B parameters, using decoder-only architecture, last-token pooling, and L2 normalization. It achieves a MTEB v2 score of 74.3 and has an embedding dimension of 5,376.",
+      "evidence": "harrier-oss-v1 is a family of multilingual text embedding models developed by Microsoft... harrier-oss-v1-27b ... 27B ... 5,376 ... 32,768 ... 74.3",
+      "section": "harrier-oss-v1",
+      "confidence": "high"
+    },
+    {
+      "field": "context_length",
+      "value": 32768,
+      "evidence": "max_length = 32768",
+      "section": "Usage",
+      "confidence": "high"
+    },
+    {
+      "field": "features",
+      "value": [
+        "ModalityTextIn",
+        "ModalityTextOut"
+      ],
+      "evidence": "text embedding models... dense text embeddings",
+      "section": "harrier-oss-v1",
+      "confidence": "high"
+    }
+  ]
+}

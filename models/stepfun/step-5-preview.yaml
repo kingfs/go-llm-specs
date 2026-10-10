@@ -5,6 +5,7 @@ provider: Stepfun
 developer: stepfun
 lifecycle: candidate
 description: Step 5 Preview is StepFun's flagship model for agentic work, built on a sparse Mixture-of-Experts architecture (27B active / 600B total parameters). It performs strongly in software engineering and professional...
+description_cn: Step 5 Preview 是阶跃星辰（StepFun）专为智能体任务设计的旗舰模型，基于稀疏专家混合（MoE）架构（270亿激活参数 / 6000亿总参数）。它在软件工程和专业领域表现强劲...
 context_length: 1000000
 max_output: 64000
 features:
